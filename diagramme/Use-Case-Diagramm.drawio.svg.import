@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://b5awvqnjtc8te"
+=======
+uid="uid://6bip2ow8lxy"
+>>>>>>> b96e994 (Update)
 path="res://.godot/imported/Use-Case-Diagramm.drawio.svg-eb486c7dafb4aeb390e68402b9378ef6.ctex"
 metadata={
 "vram_texture": false

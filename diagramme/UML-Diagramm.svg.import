@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://hkyccvj625hd"
+=======
+uid="uid://bvfteqsy02o2a"
+>>>>>>> b96e994 (Update)
 path="res://.godot/imported/UML-Diagramm.svg-0d5191114fea9eb469eba6a5ec3013a5.ctex"
 metadata={
 "vram_texture": false
