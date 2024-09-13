@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=3 uid="uid://cqokjjp5c4xlu"]
+
+[ext_resource type="Texture2D" uid="uid://c387o44u1uf8d" path="res://assets/EnemyTestRectangle/rectangle.jpg" id="1_3klqc"]
+[ext_resource type="Script" path="res://scripts/base_enemy.gd" id="1_o511m"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_r4v5d"]
+radius = 8.0
+height = 32.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jcyex"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_3klqc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_grvrj"]
+radius = 179.003
+
+[node name="base_enemy" type="Node2D"]
+script = ExtResource("1_o511m")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+lock_rotation = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(0, -16)
+shape = SubResource("CapsuleShape2D_r4v5d")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="RigidBody2D"]
+position = Vector2(0, -16)
+sprite_frames = SubResource("SpriteFrames_jcyex")
+
+[node name="detection" type="Area2D" parent="RigidBody2D"]
+position = Vector2(0, -16)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RigidBody2D/detection"]
+polygon = PackedVector2Array(8, 0, 8, -31, -69, -66, -96, 0, -69, 66, 8, 31)
+
+[node name="pursuing_radius" type="Area2D" parent="RigidBody2D"]
+position = Vector2(0, -16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D/pursuing_radius"]
+shape = SubResource("CircleShape2D_grvrj")
+
+[connection signal="body_entered" from="RigidBody2D/detection" to="." method="_on_detection_body_entered"]
+[connection signal="body_exited" from="RigidBody2D/pursuing_radius" to="." method="_on_pursuing_radius_body_exited"]

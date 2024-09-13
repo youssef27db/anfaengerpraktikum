@@ -4,6 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://7s4gcm0gyfux" path="res://assets/Hauptcharakter/02_Stripes/05_[Jump[Rising-Loop]].png" id="2_rb1dt"]
 [ext_resource type="Texture2D" uid="uid://q6wcjef4opyu" path="res://assets/Hauptcharakter/02_Stripes/02_[Run].png" id="3_kryea"]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6j6vh"]
+radius = 4.0
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_lbi8i"]
 atlas = ExtResource("1_aiayt")
 region = Rect2(0, 0, 64, 64)
@@ -218,17 +221,16 @@ animations = [{
 "speed": 22.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6j6vh"]
-radius = 4.0
-
 [node name="Player" type="CharacterBody2D"]
+z_index = 1
+collision_layer = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -14)
+shape = SubResource("CapsuleShape2D_6j6vh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(4, -31)
 sprite_frames = SubResource("SpriteFrames_hkca2")
 animation = &"run"
 autoplay = "Idle"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -14)
-shape = SubResource("CapsuleShape2D_6j6vh")
