@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://c0w6h05532gs0" path="res://assets/Dungeon Tile Set.png" id="1_a7xoi"]
 [ext_resource type="PackedScene" uid="uid://cq6xmv3najlnh" path="res://scenes/player.tscn" id="2_eiejb"]
-[ext_resource type="PackedScene" path="res://scenes/base_enemy.tscn" id="4_7nb7u"]
+[ext_resource type="PackedScene" uid="uid://cqokjjp5c4xlu" path="res://scenes/base_enemy.tscn" id="4_7nb7u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gj3od"]
 texture = ExtResource("1_a7xoi")

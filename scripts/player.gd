@@ -64,7 +64,7 @@ func _physics_process(delta: float) -> void:
 
 	# Check if the dash button is pressed and dashing is possible
 	if Input.is_action_just_pressed("dash"):
-		if direction != Vector2.ZERO and can_dash:
+		if direction != Vector2.ZERO and can_dash and direction != Vector2.UP:
 			dash_direction = direction  # Set the dash direction
 			start_dash()  # Start the dash
 

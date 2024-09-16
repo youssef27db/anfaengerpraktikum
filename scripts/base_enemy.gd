@@ -21,9 +21,13 @@ var target_position = null
 var start_position = null
 var start_rotation = false
 
+@onready var sprite = $RigidBody2D/AnimatedSprite2D
+@onready var collision_polygon = $RigidBody2D/detection/CollisionPolygon2D
+@onready var ray_cast = $RigidBody2D/RayCast2D
+
 # one time call after everything is initialized
 func _ready() -> void:
-	start_rotation = $RigidBody2D/AnimatedSprite2D.flip_h
+	start_rotation = sprite.flip_h
 	start_position = position
 
 # game loop function
@@ -48,19 +52,27 @@ func _process(delta: float) -> void:
 	
 		# move right
 		if(target_position.x > position.x):
-			$RigidBody2D/AnimatedSprite2D.flip_h = true
-			$RigidBody2D/detection/CollisionPolygon2D.rotation_degrees = 180
-			position.x += delta * speed
+			sprite.flip_h = true
+			collision_polygon.rotation_degrees = 180
+			ray_cast.rotation_degrees = 180
+			
+			# check if is in front of something
+			if(!ray_cast.is_colliding()):
+				position.x += delta * speed
 			
 		# move left
 		else :
-			$RigidBody2D/AnimatedSprite2D.flip_h = false
-			$RigidBody2D/detection/CollisionPolygon2D.rotation_degrees = 0
-			position.x -= delta * speed
+			sprite.flip_h = false
+			collision_polygon.rotation_degrees = 0
+			ray_cast.rotation_degrees = 0
+			
+			# check if is in front of something
+			if(!ray_cast.is_colliding()):
+				position.x -= delta * speed
 			
 		# stop movement if position is close to target
 		if(is_close_to(position.x, target_position.x, 0.05)):
-			if(target_position == start_position && $RigidBody2D/AnimatedSprite2D.flip_h != start_rotation):
+			if(target_position == start_position && sprite.flip_h != start_rotation):
 				flip_rotation()
 			target_position = null
 	
@@ -85,10 +97,11 @@ func check_line_if_sight(body: Node2D) -> bool:
 	# TODO: implement check
 	return true
 
-# flips the rotation of sprite and detection polygon
+# flips the rotation of sprite, detection polygon and raycast
 func flip_rotation() -> void:
-	$RigidBody2D/AnimatedSprite2D.flip_h = !$RigidBody2D/AnimatedSprite2D.flip_h
-	$RigidBody2D/detection/CollisionPolygon2D.rotation_degrees = abs($RigidBody2D/detection/CollisionPolygon2D.rotation_degrees - 180)
+	sprite.flip_h = !sprite.flip_h
+	collision_polygon.rotation_degrees = abs(collision_polygon.rotation_degrees - 180)
+	ray_cast.rotation_degrees = abs(ray_cast.rotation_degrees - 180)
 	
 
 # checks if two values are close to each other with set delta	

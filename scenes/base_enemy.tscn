@@ -49,5 +49,9 @@ position = Vector2(0, -16)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D/pursuing_radius"]
 shape = SubResource("CircleShape2D_grvrj")
 
+[node name="RayCast2D" type="RayCast2D" parent="RigidBody2D"]
+position = Vector2(0, -16)
+target_position = Vector2(-9, 0)
+
 [connection signal="body_entered" from="RigidBody2D/detection" to="." method="_on_detection_body_entered"]
 [connection signal="body_exited" from="RigidBody2D/pursuing_radius" to="." method="_on_pursuing_radius_body_exited"]
