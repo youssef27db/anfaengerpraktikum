@@ -76,7 +76,6 @@ func _process(delta: float) -> void:
 				flip_rotation()
 			target_position = null
 	
-	pass
 	
 # signal when player enters detection area -> start following player
 func _on_detection_body_entered(body: Node2D) -> void:

@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://cq6xmv3najlnh"]
 
-[ext_resource type="Script" path="res://scripts/player.gd" id="1_5xp03"]
+[ext_resource type="Script" path="res://scripts/Player.cs" id="1_h2dre"]
 [ext_resource type="Texture2D" uid="uid://7s4gcm0gyfux" path="res://assets/Hauptcharakter/02_Stripes/05_[Jump[Rising-Loop]].png" id="2_rb1dt"]
 [ext_resource type="Texture2D" uid="uid://o33d1jbytqkn" path="res://assets/Hauptcharakter/02_Stripes/07_[Jump[Falling-Loop]].png" id="3_c6t7y"]
 [ext_resource type="Texture2D" uid="uid://q6wcjef4opyu" path="res://assets/Hauptcharakter/02_Stripes/02_[Run].png" id="3_kryea"]
@@ -343,7 +343,7 @@ radius = 5.0
 [node name="Player" type="CharacterBody2D"]
 z_index = 1
 collision_layer = 3
-script = ExtResource("1_5xp03")
+script = ExtResource("1_h2dre")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(4, -31)
