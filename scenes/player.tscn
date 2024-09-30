@@ -488,5 +488,5 @@ one_shot = true
 wait_time = 0.4
 one_shot = true
 
-[connection signal="body_entered" from="Sprite2D/SwordHit" to="." method="on_sword_hit_body_entered"]
+[connection signal="body_entered" from="Sprite2D/SwordHit" to="." method="OnSwordHitBodyEntered"]
 [connection signal="timeout" from="DashEffect" to="." method="_on_dash_effect_timeout"]

@@ -7,93 +7,93 @@ public partial class Player : CharacterBody2D
     private const float JUMP_VELOCITY = -300f;
 
     // Variablen für den Doppelsprung
-    private int jumpMax = 2;
-    private int jumpCount = 0;
+    private int JumpMax = 2;
+    private int JumpCount = 0;
 
     // Variablen für den Dash
-    private Vector2 dashDirection = Vector2.Zero;
-    private float dashSpeed = 300f;
-    private bool isDashing = false;
-    private bool canDash = true;
-    private float dashTrailInterval = 0.05f;
-    private float dashTrailTimer = 0f;
+    private Vector2 DashDirection = Vector2.Zero;
+    private float DashSpeed = 300f;
+    private bool IsDashing = false;
+    private bool CanDash = true;
+    private float DashTrailInterval = 0.05f;
+    private float DashTrailTimer = 0f;
 
     // Referenzen zu den Knoten
-    private AnimationPlayer animationPlayer;
-    private Sprite2D sprite;
-    private Timer dashEffect;
-    private Timer dashTimer;
-    private CollisionShape2D swordCollision;
-    private CollisionShape2D playerHitbox;
+    private AnimationPlayer AnimationPlayer;
+    private Sprite2D Sprite;
+    private Timer DashEffect;
+    private Timer DashTimer;
+    private CollisionShape2D SwordCollision;
+    private CollisionShape2D PlayerHitbox;
 
     //Variable um Hitbox des Players zu platzieren
-    private Vector2 hauptHitbox;
+    private Vector2 HauptHitbox;
 
     public override void _Ready() {
         // Knoten in der Szene finden und zuweisen
-        animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
-        sprite = GetNode<Sprite2D>("Sprite2D");
-        dashEffect = GetNode<Timer>("DashEffect");
-        dashTimer = GetNode<Timer>("DashTimer");
-        swordCollision = GetNode<CollisionShape2D>("Sprite2D/SwordHit/SwordCollision");
-        playerHitbox = GetNode<CollisionShape2D>("PlayerHitbox");
-        hauptHitbox = playerHitbox.Position;
+        AnimationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
+        Sprite = GetNode<Sprite2D>("Sprite2D");
+        DashEffect = GetNode<Timer>("DashEffect");
+        DashTimer = GetNode<Timer>("DashTimer");
+        SwordCollision = GetNode<CollisionShape2D>("Sprite2D/SwordHit/SwordCollision");
+        PlayerHitbox = GetNode<CollisionShape2D>("PlayerHitbox");
+        HauptHitbox = PlayerHitbox.Position;
     }
 
-    public override void _PhysicsProcess(double delta) {
+    public override void _PhysicsProcess(double DeltaTime) {
         // Gravitation hinzufügen, wenn der Charakter nicht am Boden ist
         if (!IsOnFloor()) {
-            Velocity += GetGravity() * (float)delta;
+            Velocity += GetGravity() * (float)DeltaTime;
         } else {
-            canDash = true; // Dash wird zurückgesetzt, wenn der Charakter am Boden ist
+            CanDash = true; // Dash wird zurückgesetzt, wenn der Charakter am Boden ist
         }
 
         HandleJump();
-        HandleMovement(delta);
+        HandleMovement(DeltaTime);
         MoveAndSlide();
         UpdateAnimations();
     }
 
     private void HandleJump() {
         // Sprungzähler zurücksetzen, wenn der Charakter am Boden ist
-        if (jumpCount != 0 && IsOnFloor()) {
-            jumpCount = 0;
+        if (JumpCount != 0 && IsOnFloor()) {
+            JumpCount = 0;
         }
 
         // Überprüfen, ob der Sprung-Button gedrückt wurde und der Charakter noch Sprünge übrig hat
-        if (Input.IsActionJustPressed("ui_up") && jumpCount < jumpMax) {
+        if (Input.IsActionJustPressed("ui_up") && JumpCount < JumpMax) {
             Velocity = new Vector2(Velocity.X, JUMP_VELOCITY);
-            jumpCount += 1;
+            JumpCount += 1;
         }
     }
 
-    private void HandleMovement(double delta) {
+    private void HandleMovement(double DeltaTime) {
         // Bewegungsrichtung bestimmen (links/rechts)
         Vector2 direction = new Vector2(Input.GetAxis("ui_left", "ui_right"), Input.GetAxis("ui_up", "ui_down")).Normalized();
 
         // Sprite umdrehen basierend auf der Bewegungsrichtung
         if (direction.X < 0) {
-            sprite.FlipH = true;
-            swordCollision.Position = new Vector2(-Mathf.Abs(swordCollision.Position.X), swordCollision.Position.Y);    //SwordCollition umdrehen
-            playerHitbox.Position = new Vector2(sprite.Position.X * 1.8f, playerHitbox.Position.Y);
+            Sprite.FlipH = true;
+            SwordCollision.Position = new Vector2(-Mathf.Abs(SwordCollision.Position.X), SwordCollision.Position.Y);    //SwordCollition umdrehen
+            PlayerHitbox.Position = new Vector2(Sprite.Position.X * 1.8f, PlayerHitbox.Position.Y);
         } else if (direction.X > 0) {
             //Hauptsprites/Collision wieder in die Ursprungsposition bringen
-            sprite.FlipH = false;
-            swordCollision.Position = new Vector2(Mathf.Abs(swordCollision.Position.X), swordCollision.Position.Y);
-            playerHitbox.Position = hauptHitbox;
+            Sprite.FlipH = false;
+            SwordCollision.Position = new Vector2(Mathf.Abs(SwordCollision.Position.X), SwordCollision.Position.Y);
+            PlayerHitbox.Position = HauptHitbox;
         }
 
 
         float currentSpeed = SPEED;
 
         // Überprüfen, ob der Spieler gerade angreift, und Geschwindigkeit reduzieren
-        if (animationPlayer.CurrentAnimation == "light_attack") {
+        if (AnimationPlayer.CurrentAnimation == "light_attack") {
             currentSpeed *= 0.5f;
         }
 
         // Dash-Verarbeitung
-        if (isDashing) {
-            DashInProgress(delta);
+        if (IsDashing) {
+            DashInProgress(DeltaTime);
         } else {
             // Normale Bewegung verarbeiten, wenn kein Dash aktiv ist
             if (direction != Vector2.Zero) {
@@ -103,8 +103,8 @@ public partial class Player : CharacterBody2D
             }
 
             // Überprüfen, ob der Dash-Button gedrückt wurde und Dash möglich ist
-            if (Input.IsActionJustPressed("dash") && direction != Vector2.Zero && canDash && direction != Vector2.Up) {
-                dashDirection = direction;
+            if (Input.IsActionJustPressed("dash") && direction != Vector2.Zero && CanDash && direction != Vector2.Up) {
+                DashDirection = direction;
                 StartDash();
             }
         }
@@ -112,80 +112,80 @@ public partial class Player : CharacterBody2D
 
     // Funktion, die den Dash-Prozess startet
     private void StartDash() {
-        isDashing = true;
-        canDash = false;
-        dashTimer.Timeout += StopDash;
-        dashTimer.Start();
-        dashEffect.Start();
-        dashTrailTimer = 0f; // Dash-Trail-Timer zurücksetzen
+        IsDashing = true;
+        CanDash = false;
+        DashTimer.Timeout += StopDash;
+        DashTimer.Start();
+        DashEffect.Start();
+        DashTrailTimer = 0f; // Dash-Trail-Timer zurücksetzen
     }
 
     // Funktion, die während des Dashes ausgeführt wird
-    private void DashInProgress(double delta) {
+    private void DashInProgress(double DeltaTime) {
         // Charakter bewegt sich in die Dash-Richtung mit Dash-Geschwindigkeit
-        Velocity = dashDirection * dashSpeed;
+        Velocity = DashDirection * DashSpeed;
 
         // Dash-Trail bei Intervallen erstellen
-        dashTrailTimer -= (float)delta;
-        if (dashTrailTimer <= 0f) {
+        DashTrailTimer -= (float)DeltaTime;
+        if (DashTrailTimer <= 0f) {
             CreateDashEffect();
-            dashTrailTimer = dashTrailInterval;
+            DashTrailTimer = DashTrailInterval;
         }
     }
 
     // Funktion zum Erstellen des Dash-Effekts (Nachbild des Spielers)
     private void CreateDashEffect() {
-        Sprite2D playerCopyNode = (Sprite2D)sprite.Duplicate();
-        GetParent().AddChild(playerCopyNode);
+        Sprite2D PlayerCopyNode = (Sprite2D)Sprite.Duplicate();
+        GetParent().AddChild(PlayerCopyNode);
 
-        CollisionShape2D swordCollisionCopy = playerCopyNode.GetNode<CollisionShape2D>("SwordHit/SwordCollision");
-        if (swordCollisionCopy != null) {
-            swordCollisionCopy.Disabled = true;  // Deaktiviere die Kollision der Kopie
+        CollisionShape2D SwordCollisionCopy = PlayerCopyNode.GetNode<CollisionShape2D>("SwordHit/SwordCollision");
+        if (SwordCollisionCopy != null) {
+            SwordCollisionCopy.Disabled = true;  // Deaktiviere die Kollision der Kopie
         }
         
         // Position der Kopie entsprechend der Position des Spielers festlegen
-        playerCopyNode.GlobalPosition = GlobalPosition + new Vector2(0, sprite.Texture.GetHeight() * sprite.Scale.Y * -0.5f);
+        PlayerCopyNode.GlobalPosition = GlobalPosition + new Vector2(0, Sprite.Texture.GetHeight() * Sprite.Scale.Y * -0.5f);
 
         // Verblassen-Effekt für den Dash-Trail hinzufügen
-        float animationTime = (float)(dashTimer.WaitTime / 3);
+        float AnimationTime = (float)(DashTimer.WaitTime / 3);
 
-        Timer fadeTimer1 = new Timer();
-        AddChild(fadeTimer1);
-        fadeTimer1.Timeout += () => {
-            if (IsInstanceValid(playerCopyNode)) {
-                playerCopyNode.Modulate = new Color(playerCopyNode.Modulate, 0.4f);
+        Timer FadeTimer1 = new Timer();
+        AddChild(FadeTimer1);
+        FadeTimer1.Timeout += () => {
+            if (IsInstanceValid(PlayerCopyNode)) {
+                PlayerCopyNode.Modulate = new Color(PlayerCopyNode.Modulate, 0.4f);
             }
         };
-        fadeTimer1.Start(animationTime);
+        FadeTimer1.Start(AnimationTime);
 
-        Timer fadeTimer2 = new Timer();
-        AddChild(fadeTimer2);
-        fadeTimer2.Timeout += () => {
-            if (IsInstanceValid(playerCopyNode)) {
-                playerCopyNode.Modulate = new Color(playerCopyNode.Modulate, 0.2f);
+        Timer FadeTimer2 = new Timer();
+        AddChild(FadeTimer2);
+        FadeTimer2.Timeout += () => {
+            if (IsInstanceValid(PlayerCopyNode)) {
+                PlayerCopyNode.Modulate = new Color(PlayerCopyNode.Modulate, 0.2f);
             }
         };
-        fadeTimer2.Start(animationTime * 2);
+        FadeTimer2.Start(AnimationTime * 2);
 
-        Timer fadeTimer3 = new Timer();
-        AddChild(fadeTimer3);
-        fadeTimer3.Timeout += () => {
-            if (IsInstanceValid(playerCopyNode)) {
-                playerCopyNode.QueueFree();  // Knoten sicher entfernen
+        Timer FadeTimer3 = new Timer();
+        AddChild(FadeTimer3);
+        FadeTimer3.Timeout += () => {
+            if (IsInstanceValid(PlayerCopyNode)) {
+                PlayerCopyNode.QueueFree();  // Knoten sicher entfernen
             }
         };
-        fadeTimer3.Start(animationTime * 3);
+        FadeTimer3.Start(AnimationTime * 3);
     }
 
     // Funktion zum Stoppen des Dashes
     private void StopDash() {
-        isDashing = false;
-        dashEffect.Stop();
-        dashTimer.Stop();
-        dashTimer.Timeout -= StopDash;
+        IsDashing = false;
+        DashEffect.Stop();
+        DashTimer.Stop();
+        DashTimer.Timeout -= StopDash;
     }
 
-    public void on_sword_hit_body_entered(Node2D body){
+    public void OnSwordHitBodyEntered(Node2D body){
         if(body.Name == "Player"){
             return;
         }
@@ -195,22 +195,22 @@ public partial class Player : CharacterBody2D
     // Funktion zum Aktualisieren der Animationen
     private void UpdateAnimations() {
 
-        if (Input.IsActionJustPressed("attack") && !isDashing) {
-            animationPlayer.Play("light_attack");
+        if (Input.IsActionJustPressed("attack") && !IsDashing) {
+            AnimationPlayer.Play("light_attack");
         }
 
         // Bewegungsanimationen
-        if (IsOnFloor() && animationPlayer.CurrentAnimation != "light_attack") {
+        if (IsOnFloor() && AnimationPlayer.CurrentAnimation != "light_attack") {
             if (Velocity.X == 0) {
-                animationPlayer.Play("idle");
+                AnimationPlayer.Play("idle");
             } else {
-                animationPlayer.Play("run");
+                AnimationPlayer.Play("run");
             }
-        } else if (!IsOnFloor() && animationPlayer.CurrentAnimation != "light_attack") {
+        } else if (!IsOnFloor() && AnimationPlayer.CurrentAnimation != "light_attack") {
             if (Velocity.Y < 0) {
-                animationPlayer.Play("jump");
+                AnimationPlayer.Play("jump");
             } else if (Velocity.Y > 0) {
-                animationPlayer.Play("fall");
+                AnimationPlayer.Play("fall");
             }
         }
     }

@@ -6,111 +6,111 @@ public partial class BaseEnemy : Node2D
 
     //customizable variables
     [Export]
-    private bool dead = false;
+    private bool Dead = false;
     [Export]
-    private bool respawnable = true;
+    private bool Respawnable = true;
     [Export]
-    private float max_health_points = 100f;
+    private float MaxHealthPoints = 100f;
     [Export]
-    private float armor = 20f;
+    private float Armor = 20f;
     [Export]
-    private float max_stamina = 100f;
+    private float MaxStamina = 100f;
     [Export]
-    private bool can_jump = false;
+    private bool CanJump = false;
     [Export]
-    private float speed = 10;
+    private float Speed = 10;
     [Export]
-    private int sin_amount = 10;
+    private int SinAmount = 10;
     [Export]
-    private double return_to_start_after = 5;
+    private double ReturnToStartAfter = 5;
 
     //private variables
-    private float current_health_points;
-    private float current_stamina;
-    private double return_to_start;
-    private bool pursuing = false;
-    private Node2D current_target = null;
-    private Vector2 target_position = Vector2.Inf;
-    private Vector2 start_position;
-    private bool start_rotation = false;
+    private float CurrentHealthPoints;
+    private float CurrentStamina;
+    private double ReturnToStart;
+    private bool Pursuing = false;
+    private Node2D CurrentTarget = null;
+    private Vector2 TargetPosition = Vector2.Inf;
+    private Vector2 StartPosition;
+    private bool StartRotation = false;
 
     //linked nodes
-    private AnimatedSprite2D sprite;
-    private CollisionPolygon2D collision_polygon;
-    private RayCast2D front_collision_ray_cast;
+    private AnimatedSprite2D Sprite;
+    private CollisionPolygon2D CollisionPolygon;
+    private RayCast2D FrontCollisionRayCast;
 
     public override void _Ready()
     {
-        sprite = GetNode<AnimatedSprite2D>("RigidBody2D/AnimatedSprite2D");
-        collision_polygon = GetNode<CollisionPolygon2D>("RigidBody2D/detection/CollisionPolygon2D");
-        front_collision_ray_cast = GetNode<RayCast2D>("RigidBody2D/FrontCollisionRayCast");
+        Sprite = GetNode<AnimatedSprite2D>("RigidBody2D/AnimatedSprite2D");
+        CollisionPolygon = GetNode<CollisionPolygon2D>("RigidBody2D/detection/CollisionPolygon2D");
+        FrontCollisionRayCast = GetNode<RayCast2D>("RigidBody2D/FrontCollisionRayCast");
 
-        current_health_points = max_health_points;
-        current_stamina = max_stamina;
-        return_to_start = return_to_start_after;
-        start_position = Position;
-        start_rotation = sprite.FlipH;
+        CurrentHealthPoints = MaxHealthPoints;
+        CurrentStamina = MaxStamina;
+        ReturnToStart = ReturnToStartAfter;
+        StartPosition = Position;
+        StartRotation = Sprite.FlipH;
     }
 
-    public override void _Process(double delta_time)
+    public override void _Process(double DeltaTime)
     {
-        HandleMovement(delta_time);
+        HandleMovement(DeltaTime);
     }
 
     //signal when player enters detection area -> start following player
     public void OnDetectionBodyEntered(Node2D body){
         if(CheckLineOfSight(body)){
-            pursuing = true;
-            current_target = body;
+            Pursuing = true;
+            CurrentTarget = body;
         }
     }
 
     //signal when player leaves pursuing area -> stop following player
     public void OnPursuingRadiusBodyExited(Node2D body){
-        if(body == current_target){
-            pursuing = false;
-            current_target = null;
+        if(body == CurrentTarget){
+            Pursuing = false;
+            CurrentTarget = null;
         }
     }
 
-    private void HandleMovement(double delta_time){
+    private void HandleMovement(double DeltaTime){
         
-        if(pursuing){
-            target_position = current_target.Position;
-            if(IsCloseTo(Position.X, target_position.X, 0.05f)){
+        if(Pursuing){
+            TargetPosition = CurrentTarget.Position;
+            if(IsCloseTo(Position.X, TargetPosition.X, 0.05f)){
                 return;
             }
-            return_to_start = return_to_start_after;
-        } else if(return_to_start >= 0){
-            return_to_start -= delta_time;
-            target_position = Vector2.Inf;
-        } else if(!IsCloseTo(Position.X, start_position.X, 0.05f)){
-            target_position = start_position;
+            ReturnToStart = ReturnToStartAfter;
+        } else if(ReturnToStart >= 0){
+            ReturnToStart -= DeltaTime;
+            TargetPosition = Vector2.Inf;
+        } else if(!IsCloseTo(Position.X, StartPosition.X, 0.05f)){
+            TargetPosition = StartPosition;
         }
 
-        if(target_position != Vector2.Inf){
+        if(TargetPosition != Vector2.Inf){
 
-            if(target_position.X > Position.X){
+            if(TargetPosition.X > Position.X){
                 SetRotation(true);
-                if(!front_collision_ray_cast.IsColliding()){
+                if(!FrontCollisionRayCast.IsColliding()){
                     Vector2 new_position = Position;
-                    new_position.X += (float) (delta_time * speed);
+                    new_position.X += (float) (DeltaTime * Speed);
                     Position = new_position;
                 }
             } else {
                 SetRotation(false);
-                if(!front_collision_ray_cast.IsColliding()){
+                if(!FrontCollisionRayCast.IsColliding()){
                     Vector2 new_position = Position;
-                    new_position.X -= (float) (delta_time * speed);
+                    new_position.X -= (float) (DeltaTime * Speed);
                     Position = new_position;
                 }
             }
 
-            if(IsCloseTo(Position.X, target_position.X, 0.05f)){
-                if(target_position == start_position && sprite.FlipH != start_rotation){
+            if(IsCloseTo(Position.X, TargetPosition.X, 0.05f)){
+                if(TargetPosition == StartPosition && Sprite.FlipH != StartRotation){
                     FlipRotation();
                 }
-                target_position = Vector2.Inf;
+                TargetPosition = Vector2.Inf;
             }
         }
     }
@@ -122,23 +122,23 @@ public partial class BaseEnemy : Node2D
 
     //flips rotation of sprite and collision nodes
     private void FlipRotation(){
-        sprite.FlipH = !sprite.FlipH;
-        collision_polygon.RotationDegrees = Math.Abs(collision_polygon.RotationDegrees -180);
-        front_collision_ray_cast.RotationDegrees = Math.Abs(front_collision_ray_cast.RotationDegrees - 180);
+        Sprite.FlipH = !Sprite.FlipH;
+        CollisionPolygon.RotationDegrees = Math.Abs(CollisionPolygon.RotationDegrees -180);
+        FrontCollisionRayCast.RotationDegrees = Math.Abs(FrontCollisionRayCast.RotationDegrees - 180);
     }
 
-    private void SetRotation(bool rotation){
-        sprite.FlipH = rotation;
-        if(rotation){
-            collision_polygon.RotationDegrees = 180;
-            front_collision_ray_cast.RotationDegrees = 180;
+    private void SetRotation(bool Rotation){
+        Sprite.FlipH = Rotation;
+        if(Rotation){
+            CollisionPolygon.RotationDegrees = 180;
+            FrontCollisionRayCast.RotationDegrees = 180;
         } else {
-            collision_polygon.RotationDegrees = 0;
-            front_collision_ray_cast.RotationDegrees = 0;
+            CollisionPolygon.RotationDegrees = 0;
+            FrontCollisionRayCast.RotationDegrees = 0;
         }
     }
 
-    private bool IsCloseTo(float value1, float value2, float delta){
-        return (value1 <= value2 + delta && value1 >= value2 - delta);
+    private bool IsCloseTo(float Value1, float Value2, float Delta){
+        return (Value1 <= Value2 + Delta && Value1 >= Value2 - Delta);
     }
 }
