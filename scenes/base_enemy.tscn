@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cqokjjp5c4xlu"]
 
 [ext_resource type="Texture2D" uid="uid://c387o44u1uf8d" path="res://assets/EnemyTestRectangle/rectangle.jpg" id="1_3klqc"]
-[ext_resource type="Script" path="res://scripts/base_enemy.gd" id="1_o511m"]
+[ext_resource type="Script" path="res://scripts/BaseEnemy.cs" id="1_x1a6m"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_r4v5d"]
 radius = 8.0
@@ -22,7 +22,7 @@ animations = [{
 radius = 179.003
 
 [node name="base_enemy" type="Node2D"]
-script = ExtResource("1_o511m")
+script = ExtResource("1_x1a6m")
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 lock_rotation = true
@@ -49,9 +49,9 @@ position = Vector2(0, -16)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D/pursuing_radius"]
 shape = SubResource("CircleShape2D_grvrj")
 
-[node name="RayCast2D" type="RayCast2D" parent="RigidBody2D"]
+[node name="FrontCollisionRayCast" type="RayCast2D" parent="RigidBody2D"]
 position = Vector2(0, -16)
 target_position = Vector2(-9, 0)
 
-[connection signal="body_entered" from="RigidBody2D/detection" to="." method="_on_detection_body_entered"]
-[connection signal="body_exited" from="RigidBody2D/pursuing_radius" to="." method="_on_pursuing_radius_body_exited"]
+[connection signal="body_entered" from="RigidBody2D/detection" to="." method="OnDetectionBodyEntered"]
+[connection signal="body_exited" from="RigidBody2D/pursuing_radius" to="." method="OnPursuingRadiusBodyExited"]

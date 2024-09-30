@@ -191,5 +191,4 @@ zoom = Vector2(1.5, 1.5)
 position_smoothing_enabled = true
 
 [node name="base_enemy" parent="." instance=ExtResource("4_7nb7u")]
-position = Vector2(193, 15)
-speed = 20
+position = Vector2(196, 15)
