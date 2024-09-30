@@ -23,6 +23,11 @@ public partial class Player : CharacterBody2D
     private Sprite2D sprite;
     private Timer dashEffect;
     private Timer dashTimer;
+    private CollisionShape2D swordCollision;
+    private CollisionShape2D playerHitbox;
+
+    //Variable um Hitbox des Players zu platzieren
+    private Vector2 hauptHitbox;
 
     public override void _Ready() {
         // Knoten in der Szene finden und zuweisen
@@ -30,6 +35,9 @@ public partial class Player : CharacterBody2D
         sprite = GetNode<Sprite2D>("Sprite2D");
         dashEffect = GetNode<Timer>("DashEffect");
         dashTimer = GetNode<Timer>("DashTimer");
+        swordCollision = GetNode<CollisionShape2D>("Sprite2D/SwordHit/SwordCollision");
+        playerHitbox = GetNode<CollisionShape2D>("PlayerHitbox");
+        hauptHitbox = playerHitbox.Position;
     }
 
     public override void _PhysicsProcess(double delta) {
@@ -41,7 +49,7 @@ public partial class Player : CharacterBody2D
         }
 
         HandleJump();
-        HandleDash(delta);
+        HandleMovement(delta);
         MoveAndSlide();
         UpdateAnimations();
     }
@@ -59,15 +67,28 @@ public partial class Player : CharacterBody2D
         }
     }
 
-    private void HandleDash(double delta) {
+    private void HandleMovement(double delta) {
         // Bewegungsrichtung bestimmen (links/rechts)
         Vector2 direction = new Vector2(Input.GetAxis("ui_left", "ui_right"), Input.GetAxis("ui_up", "ui_down")).Normalized();
 
         // Sprite umdrehen basierend auf der Bewegungsrichtung
         if (direction.X < 0) {
             sprite.FlipH = true;
+            swordCollision.Position = new Vector2(-Mathf.Abs(swordCollision.Position.X), swordCollision.Position.Y);    //SwordCollition umdrehen
+            playerHitbox.Position = new Vector2(sprite.Position.X * 1.8f, playerHitbox.Position.Y);
         } else if (direction.X > 0) {
+            //Hauptsprites/Collision wieder in die Ursprungsposition bringen
             sprite.FlipH = false;
+            swordCollision.Position = new Vector2(Mathf.Abs(swordCollision.Position.X), swordCollision.Position.Y);
+            playerHitbox.Position = hauptHitbox;
+        }
+
+
+        float currentSpeed = SPEED;
+
+        // Überprüfen, ob der Spieler gerade angreift, und Geschwindigkeit reduzieren
+        if (animationPlayer.CurrentAnimation == "light_attack") {
+            currentSpeed *= 0.5f;
         }
 
         // Dash-Verarbeitung
@@ -76,7 +97,7 @@ public partial class Player : CharacterBody2D
         } else {
             // Normale Bewegung verarbeiten, wenn kein Dash aktiv ist
             if (direction != Vector2.Zero) {
-                Velocity = new Vector2(direction.X * SPEED, Velocity.Y);
+                Velocity = new Vector2(direction.X * currentSpeed, Velocity.Y);
             } else {
                 Velocity = new Vector2(Mathf.MoveToward(Velocity.X, 0, SPEED), Velocity.Y);
             }
@@ -117,6 +138,11 @@ public partial class Player : CharacterBody2D
         Sprite2D playerCopyNode = (Sprite2D)sprite.Duplicate();
         GetParent().AddChild(playerCopyNode);
 
+        CollisionShape2D swordCollisionCopy = playerCopyNode.GetNode<CollisionShape2D>("SwordHit/SwordCollision");
+        if (swordCollisionCopy != null) {
+            swordCollisionCopy.Disabled = true;  // Deaktiviere die Kollision der Kopie
+        }
+        
         // Position der Kopie entsprechend der Position des Spielers festlegen
         playerCopyNode.GlobalPosition = GlobalPosition + new Vector2(0, sprite.Texture.GetHeight() * sprite.Scale.Y * -0.5f);
 
@@ -159,15 +185,28 @@ public partial class Player : CharacterBody2D
         dashTimer.Timeout -= StopDash;
     }
 
+    public void on_sword_hit_body_entered(Node2D body){
+        if(body.Name == "Player"){
+            return;
+        }
+        GD.Print(body.Name);
+    }
+
     // Funktion zum Aktualisieren der Animationen
     private void UpdateAnimations() {
-        if (IsOnFloor()) {
+
+        if (Input.IsActionJustPressed("attack") && !isDashing) {
+            animationPlayer.Play("light_attack");
+        }
+
+        // Bewegungsanimationen
+        if (IsOnFloor() && animationPlayer.CurrentAnimation != "light_attack") {
             if (Velocity.X == 0) {
                 animationPlayer.Play("idle");
             } else {
                 animationPlayer.Play("run");
             }
-        } else {
+        } else if (!IsOnFloor() && animationPlayer.CurrentAnimation != "light_attack") {
             if (Velocity.Y < 0) {
                 animationPlayer.Play("jump");
             } else if (Velocity.Y > 0) {
