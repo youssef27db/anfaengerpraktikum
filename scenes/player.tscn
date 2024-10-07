@@ -224,6 +224,18 @@ tracks/2/keys = {
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D/SwordHit/SwordCollision:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
 
 [sub_resource type="Animation" id="Animation_kke4t"]
 resource_name = "idle"
@@ -464,6 +476,8 @@ texture = SubResource("CompressedTexture2D_bxhkf")
 hframes = 12
 
 [node name="SwordHit" type="Area2D" parent="Sprite2D"]
+collision_layer = 4
+collision_mask = 4
 
 [node name="SwordCollision" type="CollisionShape2D" parent="Sprite2D/SwordHit"]
 position = Vector2(18.5, 18)

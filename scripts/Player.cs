@@ -89,6 +89,8 @@ public partial class Player : CharacterBody2D
         // Überprüfen, ob der Spieler gerade angreift, und Geschwindigkeit reduzieren
         if (AnimationPlayer.CurrentAnimation == "light_attack") {
             currentSpeed *= 0.5f;
+        }else if (AnimationPlayer.CurrentAnimation == "heavy_attack"){
+            currentSpeed *= 0.15f;
         }
 
         // Dash-Verarbeitung
@@ -185,28 +187,43 @@ public partial class Player : CharacterBody2D
         DashTimer.Timeout -= StopDash;
     }
 
-    public void OnSwordHitBodyEntered(Node2D body){
+    public async void OnSwordHitBodyEntered(Node2D body){
         if(body.Name == "Player"){
             return;
         }
         GD.Print(body.Name);
+        if(AnimationPlayer.CurrentAnimation.Equals("heavy_attack")){
+            if(Sprite.FlipH == false){
+                body.Position += new Vector2(20, 0);
+            } else {
+                body.Position -= new Vector2(20, 0);
+            }
+        }
+        for (int i = 0; i < 3; i++){
+            body.Visible = false;                                       //Dmg effect, wenn Gegner getroffen wird
+            await ToSignal(GetTree().CreateTimer(0.05f), "timeout"); 
+            body.Visible = true;
+            await ToSignal(GetTree().CreateTimer(0.05f), "timeout"); 
+        }
     }
 
     // Funktion zum Aktualisieren der Animationen
     private void UpdateAnimations() {
 
-        if (Input.IsActionJustPressed("attack") && !IsDashing) {
+        if (Input.IsActionJustPressed("light_attack") && !IsDashing && AnimationPlayer.CurrentAnimation != "heavy_attack") {
             AnimationPlayer.Play("light_attack");
+        } else if(Input.IsActionJustPressed("heavy_attack") && !IsDashing && AnimationPlayer.CurrentAnimation != "light_attack"){
+            AnimationPlayer.Play("heavy_attack");
         }
 
         // Bewegungsanimationen
-        if (IsOnFloor() && AnimationPlayer.CurrentAnimation != "light_attack") {
+        if (IsOnFloor() && AnimationPlayer.CurrentAnimation != "light_attack" && AnimationPlayer.CurrentAnimation != "heavy_attack") {
             if (Velocity.X == 0) {
                 AnimationPlayer.Play("idle");
             } else {
                 AnimationPlayer.Play("run");
             }
-        } else if (!IsOnFloor() && AnimationPlayer.CurrentAnimation != "light_attack") {
+        } else if (!IsOnFloor() && AnimationPlayer.CurrentAnimation != "light_attack" && AnimationPlayer.CurrentAnimation != "heavy_attack") {
             if (Velocity.Y < 0) {
                 AnimationPlayer.Play("jump");
             } else if (Velocity.Y > 0) {
