@@ -70,6 +70,7 @@ public partial class Player : CharacterBody2D
     private void HandleMovement(double DeltaTime) {
         // Bewegungsrichtung bestimmen (links/rechts)
         Vector2 direction = new Vector2(Input.GetAxis("ui_left", "ui_right"), Input.GetAxis("ui_up", "ui_down")).Normalized();
+        float currentSpeed = SPEED;
 
         // Sprite umdrehen basierend auf der Bewegungsrichtung
         if (direction.X < 0) {
@@ -82,9 +83,6 @@ public partial class Player : CharacterBody2D
             SwordCollision.Position = new Vector2(Mathf.Abs(SwordCollision.Position.X), SwordCollision.Position.Y);
             PlayerHitbox.Position = HauptHitbox;
         }
-
-
-        float currentSpeed = SPEED;
 
         // Überprüfen, ob der Spieler gerade angreift, und Geschwindigkeit reduzieren
         if (AnimationPlayer.CurrentAnimation == "light_attack") {
