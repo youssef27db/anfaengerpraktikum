@@ -91,6 +91,11 @@ public partial class Player : CharacterBody2D
             currentSpeed *= 0.15f;
         }
 
+        if (IsBlocking()){
+            currentSpeed = 0;
+            //TODO
+        }
+
         // Dash-Verarbeitung
         if (IsDashing) {
             DashInProgress(DeltaTime);
@@ -103,7 +108,7 @@ public partial class Player : CharacterBody2D
             }
 
             // Überprüfen, ob der Dash-Button gedrückt wurde und Dash möglich ist
-            if (Input.IsActionJustPressed("dash") && direction != Vector2.Zero && CanDash && direction != Vector2.Up) {
+            if (Input.IsActionJustPressed("dash") && direction != Vector2.Zero && CanDash && !IsAttacking()) {
                 DashDirection = direction;
                 StartDash();
             }
@@ -123,7 +128,12 @@ public partial class Player : CharacterBody2D
     // Funktion, die während des Dashes ausgeführt wird
     private void DashInProgress(double DeltaTime) {
         // Charakter bewegt sich in die Dash-Richtung mit Dash-Geschwindigkeit
-        Velocity = DashDirection * DashSpeed;
+        if (DashDirection == Vector2.Up){
+            Velocity = DashDirection/1.5f * DashSpeed;
+        } else {
+            Velocity = DashDirection * DashSpeed;
+        }
+
 
         // Dash-Trail bei Intervallen erstellen
         DashTrailTimer -= (float)DeltaTime;
@@ -205,23 +215,41 @@ public partial class Player : CharacterBody2D
         }
     }
 
+    private bool IsAttacking(){
+        if (AnimationPlayer.CurrentAnimation == "heavy_attack" || AnimationPlayer.CurrentAnimation == "light_attack"){
+            return true;
+        }
+        return false;
+    }
+
+    private bool IsBlocking(){
+        if (AnimationPlayer.CurrentAnimation == "block"){
+            return true;
+        }
+        return false;
+    }
+
     // Funktion zum Aktualisieren der Animationen
     private void UpdateAnimations() {
 
-        if (Input.IsActionJustPressed("light_attack") && !IsDashing && AnimationPlayer.CurrentAnimation != "heavy_attack") {
+        //Angriffsanimationen
+        if (Input.IsActionJustPressed("light_attack") && !IsDashing && !IsAttacking()) {
             AnimationPlayer.Play("light_attack");
-        } else if(Input.IsActionJustPressed("heavy_attack") && !IsDashing && AnimationPlayer.CurrentAnimation != "light_attack"){
+        } else if(Input.IsActionJustPressed("heavy_attack") && !IsDashing && !IsAttacking()){
             AnimationPlayer.Play("heavy_attack");
+        }
+        if (Input.IsActionPressed("block")&& !IsDashing && !IsAttacking()){
+            AnimationPlayer.Play("block");
         }
 
         // Bewegungsanimationen
-        if (IsOnFloor() && AnimationPlayer.CurrentAnimation != "light_attack" && AnimationPlayer.CurrentAnimation != "heavy_attack") {
+        if (IsOnFloor() && !IsAttacking() && !IsBlocking()) {
             if (Velocity.X == 0) {
                 AnimationPlayer.Play("idle");
             } else {
                 AnimationPlayer.Play("run");
             }
-        } else if (!IsOnFloor() && AnimationPlayer.CurrentAnimation != "light_attack" && AnimationPlayer.CurrentAnimation != "heavy_attack") {
+        } else if (!IsOnFloor() && !IsAttacking() && !IsBlocking()) {
             if (Velocity.Y < 0) {
                 AnimationPlayer.Play("jump");
             } else if (Velocity.Y > 0) {

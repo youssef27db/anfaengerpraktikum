@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cq6xmv3najlnh"]
+[gd_scene load_steps=22 format=3 uid="uid://cq6xmv3najlnh"]
 
 [ext_resource type="Script" path="res://scripts/Player.cs" id="1_h2dre"]
 [ext_resource type="Texture2D" uid="uid://7s4gcm0gyfux" path="res://assets/Hauptcharakter/02_Stripes/05_[Jump[Rising-Loop]].png" id="2_rb1dt"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cejxfhqw1hkwc" path="res://assets/Hauptcharakter/02_Stripes/04_[Run]to[Jump].png" id="4_0or23"]
 [ext_resource type="Texture2D" uid="uid://iata0cc4u6md" path="res://assets/Hauptcharakter/02_Stripes/51_[Light_Attack[Hit_01]].png" id="6_ux182"]
 [ext_resource type="Texture2D" uid="uid://xxwbld460g4j" path="res://assets/Hauptcharakter/02_Stripes/52_[Light_Attack[Hit_02]].png" id="7_uc3nj"]
+[ext_resource type="Texture2D" uid="uid://byn7tq2oi26tj" path="res://assets/Hauptcharakter/02_Stripes/50_[Crouch[Attack]].png" id="8_48tyj"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bxhkf"]
 load_path = "res://.godot/imported/01_[Idle].png-25d8543e12bae982342909c7bd56fa33.ctex"
@@ -450,9 +451,63 @@ tracks/3/keys = {
 "values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 }
 
+[sub_resource type="Animation" id="Animation_im71e"]
+resource_name = "block"
+length = 0.1
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("8_48tyj")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [7]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7ensj"]
 _data = {
 "RESET": SubResource("Animation_lshj4"),
+"block": SubResource("Animation_im71e"),
 "dash": SubResource("Animation_n76he"),
 "fall": SubResource("Animation_86lfh"),
 "heavy_attack": SubResource("Animation_2q36j"),
