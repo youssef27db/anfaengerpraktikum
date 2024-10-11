@@ -93,7 +93,6 @@ public partial class Player : CharacterBody2D
 
         if (IsBlocking()){
             currentSpeed = 0;
-            //TODO
         }
 
         // Dash-Verarbeitung
@@ -238,7 +237,7 @@ public partial class Player : CharacterBody2D
         } else if(Input.IsActionJustPressed("heavy_attack") && !IsDashing && !IsAttacking()){
             AnimationPlayer.Play("heavy_attack");
         }
-        if (Input.IsActionPressed("block")&& !IsDashing && !IsAttacking()){
+        if (Input.IsActionPressed("block")&& !IsDashing && !IsAttacking() && IsOnFloor()){
             AnimationPlayer.Play("block");
         }
 
