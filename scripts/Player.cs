@@ -41,6 +41,7 @@ public partial class Player : CharacterBody2D
     }
 
     public override void _PhysicsProcess(double DeltaTime) {
+        //Anforderung 2.2.1.1
         // Gravitation hinzufügen, wenn der Charakter nicht am Boden ist
         if (!IsOnFloor()) {
             Velocity += GetGravity() * (float)DeltaTime;
@@ -55,6 +56,7 @@ public partial class Player : CharacterBody2D
     }
 
     private void HandleJump() {
+        //Anforderung 2.2.1.1.4
         // Sprungzähler zurücksetzen, wenn der Charakter am Boden ist
         if (JumpCount != 0 && IsOnFloor()) {
             JumpCount = 0;
@@ -72,7 +74,7 @@ public partial class Player : CharacterBody2D
         Vector2 direction = new Vector2(Input.GetAxis("ui_left", "ui_right"), Input.GetAxis("ui_up", "ui_down")).Normalized();
         float currentSpeed = SPEED;
 
-        // Sprite umdrehen basierend auf der Bewegungsrichtung
+        // Sprite umdrehen basierend auf der Bewegungsrichtung und Kollision umdrehen
         if (direction.X < 0) {
             Sprite.FlipH = true;
             SwordCollision.Position = new Vector2(-Mathf.Abs(SwordCollision.Position.X), SwordCollision.Position.Y);    //SwordCollition umdrehen
@@ -84,6 +86,7 @@ public partial class Player : CharacterBody2D
             PlayerHitbox.Position = HauptHitbox;
         }
 
+        //Anforderung 2.2.1.2.1 & 2.2.1.2.2
         // Überprüfen, ob der Spieler gerade angreift, und Geschwindigkeit reduzieren
         if (AnimationPlayer.CurrentAnimation == "light_attack") {
             currentSpeed *= 0.5f;
@@ -91,14 +94,16 @@ public partial class Player : CharacterBody2D
             currentSpeed *= 0.15f;
         }
 
+        //Anforderung 2.2.1.2.3
         if (IsBlocking()){
             currentSpeed = 0;
         }
 
-        // Dash-Verarbeitung
         if (IsDashing) {
+            //Anforderung 2.2.1.1.5
             DashInProgress(DeltaTime);
         } else {
+            //Anforderung 2.2.1.1.1 & 2.2.1.1.2
             // Normale Bewegung verarbeiten, wenn kein Dash aktiv ist
             if (direction != Vector2.Zero) {
                 Velocity = new Vector2(direction.X * currentSpeed, Velocity.Y);
@@ -106,10 +111,11 @@ public partial class Player : CharacterBody2D
                 Velocity = new Vector2(Mathf.MoveToward(Velocity.X, 0, SPEED), Velocity.Y);
             }
 
+            //Anforderung 2.2.1.1.5
             // Überprüfen, ob der Dash-Button gedrückt wurde und Dash möglich ist
             if (Input.IsActionJustPressed("dash") && direction != Vector2.Zero && CanDash && !IsAttacking()) {
                 DashDirection = direction;
-                StartDash();
+                StartDash(); 
             }
         }
     }
@@ -126,6 +132,7 @@ public partial class Player : CharacterBody2D
 
     // Funktion, die während des Dashes ausgeführt wird
     private void DashInProgress(double DeltaTime) {
+        //Anforderung 2.2.1.1.5
         // Charakter bewegt sich in die Dash-Richtung mit Dash-Geschwindigkeit
         if (DashDirection == Vector2.Up){
             Velocity = DashDirection/1.5f * DashSpeed;
