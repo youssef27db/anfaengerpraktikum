@@ -49,7 +49,7 @@ namespace GdMUT
             return player;
         }
 
-        // Test, ob sich der Spieler nach rechts bewegen kann
+        // Test, ob sich der Spieler nach links bewegen kann, bei "Taste a"
         [CSTestFunction]
         public static Result PlayerCanMoveRight()
         {
@@ -61,10 +61,12 @@ namespace GdMUT
             Input.ActionPress("ui_left");
             player._PhysicsProcess(0.016f); // Simuliere einen Frame
             Input.ActionRelease("ui_left");
+
             // Test: Velocity X sollte kleiner als 0 sein
             return player.Velocity.X < 0 ? Result.Success : Result.Failure;
         }
 
+        // Test, ob sich der Spieler nach rechts bewegen kann, bei "Taste d"
         [CSTestFunction]
         public static Result PlayerCanMoveLeft()
         {
@@ -73,14 +75,15 @@ namespace GdMUT
             player.Velocity = Vector2.Zero;
 
             // Bewegung nach links simulieren
-            Input.ActionPress("ui_left");
+            Input.ActionPress("ui_right");
             player._PhysicsProcess(0.016f); // Simuliere einen Frame bei 60 FPS
-            Input.ActionRelease("ui_left");
+            Input.ActionRelease("ui_right");
 
-            // Test: Velocity X sollte kleiner als 0 sein
-            return player.Velocity.X < 0 ? Result.Success : Result.Failure;
+            // Test: Velocity X sollte groesser als 0 sein
+            return player.Velocity.X > 0 ? Result.Success : Result.Failure;
         }
 
+        // Test, ob sich der Spieler springen kann, bei "Taste w"
         [CSTestFunction]
         public static Result PlayerCanJump()
         {
@@ -95,6 +98,36 @@ namespace GdMUT
 
             // Test: Velocity Y sollte kleiner als 0 sein (nach oben gerichtet)
             return player.Velocity.Y < 0 ? Result.Success : Result.Failure;
+        }
+
+        // Test, ob sich der Spieler dashen kann, bei "Taste L-Shift"
+        [CSTestFunction]
+        public static Result PlayerCanDash()
+        {
+            Player player = SetupPlayer();
+            player.Velocity = Vector2.Zero;
+
+            // Simuliere einen Dash
+            Input.ActionPress("dash");
+            player._PhysicsProcess(0.016f);
+            Input.ActionRelease("dash");
+
+            // Test: Spieler sollte sich mit Dash-Geschwindigkeit bewegen
+            return player.Velocity.Length() > 100f ? Result.Success : Result.Failure;
+        }
+
+        // Test, ob sich der Spieler blocken kann, bei "Taste Space". NUR GESCHWINDIGKEITSTEST
+        [CSTestFunction]
+        public static Result PlayerCanBlock()
+        {
+            Player player = SetupPlayer();
+
+            // Simuliere Blocken
+            Input.ActionPress("block");
+            player._PhysicsProcess(0.016f);
+
+            // Test: Velocity sollte 0 sein (Spieler bleibt stehen)
+            return player.Velocity.X == 0 ? Result.Success : Result.Failure;
         }
 #endif
     }
