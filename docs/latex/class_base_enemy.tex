@@ -1,0 +1,109 @@
+\doxysection{Base\+Enemy Class Reference}
+\hypertarget{class_base_enemy}{}\label{class_base_enemy}\index{BaseEnemy@{BaseEnemy}}
+Inheritance diagram for Base\+Enemy\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_base_enemy}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_base_enemy_a39d037e06e1fcb609e5108431e931acd}\label{class_base_enemy_a39d037e06e1fcb609e5108431e931acd} 
+override void {\bfseries \+\_\+\+Ready} ()
+\item 
+\Hypertarget{class_base_enemy_acf42e9e6b9a386259f5dd74a83c09fac}\label{class_base_enemy_acf42e9e6b9a386259f5dd74a83c09fac} 
+override void {\bfseries \+\_\+\+Process} (double Delta\+Time)
+\item 
+\Hypertarget{class_base_enemy_ad1a2b4f2e07d55eab26d4d8e1d9aa713}\label{class_base_enemy_ad1a2b4f2e07d55eab26d4d8e1d9aa713} 
+void {\bfseries On\+Detection\+Body\+Entered} (Node2D body)
+\item 
+\Hypertarget{class_base_enemy_a269f9f3626f17368f404ca27616d0697}\label{class_base_enemy_a269f9f3626f17368f404ca27616d0697} 
+void {\bfseries On\+Pursuing\+Radius\+Body\+Exited} (Node2D body)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_base_enemy_aee39d90b4efaebada5ab47b21184516a}\label{class_base_enemy_aee39d90b4efaebada5ab47b21184516a} 
+void {\bfseries Handle\+Movement} (double Delta\+Time)
+\item 
+\Hypertarget{class_base_enemy_a59a907194c4c712b41719a6fc12c1583}\label{class_base_enemy_a59a907194c4c712b41719a6fc12c1583} 
+bool {\bfseries Check\+Line\+Of\+Sight} (Node2D body)
+\item 
+\Hypertarget{class_base_enemy_aa9ade96897c57dfc0b6b69e7d0996076}\label{class_base_enemy_aa9ade96897c57dfc0b6b69e7d0996076} 
+void {\bfseries Flip\+Rotation} ()
+\item 
+\Hypertarget{class_base_enemy_aebc2a569b2f2f3d35870e9aabb943069}\label{class_base_enemy_aebc2a569b2f2f3d35870e9aabb943069} 
+void {\bfseries Set\+Rotation} (bool Rotation)
+\item 
+\Hypertarget{class_base_enemy_abf57b8dbd0f267fd42a2a02b7bda95dc}\label{class_base_enemy_abf57b8dbd0f267fd42a2a02b7bda95dc} 
+bool {\bfseries Is\+Close\+To} (float Value1, float Value2, float Delta)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_base_enemy_a61314ff2e5931900ca4a87aa8feb670f}\label{class_base_enemy_a61314ff2e5931900ca4a87aa8feb670f} 
+bool {\bfseries Dead} = false
+\item 
+\Hypertarget{class_base_enemy_a3d261e81ba7422572d0813341016c2c3}\label{class_base_enemy_a3d261e81ba7422572d0813341016c2c3} 
+bool {\bfseries Respawnable} = true
+\item 
+\Hypertarget{class_base_enemy_aeb1033802e3cdf44b1b0a510cbf18425}\label{class_base_enemy_aeb1033802e3cdf44b1b0a510cbf18425} 
+float {\bfseries Max\+Health\+Points} = 100f
+\item 
+\Hypertarget{class_base_enemy_a66b9b6f8492753769f40e18e66babe6d}\label{class_base_enemy_a66b9b6f8492753769f40e18e66babe6d} 
+float {\bfseries Armor} = 20f
+\item 
+\Hypertarget{class_base_enemy_a4f99809bf5de1dbbe762c13fc7db8881}\label{class_base_enemy_a4f99809bf5de1dbbe762c13fc7db8881} 
+float {\bfseries Max\+Stamina} = 100f
+\item 
+\Hypertarget{class_base_enemy_af0ba46ea2947a6a19452a6dd9b10713f}\label{class_base_enemy_af0ba46ea2947a6a19452a6dd9b10713f} 
+bool {\bfseries Can\+Jump} = false
+\item 
+\Hypertarget{class_base_enemy_a661de31833c943c7d7d72de616a9141a}\label{class_base_enemy_a661de31833c943c7d7d72de616a9141a} 
+float {\bfseries Speed} = 10
+\item 
+\Hypertarget{class_base_enemy_afa7426d08cbee4ed3184822c57888ec7}\label{class_base_enemy_afa7426d08cbee4ed3184822c57888ec7} 
+int {\bfseries Sin\+Amount} = 10
+\item 
+\Hypertarget{class_base_enemy_aba59e1a3fffbf2749c266d8caaf1c482}\label{class_base_enemy_aba59e1a3fffbf2749c266d8caaf1c482} 
+double {\bfseries Return\+To\+Start\+After} = 5
+\item 
+\Hypertarget{class_base_enemy_ad8681385a9f3e9e67d65acb6b945efcf}\label{class_base_enemy_ad8681385a9f3e9e67d65acb6b945efcf} 
+float {\bfseries Current\+Health\+Points}
+\item 
+\Hypertarget{class_base_enemy_a8a041329b7418ab3fb1b92aa0674eaa8}\label{class_base_enemy_a8a041329b7418ab3fb1b92aa0674eaa8} 
+float {\bfseries Current\+Stamina}
+\item 
+\Hypertarget{class_base_enemy_a283d342796ff720966538c0776fc9e48}\label{class_base_enemy_a283d342796ff720966538c0776fc9e48} 
+double {\bfseries Return\+To\+Start}
+\item 
+\Hypertarget{class_base_enemy_a512fca9892d7e4cd717adf9087dcc295}\label{class_base_enemy_a512fca9892d7e4cd717adf9087dcc295} 
+bool {\bfseries Pursuing} = false
+\item 
+\Hypertarget{class_base_enemy_aaeef5b40160a59096f667fd084b73cc8}\label{class_base_enemy_aaeef5b40160a59096f667fd084b73cc8} 
+Node2D {\bfseries Current\+Target} = null
+\item 
+\Hypertarget{class_base_enemy_a2b05c8247dab9946e801fd74a8af6376}\label{class_base_enemy_a2b05c8247dab9946e801fd74a8af6376} 
+Vector2 {\bfseries Target\+Position} = Vector2.\+Inf
+\item 
+\Hypertarget{class_base_enemy_af386b85762b6790503bf1716a9d2fd77}\label{class_base_enemy_af386b85762b6790503bf1716a9d2fd77} 
+Vector2 {\bfseries Start\+Position}
+\item 
+\Hypertarget{class_base_enemy_ad2523c398e4a11b5f36a9df26c4014eb}\label{class_base_enemy_ad2523c398e4a11b5f36a9df26c4014eb} 
+bool {\bfseries Start\+Rotation} = false
+\item 
+\Hypertarget{class_base_enemy_a2e4bd99e594a6c3366f64ab47c7443b5}\label{class_base_enemy_a2e4bd99e594a6c3366f64ab47c7443b5} 
+Animated\+Sprite2D {\bfseries Sprite}
+\item 
+\Hypertarget{class_base_enemy_ada18d6dd378a0f7380579ce63a6b4ec2}\label{class_base_enemy_ada18d6dd378a0f7380579ce63a6b4ec2} 
+Collision\+Polygon2D {\bfseries Collision\+Polygon}
+\item 
+\Hypertarget{class_base_enemy_a136d1835e3ccedebaa12d7fe151d890b}\label{class_base_enemy_a136d1835e3ccedebaa12d7fe151d890b} 
+Ray\+Cast2D {\bfseries Front\+Collision\+Ray\+Cast}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Youssef/\+Desktop/\+UNI/\+S4/\+Computerspiel\+Entwicklung/\+Das\+Spiel/anfaengerpraktikum/scripts/Base\+Enemy.\+cs\end{DoxyCompactItemize}

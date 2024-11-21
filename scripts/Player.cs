@@ -1,16 +1,18 @@
 using Godot;
 using System;
 
+/** 
+ * @brief Klasse für den Spielercharakter.
+ * Verwaltet Bewegung, Sprünge, Angriffe und Animationen.
+ */
 public partial class Player : CharacterBody2D
 {
+    // Variablen für Bewegung, Sprünge und Dash
     private const float SPEED = 100f;
     private const float JUMP_VELOCITY = -300f;
-
-    // Variablen für den Doppelsprung
     private int JumpMax = 2;
     private int JumpCount = 0;
 
-    // Variablen für den Dash
     private Vector2 DashDirection = Vector2.Zero;
     private float DashSpeed = 300f;
     private bool IsDashing = false;
@@ -26,11 +28,13 @@ public partial class Player : CharacterBody2D
     private CollisionShape2D SwordCollision;
     private CollisionShape2D PlayerHitbox;
 
-    //Variable um Hitbox des Players zu platzieren
     private Vector2 HauptHitbox;
 
+    /** 
+     * @brief Initialisierung der Referenzen.
+     * Findet die relevanten Knoten in der Szene und weist sie zu.
+     */
     public override void _Ready() {
-        // Knoten in der Szene finden und zuweisen
         AnimationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
         Sprite = GetNode<Sprite2D>("Sprite2D");
         DashEffect = GetNode<Timer>("DashEffect");
@@ -40,8 +44,12 @@ public partial class Player : CharacterBody2D
         HauptHitbox = PlayerHitbox.Position;
     }
 
+    /** 
+     * @brief Physikalische Prozesse werden in jedem Frame ausgeführt.
+     * Berechnet Gravitation, Bewegung, Sprünge und Dashes.
+     * @param DeltaTime Zeit seit dem letzten Frame.
+     */
     public override void _PhysicsProcess(double DeltaTime) {
-        //Anforderung 2.2.1.1
         // Gravitation hinzufügen, wenn der Charakter nicht am Boden ist
         if (!IsOnFloor()) {
             Velocity += GetGravity() * (float)DeltaTime;
@@ -55,8 +63,11 @@ public partial class Player : CharacterBody2D
         UpdateAnimations();
     }
 
+    /** 
+     * @brief Verarbeitet die Sprunglogik.
+     * Setzt den Sprungzähler zurück und ermöglicht einen Doppelsprung.
+     */
     private void HandleJump() {
-        //Anforderung 2.2.1.1.4
         // Sprungzähler zurücksetzen, wenn der Charakter am Boden ist
         if (JumpCount != 0 && IsOnFloor()) {
             JumpCount = 0;
@@ -69,41 +80,41 @@ public partial class Player : CharacterBody2D
         }
     }
 
+    /** 
+     * @brief Verarbeitet die Bewegung des Spielers.
+     * Regelt normale Bewegungen, Dashes und Kollisionen.
+     * @param DeltaTime Zeit seit dem letzten Frame.
+     */
     private void HandleMovement(double DeltaTime) {
-        // Bewegungsrichtung bestimmen (links/rechts)
         Vector2 direction = new Vector2(Input.GetAxis("ui_left", "ui_right"), Input.GetAxis("ui_up", "ui_down")).Normalized();
         float currentSpeed = SPEED;
 
         // Sprite umdrehen basierend auf der Bewegungsrichtung und Kollision umdrehen
         if (direction.X < 0) {
             Sprite.FlipH = true;
-            SwordCollision.Position = new Vector2(-Mathf.Abs(SwordCollision.Position.X), SwordCollision.Position.Y);    //SwordCollition umdrehen
+            SwordCollision.Position = new Vector2(-Mathf.Abs(SwordCollision.Position.X), SwordCollision.Position.Y);
             PlayerHitbox.Position = new Vector2(Sprite.Position.X * 1.8f, PlayerHitbox.Position.Y);
         } else if (direction.X > 0) {
-            //Hauptsprites/Collision wieder in die Ursprungsposition bringen
             Sprite.FlipH = false;
             SwordCollision.Position = new Vector2(Mathf.Abs(SwordCollision.Position.X), SwordCollision.Position.Y);
             PlayerHitbox.Position = HauptHitbox;
         }
 
-        //Anforderung 2.2.1.2.1 & 2.2.1.2.2
-        // Überprüfen, ob der Spieler gerade angreift, und Geschwindigkeit reduzieren
+        // Geschwindigkeit reduzieren, wenn der Spieler angreift
         if (AnimationPlayer.CurrentAnimation == "light_attack") {
             currentSpeed *= 0.5f;
-        }else if (AnimationPlayer.CurrentAnimation == "heavy_attack"){
+        } else if (AnimationPlayer.CurrentAnimation == "heavy_attack") {
             currentSpeed *= 0.15f;
         }
 
-        //Anforderung 2.2.1.2.3
-        if (IsBlocking()){
+        // Blockieren stoppt die Bewegung
+        if (IsBlocking()) {
             currentSpeed = 0;
         }
 
         if (IsDashing) {
-            //Anforderung 2.2.1.1.5
             DashInProgress(DeltaTime);
         } else {
-            //Anforderung 2.2.1.1.1 & 2.2.1.1.2
             // Normale Bewegung verarbeiten, wenn kein Dash aktiv ist
             if (direction != Vector2.Zero) {
                 Velocity = new Vector2(direction.X * currentSpeed, Velocity.Y);
@@ -111,35 +122,37 @@ public partial class Player : CharacterBody2D
                 Velocity = new Vector2(Mathf.MoveToward(Velocity.X, 0, SPEED), Velocity.Y);
             }
 
-            //Anforderung 2.2.1.1.5
-            // Überprüfen, ob der Dash-Button gedrückt wurde und Dash möglich ist
+            // Überprüfen, ob der Dash-Button gedrückt wurde
             if (Input.IsActionJustPressed("dash") && direction != Vector2.Zero && CanDash && !IsAttacking()) {
                 DashDirection = direction;
-                StartDash(); 
+                StartDash();
             }
         }
     }
 
-    // Funktion, die den Dash-Prozess startet
+    /** 
+     * @brief Startet den Dash-Prozess.
+     */
     private void StartDash() {
         IsDashing = true;
         CanDash = false;
         DashTimer.Timeout += StopDash;
         DashTimer.Start();
         DashEffect.Start();
-        DashTrailTimer = 0f; // Dash-Trail-Timer zurücksetzen
+        DashTrailTimer = 0f;
     }
 
-    // Funktion, die während des Dashes ausgeführt wird
+    /** 
+     * @brief Führt die Logik während eines Dashes aus.
+     * @param DeltaTime Zeit seit dem letzten Frame.
+     */
     private void DashInProgress(double DeltaTime) {
-        //Anforderung 2.2.1.1.5
         // Charakter bewegt sich in die Dash-Richtung mit Dash-Geschwindigkeit
-        if (DashDirection == Vector2.Up){
-            Velocity = DashDirection/1.5f * DashSpeed;
+        if (DashDirection == Vector2.Up) {
+            Velocity = DashDirection / 1.5f * DashSpeed;
         } else {
             Velocity = DashDirection * DashSpeed;
         }
-
 
         // Dash-Trail bei Intervallen erstellen
         DashTrailTimer -= (float)DeltaTime;
@@ -149,17 +162,19 @@ public partial class Player : CharacterBody2D
         }
     }
 
-    // Funktion zum Erstellen des Dash-Effekts (Nachbild des Spielers)
+    /** 
+     * @brief Erstellt einen visuellen Dash-Trail.
+     * Der Spieler hinterlässt eine Spur während des Dashes.
+     */
     private void CreateDashEffect() {
         Sprite2D PlayerCopyNode = (Sprite2D)Sprite.Duplicate();
         GetParent().AddChild(PlayerCopyNode);
 
         CollisionShape2D SwordCollisionCopy = PlayerCopyNode.GetNode<CollisionShape2D>("SwordHit/SwordCollision");
         if (SwordCollisionCopy != null) {
-            SwordCollisionCopy.Disabled = true;  // Deaktiviere die Kollision der Kopie
+            SwordCollisionCopy.Disabled = true; // Deaktiviere die Kollision der Kopie
         }
-        
-        // Position der Kopie entsprechend der Position des Spielers festlegen
+
         PlayerCopyNode.GlobalPosition = GlobalPosition + new Vector2(0, Sprite.Texture.GetHeight() * Sprite.Scale.Y * -0.5f);
 
         // Verblassen-Effekt für den Dash-Trail hinzufügen
@@ -187,13 +202,15 @@ public partial class Player : CharacterBody2D
         AddChild(FadeTimer3);
         FadeTimer3.Timeout += () => {
             if (IsInstanceValid(PlayerCopyNode)) {
-                PlayerCopyNode.QueueFree();  // Knoten sicher entfernen
+                PlayerCopyNode.QueueFree();
             }
         };
         FadeTimer3.Start(AnimationTime * 3);
     }
 
-    // Funktion zum Stoppen des Dashes
+    /** 
+     * @brief Stoppt den Dash.
+     */
     private void StopDash() {
         IsDashing = false;
         DashEffect.Stop();
@@ -201,54 +218,59 @@ public partial class Player : CharacterBody2D
         DashTimer.Timeout -= StopDash;
     }
 
-    public async void OnSwordHitBodyEntered(Node2D body){
-        if(body.Name == "Player"){
+    /** 
+     * @brief Verarbeitung, wenn ein Körper das Schwert trifft.
+     * @param body Der getroffene Körper.
+     */
+    public async void OnSwordHitBodyEntered(Node2D body) {
+        if (body.Name == "Player") {
             return;
         }
         GD.Print(body.Name);
-        if(AnimationPlayer.CurrentAnimation.Equals("heavy_attack")){
-            if(Sprite.FlipH == false){
+        if (AnimationPlayer.CurrentAnimation.Equals("heavy_attack")) {
+            if (Sprite.FlipH == false) {
                 body.Position += new Vector2(20, 0);
             } else {
                 body.Position -= new Vector2(20, 0);
             }
         }
-        for (int i = 0; i < 3; i++){
-            body.Visible = false;                                       //Dmg effect, wenn Gegner getroffen wird
-            await ToSignal(GetTree().CreateTimer(0.05f), "timeout"); 
+        for (int i = 0; i < 3; i++) {
+            body.Visible = false; // Dmg-Effekt
+            await ToSignal(GetTree().CreateTimer(0.05f), "timeout");
             body.Visible = true;
-            await ToSignal(GetTree().CreateTimer(0.05f), "timeout"); 
+            await ToSignal(GetTree().CreateTimer(0.05f), "timeout");
         }
     }
 
-    private bool IsAttacking(){
-        if (AnimationPlayer.CurrentAnimation == "heavy_attack" || AnimationPlayer.CurrentAnimation == "light_attack"){
-            return true;
-        }
-        return false;
+    /** 
+     * @brief Überprüft, ob der Spieler gerade angreift.
+     * @return true, wenn der Spieler angreift.
+     */
+    private bool IsAttacking() {
+        return AnimationPlayer.CurrentAnimation == "heavy_attack" || AnimationPlayer.CurrentAnimation == "light_attack";
     }
 
-    private bool IsBlocking(){
-        if (AnimationPlayer.CurrentAnimation == "block"){
-            return true;
-        }
-        return false;
+    /** 
+     * @brief Überprüft, ob der Spieler blockiert.
+     * @return true, wenn der Spieler blockiert.
+     */
+    private bool IsBlocking() {
+        return AnimationPlayer.CurrentAnimation == "block";
     }
 
-    // Funktion zum Aktualisieren der Animationen
+    /** 
+     * @brief Aktualisiert die Animationen des Spielers.
+     */
     private void UpdateAnimations() {
-
-        //Angriffsanimationen
         if (Input.IsActionJustPressed("light_attack") && !IsDashing && !IsAttacking()) {
             AnimationPlayer.Play("light_attack");
-        } else if(Input.IsActionJustPressed("heavy_attack") && !IsDashing && !IsAttacking()){
+        } else if (Input.IsActionJustPressed("heavy_attack") && !IsDashing && !IsAttacking()) {
             AnimationPlayer.Play("heavy_attack");
         }
-        if (Input.IsActionPressed("block")&& !IsDashing && !IsAttacking() && IsOnFloor()){
+        if (Input.IsActionPressed("block") && !IsDashing && !IsAttacking() && IsOnFloor()) {
             AnimationPlayer.Play("block");
         }
 
-        // Bewegungsanimationen
         if (IsOnFloor() && !IsAttacking() && !IsBlocking()) {
             if (Velocity.X == 0) {
                 AnimationPlayer.Play("idle");
