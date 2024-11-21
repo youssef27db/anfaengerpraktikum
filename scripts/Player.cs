@@ -30,6 +30,8 @@ public partial class Player : CharacterBody2D
 
     private Vector2 HauptHitbox;
 
+    private Vector2 SpawnPoint;
+
     /** 
      * @brief Initialisierung der Referenzen.
      * Findet die relevanten Knoten in der Szene und weist sie zu.
@@ -256,6 +258,22 @@ public partial class Player : CharacterBody2D
      */
     private bool IsBlocking() {
         return AnimationPlayer.CurrentAnimation == "block";
+    }
+
+    /** 
+     * @brief Gibt den SpawnPoint des Spielers zurück.
+     * @return Der SpawnPoint des Spielers.
+     */
+
+    public void SetSpawnPoint(Vector2 spawnPoint) {
+        SpawnPoint = spawnPoint;
+    }
+
+    /** 
+     * @brief Setzt die Position des Spielers auf den SpawnPoint zurück.
+     */
+    public void Respawn(){
+        Position = SpawnPoint;
     }
 
     /** 

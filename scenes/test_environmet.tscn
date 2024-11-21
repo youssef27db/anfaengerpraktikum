@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://c0w6h05532gs0" path="res://assets/Dungeon Tile Set.png" id="1_a7xoi"]
 [ext_resource type="PackedScene" uid="uid://cq6xmv3najlnh" path="res://scenes/player.tscn" id="2_eiejb"]
 [ext_resource type="PackedScene" uid="uid://cqokjjp5c4xlu" path="res://scenes/base_enemy.tscn" id="4_7nb7u"]
-[ext_resource type="PackedScene" uid="uid://dh381ntrht6ri" path="res://scenes/hud.tscn" id="4_rny7b"]
+[ext_resource type="PackedScene" uid="uid://cclu45b2pmyo2" path="res://scenes/checkpoint.tscn" id="4_m7wet"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gj3od"]
 texture = ExtResource("1_a7xoi")
@@ -175,7 +175,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_gj3od")
 
 [node name="Test-Environmet" type="Node2D"]
-position = Vector2(657, 397)
+position = Vector2(-1, 1)
 
 [node name="Layer1" type="TileMapLayer" parent="."]
 use_parent_material = true
@@ -192,6 +192,7 @@ zoom = Vector2(1.5, 1.5)
 position_smoothing_enabled = true
 
 [node name="base_enemy" parent="." instance=ExtResource("4_7nb7u")]
-position = Vector2(196, 15)
+position = Vector2(193, 15)
 
-[node name="HUD" parent="." instance=ExtResource("4_rny7b")]
+[node name="Checkpoint" parent="." instance=ExtResource("4_m7wet")]
+position = Vector2(-190, -8)
