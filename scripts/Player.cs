@@ -31,6 +31,7 @@ public partial class Player : CharacterBody2D
     private Vector2 HauptHitbox;
 
     private Vector2 SpawnPoint;
+    private int lastAttack = 0;
 
     /** 
      * @brief Initialisierung der Referenzen.
@@ -224,24 +225,25 @@ public partial class Player : CharacterBody2D
      * @brief Verarbeitung, wenn ein Körper das Schwert trifft.
      * @param body Der getroffene Körper.
      */
-    public async void OnSwordHitBodyEntered(Node2D body) {
+    public void OnSwordHitBodyEntered(Node2D body) {
         if (body.Name == "Player") {
             return;
         }
         GD.Print(body.Name);
-        if (AnimationPlayer.CurrentAnimation.Equals("heavy_attack")) {
-            if (Sprite.FlipH == false) {
-                body.Position += new Vector2(20, 0);
-            } else {
-                body.Position -= new Vector2(20, 0);
+    }
+
+    public Damage GetDamage(){
+        if(lastAttack == 1){
+            return new Damage(10, 0, Vector2.Zero);
+        }
+        if(lastAttack == 2){
+            Vector2 Push = new Vector2(20,0);
+            if(Sprite.FlipH){
+                Push = -Push;
             }
+            return new Damage(20, 0, Push);       
         }
-        for (int i = 0; i < 3; i++) {
-            body.Visible = false; // Dmg-Effekt
-            await ToSignal(GetTree().CreateTimer(0.05f), "timeout");
-            body.Visible = true;
-            await ToSignal(GetTree().CreateTimer(0.05f), "timeout");
-        }
+        return new Damage(0,0,Vector2.Zero);
     }
 
     /** 
@@ -281,21 +283,26 @@ public partial class Player : CharacterBody2D
      */
     private void UpdateAnimations() {
         if (Input.IsActionJustPressed("light_attack") && !IsDashing && !IsAttacking()) {
+            lastAttack = 1;
             AnimationPlayer.Play("light_attack");
         } else if (Input.IsActionJustPressed("heavy_attack") && !IsDashing && !IsAttacking()) {
+            lastAttack = 2;
             AnimationPlayer.Play("heavy_attack");
         }
         if (Input.IsActionPressed("block") && !IsDashing && !IsAttacking() && IsOnFloor()) {
             AnimationPlayer.Play("block");
+            lastAttack = 0;
         }
 
         if (IsOnFloor() && !IsAttacking() && !IsBlocking()) {
+            lastAttack = 0;
             if (Velocity.X == 0) {
                 AnimationPlayer.Play("idle");
             } else {
                 AnimationPlayer.Play("run");
             }
         } else if (!IsOnFloor() && !IsAttacking() && !IsBlocking()) {
+            lastAttack = 0;
             if (Velocity.Y < 0) {
                 AnimationPlayer.Play("jump");
             } else if (Velocity.Y > 0) {

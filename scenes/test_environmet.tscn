@@ -189,11 +189,11 @@ position = Vector2(-24, 13)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(0, -6)
-zoom = Vector2(1.5, 1.5)
+zoom = Vector2(2, 2)
 position_smoothing_enabled = true
 
 [node name="base_enemy" parent="." instance=ExtResource("4_7nb7u")]
-position = Vector2(193, 15)
+position = Vector2(197, 15)
 
 [node name="Checkpoint" parent="." instance=ExtResource("4_m7wet")]
 position = Vector2(-190, -8)
