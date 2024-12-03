@@ -20,12 +20,40 @@ void {\bfseries On\+Detection\+Body\+Entered} (Node2D body)
 \item 
 \Hypertarget{class_base_enemy_a269f9f3626f17368f404ca27616d0697}\label{class_base_enemy_a269f9f3626f17368f404ca27616d0697} 
 void {\bfseries On\+Pursuing\+Radius\+Body\+Exited} (Node2D body)
+\item 
+\Hypertarget{class_base_enemy_a6aad96826441fe152694139d29893bad}\label{class_base_enemy_a6aad96826441fe152694139d29893bad} 
+void {\bfseries On\+Hitbox\+Area\+Entered} (Area2D area)
+\item 
+\Hypertarget{class_base_enemy_ab07fb117d5286ef97dc702149c02b14a}\label{class_base_enemy_ab07fb117d5286ef97dc702149c02b14a} 
+void {\bfseries On\+Sword\+Hit\+Box\+Body\+Entered} (Node2D body)
+\item 
+\Hypertarget{class_base_enemy_a218fbf8a552062d685af11783bb6d515}\label{class_base_enemy_a218fbf8a552062d685af11783bb6d515} 
+\mbox{\hyperlink{class_damage}{Damage}} {\bfseries Get\+Damage} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_base_enemy_ac529914117dfe8158325b43be1f1c6dd}\label{class_base_enemy_ac529914117dfe8158325b43be1f1c6dd} 
+enum {\bfseries State} \{ {\bfseries IDLE}
+, {\bfseries WALK}
+, {\bfseries ATTACK}
+, {\bfseries TAKE\+\_\+\+HIT}
+ \}
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \Hypertarget{class_base_enemy_aee39d90b4efaebada5ab47b21184516a}\label{class_base_enemy_aee39d90b4efaebada5ab47b21184516a} 
 void {\bfseries Handle\+Movement} (double Delta\+Time)
+\item 
+\Hypertarget{class_base_enemy_a74b042cf6b24aa7f0b1d823ae7d4b5af}\label{class_base_enemy_a74b042cf6b24aa7f0b1d823ae7d4b5af} 
+void {\bfseries Update\+Animation} ()
+\item 
+\Hypertarget{class_base_enemy_a284a995d12d6bc1d7a23d1f6f25a96af}\label{class_base_enemy_a284a995d12d6bc1d7a23d1f6f25a96af} 
+void {\bfseries Take\+Damage} (\mbox{\hyperlink{class_damage}{Damage}} DMG)
+\item 
+\Hypertarget{class_base_enemy_aa5e7d87eaa080ed685315588a39a9f1f}\label{class_base_enemy_aa5e7d87eaa080ed685315588a39a9f1f} 
+void {\bfseries Die} ()
 \item 
 \Hypertarget{class_base_enemy_a59a907194c4c712b41719a6fc12c1583}\label{class_base_enemy_a59a907194c4c712b41719a6fc12c1583} 
 bool {\bfseries Check\+Line\+Of\+Sight} (Node2D body)
@@ -56,9 +84,6 @@ float {\bfseries Armor} = 20f
 \item 
 \Hypertarget{class_base_enemy_a4f99809bf5de1dbbe762c13fc7db8881}\label{class_base_enemy_a4f99809bf5de1dbbe762c13fc7db8881} 
 float {\bfseries Max\+Stamina} = 100f
-\item 
-\Hypertarget{class_base_enemy_af0ba46ea2947a6a19452a6dd9b10713f}\label{class_base_enemy_af0ba46ea2947a6a19452a6dd9b10713f} 
-bool {\bfseries Can\+Jump} = false
 \item 
 \Hypertarget{class_base_enemy_a661de31833c943c7d7d72de616a9141a}\label{class_base_enemy_a661de31833c943c7d7d72de616a9141a} 
 float {\bfseries Speed} = 10
@@ -93,14 +118,35 @@ Vector2 {\bfseries Start\+Position}
 \Hypertarget{class_base_enemy_ad2523c398e4a11b5f36a9df26c4014eb}\label{class_base_enemy_ad2523c398e4a11b5f36a9df26c4014eb} 
 bool {\bfseries Start\+Rotation} = false
 \item 
+\Hypertarget{class_base_enemy_a47be49c6e16a1f99ee1ed68549b31d05}\label{class_base_enemy_a47be49c6e16a1f99ee1ed68549b31d05} 
+State {\bfseries Animation\+State} = State.\+IDLE
+\item 
 \Hypertarget{class_base_enemy_a2e4bd99e594a6c3366f64ab47c7443b5}\label{class_base_enemy_a2e4bd99e594a6c3366f64ab47c7443b5} 
 Animated\+Sprite2D {\bfseries Sprite}
 \item 
 \Hypertarget{class_base_enemy_ada18d6dd378a0f7380579ce63a6b4ec2}\label{class_base_enemy_ada18d6dd378a0f7380579ce63a6b4ec2} 
 Collision\+Polygon2D {\bfseries Collision\+Polygon}
 \item 
+\Hypertarget{class_base_enemy_a9d136e8abbf09f7b418112394bdf1c88}\label{class_base_enemy_a9d136e8abbf09f7b418112394bdf1c88} 
+Area2D {\bfseries Sword\+Hitbox}
+\item 
+\Hypertarget{class_base_enemy_a9b71f0d7b10ec2b15f5176b8b69ce190}\label{class_base_enemy_a9b71f0d7b10ec2b15f5176b8b69ce190} 
+Collision\+Shape2D {\bfseries Main\+Collision}
+\item 
 \Hypertarget{class_base_enemy_a136d1835e3ccedebaa12d7fe151d890b}\label{class_base_enemy_a136d1835e3ccedebaa12d7fe151d890b} 
 Ray\+Cast2D {\bfseries Front\+Collision\+Ray\+Cast}
+\item 
+\Hypertarget{class_base_enemy_a586349c436eb91c16f5f2f4bee17caa1}\label{class_base_enemy_a586349c436eb91c16f5f2f4bee17caa1} 
+Ray\+Cast2D {\bfseries Line\+Of\+Sight}
+\item 
+\Hypertarget{class_base_enemy_a4b844f94d42f547d733385fcefc5473a}\label{class_base_enemy_a4b844f94d42f547d733385fcefc5473a} 
+Ray\+Cast2D {\bfseries Left\+Fall\+Protection}
+\item 
+\Hypertarget{class_base_enemy_a250a47e4f491f15dc19e64816bef01d7}\label{class_base_enemy_a250a47e4f491f15dc19e64816bef01d7} 
+Ray\+Cast2D {\bfseries Right\+Fall\+Protection}
+\item 
+\Hypertarget{class_base_enemy_a5944a26db58d24ee828a2d8e83687e93}\label{class_base_enemy_a5944a26db58d24ee828a2d8e83687e93} 
+Texture\+Progress\+Bar {\bfseries Health\+Bar}
 \end{DoxyCompactItemize}
 
 
