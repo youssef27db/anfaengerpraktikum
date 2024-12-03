@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['player_0',['Player',['../class_player.html',1,'']]]
+  ['checkpoint_0',['Checkpoint',['../class_checkpoint.html',1,'']]]
 ];

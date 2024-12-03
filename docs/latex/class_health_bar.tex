@@ -1,0 +1,53 @@
+\doxysection{Health\+Bar Class Reference}
+\hypertarget{class_health_bar}{}\label{class_health_bar}\index{HealthBar@{HealthBar}}
+
+
+Klasse für die Gesundheitsleiste des Spielers. Synchronisiert die Anzeige der \doxylink{class_health_bar}{Health\+Bar} mit den Lebenspunkten des Spielers.  
+
+
+Inheritance diagram for Health\+Bar\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_health_bar}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_health_bar_a639f11c646a0a7de99cbcf4db7574d99}\label{class_health_bar_a639f11c646a0a7de99cbcf4db7574d99} 
+override void {\bfseries \+\_\+\+Ready} ()
+\begin{DoxyCompactList}\small\item\em Initialisiert die \doxylink{class_health_bar}{Health\+Bar} und verbindet sie mit den Lebenspunkten des Spielers. Lädt den Spieler-\/\+Knoten und setzt die maximale und aktuelle Gesundheit in der \doxylink{class_health_bar}{Health\+Bar}. \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_health_bar_a58533261cfb54c8cfc84661c244d2da0}{\+\_\+\+Process}} (double delta)
+\begin{DoxyCompactList}\small\item\em Aktualisiert die \doxylink{class_health_bar}{Health\+Bar} in jedem Frame. Synchronisiert die Anzeige der aktuellen Lebenspunkte mit den Werten des Spielers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_health_bar_a102aefc9bcc124d772bf5b6e02bd75f8}\label{class_health_bar_a102aefc9bcc124d772bf5b6e02bd75f8} 
+\mbox{\hyperlink{class_player}{Player}} {\bfseries player}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Klasse für die Gesundheitsleiste des Spielers. Synchronisiert die Anzeige der \doxylink{class_health_bar}{Health\+Bar} mit den Lebenspunkten des Spielers. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_health_bar_a58533261cfb54c8cfc84661c244d2da0}\index{HealthBar@{HealthBar}!\_Process@{\_Process}}
+\index{\_Process@{\_Process}!HealthBar@{HealthBar}}
+\doxysubsubsection{\texorpdfstring{\_Process()}{\_Process()}}
+{\footnotesize\ttfamily \label{class_health_bar_a58533261cfb54c8cfc84661c244d2da0} 
+override void Health\+Bar.\+\_\+\+Process (\begin{DoxyParamCaption}\item[{double}]{delta}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Aktualisiert die \doxylink{class_health_bar}{Health\+Bar} in jedem Frame. Synchronisiert die Anzeige der aktuellen Lebenspunkte mit den Werten des Spielers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta} & Zeit seit dem letzten Frame (wird nicht direkt genutzt). \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Youssef/\+Desktop/\+UNI/\+S4/\+Computerspiel\+Entwicklung/\+Das\+Spiel/anfaengerpraktikum/scripts/Health\+Bar.\+cs\end{DoxyCompactItemize}

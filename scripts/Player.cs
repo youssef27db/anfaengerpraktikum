@@ -33,6 +33,14 @@ public partial class Player : CharacterBody2D
     private Vector2 SpawnPoint;
     private int lastAttack = 0;
 
+    [Export]
+    private float MaxHealthPoints = 100f;
+    private float CurrentHealth;
+
+    [Export]
+    private float MaxStamina = 100f; 
+    private float Stamina;  
+
     /** 
      * @brief Initialisierung der Referenzen.
      * Findet die relevanten Knoten in der Szene und weist sie zu.
@@ -45,6 +53,7 @@ public partial class Player : CharacterBody2D
         SwordCollision = GetNode<CollisionShape2D>("Sprite2D/SwordHit/SwordCollision");
         PlayerHitbox = GetNode<CollisionShape2D>("PlayerHitbox");
         HauptHitbox = PlayerHitbox.Position;
+        CurrentHealth = 50f;
     }
 
     /** 
@@ -222,31 +231,6 @@ public partial class Player : CharacterBody2D
     }
 
     /** 
-     * @brief Verarbeitung, wenn ein Körper das Schwert trifft.
-     * @param body Der getroffene Körper.
-     */
-    public void OnSwordHitBodyEntered(Node2D body) {
-        if (body.Name == "Player") {
-            return;
-        }
-        GD.Print(body.Name);
-    }
-
-    public Damage GetDamage(){
-        if(lastAttack == 1){
-            return new Damage(10, 0, Vector2.Zero);
-        }
-        if(lastAttack == 2){
-            Vector2 Push = new Vector2(20,0);
-            if(Sprite.FlipH){
-                Push = -Push;
-            }
-            return new Damage(20, 0, Push);       
-        }
-        return new Damage(0,0,Vector2.Zero);
-    }
-
-    /** 
      * @brief Überprüft, ob der Spieler gerade angreift.
      * @return true, wenn der Spieler angreift.
      */
@@ -266,16 +250,105 @@ public partial class Player : CharacterBody2D
      * @brief Gibt den SpawnPoint des Spielers zurück.
      * @return Der SpawnPoint des Spielers.
      */
-
     public void SetSpawnPoint(Vector2 spawnPoint) {
         SpawnPoint = spawnPoint;
     }
 
     /** 
+    * @brief Setzt die aktuellen Lebenspunkte des Spielers.
+    * @param Health Neue Lebenspunkte, die gesetzt werden sollen.
+    */
+    public void SetCurrentHealth(float Health){
+        CurrentHealth = Health;
+    }
+
+    /** 
+    * @brief Gibt die aktuellen Lebenspunkte des Spielers zurück.
+    * @return Die aktuellen Lebenspunkte.
+    */
+    public float GetCurrentHealth(){
+        return CurrentHealth;
+    }
+
+    /** 
+    * @brief Setzt die maximalen Lebenspunkte des Spielers.
+    * @param maxHealthPoints Die neuen maximalen Lebenspunkte (muss positiv sein).
+     */
+    public void SetMaxHealthPoints(float maxHealthPoints){
+        // MaxHealthPoints muss immer positiv sein
+        MaxHealthPoints = Mathf.Max(maxHealthPoints, 1); // Verhindert, dass MaxHealthPoints <= 0 wird
+    }
+
+    /** 
+    * @brief Gibt die maximalen Lebenspunkte des Spielers zurück.
+    * @return Die maximalen Lebenspunkte.
+    */
+    public float GetMaxHealthPoints(){
+        return MaxHealthPoints;
+    }
+
+    /** 
+    * @brief Heilt den Spieler vollständig, indem die aktuellen Lebenspunkte auf das Maximum gesetzt werden.
+    */
+    public void MaxHeal(){
+        SetCurrentHealth(MaxHealthPoints);
+    }
+
+    /** 
+    * @brief Wendet Schaden auf den Spieler an.
+    * Reduziert die aktuellen Lebenspunkte basierend auf dem übergebenen Schaden und wendet einen Rückstoßeffekt an.
+    * @param Damage Instanz der Klasse `Damage`, die den physischen und wahren Schaden sowie den Rückstoß enthält.
+    */
+    public void TakeDamage(Damage Damage){
+        float totalDamage = Damage.GetPhysicalDMG() + Damage.GetTrueDMG();
+
+        SetCurrentHealth(GetCurrentHealth() - totalDamage);
+        Position += Damage.GetPushAmount();
+
+        // Überprüfe, ob der Spieler gestorben ist
+        if (GetCurrentHealth() <= 0){
+            GD.Print("Spieler ist gestorben!");
+            Respawn();
+        }
+    }
+
+    /** 
+    * @brief Gibt den Schaden zurück, den der Spieler mit seinem aktuellen Angriff verursacht.
+    * Der Schaden basiert auf der letzten Angriffsmethode (`light_attack` oder `heavy_attack`).
+    * @return Eine Instanz der Klasse `Damage`, die den physischen Schaden, wahren Schaden und Rückstoß enthält.
+    */
+    public Damage GetDamage(){
+        if(lastAttack == 1){
+            return new Damage(10, 0, Vector2.Zero);
+        }
+        if(lastAttack == 2){
+            Vector2 Push = new Vector2(20,0);
+            if(Sprite.FlipH){
+                Push = -Push;
+            }
+            return new Damage(20, 0, Push);       
+        }
+        return new Damage(0,0,Vector2.Zero);
+    }
+    
+    /** 
      * @brief Setzt die Position des Spielers auf den SpawnPoint zurück.
      */
     public void Respawn(){
         Position = SpawnPoint;
+    }
+    
+    /** 
+     * @brief Verarbeitung, wenn ein Körper das Schwert trifft.
+     * @param body Der getroffene Körper.
+     */
+    public void OnEnemyHitBoxEntered(Area2D area){
+        // Überprüfen, ob der Collider ein `BaseEnemy` ist
+        if (area.GetParent() is BaseEnemy enemy){
+            // Hole den Schaden vom Gegner und wende ihn auf den Spieler an
+            Damage damage = enemy.GetDamage();
+            TakeDamage(damage);
+        }
     }
 
     /** 

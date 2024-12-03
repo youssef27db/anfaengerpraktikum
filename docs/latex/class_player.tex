@@ -19,7 +19,27 @@ override void {\bfseries \+\_\+\+Ready} ()
 \begin{DoxyCompactList}\small\item\em Initialisierung der Referenzen. Findet die relevanten Knoten in der Szene und weist sie zu. \end{DoxyCompactList}\item 
 override void \mbox{\hyperlink{class_player_a02ef3667915da4d1a2e21fd6c9f93e48}{\+\_\+\+Physics\+Process}} (double Delta\+Time)
 \begin{DoxyCompactList}\small\item\em Physikalische Prozesse werden in jedem Frame ausgeführt. Berechnet Gravitation, Bewegung, Sprünge und Dashes. \end{DoxyCompactList}\item 
-async void \mbox{\hyperlink{class_player_a014a01154170234ca9baead7c89e9e33}{On\+Sword\+Hit\+Body\+Entered}} (Node2D body)
+void \mbox{\hyperlink{class_player_a8a09cfbee2abc003bc1dda08da618d1f}{Set\+Spawn\+Point}} (Vector2 spawn\+Point)
+\begin{DoxyCompactList}\small\item\em Gibt den Spawn\+Point des Spielers zurück. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_a06c351462b12660eb8945f0cb01c1da4}{Set\+Current\+Health}} (float Health)
+\begin{DoxyCompactList}\small\item\em Setzt die aktuellen Lebenspunkte des Spielers. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_player_adcfef3e7a9ff7c077dd34f9f64c40f28}{Get\+Current\+Health}} ()
+\begin{DoxyCompactList}\small\item\em Gibt die aktuellen Lebenspunkte des Spielers zurück. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_ac715650744f9e1d804d23f5fa7e26c31}{Set\+Max\+Health\+Points}} (float max\+Health\+Points)
+\begin{DoxyCompactList}\small\item\em Setzt die maximalen Lebenspunkte des Spielers. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_player_a9fed099d84529ddc776dc59d45fa09b1}{Get\+Max\+Health\+Points}} ()
+\begin{DoxyCompactList}\small\item\em Gibt die maximalen Lebenspunkte des Spielers zurück. \end{DoxyCompactList}\item 
+\Hypertarget{class_player_a750d1c5325522c39d232332349e4d2d2}\label{class_player_a750d1c5325522c39d232332349e4d2d2} 
+void {\bfseries Max\+Heal} ()
+\begin{DoxyCompactList}\small\item\em Heilt den Spieler vollständig, indem die aktuellen Lebenspunkte auf das Maximum gesetzt werden. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_aa1a0addae97cec09d2e86f3060a05438}{Take\+Damage}} (\mbox{\hyperlink{class_damage}{Damage}} \mbox{\hyperlink{class_damage}{Damage}})
+\begin{DoxyCompactList}\small\item\em Wendet Schaden auf den Spieler an. Reduziert die aktuellen Lebenspunkte basierend auf dem übergebenen Schaden und wendet einen Rückstoßeffekt an. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_damage}{Damage}} \mbox{\hyperlink{class_player_a01ad03754c12b1288b69cdd42cb6f85e}{Get\+Damage}} ()
+\begin{DoxyCompactList}\small\item\em Gibt den Schaden zurück, den der Spieler mit seinem aktuellen Angriff verursacht. Der Schaden basiert auf der letzten Angriffsmethode ({\ttfamily light\+\_\+attack} oder {\ttfamily heavy\+\_\+attack}). \end{DoxyCompactList}\item 
+\Hypertarget{class_player_ae1104e2e3726f7bac674615c4e33b2bf}\label{class_player_ae1104e2e3726f7bac674615c4e33b2bf} 
+void {\bfseries Respawn} ()
+\begin{DoxyCompactList}\small\item\em Setzt die Position des Spielers auf den Spawn\+Point zurück. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_a393772e0438181121affcd4636a63cb0}{On\+Enemy\+Hit\+Box\+Entered}} (Area2D area)
 \begin{DoxyCompactList}\small\item\em Verarbeitung, wenn ein Körper das Schwert trifft. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
@@ -94,6 +114,24 @@ Collision\+Shape2D {\bfseries Player\+Hitbox}
 \item 
 \Hypertarget{class_player_ae9c0ec6f7123f5832d82c2cc68eedb97}\label{class_player_ae9c0ec6f7123f5832d82c2cc68eedb97} 
 Vector2 {\bfseries Haupt\+Hitbox}
+\item 
+\Hypertarget{class_player_a0b6c559da53ba0c874d88c54be5370b5}\label{class_player_a0b6c559da53ba0c874d88c54be5370b5} 
+Vector2 {\bfseries Spawn\+Point}
+\item 
+\Hypertarget{class_player_a43147365835fa93dd3778159fddd1cc7}\label{class_player_a43147365835fa93dd3778159fddd1cc7} 
+int {\bfseries last\+Attack} = 0
+\item 
+\Hypertarget{class_player_a3f2adae80dd36aaf970f84bd1f826c78}\label{class_player_a3f2adae80dd36aaf970f84bd1f826c78} 
+float {\bfseries Max\+Health\+Points} = 100f
+\item 
+\Hypertarget{class_player_ade2897d3e2d5317663725511bd24b7a1}\label{class_player_ade2897d3e2d5317663725511bd24b7a1} 
+float {\bfseries Current\+Health}
+\item 
+\Hypertarget{class_player_a30c2b38f03472010c1c1adfe772d339a}\label{class_player_a30c2b38f03472010c1c1adfe772d339a} 
+float {\bfseries Max\+Stamina} = 100f
+\item 
+\Hypertarget{class_player_a387b3297a2601142b31ed0b468ce9366}\label{class_player_a387b3297a2601142b31ed0b468ce9366} 
+float {\bfseries Stamina}
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Static Private Attributes}
 \begin{DoxyCompactItemize}
@@ -140,6 +178,45 @@ Führt die Logik während eines Dashes aus.
 {\em Delta\+Time} & Zeit seit dem letzten Frame. \\
 \hline
 \end{DoxyParams}
+\Hypertarget{class_player_adcfef3e7a9ff7c077dd34f9f64c40f28}\index{Player@{Player}!GetCurrentHealth@{GetCurrentHealth}}
+\index{GetCurrentHealth@{GetCurrentHealth}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{GetCurrentHealth()}{GetCurrentHealth()}}
+{\footnotesize\ttfamily \label{class_player_adcfef3e7a9ff7c077dd34f9f64c40f28} 
+float Player.\+Get\+Current\+Health (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gibt die aktuellen Lebenspunkte des Spielers zurück. 
+
+\begin{DoxyReturn}{Returns}
+Die aktuellen Lebenspunkte. 
+\end{DoxyReturn}
+\Hypertarget{class_player_a01ad03754c12b1288b69cdd42cb6f85e}\index{Player@{Player}!GetDamage@{GetDamage}}
+\index{GetDamage@{GetDamage}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{GetDamage()}{GetDamage()}}
+{\footnotesize\ttfamily \label{class_player_a01ad03754c12b1288b69cdd42cb6f85e} 
+\mbox{\hyperlink{class_damage}{Damage}} Player.\+Get\+Damage (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gibt den Schaden zurück, den der Spieler mit seinem aktuellen Angriff verursacht. Der Schaden basiert auf der letzten Angriffsmethode ({\ttfamily light\+\_\+attack} oder {\ttfamily heavy\+\_\+attack}). 
+
+\begin{DoxyReturn}{Returns}
+Eine Instanz der Klasse {\ttfamily \doxylink{class_damage}{Damage}}, die den physischen Schaden, wahren Schaden und Rückstoß enthält. 
+\end{DoxyReturn}
+\Hypertarget{class_player_a9fed099d84529ddc776dc59d45fa09b1}\index{Player@{Player}!GetMaxHealthPoints@{GetMaxHealthPoints}}
+\index{GetMaxHealthPoints@{GetMaxHealthPoints}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{GetMaxHealthPoints()}{GetMaxHealthPoints()}}
+{\footnotesize\ttfamily \label{class_player_a9fed099d84529ddc776dc59d45fa09b1} 
+float Player.\+Get\+Max\+Health\+Points (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gibt die maximalen Lebenspunkte des Spielers zurück. 
+
+\begin{DoxyReturn}{Returns}
+Die maximalen Lebenspunkte. 
+\end{DoxyReturn}
 \Hypertarget{class_player_af8fce0260ebcc78bb46e2a8393eb2fb7}\index{Player@{Player}!HandleMovement@{HandleMovement}}
 \index{HandleMovement@{HandleMovement}!Player@{Player}}
 \doxysubsubsection{\texorpdfstring{HandleMovement()}{HandleMovement()}}
@@ -181,11 +258,11 @@ bool Player.\+Is\+Blocking (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\
 \begin{DoxyReturn}{Returns}
 true, wenn der Spieler blockiert. 
 \end{DoxyReturn}
-\Hypertarget{class_player_a014a01154170234ca9baead7c89e9e33}\index{Player@{Player}!OnSwordHitBodyEntered@{OnSwordHitBodyEntered}}
-\index{OnSwordHitBodyEntered@{OnSwordHitBodyEntered}!Player@{Player}}
-\doxysubsubsection{\texorpdfstring{OnSwordHitBodyEntered()}{OnSwordHitBodyEntered()}}
-{\footnotesize\ttfamily \label{class_player_a014a01154170234ca9baead7c89e9e33} 
-async void Player.\+On\+Sword\+Hit\+Body\+Entered (\begin{DoxyParamCaption}\item[{Node2D}]{body}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\Hypertarget{class_player_a393772e0438181121affcd4636a63cb0}\index{Player@{Player}!OnEnemyHitBoxEntered@{OnEnemyHitBoxEntered}}
+\index{OnEnemyHitBoxEntered@{OnEnemyHitBoxEntered}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{OnEnemyHitBoxEntered()}{OnEnemyHitBoxEntered()}}
+{\footnotesize\ttfamily \label{class_player_a393772e0438181121affcd4636a63cb0} 
+void Player.\+On\+Enemy\+Hit\+Box\+Entered (\begin{DoxyParamCaption}\item[{Area2D}]{area}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -194,6 +271,64 @@ Verarbeitung, wenn ein Körper das Schwert trifft.
 
 \begin{DoxyParams}{Parameters}
 {\em body} & Der getroffene Körper. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_player_a06c351462b12660eb8945f0cb01c1da4}\index{Player@{Player}!SetCurrentHealth@{SetCurrentHealth}}
+\index{SetCurrentHealth@{SetCurrentHealth}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{SetCurrentHealth()}{SetCurrentHealth()}}
+{\footnotesize\ttfamily \label{class_player_a06c351462b12660eb8945f0cb01c1da4} 
+void Player.\+Set\+Current\+Health (\begin{DoxyParamCaption}\item[{float}]{Health}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Setzt die aktuellen Lebenspunkte des Spielers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Health} & Neue Lebenspunkte, die gesetzt werden sollen. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_player_ac715650744f9e1d804d23f5fa7e26c31}\index{Player@{Player}!SetMaxHealthPoints@{SetMaxHealthPoints}}
+\index{SetMaxHealthPoints@{SetMaxHealthPoints}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{SetMaxHealthPoints()}{SetMaxHealthPoints()}}
+{\footnotesize\ttfamily \label{class_player_ac715650744f9e1d804d23f5fa7e26c31} 
+void Player.\+Set\+Max\+Health\+Points (\begin{DoxyParamCaption}\item[{float}]{max\+Health\+Points}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Setzt die maximalen Lebenspunkte des Spielers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em max\+Health\+Points} & Die neuen maximalen Lebenspunkte (muss positiv sein). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_player_a8a09cfbee2abc003bc1dda08da618d1f}\index{Player@{Player}!SetSpawnPoint@{SetSpawnPoint}}
+\index{SetSpawnPoint@{SetSpawnPoint}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{SetSpawnPoint()}{SetSpawnPoint()}}
+{\footnotesize\ttfamily \label{class_player_a8a09cfbee2abc003bc1dda08da618d1f} 
+void Player.\+Set\+Spawn\+Point (\begin{DoxyParamCaption}\item[{Vector2}]{spawn\+Point}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gibt den Spawn\+Point des Spielers zurück. 
+
+\begin{DoxyReturn}{Returns}
+Der Spawn\+Point des Spielers. 
+\end{DoxyReturn}
+\Hypertarget{class_player_aa1a0addae97cec09d2e86f3060a05438}\index{Player@{Player}!TakeDamage@{TakeDamage}}
+\index{TakeDamage@{TakeDamage}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{TakeDamage()}{TakeDamage()}}
+{\footnotesize\ttfamily \label{class_player_aa1a0addae97cec09d2e86f3060a05438} 
+void Player.\+Take\+Damage (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_damage}{Damage}}}]{Damage}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Wendet Schaden auf den Spieler an. Reduziert die aktuellen Lebenspunkte basierend auf dem übergebenen Schaden und wendet einen Rückstoßeffekt an. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \doxylink{class_damage}{Damage}} & Instanz der Klasse {\ttfamily \doxylink{class_damage}{Damage}}, die den physischen und wahren Schaden sowie den Rückstoß enthält. \\
 \hline
 \end{DoxyParams}
 

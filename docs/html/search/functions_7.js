@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['updateanimations_0',['UpdateAnimations',['../class_player.html#a6dd10a495418b531f7e65ab238368bdc',1,'Player']]]
+  ['onenemyhitboxentered_0',['OnEnemyHitBoxEntered',['../class_player.html#a393772e0438181121affcd4636a63cb0',1,'Player']]],
+  ['onplayerbodyentered_1',['OnPlayerBodyEntered',['../class_checkpoint.html#a1edb44ccaab350249bc760360777a04b',1,'Checkpoint']]]
 ];

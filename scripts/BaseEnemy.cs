@@ -203,6 +203,19 @@ public partial class BaseEnemy : CharacterBody2D
         }
     }
 
+    public Damage GetDamage(){
+    // Beispielwerte für den Schaden (anpassbar)
+    float PhysicalDamage = 15f; 
+    float TrueDamage = 5f;     
+    Vector2 Push = new Vector2(50, 0);
+
+    if (!Sprite.FlipH){
+        Push = -Push; // Rückstoß in die entgegengesetzte Richtung, wenn der Gegner nach links schaut
+    }
+
+    return new Damage(PhysicalDamage, TrueDamage, Push);
+}
+
     private void Die(){
         Dead = true;
         Velocity = Vector2.Zero;
