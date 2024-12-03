@@ -36,6 +36,18 @@ void \mbox{\hyperlink{class_player_aa1a0addae97cec09d2e86f3060a05438}{Take\+Dama
 \begin{DoxyCompactList}\small\item\em Wendet Schaden auf den Spieler an. Reduziert die aktuellen Lebenspunkte basierend auf dem übergebenen Schaden und wendet einen Rückstoßeffekt an. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_damage}{Damage}} \mbox{\hyperlink{class_player_a01ad03754c12b1288b69cdd42cb6f85e}{Get\+Damage}} ()
 \begin{DoxyCompactList}\small\item\em Gibt den Schaden zurück, den der Spieler mit seinem aktuellen Angriff verursacht. Der Schaden basiert auf der letzten Angriffsmethode ({\ttfamily light\+\_\+attack} oder {\ttfamily heavy\+\_\+attack}). \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_player_ada9024b4d3d5a398c3d4bdb9d7a0dc74}{Get\+Stamina}} ()
+\begin{DoxyCompactList}\small\item\em Gibt die aktuelle Stamina des Spielers zurück. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_af613f10648f754010deded7aaaddea09}{Set\+Stamina}} (float Value)
+\begin{DoxyCompactList}\small\item\em Setzt die Stamina des Spielers. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_player_ae8041531f242f8b0e2e222691e546f1b}{Get\+Max\+Stamina}} ()
+\begin{DoxyCompactList}\small\item\em Gibt die maximale Stamina des Spielers zurück. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_a4af84c5660a6e9d3fe44a020bdfe8247}{Set\+Max\+Stamina}} (float Value)
+\begin{DoxyCompactList}\small\item\em Setzt die maximale Stamina des Spielers. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_ab715416eb7dbe1d4d320d4ba21999072}{Regenerate\+Stamina}} (float Amount, double delta)
+\begin{DoxyCompactList}\small\item\em Regeneriert die Stamina des Spielers, wenn er für eine bestimmte Zeit keine Stamina-\/verbrauchende Aktion durchgeführt hat. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_player_ac69e2d647a9d7317b01599b2a5695199}{Use\+Stamina}} (float Amount)
+\begin{DoxyCompactList}\small\item\em Verbraucht eine bestimmte Menge an Stamina, falls genügend verfügbar ist. Setzt den Inaktivitäts-\/\+Timer zurück, wenn Stamina verbraucht wird. \end{DoxyCompactList}\item 
 \Hypertarget{class_player_ae1104e2e3726f7bac674615c4e33b2bf}\label{class_player_ae1104e2e3726f7bac674615c4e33b2bf} 
 void {\bfseries Respawn} ()
 \begin{DoxyCompactList}\small\item\em Setzt die Position des Spielers auf den Spawn\+Point zurück. \end{DoxyCompactList}\item 
@@ -130,8 +142,11 @@ float {\bfseries Current\+Health}
 \Hypertarget{class_player_a30c2b38f03472010c1c1adfe772d339a}\label{class_player_a30c2b38f03472010c1c1adfe772d339a} 
 float {\bfseries Max\+Stamina} = 100f
 \item 
-\Hypertarget{class_player_a387b3297a2601142b31ed0b468ce9366}\label{class_player_a387b3297a2601142b31ed0b468ce9366} 
-float {\bfseries Stamina}
+\Hypertarget{class_player_a0e2a7b71e1052f6d559a664aaa76e212}\label{class_player_a0e2a7b71e1052f6d559a664aaa76e212} 
+float {\bfseries Current\+Stamina}
+\item 
+\Hypertarget{class_player_adda3c3e385b428e061d6d1ccd25f23cb}\label{class_player_adda3c3e385b428e061d6d1ccd25f23cb} 
+float {\bfseries Time\+Since\+Last\+Stamina\+Use} = 0f
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Static Private Attributes}
 \begin{DoxyCompactItemize}
@@ -217,6 +232,32 @@ Gibt die maximalen Lebenspunkte des Spielers zurück.
 \begin{DoxyReturn}{Returns}
 Die maximalen Lebenspunkte. 
 \end{DoxyReturn}
+\Hypertarget{class_player_ae8041531f242f8b0e2e222691e546f1b}\index{Player@{Player}!GetMaxStamina@{GetMaxStamina}}
+\index{GetMaxStamina@{GetMaxStamina}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{GetMaxStamina()}{GetMaxStamina()}}
+{\footnotesize\ttfamily \label{class_player_ae8041531f242f8b0e2e222691e546f1b} 
+float Player.\+Get\+Max\+Stamina (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gibt die maximale Stamina des Spielers zurück. 
+
+\begin{DoxyReturn}{Returns}
+Die maximale Stamina. 
+\end{DoxyReturn}
+\Hypertarget{class_player_ada9024b4d3d5a398c3d4bdb9d7a0dc74}\index{Player@{Player}!GetStamina@{GetStamina}}
+\index{GetStamina@{GetStamina}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{GetStamina()}{GetStamina()}}
+{\footnotesize\ttfamily \label{class_player_ada9024b4d3d5a398c3d4bdb9d7a0dc74} 
+float Player.\+Get\+Stamina (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gibt die aktuelle Stamina des Spielers zurück. 
+
+\begin{DoxyReturn}{Returns}
+Die aktuelle Stamina. 
+\end{DoxyReturn}
 \Hypertarget{class_player_af8fce0260ebcc78bb46e2a8393eb2fb7}\index{Player@{Player}!HandleMovement@{HandleMovement}}
 \index{HandleMovement@{HandleMovement}!Player@{Player}}
 \doxysubsubsection{\texorpdfstring{HandleMovement()}{HandleMovement()}}
@@ -273,6 +314,23 @@ Verarbeitung, wenn ein Körper das Schwert trifft.
 {\em body} & Der getroffene Körper. \\
 \hline
 \end{DoxyParams}
+\Hypertarget{class_player_ab715416eb7dbe1d4d320d4ba21999072}\index{Player@{Player}!RegenerateStamina@{RegenerateStamina}}
+\index{RegenerateStamina@{RegenerateStamina}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{RegenerateStamina()}{RegenerateStamina()}}
+{\footnotesize\ttfamily \label{class_player_ab715416eb7dbe1d4d320d4ba21999072} 
+void Player.\+Regenerate\+Stamina (\begin{DoxyParamCaption}\item[{float}]{Amount}{, }\item[{double}]{delta}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Regeneriert die Stamina des Spielers, wenn er für eine bestimmte Zeit keine Stamina-\/verbrauchende Aktion durchgeführt hat. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Amount} & Menge der Stamina, die regeneriert werden soll. \\
+\hline
+{\em delta} & Zeit seit dem letzten Frame. \\
+\hline
+\end{DoxyParams}
 \Hypertarget{class_player_a06c351462b12660eb8945f0cb01c1da4}\index{Player@{Player}!SetCurrentHealth@{SetCurrentHealth}}
 \index{SetCurrentHealth@{SetCurrentHealth}!Player@{Player}}
 \doxysubsubsection{\texorpdfstring{SetCurrentHealth()}{SetCurrentHealth()}}
@@ -303,6 +361,21 @@ Setzt die maximalen Lebenspunkte des Spielers.
 {\em max\+Health\+Points} & Die neuen maximalen Lebenspunkte (muss positiv sein). \\
 \hline
 \end{DoxyParams}
+\Hypertarget{class_player_a4af84c5660a6e9d3fe44a020bdfe8247}\index{Player@{Player}!SetMaxStamina@{SetMaxStamina}}
+\index{SetMaxStamina@{SetMaxStamina}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{SetMaxStamina()}{SetMaxStamina()}}
+{\footnotesize\ttfamily \label{class_player_a4af84c5660a6e9d3fe44a020bdfe8247} 
+void Player.\+Set\+Max\+Stamina (\begin{DoxyParamCaption}\item[{float}]{Value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Setzt die maximale Stamina des Spielers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Value} & Den neuen Wert für die maximale Stamina (muss positiv sein). \\
+\hline
+\end{DoxyParams}
 \Hypertarget{class_player_a8a09cfbee2abc003bc1dda08da618d1f}\index{Player@{Player}!SetSpawnPoint@{SetSpawnPoint}}
 \index{SetSpawnPoint@{SetSpawnPoint}!Player@{Player}}
 \doxysubsubsection{\texorpdfstring{SetSpawnPoint()}{SetSpawnPoint()}}
@@ -316,6 +389,21 @@ Gibt den Spawn\+Point des Spielers zurück.
 \begin{DoxyReturn}{Returns}
 Der Spawn\+Point des Spielers. 
 \end{DoxyReturn}
+\Hypertarget{class_player_af613f10648f754010deded7aaaddea09}\index{Player@{Player}!SetStamina@{SetStamina}}
+\index{SetStamina@{SetStamina}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{SetStamina()}{SetStamina()}}
+{\footnotesize\ttfamily \label{class_player_af613f10648f754010deded7aaaddea09} 
+void Player.\+Set\+Stamina (\begin{DoxyParamCaption}\item[{float}]{Value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Setzt die Stamina des Spielers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Value} & Den neuen Wert für Stamina (muss im Bereich zwischen 0 und Max\+Stamina liegen). \\
+\hline
+\end{DoxyParams}
 \Hypertarget{class_player_aa1a0addae97cec09d2e86f3060a05438}\index{Player@{Player}!TakeDamage@{TakeDamage}}
 \index{TakeDamage@{TakeDamage}!Player@{Player}}
 \doxysubsubsection{\texorpdfstring{TakeDamage()}{TakeDamage()}}
@@ -331,6 +419,24 @@ Wendet Schaden auf den Spieler an. Reduziert die aktuellen Lebenspunkte basieren
 {\em \doxylink{class_damage}{Damage}} & Instanz der Klasse {\ttfamily \doxylink{class_damage}{Damage}}, die den physischen und wahren Schaden sowie den Rückstoß enthält. \\
 \hline
 \end{DoxyParams}
+\Hypertarget{class_player_ac69e2d647a9d7317b01599b2a5695199}\index{Player@{Player}!UseStamina@{UseStamina}}
+\index{UseStamina@{UseStamina}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{UseStamina()}{UseStamina()}}
+{\footnotesize\ttfamily \label{class_player_ac69e2d647a9d7317b01599b2a5695199} 
+bool Player.\+Use\+Stamina (\begin{DoxyParamCaption}\item[{float}]{Amount}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Verbraucht eine bestimmte Menge an Stamina, falls genügend verfügbar ist. Setzt den Inaktivitäts-\/\+Timer zurück, wenn Stamina verbraucht wird. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Amount} & Die Menge an Stamina, die verbraucht werden soll. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true}, wenn genügend Stamina verfügbar war und die Aktion ausgeführt wurde; andernfalls {\ttfamily false}. 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

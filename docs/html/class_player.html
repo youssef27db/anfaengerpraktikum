@@ -137,6 +137,24 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>MaxHeal</b> ()</td></
 <tr class="memitem:a01ad03754c12b1288b69cdd42cb6f85e" id="r_a01ad03754c12b1288b69cdd42cb6f85e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_damage.html">Damage</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a01ad03754c12b1288b69cdd42cb6f85e">GetDamage</a> ()</td></tr>
 <tr class="memdesc:a01ad03754c12b1288b69cdd42cb6f85e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gibt den Schaden zurück, den der Spieler mit seinem aktuellen Angriff verursacht. Der Schaden basiert auf der letzten Angriffsmethode (<code>light_attack</code> oder <code>heavy_attack</code>).  <br /></td></tr>
 <tr class="separator:a01ad03754c12b1288b69cdd42cb6f85e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada9024b4d3d5a398c3d4bdb9d7a0dc74" id="r_ada9024b4d3d5a398c3d4bdb9d7a0dc74"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ada9024b4d3d5a398c3d4bdb9d7a0dc74">GetStamina</a> ()</td></tr>
+<tr class="memdesc:ada9024b4d3d5a398c3d4bdb9d7a0dc74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gibt die aktuelle Stamina des Spielers zurück.  <br /></td></tr>
+<tr class="separator:ada9024b4d3d5a398c3d4bdb9d7a0dc74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af613f10648f754010deded7aaaddea09" id="r_af613f10648f754010deded7aaaddea09"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af613f10648f754010deded7aaaddea09">SetStamina</a> (float Value)</td></tr>
+<tr class="memdesc:af613f10648f754010deded7aaaddea09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setzt die Stamina des Spielers.  <br /></td></tr>
+<tr class="separator:af613f10648f754010deded7aaaddea09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8041531f242f8b0e2e222691e546f1b" id="r_ae8041531f242f8b0e2e222691e546f1b"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae8041531f242f8b0e2e222691e546f1b">GetMaxStamina</a> ()</td></tr>
+<tr class="memdesc:ae8041531f242f8b0e2e222691e546f1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gibt die maximale Stamina des Spielers zurück.  <br /></td></tr>
+<tr class="separator:ae8041531f242f8b0e2e222691e546f1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4af84c5660a6e9d3fe44a020bdfe8247" id="r_a4af84c5660a6e9d3fe44a020bdfe8247"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4af84c5660a6e9d3fe44a020bdfe8247">SetMaxStamina</a> (float Value)</td></tr>
+<tr class="memdesc:a4af84c5660a6e9d3fe44a020bdfe8247"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setzt die maximale Stamina des Spielers.  <br /></td></tr>
+<tr class="separator:a4af84c5660a6e9d3fe44a020bdfe8247"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab715416eb7dbe1d4d320d4ba21999072" id="r_ab715416eb7dbe1d4d320d4ba21999072"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab715416eb7dbe1d4d320d4ba21999072">RegenerateStamina</a> (float Amount, double delta)</td></tr>
+<tr class="memdesc:ab715416eb7dbe1d4d320d4ba21999072"><td class="mdescLeft">&#160;</td><td class="mdescRight">Regeneriert die Stamina des Spielers, wenn er für eine bestimmte Zeit keine Stamina-verbrauchende Aktion durchgeführt hat.  <br /></td></tr>
+<tr class="separator:ab715416eb7dbe1d4d320d4ba21999072"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac69e2d647a9d7317b01599b2a5695199" id="r_ac69e2d647a9d7317b01599b2a5695199"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac69e2d647a9d7317b01599b2a5695199">UseStamina</a> (float Amount)</td></tr>
+<tr class="memdesc:ac69e2d647a9d7317b01599b2a5695199"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verbraucht eine bestimmte Menge an Stamina, falls genügend verfügbar ist. Setzt den Inaktivitäts-Timer zurück, wenn Stamina verbraucht wird.  <br /></td></tr>
+<tr class="separator:ac69e2d647a9d7317b01599b2a5695199"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae1104e2e3726f7bac674615c4e33b2bf" id="r_ae1104e2e3726f7bac674615c4e33b2bf"><td class="memItemLeft" align="right" valign="top"><a id="ae1104e2e3726f7bac674615c4e33b2bf" name="ae1104e2e3726f7bac674615c4e33b2bf"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>Respawn</b> ()</td></tr>
 <tr class="memdesc:ae1104e2e3726f7bac674615c4e33b2bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setzt die Position des Spielers auf den SpawnPoint zurück. <br /></td></tr>
@@ -242,9 +260,12 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>CurrentHealth</b></t
 <tr class="memitem:a30c2b38f03472010c1c1adfe772d339a" id="r_a30c2b38f03472010c1c1adfe772d339a"><td class="memItemLeft" align="right" valign="top"><a id="a30c2b38f03472010c1c1adfe772d339a" name="a30c2b38f03472010c1c1adfe772d339a"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><b>MaxStamina</b> = 100f</td></tr>
 <tr class="separator:a30c2b38f03472010c1c1adfe772d339a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a387b3297a2601142b31ed0b468ce9366" id="r_a387b3297a2601142b31ed0b468ce9366"><td class="memItemLeft" align="right" valign="top"><a id="a387b3297a2601142b31ed0b468ce9366" name="a387b3297a2601142b31ed0b468ce9366"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>Stamina</b></td></tr>
-<tr class="separator:a387b3297a2601142b31ed0b468ce9366"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e2a7b71e1052f6d559a664aaa76e212" id="r_a0e2a7b71e1052f6d559a664aaa76e212"><td class="memItemLeft" align="right" valign="top"><a id="a0e2a7b71e1052f6d559a664aaa76e212" name="a0e2a7b71e1052f6d559a664aaa76e212"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>CurrentStamina</b></td></tr>
+<tr class="separator:a0e2a7b71e1052f6d559a664aaa76e212"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adda3c3e385b428e061d6d1ccd25f23cb" id="r_adda3c3e385b428e061d6d1ccd25f23cb"><td class="memItemLeft" align="right" valign="top"><a id="adda3c3e385b428e061d6d1ccd25f23cb" name="adda3c3e385b428e061d6d1ccd25f23cb"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>TimeSinceLastStaminaUse</b> = 0f</td></tr>
+<tr class="separator:adda3c3e385b428e061d6d1ccd25f23cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
 Static Private Attributes</h2></td></tr>
@@ -408,6 +429,62 @@ const float&#160;</td><td class="memItemRight" valign="bottom"><b>JUMP_VELOCITY<
 
 </div>
 </div>
+<a id="ae8041531f242f8b0e2e222691e546f1b" name="ae8041531f242f8b0e2e222691e546f1b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8041531f242f8b0e2e222691e546f1b">&#9670;&#160;</a></span>GetMaxStamina()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Player.GetMaxStamina </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gibt die maximale Stamina des Spielers zurück. </p>
+<dl class="section return"><dt>Returns</dt><dd>Die maximale Stamina. </dd></dl>
+
+</div>
+</div>
+<a id="ada9024b4d3d5a398c3d4bdb9d7a0dc74" name="ada9024b4d3d5a398c3d4bdb9d7a0dc74"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada9024b4d3d5a398c3d4bdb9d7a0dc74">&#9670;&#160;</a></span>GetStamina()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Player.GetStamina </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gibt die aktuelle Stamina des Spielers zurück. </p>
+<dl class="section return"><dt>Returns</dt><dd>Die aktuelle Stamina. </dd></dl>
+
+</div>
+</div>
 <a id="af8fce0260ebcc78bb46e2a8393eb2fb7" name="af8fce0260ebcc78bb46e2a8393eb2fb7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af8fce0260ebcc78bb46e2a8393eb2fb7">&#9670;&#160;</a></span>HandleMovement()</h2>
 
@@ -530,6 +607,44 @@ const float&#160;</td><td class="memItemRight" valign="bottom"><b>JUMP_VELOCITY<
 
 </div>
 </div>
+<a id="ab715416eb7dbe1d4d320d4ba21999072" name="ab715416eb7dbe1d4d320d4ba21999072"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab715416eb7dbe1d4d320d4ba21999072">&#9670;&#160;</a></span>RegenerateStamina()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Player.RegenerateStamina </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>Amount</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>delta</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Regeneriert die Stamina des Spielers, wenn er für eine bestimmte Zeit keine Stamina-verbrauchende Aktion durchgeführt hat. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Amount</td><td>Menge der Stamina, die regeneriert werden soll. </td></tr>
+    <tr><td class="paramname">delta</td><td>Zeit seit dem letzten Frame. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a06c351462b12660eb8945f0cb01c1da4" name="a06c351462b12660eb8945f0cb01c1da4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a06c351462b12660eb8945f0cb01c1da4">&#9670;&#160;</a></span>SetCurrentHealth()</h2>
 
@@ -596,6 +711,39 @@ const float&#160;</td><td class="memItemRight" valign="bottom"><b>JUMP_VELOCITY<
 
 </div>
 </div>
+<a id="a4af84c5660a6e9d3fe44a020bdfe8247" name="a4af84c5660a6e9d3fe44a020bdfe8247"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4af84c5660a6e9d3fe44a020bdfe8247">&#9670;&#160;</a></span>SetMaxStamina()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Player.SetMaxStamina </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>Value</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Setzt die maximale Stamina des Spielers. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Value</td><td>Den neuen Wert für die maximale Stamina (muss positiv sein). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a8a09cfbee2abc003bc1dda08da618d1f" name="a8a09cfbee2abc003bc1dda08da618d1f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8a09cfbee2abc003bc1dda08da618d1f">&#9670;&#160;</a></span>SetSpawnPoint()</h2>
 
@@ -621,6 +769,39 @@ const float&#160;</td><td class="memItemRight" valign="bottom"><b>JUMP_VELOCITY<
 
 <p>Gibt den SpawnPoint des Spielers zurück. </p>
 <dl class="section return"><dt>Returns</dt><dd>Der SpawnPoint des Spielers. </dd></dl>
+
+</div>
+</div>
+<a id="af613f10648f754010deded7aaaddea09" name="af613f10648f754010deded7aaaddea09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af613f10648f754010deded7aaaddea09">&#9670;&#160;</a></span>SetStamina()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Player.SetStamina </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>Value</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Setzt die Stamina des Spielers. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Value</td><td>Den neuen Wert für Stamina (muss im Bereich zwischen 0 und MaxStamina liegen). </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -654,6 +835,40 @@ const float&#160;</td><td class="memItemRight" valign="bottom"><b>JUMP_VELOCITY<
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="ac69e2d647a9d7317b01599b2a5695199" name="ac69e2d647a9d7317b01599b2a5695199"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac69e2d647a9d7317b01599b2a5695199">&#9670;&#160;</a></span>UseStamina()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Player.UseStamina </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>Amount</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Verbraucht eine bestimmte Menge an Stamina, falls genügend verfügbar ist. Setzt den Inaktivitäts-Timer zurück, wenn Stamina verbraucht wird. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Amount</td><td>Die Menge an Stamina, die verbraucht werden soll. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code>, wenn genügend Stamina verfügbar war und die Aktion ausgeführt wurde; andernfalls <code>false</code>. </dd></dl>
 
 </div>
 </div>
