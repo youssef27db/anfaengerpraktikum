@@ -29,17 +29,19 @@ public partial class Player : CharacterBody2D
     private CollisionShape2D PlayerHitbox;
 
     private Vector2 HauptHitbox;
-
     private Vector2 SpawnPoint;
     private int lastAttack = 0;
 
+    //Variablen für Health
     [Export]
     private float MaxHealthPoints = 100f;
     private float CurrentHealth;
 
+    //Variablen für Stamina
     [Export]
     private float MaxStamina = 100f; 
-    private float Stamina;  
+    private float CurrentStamina;  
+    private float TimeSinceLastStaminaUse = 0f;
 
     /** 
      * @brief Initialisierung der Referenzen.
@@ -53,6 +55,8 @@ public partial class Player : CharacterBody2D
         SwordCollision = GetNode<CollisionShape2D>("Sprite2D/SwordHit/SwordCollision");
         PlayerHitbox = GetNode<CollisionShape2D>("PlayerHitbox");
         HauptHitbox = PlayerHitbox.Position;
+
+        CurrentStamina = MaxStamina;
         CurrentHealth = 50f;
     }
 
@@ -68,6 +72,9 @@ public partial class Player : CharacterBody2D
         } else {
             CanDash = true; // Dash wird zurückgesetzt, wenn der Charakter am Boden ist
         }
+
+        TimeSinceLastStaminaUse += (float)DeltaTime;
+        RegenerateStamina(10f, DeltaTime);
 
         HandleJump();
         HandleMovement(DeltaTime);
@@ -87,8 +94,17 @@ public partial class Player : CharacterBody2D
 
         // Überprüfen, ob der Sprung-Button gedrückt wurde und der Charakter noch Sprünge übrig hat
         if (Input.IsActionJustPressed("ui_up") && JumpCount < JumpMax) {
+            if (JumpCount == 0) {
+            // Erster Sprung ohne Stamina-Verlust
             Velocity = new Vector2(Velocity.X, JUMP_VELOCITY);
             JumpCount += 1;
+            } else if (JumpCount > 0) {
+                // Beim Doppelsprung Stamina prüfen und abziehen
+                if (UseStamina(15)) {
+                    Velocity = new Vector2(Velocity.X, JUMP_VELOCITY);
+                    JumpCount += 1;
+                }
+            } 
         }
     }
 
@@ -134,10 +150,13 @@ public partial class Player : CharacterBody2D
                 Velocity = new Vector2(Mathf.MoveToward(Velocity.X, 0, SPEED), Velocity.Y);
             }
 
-            // Überprüfen, ob der Dash-Button gedrückt wurde
+            // Überprüfen, ob der Dash-Button gedrückt wurde mit eine Bewegungsrichtung und nicht schon am angreifen ist
             if (Input.IsActionJustPressed("dash") && direction != Vector2.Zero && CanDash && !IsAttacking()) {
-                DashDirection = direction;
-                StartDash();
+                // Wenn der Player genug Stamina hat kann er dashen
+                if (UseStamina(20)){
+                    DashDirection = direction;
+                    StartDash(); 
+                }
             }
         }
     }
@@ -273,7 +292,7 @@ public partial class Player : CharacterBody2D
     /** 
     * @brief Setzt die maximalen Lebenspunkte des Spielers.
     * @param maxHealthPoints Die neuen maximalen Lebenspunkte (muss positiv sein).
-     */
+    */
     public void SetMaxHealthPoints(float maxHealthPoints){
         // MaxHealthPoints muss immer positiv sein
         MaxHealthPoints = Mathf.Max(maxHealthPoints, 1); // Verhindert, dass MaxHealthPoints <= 0 wird
@@ -330,6 +349,71 @@ public partial class Player : CharacterBody2D
         }
         return new Damage(0,0,Vector2.Zero);
     }
+
+    /** 
+    * @brief Gibt die aktuelle Stamina des Spielers zurück.
+    * @return Die aktuelle Stamina.
+    */
+    public float GetStamina() {
+        return CurrentStamina;
+    }
+
+    /** 
+    * @brief Setzt die Stamina des Spielers.
+    * @param Value Den neuen Wert für Stamina (muss im Bereich zwischen 0 und MaxStamina liegen).
+    */
+    public void SetStamina(float Value) {
+        // Stellt sicher, dass die CurrentStamina im gültigen Bereich bleibt (zwischen 0 und MaxStamina)
+        CurrentStamina = Mathf.Clamp(Value, 0, MaxStamina);
+    }
+
+    /** 
+    * @brief Gibt die maximale Stamina des Spielers zurück.
+    * @return Die maximale Stamina.
+    */
+    public float GetMaxStamina() {
+        return MaxStamina;
+    }
+
+    /** 
+    * @brief Setzt die maximale Stamina des Spielers.
+    * @param Value Den neuen Wert für die maximale Stamina (muss positiv sein).
+    */
+    public void SetMaxStamina(float Value) {
+        // MaxStamina muss immer positiv sein
+        MaxStamina = Mathf.Max(Value, 1);
+    }
+
+    /** 
+    * @brief Regeneriert die Stamina des Spielers, wenn er für eine bestimmte Zeit keine Stamina-verbrauchende Aktion durchgeführt hat.
+    * @param Amount Menge der Stamina, die regeneriert werden soll.
+    * @param delta Zeit seit dem letzten Frame.
+    */
+    public void RegenerateStamina(float Amount, double delta) {
+        // Wenn die Verzögerungszeit erreicht wurde, regeneriere Stamina
+        if (TimeSinceLastStaminaUse >= 5f) {
+            SetStamina(CurrentStamina + Amount * (float)delta); // Regeneriere Stamina abhängig von der Zeit
+        }
+    }
+
+    /** 
+    * @brief Verbraucht eine bestimmte Menge an Stamina, falls genügend verfügbar ist.
+    * Setzt den Inaktivitäts-Timer zurück, wenn Stamina verbraucht wird.
+    * 
+    * @param Amount Die Menge an Stamina, die verbraucht werden soll.
+    * @return `true`, wenn genügend Stamina verfügbar war und die Aktion ausgeführt wurde; andernfalls `false`.
+    */
+    public bool UseStamina(float Amount) {
+        // Versucht, eine bestimmte Menge an Stamina zu verbrauchen.
+        // Gibt true zurück, wenn genug Stamina verfügbar war; andernfalls false.
+        if (CurrentStamina >= Amount) {
+            SetStamina(CurrentStamina - Amount);
+            TimeSinceLastStaminaUse = 0f;
+            return true;
+        }
+
+        return false;
+    }
     
     /** 
      * @brief Setzt die Position des Spielers auf den SpawnPoint zurück.
@@ -356,15 +440,21 @@ public partial class Player : CharacterBody2D
      */
     private void UpdateAnimations() {
         if (Input.IsActionJustPressed("light_attack") && !IsDashing && !IsAttacking()) {
-            lastAttack = 1;
-            AnimationPlayer.Play("light_attack");
+            if (UseStamina(10)){
+                lastAttack = 1;
+                AnimationPlayer.Play("light_attack");
+            }
         } else if (Input.IsActionJustPressed("heavy_attack") && !IsDashing && !IsAttacking()) {
-            lastAttack = 2;
-            AnimationPlayer.Play("heavy_attack");
+            if (UseStamina(25)){
+                lastAttack = 2;
+                AnimationPlayer.Play("heavy_attack");
+            }
         }
         if (Input.IsActionPressed("block") && !IsDashing && !IsAttacking() && IsOnFloor()) {
-            AnimationPlayer.Play("block");
-            lastAttack = 0;
+            if (UseStamina(0)){
+                AnimationPlayer.Play("block");
+                lastAttack = 0;
+            }
         }
 
         if (IsOnFloor() && !IsAttacking() && !IsBlocking()) {
