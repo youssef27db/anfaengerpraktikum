@@ -22,6 +22,8 @@ public partial class Door : Area2D
 	private void OnPlayerBodyEntered(Node body){
 		if (body is Player player)
 		{
+            var navigationManager = GetNode<NavigationManager>("/root/NavigationManager");
+            navigationManager.GoToLevel(DestinationLevelTag, DestinationDoorTag);
 		}
 	}
 }
