@@ -12,7 +12,7 @@ public partial class Door : Area2D
     [Export]
     public string SpawnDirection { get; set; } = "up";
 
-    private Node spawn;
+    public Node spawn;
 
     public override void _Ready()
     {
@@ -22,8 +22,8 @@ public partial class Door : Area2D
 	private void OnPlayerBodyEntered(Node body){
 		if (body is Player player)
 		{
-            var navigationManager = GetNode<NavigationManager>("/root/NavigationManager");
-            navigationManager.GoToLevel(DestinationLevelTag, DestinationDoorTag);
+            var NavigationManager = GetNode<NavigationManager>("/root/NavigationManager");
+            NavigationManager.GoToLevel(DestinationLevelTag, DestinationDoorTag);
 		}
 	}
 }

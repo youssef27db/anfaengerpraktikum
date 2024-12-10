@@ -58,6 +58,9 @@ public partial class Player : CharacterBody2D
 
         CurrentStamina = MaxStamina;
         CurrentHealth = 50f;
+
+        NavigationManager navigationManager = GetNode<NavigationManager>("/root/NavigationManager");
+        navigationManager.Connect("OnTriggerPlayerSpawn", new Callable(this, nameof(_on_spawn)));
     }
 
     /** 
@@ -443,6 +446,11 @@ public partial class Player : CharacterBody2D
         }
     }
 
+    private void _on_spawn(Vector2 position, string direction)
+    {
+        // Spielerposition auf die übergebene Position setzen
+        Position = position;
+    }
     /** 
      * @brief Aktualisiert die Animationen des Spielers.
      */
