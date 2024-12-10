@@ -414,6 +414,14 @@ public partial class Player : CharacterBody2D
 
         return false;
     }
+
+    /**
+    * @brief Verlangsamt den Spieler um einen bestimmten Prozentsatz.
+    * @param SlowAmount Der Prozentsatz, um den der Spieler verlangsamt werden soll.
+    */
+    public void SlowPlayer(float SlowAmount){
+        Velocity = new Vector2(Velocity.X * SlowAmount, Velocity.Y);
+    }
     
     /** 
      * @brief Setzt die Position des Spielers auf den SpawnPoint zurück.

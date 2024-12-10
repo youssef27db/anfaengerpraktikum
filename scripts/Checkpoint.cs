@@ -30,6 +30,7 @@ public partial class Checkpoint : Node2D
 			// Setzen des Spawnpoints
 			player.SetSpawnPoint(this.GlobalPosition);
 			player.MaxHeal();
+			player.SetStamina(player.GetMaxStamina());
         	GD.Print("Spawnpoint des Players gesetzt auf: ", this.GlobalPosition);
 		}
 

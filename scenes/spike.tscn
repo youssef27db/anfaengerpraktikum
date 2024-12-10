@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://c4an5p24n6lby"]
+[gd_scene load_steps=6 format=3 uid="uid://chxndv6of54w8"]
 
 [ext_resource type="Texture2D" uid="uid://c0w6h05532gs0" path="res://assets/Dungeon Tile Set.png" id="1_145wl"]
 [ext_resource type="Script" path="res://scripts/spike.cs" id="2_rqnv7"]
@@ -123,9 +123,7 @@ texture = ExtResource("1_145wl")
 8:13/0 = 0
 9:13/0 = 0
 1:14/0 = 0
-1:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 4.6875, 8, 4.625, 8, 8, -8, 8)
 2:14/0 = 0
-2:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 4.6875, 8, 4.625, 8, 8, -8, 8)
 3:14/0 = 0
 4:14/0 = 0
 5:14/0 = 0
@@ -142,25 +140,33 @@ texture = ExtResource("1_145wl")
 12:15/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_3i14c"]
-physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_eq0hh")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pu1o3"]
-size = Vector2(31, 4)
+size = Vector2(31, 7)
 
 [node name="Node2D" type="Node2D"]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="StaticBody2D"]
+z_index = 2
 tile_map_data = PackedByteArray(0, 0, 0, 0, 255, 255, 0, 0, 1, 0, 14, 0, 0, 0, 1, 0, 255, 255, 0, 0, 2, 0, 14, 0, 0, 0)
 tile_set = SubResource("TileSet_3i14c")
 
 [node name="Area2D" type="Area2D" parent="StaticBody2D"]
+visibility_layer = 7
+z_index = 2
 script = ExtResource("2_rqnv7")
 
+[node name="Timer" type="Timer" parent="StaticBody2D/Area2D"]
+process_callback = 0
+one_shot = true
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/Area2D"]
-position = Vector2(15.5, -2)
+position = Vector2(15.5, -3.5)
 shape = SubResource("RectangleShape2D_pu1o3")
 
 [connection signal="body_entered" from="StaticBody2D/Area2D" to="StaticBody2D/Area2D" method="OnPlayerBodyEntered"]
+[connection signal="body_exited" from="StaticBody2D/Area2D" to="StaticBody2D/Area2D" method="OnPlayerBodyExited"]
+[connection signal="timeout" from="StaticBody2D/Area2D/Timer" to="StaticBody2D/Area2D" method="_on_timer_timeout"]

@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=4 uid="uid://dmnlpmrsemln6"]
+[gd_scene load_steps=11 format=4 uid="uid://bt66dt5rtalx1"]
 
 [ext_resource type="Texture2D" uid="uid://c0w6h05532gs0" path="res://assets/Dungeon Tile Set.png" id="1_dhsbv"]
 [ext_resource type="PackedScene" uid="uid://cq6xmv3najlnh" path="res://scenes/player.tscn" id="2_8cqfy"]
-[ext_resource type="PackedScene" uid="uid://1edohprgr78v" path="res://scenes/wood_platform.tscn" id="3_08ywy"]
-[ext_resource type="PackedScene" uid="uid://c4an5p24n6lby" path="res://scenes/spike.tscn" id="4_ta8nk"]
+[ext_resource type="PackedScene" path="res://scenes/wood_platform.tscn" id="3_08ywy"]
+[ext_resource type="PackedScene" uid="uid://chxndv6of54w8" path="res://scenes/spike.tscn" id="4_ta8nk"]
 [ext_resource type="PackedScene" uid="uid://dh381ntrht6ri" path="res://scenes/hud.tscn" id="5_l2ajp"]
+[ext_resource type="PackedScene" uid="uid://cclu45b2pmyo2" path="res://scenes/checkpoint.tscn" id="6_jv8or"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fxrb7"]
 texture = ExtResource("1_dhsbv")
@@ -308,7 +309,7 @@ position = Vector2(-540, 157)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(0, -66)
-zoom = Vector2(5, 5)
+zoom = Vector2(2.3, 2.3)
 limit_left = -575
 limit_top = -75
 limit_bottom = 220
@@ -348,3 +349,9 @@ position = Vector2(-31, 208)
 position = Vector2(1, 208)
 
 [node name="HUD" parent="." instance=ExtResource("5_l2ajp")]
+
+[node name="Checkpoint" parent="." instance=ExtResource("6_jv8or")]
+position = Vector2(-460, 137)
+
+[node name="Node2D" parent="." instance=ExtResource("4_ta8nk")]
+position = Vector2(-385, 160)
