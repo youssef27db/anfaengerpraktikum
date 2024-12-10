@@ -83,7 +83,7 @@ public partial class Player : CharacterBody2D
         HandleMovement(DeltaTime);
         MoveAndSlide();
         UpdateAnimations();
-    }
+        }
 
     /** 
      * @brief Verarbeitet die Sprunglogik.
@@ -446,11 +446,23 @@ public partial class Player : CharacterBody2D
         }
     }
 
-    private void _on_spawn(Vector2 position, string direction)
-    {
+    private void _on_spawn(Vector2 position, string direction){
+
         // Spielerposition auf die übergebene Position setzen
+        if (direction == "right")
+        {
+            // Update the x value by adding 50 to it, keep the original y value
+            position = position with { X = position.X + 50 };
+        }
+        else if (direction == "left")
+        {
+            // Update the x value by subtracting 50 from it, keep the original y value
+            position = position with { X = position.X - 50 };
+        }
         Position = position;
     }
+
+
     /** 
      * @brief Aktualisiert die Animationen des Spielers.
      */

@@ -173,5 +173,6 @@ SpawnDirection = "right"
 position = Vector2(35, 11)
 
 [node name="Player" parent="." instance=ExtResource("4_p5bc6")]
+position = Vector2(73, 288)
 
 [editable path="Doors/Door_west"]
