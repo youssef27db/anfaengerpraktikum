@@ -452,12 +452,14 @@ public partial class Player : CharacterBody2D
         if (direction == "right")
         {
             // Update the x value by adding 50 to it, keep the original y value
-            position = position with { X = position.X + 50 };
+            Sprite.FlipH = false;
+            position = position with { X = position.X + 25 };
         }
         else if (direction == "left")
         {
             // Update the x value by subtracting 50 from it, keep the original y value
-            position = position with { X = position.X - 50 };
+            Sprite.FlipH = true;
+            position = position with { X = position.X - 25 };
         }
         Position = position;
     }

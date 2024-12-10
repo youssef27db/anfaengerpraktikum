@@ -308,7 +308,7 @@ sources/0 = SubResource("TileSetAtlasSource_tt4er")
 script = ExtResource("1_wekk3")
 
 [node name="Player" parent="." instance=ExtResource("2_8cqfy")]
-position = Vector2(-540, 157)
+position = Vector2(-540, 160)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(0, -66)
@@ -359,12 +359,7 @@ position = Vector2(-460, 137)
 [node name="Doors" type="Node" parent="."]
 
 [node name="Door_east" parent="Doors" instance=ExtResource("7_afmkh")]
-position = Vector2(562, 140)
+position = Vector2(572, 160)
 DestinationLevelTag = "level1"
 DestinationDoorTag = "west"
 SpawnDirection = "left"
-
-[node name="Spawn" parent="Doors/Door_east" index="1"]
-position = Vector2(-39, 9)
-
-[editable path="Doors/Door_east"]

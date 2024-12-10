@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/Door.cs" id="1_nj1kv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x5qae"]
-size = Vector2(26, 41)
+size = Vector2(8, 51.5)
 
 [node name="Door" type="Area2D"]
 script = ExtResource("1_nj1kv")

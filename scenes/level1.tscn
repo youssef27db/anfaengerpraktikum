@@ -164,15 +164,13 @@ tile_set = SubResource("TileSet_b6v16")
 [node name="Doors" type="Node" parent="."]
 
 [node name="Door_west" parent="Doors" instance=ExtResource("2_2k5x2")]
-position = Vector2(16, 266)
+position = Vector2(4, 288)
 DestinationLevelTag = "intro"
 DestinationDoorTag = "east"
 SpawnDirection = "right"
 
-[node name="Spawn" parent="Doors/Door_west" index="1"]
-position = Vector2(35, 11)
-
 [node name="Player" parent="." instance=ExtResource("4_p5bc6")]
 position = Vector2(73, 288)
 
-[editable path="Doors/Door_west"]
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(2.3, 2.3)
