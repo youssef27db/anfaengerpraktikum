@@ -19,13 +19,12 @@ public partial class spike : Area2D
 	{
 	}
 
+	/**
+		 * Prüfen ob der Körper den Spike betritt falls ja wird der Timer gestartet und der Spieler nimmt Schaden
+		 */
+
 	private void OnPlayerBodyEntered(Node body)
 	{
-		
-		/**
-		 * Prüfen ob der Körper, der den Checkpoint betritt, ein Player ist
-		 * Wenn ja, dann 
-		 */
 
 		if (body is Player)
 		{
@@ -39,6 +38,10 @@ public partial class spike : Area2D
 
 	}
 
+	/**
+	 * Prüfen ob der Körper den Spike verlässt, falls ja wird der Timer gestoppt und der Spieler nimmt keinen Schaden mehr
+	 */
+
 	private void OnPlayerBodyExited(Node body)
 	{
 		if (body is Player)
@@ -49,6 +52,7 @@ public partial class spike : Area2D
 		}
 	}
 
+	// Timer wird gestartet und der Spieler nimmt Schaden
 	private void _on_timer_timeout()
 	{	
 		GD.Print("Timer timeout");
