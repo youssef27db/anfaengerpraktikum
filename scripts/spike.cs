@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class spike : Area2D
+public partial class Spike : Area2D
 {
 	// Variable für Player
 	private Player player;

@@ -60,7 +60,7 @@ public partial class Player : CharacterBody2D
         CurrentHealth = 50f;
 
         NavigationManager navigationManager = GetNode<NavigationManager>("/root/NavigationManager");
-        navigationManager.Connect("OnTriggerPlayerSpawn", new Callable(this, nameof(_on_spawn)));
+        navigationManager.Connect("OnTriggerPlayerSpawn", new Callable(this, nameof(OnSpawn)));
     }
 
     /** 
@@ -446,7 +446,12 @@ public partial class Player : CharacterBody2D
         }
     }
 
-    private void _on_spawn(Vector2 position, string direction){
+    /**
+        * @brief Wird aufgerufen, wenn der Spieler an einer neuen Position spawnen soll.
+        * @param position Die Position, an der der Spieler spawnen soll.
+        * @param direction Die Richtung, in die der Spieler schauen soll.
+        */
+    private void OnSpawn(Vector2 position, string direction){
 
         // Spielerposition auf die übergebene Position setzen
         if (direction == "right")

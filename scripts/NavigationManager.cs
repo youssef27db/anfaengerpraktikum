@@ -1,5 +1,11 @@
 using Godot;
 
+/**
+ * Der NavigationManager ist für das Laden von Leveln und das Spawnen des Spielers verantwortlich.
+ * 
+ * Der NavigationManager ist ein Singleton, der in der Haupt-Szene platziert wird und von anderen Skripten verwendet wird, um Level zu laden und den Spieler zu spawnen.
+ */
+
 public partial class NavigationManager : Node
 {
     // Deklarieren der vorab geladenen Szenen
@@ -9,11 +15,22 @@ public partial class NavigationManager : Node
     // Die Spawn-Tag-Variable
     public string SpawnDoorTag { get; private set; }
 
-    // Signal-Definition für das Spawnen des Spielers
+    /**
+     * Das Signal, das ausgelöst wird, wenn der Spieler spawnen soll.
+     * 
+     * @param position Die Position, an der der Spieler spawnen soll.
+     * @param direction Die Richtung, in die der Spieler schauen soll.
+     */
+
     [Signal]
     public delegate void OnTriggerPlayerSpawnEventHandler(Vector2 position, string direction);
 
-    // Die Methode, die die Level-Wechsel-Logik verarbeitet
+    /**
+     * Lädt das angegebene Level und setzt das Ziel-Tag für den Spieler-Spawn.
+     * 
+     * @param levelTag Das Tag des Levels, das geladen werden soll.
+     * @param destinationTag Das Tag der Tür, an der der Spieler spawnen soll.
+     */
     public void GoToLevel(string levelTag, string destinationTag)
     {
         PackedScene sceneToLoad = null;
@@ -38,7 +55,11 @@ public partial class NavigationManager : Node
         }
     }
 
-    // Methode zum Triggern des Spieler-Spawns
+    /**
+     * Lädt das angegebene Level und setzt das Ziel-Tag für den Spieler-Spawn.
+     * 
+     * @param levelTag Das Tag des Levels, das geladen werden soll.
+     */
     public void TriggerPlayerSpawn(Vector2 position, string direction)
     {
         EmitSignal(SignalName.OnTriggerPlayerSpawn, position, direction);
