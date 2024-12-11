@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=4 uid="uid://bmbrocfos5qa2"]
+[gd_scene load_steps=8 format=4 uid="uid://bmbrocfos5qa2"]
 
 [ext_resource type="Script" path="res://scripts/LevelManager.cs" id="1_6xc03"]
 [ext_resource type="Texture2D" uid="uid://c0w6h05532gs0" path="res://assets/Dungeon Tile Set.png" id="1_66gjf"]
 [ext_resource type="PackedScene" uid="uid://bmlrup5wfi5fx" path="res://scenes/door.tscn" id="2_2k5x2"]
 [ext_resource type="PackedScene" uid="uid://cq6xmv3najlnh" path="res://scenes/player.tscn" id="4_p5bc6"]
+[ext_resource type="PackedScene" uid="uid://cclu45b2pmyo2" path="res://scenes/checkpoint.tscn" id="5_362nf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1aa7m"]
 texture = ExtResource("1_66gjf")
@@ -154,7 +155,7 @@ texture = ExtResource("1_66gjf")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_1aa7m")
 
-[node name="Level1" type="Node2D"]
+[node name="level1" type="Node2D"]
 script = ExtResource("1_6xc03")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -169,8 +170,14 @@ DestinationLevelTag = "intro"
 DestinationDoorTag = "east"
 SpawnDirection = "right"
 
+[node name="Door_spawn" parent="Doors" instance=ExtResource("2_2k5x2")]
+position = Vector2(164, 264)
+
 [node name="Player" parent="." instance=ExtResource("4_p5bc6")]
 position = Vector2(73, 288)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(2.3, 2.3)
+
+[node name="Checkpoint" parent="." instance=ExtResource("5_362nf")]
+position = Vector2(164, 264)

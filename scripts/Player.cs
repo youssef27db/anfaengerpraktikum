@@ -32,6 +32,8 @@ public partial class Player : CharacterBody2D
     private Vector2 SpawnPoint;
     private int LastAttack = 0;
 
+    private int SinAmount;
+
     //Variablen für Health
     [Export]
     private float MaxHealthPoints = 100f;
@@ -430,7 +432,10 @@ public partial class Player : CharacterBody2D
      * @brief Setzt die Position des Spielers auf den SpawnPoint zurück.
      */
     public void Respawn(){
-        Position = SpawnPoint;
+        var NavigationManager = GetNode<NavigationManager>("/root/NavigationManager");
+        var PlayerStats = GetNode<PlayerStats>("/root/PlayerStats");
+        NavigationManager.GoToLevel(PlayerStats.GetRespawnLevelTag(), "spawn");
+
     }
     
     /** 

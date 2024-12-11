@@ -32,6 +32,10 @@ public partial class Checkpoint : Node2D
 			player.MaxHeal();
 			player.SetStamina(player.GetMaxStamina());
         	GD.Print("Spawnpoint des Players gesetzt auf: ", this.GlobalPosition);
+
+			PlayerStats playerStats = GetNode<PlayerStats>("/root/PlayerStats");
+			playerStats.SetRespawnLevelTag(GetParent().Name);
+			GD.Print("RespawnLevelTag des Players gesetzt auf: ", GetParent().Name);
 		}
 
 	}

@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://chxndv6of54w8"]
 
 [ext_resource type="Texture2D" uid="uid://c0w6h05532gs0" path="res://assets/Dungeon Tile Set.png" id="1_145wl"]
-[ext_resource type="Script" path="res://scripts/spike.cs" id="2_rqnv7"]
+[ext_resource type="Script" path="res://scripts/Spike.cs" id="2_hw8jv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eq0hh"]
 texture = ExtResource("1_145wl")
@@ -157,7 +157,7 @@ tile_set = SubResource("TileSet_3i14c")
 [node name="Area2D" type="Area2D" parent="StaticBody2D"]
 visibility_layer = 7
 z_index = 2
-script = ExtResource("2_rqnv7")
+script = ExtResource("2_hw8jv")
 
 [node name="Timer" type="Timer" parent="StaticBody2D/Area2D"]
 process_callback = 0
@@ -169,4 +169,4 @@ shape = SubResource("RectangleShape2D_pu1o3")
 
 [connection signal="body_entered" from="StaticBody2D/Area2D" to="StaticBody2D/Area2D" method="OnPlayerBodyEntered"]
 [connection signal="body_exited" from="StaticBody2D/Area2D" to="StaticBody2D/Area2D" method="OnPlayerBodyExited"]
-[connection signal="timeout" from="StaticBody2D/Area2D/Timer" to="StaticBody2D/Area2D" method="_on_timer_timeout"]
+[connection signal="timeout" from="StaticBody2D/Area2D/Timer" to="StaticBody2D/Area2D" method="OnTimerTimeout"]

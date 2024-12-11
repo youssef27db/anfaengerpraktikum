@@ -22,15 +22,15 @@ public partial class LevelManager : Node2D
     /**
      * Wird aufgerufen, wenn ein neues Level geladen wird.
      * 
-     * @param destinationTag Das Tag der Tür, an der der Spieler spawnen soll.
+     * @param DestinationTag Das Tag der Tür, an der der Spieler spawnen soll.
      */
-    private void OnLevelSpawn(string destinationTag)
+    private void OnLevelSpawn(string DestinationTag)
     {
         var NavigationManager = GetNode<NavigationManager>("/root/NavigationManager");
         // Pfad zur Tür basierend auf dem Ziel-Tag erstellen
-        string doorPath = "Doors/Door_" + destinationTag;
+        string DoorPath = "Doors/Door_" + DestinationTag;
 
-        Door door = GetNode<Door>(doorPath);
+        Door door = GetNode<Door>(DoorPath);
 
         // TriggerPlayerSpawn nach deferred ausführen
         NavigationManager.CallDeferred("TriggerPlayerSpawn", door.GlobalPosition, door.SpawnDirection);
