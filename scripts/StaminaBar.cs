@@ -28,7 +28,7 @@ public partial class StaminaBar : TextureProgressBar {
      * Synchronisiert die Anzeige der aktuellen Ausdauer mit den Werten des Spielers.
      * @param delta Zeit seit dem letzten Frame (wird nicht direkt genutzt).
      */
-    public override void _Process(double delta) {
+    public override void _Process(double DeltaTime) {
         if (player != null) {
             // Aktualisiere den Wert der StaminaBar basierend auf der aktuellen Ausdauer des Spielers
             Value = player.GetStamina();

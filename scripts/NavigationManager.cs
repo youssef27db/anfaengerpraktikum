@@ -1,46 +1,67 @@
 using Godot;
 
+/**
+ * Der NavigationManager ist für das Laden von Leveln und das Spawnen des Spielers verantwortlich.
+ * 
+ * Der NavigationManager ist ein Singleton, der in der Haupt-Szene platziert wird und von anderen Skripten verwendet wird, um Level zu laden und den Spieler zu spawnen.
+ */
+
 public partial class NavigationManager : Node
 {
     // Deklarieren der vorab geladenen Szenen
-    private static readonly PackedScene sceneIntro = (PackedScene)GD.Load("res://Scenes/intro.tscn");
-    private static readonly PackedScene sceneLevel1 = (PackedScene)GD.Load("res://Scenes/level1.tscn");
+    private static readonly PackedScene SceneIntro = (PackedScene)GD.Load("res://Scenes/intro.tscn");
+    private static readonly PackedScene SceneLevel1 = (PackedScene)GD.Load("res://Scenes/level1.tscn");
 
     // Die Spawn-Tag-Variable
     public string SpawnDoorTag { get; private set; }
 
-    // Signal-Definition für das Spawnen des Spielers
-    [Signal]
-    public delegate void OnTriggerPlayerSpawnEventHandler(Vector2 position, string direction);
+    /**
+     * Das Signal, das ausgelöst wird, wenn der Spieler spawnen soll.
+     * 
+     * @param Position Die Position, an der der Spieler spawnen soll.
+     * @param Direction Die Richtung, in die der Spieler schauen soll.
+     */
 
-    // Die Methode, die die Level-Wechsel-Logik verarbeitet
-    public void GoToLevel(string levelTag, string destinationTag)
+    [Signal]
+    public delegate void OnTriggerPlayerSpawnEventHandler(Vector2 Position, string Direction);
+
+    /**
+     * Lädt das angegebene Level und setzt das Ziel-Tag für den Spieler-Spawn.
+     * 
+     * @param LevelTag Das Tag des Levels, das geladen werden soll.
+     * @param DestinationTag Das Tag der Tür, an der der Spieler spawnen soll.
+     */
+    public void GoToLevel(string LevelTag, string DestinationTag)
     {
-        PackedScene sceneToLoad = null;
+        PackedScene SceneToLoad = null;
 
         // Bestimmen, welches Level geladen werden soll
-        switch (levelTag)
+        switch (LevelTag)
         {
             case "intro":
-                sceneToLoad = sceneIntro;
+                SceneToLoad = SceneIntro;
                 break;
             case "level1":
-                sceneToLoad = sceneLevel1;
+                SceneToLoad = SceneLevel1;
                 break;
         }
 
         // Überprüfen, ob eine Szene ausgewählt wurde und diese dann laden
-        if (sceneToLoad != null)
+        if (SceneToLoad != null)
         {
-            SpawnDoorTag = destinationTag;
+            SpawnDoorTag = DestinationTag;
             // Verwendung der ChangeSceneToPacked-Methode in Godot 4
-            GetTree().ChangeSceneToPacked(sceneToLoad);
+            GetTree().ChangeSceneToPacked(SceneToLoad);
         }
     }
 
-    // Methode zum Triggern des Spieler-Spawns
-    public void TriggerPlayerSpawn(Vector2 position, string direction)
+    /**
+     * Lädt das angegebene Level und setzt das Ziel-Tag für den Spieler-Spawn.
+     * 
+     * @param LevelTag Das Tag des Levels, das geladen werden soll.
+     */
+    public void TriggerPlayerSpawn(Vector2 Position, string Direction)
     {
-        EmitSignal(SignalName.OnTriggerPlayerSpawn, position, direction);
+        EmitSignal(SignalName.OnTriggerPlayerSpawn, Position, Direction);
     }
 }

@@ -30,7 +30,9 @@ public partial class Player : CharacterBody2D
 
     private Vector2 HauptHitbox;
     private Vector2 SpawnPoint;
-    private int lastAttack = 0;
+    private int LastAttack = 0;
+
+    private int SinAmount;
 
     //Variablen für Health
     [Export]
@@ -60,7 +62,7 @@ public partial class Player : CharacterBody2D
         CurrentHealth = 50f;
 
         NavigationManager navigationManager = GetNode<NavigationManager>("/root/NavigationManager");
-        navigationManager.Connect("OnTriggerPlayerSpawn", new Callable(this, nameof(_on_spawn)));
+        navigationManager.Connect("OnTriggerPlayerSpawn", new Callable(this, nameof(OnSpawn)));
     }
 
     /** 
@@ -340,10 +342,10 @@ public partial class Player : CharacterBody2D
     * @return Eine Instanz der Klasse `Damage`, die den physischen Schaden, wahren Schaden und Rückstoß enthält.
     */
     public Damage GetDamage(){
-        if(lastAttack == 1){
+        if(LastAttack == 1){
             return new Damage(10, 0, Vector2.Zero);
         }
-        if(lastAttack == 2){
+        if(LastAttack == 2){
             Vector2 Push = new Vector2(20,0);
             if(Sprite.FlipH){
                 Push = -Push;
@@ -426,11 +428,15 @@ public partial class Player : CharacterBody2D
         Velocity = new Vector2(Velocity.X * SlowAmount, Velocity.Y);
     }
     
-    /** 
-     * @brief Setzt die Position des Spielers auf den SpawnPoint zurück.
-     */
+    /**
+    * @brief Lässt den Spieler am Checkpoint spawnen.
+    */
+
     public void Respawn(){
-        Position = SpawnPoint;
+        var NavigationManager = GetNode<NavigationManager>("/root/NavigationManager");
+        var PlayerStats = GetNode<PlayerStats>("/root/PlayerStats");
+        NavigationManager.GoToLevel(PlayerStats.GetRespawnLevelTag(), "spawn");
+
     }
     
     /** 
@@ -446,7 +452,12 @@ public partial class Player : CharacterBody2D
         }
     }
 
-    private void _on_spawn(Vector2 position, string direction){
+    /**
+        * @brief Wird aufgerufen, wenn der Spieler an einer neuen Position spawnen soll.
+        * @param position Die Position, an der der Spieler spawnen soll.
+        * @param direction Die Richtung, in die der Spieler schauen soll.
+        */
+    private void OnSpawn(Vector2 position, string direction){
 
         // Spielerposition auf die übergebene Position setzen
         if (direction == "right")
@@ -471,31 +482,31 @@ public partial class Player : CharacterBody2D
     private void UpdateAnimations() {
         if (Input.IsActionJustPressed("light_attack") && !IsDashing && !IsAttacking()) {
             if (UseStamina(10)){
-                lastAttack = 1;
+                LastAttack = 1;
                 AnimationPlayer.Play("light_attack");
             }
         } else if (Input.IsActionJustPressed("heavy_attack") && !IsDashing && !IsAttacking()) {
             if (UseStamina(25)){
-                lastAttack = 2;
+                LastAttack = 2;
                 AnimationPlayer.Play("heavy_attack");
             }
         }
         if (Input.IsActionPressed("block") && !IsDashing && !IsAttacking() && IsOnFloor()) {
             if (UseStamina(0)){
                 AnimationPlayer.Play("block");
-                lastAttack = 0;
+                LastAttack = 0;
             }
         }
 
         if (IsOnFloor() && !IsAttacking() && !IsBlocking()) {
-            lastAttack = 0;
+            LastAttack = 0;
             if (Velocity.X == 0) {
                 AnimationPlayer.Play("idle");
             } else {
                 AnimationPlayer.Play("run");
             }
         } else if (!IsOnFloor() && !IsAttacking() && !IsBlocking()) {
-            lastAttack = 0;
+            LastAttack = 0;
             if (Velocity.Y < 0) {
                 AnimationPlayer.Play("jump");
             } else if (Velocity.Y > 0) {

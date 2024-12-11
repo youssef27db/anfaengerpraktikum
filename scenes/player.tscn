@@ -567,6 +567,7 @@ _data = {
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6j6vh"]
 radius = 5.0
+height = 28.0
 
 [node name="Player" type="CharacterBody2D"]
 z_index = 1
@@ -574,7 +575,8 @@ collision_layer = 3
 script = ExtResource("1_h2dre")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(4, -31)
+position = Vector2(4, -25)
+scale = Vector2(0.8, 0.8)
 texture = SubResource("CompressedTexture2D_bxhkf")
 hframes = 12
 
@@ -596,7 +598,7 @@ autoplay = "idle"
 [node name="PlayerHitbox" type="CollisionShape2D" parent="."]
 light_mask = 5
 visibility_layer = 5
-position = Vector2(0, -15)
+position = Vector2(0, -14)
 shape = SubResource("CapsuleShape2D_6j6vh")
 
 [node name="DashTimer" type="Timer" parent="."]
