@@ -428,9 +428,10 @@ public partial class Player : CharacterBody2D
         Velocity = new Vector2(Velocity.X * SlowAmount, Velocity.Y);
     }
     
-    /** 
-     * @brief Setzt die Position des Spielers auf den SpawnPoint zurück.
-     */
+    /**
+    * @brief Lässt den Spieler am Checkpoint spawnen.
+    */
+
     public void Respawn(){
         var NavigationManager = GetNode<NavigationManager>("/root/NavigationManager");
         var PlayerStats = GetNode<PlayerStats>("/root/PlayerStats");

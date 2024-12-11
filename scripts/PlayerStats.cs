@@ -1,5 +1,8 @@
 using Godot;
 
+/**
+ * Klasse für die Spielerstats
+ */
 
 public partial class PlayerStats : Node
 {
