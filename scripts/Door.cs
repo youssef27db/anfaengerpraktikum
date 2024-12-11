@@ -12,11 +12,11 @@ public partial class Door : Area2D
     [Export]
     public string SpawnDirection { get; set; } = "up";
 
-    public Node spawn;
+    public Node Spawn;
 
     public override void _Ready()
     {
-        spawn = GetNode("Spawn");
+        Spawn = GetNode("Spawn");
     }
 
 	private void OnPlayerBodyEntered(Node body){

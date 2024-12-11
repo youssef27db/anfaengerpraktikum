@@ -14,11 +14,6 @@ public partial class Spike : Area2D
 		player = GetNode<Player>("../Player");
  	}
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
-	}
-
 	/**
 		 * Prüfen ob der Körper den Spike betritt falls ja wird der Timer gestartet und der Spieler nimmt Schaden
 		 */
@@ -53,7 +48,7 @@ public partial class Spike : Area2D
 	}
 
 	// Timer wird gestartet und der Spieler nimmt Schaden
-	private void _on_timer_timeout()
+	private void OnTimerTimeout()
 	{	
 		GD.Print("Timer timeout");
 		player.TakeDamage(GetDamage());
@@ -62,10 +57,10 @@ public partial class Spike : Area2D
 
 	public Damage GetDamage(){
     // Beispielwerte für den Schaden (anpassbar)
-    float PhysicalDamage = 0f; 
-    float TrueDamage = 10f;     
-    Vector2 Push = new Vector2(0, 0);
+		float PhysicalDamage = 0f; 
+		float TrueDamage = 10f;     
+		Vector2 Push = new Vector2(0, 0);
 
-    return new Damage(PhysicalDamage, TrueDamage, Push);
-}
+		return new Damage(PhysicalDamage, TrueDamage, Push);
+	}
 }

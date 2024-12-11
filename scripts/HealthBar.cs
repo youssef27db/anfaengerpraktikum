@@ -28,7 +28,7 @@ public partial class HealthBar : TextureProgressBar {
      * Synchronisiert die Anzeige der aktuellen Lebenspunkte mit den Werten des Spielers.
      * @param delta Zeit seit dem letzten Frame (wird nicht direkt genutzt).
      */
-    public override void _Process(double delta) {
+    public override void _Process(double DeltaTime) {
         if (player != null) {
             // Aktualisiere den Wert der HealthBar basierend auf der aktuellen Gesundheit des Spielers
             Value = player.GetCurrentHealth();
