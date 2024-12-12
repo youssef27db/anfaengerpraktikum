@@ -1,10 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://dh381ntrht6ri"]
+[gd_scene load_steps=10 format=3 uid="uid://dh381ntrht6ri"]
 
 [ext_resource type="Texture2D" uid="uid://d0ghi1xr6f65k" path="res://assets/Health&Stamina/Main/Border.png" id="1_fvh8w"]
 [ext_resource type="Texture2D" uid="uid://ci1sourkiocvg" path="res://assets/Health&Stamina/Main/Stamina.png" id="2_fog6i"]
 [ext_resource type="Texture2D" uid="uid://dmp2y0mi31jl0" path="res://assets/Health&Stamina/Main/Health.png" id="3_bi167"]
 [ext_resource type="Script" path="res://scripts/StaminaBar.cs" id="3_yv15o"]
 [ext_resource type="Script" path="res://scripts/HealthBar.cs" id="4_1mp5l"]
+[ext_resource type="Texture2D" uid="uid://lr1jswqxvsk6" path="res://assets/Shikashi's Fantasy Icons Pack v2/BloodVial.png" id="6_ucypt"]
+[ext_resource type="Script" path="res://scripts/BloodVial.cs" id="7_y643s"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_pqffx"]
+font_size = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_v4x3j"]
+font_size = 19
 
 [node name="HUD" type="CanvasLayer"]
 layer = 0
@@ -25,6 +33,7 @@ texture_progress = ExtResource("2_fog6i")
 texture_progress_offset = Vector2(15, 11)
 script = ExtResource("3_yv15o")
 metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
 
 [node name="HealthBar" type="TextureProgressBar" parent="."]
 anchors_preset = -1
@@ -43,3 +52,89 @@ texture_progress = ExtResource("3_bi167")
 texture_progress_offset = Vector2(16, 3)
 script = ExtResource("4_1mp5l")
 metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="SinAmount" type="ColorRect" parent="."]
+offset_left = 941.0
+offset_top = 589.0
+offset_right = 1130.0
+offset_bottom = 629.0
+color = Color(0.114897, 0.114897, 0.114897, 1)
+metadata/_edit_lock_ = true
+
+[node name="Counter" type="Label" parent="SinAmount"]
+offset_left = -37.0
+offset_top = -5.0
+offset_right = 182.0
+offset_bottom = 43.0
+text = "0"
+label_settings = SubResource("LabelSettings_pqffx")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="BloodVial" type="ColorRect" parent="."]
+offset_left = 24.0
+offset_top = 551.0
+offset_right = 96.0
+offset_bottom = 625.0
+color = Color(0.113725, 0.113725, 0.113725, 1)
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="BloodVial"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 3.0
+offset_right = 65.0
+offset_bottom = 70.0
+texture = ExtResource("6_ucypt")
+
+[node name="Counter" type="Label" parent="BloodVial"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 47.0
+offset_right = 68.0
+offset_bottom = 74.0
+text = "0"
+label_settings = SubResource("LabelSettings_v4x3j")
+horizontal_alignment = 2
+vertical_alignment = 1
+script = ExtResource("7_y643s")
+
+[node name="PopUp" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -575.0
+offset_top = -323.0
+offset_right = 575.0
+offset_bottom = 323.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="PopUp"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -400.0
+offset_top = -239.0
+offset_right = 400.0
+offset_bottom = -64.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.803556, 0.714459, 0.534035, 1)
+
+[node name="Text" type="RichTextLabel" parent="PopUp"]
+layout_mode = 0
+offset_left = 181.0
+offset_top = 413.0
+offset_right = 970.0
+offset_bottom = 577.0
+bbcode_enabled = true
+threaded = true

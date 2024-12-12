@@ -1,0 +1,58 @@
+[gd_scene load_steps=9 format=3 uid="uid://mjtnmittvw51"]
+
+[ext_resource type="Texture2D" uid="uid://fjduqj77v3ll" path="res://assets/Effects/Water Effect and Bullet 16x16.png" id="1_d3jy5"]
+[ext_resource type="Script" path="res://scripts/Interactable.cs" id="2_shdi7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l5aof"]
+atlas = ExtResource("1_d3jy5")
+region = Rect2(224, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ptug8"]
+atlas = ExtResource("1_d3jy5")
+region = Rect2(240, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kjxvs"]
+atlas = ExtResource("1_d3jy5")
+region = Rect2(224, 128, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ovsxv"]
+atlas = ExtResource("1_d3jy5")
+region = Rect2(239, 128, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1xy4s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l5aof")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ptug8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kjxvs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ovsxv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h3tyo"]
+radius = 13.0384
+
+[node name="Interactable" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_1xy4s")
+autoplay = "default"
+frame_progress = 0.183638
+script = ExtResource("2_shdi7")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_h3tyo")
+
+[connection signal="body_exited" from="Area2D" to="." method="OnAreaBodyExited"]

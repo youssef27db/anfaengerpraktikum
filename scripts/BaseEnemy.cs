@@ -1,6 +1,9 @@
 using Godot;
 using System;
 
+/**
+* @brief Klasse für einen einfachen Gegner
+*/
 public partial class BaseEnemy : CharacterBody2D
 {
 
@@ -18,7 +21,7 @@ public partial class BaseEnemy : CharacterBody2D
     [Export]
     private float Armor = 20f;
     [Export]
-    private float MaxStamina = 100f;
+    private float MaxStamina = 1f;
     [Export]
     private float Speed = 10;
     [Export]
@@ -36,6 +39,7 @@ public partial class BaseEnemy : CharacterBody2D
     private Vector2 StartPosition;
     private bool StartRotation = false;
     private State AnimationState = State.IDLE;
+    private bool AlreadyHit = false;
 
     //linked nodes
     private AnimatedSprite2D Sprite;
@@ -47,7 +51,12 @@ public partial class BaseEnemy : CharacterBody2D
     private RayCast2D LeftFallProtection;
     private RayCast2D RightFallProtection;
     private TextureProgressBar HealthBar;
+    private Player Player;
 
+    /** 
+    * @brief Initialisierung der Referenzen.
+    * Findet die relevanten Knoten in der Szene und weist sie zu.
+    */
     public override void _Ready()
     {
         Sprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
@@ -59,6 +68,7 @@ public partial class BaseEnemy : CharacterBody2D
         LeftFallProtection = GetNode<RayCast2D>("LeftFallProtection");
         RightFallProtection = GetNode<RayCast2D>("RightFallProtection");
         HealthBar = GetNode<TextureProgressBar>("HealthBar");
+        Player = GetNode<Player>("../Player");
 
         CurrentHealthPoints = MaxHealthPoints;
         CurrentStamina = MaxStamina;
@@ -69,17 +79,30 @@ public partial class BaseEnemy : CharacterBody2D
         HealthBar.Value = 100f* CurrentHealthPoints/MaxHealthPoints;
     }
 
+    /** 
+    * @brief Physikalische Prozesse werden in jedem Frame ausgeführt.
+    * Berechnet Gravitation und Bewegung
+    * @param DeltaTime Zeit seit dem letzten Frame.
+    */
     public override void _Process(double DeltaTime)
     {
         HandleMovement(DeltaTime);
+        if(CurrentStamina < MaxStamina){
+            CurrentStamina += (float) DeltaTime;
+            Velocity = Velocity * 0.8f;
+        }
         if (!IsOnFloor() && !Dead) {
             Velocity += GetGravity() * (float)DeltaTime;
         }
         UpdateAnimation();
         MoveAndSlide();
+        CheckPlayerHit();
     }
 
-    //signal when player enters detection area -> start following player
+    /**
+    * @brief Detektiert den Spieler wenn er den Erkennungsbereich betritt.
+    * @param body Objekt das den Bereich betritt.
+    */
     public void OnDetectionBodyEntered(Node2D body){
         if(CheckLineOfSight(body)){
             Pursuing = true;
@@ -87,7 +110,10 @@ public partial class BaseEnemy : CharacterBody2D
         }
     }
 
-    //signal when player leaves pursuing area -> stop following player
+    /**
+    * @brief Detektiert wenn der Spieler den Verfolgungsbereich verlässt.
+    * @param body Objekt das den Bereich verlässt.
+    */
     public void OnPursuingRadiusBodyExited(Node2D body){
         if(body == CurrentTarget){
             Pursuing = false;
@@ -95,17 +121,28 @@ public partial class BaseEnemy : CharacterBody2D
         }
     }
 
+    /**
+    * @brief Detektiert wenn ein Objekt die Hitbox des Gegners betritt. (z.B.: Schwert des Spielers)
+    * @param area Objekt das den Bereich betritt.
+    */
     public void OnHitboxAreaEntered(Area2D area){
         Player Player1 = (Player) area.GetParent().GetParent();
         TakeDamage(Player1.GetDamage());
     }
 
+    /**
+    * @brief Detektiert ob der Spieler in Schlagreichweite ist.
+    * @param body Objekt das den Bereich betritt.
+    */
     public void OnSwordHitBoxBodyEntered(Node2D body){
+        if(Dead) return;
         Sprite.Play("attack");
-        GD.Print("Test");
-
     }
 
+    /** 
+    * @brief Verarbeitet die Bewegung des Gegners.
+    * @param DeltaTime Zeit seit dem letzten Frame.
+    */
     private void HandleMovement(double DeltaTime){
         if(Dead) return;
         if((Sprite.Animation == "take_hit" || Sprite.Animation == "attack") && Sprite.IsPlaying()){
@@ -168,6 +205,10 @@ public partial class BaseEnemy : CharacterBody2D
         }
     }
 
+
+    /** 
+    * @brief Aktualisiert die Animationen des Gegners.
+    */
     private void UpdateAnimation(){
         if(Dead) return;
         if(!((Sprite.Animation == "take_hit" || Sprite.Animation == "attack") && Sprite.IsPlaying())){
@@ -193,6 +234,9 @@ public partial class BaseEnemy : CharacterBody2D
 
     }
 
+    /** 
+    * @brief Verarbeitet zugefügten Schaden.
+    */
     private void TakeDamage(Damage DMG){
         CurrentHealthPoints -= DMG.GetPhysicalDMG() + DMG.GetTrueDMG();
         Position += DMG.GetPushAmount();
@@ -200,31 +244,62 @@ public partial class BaseEnemy : CharacterBody2D
             Die();
         } else {
             Sprite.Play("take_hit");
+            if(DMG.GetSource() == Player){
+                Pursuing = true;
+                CurrentTarget = Player;
+            }
         }
     }
 
-    public Damage GetDamage(){
-    // Beispielwerte für den Schaden (anpassbar)
-    float PhysicalDamage = 15f; 
-    float TrueDamage = 5f;     
-    Vector2 Push = new Vector2(50, 0);
+    /** 
+    * @brief Überprüft ob der Spieler sich, während eines Angriffes in Reichweite befindet
+    * und fügt diesem dann gegebenenfalls Schaden zu.
+    */
+    private void CheckPlayerHit(){
+        if(Sprite.Animation != "attack"){
+            AlreadyHit = false;
+            if(Sprite.Animation == "take_hit" || CurrentStamina < MaxStamina) return;
+            Godot.Collections.Array<Node2D> Bodies = SwordHitbox.GetOverlappingBodies();
+            foreach(Node2D Body in Bodies){
+                if(Body == Player){
+                    Sprite.Play("attack");
+                }
+            }
+            return;
+        }
+        if(AlreadyHit) return;
+        if(Sprite.Frame >= 6){
+            CurrentStamina = 0;
+            Godot.Collections.Array<Node2D> Bodies = SwordHitbox.GetOverlappingBodies();
+            foreach(Node2D Body in Bodies){
+                if(Body == Player){
+                    Player.TakeDamage(new Damage(20f, 0f, Vector2.Zero, this));
+                    AlreadyHit = true;
+                    break;
+                }
+            }
+        }
 
-    if (!Sprite.FlipH){
-        Push = -Push; // Rückstoß in die entgegengesetzte Richtung, wenn der Gegner nach links schaut
     }
 
-    return new Damage(PhysicalDamage, TrueDamage, Push);
-}
-
+    /** 
+    * @brief Wird aufgerufen wenn der Gegner stirbt.
+    */
     private void Die(){
         Dead = true;
         Velocity = Vector2.Zero;
         MainCollision.SetDeferred(CollisionShape2D.PropertyName.Disabled, true);
+
         Sprite.Play("death");
         HealthBar.SetVisible(false);
+        Player.SetSinAmount(Player.GetSinAmount() + SinAmount);
 
     }
 
+    /** 
+    * @brief Überprüft die direkte Sichtlinie zu einem Objekt.
+    * @return bool Ergebnis der Abfrage.
+    */
     private bool CheckLineOfSight(Node2D body){
         Vector2 offset = Vector2.Zero;
         offset.Y = -14;
@@ -235,7 +310,9 @@ public partial class BaseEnemy : CharacterBody2D
         return true;
     }
 
-    //flips rotation of sprite and collision nodes
+    /** 
+    * @brief Spiegelt die Orientierung aller zu dem Gegner gehörender Nodes.
+    */
     private void FlipRotation(){
         Sprite.FlipH = !Sprite.FlipH;
         CollisionPolygon.RotationDegrees = Math.Abs(CollisionPolygon.RotationDegrees -180);
@@ -243,6 +320,9 @@ public partial class BaseEnemy : CharacterBody2D
         FrontCollisionRayCast.RotationDegrees = Math.Abs(FrontCollisionRayCast.RotationDegrees - 180);
     }
 
+    /** 
+    * @brief Setzt Orientierung aller zu dem Gegner gehörender Nodes.
+    */
     private void SetRotation(bool Rotation){
         Sprite.FlipH = Rotation ^ StartRotation;
         if(Rotation){
@@ -256,7 +336,14 @@ public partial class BaseEnemy : CharacterBody2D
         }
     }
 
+    /** 
+    * @brief Überprüft, ob zwei Werte in einer Delta-Umgebung zueinander liegen.
+    * @param float Wert1
+    * @param float Wert2
+    * @param float Delta
+    * @return bool Ergebnis
+    */
     private bool IsCloseTo(float Value1, float Value2, float Delta){
-        return (Value1 <= Value2 + Delta && Value1 >= Value2 - Delta);
+        return Value1 <= (Value2 + Delta) && Value1 >= (Value2 - Delta);
     }
 }

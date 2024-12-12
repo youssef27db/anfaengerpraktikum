@@ -9,6 +9,7 @@ public class Damage{
     private float PhysicalDMG;
     private float TrueDMG;
     private Vector2 PushAmount;
+    private Node2D Source;
 
     /** 
      * @brief Konstruktor für die Damage-Klasse.
@@ -16,10 +17,11 @@ public class Damage{
      * @param TrueDMG Der wahre Schaden.
      * @param PushAmount Der Rückstoßvektor.
      */
-    public Damage(float PhysicalDMG, float TrueDMG, Vector2 PushAmount){
+    public Damage(float PhysicalDMG, float TrueDMG, Vector2 PushAmount, Node2D Source){
         this.PhysicalDMG = PhysicalDMG;
         this.TrueDMG = TrueDMG;
         this.PushAmount = PushAmount;
+        this.Source = Source;
     }
 
     /** 
@@ -44,5 +46,13 @@ public class Damage{
      */
     public Vector2 GetPushAmount(){
         return PushAmount;
+    }
+
+    /**
+    * @brief Gibt die Ursache zurück.
+    * @return Die Ursache.
+    */
+    public Node2D GetSource(){
+        return Source;
     }
 }

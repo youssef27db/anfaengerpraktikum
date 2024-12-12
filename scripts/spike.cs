@@ -61,6 +61,6 @@ public partial class Spike : Area2D
 		float TrueDamage = 10f;     
 		Vector2 Push = new Vector2(0, 0);
 
-		return new Damage(PhysicalDamage, TrueDamage, Push);
+		return new Damage(PhysicalDamage, TrueDamage, Push, this);
 	}
 }
