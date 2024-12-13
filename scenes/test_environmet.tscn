@@ -203,4 +203,5 @@ position = Vector2(-190, -8)
 
 [node name="Interactable" parent="." instance=ExtResource("6_fp4c4")]
 position = Vector2(-96, -94)
-Text = "[font_size=20][color=black][center]Test[/center][/color][/font_size]"
+Text = "[font_size=20][color=black][center]Test[/center][/color][/font_size]
+[shake rate=20.0 level=5 connected=1]Test2[/shake]"

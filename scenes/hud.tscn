@@ -63,6 +63,7 @@ color = Color(0.114897, 0.114897, 0.114897, 1)
 metadata/_edit_lock_ = true
 
 [node name="Counter" type="Label" parent="SinAmount"]
+layout_mode = 0
 offset_left = -37.0
 offset_top = -5.0
 offset_right = 182.0

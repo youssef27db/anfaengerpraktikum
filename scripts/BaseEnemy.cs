@@ -13,6 +13,8 @@ public partial class BaseEnemy : CharacterBody2D
 
     //customizable variables
     [Export]
+    private float Damage = 20f;    
+    [Export]
     private bool Dead = false;
     [Export]
     private bool Respawnable = true;
@@ -256,6 +258,7 @@ public partial class BaseEnemy : CharacterBody2D
     * und fügt diesem dann gegebenenfalls Schaden zu.
     */
     private void CheckPlayerHit(){
+        if(Dead) return;
         if(Sprite.Animation != "attack"){
             AlreadyHit = false;
             if(Sprite.Animation == "take_hit" || CurrentStamina < MaxStamina) return;
@@ -273,7 +276,7 @@ public partial class BaseEnemy : CharacterBody2D
             Godot.Collections.Array<Node2D> Bodies = SwordHitbox.GetOverlappingBodies();
             foreach(Node2D Body in Bodies){
                 if(Body == Player){
-                    Player.TakeDamage(new Damage(20f, 0f, Vector2.Zero, this));
+                    Player.TakeDamage(new Damage(Damage, 0f, Vector2.Zero, this));
                     AlreadyHit = true;
                     break;
                 }

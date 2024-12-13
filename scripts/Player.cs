@@ -485,19 +485,6 @@ public partial class Player : CharacterBody2D
         SinDisplay.Text = SinAmount + "";
     }
 
-    /** 
-     * @brief Verarbeitung, wenn ein Körper das Schwert trifft.
-     * @param body Der getroffene Körper.
-     */
-    public void OnEnemyHitBoxEntered(Area2D area){
-        // Überprüfen, ob der Collider ein `BaseEnemy` ist
-        if (area.GetParent() is BaseEnemy enemy){
-            // Hole den Schaden vom Gegner und wende ihn auf den Spieler an
-            //Damage damage = enemy.GetDamage();
-            //TakeDamage(damage);
-        }
-    }
-
     /**
     * @brief Wird aufgerufen, wenn der Spieler an einer neuen Position spawnen soll.
     * @param position Die Position, an der der Spieler spawnen soll.
