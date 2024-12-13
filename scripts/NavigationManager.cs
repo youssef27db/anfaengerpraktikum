@@ -51,8 +51,13 @@ public partial class NavigationManager : Node
         {
             SpawnDoorTag = DestinationTag;
             // Verwendung der ChangeSceneToPacked-Methode in Godot 4
-            GetTree().ChangeSceneToPacked(SceneToLoad);
+            CallDeferred(nameof(DeferredChangeScene), SceneToLoad);
         }
+    }
+
+    private void DeferredChangeScene(PackedScene SceneToLoad)
+    {
+        GetTree().ChangeSceneToPacked(SceneToLoad);
     }
 
     /**

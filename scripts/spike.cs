@@ -42,7 +42,7 @@ public partial class Spike : Area2D
 		if (body is Player)
 		{
 			player = null; // Instanzvariable zurücksetzen
-
+			
 			GetNode<Timer>("Timer").Stop();
 		}
 	}
