@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['damage_0',['Damage',['../class_damage.html#aba9d5c4989d419180c03afc3a7aa022a',1,'Damage']]],
-  ['dashinprogress_1',['DashInProgress',['../class_player.html#aeb354dd739e4fb8af95215e633f2ae30',1,'Player']]]
+  ['checklineofsight_0',['CheckLineOfSight',['../class_base_enemy.html#a59a907194c4c712b41719a6fc12c1583',1,'BaseEnemy']]],
+  ['checkplayerhit_1',['CheckPlayerHit',['../class_base_enemy.html#a0a7f33bd3971e202eee9d43e63180500',1,'BaseEnemy']]],
+  ['createdasheffect_2',['CreateDashEffect',['../class_player.html#a0aa4500de693c81904bba34fb91df560',1,'Player']]]
 ];

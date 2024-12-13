@@ -48,11 +48,17 @@ void \mbox{\hyperlink{class_player_ab715416eb7dbe1d4d320d4ba21999072}{Regenerate
 \begin{DoxyCompactList}\small\item\em Regeneriert die Stamina des Spielers, wenn er für eine bestimmte Zeit keine Stamina-\/verbrauchende Aktion durchgeführt hat. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_player_ac69e2d647a9d7317b01599b2a5695199}{Use\+Stamina}} (float Amount)
 \begin{DoxyCompactList}\small\item\em Verbraucht eine bestimmte Menge an Stamina, falls genügend verfügbar ist. Setzt den Inaktivitäts-\/\+Timer zurück, wenn Stamina verbraucht wird. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_a0a59dfe03d542fa98f28f4c4eaa49a75}{Slow\+Player}} (float Slow\+Amount)
+\begin{DoxyCompactList}\small\item\em Verlangsamt den Spieler um einen bestimmten Prozentsatz. \end{DoxyCompactList}\item 
 \Hypertarget{class_player_ae1104e2e3726f7bac674615c4e33b2bf}\label{class_player_ae1104e2e3726f7bac674615c4e33b2bf} 
 void {\bfseries Respawn} ()
-\begin{DoxyCompactList}\small\item\em Setzt die Position des Spielers auf den Spawn\+Point zurück. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_player_a393772e0438181121affcd4636a63cb0}{On\+Enemy\+Hit\+Box\+Entered}} (Area2D area)
-\begin{DoxyCompactList}\small\item\em Verarbeitung, wenn ein Körper das Schwert trifft. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Lässt den Spieler am \doxylink{class_checkpoint}{Checkpoint} spawnen. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_blood_vial}{Blood\+Vial}} \mbox{\hyperlink{class_player_ab04e4301a26dacc4e1d178d1b7d1d872}{Get\+Blood\+Vials}} ()
+\begin{DoxyCompactList}\small\item\em Getter für Blood\+Vials. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_player_a5a6321940f9ffe59078fbebb32cb0c54}{Get\+Sin\+Amount}} ()
+\begin{DoxyCompactList}\small\item\em Getter für Sin\+Amount. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_aa718b6dab81ebd60b8b910ad8c7adff6}{Set\+Sin\+Amount}} (int Value)
+\begin{DoxyCompactList}\small\item\em Setzt den Sin\+Amount des Spielers. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -76,6 +82,8 @@ bool \mbox{\hyperlink{class_player_ab8df147009969880162db05e243cd129}{Is\+Attack
 \begin{DoxyCompactList}\small\item\em Überprüft, ob der Spieler gerade angreift. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_player_ac5b003495e551fee56ed26d26a239432}{Is\+Blocking}} ()
 \begin{DoxyCompactList}\small\item\em Überprüft, ob der Spieler blockiert. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_a026f050e54322e805ad546ee99483e6e}{On\+Spawn}} (Vector2 position, string direction)
+\begin{DoxyCompactList}\small\item\em Wird aufgerufen, wenn der Spieler an einer neuen Position spawnen soll. \end{DoxyCompactList}\item 
 \Hypertarget{class_player_a6dd10a495418b531f7e65ab238368bdc}\label{class_player_a6dd10a495418b531f7e65ab238368bdc} 
 void {\bfseries Update\+Animations} ()
 \begin{DoxyCompactList}\small\item\em Aktualisiert die Animationen des Spielers. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -124,14 +132,23 @@ Collision\+Shape2D {\bfseries Sword\+Collision}
 \Hypertarget{class_player_a5b037b53d0e7c4eacd6e09b71463862c}\label{class_player_a5b037b53d0e7c4eacd6e09b71463862c} 
 Collision\+Shape2D {\bfseries Player\+Hitbox}
 \item 
+\Hypertarget{class_player_aaef48228442e066781c02ea9b8c3f694}\label{class_player_aaef48228442e066781c02ea9b8c3f694} 
+\mbox{\hyperlink{class_blood_vial}{Blood\+Vial}} {\bfseries Blood\+Vials}
+\item 
+\Hypertarget{class_player_aa23d4f9699cd9b706e9b6945a365699b}\label{class_player_aa23d4f9699cd9b706e9b6945a365699b} 
+Label {\bfseries Sin\+Display}
+\item 
 \Hypertarget{class_player_ae9c0ec6f7123f5832d82c2cc68eedb97}\label{class_player_ae9c0ec6f7123f5832d82c2cc68eedb97} 
 Vector2 {\bfseries Haupt\+Hitbox}
 \item 
 \Hypertarget{class_player_a0b6c559da53ba0c874d88c54be5370b5}\label{class_player_a0b6c559da53ba0c874d88c54be5370b5} 
 Vector2 {\bfseries Spawn\+Point}
 \item 
-\Hypertarget{class_player_a43147365835fa93dd3778159fddd1cc7}\label{class_player_a43147365835fa93dd3778159fddd1cc7} 
-int {\bfseries last\+Attack} = 0
+\Hypertarget{class_player_a57850da38e07a680af71543a3e02de1a}\label{class_player_a57850da38e07a680af71543a3e02de1a} 
+int {\bfseries Last\+Attack} = 0
+\item 
+\Hypertarget{class_player_a471bedf063b180b55af0f0980b69c20f}\label{class_player_a471bedf063b180b55af0f0980b69c20f} 
+int {\bfseries Sin\+Amount}
 \item 
 \Hypertarget{class_player_a3f2adae80dd36aaf970f84bd1f826c78}\label{class_player_a3f2adae80dd36aaf970f84bd1f826c78} 
 float {\bfseries Max\+Health\+Points} = 100f
@@ -193,6 +210,19 @@ Führt die Logik während eines Dashes aus.
 {\em Delta\+Time} & Zeit seit dem letzten Frame. \\
 \hline
 \end{DoxyParams}
+\Hypertarget{class_player_ab04e4301a26dacc4e1d178d1b7d1d872}\index{Player@{Player}!GetBloodVials@{GetBloodVials}}
+\index{GetBloodVials@{GetBloodVials}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{GetBloodVials()}{GetBloodVials()}}
+{\footnotesize\ttfamily \label{class_player_ab04e4301a26dacc4e1d178d1b7d1d872} 
+\mbox{\hyperlink{class_blood_vial}{Blood\+Vial}} Player.\+Get\+Blood\+Vials (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Getter für Blood\+Vials. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{class_blood_vial}{Blood\+Vial} 
+\end{DoxyReturn}
 \Hypertarget{class_player_adcfef3e7a9ff7c077dd34f9f64c40f28}\index{Player@{Player}!GetCurrentHealth@{GetCurrentHealth}}
 \index{GetCurrentHealth@{GetCurrentHealth}!Player@{Player}}
 \doxysubsubsection{\texorpdfstring{GetCurrentHealth()}{GetCurrentHealth()}}
@@ -244,6 +274,19 @@ Gibt die maximale Stamina des Spielers zurück.
 
 \begin{DoxyReturn}{Returns}
 Die maximale Stamina. 
+\end{DoxyReturn}
+\Hypertarget{class_player_a5a6321940f9ffe59078fbebb32cb0c54}\index{Player@{Player}!GetSinAmount@{GetSinAmount}}
+\index{GetSinAmount@{GetSinAmount}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{GetSinAmount()}{GetSinAmount()}}
+{\footnotesize\ttfamily \label{class_player_a5a6321940f9ffe59078fbebb32cb0c54} 
+int Player.\+Get\+Sin\+Amount (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Getter für Sin\+Amount. 
+
+\begin{DoxyReturn}{Returns}
+int Sins 
 \end{DoxyReturn}
 \Hypertarget{class_player_ada9024b4d3d5a398c3d4bdb9d7a0dc74}\index{Player@{Player}!GetStamina@{GetStamina}}
 \index{GetStamina@{GetStamina}!Player@{Player}}
@@ -299,19 +342,21 @@ bool Player.\+Is\+Blocking (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\
 \begin{DoxyReturn}{Returns}
 true, wenn der Spieler blockiert. 
 \end{DoxyReturn}
-\Hypertarget{class_player_a393772e0438181121affcd4636a63cb0}\index{Player@{Player}!OnEnemyHitBoxEntered@{OnEnemyHitBoxEntered}}
-\index{OnEnemyHitBoxEntered@{OnEnemyHitBoxEntered}!Player@{Player}}
-\doxysubsubsection{\texorpdfstring{OnEnemyHitBoxEntered()}{OnEnemyHitBoxEntered()}}
-{\footnotesize\ttfamily \label{class_player_a393772e0438181121affcd4636a63cb0} 
-void Player.\+On\+Enemy\+Hit\+Box\+Entered (\begin{DoxyParamCaption}\item[{Area2D}]{area}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\Hypertarget{class_player_a026f050e54322e805ad546ee99483e6e}\index{Player@{Player}!OnSpawn@{OnSpawn}}
+\index{OnSpawn@{OnSpawn}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{OnSpawn()}{OnSpawn()}}
+{\footnotesize\ttfamily \label{class_player_a026f050e54322e805ad546ee99483e6e} 
+void Player.\+On\+Spawn (\begin{DoxyParamCaption}\item[{Vector2}]{position}{, }\item[{string}]{direction}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
 
 
 
-Verarbeitung, wenn ein Körper das Schwert trifft. 
+Wird aufgerufen, wenn der Spieler an einer neuen Position spawnen soll. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em body} & Der getroffene Körper. \\
+{\em position} & Die Position, an der der Spieler spawnen soll. \\
+\hline
+{\em direction} & Die Richtung, in die der Spieler schauen soll. \\
 \hline
 \end{DoxyParams}
 \Hypertarget{class_player_ab715416eb7dbe1d4d320d4ba21999072}\index{Player@{Player}!RegenerateStamina@{RegenerateStamina}}
@@ -376,6 +421,21 @@ Setzt die maximale Stamina des Spielers.
 {\em Value} & Den neuen Wert für die maximale Stamina (muss positiv sein). \\
 \hline
 \end{DoxyParams}
+\Hypertarget{class_player_aa718b6dab81ebd60b8b910ad8c7adff6}\index{Player@{Player}!SetSinAmount@{SetSinAmount}}
+\index{SetSinAmount@{SetSinAmount}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{SetSinAmount()}{SetSinAmount()}}
+{\footnotesize\ttfamily \label{class_player_aa718b6dab81ebd60b8b910ad8c7adff6} 
+void Player.\+Set\+Sin\+Amount (\begin{DoxyParamCaption}\item[{int}]{Value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Setzt den Sin\+Amount des Spielers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Value} & Der neue Wert für den Sin\+Amount. \\
+\hline
+\end{DoxyParams}
 \Hypertarget{class_player_a8a09cfbee2abc003bc1dda08da618d1f}\index{Player@{Player}!SetSpawnPoint@{SetSpawnPoint}}
 \index{SetSpawnPoint@{SetSpawnPoint}!Player@{Player}}
 \doxysubsubsection{\texorpdfstring{SetSpawnPoint()}{SetSpawnPoint()}}
@@ -402,6 +462,21 @@ Setzt die Stamina des Spielers.
 
 \begin{DoxyParams}{Parameters}
 {\em Value} & Den neuen Wert für Stamina (muss im Bereich zwischen 0 und Max\+Stamina liegen). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_player_a0a59dfe03d542fa98f28f4c4eaa49a75}\index{Player@{Player}!SlowPlayer@{SlowPlayer}}
+\index{SlowPlayer@{SlowPlayer}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{SlowPlayer()}{SlowPlayer()}}
+{\footnotesize\ttfamily \label{class_player_a0a59dfe03d542fa98f28f4c4eaa49a75} 
+void Player.\+Slow\+Player (\begin{DoxyParamCaption}\item[{float}]{Slow\+Amount}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Verlangsamt den Spieler um einen bestimmten Prozentsatz. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Slow\+Amount} & Der Prozentsatz, um den der Spieler verlangsamt werden soll. \\
 \hline
 \end{DoxyParams}
 \Hypertarget{class_player_aa1a0addae97cec09d2e86f3060a05438}\index{Player@{Player}!TakeDamage@{TakeDamage}}

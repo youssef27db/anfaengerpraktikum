@@ -1,0 +1,88 @@
+\doxysection{Navigation\+Manager Class Reference}
+\hypertarget{class_navigation_manager}{}\label{class_navigation_manager}\index{NavigationManager@{NavigationManager}}
+Inheritance diagram for Navigation\+Manager\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_navigation_manager}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+delegate void \mbox{\hyperlink{class_navigation_manager_a0dee864e0854aa918dd9b2d7a125d8dd}{On\+Trigger\+Player\+Spawn\+Event\+Handler}} (Vector2 Position, string Direction)
+\item 
+void \mbox{\hyperlink{class_navigation_manager_a5966bab1490d10dfc285507a0c8d8bb7}{Go\+To\+Level}} (string Level\+Tag, string Destination\+Tag)
+\item 
+void \mbox{\hyperlink{class_navigation_manager_aaec36be7cfa331ec6d3ca8eb14ba3872}{Trigger\+Player\+Spawn}} (Vector2 Position, string Direction)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_navigation_manager_a5aa88986fee7cfcf701e424e333b6980}\label{class_navigation_manager_a5aa88986fee7cfcf701e424e333b6980} 
+string {\bfseries Spawn\+Door\+Tag}\hspace{0.3cm}{\ttfamily  \mbox{[}get, private set\mbox{]}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_navigation_manager_ae1efff3ff02142f6b432967154fdc4ce}\label{class_navigation_manager_ae1efff3ff02142f6b432967154fdc4ce} 
+static readonly Packed\+Scene {\bfseries Scene\+Intro} = (Packed\+Scene)GD.\+Load("{}res\+://Scenes/intro.\+tscn"{})
+\item 
+\Hypertarget{class_navigation_manager_a75bcdf3626163a7a13a04786e5c50d45}\label{class_navigation_manager_a75bcdf3626163a7a13a04786e5c50d45} 
+static readonly Packed\+Scene {\bfseries Scene\+Level1} = (Packed\+Scene)GD.\+Load("{}res\+://Scenes/level1.\+tscn"{})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Der \doxylink{class_navigation_manager}{Navigation\+Manager} ist für das Laden von Leveln und das Spawnen des Spielers verantwortlich.
+
+Der \doxylink{class_navigation_manager}{Navigation\+Manager} ist ein Singleton, der in der Haupt-\/\+Szene platziert wird und von anderen Skripten verwendet wird, um Level zu laden und den Spieler zu spawnen. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_navigation_manager_a5966bab1490d10dfc285507a0c8d8bb7}\index{NavigationManager@{NavigationManager}!GoToLevel@{GoToLevel}}
+\index{GoToLevel@{GoToLevel}!NavigationManager@{NavigationManager}}
+\doxysubsubsection{\texorpdfstring{GoToLevel()}{GoToLevel()}}
+{\footnotesize\ttfamily \label{class_navigation_manager_a5966bab1490d10dfc285507a0c8d8bb7} 
+void Navigation\+Manager.\+Go\+To\+Level (\begin{DoxyParamCaption}\item[{string}]{Level\+Tag}{, }\item[{string}]{Destination\+Tag}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Lädt das angegebene Level und setzt das Ziel-\/\+Tag für den Spieler-\/\+Spawn.
+
+
+\begin{DoxyParams}{Parameters}
+{\em Level\+Tag} & Das Tag des Levels, das geladen werden soll. \\
+\hline
+{\em Destination\+Tag} & Das Tag der Tür, an der der Spieler spawnen soll. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_navigation_manager_a0dee864e0854aa918dd9b2d7a125d8dd}\index{NavigationManager@{NavigationManager}!OnTriggerPlayerSpawnEventHandler@{OnTriggerPlayerSpawnEventHandler}}
+\index{OnTriggerPlayerSpawnEventHandler@{OnTriggerPlayerSpawnEventHandler}!NavigationManager@{NavigationManager}}
+\doxysubsubsection{\texorpdfstring{OnTriggerPlayerSpawnEventHandler()}{OnTriggerPlayerSpawnEventHandler()}}
+{\footnotesize\ttfamily \label{class_navigation_manager_a0dee864e0854aa918dd9b2d7a125d8dd} 
+delegate void Navigation\+Manager.\+On\+Trigger\+Player\+Spawn\+Event\+Handler (\begin{DoxyParamCaption}\item[{Vector2}]{Position}{, }\item[{string}]{Direction}{}\end{DoxyParamCaption})}
+
+Das Signal, das ausgelöst wird, wenn der Spieler spawnen soll.
+
+
+\begin{DoxyParams}{Parameters}
+{\em Position} & Die Position, an der der Spieler spawnen soll. \\
+\hline
+{\em Direction} & Die Richtung, in die der Spieler schauen soll. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_navigation_manager_aaec36be7cfa331ec6d3ca8eb14ba3872}\index{NavigationManager@{NavigationManager}!TriggerPlayerSpawn@{TriggerPlayerSpawn}}
+\index{TriggerPlayerSpawn@{TriggerPlayerSpawn}!NavigationManager@{NavigationManager}}
+\doxysubsubsection{\texorpdfstring{TriggerPlayerSpawn()}{TriggerPlayerSpawn()}}
+{\footnotesize\ttfamily \label{class_navigation_manager_aaec36be7cfa331ec6d3ca8eb14ba3872} 
+void Navigation\+Manager.\+Trigger\+Player\+Spawn (\begin{DoxyParamCaption}\item[{Vector2}]{Position}{, }\item[{string}]{Direction}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Lädt das angegebene Level und setzt das Ziel-\/\+Tag für den Spieler-\/\+Spawn.
+
+
+\begin{DoxyParams}{Parameters}
+{\em Level\+Tag} & Das Tag des Levels, das geladen werden soll. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Youssef/\+Desktop/\+UNI/\+S4/\+Computerspiel\+Entwicklung/\+Das\+Spiel/anfaengerpraktikum/scripts/Navigation\+Manager.\+cs\end{DoxyCompactItemize}

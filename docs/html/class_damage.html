@@ -97,9 +97,9 @@ $(function(){ initResizable(false); });
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aba9d5c4989d419180c03afc3a7aa022a" id="r_aba9d5c4989d419180c03afc3a7aa022a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aba9d5c4989d419180c03afc3a7aa022a">Damage</a> (float PhysicalDMG, float TrueDMG, Vector2 PushAmount)</td></tr>
-<tr class="memdesc:aba9d5c4989d419180c03afc3a7aa022a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Konstruktor für die Damage-Klasse.  <br /></td></tr>
-<tr class="separator:aba9d5c4989d419180c03afc3a7aa022a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a078b1c0b6cb42cd0d3c4bf74e3ca4454" id="r_a078b1c0b6cb42cd0d3c4bf74e3ca4454"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a078b1c0b6cb42cd0d3c4bf74e3ca4454">Damage</a> (float PhysicalDMG, float TrueDMG, Vector2 PushAmount, Node2D Source)</td></tr>
+<tr class="memdesc:a078b1c0b6cb42cd0d3c4bf74e3ca4454"><td class="mdescLeft">&#160;</td><td class="mdescRight">Konstruktor für die Damage-Klasse.  <br /></td></tr>
+<tr class="separator:a078b1c0b6cb42cd0d3c4bf74e3ca4454"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a084fad418a6be9edca3e3e32355e49c0" id="r_a084fad418a6be9edca3e3e32355e49c0"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a084fad418a6be9edca3e3e32355e49c0">GetPhysicalDMG</a> ()</td></tr>
 <tr class="memdesc:a084fad418a6be9edca3e3e32355e49c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gibt den physischen Schaden zurück.  <br /></td></tr>
 <tr class="separator:a084fad418a6be9edca3e3e32355e49c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -109,6 +109,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a60741a1e632c21788499ddc284b2844b" id="r_a60741a1e632c21788499ddc284b2844b"><td class="memItemLeft" align="right" valign="top">Vector2&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a60741a1e632c21788499ddc284b2844b">GetPushAmount</a> ()</td></tr>
 <tr class="memdesc:a60741a1e632c21788499ddc284b2844b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gibt den Rückstoßvektor zurück.  <br /></td></tr>
 <tr class="separator:a60741a1e632c21788499ddc284b2844b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac446ed14eae2ee0d927510a3ab525042" id="r_ac446ed14eae2ee0d927510a3ab525042"><td class="memItemLeft" align="right" valign="top">Node2D&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac446ed14eae2ee0d927510a3ab525042">GetSource</a> ()</td></tr>
+<tr class="memdesc:ac446ed14eae2ee0d927510a3ab525042"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gibt die Ursache zurück.  <br /></td></tr>
+<tr class="separator:ac446ed14eae2ee0d927510a3ab525042"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -121,12 +124,15 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>TrueDMG</b></td></tr
 <tr class="memitem:ab3c892c04820406c50102d9471d0fc9d" id="r_ab3c892c04820406c50102d9471d0fc9d"><td class="memItemLeft" align="right" valign="top"><a id="ab3c892c04820406c50102d9471d0fc9d" name="ab3c892c04820406c50102d9471d0fc9d"></a>
 Vector2&#160;</td><td class="memItemRight" valign="bottom"><b>PushAmount</b></td></tr>
 <tr class="separator:ab3c892c04820406c50102d9471d0fc9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97ac7df60d926ce18242bba40e5d500f" id="r_a97ac7df60d926ce18242bba40e5d500f"><td class="memItemLeft" align="right" valign="top"><a id="a97ac7df60d926ce18242bba40e5d500f" name="a97ac7df60d926ce18242bba40e5d500f"></a>
+Node2D&#160;</td><td class="memItemRight" valign="bottom"><b>Source</b></td></tr>
+<tr class="separator:a97ac7df60d926ce18242bba40e5d500f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Repräsentiert den Schaden, der von Charakteren oder Gegnern verursacht wird. Beinhaltet physischen Schaden, wahren Schaden und den Rückstoßeffekt. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="aba9d5c4989d419180c03afc3a7aa022a" name="aba9d5c4989d419180c03afc3a7aa022a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aba9d5c4989d419180c03afc3a7aa022a">&#9670;&#160;</a></span>Damage()</h2>
+<a id="a078b1c0b6cb42cd0d3c4bf74e3ca4454" name="a078b1c0b6cb42cd0d3c4bf74e3ca4454"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a078b1c0b6cb42cd0d3c4bf74e3ca4454">&#9670;&#160;</a></span>Damage()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -147,7 +153,12 @@ Vector2&#160;</td><td class="memItemRight" valign="bottom"><b>PushAmount</b></td
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Vector2</td>          <td class="paramname"><span class="paramname"><em>PushAmount</em></span>&#160;)</td>
+          <td class="paramtype">Vector2</td>          <td class="paramname"><span class="paramname"><em>PushAmount</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Node2D</td>          <td class="paramname"><span class="paramname"><em>Source</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -223,6 +234,34 @@ Vector2&#160;</td><td class="memItemRight" valign="bottom"><b>PushAmount</b></td
 
 <p>Gibt den Rückstoßvektor zurück. </p>
 <dl class="section return"><dt>Returns</dt><dd>Der Rückstoßvektor. </dd></dl>
+
+</div>
+</div>
+<a id="ac446ed14eae2ee0d927510a3ab525042" name="ac446ed14eae2ee0d927510a3ab525042"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac446ed14eae2ee0d927510a3ab525042">&#9670;&#160;</a></span>GetSource()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Node2D Damage.GetSource </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gibt die Ursache zurück. </p>
+<dl class="section return"><dt>Returns</dt><dd>Die Ursache. </dd></dl>
 
 </div>
 </div>

@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['updateanimations_0',['UpdateAnimations',['../class_player.html#a6dd10a495418b531f7e65ab238368bdc',1,'Player']]],
-  ['usestamina_1',['UseStamina',['../class_player.html#ac69e2d647a9d7317b01599b2a5695199',1,'Player']]]
+  ['regeneratestamina_0',['RegenerateStamina',['../class_player.html#ab715416eb7dbe1d4d320d4ba21999072',1,'Player']]],
+  ['resetuses_1',['ResetUses',['../class_blood_vial.html#a31a53feef846bd962bd5b525b0bc5c6c',1,'BloodVial']]],
+  ['respawn_2',['Respawn',['../class_player.html#ae1104e2e3726f7bac674615c4e33b2bf',1,'Player']]]
 ];

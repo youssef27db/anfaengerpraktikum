@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['handlejump_0',['HandleJump',['../class_player.html#a8237be052507e34edec4776fa25f9544',1,'Player']]],
-  ['handlemovement_1',['HandleMovement',['../class_player.html#af8fce0260ebcc78bb46e2a8393eb2fb7',1,'Player']]]
+  ['fliprotation_0',['FlipRotation',['../class_base_enemy.html#aa9ade96897c57dfc0b6b69e7d0996076',1,'BaseEnemy']]]
 ];

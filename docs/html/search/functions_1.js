@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['createdasheffect_0',['CreateDashEffect',['../class_player.html#a0aa4500de693c81904bba34fb91df560',1,'Player']]]
+  ['addmaxuses_0',['AddMaxUses',['../class_blood_vial.html#af5370d164b83ed4e3b5edec111b4ef98',1,'BloodVial']]]
 ];

@@ -1,6 +1,19 @@
 var searchData=
 [
-  ['handlejump_0',['HandleJump',['../class_player.html#a8237be052507e34edec4776fa25f9544',1,'Player']]],
-  ['handlemovement_1',['HandleMovement',['../class_player.html#af8fce0260ebcc78bb46e2a8393eb2fb7',1,'Player']]],
-  ['healthbar_2',['HealthBar',['../class_health_bar.html',1,'']]]
+  ['gdmut_0',['GdMUT',['../namespace_gd_m_u_t.html',1,'']]],
+  ['gdmut_3a_3acomponents_1',['Components',['../namespace_gd_m_u_t_1_1_components.html',1,'GdMUT']]],
+  ['getbloodvials_2',['GetBloodVials',['../class_player.html#ab04e4301a26dacc4e1d178d1b7d1d872',1,'Player']]],
+  ['getcurrenthealth_3',['GetCurrentHealth',['../class_player.html#adcfef3e7a9ff7c077dd34f9f64c40f28',1,'Player']]],
+  ['getdamage_4',['GetDamage',['../class_player.html#a01ad03754c12b1288b69cdd42cb6f85e',1,'Player.GetDamage()'],['../class_spike.html#a089076328dd0c52b0c595f9ee9c98c33',1,'Spike.GetDamage()']]],
+  ['getmaxhealthpoints_5',['GetMaxHealthPoints',['../class_player.html#a9fed099d84529ddc776dc59d45fa09b1',1,'Player']]],
+  ['getmaxstamina_6',['GetMaxStamina',['../class_player.html#ae8041531f242f8b0e2e222691e546f1b',1,'Player']]],
+  ['getphysicaldmg_7',['GetPhysicalDMG',['../class_damage.html#a084fad418a6be9edca3e3e32355e49c0',1,'Damage']]],
+  ['getpushamount_8',['GetPushAmount',['../class_damage.html#a60741a1e632c21788499ddc284b2844b',1,'Damage']]],
+  ['getsinamount_9',['GetSinAmount',['../class_player.html#a5a6321940f9ffe59078fbebb32cb0c54',1,'Player']]],
+  ['getsource_10',['GetSource',['../class_damage.html#ac446ed14eae2ee0d927510a3ab525042',1,'Damage']]],
+  ['getstamina_11',['GetStamina',['../class_player.html#ada9024b4d3d5a398c3d4bdb9d7a0dc74',1,'Player']]],
+  ['gettruedmg_12',['GetTrueDMG',['../class_damage.html#a4d43580112f089c208f9ba8e0b2559f0',1,'Damage']]],
+  ['godot_20cpp_13',['godotengine/godot-cpp',['../md__c_1_2_users_2_youssef_2_desktop_2_u_n_i_2_s4_2_computerspiel_entwicklung_2_das_spiel_2anfaene077cc7c5bcf0a389cded2b1f693474f.html#autotoc_md2',1,'']]],
+  ['godotengine_20godot_20cpp_14',['godotengine/godot-cpp',['../md__c_1_2_users_2_youssef_2_desktop_2_u_n_i_2_s4_2_computerspiel_entwicklung_2_das_spiel_2anfaene077cc7c5bcf0a389cded2b1f693474f.html#autotoc_md2',1,'']]],
+  ['gotolevel_15',['GoToLevel',['../class_navigation_manager.html#a5966bab1490d10dfc285507a0c8d8bb7',1,'NavigationManager']]]
 ];
