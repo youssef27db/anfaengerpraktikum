@@ -63,7 +63,7 @@ public partial class Player : CharacterBody2D
         SinDisplay = GetNode<Label>("../HUD/SinAmount/Counter");
 
         CurrentStamina = MaxStamina;
-        CurrentHealth = 50f;
+        CurrentHealth = MaxHealthPoints;
         SinDisplay.Text = SinAmount + "";
 
         NavigationManager navigationManager = GetNode<NavigationManager>("/root/NavigationManager");

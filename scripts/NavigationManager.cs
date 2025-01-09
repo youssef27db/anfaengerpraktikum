@@ -11,6 +11,7 @@ public partial class NavigationManager : Node
     // Deklarieren der vorab geladenen Szenen
     private static readonly PackedScene SceneIntro = (PackedScene)GD.Load("res://Scenes/intro.tscn");
     private static readonly PackedScene SceneLevel1 = (PackedScene)GD.Load("res://Scenes/level1.tscn");
+    private static readonly PackedScene SceneBoss = (PackedScene)GD.Load("res://Scenes/bossRoom.tscn");
 
     // Die Spawn-Tag-Variable
     public string SpawnDoorTag { get; private set; }
@@ -43,6 +44,9 @@ public partial class NavigationManager : Node
                 break;
             case "level1":
                 SceneToLoad = SceneLevel1;
+                break;
+            case "bossRoom":
+                SceneToLoad = SceneBoss;
                 break;
         }
 

@@ -173,6 +173,12 @@ SpawnDirection = "right"
 [node name="Door_spawn" parent="Doors" instance=ExtResource("2_2k5x2")]
 position = Vector2(164, 264)
 
+[node name="Door_east" parent="Doors" instance=ExtResource("2_2k5x2")]
+position = Vector2(495, 288)
+DestinationLevelTag = "bossRoom"
+DestinationDoorTag = "west"
+SpawnDirection = "left"
+
 [node name="Player" parent="." instance=ExtResource("4_p5bc6")]
 position = Vector2(73, 288)
 
