@@ -13,47 +13,47 @@ public partial class BaseEnemy : CharacterBody2D
 
     //customizable variables
     [Export]
-    private float Damage = 20f;    
+    protected float Damage = 20f;    
     [Export]
-    private bool Dead = false;
+    protected bool Dead = false;
     [Export]
-    private bool Respawnable = true;
+    protected bool Respawnable = true;
     [Export]
-    private float MaxHealthPoints = 100f;
+    protected float MaxHealthPoints = 100f;
     [Export]
-    private float Armor = 20f;
+    protected float Armor = 20f; //MUSS ZISCHEN 0 UND 99 LIEGEN
     [Export]
-    private float MaxStamina = 1f;
+    protected float MaxStamina = 1f;
     [Export]
-    private float Speed = 10;
+    protected float Speed = 10;
     [Export]
-    private int SinAmount = 10;
+    protected int SinAmount = 10;
     [Export]
-    private double ReturnToStartAfter = 5;
+    protected double ReturnToStartAfter = 5;
 
     //private variables
-    private float CurrentHealthPoints;
-    private float CurrentStamina;
-    private double ReturnToStart;
-    private bool Pursuing = false;
-    private Node2D CurrentTarget = null;
-    private Vector2 TargetPosition = Vector2.Inf;
-    private Vector2 StartPosition;
-    private bool StartRotation = false;
+    protected float CurrentHealthPoints;
+    protected float CurrentStamina;
+    protected double ReturnToStart;
+    protected bool Pursuing = false;
+    protected Node2D CurrentTarget = null;
+    protected Vector2 TargetPosition = Vector2.Inf;
+    protected Vector2 StartPosition;
+    protected bool StartRotation = false;
     private State AnimationState = State.IDLE;
-    private bool AlreadyHit = false;
+    protected bool AlreadyHit = false;
 
     //linked nodes
-    private AnimatedSprite2D Sprite;
-    private CollisionPolygon2D CollisionPolygon;
-    private Area2D SwordHitbox;
-    private CollisionShape2D MainCollision;
-    private RayCast2D FrontCollisionRayCast;
-    private RayCast2D LineOfSight;
-    private RayCast2D LeftFallProtection;
-    private RayCast2D RightFallProtection;
-    private TextureProgressBar HealthBar;
-    private Player Player;
+    protected AnimatedSprite2D Sprite;
+    protected CollisionPolygon2D CollisionPolygon;
+    protected Area2D SwordHitbox;
+    protected CollisionShape2D MainCollision;
+    protected RayCast2D FrontCollisionRayCast;
+    protected RayCast2D LineOfSight;
+    protected RayCast2D LeftFallProtection;
+    protected RayCast2D RightFallProtection;
+    protected TextureProgressBar HealthBar;
+    protected Player Player;
 
     /** 
     * @brief Initialisierung der Referenzen.
@@ -211,7 +211,7 @@ public partial class BaseEnemy : CharacterBody2D
     /** 
     * @brief Aktualisiert die Animationen des Gegners.
     */
-    private void UpdateAnimation(){
+    protected virtual void UpdateAnimation(){
         if(Dead) return;
         if(!((Sprite.Animation == "take_hit" || Sprite.Animation == "attack") && Sprite.IsPlaying())){
             switch(AnimationState){
@@ -240,7 +240,7 @@ public partial class BaseEnemy : CharacterBody2D
     * @brief Verarbeitet zugefügten Schaden.
     */
     private void TakeDamage(Damage DMG){
-        CurrentHealthPoints -= DMG.GetPhysicalDMG() + DMG.GetTrueDMG();
+        CurrentHealthPoints -= DMG.GetPhysicalDMG() * (1 - Armor / 100.0f) + DMG.GetTrueDMG();
         Position += DMG.GetPushAmount();
         if(CurrentHealthPoints <= 0){
             Die();
@@ -251,6 +251,13 @@ public partial class BaseEnemy : CharacterBody2D
                 CurrentTarget = Player;
             }
         }
+    }
+
+    /**
+    * @brief Gib bool Dead zurück.
+    */
+    public bool IsDead(){
+        return Dead;
     }
 
     /** 
@@ -297,6 +304,15 @@ public partial class BaseEnemy : CharacterBody2D
         HealthBar.SetVisible(false);
         Player.SetSinAmount(Player.GetSinAmount() + SinAmount);
 
+    }
+
+    public void Respawn(){
+        Dead = false;
+        CurrentHealthPoints = MaxHealthPoints;
+        HealthBar.Value = 100f* CurrentHealthPoints/MaxHealthPoints;
+        MainCollision.SetDeferred(CollisionShape2D.PropertyName.Disabled, false);
+        HealthBar.SetVisible(true);
+        Sprite.Play("idle");
     }
 
     /** 
