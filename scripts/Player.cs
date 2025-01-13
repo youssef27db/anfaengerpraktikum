@@ -367,7 +367,7 @@ public partial class Player : CharacterBody2D
     */
     public Damage GetDamage(){
         if(LastAttack == 1){
-            return new Damage(100, 0, Vector2.Zero, this);
+            return new Damage(10, 0, Vector2.Zero, this);
         }
         if(LastAttack == 2){
             Vector2 Push = new Vector2(20,0);
