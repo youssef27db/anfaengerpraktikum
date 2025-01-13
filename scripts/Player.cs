@@ -90,7 +90,7 @@ public partial class Player : CharacterBody2D
         if(Input.IsActionJustPressed("heal")){
             BloodVials.UseBloodVial();
         }
-
+        
         HandleJump();
         HandleMovement(DeltaTime);
         MoveAndSlide();
@@ -180,6 +180,8 @@ public partial class Player : CharacterBody2D
      * @brief Startet den Dash-Prozess.
      */
     private void StartDash() {
+        SetCollisionLayerValue(1,false);
+        SetCollisionMaskValue(1,false);
         IsDashing = true;
         CanDash = false;
         DashTimer.Timeout += StopDash;
@@ -262,6 +264,8 @@ public partial class Player : CharacterBody2D
         DashEffect.Stop();
         DashTimer.Stop();
         DashTimer.Timeout -= StopDash;
+        SetCollisionLayerValue(1,true);
+        SetCollisionMaskValue(1,true);
     }
 
     /** 
@@ -363,7 +367,7 @@ public partial class Player : CharacterBody2D
     */
     public Damage GetDamage(){
         if(LastAttack == 1){
-            return new Damage(10, 0, Vector2.Zero, this);
+            return new Damage(100, 0, Vector2.Zero, this);
         }
         if(LastAttack == 2){
             Vector2 Push = new Vector2(20,0);

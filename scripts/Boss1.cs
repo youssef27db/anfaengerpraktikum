@@ -1,6 +1,5 @@
 using Godot;
 using System;
-using System.Threading.Tasks;
 
 /**
 * @brief Klasse für einen stärkeren Boss-Gegner, der von BaseEnemy erbt
@@ -39,7 +38,7 @@ public partial class Boss1 : BaseEnemy{
         base._Process(DeltaTime);
 
         if (CurrentHealthPoints <= MaxHealthPoints / 2 && !EnemiesRevived){
-            _ = StartGlowingAsync();
+            StartGlowing();
             ReviveEnemies();
             EnemiesRevived = true;
             Armor = 60f; // Rüstung erhöhen
@@ -67,14 +66,11 @@ public partial class Boss1 : BaseEnemy{
     /**
     * @brief Startet einen Leuchteffekt, wenn der Boss Schaden nimmt
     */
-    private async Task StartGlowingAsync(){
+    private void StartGlowing(){
         // Ändere die Modulationsfarbe des Sprites, um ein Leuchten zu simulieren
         if (Sprite != null){
-            GetTree().Paused = true;
             ShowPopupMessage("AHHHH!!!");
             Sprite.Modulate = new Color(1.0f, 0.84f, 0.0f, 1.0f); // Ein goldliche Leuchteffekt
-            await ToSignal(GetTree().CreateTimer(0.5f), "timeout");
-            GetTree().Paused = false;
         }
     }
 

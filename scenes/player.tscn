@@ -571,7 +571,8 @@ height = 28.0
 
 [node name="Player" type="CharacterBody2D"]
 z_index = 1
-collision_layer = 3
+collision_layer = 2
+collision_mask = 2048
 script = ExtResource("1_h2dre")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

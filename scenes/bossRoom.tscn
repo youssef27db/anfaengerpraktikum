@@ -154,12 +154,9 @@ texture = ExtResource("2_3tgvv")
 10:15/0 = 0
 11:15/0 = 0
 12:15/0 = 0
-14:4/0 = 0
-14:5/0 = 0
-14:6/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_b6v16"]
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 2049
 sources/0 = SubResource("TileSetAtlasSource_1aa7m")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1lgw5"]
@@ -325,6 +322,8 @@ SpawnDirection = "right"
 
 [node name="Player" parent="." instance=ExtResource("4_7lu2w")]
 position = Vector2(22, 287)
+collision_layer = 3
+collision_mask = 2049
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(2.3, 2.3)
