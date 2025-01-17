@@ -1,0 +1,66 @@
+\doxysection{Blood\+Vial Class Reference}
+\hypertarget{class_blood_vial}{}\label{class_blood_vial}\index{BloodVial@{BloodVial}}
+
+
+Klasse für die Interaktion zum heilen.  
+
+
+Inheritance diagram for Blood\+Vial\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_blood_vial}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_blood_vial_a42ceac7194f591e87bc2a82a61b2165c}\label{class_blood_vial_a42ceac7194f591e87bc2a82a61b2165c} 
+override void {\bfseries \+\_\+\+Ready} ()
+\begin{DoxyCompactList}\small\item\em Initialisierung der Referenzen. Findet die relevanten Knoten in der Szene und weist sie zu. \end{DoxyCompactList}\item 
+\Hypertarget{class_blood_vial_a0e0fed9a887f1fa7f068906273d43275}\label{class_blood_vial_a0e0fed9a887f1fa7f068906273d43275} 
+void {\bfseries Use\+Blood\+Vial} ()
+\begin{DoxyCompactList}\small\item\em Versucht ein Bloodvial zu verwenden um den Spieler zu Heilen. \end{DoxyCompactList}\item 
+\Hypertarget{class_blood_vial_a31a53feef846bd962bd5b525b0bc5c6c}\label{class_blood_vial_a31a53feef846bd962bd5b525b0bc5c6c} 
+void {\bfseries Reset\+Uses} ()
+\begin{DoxyCompactList}\small\item\em Setzt die Anzahl der Bloodvials auf das Maximum. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_blood_vial_af5370d164b83ed4e3b5edec111b4ef98}{Add\+Max\+Uses}} (int Amount)
+\begin{DoxyCompactList}\small\item\em Verbessert die Maximale Anzahl an Bloodvials um die angegebene Anzahl. \end{DoxyCompactList}\item 
+\Hypertarget{class_blood_vial_a993c680c590e63fb4db1f6466e1418d2}\label{class_blood_vial_a993c680c590e63fb4db1f6466e1418d2} 
+void {\bfseries Level\+Heal\+Amount} ()
+\begin{DoxyCompactList}\small\item\em Verbessert den Heal\+AMount eines Bloodvials um 25. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_blood_vial_a5a69ee19247334898894c701fd83960e}\label{class_blood_vial_a5a69ee19247334898894c701fd83960e} 
+\mbox{\hyperlink{class_player}{Player}} {\bfseries Player}
+\item 
+\Hypertarget{class_blood_vial_a89a14fa2003b654ce66e5b665dc07467}\label{class_blood_vial_a89a14fa2003b654ce66e5b665dc07467} 
+int {\bfseries Heal\+Amount} = 25
+\item 
+\Hypertarget{class_blood_vial_a7d34cf4825dfb5af42bf1d8f4925923d}\label{class_blood_vial_a7d34cf4825dfb5af42bf1d8f4925923d} 
+int {\bfseries Max\+Uses} = 5
+\item 
+\Hypertarget{class_blood_vial_aceda9579e1c73b39dc393970c7d8bb25}\label{class_blood_vial_aceda9579e1c73b39dc393970c7d8bb25} 
+int {\bfseries Current\+Uses}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Klasse für die Interaktion zum heilen. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_blood_vial_af5370d164b83ed4e3b5edec111b4ef98}\index{BloodVial@{BloodVial}!AddMaxUses@{AddMaxUses}}
+\index{AddMaxUses@{AddMaxUses}!BloodVial@{BloodVial}}
+\doxysubsubsection{\texorpdfstring{AddMaxUses()}{AddMaxUses()}}
+{\footnotesize\ttfamily \label{class_blood_vial_af5370d164b83ed4e3b5edec111b4ef98} 
+void Blood\+Vial.\+Add\+Max\+Uses (\begin{DoxyParamCaption}\item[{int}]{Amount}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Verbessert die Maximale Anzahl an Bloodvials um die angegebene Anzahl. 
+
+int Amount, um die Max\+Uses erhöht wird. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Youssef/\+Desktop/\+UNI/\+S4/\+Computerspiel\+Entwicklung/\+Das\+Spiel/anfaengerpraktikum/scripts/Blood\+Vial.\+cs\end{DoxyCompactItemize}

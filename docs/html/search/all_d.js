@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['regeneratestamina_0',['RegenerateStamina',['../class_player.html#ab715416eb7dbe1d4d320d4ba21999072',1,'Player']]],
-  ['respawn_1',['Respawn',['../class_player.html#ae1104e2e3726f7bac674615c4e33b2bf',1,'Player']]]
+  ['party_20notices_0',['Third-Party Notices',['../md__c_1_2_users_2_youssef_2_desktop_2_u_n_i_2_s4_2_computerspiel_entwicklung_2_das_spiel_2anfaene077cc7c5bcf0a389cded2b1f693474f.html',1,'']]],
+  ['player_1',['Player',['../class_player.html',1,'']]],
+  ['playerstats_2',['PlayerStats',['../class_player_stats.html',1,'']]]
 ];

@@ -1,6 +1,9 @@
 using Godot;
 using System;
 
+/**
+* @brief Klasse für einen einfachen Gegner
+*/
 public partial class BaseEnemy : CharacterBody2D
 {
 
@@ -10,44 +13,52 @@ public partial class BaseEnemy : CharacterBody2D
 
     //customizable variables
     [Export]
-    private bool Dead = false;
+    protected float Damage = 20f;    
     [Export]
-    private bool Respawnable = true;
+    protected bool Dead = false;
     [Export]
-    private float MaxHealthPoints = 100f;
+    protected bool Respawnable = true;
     [Export]
-    private float Armor = 20f;
+    protected float MaxHealthPoints = 100f;
     [Export]
-    private float MaxStamina = 100f;
+    protected float Armor = 20f; //MUSS ZISCHEN 0 UND 99 LIEGEN
     [Export]
-    private float Speed = 10;
+    protected float MaxStamina = 1f;
     [Export]
-    private int SinAmount = 10;
+    protected float Speed = 10;
     [Export]
-    private double ReturnToStartAfter = 5;
+    protected int SinAmount = 10;
+    [Export]
+    protected double ReturnToStartAfter = 5;
 
     //private variables
-    private float CurrentHealthPoints;
-    private float CurrentStamina;
-    private double ReturnToStart;
-    private bool Pursuing = false;
-    private Node2D CurrentTarget = null;
-    private Vector2 TargetPosition = Vector2.Inf;
-    private Vector2 StartPosition;
-    private bool StartRotation = false;
+    protected float CurrentHealthPoints;
+    protected float CurrentStamina;
+    protected double ReturnToStart;
+    protected bool Pursuing = false;
+    protected Node2D CurrentTarget = null;
+    protected Vector2 TargetPosition = Vector2.Inf;
+    protected Vector2 StartPosition;
+    protected bool StartRotation = false;
     private State AnimationState = State.IDLE;
+    protected bool AlreadyHit = false;
 
     //linked nodes
-    private AnimatedSprite2D Sprite;
-    private CollisionPolygon2D CollisionPolygon;
-    private Area2D SwordHitbox;
-    private CollisionShape2D MainCollision;
-    private RayCast2D FrontCollisionRayCast;
-    private RayCast2D LineOfSight;
-    private RayCast2D LeftFallProtection;
-    private RayCast2D RightFallProtection;
-    private TextureProgressBar HealthBar;
+    protected AnimatedSprite2D Sprite;
+    protected CollisionPolygon2D CollisionPolygon;
+    protected Area2D SwordHitbox;
+    protected CollisionShape2D MainCollision;
+    protected RayCast2D FrontCollisionRayCast;
+    protected RayCast2D LineOfSight;
+    protected RayCast2D LeftFallProtection;
+    protected RayCast2D RightFallProtection;
+    protected TextureProgressBar HealthBar;
+    protected Player Player;
 
+    /** 
+    * @brief Initialisierung der Referenzen.
+    * Findet die relevanten Knoten in der Szene und weist sie zu.
+    */
     public override void _Ready()
     {
         Sprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
@@ -59,6 +70,7 @@ public partial class BaseEnemy : CharacterBody2D
         LeftFallProtection = GetNode<RayCast2D>("LeftFallProtection");
         RightFallProtection = GetNode<RayCast2D>("RightFallProtection");
         HealthBar = GetNode<TextureProgressBar>("HealthBar");
+        Player = GetNode<Player>("../Player");
 
         CurrentHealthPoints = MaxHealthPoints;
         CurrentStamina = MaxStamina;
@@ -69,17 +81,30 @@ public partial class BaseEnemy : CharacterBody2D
         HealthBar.Value = 100f* CurrentHealthPoints/MaxHealthPoints;
     }
 
+    /** 
+    * @brief Physikalische Prozesse werden in jedem Frame ausgeführt.
+    * Berechnet Gravitation und Bewegung
+    * @param DeltaTime Zeit seit dem letzten Frame.
+    */
     public override void _Process(double DeltaTime)
     {
         HandleMovement(DeltaTime);
+        if(CurrentStamina < MaxStamina){
+            CurrentStamina += (float) DeltaTime;
+            Velocity = Velocity * 0.8f;
+        }
         if (!IsOnFloor() && !Dead) {
             Velocity += GetGravity() * (float)DeltaTime;
         }
         UpdateAnimation();
         MoveAndSlide();
+        CheckPlayerHit();
     }
 
-    //signal when player enters detection area -> start following player
+    /**
+    * @brief Detektiert den Spieler wenn er den Erkennungsbereich betritt.
+    * @param body Objekt das den Bereich betritt.
+    */
     public void OnDetectionBodyEntered(Node2D body){
         if(CheckLineOfSight(body)){
             Pursuing = true;
@@ -87,7 +112,10 @@ public partial class BaseEnemy : CharacterBody2D
         }
     }
 
-    //signal when player leaves pursuing area -> stop following player
+    /**
+    * @brief Detektiert wenn der Spieler den Verfolgungsbereich verlässt.
+    * @param body Objekt das den Bereich verlässt.
+    */
     public void OnPursuingRadiusBodyExited(Node2D body){
         if(body == CurrentTarget){
             Pursuing = false;
@@ -95,17 +123,28 @@ public partial class BaseEnemy : CharacterBody2D
         }
     }
 
+    /**
+    * @brief Detektiert wenn ein Objekt die Hitbox des Gegners betritt. (z.B.: Schwert des Spielers)
+    * @param area Objekt das den Bereich betritt.
+    */
     public void OnHitboxAreaEntered(Area2D area){
         Player Player1 = (Player) area.GetParent().GetParent();
         TakeDamage(Player1.GetDamage());
     }
 
+    /**
+    * @brief Detektiert ob der Spieler in Schlagreichweite ist.
+    * @param body Objekt das den Bereich betritt.
+    */
     public void OnSwordHitBoxBodyEntered(Node2D body){
+        if(Dead) return;
         Sprite.Play("attack");
-        GD.Print("Test");
-
     }
 
+    /** 
+    * @brief Verarbeitet die Bewegung des Gegners.
+    * @param DeltaTime Zeit seit dem letzten Frame.
+    */
     private void HandleMovement(double DeltaTime){
         if(Dead) return;
         if((Sprite.Animation == "take_hit" || Sprite.Animation == "attack") && Sprite.IsPlaying()){
@@ -168,7 +207,11 @@ public partial class BaseEnemy : CharacterBody2D
         }
     }
 
-    private void UpdateAnimation(){
+
+    /** 
+    * @brief Aktualisiert die Animationen des Gegners.
+    */
+    protected virtual void UpdateAnimation(){
         if(Dead) return;
         if(!((Sprite.Animation == "take_hit" || Sprite.Animation == "attack") && Sprite.IsPlaying())){
             switch(AnimationState){
@@ -193,38 +236,89 @@ public partial class BaseEnemy : CharacterBody2D
 
     }
 
+    /** 
+    * @brief Verarbeitet zugefügten Schaden.
+    */
     private void TakeDamage(Damage DMG){
-        CurrentHealthPoints -= DMG.GetPhysicalDMG() + DMG.GetTrueDMG();
+        CurrentHealthPoints -= DMG.GetPhysicalDMG() * (1 - Armor / 100.0f) + DMG.GetTrueDMG();
         Position += DMG.GetPushAmount();
         if(CurrentHealthPoints <= 0){
             Die();
         } else {
             Sprite.Play("take_hit");
+            if(DMG.GetSource() == Player){
+                Pursuing = true;
+                CurrentTarget = Player;
+            }
         }
     }
 
-    public Damage GetDamage(){
-    // Beispielwerte für den Schaden (anpassbar)
-    float PhysicalDamage = 15f; 
-    float TrueDamage = 5f;     
-    Vector2 Push = new Vector2(50, 0);
-
-    if (!Sprite.FlipH){
-        Push = -Push; // Rückstoß in die entgegengesetzte Richtung, wenn der Gegner nach links schaut
+    /**
+    * @brief Gib bool Dead zurück.
+    */
+    public bool IsDead(){
+        return Dead;
     }
 
-    return new Damage(PhysicalDamage, TrueDamage, Push);
-}
+    /** 
+    * @brief Überprüft ob der Spieler sich, während eines Angriffes in Reichweite befindet
+    * und fügt diesem dann gegebenenfalls Schaden zu.
+    */
+    private void CheckPlayerHit(){
+        if(Dead) return;
+        if(Sprite.Animation != "attack"){
+            AlreadyHit = false;
+            if(Sprite.Animation == "take_hit" || CurrentStamina < MaxStamina) return;
+            Godot.Collections.Array<Node2D> Bodies = SwordHitbox.GetOverlappingBodies();
+            foreach(Node2D Body in Bodies){
+                if(Body == Player){
+                    Sprite.Play("attack");
+                }
+            }
+            return;
+        }
+        if(AlreadyHit) return;
+        if(Sprite.Frame >= 6){
+            CurrentStamina = 0;
+            Godot.Collections.Array<Node2D> Bodies = SwordHitbox.GetOverlappingBodies();
+            foreach(Node2D Body in Bodies){
+                if(Body == Player){
+                    Player.TakeDamage(new Damage(Damage, 0f, Vector2.Zero, this));
+                    AlreadyHit = true;
+                    break;
+                }
+            }
+        }
 
+    }
+
+    /** 
+    * @brief Wird aufgerufen wenn der Gegner stirbt.
+    */
     private void Die(){
         Dead = true;
         Velocity = Vector2.Zero;
         MainCollision.SetDeferred(CollisionShape2D.PropertyName.Disabled, true);
+
         Sprite.Play("death");
         HealthBar.SetVisible(false);
+        Player.SetSinAmount(Player.GetSinAmount() + SinAmount);
 
     }
 
+    public void Respawn(){
+        Dead = false;
+        CurrentHealthPoints = MaxHealthPoints;
+        HealthBar.Value = 100f* CurrentHealthPoints/MaxHealthPoints;
+        MainCollision.SetDeferred(CollisionShape2D.PropertyName.Disabled, false);
+        HealthBar.SetVisible(true);
+        Sprite.Play("idle");
+    }
+
+    /** 
+    * @brief Überprüft die direkte Sichtlinie zu einem Objekt.
+    * @return bool Ergebnis der Abfrage.
+    */
     private bool CheckLineOfSight(Node2D body){
         Vector2 offset = Vector2.Zero;
         offset.Y = -14;
@@ -235,7 +329,9 @@ public partial class BaseEnemy : CharacterBody2D
         return true;
     }
 
-    //flips rotation of sprite and collision nodes
+    /** 
+    * @brief Spiegelt die Orientierung aller zu dem Gegner gehörender Nodes.
+    */
     private void FlipRotation(){
         Sprite.FlipH = !Sprite.FlipH;
         CollisionPolygon.RotationDegrees = Math.Abs(CollisionPolygon.RotationDegrees -180);
@@ -243,6 +339,9 @@ public partial class BaseEnemy : CharacterBody2D
         FrontCollisionRayCast.RotationDegrees = Math.Abs(FrontCollisionRayCast.RotationDegrees - 180);
     }
 
+    /** 
+    * @brief Setzt Orientierung aller zu dem Gegner gehörender Nodes.
+    */
     private void SetRotation(bool Rotation){
         Sprite.FlipH = Rotation ^ StartRotation;
         if(Rotation){
@@ -256,7 +355,14 @@ public partial class BaseEnemy : CharacterBody2D
         }
     }
 
+    /** 
+    * @brief Überprüft, ob zwei Werte in einer Delta-Umgebung zueinander liegen.
+    * @param float Wert1
+    * @param float Wert2
+    * @param float Delta
+    * @return bool Ergebnis
+    */
     private bool IsCloseTo(float Value1, float Value2, float Delta){
-        return (Value1 <= Value2 + Delta && Value1 >= Value2 - Delta);
+        return Value1 <= (Value2 + Delta) && Value1 >= (Value2 - Delta);
     }
 }

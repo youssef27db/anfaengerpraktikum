@@ -27,6 +27,8 @@ public partial class Player : CharacterBody2D
     private Timer DashTimer;
     private CollisionShape2D SwordCollision;
     private CollisionShape2D PlayerHitbox;
+    private BloodVial BloodVials;
+    private Label SinDisplay;
 
     private Vector2 HauptHitbox;
     private Vector2 SpawnPoint;
@@ -57,9 +59,12 @@ public partial class Player : CharacterBody2D
         SwordCollision = GetNode<CollisionShape2D>("Sprite2D/SwordHit/SwordCollision");
         PlayerHitbox = GetNode<CollisionShape2D>("PlayerHitbox");
         HauptHitbox = PlayerHitbox.Position;
+        BloodVials = GetNode<BloodVial>("../HUD/BloodVial/Counter");
+        SinDisplay = GetNode<Label>("../HUD/SinAmount/Counter");
 
         CurrentStamina = MaxStamina;
-        CurrentHealth = 50f;
+        CurrentHealth = MaxHealthPoints;
+        SinDisplay.Text = SinAmount + "";
 
         NavigationManager navigationManager = GetNode<NavigationManager>("/root/NavigationManager");
         navigationManager.Connect("OnTriggerPlayerSpawn", new Callable(this, nameof(OnSpawn)));
@@ -79,8 +84,13 @@ public partial class Player : CharacterBody2D
         }
 
         TimeSinceLastStaminaUse += (float)DeltaTime;
-        RegenerateStamina(10f, DeltaTime);
+        RegenerateStamina(20f, DeltaTime);
 
+        // Heal
+        if(Input.IsActionJustPressed("heal")){
+            BloodVials.UseBloodVial();
+        }
+        
         HandleJump();
         HandleMovement(DeltaTime);
         MoveAndSlide();
@@ -170,6 +180,8 @@ public partial class Player : CharacterBody2D
      * @brief Startet den Dash-Prozess.
      */
     private void StartDash() {
+        SetCollisionLayerValue(1,false);
+        SetCollisionMaskValue(1,false);
         IsDashing = true;
         CanDash = false;
         DashTimer.Timeout += StopDash;
@@ -252,6 +264,8 @@ public partial class Player : CharacterBody2D
         DashEffect.Stop();
         DashTimer.Stop();
         DashTimer.Timeout -= StopDash;
+        SetCollisionLayerValue(1,true);
+        SetCollisionMaskValue(1,true);
     }
 
     /** 
@@ -283,7 +297,8 @@ public partial class Player : CharacterBody2D
     * @param Health Neue Lebenspunkte, die gesetzt werden sollen.
     */
     public void SetCurrentHealth(float Health){
-        CurrentHealth = Health;
+        // CurrentHealth darf MaxHealthPoints nicht überschreiten.
+        CurrentHealth = Mathf.Min(Health, MaxHealthPoints);
     }
 
     /** 
@@ -324,7 +339,16 @@ public partial class Player : CharacterBody2D
     * @param Damage Instanz der Klasse `Damage`, die den physischen und wahren Schaden sowie den Rückstoß enthält.
     */
     public void TakeDamage(Damage Damage){
-        float totalDamage = Damage.GetPhysicalDMG() + Damage.GetTrueDMG();
+        float totalDamage = Damage.GetTrueDMG();
+        if(!IsBlocking()){
+            totalDamage += Damage.GetPhysicalDMG();
+        } else {
+            CurrentStamina -= Damage.GetPhysicalDMG();
+            if(CurrentStamina < 0){
+                totalDamage -= CurrentStamina;
+                CurrentStamina = 0;
+            }
+        }
 
         SetCurrentHealth(GetCurrentHealth() - totalDamage);
         Position += Damage.GetPushAmount();
@@ -343,16 +367,16 @@ public partial class Player : CharacterBody2D
     */
     public Damage GetDamage(){
         if(LastAttack == 1){
-            return new Damage(10, 0, Vector2.Zero);
+            return new Damage(10, 0, Vector2.Zero, this);
         }
         if(LastAttack == 2){
             Vector2 Push = new Vector2(20,0);
             if(Sprite.FlipH){
                 Push = -Push;
             }
-            return new Damage(20, 0, Push);       
+            return new Damage(20, 0, Push, this);       
         }
-        return new Damage(0,0,Vector2.Zero);
+        return new Damage(0,0,Vector2.Zero, this);
     }
 
     /** 
@@ -396,7 +420,7 @@ public partial class Player : CharacterBody2D
     */
     public void RegenerateStamina(float Amount, double delta) {
         // Wenn die Verzögerungszeit erreicht wurde, regeneriere Stamina
-        if (TimeSinceLastStaminaUse >= 5f) {
+        if (TimeSinceLastStaminaUse >= 1f) {
             SetStamina(CurrentStamina + Amount * (float)delta); // Regeneriere Stamina abhängig von der Zeit
         }
     }
@@ -431,32 +455,45 @@ public partial class Player : CharacterBody2D
     /**
     * @brief Lässt den Spieler am Checkpoint spawnen.
     */
-
     public void Respawn(){
         var NavigationManager = GetNode<NavigationManager>("/root/NavigationManager");
         var PlayerStats = GetNode<PlayerStats>("/root/PlayerStats");
         NavigationManager.GoToLevel(PlayerStats.GetRespawnLevelTag(), "spawn");
+        BloodVials.ResetUses();
 
     }
     
-    /** 
-     * @brief Verarbeitung, wenn ein Körper das Schwert trifft.
-     * @param body Der getroffene Körper.
-     */
-    public void OnEnemyHitBoxEntered(Area2D area){
-        // Überprüfen, ob der Collider ein `BaseEnemy` ist
-        if (area.GetParent() is BaseEnemy enemy){
-            // Hole den Schaden vom Gegner und wende ihn auf den Spieler an
-            Damage damage = enemy.GetDamage();
-            TakeDamage(damage);
-        }
+    /**
+    * @brief Getter für BloodVials.
+    * @return BloodVial
+    */
+    public BloodVial GetBloodVials(){
+        return BloodVials;
     }
 
     /**
-        * @brief Wird aufgerufen, wenn der Spieler an einer neuen Position spawnen soll.
-        * @param position Die Position, an der der Spieler spawnen soll.
-        * @param direction Die Richtung, in die der Spieler schauen soll.
-        */
+    * @brief Getter für SinAmount.
+    * @return int Sins
+    */
+    public int GetSinAmount(){
+        return SinAmount;
+    }
+
+    /** 
+    * @brief Setzt den SinAmount des Spielers.
+    * @param Value Der neue Wert für den SinAmount.
+    */
+    public void SetSinAmount(int Value) {
+        // SinAmount muss immer >= 0 sein
+        SinAmount = Mathf.Max(Value, 0);
+        SinDisplay.Text = SinAmount + "";
+    }
+
+    /**
+    * @brief Wird aufgerufen, wenn der Spieler an einer neuen Position spawnen soll.
+    * @param position Die Position, an der der Spieler spawnen soll.
+    * @param direction Die Richtung, in die der Spieler schauen soll.
+    */
     private void OnSpawn(Vector2 position, string direction){
 
         // Spielerposition auf die übergebene Position setzen

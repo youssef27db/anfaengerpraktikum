@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['isattacking_0',['IsAttacking',['../class_player.html#ab8df147009969880162db05e243cd129',1,'Player']]],
-  ['isblocking_1',['IsBlocking',['../class_player.html#ac5b003495e551fee56ed26d26a239432',1,'Player']]]
+  ['handlejump_0',['HandleJump',['../class_player.html#a8237be052507e34edec4776fa25f9544',1,'Player']]],
+  ['handlemovement_1',['HandleMovement',['../class_base_enemy.html#aee39d90b4efaebada5ab47b21184516a',1,'BaseEnemy.HandleMovement()'],['../class_player.html#af8fce0260ebcc78bb46e2a8393eb2fb7',1,'Player.HandleMovement()']]],
+  ['healthbar_2',['HealthBar',['../class_health_bar.html',1,'']]]
 ];

@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://chxndv6of54w8"]
+[gd_scene load_steps=7 format=3 uid="uid://chxndv6of54w8"]
 
 [ext_resource type="Texture2D" uid="uid://c0w6h05532gs0" path="res://assets/Dungeon Tile Set.png" id="1_145wl"]
 [ext_resource type="Script" path="res://scripts/Spike.cs" id="2_hw8jv"]
@@ -145,7 +145,11 @@ sources/0 = SubResource("TileSetAtlasSource_eq0hh")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pu1o3"]
 size = Vector2(31, 7)
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_gw4ie"]
+b = Vector2(31, 0)
+
+[node name="Spike" type="Node2D"]
+script = ExtResource("2_hw8jv")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -157,7 +161,6 @@ tile_set = SubResource("TileSet_3i14c")
 [node name="Area2D" type="Area2D" parent="StaticBody2D"]
 visibility_layer = 7
 z_index = 2
-script = ExtResource("2_hw8jv")
 
 [node name="Timer" type="Timer" parent="StaticBody2D/Area2D"]
 process_callback = 0
@@ -167,6 +170,10 @@ one_shot = true
 position = Vector2(15.5, -3.5)
 shape = SubResource("RectangleShape2D_pu1o3")
 
-[connection signal="body_entered" from="StaticBody2D/Area2D" to="StaticBody2D/Area2D" method="OnPlayerBodyEntered"]
-[connection signal="body_exited" from="StaticBody2D/Area2D" to="StaticBody2D/Area2D" method="OnPlayerBodyExited"]
-[connection signal="timeout" from="StaticBody2D/Area2D/Timer" to="StaticBody2D/Area2D" method="OnTimerTimeout"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("SegmentShape2D_gw4ie")
+disabled = true
+
+[connection signal="body_entered" from="StaticBody2D/Area2D" to="." method="OnPlayerBodyEntered"]
+[connection signal="body_exited" from="StaticBody2D/Area2D" to="." method="OnPlayerBodyExited"]
+[connection signal="timeout" from="StaticBody2D/Area2D/Timer" to="." method="OnTimerTimeout"]

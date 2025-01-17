@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=4 uid="uid://dvk8ylyepouug"]
+[gd_scene load_steps=9 format=4 uid="uid://dvk8ylyepouug"]
 
 [ext_resource type="Texture2D" uid="uid://c0w6h05532gs0" path="res://assets/Dungeon Tile Set.png" id="1_a7xoi"]
 [ext_resource type="PackedScene" uid="uid://cq6xmv3najlnh" path="res://scenes/player.tscn" id="2_eiejb"]
 [ext_resource type="PackedScene" uid="uid://cqokjjp5c4xlu" path="res://scenes/base_enemy.tscn" id="4_7nb7u"]
 [ext_resource type="PackedScene" uid="uid://cclu45b2pmyo2" path="res://scenes/checkpoint.tscn" id="4_m7wet"]
 [ext_resource type="PackedScene" uid="uid://dh381ntrht6ri" path="res://scenes/hud.tscn" id="5_eivtg"]
+[ext_resource type="PackedScene" uid="uid://mjtnmittvw51" path="res://scenes/interactable.tscn" id="6_fp4c4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gj3od"]
 texture = ExtResource("1_a7xoi")
@@ -199,3 +200,8 @@ position = Vector2(193, 15)
 position = Vector2(-190, -8)
 
 [node name="HUD" parent="." instance=ExtResource("5_eivtg")]
+
+[node name="Interactable" parent="." instance=ExtResource("6_fp4c4")]
+position = Vector2(-96, -94)
+Text = "[font_size=20][color=black][center]Test[/center][/color][/font_size]
+[shake rate=20.0 level=5 connected=1]Test2[/shake]"

@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['onenemyhitboxentered_0',['OnEnemyHitBoxEntered',['../class_player.html#a393772e0438181121affcd4636a63cb0',1,'Player']]],
-  ['onplayerbodyentered_1',['OnPlayerBodyEntered',['../class_checkpoint.html#a1edb44ccaab350249bc760360777a04b',1,'Checkpoint']]]
+  ['isattacking_0',['IsAttacking',['../class_player.html#ab8df147009969880162db05e243cd129',1,'Player']]],
+  ['isblocking_1',['IsBlocking',['../class_player.html#ac5b003495e551fee56ed26d26a239432',1,'Player']]],
+  ['iscloseto_2',['IsCloseTo',['../class_base_enemy.html#abf57b8dbd0f267fd42a2a02b7bda95dc',1,'BaseEnemy']]]
 ];

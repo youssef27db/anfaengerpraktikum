@@ -1,22 +1,25 @@
 using Godot;
 using System;
 
-public partial class Spike : Area2D
+public partial class Spike : Node2D
 {
 	// Variable für Player
 	private Player player;
+
+	[Export]
+	private float Damage = 10f;
 
 
 	public override void _Ready()
 	{
 		// Zugriff auf Player Node
 
-		player = GetNode<Player>("../Player");
+		player = GetNode<Player>("../../Player");
  	}
 
 	/**
-		 * Prüfen ob der Körper den Spike betritt falls ja wird der Timer gestartet und der Spieler nimmt Schaden
-		 */
+	* @brief Prüfen ob der Körper den Spike betritt falls ja wird der Timer gestartet und der Spieler nimmt Schaden
+	*/
 
 	private void OnPlayerBodyEntered(Node body)
 	{
@@ -26,7 +29,7 @@ public partial class Spike : Area2D
 			player = (Player)body; // Instanzvariable setzen				
 			player.TakeDamage(GetDamage());
 			player.SlowPlayer(0.5f);
-			GetNode<Timer>("Timer").Start();
+			GetNode<Timer>("StaticBody2D/Area2D/Timer").Start();
 			GD.Print("Player entered spike");
 		}
 
@@ -34,7 +37,7 @@ public partial class Spike : Area2D
 	}
 
 	/**
-	 * Prüfen ob der Körper den Spike verlässt, falls ja wird der Timer gestoppt und der Spieler nimmt keinen Schaden mehr
+	 * @brief Prüfen ob der Körper den Spike verlässt, falls ja wird der Timer gestoppt und der Spieler nimmt keinen Schaden mehr
 	 */
 
 	private void OnPlayerBodyExited(Node body)
@@ -42,25 +45,31 @@ public partial class Spike : Area2D
 		if (body is Player)
 		{
 			player = null; // Instanzvariable zurücksetzen
+<<<<<<< HEAD
 			
 			GetNode<Timer>("Timer").Stop();
+=======
+
+			GetNode<Timer>("StaticBody2D/Area2D/Timer").Stop();
+>>>>>>> main
 		}
 	}
 
-	// Timer wird gestartet und der Spieler nimmt Schaden
+	/**
+	 * @brief Timer Timeout Methode, die den Schaden an den Spieler übergibt
+	 */
 	private void OnTimerTimeout()
 	{	
 		GD.Print("Timer timeout");
 		player.TakeDamage(GetDamage());
-		GetNode<Timer>("Timer").Start();
+		GetNode<Timer>("StaticBody2D/Area2D/Timer").Start();
 	}
 
+	/**
+	 * @brief Gibt ein Damage Objekt zurück.
+	 * @return Damage Objekt
+	 */
 	public Damage GetDamage(){
-    // Beispielwerte für den Schaden (anpassbar)
-		float PhysicalDamage = 0f; 
-		float TrueDamage = 10f;     
-		Vector2 Push = new Vector2(0, 0);
-
-		return new Damage(PhysicalDamage, TrueDamage, Push);
+		return new Damage(0, Damage, Vector2.Zero, this);
 	}
 }

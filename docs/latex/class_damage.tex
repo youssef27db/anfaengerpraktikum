@@ -8,14 +8,16 @@ Repräsentiert den Schaden, der von Charakteren oder Gegnern verursacht wird. Be
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_damage_aba9d5c4989d419180c03afc3a7aa022a}{Damage}} (float Physical\+DMG, float True\+DMG, Vector2 Push\+Amount)
+\mbox{\hyperlink{class_damage_a078b1c0b6cb42cd0d3c4bf74e3ca4454}{Damage}} (float Physical\+DMG, float True\+DMG, Vector2 Push\+Amount, Node2D Source)
 \begin{DoxyCompactList}\small\item\em Konstruktor für die Damage-\/\+Klasse. \end{DoxyCompactList}\item 
 float \mbox{\hyperlink{class_damage_a084fad418a6be9edca3e3e32355e49c0}{Get\+Physical\+DMG}} ()
 \begin{DoxyCompactList}\small\item\em Gibt den physischen Schaden zurück. \end{DoxyCompactList}\item 
 float \mbox{\hyperlink{class_damage_a4d43580112f089c208f9ba8e0b2559f0}{Get\+True\+DMG}} ()
 \begin{DoxyCompactList}\small\item\em Gibt den wahren Schaden zurück. \end{DoxyCompactList}\item 
 Vector2 \mbox{\hyperlink{class_damage_a60741a1e632c21788499ddc284b2844b}{Get\+Push\+Amount}} ()
-\begin{DoxyCompactList}\small\item\em Gibt den Rückstoßvektor zurück. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Gibt den Rückstoßvektor zurück. \end{DoxyCompactList}\item 
+Node2D \mbox{\hyperlink{class_damage_ac446ed14eae2ee0d927510a3ab525042}{Get\+Source}} ()
+\begin{DoxyCompactList}\small\item\em Gibt die Ursache zurück. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -27,6 +29,9 @@ float {\bfseries True\+DMG}
 \item 
 \Hypertarget{class_damage_ab3c892c04820406c50102d9471d0fc9d}\label{class_damage_ab3c892c04820406c50102d9471d0fc9d} 
 Vector2 {\bfseries Push\+Amount}
+\item 
+\Hypertarget{class_damage_a97ac7df60d926ce18242bba40e5d500f}\label{class_damage_a97ac7df60d926ce18242bba40e5d500f} 
+Node2D {\bfseries Source}
 \end{DoxyCompactItemize}
 
 
@@ -34,11 +39,11 @@ Vector2 {\bfseries Push\+Amount}
 Repräsentiert den Schaden, der von Charakteren oder Gegnern verursacht wird. Beinhaltet physischen Schaden, wahren Schaden und den Rückstoßeffekt. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{class_damage_aba9d5c4989d419180c03afc3a7aa022a}\index{Damage@{Damage}!Damage@{Damage}}
+\Hypertarget{class_damage_a078b1c0b6cb42cd0d3c4bf74e3ca4454}\index{Damage@{Damage}!Damage@{Damage}}
 \index{Damage@{Damage}!Damage@{Damage}}
 \doxysubsubsection{\texorpdfstring{Damage()}{Damage()}}
-{\footnotesize\ttfamily \label{class_damage_aba9d5c4989d419180c03afc3a7aa022a} 
-Damage.\+Damage (\begin{DoxyParamCaption}\item[{float}]{Physical\+DMG}{, }\item[{float}]{True\+DMG}{, }\item[{Vector2}]{Push\+Amount}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \label{class_damage_a078b1c0b6cb42cd0d3c4bf74e3ca4454} 
+Damage.\+Damage (\begin{DoxyParamCaption}\item[{float}]{Physical\+DMG}{, }\item[{float}]{True\+DMG}{, }\item[{Vector2}]{Push\+Amount}{, }\item[{Node2D}]{Source}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -81,6 +86,19 @@ Gibt den Rückstoßvektor zurück.
 
 \begin{DoxyReturn}{Returns}
 Der Rückstoßvektor. 
+\end{DoxyReturn}
+\Hypertarget{class_damage_ac446ed14eae2ee0d927510a3ab525042}\index{Damage@{Damage}!GetSource@{GetSource}}
+\index{GetSource@{GetSource}!Damage@{Damage}}
+\doxysubsubsection{\texorpdfstring{GetSource()}{GetSource()}}
+{\footnotesize\ttfamily \label{class_damage_ac446ed14eae2ee0d927510a3ab525042} 
+Node2D Damage.\+Get\+Source (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gibt die Ursache zurück. 
+
+\begin{DoxyReturn}{Returns}
+Die Ursache. 
 \end{DoxyReturn}
 \Hypertarget{class_damage_a4d43580112f089c208f9ba8e0b2559f0}\index{Damage@{Damage}!GetTrueDMG@{GetTrueDMG}}
 \index{GetTrueDMG@{GetTrueDMG}!Damage@{Damage}}

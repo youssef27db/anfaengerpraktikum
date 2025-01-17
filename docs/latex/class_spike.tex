@@ -1,0 +1,58 @@
+\doxysection{Spike Class Reference}
+\hypertarget{class_spike}{}\label{class_spike}\index{Spike@{Spike}}
+Inheritance diagram for Spike\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_spike}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_spike_a527675080d8e2e4ee4310fb3e112a120}\label{class_spike_a527675080d8e2e4ee4310fb3e112a120} 
+override void {\bfseries \+\_\+\+Ready} ()
+\item 
+\mbox{\hyperlink{class_damage}{Damage}} \mbox{\hyperlink{class_spike_a089076328dd0c52b0c595f9ee9c98c33}{Get\+Damage}} ()
+\begin{DoxyCompactList}\small\item\em Gibt ein \doxylink{class_damage}{Damage} Objekt zurück. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_spike_ad359ec07f383c62c2683c1c307941f74}\label{class_spike_ad359ec07f383c62c2683c1c307941f74} 
+void {\bfseries On\+Player\+Body\+Entered} (Node body)
+\begin{DoxyCompactList}\small\item\em Prüfen ob der Körper den \doxylink{class_spike}{Spike} betritt falls ja wird der Timer gestartet und der Spieler nimmt Schaden. \end{DoxyCompactList}\item 
+\Hypertarget{class_spike_ac7ee6575608e186c3d00d17331dfc97e}\label{class_spike_ac7ee6575608e186c3d00d17331dfc97e} 
+void {\bfseries On\+Player\+Body\+Exited} (Node body)
+\begin{DoxyCompactList}\small\item\em Prüfen ob der Körper den \doxylink{class_spike}{Spike} verlässt, falls ja wird der Timer gestoppt und der Spieler nimmt keinen Schaden mehr. \end{DoxyCompactList}\item 
+\Hypertarget{class_spike_a1ef0f806f713e9d58eb5ef768e5a582e}\label{class_spike_a1ef0f806f713e9d58eb5ef768e5a582e} 
+void {\bfseries On\+Timer\+Timeout} ()
+\begin{DoxyCompactList}\small\item\em Timer Timeout Methode, die den Schaden an den Spieler übergibt. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_spike_af8fec8c06e83274f57c4d37a8cbece5f}\label{class_spike_af8fec8c06e83274f57c4d37a8cbece5f} 
+\mbox{\hyperlink{class_player}{Player}} {\bfseries player}
+\item 
+\Hypertarget{class_spike_aa6e0e6494eb6bf74afaa7becf33cefe3}\label{class_spike_aa6e0e6494eb6bf74afaa7becf33cefe3} 
+float {\bfseries Damage} = 10f
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_spike_a089076328dd0c52b0c595f9ee9c98c33}\index{Spike@{Spike}!GetDamage@{GetDamage}}
+\index{GetDamage@{GetDamage}!Spike@{Spike}}
+\doxysubsubsection{\texorpdfstring{GetDamage()}{GetDamage()}}
+{\footnotesize\ttfamily \label{class_spike_a089076328dd0c52b0c595f9ee9c98c33} 
+\mbox{\hyperlink{class_damage}{Damage}} Spike.\+Get\+Damage (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gibt ein \doxylink{class_damage}{Damage} Objekt zurück. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{class_damage}{Damage} Objekt 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Youssef/\+Desktop/\+UNI/\+S4/\+Computerspiel\+Entwicklung/\+Das\+Spiel/anfaengerpraktikum/scripts/Spike.\+cs\end{DoxyCompactItemize}

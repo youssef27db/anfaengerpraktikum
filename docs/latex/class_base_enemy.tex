@@ -1,5 +1,10 @@
 \doxysection{Base\+Enemy Class Reference}
 \hypertarget{class_base_enemy}{}\label{class_base_enemy}\index{BaseEnemy@{BaseEnemy}}
+
+
+Klasse für einen einfachen Gegner.  
+
+
 Inheritance diagram for Base\+Enemy\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -11,25 +16,17 @@ Inheritance diagram for Base\+Enemy\+:\begin{figure}[H]
 \item 
 \Hypertarget{class_base_enemy_a39d037e06e1fcb609e5108431e931acd}\label{class_base_enemy_a39d037e06e1fcb609e5108431e931acd} 
 override void {\bfseries \+\_\+\+Ready} ()
-\item 
-\Hypertarget{class_base_enemy_acf42e9e6b9a386259f5dd74a83c09fac}\label{class_base_enemy_acf42e9e6b9a386259f5dd74a83c09fac} 
-override void {\bfseries \+\_\+\+Process} (double Delta\+Time)
-\item 
-\Hypertarget{class_base_enemy_ad1a2b4f2e07d55eab26d4d8e1d9aa713}\label{class_base_enemy_ad1a2b4f2e07d55eab26d4d8e1d9aa713} 
-void {\bfseries On\+Detection\+Body\+Entered} (Node2D body)
-\item 
-\Hypertarget{class_base_enemy_a269f9f3626f17368f404ca27616d0697}\label{class_base_enemy_a269f9f3626f17368f404ca27616d0697} 
-void {\bfseries On\+Pursuing\+Radius\+Body\+Exited} (Node2D body)
-\item 
-\Hypertarget{class_base_enemy_a6aad96826441fe152694139d29893bad}\label{class_base_enemy_a6aad96826441fe152694139d29893bad} 
-void {\bfseries On\+Hitbox\+Area\+Entered} (Area2D area)
-\item 
-\Hypertarget{class_base_enemy_ab07fb117d5286ef97dc702149c02b14a}\label{class_base_enemy_ab07fb117d5286ef97dc702149c02b14a} 
-void {\bfseries On\+Sword\+Hit\+Box\+Body\+Entered} (Node2D body)
-\item 
-\Hypertarget{class_base_enemy_a218fbf8a552062d685af11783bb6d515}\label{class_base_enemy_a218fbf8a552062d685af11783bb6d515} 
-\mbox{\hyperlink{class_damage}{Damage}} {\bfseries Get\+Damage} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Initialisierung der Referenzen. Findet die relevanten Knoten in der Szene und weist sie zu. \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_base_enemy_acf42e9e6b9a386259f5dd74a83c09fac}{\+\_\+\+Process}} (double Delta\+Time)
+\begin{DoxyCompactList}\small\item\em Physikalische Prozesse werden in jedem Frame ausgeführt. Berechnet Gravitation und Bewegung. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_base_enemy_ad1a2b4f2e07d55eab26d4d8e1d9aa713}{On\+Detection\+Body\+Entered}} (Node2D body)
+\begin{DoxyCompactList}\small\item\em Detektiert den Spieler wenn er den Erkennungsbereich betritt. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_base_enemy_a269f9f3626f17368f404ca27616d0697}{On\+Pursuing\+Radius\+Body\+Exited}} (Node2D body)
+\begin{DoxyCompactList}\small\item\em Detektiert wenn der Spieler den Verfolgungsbereich verlässt. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_base_enemy_a6aad96826441fe152694139d29893bad}{On\+Hitbox\+Area\+Entered}} (Area2D area)
+\begin{DoxyCompactList}\small\item\em Detektiert wenn ein Objekt die Hitbox des Gegners betritt. (z.\+B.\+: Schwert des Spielers) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_base_enemy_ab07fb117d5286ef97dc702149c02b14a}{On\+Sword\+Hit\+Box\+Body\+Entered}} (Node2D body)
+\begin{DoxyCompactList}\small\item\em Detektiert ob der Spieler in Schlagreichweite ist. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Types}
 \begin{DoxyCompactItemize}
 \item 
@@ -43,32 +40,35 @@ enum {\bfseries State} \{ {\bfseries IDLE}
 \doxysubsubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_base_enemy_aee39d90b4efaebada5ab47b21184516a}\label{class_base_enemy_aee39d90b4efaebada5ab47b21184516a} 
-void {\bfseries Handle\+Movement} (double Delta\+Time)
-\item 
+void \mbox{\hyperlink{class_base_enemy_aee39d90b4efaebada5ab47b21184516a}{Handle\+Movement}} (double Delta\+Time)
+\begin{DoxyCompactList}\small\item\em Verarbeitet die Bewegung des Gegners. \end{DoxyCompactList}\item 
 \Hypertarget{class_base_enemy_a74b042cf6b24aa7f0b1d823ae7d4b5af}\label{class_base_enemy_a74b042cf6b24aa7f0b1d823ae7d4b5af} 
 void {\bfseries Update\+Animation} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Aktualisiert die Animationen des Gegners. \end{DoxyCompactList}\item 
 \Hypertarget{class_base_enemy_a284a995d12d6bc1d7a23d1f6f25a96af}\label{class_base_enemy_a284a995d12d6bc1d7a23d1f6f25a96af} 
 void {\bfseries Take\+Damage} (\mbox{\hyperlink{class_damage}{Damage}} DMG)
-\item 
+\begin{DoxyCompactList}\small\item\em Verarbeitet zugefügten Schaden. \end{DoxyCompactList}\item 
+\Hypertarget{class_base_enemy_a0a7f33bd3971e202eee9d43e63180500}\label{class_base_enemy_a0a7f33bd3971e202eee9d43e63180500} 
+void {\bfseries Check\+Player\+Hit} ()
+\begin{DoxyCompactList}\small\item\em Überprüft ob der Spieler sich, während eines Angriffes in Reichweite befindet und fügt diesem dann gegebenenfalls Schaden zu. \end{DoxyCompactList}\item 
 \Hypertarget{class_base_enemy_aa5e7d87eaa080ed685315588a39a9f1f}\label{class_base_enemy_aa5e7d87eaa080ed685315588a39a9f1f} 
 void {\bfseries Die} ()
-\item 
-\Hypertarget{class_base_enemy_a59a907194c4c712b41719a6fc12c1583}\label{class_base_enemy_a59a907194c4c712b41719a6fc12c1583} 
-bool {\bfseries Check\+Line\+Of\+Sight} (Node2D body)
-\item 
+\begin{DoxyCompactList}\small\item\em Wird aufgerufen wenn der Gegner stirbt. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_base_enemy_a59a907194c4c712b41719a6fc12c1583}{Check\+Line\+Of\+Sight}} (Node2D body)
+\begin{DoxyCompactList}\small\item\em Überprüft die direkte Sichtlinie zu einem Objekt. \end{DoxyCompactList}\item 
 \Hypertarget{class_base_enemy_aa9ade96897c57dfc0b6b69e7d0996076}\label{class_base_enemy_aa9ade96897c57dfc0b6b69e7d0996076} 
 void {\bfseries Flip\+Rotation} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Spiegelt die Orientierung aller zu dem Gegner gehörender Nodes. \end{DoxyCompactList}\item 
 \Hypertarget{class_base_enemy_aebc2a569b2f2f3d35870e9aabb943069}\label{class_base_enemy_aebc2a569b2f2f3d35870e9aabb943069} 
 void {\bfseries Set\+Rotation} (bool Rotation)
-\item 
-\Hypertarget{class_base_enemy_abf57b8dbd0f267fd42a2a02b7bda95dc}\label{class_base_enemy_abf57b8dbd0f267fd42a2a02b7bda95dc} 
-bool {\bfseries Is\+Close\+To} (float Value1, float Value2, float Delta)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Setzt Orientierung aller zu dem Gegner gehörender Nodes. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_base_enemy_abf57b8dbd0f267fd42a2a02b7bda95dc}{Is\+Close\+To}} (float Value1, float Value2, float Delta)
+\begin{DoxyCompactList}\small\item\em Überprüft, ob zwei Werte in einer Delta-\/\+Umgebung zueinander liegen. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_base_enemy_a1661cfbf7e6dff6a1d8a6fa44b10a3b0}\label{class_base_enemy_a1661cfbf7e6dff6a1d8a6fa44b10a3b0} 
+float {\bfseries Damage} = 20f
 \item 
 \Hypertarget{class_base_enemy_a61314ff2e5931900ca4a87aa8feb670f}\label{class_base_enemy_a61314ff2e5931900ca4a87aa8feb670f} 
 bool {\bfseries Dead} = false
@@ -83,7 +83,7 @@ float {\bfseries Max\+Health\+Points} = 100f
 float {\bfseries Armor} = 20f
 \item 
 \Hypertarget{class_base_enemy_a4f99809bf5de1dbbe762c13fc7db8881}\label{class_base_enemy_a4f99809bf5de1dbbe762c13fc7db8881} 
-float {\bfseries Max\+Stamina} = 100f
+float {\bfseries Max\+Stamina} = 1f
 \item 
 \Hypertarget{class_base_enemy_a661de31833c943c7d7d72de616a9141a}\label{class_base_enemy_a661de31833c943c7d7d72de616a9141a} 
 float {\bfseries Speed} = 10
@@ -121,6 +121,9 @@ bool {\bfseries Start\+Rotation} = false
 \Hypertarget{class_base_enemy_a47be49c6e16a1f99ee1ed68549b31d05}\label{class_base_enemy_a47be49c6e16a1f99ee1ed68549b31d05} 
 State {\bfseries Animation\+State} = State.\+IDLE
 \item 
+\Hypertarget{class_base_enemy_a47e5e613c39180e6b1bf9899039b45fc}\label{class_base_enemy_a47e5e613c39180e6b1bf9899039b45fc} 
+bool {\bfseries Already\+Hit} = false
+\item 
 \Hypertarget{class_base_enemy_a2e4bd99e594a6c3366f64ab47c7443b5}\label{class_base_enemy_a2e4bd99e594a6c3366f64ab47c7443b5} 
 Animated\+Sprite2D {\bfseries Sprite}
 \item 
@@ -147,7 +150,141 @@ Ray\+Cast2D {\bfseries Right\+Fall\+Protection}
 \item 
 \Hypertarget{class_base_enemy_a5944a26db58d24ee828a2d8e83687e93}\label{class_base_enemy_a5944a26db58d24ee828a2d8e83687e93} 
 Texture\+Progress\+Bar {\bfseries Health\+Bar}
+\item 
+\Hypertarget{class_base_enemy_a968a793842be49b5cf65fa35deb9ae5c}\label{class_base_enemy_a968a793842be49b5cf65fa35deb9ae5c} 
+\mbox{\hyperlink{class_player}{Player}} {\bfseries Player}
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Klasse für einen einfachen Gegner. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_base_enemy_acf42e9e6b9a386259f5dd74a83c09fac}\index{BaseEnemy@{BaseEnemy}!\_Process@{\_Process}}
+\index{\_Process@{\_Process}!BaseEnemy@{BaseEnemy}}
+\doxysubsubsection{\texorpdfstring{\_Process()}{\_Process()}}
+{\footnotesize\ttfamily \label{class_base_enemy_acf42e9e6b9a386259f5dd74a83c09fac} 
+override void Base\+Enemy.\+\_\+\+Process (\begin{DoxyParamCaption}\item[{double}]{Delta\+Time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Physikalische Prozesse werden in jedem Frame ausgeführt. Berechnet Gravitation und Bewegung. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Delta\+Time} & Zeit seit dem letzten Frame. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_base_enemy_a59a907194c4c712b41719a6fc12c1583}\index{BaseEnemy@{BaseEnemy}!CheckLineOfSight@{CheckLineOfSight}}
+\index{CheckLineOfSight@{CheckLineOfSight}!BaseEnemy@{BaseEnemy}}
+\doxysubsubsection{\texorpdfstring{CheckLineOfSight()}{CheckLineOfSight()}}
+{\footnotesize\ttfamily \label{class_base_enemy_a59a907194c4c712b41719a6fc12c1583} 
+bool Base\+Enemy.\+Check\+Line\+Of\+Sight (\begin{DoxyParamCaption}\item[{Node2D}]{body}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Überprüft die direkte Sichtlinie zu einem Objekt. 
+
+\begin{DoxyReturn}{Returns}
+bool Ergebnis der Abfrage. 
+\end{DoxyReturn}
+\Hypertarget{class_base_enemy_aee39d90b4efaebada5ab47b21184516a}\index{BaseEnemy@{BaseEnemy}!HandleMovement@{HandleMovement}}
+\index{HandleMovement@{HandleMovement}!BaseEnemy@{BaseEnemy}}
+\doxysubsubsection{\texorpdfstring{HandleMovement()}{HandleMovement()}}
+{\footnotesize\ttfamily \label{class_base_enemy_aee39d90b4efaebada5ab47b21184516a} 
+void Base\+Enemy.\+Handle\+Movement (\begin{DoxyParamCaption}\item[{double}]{Delta\+Time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Verarbeitet die Bewegung des Gegners. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Delta\+Time} & Zeit seit dem letzten Frame. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_base_enemy_abf57b8dbd0f267fd42a2a02b7bda95dc}\index{BaseEnemy@{BaseEnemy}!IsCloseTo@{IsCloseTo}}
+\index{IsCloseTo@{IsCloseTo}!BaseEnemy@{BaseEnemy}}
+\doxysubsubsection{\texorpdfstring{IsCloseTo()}{IsCloseTo()}}
+{\footnotesize\ttfamily \label{class_base_enemy_abf57b8dbd0f267fd42a2a02b7bda95dc} 
+bool Base\+Enemy.\+Is\+Close\+To (\begin{DoxyParamCaption}\item[{float}]{Value1}{, }\item[{float}]{Value2}{, }\item[{float}]{Delta}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Überprüft, ob zwei Werte in einer Delta-\/\+Umgebung zueinander liegen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em float} & Wert1 \\
+\hline
+{\em float} & Wert2 \\
+\hline
+{\em float} & Delta \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool Ergebnis 
+\end{DoxyReturn}
+\Hypertarget{class_base_enemy_ad1a2b4f2e07d55eab26d4d8e1d9aa713}\index{BaseEnemy@{BaseEnemy}!OnDetectionBodyEntered@{OnDetectionBodyEntered}}
+\index{OnDetectionBodyEntered@{OnDetectionBodyEntered}!BaseEnemy@{BaseEnemy}}
+\doxysubsubsection{\texorpdfstring{OnDetectionBodyEntered()}{OnDetectionBodyEntered()}}
+{\footnotesize\ttfamily \label{class_base_enemy_ad1a2b4f2e07d55eab26d4d8e1d9aa713} 
+void Base\+Enemy.\+On\+Detection\+Body\+Entered (\begin{DoxyParamCaption}\item[{Node2D}]{body}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Detektiert den Spieler wenn er den Erkennungsbereich betritt. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em body} & Objekt das den Bereich betritt. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_base_enemy_a6aad96826441fe152694139d29893bad}\index{BaseEnemy@{BaseEnemy}!OnHitboxAreaEntered@{OnHitboxAreaEntered}}
+\index{OnHitboxAreaEntered@{OnHitboxAreaEntered}!BaseEnemy@{BaseEnemy}}
+\doxysubsubsection{\texorpdfstring{OnHitboxAreaEntered()}{OnHitboxAreaEntered()}}
+{\footnotesize\ttfamily \label{class_base_enemy_a6aad96826441fe152694139d29893bad} 
+void Base\+Enemy.\+On\+Hitbox\+Area\+Entered (\begin{DoxyParamCaption}\item[{Area2D}]{area}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Detektiert wenn ein Objekt die Hitbox des Gegners betritt. (z.\+B.\+: Schwert des Spielers) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em area} & Objekt das den Bereich betritt. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_base_enemy_a269f9f3626f17368f404ca27616d0697}\index{BaseEnemy@{BaseEnemy}!OnPursuingRadiusBodyExited@{OnPursuingRadiusBodyExited}}
+\index{OnPursuingRadiusBodyExited@{OnPursuingRadiusBodyExited}!BaseEnemy@{BaseEnemy}}
+\doxysubsubsection{\texorpdfstring{OnPursuingRadiusBodyExited()}{OnPursuingRadiusBodyExited()}}
+{\footnotesize\ttfamily \label{class_base_enemy_a269f9f3626f17368f404ca27616d0697} 
+void Base\+Enemy.\+On\+Pursuing\+Radius\+Body\+Exited (\begin{DoxyParamCaption}\item[{Node2D}]{body}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Detektiert wenn der Spieler den Verfolgungsbereich verlässt. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em body} & Objekt das den Bereich verlässt. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_base_enemy_ab07fb117d5286ef97dc702149c02b14a}\index{BaseEnemy@{BaseEnemy}!OnSwordHitBoxBodyEntered@{OnSwordHitBoxBodyEntered}}
+\index{OnSwordHitBoxBodyEntered@{OnSwordHitBoxBodyEntered}!BaseEnemy@{BaseEnemy}}
+\doxysubsubsection{\texorpdfstring{OnSwordHitBoxBodyEntered()}{OnSwordHitBoxBodyEntered()}}
+{\footnotesize\ttfamily \label{class_base_enemy_ab07fb117d5286ef97dc702149c02b14a} 
+void Base\+Enemy.\+On\+Sword\+Hit\+Box\+Body\+Entered (\begin{DoxyParamCaption}\item[{Node2D}]{body}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Detektiert ob der Spieler in Schlagreichweite ist. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em body} & Objekt das den Bereich betritt. \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
