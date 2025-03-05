@@ -1,0 +1,58 @@
+[gd_scene load_steps=3 format=3 uid="uid://cku8xlcs7yegh"]
+
+[ext_resource type="Script" path="res://scripts/MainMenuBackground.cs" id="1_4kx2j"]
+[ext_resource type="Texture2D" uid="uid://b4s5marq1e5x8" path="res://assets/Clouds 3/1.png" id="1_xjphi"]
+
+[node name="MainMenu" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Parallax2D" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1152, 0)
+script = ExtResource("1_4kx2j")
+ScrollSpeed = -15.0
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/Parallax2D"]
+offset_right = 1152.0
+offset_bottom = 648.0
+size_flags_horizontal = 0
+texture = ExtResource("1_xjphi")
+expand_mode = 1
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1151.0
+offset_bottom = 648.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -231.0
+offset_top = -120.0
+offset_right = -18.0
+offset_bottom = -20.0
+grow_horizontal = 0
+grow_vertical = 0
+alignment = 2
+
+[node name="NewGameButton" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+text = "New Game
+"
+
+[node name="ContinueButton" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+text = "Continue"
+
+[node name="LoadGameButton" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+text = "Load Game"
+
+[node name="QuitButton" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+text = "Quit"

@@ -45,13 +45,7 @@ public partial class Spike : Node2D
 		if (body is Player)
 		{
 			player = null; // Instanzvariable zurücksetzen
-<<<<<<< HEAD
-			
-			GetNode<Timer>("Timer").Stop();
-=======
-
 			GetNode<Timer>("StaticBody2D/Area2D/Timer").Stop();
->>>>>>> main
 		}
 	}
 

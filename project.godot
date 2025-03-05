@@ -20,6 +20,11 @@ config/icon="res://icon.svg"
 NavigationManager="*res://scripts/NavigationManager.cs"
 PlayerStats="*res://scripts/PlayerStats.cs"
 
+[display]
+
+window/stretch/mode="viewport"
+window/stretch/aspect="ignore"
+
 [dotnet]
 
 project/assembly_name="Anfaengerpraktikum"

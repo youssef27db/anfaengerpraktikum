@@ -55,10 +55,17 @@ metadata/_edit_use_anchors_ = true
 metadata/_edit_lock_ = true
 
 [node name="SinAmount" type="ColorRect" parent="."]
-offset_left = 941.0
-offset_top = 589.0
-offset_right = 1130.0
-offset_bottom = 629.0
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -209.0
+offset_top = -60.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 0
+grow_vertical = 0
 color = Color(0.114897, 0.114897, 0.114897, 1)
 metadata/_edit_lock_ = true
 
@@ -74,12 +81,15 @@ horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="BloodVial" type="ColorRect" parent="."]
-offset_left = 24.0
-offset_top = 551.0
-offset_right = 96.0
-offset_bottom = 625.0
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -94.0
+offset_right = 92.0
+offset_bottom = -20.0
+grow_vertical = 0
 color = Color(0.113725, 0.113725, 0.113725, 1)
-metadata/_edit_lock_ = true
 
 [node name="TextureRect" type="TextureRect" parent="BloodVial"]
 layout_mode = 0
@@ -88,6 +98,7 @@ offset_top = 3.0
 offset_right = 65.0
 offset_bottom = 70.0
 texture = ExtResource("6_ucypt")
+metadata/_edit_lock_ = true
 
 [node name="Counter" type="Label" parent="BloodVial"]
 layout_mode = 0

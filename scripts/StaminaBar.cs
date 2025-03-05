@@ -5,22 +5,15 @@ using Godot;
  * Synchronisiert die Anzeige der StaminaBar mit der Ausdauer des Spielers.
  */
 public partial class StaminaBar : TextureProgressBar {
-    // Referenz zum Spieler
-    private Player player;
 
     /** 
      * @brief Initialisiert die StaminaBar und verbindet sie mit der Ausdauer des Spielers.
      * Lädt den Spieler-Knoten und setzt die maximale und aktuelle Ausdauer in der StaminaBar.
      */
     public override void _Ready() {
-        // Spieler-Knoten im Baum finden (ersetze "Player" mit dem tatsächlichen Pfad des Spieler-Nodes)
-        player = GetNode<Player>("../../Player");
-
-        if (player != null) {
-            // Setze die maximale Ausdauer der StaminaBar basierend auf der Spieler-MaxStamina
-            MaxValue = player.GetMaxStamina();
-            Value = player.GetStamina();
-        }
+        // Setze die maximale Ausdauer der StaminaBar basierend auf der Spieler-MaxStamina
+        MaxValue = PlayerStats.Instance.GetMaxStamina();
+        Value = PlayerStats.Instance.GetStamina();
     }
 
     /** 
@@ -29,9 +22,7 @@ public partial class StaminaBar : TextureProgressBar {
      * @param delta Zeit seit dem letzten Frame (wird nicht direkt genutzt).
      */
     public override void _Process(double DeltaTime) {
-        if (player != null) {
-            // Aktualisiere den Wert der StaminaBar basierend auf der aktuellen Ausdauer des Spielers
-            Value = player.GetStamina();
-        }
+        // Aktualisiere den Wert der StaminaBar basierend auf der aktuellen Ausdauer des Spielers
+        Value = PlayerStats.Instance.GetStamina();
     }
 }

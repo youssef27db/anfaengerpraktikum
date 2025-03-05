@@ -240,6 +240,9 @@ public partial class BaseEnemy : CharacterBody2D
     * @brief Verarbeitet zugefügten Schaden.
     */
     private void TakeDamage(Damage DMG){
+        if(Dead) {
+            return;
+        }
         CurrentHealthPoints -= DMG.GetPhysicalDMG() * (1 - Armor / 100.0f) + DMG.GetTrueDMG();
         Position += DMG.GetPushAmount();
         if(CurrentHealthPoints <= 0){
@@ -302,7 +305,7 @@ public partial class BaseEnemy : CharacterBody2D
 
         Sprite.Play("death");
         HealthBar.SetVisible(false);
-        Player.SetSinAmount(Player.GetSinAmount() + SinAmount);
+        Player.SetSinAmount(PlayerStats.Instance.GetSinAmount() + SinAmount);
 
     }
 

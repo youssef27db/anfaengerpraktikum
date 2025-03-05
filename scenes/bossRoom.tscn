@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://dp58sd4eilbto"]
+[gd_scene load_steps=14 format=4 uid="uid://bcjwcnm7uv7b6"]
 
 [ext_resource type="Script" path="res://scripts/LevelManager.cs" id="1_4qpl3"]
 [ext_resource type="Texture2D" uid="uid://c0w6h05532gs0" path="res://assets/Dungeon Tile Set.png" id="2_3tgvv"]

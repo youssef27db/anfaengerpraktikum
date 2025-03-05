@@ -1,3 +1,4 @@
+using GdMUT;
 using Godot;
 using System;
 
@@ -6,41 +7,30 @@ using System;
 */
 public partial class BloodVial : Label {
 
-    private Player Player;
-    [Export]
-    private int HealAmount = 25;
-    [Export]
-    private int MaxUses = 5;
-    private int CurrentUses;
-
     /** 
     * @brief Initialisierung der Referenzen.
     * Findet die relevanten Knoten in der Szene und weist sie zu.
     */
     public override void _Ready() {
-        
-        CurrentUses = MaxUses;
-        Player = GetNode<Player>("../../../Player");
-        Text = CurrentUses + "";
-
+        Text = PlayerStats.Instance.GetBVCurrentUses() + "";
     }
 
     /**
     * @brief Versucht ein Bloodvial zu verwenden um den Spieler zu Heilen.
     */
     public void UseBloodVial(){
-        if(CurrentUses <= 0) return;
-        CurrentUses--;
-        Text = CurrentUses + "";
-        Player.SetCurrentHealth(Player.GetCurrentHealth() + HealAmount);
+        if(PlayerStats.Instance.GetBVCurrentUses() <= 0) return;
+        PlayerStats.Instance.SetBVCurrentUses(PlayerStats.Instance.GetBVCurrentUses() - 1);
+        Text = PlayerStats.Instance.GetBVCurrentUses() + "";
+        PlayerStats.Instance.SetCurrentHealth(PlayerStats.Instance.GetCurrentHealth() + PlayerStats.Instance.GetBVHealAmount());
     }
 
     /**
     * @brief Setzt die Anzahl der Bloodvials auf das Maximum.
     */
     public void ResetUses(){
-        CurrentUses = MaxUses;
-        Text = CurrentUses + "";
+        PlayerStats.Instance.SetBVCurrentUses(PlayerStats.Instance.GetBVMaxUses());
+        Text = PlayerStats.Instance.GetBVCurrentUses() + "";
     }
 
     /**
@@ -48,15 +38,14 @@ public partial class BloodVial : Label {
     * @brief int Amount, um die MaxUses erhöht wird.
     */
     public void AddMaxUses(int Amount){
-        MaxUses += Amount;
-        CurrentUses += Amount;
-        Text = CurrentUses + "";
+        PlayerStats.Instance.SetBVMaxUses(PlayerStats.Instance.GetBVMaxUses() + Amount);
+        ResetUses();
     }
 
     /**
     * @brief Verbessert den HealAMount eines Bloodvials um 25.
     */
     public void LevelHealAmount(){
-        HealAmount += 25;
+        PlayerStats.Instance.SetBVHealAmount(PlayerStats.Instance.GetBVHealAmount() + 25);
     }
 }

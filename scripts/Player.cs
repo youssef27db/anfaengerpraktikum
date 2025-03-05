@@ -31,20 +31,9 @@ public partial class Player : CharacterBody2D
     private Label SinDisplay;
 
     private Vector2 HauptHitbox;
-    private Vector2 SpawnPoint;
     private int LastAttack = 0;
 
-    private int SinAmount;
-
-    //Variablen für Health
-    [Export]
-    private float MaxHealthPoints = 100f;
-    private float CurrentHealth;
-
     //Variablen für Stamina
-    [Export]
-    private float MaxStamina = 100f; 
-    private float CurrentStamina;  
     private float TimeSinceLastStaminaUse = 0f;
 
     /** 
@@ -62,9 +51,7 @@ public partial class Player : CharacterBody2D
         BloodVials = GetNode<BloodVial>("../HUD/BloodVial/Counter");
         SinDisplay = GetNode<Label>("../HUD/SinAmount/Counter");
 
-        CurrentStamina = MaxStamina;
-        CurrentHealth = MaxHealthPoints;
-        SinDisplay.Text = SinAmount + "";
+        SinDisplay.Text = PlayerStats.Instance.GetSinAmount() + "";
 
         NavigationManager navigationManager = GetNode<NavigationManager>("/root/NavigationManager");
         navigationManager.Connect("OnTriggerPlayerSpawn", new Callable(this, nameof(OnSpawn)));
@@ -285,52 +272,10 @@ public partial class Player : CharacterBody2D
     }
 
     /** 
-     * @brief Gibt den SpawnPoint des Spielers zurück.
-     * @return Der SpawnPoint des Spielers.
-     */
-    public void SetSpawnPoint(Vector2 spawnPoint) {
-        SpawnPoint = spawnPoint;
-    }
-
-    /** 
-    * @brief Setzt die aktuellen Lebenspunkte des Spielers.
-    * @param Health Neue Lebenspunkte, die gesetzt werden sollen.
-    */
-    public void SetCurrentHealth(float Health){
-        // CurrentHealth darf MaxHealthPoints nicht überschreiten.
-        CurrentHealth = Mathf.Min(Health, MaxHealthPoints);
-    }
-
-    /** 
-    * @brief Gibt die aktuellen Lebenspunkte des Spielers zurück.
-    * @return Die aktuellen Lebenspunkte.
-    */
-    public float GetCurrentHealth(){
-        return CurrentHealth;
-    }
-
-    /** 
-    * @brief Setzt die maximalen Lebenspunkte des Spielers.
-    * @param maxHealthPoints Die neuen maximalen Lebenspunkte (muss positiv sein).
-    */
-    public void SetMaxHealthPoints(float maxHealthPoints){
-        // MaxHealthPoints muss immer positiv sein
-        MaxHealthPoints = Mathf.Max(maxHealthPoints, 1); // Verhindert, dass MaxHealthPoints <= 0 wird
-    }
-
-    /** 
-    * @brief Gibt die maximalen Lebenspunkte des Spielers zurück.
-    * @return Die maximalen Lebenspunkte.
-    */
-    public float GetMaxHealthPoints(){
-        return MaxHealthPoints;
-    }
-
-    /** 
     * @brief Heilt den Spieler vollständig, indem die aktuellen Lebenspunkte auf das Maximum gesetzt werden.
     */
     public void MaxHeal(){
-        SetCurrentHealth(MaxHealthPoints);
+        PlayerStats.Instance.SetCurrentHealth(PlayerStats.Instance.GetMaxHealthPoints());
     }
 
     /** 
@@ -343,18 +288,19 @@ public partial class Player : CharacterBody2D
         if(!IsBlocking()){
             totalDamage += Damage.GetPhysicalDMG();
         } else {
+            float CurrentStamina = PlayerStats.Instance.GetStamina();
             CurrentStamina -= Damage.GetPhysicalDMG();
             if(CurrentStamina < 0){
                 totalDamage -= CurrentStamina;
-                CurrentStamina = 0;
             }
+            PlayerStats.Instance.SetStamina(CurrentStamina);
         }
 
-        SetCurrentHealth(GetCurrentHealth() - totalDamage);
+        PlayerStats.Instance.SetCurrentHealth(PlayerStats.Instance.GetCurrentHealth() - totalDamage);
         Position += Damage.GetPushAmount();
 
         // Überprüfe, ob der Spieler gestorben ist
-        if (GetCurrentHealth() <= 0){
+        if (PlayerStats.Instance.GetCurrentHealth() <= 0){
             GD.Print("Spieler ist gestorben!");
             Respawn();
         }
@@ -380,40 +326,6 @@ public partial class Player : CharacterBody2D
     }
 
     /** 
-    * @brief Gibt die aktuelle Stamina des Spielers zurück.
-    * @return Die aktuelle Stamina.
-    */
-    public float GetStamina() {
-        return CurrentStamina;
-    }
-
-    /** 
-    * @brief Setzt die Stamina des Spielers.
-    * @param Value Den neuen Wert für Stamina (muss im Bereich zwischen 0 und MaxStamina liegen).
-    */
-    public void SetStamina(float Value) {
-        // Stellt sicher, dass die CurrentStamina im gültigen Bereich bleibt (zwischen 0 und MaxStamina)
-        CurrentStamina = Mathf.Clamp(Value, 0, MaxStamina);
-    }
-
-    /** 
-    * @brief Gibt die maximale Stamina des Spielers zurück.
-    * @return Die maximale Stamina.
-    */
-    public float GetMaxStamina() {
-        return MaxStamina;
-    }
-
-    /** 
-    * @brief Setzt die maximale Stamina des Spielers.
-    * @param Value Den neuen Wert für die maximale Stamina (muss positiv sein).
-    */
-    public void SetMaxStamina(float Value) {
-        // MaxStamina muss immer positiv sein
-        MaxStamina = Mathf.Max(Value, 1);
-    }
-
-    /** 
     * @brief Regeneriert die Stamina des Spielers, wenn er für eine bestimmte Zeit keine Stamina-verbrauchende Aktion durchgeführt hat.
     * @param Amount Menge der Stamina, die regeneriert werden soll.
     * @param delta Zeit seit dem letzten Frame.
@@ -421,7 +333,7 @@ public partial class Player : CharacterBody2D
     public void RegenerateStamina(float Amount, double delta) {
         // Wenn die Verzögerungszeit erreicht wurde, regeneriere Stamina
         if (TimeSinceLastStaminaUse >= 1f) {
-            SetStamina(CurrentStamina + Amount * (float)delta); // Regeneriere Stamina abhängig von der Zeit
+            PlayerStats.Instance.SetStamina(PlayerStats.Instance.GetStamina() + Amount * (float)delta); // Regeneriere Stamina abhängig von der Zeit
         }
     }
 
@@ -435,8 +347,8 @@ public partial class Player : CharacterBody2D
     public bool UseStamina(float Amount) {
         // Versucht, eine bestimmte Menge an Stamina zu verbrauchen.
         // Gibt true zurück, wenn genug Stamina verfügbar war; andernfalls false.
-        if (CurrentStamina >= Amount) {
-            SetStamina(CurrentStamina - Amount);
+        if (PlayerStats.Instance.GetStamina() >= Amount) {
+            PlayerStats.Instance.SetStamina(PlayerStats.Instance.GetStamina() - Amount);
             TimeSinceLastStaminaUse = 0f;
             return true;
         }
@@ -457,8 +369,7 @@ public partial class Player : CharacterBody2D
     */
     public void Respawn(){
         var NavigationManager = GetNode<NavigationManager>("/root/NavigationManager");
-        var PlayerStats = GetNode<PlayerStats>("/root/PlayerStats");
-        NavigationManager.GoToLevel(PlayerStats.GetRespawnLevelTag(), "spawn");
+        NavigationManager.GoToLevel(PlayerStats.Instance.GetRespawnLevelTag(), "spawn");
         BloodVials.ResetUses();
 
     }
@@ -471,22 +382,14 @@ public partial class Player : CharacterBody2D
         return BloodVials;
     }
 
-    /**
-    * @brief Getter für SinAmount.
-    * @return int Sins
-    */
-    public int GetSinAmount(){
-        return SinAmount;
-    }
-
     /** 
     * @brief Setzt den SinAmount des Spielers.
     * @param Value Der neue Wert für den SinAmount.
     */
     public void SetSinAmount(int Value) {
         // SinAmount muss immer >= 0 sein
-        SinAmount = Mathf.Max(Value, 0);
-        SinDisplay.Text = SinAmount + "";
+        PlayerStats.Instance.SetSinAmount(Value);
+        SinDisplay.Text = PlayerStats.Instance.GetSinAmount() + "";
     }
 
     /**
@@ -510,6 +413,7 @@ public partial class Player : CharacterBody2D
             position = position with { X = position.X - 25 };
         }
         Position = position;
+
     }
 
 
