@@ -30,6 +30,8 @@ public partial class BaseEnemy : CharacterBody2D
     protected int SinAmount = 10;
     [Export]
     protected double ReturnToStartAfter = 5;
+    [Export(PropertyHint.Flags, "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32")]
+    public uint Id { get; set;} = 0;
 
     //private variables
     protected float CurrentHealthPoints;
