@@ -76,11 +76,11 @@ public partial class Boss1 : BaseEnemy{
 
     /**
     * @brief Zeigt eine Popup-Nachricht an
-    * @param message Die Nachricht, die angezeigt werden soll
+    * @param Message Die Nachricht, die angezeigt werden soll
     */
-    private void ShowPopupMessage(string message){
+    private void ShowPopupMessage(string Message){
         Label popup = new Label();
-        popup.Text = message;
+        popup.Text = Message;
         popup.AddThemeColorOverride("font_color", new Color(1, 0, 0)); // Rot
         popup.Modulate = new Color(1, 1, 1, 0); // Start transparent
         popup.AutowrapMode = TextServer.AutowrapMode.Word;
