@@ -70,7 +70,7 @@ public partial class BaseEnemy : CharacterBody2D
         LeftFallProtection = GetNode<RayCast2D>("LeftFallProtection");
         RightFallProtection = GetNode<RayCast2D>("RightFallProtection");
         HealthBar = GetNode<TextureProgressBar>("HealthBar");
-        Player = GetNode<Player>("../Player");
+        Player = GetNode<Player>("../../Player");
 
         CurrentHealthPoints = MaxHealthPoints;
         CurrentStamina = MaxStamina;

@@ -301,7 +301,7 @@ texture = ExtResource("1_dhsbv")
 12:15/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_k8ccg"]
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 2049
 sources/0 = SubResource("TileSetAtlasSource_tt4er")
 
 [node name="intro" type="Node2D"]
