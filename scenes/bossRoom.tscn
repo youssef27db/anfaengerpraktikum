@@ -374,4 +374,6 @@ position = Vector2(710, 288)
 position = Vector2(365, 276)
 Text = "Press -Left click- to ATTACK
 
-Press -Space- to BLOCK"
+Press -Space- to BLOCK
+
+Press -Q- to HEAL"
