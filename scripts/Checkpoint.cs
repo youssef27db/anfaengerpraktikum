@@ -37,6 +37,7 @@ public partial class Checkpoint : Node2D
 			PlayerStats playerStats = GetNode<PlayerStats>("/root/PlayerStats");
 			playerStats.SetRespawnLevelTag(GetParent().Name);
 			GD.Print("RespawnLevelTag des Players gesetzt auf: ", GetParent().Name);
+			GD.Print(PlayerStats.Instance.GetRespawnLevelTag());
 		}
 
 	}
