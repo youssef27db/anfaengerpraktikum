@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://j5p85ph3jmfq"]
+[gd_scene load_steps=15 format=4 uid="uid://j5p85ph3jmfq"]
 
 [ext_resource type="Texture2D" uid="uid://c0w6h05532gs0" path="res://assets/Dungeon Tile Set.png" id="1_dhsbv"]
 [ext_resource type="Script" path="res://scripts/LevelManager.cs" id="1_wekk3"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://chxndv6of54w8" path="res://scenes/spike.tscn" id="4_ta8nk"]
 [ext_resource type="PackedScene" uid="uid://dh381ntrht6ri" path="res://scenes/hud.tscn" id="5_l2ajp"]
 [ext_resource type="PackedScene" uid="uid://cclu45b2pmyo2" path="res://scenes/checkpoint.tscn" id="6_jv8or"]
+[ext_resource type="PackedScene" uid="uid://dkd5ua6qjnm3o" path="res://scenes/spike_dynamic_long.tscn" id="6_un1fe"]
 [ext_resource type="PackedScene" uid="uid://bmlrup5wfi5fx" path="res://scenes/door.tscn" id="7_afmkh"]
 [ext_resource type="PackedScene" uid="uid://mjtnmittvw51" path="res://scenes/interactable.tscn" id="9_tcfnl"]
 
@@ -344,17 +345,17 @@ position = Vector2(-2, 48)
 
 [node name="Spikes" type="Node2D" parent="."]
 
-[node name="Node2D3" parent="Spikes" instance=ExtResource("4_ta8nk")]
-position = Vector2(401, 160)
-
 [node name="Node2D4" parent="Spikes" instance=ExtResource("4_ta8nk")]
 position = Vector2(-63, 208)
+Damage = 100.0
 
 [node name="Node2D" parent="Spikes" instance=ExtResource("4_ta8nk")]
 position = Vector2(-31, 208)
+Damage = 100.0
 
 [node name="Node2D2" parent="Spikes" instance=ExtResource("4_ta8nk")]
 position = Vector2(1, 208)
+Damage = 100.0
 
 [node name="Spike" parent="Spikes" instance=ExtResource("4_ta8nk")]
 position = Vector2(-288, 300)
@@ -363,6 +364,12 @@ Damage = 10000.0
 [node name="Spike2" parent="Spikes" instance=ExtResource("4_ta8nk")]
 position = Vector2(-256, 300)
 Damage = 10000.0
+
+[node name="spike_dynamic" parent="Spikes" instance=ExtResource("6_un1fe")]
+position = Vector2(122, 277)
+
+[node name="spike_dynamic2" parent="Spikes" instance=ExtResource("6_un1fe")]
+position = Vector2(244, 277)
 
 [node name="HUD" parent="." instance=ExtResource("5_l2ajp")]
 
