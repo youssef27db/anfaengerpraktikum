@@ -629,11 +629,6 @@ position = Vector2(795, -366)
 rotation = 3.13209
 Damage = 100.0
 
-[node name="Spike20" parent="spikes/Spike20" instance=ExtResource("4_8bhcp")]
-position = Vector2(-154.984, -2.47283)
-rotation = 0.0108671
-Damage = 100.0
-
 [node name="Spike6" parent="spikes" instance=ExtResource("4_8bhcp")]
 position = Vector2(246, 66)
 Damage = 100.0
@@ -713,6 +708,12 @@ Damage = 100.0
 [node name="Spike21" parent="spikes" instance=ExtResource("4_8bhcp")]
 position = Vector2(694, -126)
 rotation = -1.57555
+Damage = 100.0
+
+[node name="Spike22" parent="spikes" instance=ExtResource("4_8bhcp")]
+position = Vector2(950, -365)
+rotation = -3.14023
+scale = Vector2(1, 1)
 Damage = 100.0
 
 [node name="spikes_dynamic" type="Node2D" parent="."]
