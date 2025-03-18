@@ -55,6 +55,8 @@ public partial class Player : CharacterBody2D
 
         NavigationManager navigationManager = GetNode<NavigationManager>("/root/NavigationManager");
         navigationManager.Connect("OnTriggerPlayerSpawn", new Callable(this, nameof(OnSpawn)));
+
+        Position = PlayerStats.Instance.GetPosition();
     }
 
     /** 
@@ -82,6 +84,7 @@ public partial class Player : CharacterBody2D
         HandleMovement(DeltaTime);
         MoveAndSlide();
         UpdateAnimations();
+        PlayerStats.Instance.SetPosition(Position);
         }
 
     /** 

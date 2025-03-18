@@ -8,7 +8,9 @@ using Godot;
 
 public partial class NavigationManager : Node
 {
+    public static NavigationManager Instance { get; private set; }
     // Deklarieren der vorab geladenen Szenen
+    private static readonly PackedScene SceneMainMenu = (PackedScene)GD.Load("res://Scenes/main_menu.tscn");
     private static readonly PackedScene SceneIntro = (PackedScene)GD.Load("res://Scenes/intro.tscn");
     private static readonly PackedScene SceneLevel1 = (PackedScene)GD.Load("res://Scenes/level1.tscn");
     private static readonly PackedScene SceneBoss = (PackedScene)GD.Load("res://Scenes/bossRoom.tscn");
@@ -28,6 +30,11 @@ public partial class NavigationManager : Node
     [Signal]
     public delegate void OnTriggerPlayerSpawnEventHandler(Vector2 Position, string Direction);
 
+
+    public override void _Ready(){
+        Instance = this;
+    }
+
     /**
      * Lädt das angegebene Level und setzt das Ziel-Tag für den Spieler-Spawn.
      * 
@@ -41,6 +48,9 @@ public partial class NavigationManager : Node
         // Bestimmen, welches Level geladen werden soll
         switch (LevelTag)
         {
+            case "main_menu":
+                SceneToLoad = SceneMainMenu;
+                break;
             case "intro":
                 SceneToLoad = SceneIntro;
                 break;
@@ -59,12 +69,14 @@ public partial class NavigationManager : Node
         }
 
         // Überprüfen, ob eine Szene ausgewählt wurde und diese dann laden
-        if (SceneToLoad != null)
-        {
-            SpawnDoorTag = DestinationTag;
+        if (SceneToLoad != null){
+            if(SceneToLoad != SceneMainMenu){
+                PlayerStats.Instance.SetCurrentLevelTag(LevelTag);
+                SpawnDoorTag = DestinationTag;
+            }
             // Verwendung der ChangeSceneToPacked-Methode in Godot 4
             CallDeferred(nameof(DeferredChangeScene), SceneToLoad);
-        }
+        } 
     }
 
     private void DeferredChangeScene(PackedScene SceneToLoad)

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dbbehkkpg2xys"]
 
 [ext_resource type="Texture2D" uid="uid://c0w6h05532gs0" path="res://assets/Dungeon Tile Set.png" id="1_61r2l"]
-[ext_resource type="PackedScene" uid="uid://chxndv6of54w8" path="res://scenes/spike.tscn" id="2_7a4pp"]
+[ext_resource type="PackedScene" uid="uid://chxndv6of54w8" path="res://Scenes/spike.tscn" id="2_7a4pp"]
 [ext_resource type="Script" path="res://scripts/SpikeDynamic.cs" id="3_net55"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aimbu"]

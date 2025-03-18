@@ -1,24 +1,24 @@
 [gd_scene load_steps=4 format=3 uid="uid://cku8xlcs7yegh"]
 
-[ext_resource type="Script" path="res://scripts/MainMenuBackground.cs" id="1_4kx2j"]
-[ext_resource type="Script" path="res://scripts/MainMenu.cs" id="1_dcjoc"]
-[ext_resource type="Texture2D" uid="uid://b4s5marq1e5x8" path="res://assets/Clouds 3/1.png" id="1_xjphi"]
+[ext_resource type="Script" path="res://scripts/MainMenu.cs" id="1_cwjkl"]
+[ext_resource type="Script" path="res://scripts/MainMenuBackground.cs" id="2_tn8kr"]
+[ext_resource type="Texture2D" uid="uid://b4s5marq1e5x8" path="res://assets/Clouds 3/1.png" id="3_j3li2"]
 
 [node name="MainMenu" type="Node2D"]
-script = ExtResource("1_dcjoc")
+script = ExtResource("1_cwjkl")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="Parallax2D" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_mirroring = Vector2(1152, 0)
-script = ExtResource("1_4kx2j")
+script = ExtResource("2_tn8kr")
 ScrollSpeed = -15.0
 
 [node name="TextureRect" type="TextureRect" parent="ParallaxBackground/Parallax2D"]
 offset_right = 1152.0
 offset_bottom = 648.0
 size_flags_horizontal = 0
-texture = ExtResource("1_xjphi")
+texture = ExtResource("3_j3li2")
 expand_mode = 1
 
 [node name="Control" type="Control" parent="."]
@@ -262,8 +262,22 @@ layout_mode = 2
 size_flags_horizontal = 4
 text = "Back"
 
+[node name="DeleteConfirmation" type="ConfirmationDialog" parent="."]
+title = "Delete Confirmation"
+initial_position = 1
+ok_button_text = "Delete"
+
 [connection signal="pressed" from="Control/Navigation/ContinueButton" to="." method="OnContinueButtonPressed"]
 [connection signal="pressed" from="Control/Navigation/NewGameButton" to="." method="OnNewGameButtonPressed"]
 [connection signal="pressed" from="Control/Navigation/LoadGameButton" to="." method="OnLoadGameButtonPressed"]
 [connection signal="pressed" from="Control/Navigation/QuitButton" to="." method="OnQuitButtonPressed"]
+[connection signal="pressed" from="Control/Saves/VBoxContainer/HBoxContainer/Save1/Select" to="." method="OnSave1SelectPressed"]
+[connection signal="pressed" from="Control/Saves/VBoxContainer/HBoxContainer/Save1/Delete" to="." method="OnSave1DeletePressed"]
+[connection signal="pressed" from="Control/Saves/VBoxContainer/HBoxContainer/Save2/Select" to="." method="OnSave2SelectPressed"]
+[connection signal="pressed" from="Control/Saves/VBoxContainer/HBoxContainer/Save2/Delete" to="." method="OnSave2DeletePressed"]
+[connection signal="pressed" from="Control/Saves/VBoxContainer/HBoxContainer/Save3/Select" to="." method="OnSave3SelectPressed"]
+[connection signal="pressed" from="Control/Saves/VBoxContainer/HBoxContainer/Save3/Delete" to="." method="OnSave3DeletePressed"]
 [connection signal="pressed" from="Control/Saves/VBoxContainer/BackButton" to="." method="OnBackButtonPressed"]
+[connection signal="canceled" from="DeleteConfirmation" to="." method="OnDeleteConfirmationCanceled"]
+[connection signal="close_requested" from="DeleteConfirmation" to="." method="OnDeleteConfirmationCloseRequested"]
+[connection signal="confirmed" from="DeleteConfirmation" to="." method="OnDeleteConfirmationConfirmed"]

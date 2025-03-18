@@ -12,6 +12,8 @@ public partial class MainMenu : Node2D {
     private Label[] SaveLabel = new Label[3];
     private Button[] SelectButton = new Button[3];
     private Button[] DeleteButton = new Button[3];
+    private ConfirmationDialog DeleteConfirmation;
+    private int SaveToDelete = 0;
 
     public override void _Ready() {
         Navigation = GetNode<VBoxContainer>("Control/Navigation");
@@ -28,6 +30,8 @@ public partial class MainMenu : Node2D {
         SaveLabel[2] = GetNode<Label>("Control/Saves/VBoxContainer/HBoxContainer/Save3/Label");
         SelectButton[2] = GetNode<Button>("Control/Saves/VBoxContainer/HBoxContainer/Save3/Select");
         DeleteButton[2] = GetNode<Button>("Control/Saves/VBoxContainer/HBoxContainer/Save3/Delete");
+
+        DeleteConfirmation = GetNode<ConfirmationDialog>("DeleteConfirmation");
 
         if(StorageManager.Instance.GetLastSaveId() > -1){
             ContinueButton.Visible = true;
@@ -75,11 +79,12 @@ public partial class MainMenu : Node2D {
     }
 
     public void OnContinueButtonPressed(){
-
+        StorageManager.Instance.LoadGameFile(StorageManager.Instance.GetLastSaveId());
+        NavigationManager.Instance.GoToLevel(PlayerStats.Instance.GetCurrentLevelTag(), null);
     }
 
     public void OnQuitButtonPressed(){
-        StorageManager.Instance.SaveAll();
+        StorageManager.Instance.SaveSettings();
         GetTree().Quit();
     }
 
@@ -97,4 +102,64 @@ public partial class MainMenu : Node2D {
         MenuState = 0;
         Change();
     }
+
+    public void OnSave1SelectPressed(){
+        if(MenuState == 2){
+            StorageManager.Instance.LoadGameFile(0);
+        }
+        NavigationManager.Instance.GoToLevel(PlayerStats.Instance.GetCurrentLevelTag(), null);
+        StorageManager.Instance.SetSaves(StorageManager.Instance.GetSaves() | 1);
+        StorageManager.Instance.SetLastSaveId(0);
+    }
+
+    public void OnSave1DeletePressed(){
+        SaveToDelete = 1;
+        DeleteConfirmation.SetText("Are you sure you want to DELETE Save " + SaveToDelete + "?");
+        DeleteConfirmation.Show();
+    }
+
+    public void OnSave2SelectPressed(){
+        if(MenuState == 2){
+            StorageManager.Instance.LoadGameFile(1);
+        }
+        NavigationManager.Instance.GoToLevel(PlayerStats.Instance.GetCurrentLevelTag(), null);
+        StorageManager.Instance.SetSaves(StorageManager.Instance.GetSaves() | 2);
+        StorageManager.Instance.SetLastSaveId(1);
+    }
+
+    public void OnSave2DeletePressed(){
+        SaveToDelete = 2;
+        DeleteConfirmation.SetText("Are you sure you want to DELETE Save " + SaveToDelete + "?");
+        DeleteConfirmation.Show();
+    }
+
+    public void OnSave3SelectPressed(){
+        if(MenuState == 2){
+            StorageManager.Instance.LoadGameFile(2);
+        }
+        NavigationManager.Instance.GoToLevel(PlayerStats.Instance.GetCurrentLevelTag(), null);
+        StorageManager.Instance.SetSaves(StorageManager.Instance.GetSaves() | 4);
+        StorageManager.Instance.SetLastSaveId(2);
+    }
+
+    public void OnSave3DeletePressed(){
+        SaveToDelete = 3;
+        DeleteConfirmation.SetText("Are you sure you want to DELETE Save " + SaveToDelete + "?");
+        DeleteConfirmation.Show();
+    }
+
+    public void OnDeleteConfirmationCanceled(){
+        SaveToDelete = 0;
+        Change();
+    }
+
+    public void OnDeleteConfirmationConfirmed(){
+        StorageManager.Instance.SetSaves(StorageManager.Instance.GetSaves() ^ (int) Math.Pow(2, SaveToDelete - 1));
+        Change();
+    }
+
+    public void OnDeleteConfirmationCloseRequested(){
+        OnDeleteConfirmationCanceled();
+    }
+
 }

@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" path="res://scripts/LevelManager.cs" id="1_6xc03"]
 [ext_resource type="Texture2D" uid="uid://c0w6h05532gs0" path="res://assets/Dungeon Tile Set.png" id="1_66gjf"]
-[ext_resource type="PackedScene" uid="uid://bmlrup5wfi5fx" path="res://scenes/door.tscn" id="2_2k5x2"]
-[ext_resource type="PackedScene" uid="uid://cq6xmv3najlnh" path="res://scenes/player.tscn" id="4_p5bc6"]
-[ext_resource type="PackedScene" uid="uid://cclu45b2pmyo2" path="res://scenes/checkpoint.tscn" id="5_362nf"]
-[ext_resource type="PackedScene" uid="uid://dh381ntrht6ri" path="res://scenes/hud.tscn" id="6_5l6n6"]
+[ext_resource type="PackedScene" uid="uid://bmlrup5wfi5fx" path="res://Scenes/door.tscn" id="2_2k5x2"]
+[ext_resource type="PackedScene" uid="uid://cq6xmv3najlnh" path="res://Scenes/player.tscn" id="4_p5bc6"]
+[ext_resource type="PackedScene" uid="uid://cclu45b2pmyo2" path="res://Scenes/checkpoint.tscn" id="5_362nf"]
+[ext_resource type="PackedScene" uid="uid://dh381ntrht6ri" path="res://Scenes/hud.tscn" id="6_5l6n6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1aa7m"]
 texture = ExtResource("1_66gjf")

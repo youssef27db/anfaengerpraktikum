@@ -10,8 +10,10 @@ public partial class PlayerStats : Node
 
 	public static PlayerStats Instance { get; private set; }
 	
-	private string RespawnLevelTag = "intro";
+	private String RespawnLevelTag = "intro";
+    private String CurrentLevelTag = "intro";
 	private Vector2 SpawnPoint;
+    private Vector2 Position = new Vector2(-540, 160);
 	private int SinAmount;
 	private float MaxHealthPoints = 100f;
     private float CurrentHealth;
@@ -36,8 +38,7 @@ public partial class PlayerStats : Node
     * @brief Getter für RespawnLevelTag.
     * @return String RespawnLevelTag
     */
-    public string GetRespawnLevelTag()
-	{
+    public String GetRespawnLevelTag() {
 		return RespawnLevelTag;
 	}
 
@@ -45,18 +46,58 @@ public partial class PlayerStats : Node
     * @brief Setter für RespawnLevelTag.
     * @param RespawnLevelTag Neuer Tag
     */
-	public void SetRespawnLevelTag(string levelTag)
-	{
+	public void SetRespawnLevelTag(String levelTag) {
 		RespawnLevelTag = levelTag;
 	}
 
+    /**
+    * @brief Getter für CurrentLevelTag.
+    * @return String CurrentLevelTag
+    */
+    public String GetCurrentLevelTag() {
+		return CurrentLevelTag;
+	}
+
+	/**
+    * @brief Setter für CurrentLevelTag.
+    * @param CurrentLevelTag Neuer Tag
+    */
+	public void SetCurrentLevelTag(String levelTag) {
+		CurrentLevelTag = levelTag;
+	}
+
     /** 
-     * @brief Gibt den SpawnPoint des Spielers zurück.
-     * @return Der SpawnPoint des Spielers.
+     * @brief Setzt den SpawnPoint des Spielers.
+     * @param Der SpawnPoint des Spielers.
      */
     public void SetSpawnPoint(Vector2 spawnPoint) {
         SpawnPoint = spawnPoint;
     }
+
+    /**
+    * @brief Getter für den SpawnPoint
+    * @return Der SpawnPoint des Spielers
+    */
+    public Vector2 GetSpawnPoint(){
+        return SpawnPoint;
+    }
+
+    /** 
+     * @brief Setzt die Position des Spielers.
+     * @param Position des Spielers.
+     */
+    public void SetPosition(Vector2 position) {
+        Position = position;
+    }
+
+    /**
+    * @brief Getter für die Position
+    * @return Position des Spielers
+    */
+    public Vector2 GetPosition(){
+        return Position;
+    }
+
 
 	/**
     * @brief Getter für SinAmount.
@@ -189,6 +230,11 @@ public partial class PlayerStats : Node
     */
     public int GetBVCurrentUses() {
         return BVCurrentUses;
+    }
+
+    public void Reload(){
+        Instance = new PlayerStats();
+        Instance._Ready();
     }
 
 }

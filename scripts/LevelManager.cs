@@ -1,7 +1,5 @@
 using Godot;
 
-
-
 public partial class LevelManager : Node2D
 {
     public override void _Ready()
@@ -12,11 +10,12 @@ public partial class LevelManager : Node2D
          * Wenn ein Spawn-Tag gesetzt ist, wird der Spieler an die entsprechende Tür gesetzt.
          * Dies wird verwendet, um den Spieler an eine bestimmte Tür zu setzen, wenn er von einem anderen Level aus spawnt.
          */
-
-        if (NavigationManager.SpawnDoorTag != null)
-        {
+        if (NavigationManager.SpawnDoorTag != null){
             OnLevelSpawn(NavigationManager.SpawnDoorTag);
+        } else {
+            NavigationManager.CallDeferred("TriggerPlayerSpawn", PlayerStats.Instance.GetPosition(), "");
         }
+
     }
 
     /**
