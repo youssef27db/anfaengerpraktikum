@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://bcjwcnm7uv7b6"]
+[gd_scene load_steps=16 format=4 uid="uid://bcjwcnm7uv7b6"]
 
 [ext_resource type="Script" path="res://scripts/LevelManager.cs" id="1_4qpl3"]
 [ext_resource type="Texture2D" uid="uid://c0w6h05532gs0" path="res://assets/Dungeon Tile Set.png" id="2_3tgvv"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://cqokjjp5c4xlu" path="res://scenes/base_enemy.tscn" id="7_s7erx"]
 [ext_resource type="Script" path="res://scripts/Boss1.cs" id="8_ej3wy"]
 [ext_resource type="PackedScene" uid="uid://dh381ntrht6ri" path="res://scenes/hud.tscn" id="9_616dq"]
+[ext_resource type="PackedScene" uid="uid://cclu45b2pmyo2" path="res://scenes/checkpoint.tscn" id="10_pk3fs"]
+[ext_resource type="PackedScene" uid="uid://mjtnmittvw51" path="res://scenes/interactable.tscn" id="11_utbav"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1aa7m"]
 texture = ExtResource("2_3tgvv")
@@ -316,9 +318,9 @@ tile_set = SubResource("TileSet_0eynk")
 
 [node name="Door_west" parent="Doors" instance=ExtResource("3_chsum")]
 position = Vector2(11, 288)
-DestinationLevelTag = "level1"
-DestinationDoorTag = "east"
-SpawnDirection = "right"
+
+[node name="Door_spawn" parent="Doors" instance=ExtResource("3_chsum")]
+position = Vector2(161, 288)
 
 [node name="Player" parent="." instance=ExtResource("4_7lu2w")]
 position = Vector2(22, 287)
@@ -349,13 +351,28 @@ Damage = 10000.0
 
 [node name="HUD" parent="." instance=ExtResource("9_616dq")]
 
-[node name="Boss" parent="." instance=ExtResource("7_s7erx")]
+[node name="Checkpoint" parent="." instance=ExtResource("10_pk3fs")]
+position = Vector2(161, 265)
+
+[node name="enemies" type="Node" parent="."]
+
+[node name="Boss" parent="enemies" instance=ExtResource("7_s7erx")]
 position = Vector2(823, 288)
 scale = Vector2(2, 2)
 script = ExtResource("8_ej3wy")
 
-[node name="BaseEnemy1" parent="." instance=ExtResource("7_s7erx")]
+[node name="BaseEnemy1" parent="enemies" instance=ExtResource("7_s7erx")]
 position = Vector2(667, 288)
 
-[node name="BaseEnemy2" parent="." instance=ExtResource("7_s7erx")]
+[node name="BaseEnemy2" parent="enemies" instance=ExtResource("7_s7erx")]
 position = Vector2(710, 288)
+
+[node name="Interactable" parent="." instance=ExtResource("11_utbav")]
+position = Vector2(365, 276)
+Text = "Press -Left click- for LIGHT ATTACK
+
+Press -Right click- for HEAVY ATTACK
+
+Press -Space- to BLOCK
+
+Press -Q- to HEAL"

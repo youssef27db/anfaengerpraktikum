@@ -176,7 +176,7 @@ position = Vector2(164, 264)
 
 [node name="Door_east" parent="Doors" instance=ExtResource("2_2k5x2")]
 position = Vector2(495, 288)
-DestinationLevelTag = "bossRoom"
+DestinationLevelTag = "level_two"
 DestinationDoorTag = "west"
 SpawnDirection = "left"
 
