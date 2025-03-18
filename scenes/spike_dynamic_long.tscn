@@ -9,6 +9,7 @@ size = Vector2(31, 4)
 
 [node name="spike_dynamic" type="AnimatableBody2D"]
 z_index = -1
+collision_layer = 2049
 
 [node name="Spike3" parent="." instance=ExtResource("2_ahkow")]
 z_index = -1

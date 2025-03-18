@@ -9,6 +9,7 @@ size = Vector2(31, 4)
 
 [node name="spike_dynamic" type="AnimatableBody2D"]
 z_index = -1
+collision_layer = 2049
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0.5, 0)
