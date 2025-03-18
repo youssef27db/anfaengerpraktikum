@@ -318,9 +318,6 @@ tile_set = SubResource("TileSet_0eynk")
 
 [node name="Door_west" parent="Doors" instance=ExtResource("3_chsum")]
 position = Vector2(11, 288)
-DestinationLevelTag = "level1"
-DestinationDoorTag = "east"
-SpawnDirection = "right"
 
 [node name="Door_spawn" parent="Doors" instance=ExtResource("3_chsum")]
 position = Vector2(161, 288)
