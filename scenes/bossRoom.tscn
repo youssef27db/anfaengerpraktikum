@@ -369,7 +369,9 @@ position = Vector2(710, 288)
 
 [node name="Interactable" parent="." instance=ExtResource("11_utbav")]
 position = Vector2(365, 276)
-Text = "Press -Left click- to ATTACK
+Text = "Press -Left click- for LIGHT ATTACK
+
+Press -Right click- for HEAVY ATTACK
 
 Press -Space- to BLOCK
 
