@@ -2,6 +2,9 @@ using Godot;
 using System;
 using System.Collections;
 
+/**
+* @brief Klasse für das Speichern und Laden von Daten.
+*/
 public partial class StorageManager : Node {
 
     private const String PathSettings = "user://settings.txt";
@@ -10,11 +13,18 @@ public partial class StorageManager : Node {
     private int Saves = 0;
     public static StorageManager Instance { get; private set; }
 
+
+    /** 
+     * @brief Initialisierung der Instanz und erstes laden der Einstellungen.
+     */
     public override void _Ready(){
         LoadSettings();
         Instance = this;
     }
 
+    /** 
+    * @brief Laden der Einstellungen.
+    */
     public void LoadSettings(){
         if(!FileAccess.FileExists(PathSettings)){
             return;
@@ -26,6 +36,10 @@ public partial class StorageManager : Node {
         File.Close();
     }
 
+    /** 
+    * @brief Laden eines Spielstandes.
+    * @param Id des Spielstandes.
+    */
     public void LoadGameFile(int id){
         if(!FileAccess.FileExists(PathSave[id])){
             return;
@@ -47,11 +61,18 @@ public partial class StorageManager : Node {
         File.Close();
     }
 
+    /** 
+    * @brief Speichern der Einstellungen und eines Spielstandes.
+    * @param Id des Spielstandes.
+    */
     public void SaveAll(int id){
         SaveGameFile(id);
         SaveSettings();
     }
 
+    /** 
+    * @brief Speichern der Einstellungen.
+    */
     public void SaveSettings(){
         FileAccess File = FileAccess.Open(PathSettings, FileAccess.ModeFlags.Write);
         File.StoreVar(Saves);
@@ -60,6 +81,10 @@ public partial class StorageManager : Node {
         File.Close();
     }
 
+    /** 
+    * @brief Speichern eines Spielstandes.
+    * @param Id des Spielstandes.
+    */
     public void SaveGameFile(int id){
         FileAccess File = FileAccess.Open(PathSave[id], FileAccess.ModeFlags.Write);
         File.StoreVar(PlayerStats.Instance.GetRespawnLevelTag());
@@ -78,18 +103,34 @@ public partial class StorageManager : Node {
         File.Close();
     }
 
+    /**
+    * @brief Setter für LastSaveId.
+    * @param int LastSaveId
+    */
     public void SetLastSaveId(int id){
         LastSaveId = id;
     }
 
+    /**
+    * @brief Getter für LastSaveId.
+    * @return int LastSaveId
+    */
     public int GetLastSaveId(){
         return LastSaveId;
     }
 
+    /**
+    * @brief Setter für Saves.
+    * @param int Saves
+    */
     public void SetSaves(int Saves){
         this.Saves = Saves;
     }
 
+    /**
+    * @brief Getter für Saves.
+    * @return int Saves
+    */
     public int GetSaves(){
         return Saves;
     }

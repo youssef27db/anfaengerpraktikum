@@ -2,9 +2,8 @@ using System;
 using Godot;
 
 /**
- * Klasse für die Spielerstats
+ * @brief Klasse für die Spielerstats
  */
-
 public partial class PlayerStats : Node
 {
 
@@ -232,6 +231,9 @@ public partial class PlayerStats : Node
         return BVCurrentUses;
     }
 
+    /**
+    * @brief Setzt die Attribute zurück.
+    */
     public void Reload(){
         Instance = new PlayerStats();
         Instance._Ready();
