@@ -30,6 +30,9 @@ public partial class NavigationManager : Node
     [Signal]
     public delegate void OnTriggerPlayerSpawnEventHandler(Vector2 Position, string Direction);
 
+    /**
+     * Initialisiert den NavigationManager und setzt ihn als Singleton.
+     */
 
     public override void _Ready(){
         Instance = this;
@@ -78,6 +81,12 @@ public partial class NavigationManager : Node
             CallDeferred(nameof(DeferredChangeScene), SceneToLoad);
         } 
     }
+
+    /**
+     * Diese Methode wird aufgerufen, um die Szene zu wechseln.
+     * 
+     * @param SceneToLoad Die Szene, die geladen werden soll.
+     */
 
     private void DeferredChangeScene(PackedScene SceneToLoad)
     {

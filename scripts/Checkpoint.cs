@@ -6,17 +6,22 @@ public partial class Checkpoint : Node2D
 
 	// Variable für Player
 	private Player player;
+
+	/*
+	 * @brief Intitalisierung der Node player
+	 */
+
 	public override void _Ready()
 	{
 		// Zugriff auf Player Node
 
 		player = GetNode<Player>("../Player");
 	}
-
-	public override void _Process(double delta)
-	{
-	}
 	
+	/*
+	 * @brief Diese Funktion wird aufgerufen, wenn der Player den Checkpoint betritt
+	 * @param body Der Körper, der den Checkpoint betritt
+	 */
 	private void OnPlayerBodyEntered(Node body)
 	{
 		

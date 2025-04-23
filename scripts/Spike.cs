@@ -6,10 +6,14 @@ public partial class Spike : Node2D
 	// Variable für Player
 	private Player player;
 
+
 	[Export]
 	private float Damage = 10f;
 
-
+	/**
+	 * @brief Initialisierung der Node Player
+	 * @details Hier wird der Player Node gefunden
+	 */
 	public override void _Ready()
 	{
 		// Zugriff auf Player Node

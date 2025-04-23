@@ -9,6 +9,10 @@ public partial class SpikeDynamic : Node2D
 	[Export]
 	private float Damage = 10f;
 
+	/**
+	 * @brief Initialisierung der Node Player
+	 * @details Hier wird der Player Node gefunden
+	 */
 
 	public override void _Ready()
 	{
