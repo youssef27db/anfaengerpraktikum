@@ -1,16 +1,16 @@
 [gd_scene load_steps=34 format=4 uid="uid://cjhbi6fpo5f66"]
 
 [ext_resource type="Script" path="res://scripts/LevelManager.cs" id="1_ae7yb"]
-[ext_resource type="PackedScene" uid="uid://cq6xmv3najlnh" path="res://Scenes/player.tscn" id="1_nw8jm"]
+[ext_resource type="PackedScene" uid="uid://cq6xmv3najlnh" path="res://scenes/player.tscn" id="1_nw8jm"]
 [ext_resource type="Texture2D" uid="uid://c0w6h05532gs0" path="res://assets/Dungeon Tile Set.png" id="2_b8sg5"]
-[ext_resource type="PackedScene" uid="uid://dp7co0plevfjk" path="res://Scenes/platform.tscn" id="3_vlrcr"]
-[ext_resource type="PackedScene" uid="uid://chxndv6of54w8" path="res://Scenes/spike.tscn" id="4_8bhcp"]
-[ext_resource type="PackedScene" uid="uid://dbbehkkpg2xys" path="res://Scenes/spike_dynamic.tscn" id="5_hxmra"]
-[ext_resource type="PackedScene" uid="uid://cqokjjp5c4xlu" path="res://Scenes/base_enemy.tscn" id="6_i04s2"]
-[ext_resource type="PackedScene" uid="uid://bmlrup5wfi5fx" path="res://Scenes/door.tscn" id="7_3adr6"]
-[ext_resource type="PackedScene" uid="uid://dh381ntrht6ri" path="res://Scenes/hud.tscn" id="8_c3bjn"]
-[ext_resource type="PackedScene" uid="uid://cclu45b2pmyo2" path="res://Scenes/checkpoint.tscn" id="9_btrft"]
-[ext_resource type="PackedScene" uid="uid://mjtnmittvw51" path="res://Scenes/interactable.tscn" id="11_fsmfv"]
+[ext_resource type="PackedScene" uid="uid://dp7co0plevfjk" path="res://scenes/platform.tscn" id="3_vlrcr"]
+[ext_resource type="PackedScene" uid="uid://chxndv6of54w8" path="res://scenes/spike.tscn" id="4_8bhcp"]
+[ext_resource type="PackedScene" uid="uid://dbbehkkpg2xys" path="res://scenes/spike_dynamic.tscn" id="5_hxmra"]
+[ext_resource type="PackedScene" uid="uid://cqokjjp5c4xlu" path="res://scenes/base_enemy.tscn" id="6_i04s2"]
+[ext_resource type="PackedScene" uid="uid://bmlrup5wfi5fx" path="res://scenes/door.tscn" id="7_3adr6"]
+[ext_resource type="PackedScene" uid="uid://dh381ntrht6ri" path="res://scenes/hud.tscn" id="8_c3bjn"]
+[ext_resource type="PackedScene" uid="uid://cclu45b2pmyo2" path="res://scenes/checkpoint.tscn" id="9_btrft"]
+[ext_resource type="PackedScene" uid="uid://mjtnmittvw51" path="res://scenes/interactable.tscn" id="11_fsmfv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fr7pc"]
 texture = ExtResource("2_b8sg5")
@@ -714,7 +714,6 @@ Damage = 100.0
 [node name="Spike22" parent="spikes" instance=ExtResource("4_8bhcp")]
 position = Vector2(950, -365)
 rotation = -3.14023
-scale = Vector2(1, 1)
 Damage = 100.0
 
 [node name="spikes_dynamic" type="Node2D" parent="."]
