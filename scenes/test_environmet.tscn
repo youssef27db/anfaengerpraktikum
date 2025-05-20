@@ -1,11 +1,11 @@
 [gd_scene load_steps=9 format=4 uid="uid://dvk8ylyepouug"]
 
 [ext_resource type="Texture2D" uid="uid://c0w6h05532gs0" path="res://assets/Dungeon Tile Set.png" id="1_a7xoi"]
-[ext_resource type="PackedScene" uid="uid://cq6xmv3najlnh" path="res://Scenes/player.tscn" id="2_eiejb"]
-[ext_resource type="PackedScene" uid="uid://cqokjjp5c4xlu" path="res://Scenes/base_enemy.tscn" id="4_7nb7u"]
-[ext_resource type="PackedScene" uid="uid://cclu45b2pmyo2" path="res://Scenes/checkpoint.tscn" id="4_m7wet"]
-[ext_resource type="PackedScene" uid="uid://dh381ntrht6ri" path="res://Scenes/hud.tscn" id="5_eivtg"]
-[ext_resource type="PackedScene" uid="uid://mjtnmittvw51" path="res://Scenes/interactable.tscn" id="6_fp4c4"]
+[ext_resource type="PackedScene" uid="uid://cq6xmv3najlnh" path="res://scenes/player.tscn" id="2_eiejb"]
+[ext_resource type="PackedScene" uid="uid://cqokjjp5c4xlu" path="res://scenes/base_enemy.tscn" id="4_7nb7u"]
+[ext_resource type="PackedScene" uid="uid://cclu45b2pmyo2" path="res://scenes/checkpoint.tscn" id="4_m7wet"]
+[ext_resource type="PackedScene" uid="uid://dh381ntrht6ri" path="res://scenes/hud.tscn" id="5_eivtg"]
+[ext_resource type="PackedScene" uid="uid://mjtnmittvw51" path="res://scenes/interactable.tscn" id="6_fp4c4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gj3od"]
 texture = ExtResource("1_a7xoi")
