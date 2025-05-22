@@ -1,0 +1,873 @@
+\begin{theindex}
+
+  \item {\_PhysicsProcess}
+    \subitem {Player}, \hyperpage{88}
+  \item {\_Process}
+    \subitem {BaseEnemy}, \hyperpage{33}
+    \subitem {Boss1}, \hyperpage{52}
+    \subitem {HealthBar}, \hyperpage{63}
+    \subitem {Hud}, \hyperpage{64}
+    \subitem {Interactable}, \hyperpage{68}
+    \subitem {MainMenuBackground}, \hyperpage{80}
+    \subitem {StaminaBar}, \hyperpage{120}
+  \item {\_Ready}
+    \subitem {BaseEnemy}, \hyperpage{34}
+    \subitem {BloodVial}, \hyperpage{48}
+    \subitem {Boss1}, \hyperpage{52}
+    \subitem {Checkpoint}, \hyperpage{56}
+    \subitem {Door}, \hyperpage{61}
+    \subitem {HealthBar}, \hyperpage{63}
+    \subitem {Hud}, \hyperpage{65}
+    \subitem {Interactable}, \hyperpage{68}
+    \subitem {LevelManager}, \hyperpage{71}
+    \subitem {MainMenu}, \hyperpage{73}
+    \subitem {NavigationManager}, \hyperpage{82}
+    \subitem {Player}, \hyperpage{88}
+    \subitem {PlayerStats}, \hyperpage{103}
+    \subitem {Spike}, \hyperpage{114}
+    \subitem {SpikeDynamic}, \hyperpage{117}
+    \subitem {StaminaBar}, \hyperpage{120}
+    \subitem {StorageManager}, \hyperpage{122}
+
+  \indexspace
+
+  \item {AddMaxUses}
+    \subitem {BloodVial}, \hyperpage{48}
+  \item {AlreadyHit}
+    \subitem {BaseEnemy}, \hyperpage{42}
+  \item {anfaengerpraktikum}, \hyperpage{1}
+  \item {AnimationPlayer}
+    \subitem {Hud}, \hyperpage{66}
+    \subitem {Player}, \hyperpage{97}
+  \item {AnimationState}
+    \subitem {BaseEnemy}, \hyperpage{42}
+  \item {Area}
+    \subitem {Interactable}, \hyperpage{69}
+  \item {Armor}
+    \subitem {BaseEnemy}, \hyperpage{43}
+  \item {ATTACK}
+    \subitem {BaseEnemy}, \hyperpage{33}
+
+  \indexspace
+
+  \item {BaseEnemy}, \hyperpage{31}
+    \subitem {\_Process}, \hyperpage{33}
+    \subitem {\_Ready}, \hyperpage{34}
+    \subitem {AlreadyHit}, \hyperpage{42}
+    \subitem {AnimationState}, \hyperpage{42}
+    \subitem {Armor}, \hyperpage{43}
+    \subitem {ATTACK}, \hyperpage{33}
+    \subitem {CheckLineOfSight}, \hyperpage{34}
+    \subitem {CheckPlayerHit}, \hyperpage{35}
+    \subitem {CollisionPolygon}, \hyperpage{43}
+    \subitem {CurrentHealthPoints}, \hyperpage{43}
+    \subitem {CurrentStamina}, \hyperpage{43}
+    \subitem {CurrentTarget}, \hyperpage{43}
+    \subitem {Damage}, \hyperpage{43}
+    \subitem {Dead}, \hyperpage{44}
+    \subitem {Die}, \hyperpage{35}
+    \subitem {FlipRotation}, \hyperpage{36}
+    \subitem {FrontCollisionRayCast}, \hyperpage{44}
+    \subitem {HandleMovement}, \hyperpage{36}
+    \subitem {HealthBar}, \hyperpage{44}
+    \subitem {Id}, \hyperpage{47}
+    \subitem {IDLE}, \hyperpage{33}
+    \subitem {IsCloseTo}, \hyperpage{37}
+    \subitem {IsDead}, \hyperpage{39}
+    \subitem {LeftFallProtection}, \hyperpage{44}
+    \subitem {LineOfSight}, \hyperpage{44}
+    \subitem {MainCollision}, \hyperpage{44}
+    \subitem {MaxHealthPoints}, \hyperpage{45}
+    \subitem {MaxStamina}, \hyperpage{45}
+    \subitem {OnDetectionBodyEntered}, \hyperpage{39}
+    \subitem {OnHitboxAreaEntered}, \hyperpage{39}
+    \subitem {OnPursuingRadiusBodyExited}, \hyperpage{40}
+    \subitem {OnSwordHitBoxBodyEntered}, \hyperpage{40}
+    \subitem {Player}, \hyperpage{45}
+    \subitem {Pursuing}, \hyperpage{45}
+    \subitem {Respawn}, \hyperpage{40}
+    \subitem {Respawnable}, \hyperpage{45}
+    \subitem {ReturnToStart}, \hyperpage{45}
+    \subitem {ReturnToStartAfter}, \hyperpage{46}
+    \subitem {RightFallProtection}, \hyperpage{46}
+    \subitem {SetRotation}, \hyperpage{41}
+    \subitem {SinAmount}, \hyperpage{46}
+    \subitem {Speed}, \hyperpage{46}
+    \subitem {Sprite}, \hyperpage{46}
+    \subitem {StartPosition}, \hyperpage{46}
+    \subitem {StartRotation}, \hyperpage{47}
+    \subitem {State}, \hyperpage{33}
+    \subitem {SwordHitbox}, \hyperpage{47}
+    \subitem {TAKE\_HIT}, \hyperpage{33}
+    \subitem {TakeDamage}, \hyperpage{41}
+    \subitem {TargetPosition}, \hyperpage{47}
+    \subitem {UpdateAnimation}, \hyperpage{42}
+    \subitem {WALK}, \hyperpage{33}
+  \item {BloodVial}, \hyperpage{48}
+    \subitem {\_Ready}, \hyperpage{48}
+    \subitem {AddMaxUses}, \hyperpage{48}
+    \subitem {LevelHealAmount}, \hyperpage{49}
+    \subitem {ResetUses}, \hyperpage{49}
+    \subitem {UseBloodVial}, \hyperpage{49}
+  \item {BloodVials}
+    \subitem {Player}, \hyperpage{97}
+  \item {Boss1}, \hyperpage{50}
+    \subitem {\_Process}, \hyperpage{52}
+    \subitem {\_Ready}, \hyperpage{52}
+    \subitem {EnemiesRevived}, \hyperpage{54}
+    \subitem {HandleRegeneration}, \hyperpage{52}
+    \subitem {RegenAmount}, \hyperpage{54}
+    \subitem {RegenCooldown}, \hyperpage{55}
+    \subitem {RegenTimer}, \hyperpage{55}
+    \subitem {ReviveEnemies}, \hyperpage{53}
+    \subitem {ShowPopupMessage}, \hyperpage{53}
+    \subitem {StartGlowing}, \hyperpage{54}
+  \item {Buttons}
+    \subitem {Hud}, \hyperpage{66}
+  \item {BVCurrentUses}
+    \subitem {PlayerStats}, \hyperpage{111}
+  \item {BVHealAmount}
+    \subitem {PlayerStats}, \hyperpage{111}
+  \item {BVMaxUses}
+    \subitem {PlayerStats}, \hyperpage{111}
+
+  \indexspace
+
+  \item {C:/Users/Youssef/Desktop/UNI/S4/ComputerspielEntwicklung/DasSpiel/anfaengerpraktikum/addons/GDMUT/Dock.cs}, 
+		\hyperpage{127}
+  \item {C:/Users/Youssef/Desktop/UNI/S4/ComputerspielEntwicklung/DasSpiel/anfaengerpraktikum/addons/GDMUT/GDMUT.cs}, 
+		\hyperpage{129}
+  \item {C:/Users/Youssef/Desktop/UNI/S4/ComputerspielEntwicklung/DasSpiel/anfaengerpraktikum/addons/GDMUT/MethodResult.cs}, 
+		\hyperpage{130}
+  \item {C:/Users/Youssef/Desktop/UNI/S4/ComputerspielEntwicklung/DasSpiel/anfaengerpraktikum/addons/GDMUT/Result.cs}, 
+		\hyperpage{131}
+  \item {C:/Users/Youssef/Desktop/UNI/S4/ComputerspielEntwicklung/DasSpiel/anfaengerpraktikum/addons/GDMUT/TestFunction.cs}, 
+		\hyperpage{131}
+  \item {C:/Users/Youssef/Desktop/UNI/S4/ComputerspielEntwicklung/DasSpiel/anfaengerpraktikum/addons/GDMUT/TestLoader.cs}, 
+		\hyperpage{131}
+  \item {C:/Users/Youssef/Desktop/UNI/S4/ComputerspielEntwicklung/DasSpiel/anfaengerpraktikum/addons/GDMUT/TestResult.cs}, 
+		\hyperpage{133}
+  \item {C:/Users/Youssef/Desktop/UNI/S4/ComputerspielEntwicklung/DasSpiel/anfaengerpraktikum/addons/godot-\/git-\/plugin/THIRDPARTY.md}, 
+		\hyperpage{134}
+  \item {C:/Users/Youssef/Desktop/UNI/S4/ComputerspielEntwicklung/DasSpiel/anfaengerpraktikum/README.md}, 
+		\hyperpage{134}
+  \item {C:/Users/Youssef/Desktop/UNI/S4/ComputerspielEntwicklung/DasSpiel/anfaengerpraktikum/scripts/BaseEnemy.cs}, 
+		\hyperpage{134}
+  \item {C:/Users/Youssef/Desktop/UNI/S4/ComputerspielEntwicklung/DasSpiel/anfaengerpraktikum/scripts/BloodVial.cs}, 
+		\hyperpage{138}
+  \item {C:/Users/Youssef/Desktop/UNI/S4/ComputerspielEntwicklung/DasSpiel/anfaengerpraktikum/scripts/Boss1.cs}, 
+		\hyperpage{139}
+  \item {C:/Users/Youssef/Desktop/UNI/S4/ComputerspielEntwicklung/DasSpiel/anfaengerpraktikum/scripts/Checkpoint.cs}, 
+		\hyperpage{140}
+  \item {C:/Users/Youssef/Desktop/UNI/S4/ComputerspielEntwicklung/DasSpiel/anfaengerpraktikum/scripts/Damage.cs}, 
+		\hyperpage{141}
+  \item {C:/Users/Youssef/Desktop/UNI/S4/ComputerspielEntwicklung/DasSpiel/anfaengerpraktikum/scripts/Door.cs}, 
+		\hyperpage{141, 142}
+  \item {C:/Users/Youssef/Desktop/UNI/S4/ComputerspielEntwicklung/DasSpiel/anfaengerpraktikum/scripts/HealthBar.cs}, 
+		\hyperpage{142}
+  \item {C:/Users/Youssef/Desktop/UNI/S4/ComputerspielEntwicklung/DasSpiel/anfaengerpraktikum/scripts/Hud.cs}, 
+		\hyperpage{143}
+  \item {C:/Users/Youssef/Desktop/UNI/S4/ComputerspielEntwicklung/DasSpiel/anfaengerpraktikum/scripts/Interactable.cs}, 
+		\hyperpage{143, 144}
+  \item {C:/Users/Youssef/Desktop/UNI/S4/ComputerspielEntwicklung/DasSpiel/anfaengerpraktikum/scripts/LevelManager.cs}, 
+		\hyperpage{144}
+  \item {C:/Users/Youssef/Desktop/UNI/S4/ComputerspielEntwicklung/DasSpiel/anfaengerpraktikum/scripts/MainMenu.cs}, 
+		\hyperpage{145}
+  \item {C:/Users/Youssef/Desktop/UNI/S4/ComputerspielEntwicklung/DasSpiel/anfaengerpraktikum/scripts/MainMenuBackground.cs}, 
+		\hyperpage{147}
+  \item {C:/Users/Youssef/Desktop/UNI/S4/ComputerspielEntwicklung/DasSpiel/anfaengerpraktikum/scripts/NavigationManager.cs}, 
+		\hyperpage{148}
+  \item {C:/Users/Youssef/Desktop/UNI/S4/ComputerspielEntwicklung/DasSpiel/anfaengerpraktikum/scripts/Player.cs}, 
+		\hyperpage{149}
+  \item {C:/Users/Youssef/Desktop/UNI/S4/ComputerspielEntwicklung/DasSpiel/anfaengerpraktikum/scripts/PlayerStats.cs}, 
+		\hyperpage{153, 154}
+  \item {C:/Users/Youssef/Desktop/UNI/S4/ComputerspielEntwicklung/DasSpiel/anfaengerpraktikum/scripts/Spike.cs}, 
+		\hyperpage{155}
+  \item {C:/Users/Youssef/Desktop/UNI/S4/ComputerspielEntwicklung/DasSpiel/anfaengerpraktikum/scripts/SpikeDynamic.cs}, 
+		\hyperpage{156}
+  \item {C:/Users/Youssef/Desktop/UNI/S4/ComputerspielEntwicklung/DasSpiel/anfaengerpraktikum/scripts/StaminaBar.cs}, 
+		\hyperpage{157}
+  \item {C:/Users/Youssef/Desktop/UNI/S4/ComputerspielEntwicklung/DasSpiel/anfaengerpraktikum/scripts/StorageManager.cs}, 
+		\hyperpage{158}
+  \item {C:/Users/Youssef/Desktop/UNI/S4/ComputerspielEntwicklung/DasSpiel/anfaengerpraktikum/TestClass.cs}, 
+		\hyperpage{159}
+  \item {CanDash}
+    \subitem {Player}, \hyperpage{97}
+  \item {Change}
+    \subitem {MainMenu}, \hyperpage{73}
+  \item {CheckLineOfSight}
+    \subitem {BaseEnemy}, \hyperpage{34}
+  \item {CheckPlayerHit}
+    \subitem {BaseEnemy}, \hyperpage{35}
+  \item {Checkpoint}, \hyperpage{55}
+    \subitem {\_Ready}, \hyperpage{56}
+    \subitem {OnPlayerBodyEntered}, \hyperpage{56}
+    \subitem {Player}, \hyperpage{56}
+  \item {CollisionPolygon}
+    \subitem {BaseEnemy}, \hyperpage{43}
+  \item {ContinueButton}
+    \subitem {MainMenu}, \hyperpage{78}
+  \item {CreateDashEffect}
+    \subitem {Player}, \hyperpage{88}
+  \item {CurrentHealth}
+    \subitem {PlayerStats}, \hyperpage{112}
+  \item {CurrentHealthPoints}
+    \subitem {BaseEnemy}, \hyperpage{43}
+  \item {CurrentLevelTag}
+    \subitem {PlayerStats}, \hyperpage{112}
+  \item {CurrentStamina}
+    \subitem {BaseEnemy}, \hyperpage{43}
+    \subitem {PlayerStats}, \hyperpage{112}
+  \item {CurrentTarget}
+    \subitem {BaseEnemy}, \hyperpage{43}
+
+  \indexspace
+
+  \item {Damage}, \hyperpage{57}
+    \subitem {BaseEnemy}, \hyperpage{43}
+    \subitem {Damage}, \hyperpage{57}
+    \subitem {GetPhysicalDMG}, \hyperpage{58}
+    \subitem {GetPushAmount}, \hyperpage{58}
+    \subitem {GetSource}, \hyperpage{58}
+    \subitem {GetTrueDMG}, \hyperpage{58}
+    \subitem {PhysicalDMG}, \hyperpage{59}
+    \subitem {PushAmount}, \hyperpage{59}
+    \subitem {Source}, \hyperpage{59}
+    \subitem {Spike}, \hyperpage{116}
+    \subitem {SpikeDynamic}, \hyperpage{119}
+    \subitem {TrueDMG}, \hyperpage{59}
+  \item {DashDirection}
+    \subitem {Player}, \hyperpage{98}
+  \item {DashEffect}
+    \subitem {Player}, \hyperpage{98}
+  \item {DashInProgress}
+    \subitem {Player}, \hyperpage{89}
+  \item {DashSpeed}
+    \subitem {Player}, \hyperpage{98}
+  \item {DashTimer}
+    \subitem {Player}, \hyperpage{98}
+  \item {DashTrailInterval}
+    \subitem {Player}, \hyperpage{98}
+  \item {DashTrailTimer}
+    \subitem {Player}, \hyperpage{98}
+  \item {Dead}
+    \subitem {BaseEnemy}, \hyperpage{44}
+  \item {DeferredChangeScene}
+    \subitem {NavigationManager}, \hyperpage{82}
+  \item {DeleteButton}
+    \subitem {MainMenu}, \hyperpage{78}
+  \item {DeleteConfirmation}
+    \subitem {MainMenu}, \hyperpage{78}
+  \item {DestinationDoorTag}
+    \subitem {Door}, \hyperpage{62}
+  \item {DestinationLevelTag}
+    \subitem {Door}, \hyperpage{62}
+  \item {Die}
+    \subitem {BaseEnemy}, \hyperpage{35}
+  \item {Door}, \hyperpage{60}
+    \subitem {\_Ready}, \hyperpage{61}
+    \subitem {DestinationDoorTag}, \hyperpage{62}
+    \subitem {DestinationLevelTag}, \hyperpage{62}
+    \subitem {OnPlayerBodyEntered}, \hyperpage{61}
+    \subitem {Spawn}, \hyperpage{61}
+    \subitem {SpawnDirection}, \hyperpage{62}
+
+  \indexspace
+
+  \item {Enabled}
+    \subitem {Hud}, \hyperpage{67}
+  \item {EnemiesRevived}
+    \subitem {Boss1}, \hyperpage{54}
+
+  \indexspace
+
+  \item {FlipRotation}
+    \subitem {BaseEnemy}, \hyperpage{36}
+  \item {FrontCollisionRayCast}
+    \subitem {BaseEnemy}, \hyperpage{44}
+
+  \indexspace
+
+  \item {GdMUT}, \hyperpage{29}
+  \item {GdMUT.Components}, \hyperpage{29}
+  \item {GetBloodVials}
+    \subitem {Player}, \hyperpage{90}
+  \item {GetBVCurrentUses}
+    \subitem {PlayerStats}, \hyperpage{103}
+  \item {GetBVHealAmount}
+    \subitem {PlayerStats}, \hyperpage{103}
+  \item {GetBVMaxUses}
+    \subitem {PlayerStats}, \hyperpage{103}
+  \item {GetCurrentHealth}
+    \subitem {PlayerStats}, \hyperpage{104}
+  \item {GetCurrentLevelTag}
+    \subitem {PlayerStats}, \hyperpage{104}
+  \item {GetDamage}
+    \subitem {Player}, \hyperpage{90}
+    \subitem {Spike}, \hyperpage{114}
+    \subitem {SpikeDynamic}, \hyperpage{117}
+  \item {GetLastSaveId}
+    \subitem {StorageManager}, \hyperpage{122}
+  \item {GetMaxHealthPoints}
+    \subitem {PlayerStats}, \hyperpage{104}
+  \item {GetMaxStamina}
+    \subitem {PlayerStats}, \hyperpage{105}
+  \item {GetPhysicalDMG}
+    \subitem {Damage}, \hyperpage{58}
+  \item {GetPosition}
+    \subitem {PlayerStats}, \hyperpage{105}
+  \item {GetPushAmount}
+    \subitem {Damage}, \hyperpage{58}
+  \item {GetRespawnLevelTag}
+    \subitem {PlayerStats}, \hyperpage{105}
+  \item {GetSaves}
+    \subitem {StorageManager}, \hyperpage{122}
+  \item {GetSinAmount}
+    \subitem {PlayerStats}, \hyperpage{106}
+  \item {GetSource}
+    \subitem {Damage}, \hyperpage{58}
+  \item {GetSpawnPoint}
+    \subitem {PlayerStats}, \hyperpage{106}
+  \item {GetStamina}
+    \subitem {PlayerStats}, \hyperpage{106}
+  \item {GetTrueDMG}
+    \subitem {Damage}, \hyperpage{58}
+  \item {GoToLevel}
+    \subitem {NavigationManager}, \hyperpage{83}
+
+  \indexspace
+
+  \item {HandleJump}
+    \subitem {Player}, \hyperpage{90}
+  \item {HandleMovement}
+    \subitem {BaseEnemy}, \hyperpage{36}
+    \subitem {Player}, \hyperpage{91}
+  \item {HandleRegeneration}
+    \subitem {Boss1}, \hyperpage{52}
+  \item {HauptHitbox}
+    \subitem {Player}, \hyperpage{99}
+  \item {HealthBar}, \hyperpage{62}
+    \subitem {\_Process}, \hyperpage{63}
+    \subitem {\_Ready}, \hyperpage{63}
+    \subitem {BaseEnemy}, \hyperpage{44}
+  \item {Hud}, \hyperpage{64}
+    \subitem {\_Process}, \hyperpage{64}
+    \subitem {\_Ready}, \hyperpage{65}
+    \subitem {AnimationPlayer}, \hyperpage{66}
+    \subitem {Buttons}, \hyperpage{66}
+    \subitem {Enabled}, \hyperpage{67}
+    \subitem {OnResumeButtonPressed}, \hyperpage{65}
+    \subitem {OnSaveButtonPressed}, \hyperpage{65}
+    \subitem {OnSaveMenuButtonPressed}, \hyperpage{65}
+    \subitem {OnSaveQuitButtonPressed}, \hyperpage{66}
+    \subitem {TogglePause}, \hyperpage{66}
+
+  \indexspace
+
+  \item {Id}
+    \subitem {BaseEnemy}, \hyperpage{47}
+  \item {IDLE}
+    \subitem {BaseEnemy}, \hyperpage{33}
+  \item {InfoLabel}
+    \subitem {MainMenu}, \hyperpage{79}
+  \item {Instance}
+    \subitem {NavigationManager}, \hyperpage{85}
+    \subitem {PlayerStats}, \hyperpage{113}
+    \subitem {StorageManager}, \hyperpage{126}
+  \item {Interactable}, \hyperpage{67}
+    \subitem {\_Process}, \hyperpage{68}
+    \subitem {\_Ready}, \hyperpage{68}
+    \subitem {Area}, \hyperpage{69}
+    \subitem {OnAreaBodyExited}, \hyperpage{68}
+    \subitem {Player}, \hyperpage{69}
+    \subitem {PopUp}, \hyperpage{69}
+    \subitem {Text}, \hyperpage{70}
+    \subitem {TextLabel}, \hyperpage{69}
+  \item {IsAttacking}
+    \subitem {Player}, \hyperpage{92}
+  \item {IsBlocking}
+    \subitem {Player}, \hyperpage{92}
+  \item {IsCloseTo}
+    \subitem {BaseEnemy}, \hyperpage{37}
+  \item {IsDashing}
+    \subitem {Player}, \hyperpage{99}
+  \item {IsDead}
+    \subitem {BaseEnemy}, \hyperpage{39}
+
+  \indexspace
+
+  \item {JUMP\_VELOCITY}
+    \subitem {Player}, \hyperpage{99}
+  \item {JumpCount}
+    \subitem {Player}, \hyperpage{99}
+  \item {JumpMax}
+    \subitem {Player}, \hyperpage{99}
+
+  \indexspace
+
+  \item {LastAttack}
+    \subitem {Player}, \hyperpage{99}
+  \item {LastSaveId}
+    \subitem {StorageManager}, \hyperpage{125}
+  \item {LeftFallProtection}
+    \subitem {BaseEnemy}, \hyperpage{44}
+  \item {LevelHealAmount}
+    \subitem {BloodVial}, \hyperpage{49}
+  \item {LevelManager}, \hyperpage{70}
+    \subitem {\_Ready}, \hyperpage{71}
+    \subitem {OnLevelSpawn}, \hyperpage{71}
+  \item {LineOfSight}
+    \subitem {BaseEnemy}, \hyperpage{44}
+  \item {LoadGameFile}
+    \subitem {StorageManager}, \hyperpage{122}
+  \item {LoadSettings}
+    \subitem {StorageManager}, \hyperpage{123}
+
+  \indexspace
+
+  \item {MainCollision}
+    \subitem {BaseEnemy}, \hyperpage{44}
+  \item {MainMenu}, \hyperpage{72}
+    \subitem {\_Ready}, \hyperpage{73}
+    \subitem {Change}, \hyperpage{73}
+    \subitem {ContinueButton}, \hyperpage{78}
+    \subitem {DeleteButton}, \hyperpage{78}
+    \subitem {DeleteConfirmation}, \hyperpage{78}
+    \subitem {InfoLabel}, \hyperpage{79}
+    \subitem {MenuState}, \hyperpage{79}
+    \subitem {Navigation}, \hyperpage{79}
+    \subitem {OnBackButtonPressed}, \hyperpage{74}
+    \subitem {OnContinueButtonPressed}, \hyperpage{74}
+    \subitem {OnDeleteConfirmationCanceled}, \hyperpage{75}
+    \subitem {OnDeleteConfirmationCloseRequested}, \hyperpage{75}
+    \subitem {OnDeleteConfirmationConfirmed}, \hyperpage{75}
+    \subitem {OnLoadGameButtonPressed}, \hyperpage{75}
+    \subitem {OnNewGameButtonPressed}, \hyperpage{76}
+    \subitem {OnQuitButtonPressed}, \hyperpage{76}
+    \subitem {OnSave1DeletePressed}, \hyperpage{76}
+    \subitem {OnSave1SelectPressed}, \hyperpage{76}
+    \subitem {OnSave2DeletePressed}, \hyperpage{77}
+    \subitem {OnSave2SelectPressed}, \hyperpage{77}
+    \subitem {OnSave3DeletePressed}, \hyperpage{77}
+    \subitem {OnSave3SelectPressed}, \hyperpage{78}
+    \subitem {SaveLabel}, \hyperpage{79}
+    \subitem {SavesContainer}, \hyperpage{79}
+    \subitem {SaveToDelete}, \hyperpage{79}
+    \subitem {SelectButton}, \hyperpage{80}
+  \item {MainMenuBackground}, \hyperpage{80}
+    \subitem {\_Process}, \hyperpage{80}
+    \subitem {ScrollSpeed}, \hyperpage{81}
+  \item {MaxHeal}
+    \subitem {Player}, \hyperpage{92}
+  \item {MaxHealthPoints}
+    \subitem {BaseEnemy}, \hyperpage{45}
+    \subitem {PlayerStats}, \hyperpage{112}
+  \item {MaxStamina}
+    \subitem {BaseEnemy}, \hyperpage{45}
+    \subitem {PlayerStats}, \hyperpage{112}
+  \item {MenuState}
+    \subitem {MainMenu}, \hyperpage{79}
+
+  \indexspace
+
+  \item {Navigation}
+    \subitem {MainMenu}, \hyperpage{79}
+  \item {NavigationManager}, \hyperpage{81}
+    \subitem {\_Ready}, \hyperpage{82}
+    \subitem {DeferredChangeScene}, \hyperpage{82}
+    \subitem {GoToLevel}, \hyperpage{83}
+    \subitem {Instance}, \hyperpage{85}
+    \subitem {OnTriggerPlayerSpawnEventHandler}, \hyperpage{83}
+    \subitem {SceneBoss}, \hyperpage{84}
+    \subitem {SceneIntro}, \hyperpage{84}
+    \subitem {SceneLevel1}, \hyperpage{84}
+    \subitem {SceneLevelOne}, \hyperpage{85}
+    \subitem {SceneLevelTwo}, \hyperpage{85}
+    \subitem {SceneMainMenu}, \hyperpage{85}
+    \subitem {SpawnDoorTag}, \hyperpage{85}
+    \subitem {TriggerPlayerSpawn}, \hyperpage{84}
+
+  \indexspace
+
+  \item {OnAreaBodyExited}
+    \subitem {Interactable}, \hyperpage{68}
+  \item {OnBackButtonPressed}
+    \subitem {MainMenu}, \hyperpage{74}
+  \item {OnContinueButtonPressed}
+    \subitem {MainMenu}, \hyperpage{74}
+  \item {OnDeleteConfirmationCanceled}
+    \subitem {MainMenu}, \hyperpage{75}
+  \item {OnDeleteConfirmationCloseRequested}
+    \subitem {MainMenu}, \hyperpage{75}
+  \item {OnDeleteConfirmationConfirmed}
+    \subitem {MainMenu}, \hyperpage{75}
+  \item {OnDetectionBodyEntered}
+    \subitem {BaseEnemy}, \hyperpage{39}
+  \item {OnHitboxAreaEntered}
+    \subitem {BaseEnemy}, \hyperpage{39}
+  \item {OnLevelSpawn}
+    \subitem {LevelManager}, \hyperpage{71}
+  \item {OnLoadGameButtonPressed}
+    \subitem {MainMenu}, \hyperpage{75}
+  \item {OnNewGameButtonPressed}
+    \subitem {MainMenu}, \hyperpage{76}
+  \item {OnPlayerBodyEntered}
+    \subitem {Checkpoint}, \hyperpage{56}
+    \subitem {Door}, \hyperpage{61}
+    \subitem {Spike}, \hyperpage{115}
+    \subitem {SpikeDynamic}, \hyperpage{118}
+  \item {OnPlayerBodyExited}
+    \subitem {Spike}, \hyperpage{115}
+    \subitem {SpikeDynamic}, \hyperpage{118}
+  \item {OnPursuingRadiusBodyExited}
+    \subitem {BaseEnemy}, \hyperpage{40}
+  \item {OnQuitButtonPressed}
+    \subitem {MainMenu}, \hyperpage{76}
+  \item {OnResumeButtonPressed}
+    \subitem {Hud}, \hyperpage{65}
+  \item {OnSave1DeletePressed}
+    \subitem {MainMenu}, \hyperpage{76}
+  \item {OnSave1SelectPressed}
+    \subitem {MainMenu}, \hyperpage{76}
+  \item {OnSave2DeletePressed}
+    \subitem {MainMenu}, \hyperpage{77}
+  \item {OnSave2SelectPressed}
+    \subitem {MainMenu}, \hyperpage{77}
+  \item {OnSave3DeletePressed}
+    \subitem {MainMenu}, \hyperpage{77}
+  \item {OnSave3SelectPressed}
+    \subitem {MainMenu}, \hyperpage{78}
+  \item {OnSaveButtonPressed}
+    \subitem {Hud}, \hyperpage{65}
+  \item {OnSaveMenuButtonPressed}
+    \subitem {Hud}, \hyperpage{65}
+  \item {OnSaveQuitButtonPressed}
+    \subitem {Hud}, \hyperpage{66}
+  \item {OnSpawn}
+    \subitem {Player}, \hyperpage{93}
+  \item {OnSwordHitBoxBodyEntered}
+    \subitem {BaseEnemy}, \hyperpage{40}
+  \item {OnTimerTimeout}
+    \subitem {Spike}, \hyperpage{115}
+    \subitem {SpikeDynamic}, \hyperpage{118}
+  \item {OnTriggerPlayerSpawnEventHandler}
+    \subitem {NavigationManager}, \hyperpage{83}
+
+  \indexspace
+
+  \item {PathSave}
+    \subitem {StorageManager}, \hyperpage{125}
+  \item {PathSettings}
+    \subitem {StorageManager}, \hyperpage{126}
+  \item {PhysicalDMG}
+    \subitem {Damage}, \hyperpage{59}
+  \item {Player}, \hyperpage{86}
+    \subitem {\_PhysicsProcess}, \hyperpage{88}
+    \subitem {\_Ready}, \hyperpage{88}
+    \subitem {AnimationPlayer}, \hyperpage{97}
+    \subitem {BaseEnemy}, \hyperpage{45}
+    \subitem {BloodVials}, \hyperpage{97}
+    \subitem {CanDash}, \hyperpage{97}
+    \subitem {Checkpoint}, \hyperpage{56}
+    \subitem {CreateDashEffect}, \hyperpage{88}
+    \subitem {DashDirection}, \hyperpage{98}
+    \subitem {DashEffect}, \hyperpage{98}
+    \subitem {DashInProgress}, \hyperpage{89}
+    \subitem {DashSpeed}, \hyperpage{98}
+    \subitem {DashTimer}, \hyperpage{98}
+    \subitem {DashTrailInterval}, \hyperpage{98}
+    \subitem {DashTrailTimer}, \hyperpage{98}
+    \subitem {GetBloodVials}, \hyperpage{90}
+    \subitem {GetDamage}, \hyperpage{90}
+    \subitem {HandleJump}, \hyperpage{90}
+    \subitem {HandleMovement}, \hyperpage{91}
+    \subitem {HauptHitbox}, \hyperpage{99}
+    \subitem {Interactable}, \hyperpage{69}
+    \subitem {IsAttacking}, \hyperpage{92}
+    \subitem {IsBlocking}, \hyperpage{92}
+    \subitem {IsDashing}, \hyperpage{99}
+    \subitem {JUMP\_VELOCITY}, \hyperpage{99}
+    \subitem {JumpCount}, \hyperpage{99}
+    \subitem {JumpMax}, \hyperpage{99}
+    \subitem {LastAttack}, \hyperpage{99}
+    \subitem {MaxHeal}, \hyperpage{92}
+    \subitem {OnSpawn}, \hyperpage{93}
+    \subitem {PlayerHitbox}, \hyperpage{100}
+    \subitem {RegenerateStamina}, \hyperpage{93}
+    \subitem {Respawn}, \hyperpage{94}
+    \subitem {SetSinAmount}, \hyperpage{94}
+    \subitem {SinDisplay}, \hyperpage{100}
+    \subitem {SlowPlayer}, \hyperpage{94}
+    \subitem {SPEED}, \hyperpage{100}
+    \subitem {Spike}, \hyperpage{116}
+    \subitem {SpikeDynamic}, \hyperpage{119}
+    \subitem {Sprite}, \hyperpage{100}
+    \subitem {StartDash}, \hyperpage{95}
+    \subitem {StopDash}, \hyperpage{95}
+    \subitem {SwordCollision}, \hyperpage{100}
+    \subitem {TakeDamage}, \hyperpage{95}
+    \subitem {TimeSinceLastStaminaUse}, \hyperpage{100}
+    \subitem {UpdateAnimations}, \hyperpage{96}
+    \subitem {UseStamina}, \hyperpage{97}
+  \item {PlayerHitbox}
+    \subitem {Player}, \hyperpage{100}
+  \item {PlayerStats}, \hyperpage{101}
+    \subitem {\_Ready}, \hyperpage{103}
+    \subitem {BVCurrentUses}, \hyperpage{111}
+    \subitem {BVHealAmount}, \hyperpage{111}
+    \subitem {BVMaxUses}, \hyperpage{111}
+    \subitem {CurrentHealth}, \hyperpage{112}
+    \subitem {CurrentLevelTag}, \hyperpage{112}
+    \subitem {CurrentStamina}, \hyperpage{112}
+    \subitem {GetBVCurrentUses}, \hyperpage{103}
+    \subitem {GetBVHealAmount}, \hyperpage{103}
+    \subitem {GetBVMaxUses}, \hyperpage{103}
+    \subitem {GetCurrentHealth}, \hyperpage{104}
+    \subitem {GetCurrentLevelTag}, \hyperpage{104}
+    \subitem {GetMaxHealthPoints}, \hyperpage{104}
+    \subitem {GetMaxStamina}, \hyperpage{105}
+    \subitem {GetPosition}, \hyperpage{105}
+    \subitem {GetRespawnLevelTag}, \hyperpage{105}
+    \subitem {GetSinAmount}, \hyperpage{106}
+    \subitem {GetSpawnPoint}, \hyperpage{106}
+    \subitem {GetStamina}, \hyperpage{106}
+    \subitem {Instance}, \hyperpage{113}
+    \subitem {MaxHealthPoints}, \hyperpage{112}
+    \subitem {MaxStamina}, \hyperpage{112}
+    \subitem {Position}, \hyperpage{112}
+    \subitem {Reload}, \hyperpage{107}
+    \subitem {RespawnLevelTag}, \hyperpage{113}
+    \subitem {SetBVCurrentUses}, \hyperpage{107}
+    \subitem {SetBVHealAmount}, \hyperpage{107}
+    \subitem {SetBVMaxUses}, \hyperpage{108}
+    \subitem {SetCurrentHealth}, \hyperpage{108}
+    \subitem {SetCurrentLevelTag}, \hyperpage{108}
+    \subitem {SetMaxHealthPoints}, \hyperpage{109}
+    \subitem {SetMaxStamina}, \hyperpage{109}
+    \subitem {SetPosition}, \hyperpage{109}
+    \subitem {SetRespawnLevelTag}, \hyperpage{110}
+    \subitem {SetSinAmount}, \hyperpage{110}
+    \subitem {SetSpawnPoint}, \hyperpage{110}
+    \subitem {SetStamina}, \hyperpage{111}
+    \subitem {SinAmount}, \hyperpage{113}
+    \subitem {SpawnPoint}, \hyperpage{113}
+  \item {PopUp}
+    \subitem {Interactable}, \hyperpage{69}
+  \item {Position}
+    \subitem {PlayerStats}, \hyperpage{112}
+  \item {Pursuing}
+    \subitem {BaseEnemy}, \hyperpage{45}
+  \item {PushAmount}
+    \subitem {Damage}, \hyperpage{59}
+
+  \indexspace
+
+  \item {RegenAmount}
+    \subitem {Boss1}, \hyperpage{54}
+  \item {RegenCooldown}
+    \subitem {Boss1}, \hyperpage{55}
+  \item {RegenerateStamina}
+    \subitem {Player}, \hyperpage{93}
+  \item {RegenTimer}
+    \subitem {Boss1}, \hyperpage{55}
+  \item {Reload}
+    \subitem {PlayerStats}, \hyperpage{107}
+  \item {ResetUses}
+    \subitem {BloodVial}, \hyperpage{49}
+  \item {Respawn}
+    \subitem {BaseEnemy}, \hyperpage{40}
+    \subitem {Player}, \hyperpage{94}
+  \item {Respawnable}
+    \subitem {BaseEnemy}, \hyperpage{45}
+  \item {RespawnLevelTag}
+    \subitem {PlayerStats}, \hyperpage{113}
+  \item {ReturnToStart}
+    \subitem {BaseEnemy}, \hyperpage{45}
+  \item {ReturnToStartAfter}
+    \subitem {BaseEnemy}, \hyperpage{46}
+  \item {ReviveEnemies}
+    \subitem {Boss1}, \hyperpage{53}
+  \item {RightFallProtection}
+    \subitem {BaseEnemy}, \hyperpage{46}
+
+  \indexspace
+
+  \item {SaveAll}
+    \subitem {StorageManager}, \hyperpage{123}
+  \item {SaveGameFile}
+    \subitem {StorageManager}, \hyperpage{124}
+  \item {SaveLabel}
+    \subitem {MainMenu}, \hyperpage{79}
+  \item {Saves}
+    \subitem {StorageManager}, \hyperpage{126}
+  \item {SavesContainer}
+    \subitem {MainMenu}, \hyperpage{79}
+  \item {SaveSettings}
+    \subitem {StorageManager}, \hyperpage{124}
+  \item {SaveToDelete}
+    \subitem {MainMenu}, \hyperpage{79}
+  \item {SceneBoss}
+    \subitem {NavigationManager}, \hyperpage{84}
+  \item {SceneIntro}
+    \subitem {NavigationManager}, \hyperpage{84}
+  \item {SceneLevel1}
+    \subitem {NavigationManager}, \hyperpage{84}
+  \item {SceneLevelOne}
+    \subitem {NavigationManager}, \hyperpage{85}
+  \item {SceneLevelTwo}
+    \subitem {NavigationManager}, \hyperpage{85}
+  \item {SceneMainMenu}
+    \subitem {NavigationManager}, \hyperpage{85}
+  \item {ScrollSpeed}
+    \subitem {MainMenuBackground}, \hyperpage{81}
+  \item {SelectButton}
+    \subitem {MainMenu}, \hyperpage{80}
+  \item {SetBVCurrentUses}
+    \subitem {PlayerStats}, \hyperpage{107}
+  \item {SetBVHealAmount}
+    \subitem {PlayerStats}, \hyperpage{107}
+  \item {SetBVMaxUses}
+    \subitem {PlayerStats}, \hyperpage{108}
+  \item {SetCurrentHealth}
+    \subitem {PlayerStats}, \hyperpage{108}
+  \item {SetCurrentLevelTag}
+    \subitem {PlayerStats}, \hyperpage{108}
+  \item {SetLastSaveId}
+    \subitem {StorageManager}, \hyperpage{124}
+  \item {SetMaxHealthPoints}
+    \subitem {PlayerStats}, \hyperpage{109}
+  \item {SetMaxStamina}
+    \subitem {PlayerStats}, \hyperpage{109}
+  \item {SetPosition}
+    \subitem {PlayerStats}, \hyperpage{109}
+  \item {SetRespawnLevelTag}
+    \subitem {PlayerStats}, \hyperpage{110}
+  \item {SetRotation}
+    \subitem {BaseEnemy}, \hyperpage{41}
+  \item {SetSaves}
+    \subitem {StorageManager}, \hyperpage{125}
+  \item {SetSinAmount}
+    \subitem {Player}, \hyperpage{94}
+    \subitem {PlayerStats}, \hyperpage{110}
+  \item {SetSpawnPoint}
+    \subitem {PlayerStats}, \hyperpage{110}
+  \item {SetStamina}
+    \subitem {PlayerStats}, \hyperpage{111}
+  \item {ShowPopupMessage}
+    \subitem {Boss1}, \hyperpage{53}
+  \item {SinAmount}
+    \subitem {BaseEnemy}, \hyperpage{46}
+    \subitem {PlayerStats}, \hyperpage{113}
+  \item {SinDisplay}
+    \subitem {Player}, \hyperpage{100}
+  \item {SlowPlayer}
+    \subitem {Player}, \hyperpage{94}
+  \item {Source}
+    \subitem {Damage}, \hyperpage{59}
+  \item {Spawn}
+    \subitem {Door}, \hyperpage{61}
+  \item {SpawnDirection}
+    \subitem {Door}, \hyperpage{62}
+  \item {SpawnDoorTag}
+    \subitem {NavigationManager}, \hyperpage{85}
+  \item {SpawnPoint}
+    \subitem {PlayerStats}, \hyperpage{113}
+  \item {SPEED}
+    \subitem {Player}, \hyperpage{100}
+  \item {Speed}
+    \subitem {BaseEnemy}, \hyperpage{46}
+  \item {Spike}, \hyperpage{114}
+    \subitem {\_Ready}, \hyperpage{114}
+    \subitem {Damage}, \hyperpage{116}
+    \subitem {GetDamage}, \hyperpage{114}
+    \subitem {OnPlayerBodyEntered}, \hyperpage{115}
+    \subitem {OnPlayerBodyExited}, \hyperpage{115}
+    \subitem {OnTimerTimeout}, \hyperpage{115}
+    \subitem {Player}, \hyperpage{116}
+  \item {SpikeDynamic}, \hyperpage{116}
+    \subitem {\_Ready}, \hyperpage{117}
+    \subitem {Damage}, \hyperpage{119}
+    \subitem {GetDamage}, \hyperpage{117}
+    \subitem {OnPlayerBodyEntered}, \hyperpage{118}
+    \subitem {OnPlayerBodyExited}, \hyperpage{118}
+    \subitem {OnTimerTimeout}, \hyperpage{118}
+    \subitem {Player}, \hyperpage{119}
+  \item {Sprite}
+    \subitem {BaseEnemy}, \hyperpage{46}
+    \subitem {Player}, \hyperpage{100}
+  \item {StaminaBar}, \hyperpage{119}
+    \subitem {\_Process}, \hyperpage{120}
+    \subitem {\_Ready}, \hyperpage{120}
+  \item {StartDash}
+    \subitem {Player}, \hyperpage{95}
+  \item {StartGlowing}
+    \subitem {Boss1}, \hyperpage{54}
+  \item {StartPosition}
+    \subitem {BaseEnemy}, \hyperpage{46}
+  \item {StartRotation}
+    \subitem {BaseEnemy}, \hyperpage{47}
+  \item {State}
+    \subitem {BaseEnemy}, \hyperpage{33}
+  \item {StopDash}
+    \subitem {Player}, \hyperpage{95}
+  \item {StorageManager}, \hyperpage{121}
+    \subitem {\_Ready}, \hyperpage{122}
+    \subitem {GetLastSaveId}, \hyperpage{122}
+    \subitem {GetSaves}, \hyperpage{122}
+    \subitem {Instance}, \hyperpage{126}
+    \subitem {LastSaveId}, \hyperpage{125}
+    \subitem {LoadGameFile}, \hyperpage{122}
+    \subitem {LoadSettings}, \hyperpage{123}
+    \subitem {PathSave}, \hyperpage{125}
+    \subitem {PathSettings}, \hyperpage{126}
+    \subitem {SaveAll}, \hyperpage{123}
+    \subitem {SaveGameFile}, \hyperpage{124}
+    \subitem {Saves}, \hyperpage{126}
+    \subitem {SaveSettings}, \hyperpage{124}
+    \subitem {SetLastSaveId}, \hyperpage{124}
+    \subitem {SetSaves}, \hyperpage{125}
+  \item {SwordCollision}
+    \subitem {Player}, \hyperpage{100}
+  \item {SwordHitbox}
+    \subitem {BaseEnemy}, \hyperpage{47}
+
+  \indexspace
+
+  \item {TAKE\_HIT}
+    \subitem {BaseEnemy}, \hyperpage{33}
+  \item {TakeDamage}
+    \subitem {BaseEnemy}, \hyperpage{41}
+    \subitem {Player}, \hyperpage{95}
+  \item {TargetPosition}
+    \subitem {BaseEnemy}, \hyperpage{47}
+  \item {Text}
+    \subitem {Interactable}, \hyperpage{70}
+  \item {TextLabel}
+    \subitem {Interactable}, \hyperpage{69}
+  \item {Third-\/Party Notices}, \hyperpage{3}
+  \item {TimeSinceLastStaminaUse}
+    \subitem {Player}, \hyperpage{100}
+  \item {TogglePause}
+    \subitem {Hud}, \hyperpage{66}
+  \item {TriggerPlayerSpawn}
+    \subitem {NavigationManager}, \hyperpage{84}
+  \item {TrueDMG}
+    \subitem {Damage}, \hyperpage{59}
+
+  \indexspace
+
+  \item {UpdateAnimation}
+    \subitem {BaseEnemy}, \hyperpage{42}
+  \item {UpdateAnimations}
+    \subitem {Player}, \hyperpage{96}
+  \item {UseBloodVial}
+    \subitem {BloodVial}, \hyperpage{49}
+  \item {UseStamina}
+    \subitem {Player}, \hyperpage{97}
+
+  \indexspace
+
+  \item {WALK}
+    \subitem {BaseEnemy}, \hyperpage{33}
+
+\end{theindex}
