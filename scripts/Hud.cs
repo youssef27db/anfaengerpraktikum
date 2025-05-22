@@ -26,7 +26,7 @@ public partial class Hud : CanvasLayer {
     * @brief Methode wird in jedem Frame ausgeführt.
     * @param DeltaTime Zeit seit dem letzten Frame.
     */
-    public override void _Process(double delta) {
+    public override void _Process(double DeltaTime) {
         if(Input.IsActionJustPressed("escape")){
             TogglePause();
         }

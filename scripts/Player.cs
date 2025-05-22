@@ -316,14 +316,14 @@ public partial class Player : CharacterBody2D
     */
     public Damage GetDamage(){
         if(LastAttack == 1){
-            return new Damage(10, 0, Vector2.Zero, this);
+            return new Damage(50, 0, Vector2.Zero, this);
         }
         if(LastAttack == 2){
             Vector2 Push = new Vector2(20,0);
             if(Sprite.FlipH){
                 Push = -Push;
             }
-            return new Damage(20, 0, Push, this);       
+            return new Damage(100, 0, Push, this);       
         }
         return new Damage(0,0,Vector2.Zero, this);
     }
@@ -343,7 +343,6 @@ public partial class Player : CharacterBody2D
     /** 
     * @brief Verbraucht eine bestimmte Menge an Stamina, falls genügend verfügbar ist.
     * Setzt den Inaktivitäts-Timer zurück, wenn Stamina verbraucht wird.
-    * 
     * @param Amount Die Menge an Stamina, die verbraucht werden soll.
     * @return `true`, wenn genügend Stamina verfügbar war und die Aktion ausgeführt wurde; andernfalls `false`.
     */

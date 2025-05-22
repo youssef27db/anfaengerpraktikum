@@ -240,6 +240,7 @@ public partial class BaseEnemy : CharacterBody2D
 
     /** 
     * @brief Verarbeitet zugefügten Schaden.
+    * @param DMG Schaden der zugefügt wird.
     */
     private void TakeDamage(Damage DMG){
         if(Dead) {
@@ -259,7 +260,8 @@ public partial class BaseEnemy : CharacterBody2D
     }
 
     /**
-    * @brief Gib bool Dead zurück.
+    * @brief Gibt boolean Dead zurück.
+    * @return bool ob Gegner tot ist.
     */
     public bool IsDead(){
         return Dead;
@@ -311,10 +313,14 @@ public partial class BaseEnemy : CharacterBody2D
 
     }
 
-    public void Respawn(){
+    /**
+    * @brief Wird aufgerufen wenn der Gegner respawnt.
+    */
+    public void Respawn()
+    {
         Dead = false;
         CurrentHealthPoints = MaxHealthPoints;
-        HealthBar.Value = 100f* CurrentHealthPoints/MaxHealthPoints;
+        HealthBar.Value = 100f * CurrentHealthPoints / MaxHealthPoints;
         MainCollision.SetDeferred(CollisionShape2D.PropertyName.Disabled, false);
         HealthBar.SetVisible(true);
         Sprite.Play("idle");
@@ -322,6 +328,7 @@ public partial class BaseEnemy : CharacterBody2D
 
     /** 
     * @brief Überprüft die direkte Sichtlinie zu einem Objekt.
+    * @param body Objekt das überprüft werden soll.
     * @return bool Ergebnis der Abfrage.
     */
     private bool CheckLineOfSight(Node2D body){
@@ -346,9 +353,10 @@ public partial class BaseEnemy : CharacterBody2D
 
     /** 
     * @brief Setzt Orientierung aller zu dem Gegner gehörender Nodes.
+    * @param Rotation Die neue Orientierung.
     */
     private void SetRotation(bool Rotation){
-        Sprite.FlipH = Rotation ^ StartRotation;
+        Sprite.FlipH = Rotation ^ StartRotation; // XOR mit StartRotation
         if(Rotation){
             CollisionPolygon.RotationDegrees = 180;
             SwordHitbox.RotationDegrees = 180;

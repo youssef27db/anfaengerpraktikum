@@ -13,9 +13,9 @@ public partial class MainMenuBackground : ParallaxLayer {
     * @brief Methode wird in jedem Frame ausgeführt.
     * @param DeltaTime Zeit seit dem letzten Frame.
     */
-    public override void _Process(double delta) {
+    public override void _Process(double DeltaTime) {
         float X = GetMotionOffset().X;
-        X += ScrollSpeed * (float) delta;
+        X += ScrollSpeed * (float) DeltaTime;
         SetMotionOffset(new Vector2(X,0));
     }
 }

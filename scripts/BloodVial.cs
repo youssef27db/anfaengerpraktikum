@@ -35,7 +35,7 @@ public partial class BloodVial : Label {
 
     /**
     * @brief Verbessert die Maximale Anzahl an Bloodvials um die angegebene Anzahl.
-    * @brief int Amount, um die MaxUses erhöht wird.
+    * @param int Amount, um die MaxUses erhöht wird.
     */
     public void AddMaxUses(int Amount){
         PlayerStats.Instance.SetBVMaxUses(PlayerStats.Instance.GetBVMaxUses() + Amount);

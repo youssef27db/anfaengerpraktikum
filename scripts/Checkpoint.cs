@@ -5,17 +5,15 @@ public partial class Checkpoint : Node2D
 {
 
 	// Variable für Player
-	private Player player;
+	private Player Player;
 
 	/*
-	 * @brief Intitalisierung der Node player
+	 * @brief Intitalisierung der Node Player
 	 */
-
 	public override void _Ready()
 	{
 		// Zugriff auf Player Node
-
-		player = GetNode<Player>("../Player");
+		Player = GetNode<Player>("../Player");
 	}
 	
 	/*
@@ -30,17 +28,17 @@ public partial class Checkpoint : Node2D
 		 * Wenn ja, dann wird der Checkpoint als Spawnpoint gesetzt
 		 */
 
-		if (body is Player player)
+		if (body is Player Player)
 		{
 			// Setzen des Spawnpoints
+			PlayerStats PlayerStats = GetNode<PlayerStats>("/root/PlayerStats");
 			PlayerStats.Instance.SetSpawnPoint(this.GlobalPosition);
-			player.MaxHeal();
+			Player.MaxHeal();
 			PlayerStats.Instance.SetStamina(PlayerStats.Instance.GetMaxStamina());
-			player.GetBloodVials().ResetUses();
+			Player.GetBloodVials().ResetUses();
         	GD.Print("Spawnpoint des Players gesetzt auf: ", this.GlobalPosition);
 
-			PlayerStats playerStats = GetNode<PlayerStats>("/root/PlayerStats");
-			playerStats.SetRespawnLevelTag(GetParent().Name);
+			PlayerStats.SetRespawnLevelTag(GetParent().Name);
 			GD.Print("RespawnLevelTag des Players gesetzt auf: ", GetParent().Name);
 			GD.Print(PlayerStats.Instance.GetRespawnLevelTag());
 		}

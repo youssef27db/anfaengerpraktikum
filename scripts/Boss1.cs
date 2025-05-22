@@ -15,7 +15,6 @@ public partial class Boss1 : BaseEnemy{
     /**
     * @brief Überschreibt die _Ready-Methode von BaseEnemy
     */
-
     public override void _Ready(){
 
         MaxHealthPoints = 400f;
