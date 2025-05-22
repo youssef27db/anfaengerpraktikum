@@ -14,26 +14,51 @@ Inheritance diagram for Blood\+Vial\+:\begin{figure}[H]
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_blood_vial_a42ceac7194f591e87bc2a82a61b2165c}\label{class_blood_vial_a42ceac7194f591e87bc2a82a61b2165c} 
-override void {\bfseries \+\_\+\+Ready} ()
+override void \mbox{\hyperlink{class_blood_vial_a42ceac7194f591e87bc2a82a61b2165c}{\+\_\+\+Ready}} ()
 \begin{DoxyCompactList}\small\item\em Initialisierung der Referenzen. Findet die relevanten Knoten in der Szene und weist sie zu. \end{DoxyCompactList}\item 
-\Hypertarget{class_blood_vial_a0e0fed9a887f1fa7f068906273d43275}\label{class_blood_vial_a0e0fed9a887f1fa7f068906273d43275} 
-void {\bfseries Use\+Blood\+Vial} ()
+void \mbox{\hyperlink{class_blood_vial_a0e0fed9a887f1fa7f068906273d43275}{Use\+Blood\+Vial}} ()
 \begin{DoxyCompactList}\small\item\em Versucht ein Bloodvial zu verwenden um den Spieler zu Heilen. \end{DoxyCompactList}\item 
-\Hypertarget{class_blood_vial_a31a53feef846bd962bd5b525b0bc5c6c}\label{class_blood_vial_a31a53feef846bd962bd5b525b0bc5c6c} 
-void {\bfseries Reset\+Uses} ()
+void \mbox{\hyperlink{class_blood_vial_a31a53feef846bd962bd5b525b0bc5c6c}{Reset\+Uses}} ()
 \begin{DoxyCompactList}\small\item\em Setzt die Anzahl der Bloodvials auf das Maximum. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_blood_vial_af5370d164b83ed4e3b5edec111b4ef98}{Add\+Max\+Uses}} (int Amount)
 \begin{DoxyCompactList}\small\item\em Verbessert die Maximale Anzahl an Bloodvials um die angegebene Anzahl. \end{DoxyCompactList}\item 
-\Hypertarget{class_blood_vial_a993c680c590e63fb4db1f6466e1418d2}\label{class_blood_vial_a993c680c590e63fb4db1f6466e1418d2} 
-void {\bfseries Level\+Heal\+Amount} ()
+void \mbox{\hyperlink{class_blood_vial_a993c680c590e63fb4db1f6466e1418d2}{Level\+Heal\+Amount}} ()
 \begin{DoxyCompactList}\small\item\em Verbessert den Heal\+AMount eines Bloodvials um 25. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 Klasse für die Interaktion zum heilen. 
 
+Definition at line \mbox{\hyperlink{_blood_vial_8cs_source_l00008}{8}} of file \mbox{\hyperlink{_blood_vial_8cs_source}{Blood\+Vial.\+cs}}.
+
+
+
 \doxysubsection{Member Function Documentation}
+\Hypertarget{class_blood_vial_a42ceac7194f591e87bc2a82a61b2165c}\index{BloodVial@{BloodVial}!\_Ready@{\_Ready}}
+\index{\_Ready@{\_Ready}!BloodVial@{BloodVial}}
+\doxysubsubsection{\texorpdfstring{\_Ready()}{\_Ready()}}
+{\footnotesize\ttfamily \label{class_blood_vial_a42ceac7194f591e87bc2a82a61b2165c} 
+override void Blood\+Vial.\+\_\+\+Ready (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Initialisierung der Referenzen. Findet die relevanten Knoten in der Szene und weist sie zu. 
+
+
+
+Definition at line \mbox{\hyperlink{_blood_vial_8cs_source_l00014}{14}} of file \mbox{\hyperlink{_blood_vial_8cs_source}{Blood\+Vial.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ Text\ =\ \mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_a7927fc41f41b344aecea23f12c52329b}{GetBVCurrentUses}}()\ +\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00016\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_player_stats_8cs_source_l00230}{Player\+Stats.\+Get\+BVCurrent\+Uses()}}, and \mbox{\hyperlink{_player_stats_8cs_source_l00010}{Player\+Stats.\+Instance}}.
+
 \Hypertarget{class_blood_vial_af5370d164b83ed4e3b5edec111b4ef98}\index{BloodVial@{BloodVial}!AddMaxUses@{AddMaxUses}}
 \index{AddMaxUses@{AddMaxUses}!BloodVial@{BloodVial}}
 \doxysubsubsection{\texorpdfstring{AddMaxUses()}{AddMaxUses()}}
@@ -51,6 +76,109 @@ Verbessert die Maximale Anzahl an Bloodvials um die angegebene Anzahl.
 \end{DoxyParams}
 
 
+Definition at line \mbox{\hyperlink{_blood_vial_8cs_source_l00040}{40}} of file \mbox{\hyperlink{_blood_vial_8cs_source}{Blood\+Vial.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_abebcd5c40720aa0a7b4d86518f8e3b1b}{SetBVMaxUses}}(\mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_a88cc0468ef32b3b4a7b2e79af4e24424}{GetBVMaxUses}}()\ +\ Amount);}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_blood_vial_a31a53feef846bd962bd5b525b0bc5c6c}{ResetUses}}();}
+\DoxyCodeLine{00043\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_player_stats_8cs_source_l00214}{Player\+Stats.\+Get\+BVMax\+Uses()}}, \mbox{\hyperlink{_player_stats_8cs_source_l00010}{Player\+Stats.\+Instance}}, \mbox{\hyperlink{_blood_vial_8cs_source_l00031}{Reset\+Uses()}}, and \mbox{\hyperlink{_player_stats_8cs_source_l00206}{Player\+Stats.\+Set\+BVMax\+Uses()}}.
+
+\Hypertarget{class_blood_vial_a993c680c590e63fb4db1f6466e1418d2}\index{BloodVial@{BloodVial}!LevelHealAmount@{LevelHealAmount}}
+\index{LevelHealAmount@{LevelHealAmount}!BloodVial@{BloodVial}}
+\doxysubsubsection{\texorpdfstring{LevelHealAmount()}{LevelHealAmount()}}
+{\footnotesize\ttfamily \label{class_blood_vial_a993c680c590e63fb4db1f6466e1418d2} 
+void Blood\+Vial.\+Level\+Heal\+Amount (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Verbessert den Heal\+AMount eines Bloodvials um 25. 
+
+
+
+Definition at line \mbox{\hyperlink{_blood_vial_8cs_source_l00048}{48}} of file \mbox{\hyperlink{_blood_vial_8cs_source}{Blood\+Vial.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_a76c874319c947a35702cd9a0a4b0e66c}{SetBVHealAmount}}(\mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_a026f80c7d14afe5dbf7e33e0edd2a16a}{GetBVHealAmount}}()\ +\ 25);}
+\DoxyCodeLine{00050\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_player_stats_8cs_source_l00198}{Player\+Stats.\+Get\+BVHeal\+Amount()}}, \mbox{\hyperlink{_player_stats_8cs_source_l00010}{Player\+Stats.\+Instance}}, and \mbox{\hyperlink{_player_stats_8cs_source_l00190}{Player\+Stats.\+Set\+BVHeal\+Amount()}}.
+
+\Hypertarget{class_blood_vial_a31a53feef846bd962bd5b525b0bc5c6c}\index{BloodVial@{BloodVial}!ResetUses@{ResetUses}}
+\index{ResetUses@{ResetUses}!BloodVial@{BloodVial}}
+\doxysubsubsection{\texorpdfstring{ResetUses()}{ResetUses()}}
+{\footnotesize\ttfamily \label{class_blood_vial_a31a53feef846bd962bd5b525b0bc5c6c} 
+void Blood\+Vial.\+Reset\+Uses (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Setzt die Anzahl der Bloodvials auf das Maximum. 
+
+
+
+Definition at line \mbox{\hyperlink{_blood_vial_8cs_source_l00031}{31}} of file \mbox{\hyperlink{_blood_vial_8cs_source}{Blood\+Vial.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_a05f3b699b992de2ea849c9397c818a6f}{SetBVCurrentUses}}(\mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_a88cc0468ef32b3b4a7b2e79af4e24424}{GetBVMaxUses}}());}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ Text\ =\ \mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_a7927fc41f41b344aecea23f12c52329b}{GetBVCurrentUses}}()\ +\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00034\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_player_stats_8cs_source_l00230}{Player\+Stats.\+Get\+BVCurrent\+Uses()}}, \mbox{\hyperlink{_player_stats_8cs_source_l00214}{Player\+Stats.\+Get\+BVMax\+Uses()}}, \mbox{\hyperlink{_player_stats_8cs_source_l00010}{Player\+Stats.\+Instance}}, and \mbox{\hyperlink{_player_stats_8cs_source_l00222}{Player\+Stats.\+Set\+BVCurrent\+Uses()}}.
+
+
+
+Referenced by \mbox{\hyperlink{_blood_vial_8cs_source_l00040}{Add\+Max\+Uses()}}, \mbox{\hyperlink{_checkpoint_8cs_source_l00023}{Checkpoint.\+On\+Player\+Body\+Entered()}}, and \mbox{\hyperlink{_player_8cs_source_l00372}{Player.\+Respawn()}}.
+
+\Hypertarget{class_blood_vial_a0e0fed9a887f1fa7f068906273d43275}\index{BloodVial@{BloodVial}!UseBloodVial@{UseBloodVial}}
+\index{UseBloodVial@{UseBloodVial}!BloodVial@{BloodVial}}
+\doxysubsubsection{\texorpdfstring{UseBloodVial()}{UseBloodVial()}}
+{\footnotesize\ttfamily \label{class_blood_vial_a0e0fed9a887f1fa7f068906273d43275} 
+void Blood\+Vial.\+Use\+Blood\+Vial (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Versucht ein Bloodvial zu verwenden um den Spieler zu Heilen. 
+
+
+
+Definition at line \mbox{\hyperlink{_blood_vial_8cs_source_l00021}{21}} of file \mbox{\hyperlink{_blood_vial_8cs_source}{Blood\+Vial.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_a7927fc41f41b344aecea23f12c52329b}{GetBVCurrentUses}}()\ <=\ 0)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_a05f3b699b992de2ea849c9397c818a6f}{SetBVCurrentUses}}(\mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_a7927fc41f41b344aecea23f12c52329b}{GetBVCurrentUses}}()\ -\/\ 1);}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ Text\ =\ \mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_a7927fc41f41b344aecea23f12c52329b}{GetBVCurrentUses}}()\ +\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_aaed3690620c6ba9a8866d0c35b4f26d7}{SetCurrentHealth}}(\mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_a0ec1075ba0983a3df42454b110194c0d}{GetCurrentHealth}}()\ +\ \mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_a026f80c7d14afe5dbf7e33e0edd2a16a}{GetBVHealAmount}}());}
+\DoxyCodeLine{00026\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_player_stats_8cs_source_l00230}{Player\+Stats.\+Get\+BVCurrent\+Uses()}}, \mbox{\hyperlink{_player_stats_8cs_source_l00198}{Player\+Stats.\+Get\+BVHeal\+Amount()}}, \mbox{\hyperlink{_player_stats_8cs_source_l00139}{Player\+Stats.\+Get\+Current\+Health()}}, \mbox{\hyperlink{_player_stats_8cs_source_l00010}{Player\+Stats.\+Instance}}, \mbox{\hyperlink{_player_stats_8cs_source_l00222}{Player\+Stats.\+Set\+BVCurrent\+Uses()}}, and \mbox{\hyperlink{_player_stats_8cs_source_l00147}{Player\+Stats.\+Set\+Current\+Health()}}.
+
+
+
+Referenced by \mbox{\hyperlink{_player_8cs_source_l00067}{Player.\+\_\+\+Physics\+Process()}}.
+
+
+
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/\+Youssef/\+Desktop/\+UNI/\+S4/\+Computerspiel\+Entwicklung/\+Das\+Spiel/anfaengerpraktikum/scripts/Blood\+Vial.\+cs\end{DoxyCompactItemize}
+C\+:/\+Users/\+Youssef/\+Desktop/\+UNI/\+S4/\+Computerspiel\+Entwicklung/\+Das\+Spiel/anfaengerpraktikum/scripts/\mbox{\hyperlink{_blood_vial_8cs}{Blood\+Vial.\+cs}}\end{DoxyCompactItemize}

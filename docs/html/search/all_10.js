@@ -1,8 +1,18 @@
 var searchData=
 [
-  ['takedamage_0',['TakeDamage',['../class_base_enemy.html#a284a995d12d6bc1d7a23d1f6f25a96af',1,'BaseEnemy.TakeDamage()'],['../class_player.html#aa1a0addae97cec09d2e86f3060a05438',1,'Player.TakeDamage()']]],
-  ['texts_1',['License Texts',['../md__c_1_2_users_2_youssef_2_desktop_2_u_n_i_2_s4_2_computerspiel_entwicklung_2_das_spiel_2anfaene077cc7c5bcf0a389cded2b1f693474f.html#autotoc_md1',1,'']]],
-  ['third_20party_20notices_2',['Third-Party Notices',['../md__c_1_2_users_2_youssef_2_desktop_2_u_n_i_2_s4_2_computerspiel_entwicklung_2_das_spiel_2anfaene077cc7c5bcf0a389cded2b1f693474f.html',1,'']]],
-  ['togglepause_3',['TogglePause',['../class_hud.html#ab01ffd8302eac92e75c87da377711f18',1,'Hud']]],
-  ['triggerplayerspawn_4',['TriggerPlayerSpawn',['../class_navigation_manager.html#aaec36be7cfa331ec6d3ca8eb14ba3872',1,'NavigationManager']]]
+  ['readme_2emd_0',['README.md',['../_r_e_a_d_m_e_8md.html',1,'']]],
+  ['regenamount_1',['RegenAmount',['../class_boss1.html#ac698e027fada02bcf0bea5e2c756711c',1,'Boss1']]],
+  ['regencooldown_2',['RegenCooldown',['../class_boss1.html#a0a05bef3b6a4852c18ee805f785c8a67',1,'Boss1']]],
+  ['regeneratestamina_3',['RegenerateStamina',['../class_player.html#ab715416eb7dbe1d4d320d4ba21999072',1,'Player']]],
+  ['regentimer_4',['RegenTimer',['../class_boss1.html#a1ffe13684ef66b1ec26b87e728b83cb0',1,'Boss1']]],
+  ['reload_5',['Reload',['../class_player_stats.html#a9a513942394be2aae3457a6be9f81b9b',1,'PlayerStats']]],
+  ['resetuses_6',['ResetUses',['../class_blood_vial.html#a31a53feef846bd962bd5b525b0bc5c6c',1,'BloodVial']]],
+  ['respawn_7',['Respawn',['../class_base_enemy.html#a9ef92c3f73170538681e665e78e2279a',1,'BaseEnemy.Respawn()'],['../class_player.html#ae1104e2e3726f7bac674615c4e33b2bf',1,'Player.Respawn()']]],
+  ['respawnable_8',['Respawnable',['../class_base_enemy.html#a3d261e81ba7422572d0813341016c2c3',1,'BaseEnemy']]],
+  ['respawnleveltag_9',['RespawnLevelTag',['../class_player_stats.html#a1e6557a3100cd9b69dccf218d2c84609',1,'PlayerStats']]],
+  ['result_2ecs_10',['Result.cs',['../_result_8cs.html',1,'']]],
+  ['returntostart_11',['ReturnToStart',['../class_base_enemy.html#a283d342796ff720966538c0776fc9e48',1,'BaseEnemy']]],
+  ['returntostartafter_12',['ReturnToStartAfter',['../class_base_enemy.html#aba59e1a3fffbf2749c266d8caaf1c482',1,'BaseEnemy']]],
+  ['reviveenemies_13',['ReviveEnemies',['../class_boss1.html#aba2c531c46124f21ec612a2acd14cd6c',1,'Boss1']]],
+  ['rightfallprotection_14',['RightFallProtection',['../class_base_enemy.html#a250a47e4f491f15dc19e64816bef01d7',1,'BaseEnemy']]]
 ];

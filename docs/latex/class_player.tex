@@ -14,13 +14,11 @@ Inheritance diagram for Player\+:\begin{figure}[H]
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_player_ae192a478a80f0e93e01339d62cdd6f6d}\label{class_player_ae192a478a80f0e93e01339d62cdd6f6d} 
-override void {\bfseries \+\_\+\+Ready} ()
+override void \mbox{\hyperlink{class_player_ae192a478a80f0e93e01339d62cdd6f6d}{\+\_\+\+Ready}} ()
 \begin{DoxyCompactList}\small\item\em Initialisierung der Referenzen. Findet die relevanten Knoten in der Szene und weist sie zu. \end{DoxyCompactList}\item 
 override void \mbox{\hyperlink{class_player_a02ef3667915da4d1a2e21fd6c9f93e48}{\+\_\+\+Physics\+Process}} (double Delta\+Time)
 \begin{DoxyCompactList}\small\item\em Physikalische Prozesse werden in jedem Frame ausgeführt. Berechnet Gravitation, Bewegung, Sprünge und Dashes. \end{DoxyCompactList}\item 
-\Hypertarget{class_player_a750d1c5325522c39d232332349e4d2d2}\label{class_player_a750d1c5325522c39d232332349e4d2d2} 
-void {\bfseries Max\+Heal} ()
+void \mbox{\hyperlink{class_player_a750d1c5325522c39d232332349e4d2d2}{Max\+Heal}} ()
 \begin{DoxyCompactList}\small\item\em Heilt den Spieler vollständig, indem die aktuellen Lebenspunkte auf das Maximum gesetzt werden. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_player_aa1a0addae97cec09d2e86f3060a05438}{Take\+Damage}} (\mbox{\hyperlink{class_damage}{Damage}} \mbox{\hyperlink{class_damage}{Damage}})
 \begin{DoxyCompactList}\small\item\em Wendet Schaden auf den Spieler an. Reduziert die aktuellen Lebenspunkte basierend auf dem übergebenen Schaden und wendet einen Rückstoßeffekt an. \end{DoxyCompactList}\item 
@@ -32,8 +30,7 @@ bool \mbox{\hyperlink{class_player_ac69e2d647a9d7317b01599b2a5695199}{Use\+Stami
 \begin{DoxyCompactList}\small\item\em Verbraucht eine bestimmte Menge an Stamina, falls genügend verfügbar ist. Setzt den Inaktivitäts-\/\+Timer zurück, wenn Stamina verbraucht wird. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_player_a0a59dfe03d542fa98f28f4c4eaa49a75}{Slow\+Player}} (float Slow\+Amount)
 \begin{DoxyCompactList}\small\item\em Verlangsamt den Spieler um einen bestimmten Prozentsatz. \end{DoxyCompactList}\item 
-\Hypertarget{class_player_ae1104e2e3726f7bac674615c4e33b2bf}\label{class_player_ae1104e2e3726f7bac674615c4e33b2bf} 
-void {\bfseries Respawn} ()
+void \mbox{\hyperlink{class_player_ae1104e2e3726f7bac674615c4e33b2bf}{Respawn}} ()
 \begin{DoxyCompactList}\small\item\em Lässt den Spieler am \doxylink{class_checkpoint}{Checkpoint} spawnen. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_blood_vial}{Blood\+Vial}} \mbox{\hyperlink{class_player_ab04e4301a26dacc4e1d178d1b7d1d872}{Get\+Blood\+Vials}} ()
 \begin{DoxyCompactList}\small\item\em Getter für Blood\+Vials. \end{DoxyCompactList}\item 
@@ -42,21 +39,17 @@ void \mbox{\hyperlink{class_player_aa718b6dab81ebd60b8b910ad8c7adff6}{Set\+Sin\+
 \doxysubsubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_player_a8237be052507e34edec4776fa25f9544}\label{class_player_a8237be052507e34edec4776fa25f9544} 
-void {\bfseries Handle\+Jump} ()
+void \mbox{\hyperlink{class_player_a8237be052507e34edec4776fa25f9544}{Handle\+Jump}} ()
 \begin{DoxyCompactList}\small\item\em Verarbeitet die Sprunglogik. Setzt den Sprungzähler zurück und ermöglicht einen Doppelsprung. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_player_af8fce0260ebcc78bb46e2a8393eb2fb7}{Handle\+Movement}} (double Delta\+Time)
 \begin{DoxyCompactList}\small\item\em Verarbeitet die Bewegung des Spielers. Regelt normale Bewegungen, Dashes und Kollisionen. \end{DoxyCompactList}\item 
-\Hypertarget{class_player_a9d3abf4c257f11a5838c978ab3abb27f}\label{class_player_a9d3abf4c257f11a5838c978ab3abb27f} 
-void {\bfseries Start\+Dash} ()
+void \mbox{\hyperlink{class_player_a9d3abf4c257f11a5838c978ab3abb27f}{Start\+Dash}} ()
 \begin{DoxyCompactList}\small\item\em Startet den Dash-\/\+Prozess. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_player_aeb354dd739e4fb8af95215e633f2ae30}{Dash\+In\+Progress}} (double Delta\+Time)
 \begin{DoxyCompactList}\small\item\em Führt die Logik während eines Dashes aus. \end{DoxyCompactList}\item 
-\Hypertarget{class_player_a0aa4500de693c81904bba34fb91df560}\label{class_player_a0aa4500de693c81904bba34fb91df560} 
-void {\bfseries Create\+Dash\+Effect} ()
+void \mbox{\hyperlink{class_player_a0aa4500de693c81904bba34fb91df560}{Create\+Dash\+Effect}} ()
 \begin{DoxyCompactList}\small\item\em Erstellt einen visuellen Dash-\/\+Trail. Der Spieler hinterlässt eine Spur während des Dashes. \end{DoxyCompactList}\item 
-\Hypertarget{class_player_a53389f72f48d7980aedb5e8b75d237dd}\label{class_player_a53389f72f48d7980aedb5e8b75d237dd} 
-void {\bfseries Stop\+Dash} ()
+void \mbox{\hyperlink{class_player_a53389f72f48d7980aedb5e8b75d237dd}{Stop\+Dash}} ()
 \begin{DoxyCompactList}\small\item\em Stoppt den Dash. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_player_ab8df147009969880162db05e243cd129}{Is\+Attacking}} ()
 \begin{DoxyCompactList}\small\item\em Überprüft, ob der Spieler gerade angreift. \end{DoxyCompactList}\item 
@@ -64,82 +57,64 @@ bool \mbox{\hyperlink{class_player_ac5b003495e551fee56ed26d26a239432}{Is\+Blocki
 \begin{DoxyCompactList}\small\item\em Überprüft, ob der Spieler blockiert. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_player_a026f050e54322e805ad546ee99483e6e}{On\+Spawn}} (Vector2 position, string direction)
 \begin{DoxyCompactList}\small\item\em Wird aufgerufen, wenn der Spieler an einer neuen Position spawnen soll. \end{DoxyCompactList}\item 
-\Hypertarget{class_player_a6dd10a495418b531f7e65ab238368bdc}\label{class_player_a6dd10a495418b531f7e65ab238368bdc} 
-void {\bfseries Update\+Animations} ()
+void \mbox{\hyperlink{class_player_a6dd10a495418b531f7e65ab238368bdc}{Update\+Animations}} ()
 \begin{DoxyCompactList}\small\item\em Aktualisiert die Animationen des Spielers. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_player_a7bcbe69f9f5e347cf485306520b1dadd}\label{class_player_a7bcbe69f9f5e347cf485306520b1dadd} 
-int {\bfseries Jump\+Max} = 2
+int \mbox{\hyperlink{class_player_a7bcbe69f9f5e347cf485306520b1dadd}{Jump\+Max}} = 2
 \item 
-\Hypertarget{class_player_a9c16b607216c433cd53e2a56fedfeeed}\label{class_player_a9c16b607216c433cd53e2a56fedfeeed} 
-int {\bfseries Jump\+Count} = 0
+int \mbox{\hyperlink{class_player_a9c16b607216c433cd53e2a56fedfeeed}{Jump\+Count}} = 0
 \item 
-\Hypertarget{class_player_ad64449e2fb7a7b527d08ce823dc4e2e4}\label{class_player_ad64449e2fb7a7b527d08ce823dc4e2e4} 
-Vector2 {\bfseries Dash\+Direction} = Vector2.\+Zero
+Vector2 \mbox{\hyperlink{class_player_ad64449e2fb7a7b527d08ce823dc4e2e4}{Dash\+Direction}} = Vector2.\+Zero
 \item 
-\Hypertarget{class_player_ad418db551711bceecb6a0f504727ca91}\label{class_player_ad418db551711bceecb6a0f504727ca91} 
-float {\bfseries Dash\+Speed} = 300f
+float \mbox{\hyperlink{class_player_ad418db551711bceecb6a0f504727ca91}{Dash\+Speed}} = 300f
 \item 
-\Hypertarget{class_player_a3cf5113d8c5c04d4fc9822c7b33a4fa1}\label{class_player_a3cf5113d8c5c04d4fc9822c7b33a4fa1} 
-bool {\bfseries Is\+Dashing} = false
+bool \mbox{\hyperlink{class_player_a3cf5113d8c5c04d4fc9822c7b33a4fa1}{Is\+Dashing}} = false
 \item 
-\Hypertarget{class_player_ae5ed42be5737449538f03a89ae258780}\label{class_player_ae5ed42be5737449538f03a89ae258780} 
-bool {\bfseries Can\+Dash} = true
+bool \mbox{\hyperlink{class_player_ae5ed42be5737449538f03a89ae258780}{Can\+Dash}} = true
 \item 
-\Hypertarget{class_player_a33ad87048d2a086b8b74cf2d610aac8e}\label{class_player_a33ad87048d2a086b8b74cf2d610aac8e} 
-float {\bfseries Dash\+Trail\+Interval} = 0.\+05f
+float \mbox{\hyperlink{class_player_a33ad87048d2a086b8b74cf2d610aac8e}{Dash\+Trail\+Interval}} = 0.\+05f
 \item 
-\Hypertarget{class_player_af96d2cf00ca821528f6624b9d746de79}\label{class_player_af96d2cf00ca821528f6624b9d746de79} 
-float {\bfseries Dash\+Trail\+Timer} = 0f
+float \mbox{\hyperlink{class_player_af96d2cf00ca821528f6624b9d746de79}{Dash\+Trail\+Timer}} = 0f
 \item 
-\Hypertarget{class_player_a343fb1371365e58eb9c641928d41237a}\label{class_player_a343fb1371365e58eb9c641928d41237a} 
-Animation\+Player {\bfseries Animation\+Player}
+Animation\+Player \mbox{\hyperlink{class_player_a343fb1371365e58eb9c641928d41237a}{Animation\+Player}}
 \item 
-\Hypertarget{class_player_a650e61374596e594f38f5d9caf11c3fb}\label{class_player_a650e61374596e594f38f5d9caf11c3fb} 
-Sprite2D {\bfseries Sprite}
+Sprite2D \mbox{\hyperlink{class_player_a650e61374596e594f38f5d9caf11c3fb}{Sprite}}
 \item 
-\Hypertarget{class_player_afc303e1e2108345937a0834cb03fee60}\label{class_player_afc303e1e2108345937a0834cb03fee60} 
-Timer {\bfseries Dash\+Effect}
+Timer \mbox{\hyperlink{class_player_afc303e1e2108345937a0834cb03fee60}{Dash\+Effect}}
 \item 
-\Hypertarget{class_player_ae1197f00cda479e2e18246010b36fa9d}\label{class_player_ae1197f00cda479e2e18246010b36fa9d} 
-Timer {\bfseries Dash\+Timer}
+Timer \mbox{\hyperlink{class_player_ae1197f00cda479e2e18246010b36fa9d}{Dash\+Timer}}
 \item 
-\Hypertarget{class_player_a64d74400579bd882301f0ec6a6135ed8}\label{class_player_a64d74400579bd882301f0ec6a6135ed8} 
-Collision\+Shape2D {\bfseries Sword\+Collision}
+Collision\+Shape2D \mbox{\hyperlink{class_player_a64d74400579bd882301f0ec6a6135ed8}{Sword\+Collision}}
 \item 
-\Hypertarget{class_player_a5b037b53d0e7c4eacd6e09b71463862c}\label{class_player_a5b037b53d0e7c4eacd6e09b71463862c} 
-Collision\+Shape2D {\bfseries Player\+Hitbox}
+Collision\+Shape2D \mbox{\hyperlink{class_player_a5b037b53d0e7c4eacd6e09b71463862c}{Player\+Hitbox}}
 \item 
-\Hypertarget{class_player_aaef48228442e066781c02ea9b8c3f694}\label{class_player_aaef48228442e066781c02ea9b8c3f694} 
-\mbox{\hyperlink{class_blood_vial}{Blood\+Vial}} {\bfseries Blood\+Vials}
+\mbox{\hyperlink{class_blood_vial}{Blood\+Vial}} \mbox{\hyperlink{class_player_aaef48228442e066781c02ea9b8c3f694}{Blood\+Vials}}
 \item 
-\Hypertarget{class_player_aa23d4f9699cd9b706e9b6945a365699b}\label{class_player_aa23d4f9699cd9b706e9b6945a365699b} 
-Label {\bfseries Sin\+Display}
+Label \mbox{\hyperlink{class_player_aa23d4f9699cd9b706e9b6945a365699b}{Sin\+Display}}
 \item 
-\Hypertarget{class_player_ae9c0ec6f7123f5832d82c2cc68eedb97}\label{class_player_ae9c0ec6f7123f5832d82c2cc68eedb97} 
-Vector2 {\bfseries Haupt\+Hitbox}
+Vector2 \mbox{\hyperlink{class_player_ae9c0ec6f7123f5832d82c2cc68eedb97}{Haupt\+Hitbox}}
 \item 
-\Hypertarget{class_player_a57850da38e07a680af71543a3e02de1a}\label{class_player_a57850da38e07a680af71543a3e02de1a} 
-int {\bfseries Last\+Attack} = 0
+int \mbox{\hyperlink{class_player_a57850da38e07a680af71543a3e02de1a}{Last\+Attack}} = 0
 \item 
-\Hypertarget{class_player_adda3c3e385b428e061d6d1ccd25f23cb}\label{class_player_adda3c3e385b428e061d6d1ccd25f23cb} 
-float {\bfseries Time\+Since\+Last\+Stamina\+Use} = 0f
+float \mbox{\hyperlink{class_player_adda3c3e385b428e061d6d1ccd25f23cb}{Time\+Since\+Last\+Stamina\+Use}} = 0f
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Static Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_player_a23e57f8d9bfe69ab49b86a94bcc8c37d}\label{class_player_a23e57f8d9bfe69ab49b86a94bcc8c37d} 
-const float {\bfseries SPEED} = 100f
+const float \mbox{\hyperlink{class_player_a23e57f8d9bfe69ab49b86a94bcc8c37d}{SPEED}} = 100f
 \item 
-\Hypertarget{class_player_a8da3506a415217b5eeacbf254620b0a1}\label{class_player_a8da3506a415217b5eeacbf254620b0a1} 
-const float {\bfseries JUMP\+\_\+\+VELOCITY} = -\/300f
+const float \mbox{\hyperlink{class_player_a8da3506a415217b5eeacbf254620b0a1}{JUMP\+\_\+\+VELOCITY}} = -\/300f
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 Klasse für den Spielercharakter. Verwaltet Bewegung, Sprünge, Angriffe und Animationen. 
+
+Definition at line \mbox{\hyperlink{_player_8cs_source_l00008}{8}} of file \mbox{\hyperlink{_player_8cs_source}{Player.\+cs}}.
+
+
 
 \doxysubsection{Member Function Documentation}
 \Hypertarget{class_player_a02ef3667915da4d1a2e21fd6c9f93e48}\index{Player@{Player}!\_PhysicsProcess@{\_PhysicsProcess}}
@@ -157,6 +132,147 @@ Physikalische Prozesse werden in jedem Frame ausgeführt. Berechnet Gravitation,
 {\em Delta\+Time} & Zeit seit dem letzten Frame. \\
 \hline
 \end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_player_8cs_source_l00067}{67}} of file \mbox{\hyperlink{_player_8cs_source}{Player.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Gravitation\ hinzufügen,\ wenn\ der\ Charakter\ nicht\ am\ Boden\ ist}}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!IsOnFloor())\ \{}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ Velocity\ +=\ GetGravity()\ *\ (float)DeltaTime;}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_ae5ed42be5737449538f03a89ae258780}{CanDash}}\ =\ \textcolor{keyword}{true};\ \textcolor{comment}{//\ Dash\ wird\ zurückgesetzt,\ wenn\ der\ Charakter\ am\ Boden\ ist}}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_adda3c3e385b428e061d6d1ccd25f23cb}{TimeSinceLastStaminaUse}}\ +=\ (float)DeltaTime;}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_ab715416eb7dbe1d4d320d4ba21999072}{RegenerateStamina}}(20f,\ DeltaTime);}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Heal}}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(Input.IsActionJustPressed(\textcolor{stringliteral}{"{}heal"{}}))\{}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_aaef48228442e066781c02ea9b8c3f694}{BloodVials}}.\mbox{\hyperlink{class_blood_vial_a0e0fed9a887f1fa7f068906273d43275}{UseBloodVial}}();}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_a8237be052507e34edec4776fa25f9544}{HandleJump}}();}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_af8fce0260ebcc78bb46e2a8393eb2fb7}{HandleMovement}}(DeltaTime);}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ MoveAndSlide();}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_a6dd10a495418b531f7e65ab238368bdc}{UpdateAnimations}}();}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_adb53f7019a00edfe089c3dfd205438c2}{SetPosition}}(Position);}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_player_8cs_source_l00030}{Blood\+Vials}}, \mbox{\hyperlink{_player_8cs_source_l00019}{Can\+Dash}}, \mbox{\hyperlink{_player_8cs_source_l00094}{Handle\+Jump()}}, \mbox{\hyperlink{_player_8cs_source_l00121}{Handle\+Movement()}}, \mbox{\hyperlink{_player_stats_8cs_source_l00010}{Player\+Stats.\+Instance}}, \mbox{\hyperlink{_player_8cs_source_l00336}{Regenerate\+Stamina()}}, \mbox{\hyperlink{_player_stats_8cs_source_l00088}{Player\+Stats.\+Set\+Position()}}, \mbox{\hyperlink{_player_8cs_source_l00037}{Time\+Since\+Last\+Stamina\+Use}}, \mbox{\hyperlink{_player_8cs_source_l00425}{Update\+Animations()}}, and \mbox{\hyperlink{_blood_vial_8cs_source_l00021}{Blood\+Vial.\+Use\+Blood\+Vial()}}.
+
+\Hypertarget{class_player_ae192a478a80f0e93e01339d62cdd6f6d}\index{Player@{Player}!\_Ready@{\_Ready}}
+\index{\_Ready@{\_Ready}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{\_Ready()}{\_Ready()}}
+{\footnotesize\ttfamily \label{class_player_ae192a478a80f0e93e01339d62cdd6f6d} 
+override void Player.\+\_\+\+Ready (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Initialisierung der Referenzen. Findet die relevanten Knoten in der Szene und weist sie zu. 
+
+
+
+Definition at line \mbox{\hyperlink{_player_8cs_source_l00043}{43}} of file \mbox{\hyperlink{_player_8cs_source}{Player.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_a343fb1371365e58eb9c641928d41237a}{AnimationPlayer}}\ =\ GetNode<AnimationPlayer>(\textcolor{stringliteral}{"{}AnimationPlayer"{}});}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_a650e61374596e594f38f5d9caf11c3fb}{Sprite}}\ =\ GetNode<Sprite2D>(\textcolor{stringliteral}{"{}Sprite2D"{}});}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_afc303e1e2108345937a0834cb03fee60}{DashEffect}}\ =\ GetNode<Timer>(\textcolor{stringliteral}{"{}DashEffect"{}});}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_ae1197f00cda479e2e18246010b36fa9d}{DashTimer}}\ =\ GetNode<Timer>(\textcolor{stringliteral}{"{}DashTimer"{}});}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_a64d74400579bd882301f0ec6a6135ed8}{SwordCollision}}\ =\ GetNode<CollisionShape2D>(\textcolor{stringliteral}{"{}Sprite2D/SwordHit/SwordCollision"{}});}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_a5b037b53d0e7c4eacd6e09b71463862c}{PlayerHitbox}}\ =\ GetNode<CollisionShape2D>(\textcolor{stringliteral}{"{}PlayerHitbox"{}});}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_ae9c0ec6f7123f5832d82c2cc68eedb97}{HauptHitbox}}\ =\ \mbox{\hyperlink{class_player_a5b037b53d0e7c4eacd6e09b71463862c}{PlayerHitbox}}.Position;}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_aaef48228442e066781c02ea9b8c3f694}{BloodVials}}\ =\ GetNode<BloodVial>(\textcolor{stringliteral}{"{}../HUD/BloodVial/Counter"{}});}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_aa23d4f9699cd9b706e9b6945a365699b}{SinDisplay}}\ =\ GetNode<Label>(\textcolor{stringliteral}{"{}../HUD/SinAmount/Counter"{}});}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ SinDisplay.Text\ =\ \mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_a0b2b3398a02e8fbafe3c41dd466c57d0}{GetSinAmount}}()\ +\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_navigation_manager}{NavigationManager}}\ navigationManager\ =\ GetNode<NavigationManager>(\textcolor{stringliteral}{"{}/root/NavigationManager"{}});}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ navigationManager.Connect(\textcolor{stringliteral}{"{}OnTriggerPlayerSpawn"{}},\ \textcolor{keyword}{new}\ Callable(\textcolor{keyword}{this},\ nameof(\mbox{\hyperlink{class_player_a026f050e54322e805ad546ee99483e6e}{OnSpawn}})));}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ Position\ =\ \mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_a77ca820f184b31dd9590bc8613f8566e}{GetPosition}}();}
+\DoxyCodeLine{00060\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_player_8cs_source_l00024}{Animation\+Player}}, \mbox{\hyperlink{_player_8cs_source_l00030}{Blood\+Vials}}, \mbox{\hyperlink{_player_8cs_source_l00026}{Dash\+Effect}}, \mbox{\hyperlink{_player_8cs_source_l00027}{Dash\+Timer}}, \mbox{\hyperlink{_player_stats_8cs_source_l00096}{Player\+Stats.\+Get\+Position()}}, \mbox{\hyperlink{_player_stats_8cs_source_l00105}{Player\+Stats.\+Get\+Sin\+Amount()}}, \mbox{\hyperlink{_player_8cs_source_l00033}{Haupt\+Hitbox}}, \mbox{\hyperlink{_player_stats_8cs_source_l00010}{Player\+Stats.\+Instance}}, \mbox{\hyperlink{_player_8cs_source_l00402}{On\+Spawn()}}, \mbox{\hyperlink{_player_8cs_source_l00029}{Player\+Hitbox}}, \mbox{\hyperlink{_player_8cs_source_l00031}{Sin\+Display}}, \mbox{\hyperlink{_player_8cs_source_l00025}{Sprite}}, and \mbox{\hyperlink{_player_8cs_source_l00028}{Sword\+Collision}}.
+
+\Hypertarget{class_player_a0aa4500de693c81904bba34fb91df560}\index{Player@{Player}!CreateDashEffect@{CreateDashEffect}}
+\index{CreateDashEffect@{CreateDashEffect}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{CreateDashEffect()}{CreateDashEffect()}}
+{\footnotesize\ttfamily \label{class_player_a0aa4500de693c81904bba34fb91df560} 
+void Player.\+Create\+Dash\+Effect (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Erstellt einen visuellen Dash-\/\+Trail. Der Spieler hinterlässt eine Spur während des Dashes. 
+
+
+
+Definition at line \mbox{\hyperlink{_player_8cs_source_l00207}{207}} of file \mbox{\hyperlink{_player_8cs_source}{Player.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ Sprite2D\ PlayerCopyNode\ =\ (Sprite2D)\mbox{\hyperlink{class_player_a650e61374596e594f38f5d9caf11c3fb}{Sprite}}.Duplicate();}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ GetParent().AddChild(PlayerCopyNode);}
+\DoxyCodeLine{00210\ }
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ CollisionShape2D\ SwordCollisionCopy\ =\ PlayerCopyNode.GetNode<CollisionShape2D>(\textcolor{stringliteral}{"{}SwordHit/SwordCollision"{}});}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (SwordCollisionCopy\ !=\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \ \ \ \ SwordCollisionCopy.Disabled\ =\ \textcolor{keyword}{true};\ \textcolor{comment}{//\ Deaktiviere\ die\ Kollision\ der\ Kopie}}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00215\ }
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ PlayerCopyNode.GlobalPosition\ =\ GlobalPosition\ +\ \textcolor{keyword}{new}\ Vector2(0,\ \mbox{\hyperlink{class_player_a650e61374596e594f38f5d9caf11c3fb}{Sprite}}.Texture.GetHeight()\ *\ \mbox{\hyperlink{class_player_a650e61374596e594f38f5d9caf11c3fb}{Sprite}}.Scale.Y\ *\ -\/0.5f);}
+\DoxyCodeLine{00217\ }
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Verblassen-\/Effekt\ für\ den\ Dash-\/Trail\ hinzufügen}}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ AnimationTime\ =\ (float)(\mbox{\hyperlink{class_player_ae1197f00cda479e2e18246010b36fa9d}{DashTimer}}.WaitTime\ /\ 3);}
+\DoxyCodeLine{00220\ }
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ Timer\ FadeTimer1\ =\ \textcolor{keyword}{new}\ Timer();}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ AddChild(FadeTimer1);}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ FadeTimer1.Timeout\ +=\ ()\ =>\ \{}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (IsInstanceValid(PlayerCopyNode))\ \{}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ PlayerCopyNode.Modulate\ =\ \textcolor{keyword}{new}\ Color(PlayerCopyNode.Modulate,\ 0.4f);}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ FadeTimer1.Start(AnimationTime);}
+\DoxyCodeLine{00229\ }
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ Timer\ FadeTimer2\ =\ \textcolor{keyword}{new}\ Timer();}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ AddChild(FadeTimer2);}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ FadeTimer2.Timeout\ +=\ ()\ =>\ \{}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (IsInstanceValid(PlayerCopyNode))\ \{}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ PlayerCopyNode.Modulate\ =\ \textcolor{keyword}{new}\ Color(PlayerCopyNode.Modulate,\ 0.2f);}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ FadeTimer2.Start(AnimationTime\ *\ 2);}
+\DoxyCodeLine{00238\ }
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ Timer\ FadeTimer3\ =\ \textcolor{keyword}{new}\ Timer();}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ AddChild(FadeTimer3);}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ FadeTimer3.Timeout\ +=\ ()\ =>\ \{}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (IsInstanceValid(PlayerCopyNode))\ \{}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ PlayerCopyNode.QueueFree();}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ FadeTimer3.Start(AnimationTime\ *\ 3);}
+\DoxyCodeLine{00247\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_player_8cs_source_l00027}{Dash\+Timer}}, and \mbox{\hyperlink{_player_8cs_source_l00025}{Sprite}}.
+
+
+
+Referenced by \mbox{\hyperlink{_player_8cs_source_l00187}{Dash\+In\+Progress()}}.
+
 \Hypertarget{class_player_aeb354dd739e4fb8af95215e633f2ae30}\index{Player@{Player}!DashInProgress@{DashInProgress}}
 \index{DashInProgress@{DashInProgress}!Player@{Player}}
 \doxysubsubsection{\texorpdfstring{DashInProgress()}{DashInProgress()}}
@@ -172,6 +288,37 @@ Führt die Logik während eines Dashes aus.
 {\em Delta\+Time} & Zeit seit dem letzten Frame. \\
 \hline
 \end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_player_8cs_source_l00187}{187}} of file \mbox{\hyperlink{_player_8cs_source}{Player.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Charakter\ bewegt\ sich\ in\ die\ Dash-\/Richtung\ mit\ Dash-\/Geschwindigkeit}}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_player_ad64449e2fb7a7b527d08ce823dc4e2e4}{DashDirection}}\ ==\ Vector2.Up)\ \{}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ Velocity\ =\ \mbox{\hyperlink{class_player_ad64449e2fb7a7b527d08ce823dc4e2e4}{DashDirection}}\ /\ 1.5f\ *\ \mbox{\hyperlink{class_player_ad418db551711bceecb6a0f504727ca91}{DashSpeed}};}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ Velocity\ =\ \mbox{\hyperlink{class_player_ad64449e2fb7a7b527d08ce823dc4e2e4}{DashDirection}}\ *\ \mbox{\hyperlink{class_player_ad418db551711bceecb6a0f504727ca91}{DashSpeed}};}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Dash-\/Trail\ bei\ Intervallen\ erstellen}}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_af96d2cf00ca821528f6624b9d746de79}{DashTrailTimer}}\ -\/=\ (float)DeltaTime;}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_player_af96d2cf00ca821528f6624b9d746de79}{DashTrailTimer}}\ <=\ 0f)\ \{}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_a0aa4500de693c81904bba34fb91df560}{CreateDashEffect}}();}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_af96d2cf00ca821528f6624b9d746de79}{DashTrailTimer}}\ =\ \mbox{\hyperlink{class_player_a33ad87048d2a086b8b74cf2d610aac8e}{DashTrailInterval}};}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00201\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_player_8cs_source_l00207}{Create\+Dash\+Effect()}}, \mbox{\hyperlink{_player_8cs_source_l00016}{Dash\+Direction}}, \mbox{\hyperlink{_player_8cs_source_l00017}{Dash\+Speed}}, \mbox{\hyperlink{_player_8cs_source_l00020}{Dash\+Trail\+Interval}}, and \mbox{\hyperlink{_player_8cs_source_l00021}{Dash\+Trail\+Timer}}.
+
+
+
+Referenced by \mbox{\hyperlink{_player_8cs_source_l00121}{Handle\+Movement()}}.
+
 \Hypertarget{class_player_ab04e4301a26dacc4e1d178d1b7d1d872}\index{Player@{Player}!GetBloodVials@{GetBloodVials}}
 \index{GetBloodVials@{GetBloodVials}!Player@{Player}}
 \doxysubsubsection{\texorpdfstring{GetBloodVials()}{GetBloodVials()}}
@@ -185,6 +332,25 @@ Getter für Blood\+Vials.
 \begin{DoxyReturn}{Returns}
 \doxylink{class_blood_vial}{Blood\+Vial} 
 \end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_player_8cs_source_l00383}{383}} of file \mbox{\hyperlink{_player_8cs_source}{Player.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00383\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00384\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_player_aaef48228442e066781c02ea9b8c3f694}{BloodVials}};}
+\DoxyCodeLine{00385\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_player_8cs_source_l00030}{Blood\+Vials}}.
+
+
+
+Referenced by \mbox{\hyperlink{_checkpoint_8cs_source_l00023}{Checkpoint.\+On\+Player\+Body\+Entered()}}.
+
 \Hypertarget{class_player_a01ad03754c12b1288b69cdd42cb6f85e}\index{Player@{Player}!GetDamage@{GetDamage}}
 \index{GetDamage@{GetDamage}!Player@{Player}}
 \doxysubsubsection{\texorpdfstring{GetDamage()}{GetDamage()}}
@@ -198,6 +364,82 @@ Gibt den Schaden zurück, den der Spieler mit seinem aktuellen Angriff verursach
 \begin{DoxyReturn}{Returns}
 Eine Instanz der Klasse {\ttfamily \doxylink{class_damage}{Damage}}, die den physischen Schaden, wahren Schaden und Rückstoß enthält. 
 \end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_player_8cs_source_l00317}{317}} of file \mbox{\hyperlink{_player_8cs_source}{Player.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00317\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00318\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_player_a57850da38e07a680af71543a3e02de1a}{LastAttack}}\ ==\ 1)\{}
+\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_damage}{Damage}}(50,\ 0,\ Vector2.Zero,\ \textcolor{keyword}{this});}
+\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_player_a57850da38e07a680af71543a3e02de1a}{LastAttack}}\ ==\ 2)\{}
+\DoxyCodeLine{00322\ \ \ \ \ \ \ \ \ \ \ \ \ Vector2\ Push\ =\ \textcolor{keyword}{new}\ Vector2(20,0);}
+\DoxyCodeLine{00323\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_player_a650e61374596e594f38f5d9caf11c3fb}{Sprite}}.FlipH)\{}
+\DoxyCodeLine{00324\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Push\ =\ -\/Push;}
+\DoxyCodeLine{00325\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00326\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_damage}{Damage}}(100,\ 0,\ Push,\ \textcolor{keyword}{this});\ \ \ \ \ \ \ }
+\DoxyCodeLine{00327\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00328\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_damage}{Damage}}(0,0,Vector2.Zero,\ \textcolor{keyword}{this});}
+\DoxyCodeLine{00329\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_player_8cs_source_l00034}{Last\+Attack}}, and \mbox{\hyperlink{_player_8cs_source_l00025}{Sprite}}.
+
+
+
+Referenced by \mbox{\hyperlink{_base_enemy_8cs_source_l00132}{Base\+Enemy.\+On\+Hitbox\+Area\+Entered()}}.
+
+\Hypertarget{class_player_a8237be052507e34edec4776fa25f9544}\index{Player@{Player}!HandleJump@{HandleJump}}
+\index{HandleJump@{HandleJump}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{HandleJump()}{HandleJump()}}
+{\footnotesize\ttfamily \label{class_player_a8237be052507e34edec4776fa25f9544} 
+void Player.\+Handle\+Jump (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Verarbeitet die Sprunglogik. Setzt den Sprungzähler zurück und ermöglicht einen Doppelsprung. 
+
+
+
+Definition at line \mbox{\hyperlink{_player_8cs_source_l00094}{94}} of file \mbox{\hyperlink{_player_8cs_source}{Player.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Sprungzähler\ zurücksetzen,\ wenn\ der\ Charakter\ am\ Boden\ ist}}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_player_a9c16b607216c433cd53e2a56fedfeeed}{JumpCount}}\ !=\ 0\ \&\&\ IsOnFloor())\ \{}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_a9c16b607216c433cd53e2a56fedfeeed}{JumpCount}}\ =\ 0;}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Überprüfen,\ ob\ der\ Sprung-\/Button\ gedrückt\ wurde\ und\ der\ Charakter\ noch\ Sprünge\ übrig\ hat}}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Input.IsActionJustPressed(\textcolor{stringliteral}{"{}ui\_up"{}})\ \&\&\ \mbox{\hyperlink{class_player_a9c16b607216c433cd53e2a56fedfeeed}{JumpCount}}\ <\ \mbox{\hyperlink{class_player_a7bcbe69f9f5e347cf485306520b1dadd}{JumpMax}})\ \{}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_player_a9c16b607216c433cd53e2a56fedfeeed}{JumpCount}}\ ==\ 0)\ \{}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Erster\ Sprung\ ohne\ Stamina-\/Verlust}}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ Velocity\ =\ \textcolor{keyword}{new}\ Vector2(Velocity.X,\ \mbox{\hyperlink{class_player_a8da3506a415217b5eeacbf254620b0a1}{JUMP\_VELOCITY}});}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_a9c16b607216c433cd53e2a56fedfeeed}{JumpCount}}\ +=\ 1;}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_player_a9c16b607216c433cd53e2a56fedfeeed}{JumpCount}}\ >\ 0)\ \{}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Beim\ Doppelsprung\ Stamina\ prüfen\ und\ abziehen}}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_player_ac69e2d647a9d7317b01599b2a5695199}{UseStamina}}(15))\ \{}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Velocity\ =\ \textcolor{keyword}{new}\ Vector2(Velocity.X,\ \mbox{\hyperlink{class_player_a8da3506a415217b5eeacbf254620b0a1}{JUMP\_VELOCITY}});}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_a9c16b607216c433cd53e2a56fedfeeed}{JumpCount}}\ +=\ 1;}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ }
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00114\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_player_8cs_source_l00012}{JUMP\+\_\+\+VELOCITY}}, \mbox{\hyperlink{_player_8cs_source_l00014}{Jump\+Count}}, \mbox{\hyperlink{_player_8cs_source_l00013}{Jump\+Max}}, and \mbox{\hyperlink{_player_8cs_source_l00349}{Use\+Stamina()}}.
+
+
+
+Referenced by \mbox{\hyperlink{_player_8cs_source_l00067}{\+\_\+\+Physics\+Process()}}.
+
 \Hypertarget{class_player_af8fce0260ebcc78bb46e2a8393eb2fb7}\index{Player@{Player}!HandleMovement@{HandleMovement}}
 \index{HandleMovement@{HandleMovement}!Player@{Player}}
 \doxysubsubsection{\texorpdfstring{HandleMovement()}{HandleMovement()}}
@@ -213,6 +455,69 @@ Verarbeitet die Bewegung des Spielers. Regelt normale Bewegungen, Dashes und Kol
 {\em Delta\+Time} & Zeit seit dem letzten Frame. \\
 \hline
 \end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_player_8cs_source_l00121}{121}} of file \mbox{\hyperlink{_player_8cs_source}{Player.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ Vector2\ direction\ =\ \textcolor{keyword}{new}\ Vector2(Input.GetAxis(\textcolor{stringliteral}{"{}ui\_left"{}},\ \textcolor{stringliteral}{"{}ui\_right"{}}),\ Input.GetAxis(\textcolor{stringliteral}{"{}ui\_up"{}},\ \textcolor{stringliteral}{"{}ui\_down"{}})).Normalized();}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ currentSpeed\ =\ \mbox{\hyperlink{class_player_a23e57f8d9bfe69ab49b86a94bcc8c37d}{SPEED}};}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Sprite\ umdrehen\ basierend\ auf\ der\ Bewegungsrichtung\ und\ Kollision\ umdrehen}}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (direction.X\ <\ 0)\ \{}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ Sprite.FlipH\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ SwordCollision.Position\ =\ \textcolor{keyword}{new}\ Vector2(-\/Mathf.Abs(\mbox{\hyperlink{class_player_a64d74400579bd882301f0ec6a6135ed8}{SwordCollision}}.Position.X),\ \mbox{\hyperlink{class_player_a64d74400579bd882301f0ec6a6135ed8}{SwordCollision}}.Position.Y);}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ PlayerHitbox.Position\ =\ \textcolor{keyword}{new}\ Vector2(\mbox{\hyperlink{class_player_a650e61374596e594f38f5d9caf11c3fb}{Sprite}}.Position.X\ *\ 1.8f,\ \mbox{\hyperlink{class_player_a5b037b53d0e7c4eacd6e09b71463862c}{PlayerHitbox}}.Position.Y);}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (direction.X\ >\ 0)\ \{}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ Sprite.FlipH\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ SwordCollision.Position\ =\ \textcolor{keyword}{new}\ Vector2(Mathf.Abs(\mbox{\hyperlink{class_player_a64d74400579bd882301f0ec6a6135ed8}{SwordCollision}}.Position.X),\ \mbox{\hyperlink{class_player_a64d74400579bd882301f0ec6a6135ed8}{SwordCollision}}.Position.Y);}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ PlayerHitbox.Position\ =\ \mbox{\hyperlink{class_player_ae9c0ec6f7123f5832d82c2cc68eedb97}{HauptHitbox}};}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Geschwindigkeit\ reduzieren,\ wenn\ der\ Spieler\ angreift}}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_player_a343fb1371365e58eb9c641928d41237a}{AnimationPlayer}}.CurrentAnimation\ ==\ \textcolor{stringliteral}{"{}light\_attack"{}})\ \{}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ currentSpeed\ *=\ 0.5f;}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_player_a343fb1371365e58eb9c641928d41237a}{AnimationPlayer}}.CurrentAnimation\ ==\ \textcolor{stringliteral}{"{}heavy\_attack"{}})\ \{}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ currentSpeed\ *=\ 0.15f;}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Blockieren\ stoppt\ die\ Bewegung}}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_player_ac5b003495e551fee56ed26d26a239432}{IsBlocking}}())\ \{}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ currentSpeed\ =\ 0;}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_player_a3cf5113d8c5c04d4fc9822c7b33a4fa1}{IsDashing}})\ \{}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_aeb354dd739e4fb8af95215e633f2ae30}{DashInProgress}}(DeltaTime);}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Normale\ Bewegung\ verarbeiten,\ wenn\ kein\ Dash\ aktiv\ ist}}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (direction\ !=\ Vector2.Zero)\ \{}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Velocity\ =\ \textcolor{keyword}{new}\ Vector2(direction.X\ *\ currentSpeed,\ Velocity.Y);}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Velocity\ =\ \textcolor{keyword}{new}\ Vector2(Mathf.MoveToward(Velocity.X,\ 0,\ \mbox{\hyperlink{class_player_a23e57f8d9bfe69ab49b86a94bcc8c37d}{SPEED}}),\ Velocity.Y);}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Überprüfen,\ ob\ der\ Dash-\/Button\ gedrückt\ wurde\ mit\ eine\ Bewegungsrichtung\ und\ nicht\ schon\ am\ angreifen\ ist}}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Input.IsActionJustPressed(\textcolor{stringliteral}{"{}dash"{}})\ \&\&\ direction\ !=\ Vector2.Zero\ \&\&\ \mbox{\hyperlink{class_player_ae5ed42be5737449538f03a89ae258780}{CanDash}}\ \&\&\ !\mbox{\hyperlink{class_player_ab8df147009969880162db05e243cd129}{IsAttacking}}())\ \{}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Wenn\ der\ Player\ genug\ Stamina\ hat\ kann\ er\ dashen}}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_player_ac69e2d647a9d7317b01599b2a5695199}{UseStamina}}(20))\{}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_ad64449e2fb7a7b527d08ce823dc4e2e4}{DashDirection}}\ =\ direction;}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_a9d3abf4c257f11a5838c978ab3abb27f}{StartDash}}();\ }
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00167\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_player_8cs_source_l00024}{Animation\+Player}}, \mbox{\hyperlink{_player_8cs_source_l00019}{Can\+Dash}}, \mbox{\hyperlink{_player_8cs_source_l00016}{Dash\+Direction}}, \mbox{\hyperlink{_player_8cs_source_l00187}{Dash\+In\+Progress()}}, \mbox{\hyperlink{_player_8cs_source_l00033}{Haupt\+Hitbox}}, \mbox{\hyperlink{_player_8cs_source_l00265}{Is\+Attacking()}}, \mbox{\hyperlink{_player_8cs_source_l00273}{Is\+Blocking()}}, \mbox{\hyperlink{_player_8cs_source_l00018}{Is\+Dashing}}, \mbox{\hyperlink{_player_8cs_source_l00029}{Player\+Hitbox}}, \mbox{\hyperlink{_player_8cs_source_l00011}{SPEED}}, \mbox{\hyperlink{_player_8cs_source_l00025}{Sprite}}, \mbox{\hyperlink{_player_8cs_source_l00172}{Start\+Dash()}}, \mbox{\hyperlink{_player_8cs_source_l00028}{Sword\+Collision}}, and \mbox{\hyperlink{_player_8cs_source_l00349}{Use\+Stamina()}}.
+
+
+
+Referenced by \mbox{\hyperlink{_player_8cs_source_l00067}{\+\_\+\+Physics\+Process()}}.
+
 \Hypertarget{class_player_ab8df147009969880162db05e243cd129}\index{Player@{Player}!IsAttacking@{IsAttacking}}
 \index{IsAttacking@{IsAttacking}!Player@{Player}}
 \doxysubsubsection{\texorpdfstring{IsAttacking()}{IsAttacking()}}
@@ -226,6 +531,21 @@ bool Player.\+Is\+Attacking (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})
 \begin{DoxyReturn}{Returns}
 true, wenn der Spieler angreift. 
 \end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_player_8cs_source_l00265}{265}} of file \mbox{\hyperlink{_player_8cs_source}{Player.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ AnimationPlayer.CurrentAnimation\ ==\ \textcolor{stringliteral}{"{}heavy\_attack"{}}\ ||\ AnimationPlayer.CurrentAnimation\ ==\ \textcolor{stringliteral}{"{}light\_attack"{}};}
+\DoxyCodeLine{00267\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{_player_8cs_source_l00121}{Handle\+Movement()}}, and \mbox{\hyperlink{_player_8cs_source_l00425}{Update\+Animations()}}.
+
 \Hypertarget{class_player_ac5b003495e551fee56ed26d26a239432}\index{Player@{Player}!IsBlocking@{IsBlocking}}
 \index{IsBlocking@{IsBlocking}!Player@{Player}}
 \doxysubsubsection{\texorpdfstring{IsBlocking()}{IsBlocking()}}
@@ -239,6 +559,50 @@ bool Player.\+Is\+Blocking (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\
 \begin{DoxyReturn}{Returns}
 true, wenn der Spieler blockiert. 
 \end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_player_8cs_source_l00273}{273}} of file \mbox{\hyperlink{_player_8cs_source}{Player.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ AnimationPlayer.CurrentAnimation\ ==\ \textcolor{stringliteral}{"{}block"{}};}
+\DoxyCodeLine{00275\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{_player_8cs_source_l00121}{Handle\+Movement()}}, \mbox{\hyperlink{_player_8cs_source_l00289}{Take\+Damage()}}, and \mbox{\hyperlink{_player_8cs_source_l00425}{Update\+Animations()}}.
+
+\Hypertarget{class_player_a750d1c5325522c39d232332349e4d2d2}\index{Player@{Player}!MaxHeal@{MaxHeal}}
+\index{MaxHeal@{MaxHeal}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{MaxHeal()}{MaxHeal()}}
+{\footnotesize\ttfamily \label{class_player_a750d1c5325522c39d232332349e4d2d2} 
+void Player.\+Max\+Heal (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Heilt den Spieler vollständig, indem die aktuellen Lebenspunkte auf das Maximum gesetzt werden. 
+
+
+
+Definition at line \mbox{\hyperlink{_player_8cs_source_l00280}{280}} of file \mbox{\hyperlink{_player_8cs_source}{Player.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_aaed3690620c6ba9a8866d0c35b4f26d7}{SetCurrentHealth}}(\mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_a6a24773d00e75be9747b99681ac76127}{GetMaxHealthPoints}}());}
+\DoxyCodeLine{00282\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_player_stats_8cs_source_l00122}{Player\+Stats.\+Get\+Max\+Health\+Points()}}, \mbox{\hyperlink{_player_stats_8cs_source_l00010}{Player\+Stats.\+Instance}}, and \mbox{\hyperlink{_player_stats_8cs_source_l00147}{Player\+Stats.\+Set\+Current\+Health()}}.
+
+
+
+Referenced by \mbox{\hyperlink{_checkpoint_8cs_source_l00023}{Checkpoint.\+On\+Player\+Body\+Entered()}}.
+
 \Hypertarget{class_player_a026f050e54322e805ad546ee99483e6e}\index{Player@{Player}!OnSpawn@{OnSpawn}}
 \index{OnSpawn@{OnSpawn}!Player@{Player}}
 \doxysubsubsection{\texorpdfstring{OnSpawn()}{OnSpawn()}}
@@ -256,6 +620,36 @@ Wird aufgerufen, wenn der Spieler an einer neuen Position spawnen soll.
 {\em direction} & Die Richtung, in die der Spieler schauen soll. \\
 \hline
 \end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_player_8cs_source_l00402}{402}} of file \mbox{\hyperlink{_player_8cs_source}{Player.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00402\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00403\ }
+\DoxyCodeLine{00404\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Spielerposition\ auf\ die\ übergebene\ Position\ setzen}}
+\DoxyCodeLine{00405\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (direction\ ==\ \textcolor{stringliteral}{"{}right"{}})}
+\DoxyCodeLine{00406\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00407\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Update\ the\ x\ value\ by\ adding\ 50\ to\ it,\ keep\ the\ original\ y\ value}}
+\DoxyCodeLine{00408\ \ \ \ \ \ \ \ \ \ \ \ \ Sprite.FlipH\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00409\ \ \ \ \ \ \ \ \ \ \ \ \ position\ =\ position\ with\ \{\ X\ =\ position.X\ +\ 25\ \};}
+\DoxyCodeLine{00410\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00411\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (direction\ ==\ \textcolor{stringliteral}{"{}left"{}})}
+\DoxyCodeLine{00412\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00413\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Update\ the\ x\ value\ by\ subtracting\ 50\ from\ it,\ keep\ the\ original\ y\ value}}
+\DoxyCodeLine{00414\ \ \ \ \ \ \ \ \ \ \ \ \ Sprite.FlipH\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00415\ \ \ \ \ \ \ \ \ \ \ \ \ position\ =\ position\ with\ \{\ X\ =\ position.X\ -\/\ 25\ \};}
+\DoxyCodeLine{00416\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00417\ \ \ \ \ \ \ \ \ Position\ =\ position;}
+\DoxyCodeLine{00418\ }
+\DoxyCodeLine{00419\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{_player_8cs_source_l00043}{\+\_\+\+Ready()}}.
+
 \Hypertarget{class_player_ab715416eb7dbe1d4d320d4ba21999072}\index{Player@{Player}!RegenerateStamina@{RegenerateStamina}}
 \index{RegenerateStamina@{RegenerateStamina}!Player@{Player}}
 \doxysubsubsection{\texorpdfstring{RegenerateStamina()}{RegenerateStamina()}}
@@ -273,6 +667,60 @@ Regeneriert die Stamina des Spielers, wenn er für eine bestimmte Zeit keine Sta
 {\em delta} & Zeit seit dem letzten Frame. \\
 \hline
 \end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_player_8cs_source_l00336}{336}} of file \mbox{\hyperlink{_player_8cs_source}{Player.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00336\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00337\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Wenn\ die\ Verzögerungszeit\ erreicht\ wurde,\ regeneriere\ Stamina}}
+\DoxyCodeLine{00338\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_player_adda3c3e385b428e061d6d1ccd25f23cb}{TimeSinceLastStaminaUse}}\ >=\ 1f)\ \{}
+\DoxyCodeLine{00339\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_ab341f12827a6bdcfebb826dff43e82e3}{SetStamina}}(\mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_a3a170316e8384ab030f5f697b799a947}{GetStamina}}()\ +\ Amount\ *\ (\textcolor{keywordtype}{float})delta);\ \textcolor{comment}{//\ Regeneriere\ Stamina\ abhängig\ von\ der\ Zeit}}
+\DoxyCodeLine{00340\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00341\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_player_stats_8cs_source_l00182}{Player\+Stats.\+Get\+Stamina()}}, \mbox{\hyperlink{_player_stats_8cs_source_l00010}{Player\+Stats.\+Instance}}, \mbox{\hyperlink{_player_stats_8cs_source_l00173}{Player\+Stats.\+Set\+Stamina()}}, and \mbox{\hyperlink{_player_8cs_source_l00037}{Time\+Since\+Last\+Stamina\+Use}}.
+
+
+
+Referenced by \mbox{\hyperlink{_player_8cs_source_l00067}{\+\_\+\+Physics\+Process()}}.
+
+\Hypertarget{class_player_ae1104e2e3726f7bac674615c4e33b2bf}\index{Player@{Player}!Respawn@{Respawn}}
+\index{Respawn@{Respawn}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{Respawn()}{Respawn()}}
+{\footnotesize\ttfamily \label{class_player_ae1104e2e3726f7bac674615c4e33b2bf} 
+void Player.\+Respawn (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Lässt den Spieler am \doxylink{class_checkpoint}{Checkpoint} spawnen. 
+
+
+
+Definition at line \mbox{\hyperlink{_player_8cs_source_l00372}{372}} of file \mbox{\hyperlink{_player_8cs_source}{Player.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00372\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00373\ \ \ \ \ \ \ \ \ var\ \mbox{\hyperlink{class_navigation_manager}{NavigationManager}}\ =\ GetNode<NavigationManager>(\textcolor{stringliteral}{"{}/root/NavigationManager"{}});}
+\DoxyCodeLine{00374\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_navigation_manager}{NavigationManager}}.\mbox{\hyperlink{class_navigation_manager_a5966bab1490d10dfc285507a0c8d8bb7}{GoToLevel}}(\mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_ad868bae6deb062dbcc4702b276a27041}{GetRespawnLevelTag}}(),\ \textcolor{stringliteral}{"{}spawn"{}});}
+\DoxyCodeLine{00375\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_aaef48228442e066781c02ea9b8c3f694}{BloodVials}}.\mbox{\hyperlink{class_blood_vial_a31a53feef846bd962bd5b525b0bc5c6c}{ResetUses}}();}
+\DoxyCodeLine{00376\ }
+\DoxyCodeLine{00377\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_player_8cs_source_l00030}{Blood\+Vials}}, \mbox{\hyperlink{_player_stats_8cs_source_l00040}{Player\+Stats.\+Get\+Respawn\+Level\+Tag()}}, \mbox{\hyperlink{_navigation_manager_8cs_source_l00041}{Navigation\+Manager.\+Go\+To\+Level()}}, \mbox{\hyperlink{_player_stats_8cs_source_l00010}{Player\+Stats.\+Instance}}, and \mbox{\hyperlink{_blood_vial_8cs_source_l00031}{Blood\+Vial.\+Reset\+Uses()}}.
+
+
+
+Referenced by \mbox{\hyperlink{_player_8cs_source_l00289}{Take\+Damage()}}.
+
 \Hypertarget{class_player_aa718b6dab81ebd60b8b910ad8c7adff6}\index{Player@{Player}!SetSinAmount@{SetSinAmount}}
 \index{SetSinAmount@{SetSinAmount}!Player@{Player}}
 \doxysubsubsection{\texorpdfstring{SetSinAmount()}{SetSinAmount()}}
@@ -288,6 +736,27 @@ Setzt den Sin\+Amount des Spielers.
 {\em Value} & Der neue Wert für den Sin\+Amount. \\
 \hline
 \end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_player_8cs_source_l00391}{391}} of file \mbox{\hyperlink{_player_8cs_source}{Player.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00391\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00392\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ SinAmount\ muss\ immer\ >=\ 0\ sein}}
+\DoxyCodeLine{00393\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_a647991a1d154f8c2bc8d7032b43e35aa}{SetSinAmount}}(Value);}
+\DoxyCodeLine{00394\ \ \ \ \ \ \ \ \ SinDisplay.Text\ =\ \mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_a0b2b3398a02e8fbafe3c41dd466c57d0}{GetSinAmount}}()\ +\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00395\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_player_stats_8cs_source_l00105}{Player\+Stats.\+Get\+Sin\+Amount()}}, \mbox{\hyperlink{_player_stats_8cs_source_l00010}{Player\+Stats.\+Instance}}, and \mbox{\hyperlink{_player_stats_8cs_source_l00113}{Player\+Stats.\+Set\+Sin\+Amount()}}.
+
+
+
+Referenced by \mbox{\hyperlink{_base_enemy_8cs_source_l00305}{Base\+Enemy.\+Die()}}.
+
 \Hypertarget{class_player_a0a59dfe03d542fa98f28f4c4eaa49a75}\index{Player@{Player}!SlowPlayer@{SlowPlayer}}
 \index{SlowPlayer@{SlowPlayer}!Player@{Player}}
 \doxysubsubsection{\texorpdfstring{SlowPlayer()}{SlowPlayer()}}
@@ -303,6 +772,91 @@ Verlangsamt den Spieler um einen bestimmten Prozentsatz.
 {\em Slow\+Amount} & Der Prozentsatz, um den der Spieler verlangsamt werden soll. \\
 \hline
 \end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_player_8cs_source_l00365}{365}} of file \mbox{\hyperlink{_player_8cs_source}{Player.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00365\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00366\ \ \ \ \ \ \ \ \ Velocity\ =\ \textcolor{keyword}{new}\ Vector2(Velocity.X\ *\ SlowAmount,\ Velocity.Y);}
+\DoxyCodeLine{00367\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{_spike_8cs_source_l00030}{Spike.\+On\+Player\+Body\+Entered()}}, and \mbox{\hyperlink{_spike_dynamic_8cs_source_l00030}{Spike\+Dynamic.\+On\+Player\+Body\+Entered()}}.
+
+\Hypertarget{class_player_a9d3abf4c257f11a5838c978ab3abb27f}\index{Player@{Player}!StartDash@{StartDash}}
+\index{StartDash@{StartDash}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{StartDash()}{StartDash()}}
+{\footnotesize\ttfamily \label{class_player_a9d3abf4c257f11a5838c978ab3abb27f} 
+void Player.\+Start\+Dash (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Startet den Dash-\/\+Prozess. 
+
+
+
+Definition at line \mbox{\hyperlink{_player_8cs_source_l00172}{172}} of file \mbox{\hyperlink{_player_8cs_source}{Player.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ SetCollisionLayerValue(1,\textcolor{keyword}{false});}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ SetCollisionMaskValue(1,\textcolor{keyword}{false});}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_a3cf5113d8c5c04d4fc9822c7b33a4fa1}{IsDashing}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_ae5ed42be5737449538f03a89ae258780}{CanDash}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ DashTimer.Timeout\ +=\ \mbox{\hyperlink{class_player_a53389f72f48d7980aedb5e8b75d237dd}{StopDash}};}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_ae1197f00cda479e2e18246010b36fa9d}{DashTimer}}.Start();}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_afc303e1e2108345937a0834cb03fee60}{DashEffect}}.Start();}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_af96d2cf00ca821528f6624b9d746de79}{DashTrailTimer}}\ =\ 0f;}
+\DoxyCodeLine{00181\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_player_8cs_source_l00019}{Can\+Dash}}, \mbox{\hyperlink{_player_8cs_source_l00026}{Dash\+Effect}}, \mbox{\hyperlink{_player_8cs_source_l00027}{Dash\+Timer}}, \mbox{\hyperlink{_player_8cs_source_l00021}{Dash\+Trail\+Timer}}, \mbox{\hyperlink{_player_8cs_source_l00018}{Is\+Dashing}}, and \mbox{\hyperlink{_player_8cs_source_l00252}{Stop\+Dash()}}.
+
+
+
+Referenced by \mbox{\hyperlink{_player_8cs_source_l00121}{Handle\+Movement()}}.
+
+\Hypertarget{class_player_a53389f72f48d7980aedb5e8b75d237dd}\index{Player@{Player}!StopDash@{StopDash}}
+\index{StopDash@{StopDash}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{StopDash()}{StopDash()}}
+{\footnotesize\ttfamily \label{class_player_a53389f72f48d7980aedb5e8b75d237dd} 
+void Player.\+Stop\+Dash (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Stoppt den Dash. 
+
+
+
+Definition at line \mbox{\hyperlink{_player_8cs_source_l00252}{252}} of file \mbox{\hyperlink{_player_8cs_source}{Player.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_a3cf5113d8c5c04d4fc9822c7b33a4fa1}{IsDashing}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_afc303e1e2108345937a0834cb03fee60}{DashEffect}}.Stop();}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_ae1197f00cda479e2e18246010b36fa9d}{DashTimer}}.Stop();}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ DashTimer.Timeout\ -\/=\ \mbox{\hyperlink{class_player_a53389f72f48d7980aedb5e8b75d237dd}{StopDash}};}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ SetCollisionLayerValue(1,\textcolor{keyword}{true});}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ SetCollisionMaskValue(1,\textcolor{keyword}{true});}
+\DoxyCodeLine{00259\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_player_8cs_source_l00026}{Dash\+Effect}}, \mbox{\hyperlink{_player_8cs_source_l00027}{Dash\+Timer}}, \mbox{\hyperlink{_player_8cs_source_l00018}{Is\+Dashing}}, and \mbox{\hyperlink{_player_8cs_source_l00252}{Stop\+Dash()}}.
+
+
+
+Referenced by \mbox{\hyperlink{_player_8cs_source_l00172}{Start\+Dash()}}, and \mbox{\hyperlink{_player_8cs_source_l00252}{Stop\+Dash()}}.
+
 \Hypertarget{class_player_aa1a0addae97cec09d2e86f3060a05438}\index{Player@{Player}!TakeDamage@{TakeDamage}}
 \index{TakeDamage@{TakeDamage}!Player@{Player}}
 \doxysubsubsection{\texorpdfstring{TakeDamage()}{TakeDamage()}}
@@ -318,6 +872,105 @@ Wendet Schaden auf den Spieler an. Reduziert die aktuellen Lebenspunkte basieren
 {\em \doxylink{class_damage}{Damage}} & Instanz der Klasse {\ttfamily \doxylink{class_damage}{Damage}}, die den physischen und wahren Schaden sowie den Rückstoß enthält. \\
 \hline
 \end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_player_8cs_source_l00289}{289}} of file \mbox{\hyperlink{_player_8cs_source}{Player.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ totalDamage\ =\ \mbox{\hyperlink{class_damage}{Damage}}.\mbox{\hyperlink{class_damage_a4d43580112f089c208f9ba8e0b2559f0}{GetTrueDMG}}();}
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!\mbox{\hyperlink{class_player_ac5b003495e551fee56ed26d26a239432}{IsBlocking}}())\{}
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ \ \ \ \ totalDamage\ +=\ \mbox{\hyperlink{class_damage}{Damage}}.\mbox{\hyperlink{class_damage_a084fad418a6be9edca3e3e32355e49c0}{GetPhysicalDMG}}();}
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ CurrentStamina\ =\ \mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_a3a170316e8384ab030f5f697b799a947}{GetStamina}}();}
+\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ \ \ \ \ CurrentStamina\ -\/=\ \mbox{\hyperlink{class_damage}{Damage}}.\mbox{\hyperlink{class_damage_a084fad418a6be9edca3e3e32355e49c0}{GetPhysicalDMG}}();}
+\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(CurrentStamina\ <\ 0)\{}
+\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ totalDamage\ -\/=\ CurrentStamina;}
+\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00299\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_ab341f12827a6bdcfebb826dff43e82e3}{SetStamina}}(CurrentStamina);}
+\DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00301\ }
+\DoxyCodeLine{00302\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_aaed3690620c6ba9a8866d0c35b4f26d7}{SetCurrentHealth}}(\mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_a0ec1075ba0983a3df42454b110194c0d}{GetCurrentHealth}}()\ -\/\ totalDamage);}
+\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ Position\ +=\ \mbox{\hyperlink{class_damage}{Damage}}.\mbox{\hyperlink{class_damage_a60741a1e632c21788499ddc284b2844b}{GetPushAmount}}();}
+\DoxyCodeLine{00304\ }
+\DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Überprüfe,\ ob\ der\ Spieler\ gestorben\ ist}}
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_a0ec1075ba0983a3df42454b110194c0d}{GetCurrentHealth}}()\ <=\ 0)\{}
+\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ \ \ \ \ GD.Print(\textcolor{stringliteral}{"{}Spieler\ ist\ gestorben!"{}});}
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_ae1104e2e3726f7bac674615c4e33b2bf}{Respawn}}();}
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00310\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_player_stats_8cs_source_l00139}{Player\+Stats.\+Get\+Current\+Health()}}, \mbox{\hyperlink{_damage_8cs_source_l00031}{Damage.\+Get\+Physical\+DMG()}}, \mbox{\hyperlink{_damage_8cs_source_l00047}{Damage.\+Get\+Push\+Amount()}}, \mbox{\hyperlink{_player_stats_8cs_source_l00182}{Player\+Stats.\+Get\+Stamina()}}, \mbox{\hyperlink{_damage_8cs_source_l00039}{Damage.\+Get\+True\+DMG()}}, \mbox{\hyperlink{_player_stats_8cs_source_l00010}{Player\+Stats.\+Instance}}, \mbox{\hyperlink{_player_8cs_source_l00273}{Is\+Blocking()}}, \mbox{\hyperlink{_player_8cs_source_l00372}{Respawn()}}, \mbox{\hyperlink{_player_stats_8cs_source_l00147}{Player\+Stats.\+Set\+Current\+Health()}}, and \mbox{\hyperlink{_player_stats_8cs_source_l00173}{Player\+Stats.\+Set\+Stamina()}}.
+
+
+
+Referenced by \mbox{\hyperlink{_base_enemy_8cs_source_l00274}{Base\+Enemy.\+Check\+Player\+Hit()}}, \mbox{\hyperlink{_spike_8cs_source_l00030}{Spike.\+On\+Player\+Body\+Entered()}}, \mbox{\hyperlink{_spike_dynamic_8cs_source_l00030}{Spike\+Dynamic.\+On\+Player\+Body\+Entered()}}, \mbox{\hyperlink{_spike_8cs_source_l00060}{Spike.\+On\+Timer\+Timeout()}}, and \mbox{\hyperlink{_spike_dynamic_8cs_source_l00060}{Spike\+Dynamic.\+On\+Timer\+Timeout()}}.
+
+\Hypertarget{class_player_a6dd10a495418b531f7e65ab238368bdc}\index{Player@{Player}!UpdateAnimations@{UpdateAnimations}}
+\index{UpdateAnimations@{UpdateAnimations}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{UpdateAnimations()}{UpdateAnimations()}}
+{\footnotesize\ttfamily \label{class_player_a6dd10a495418b531f7e65ab238368bdc} 
+void Player.\+Update\+Animations (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Aktualisiert die Animationen des Spielers. 
+
+
+
+Definition at line \mbox{\hyperlink{_player_8cs_source_l00425}{425}} of file \mbox{\hyperlink{_player_8cs_source}{Player.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00425\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00426\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Input.IsActionJustPressed(\textcolor{stringliteral}{"{}light\_attack"{}})\ \&\&\ !\mbox{\hyperlink{class_player_a3cf5113d8c5c04d4fc9822c7b33a4fa1}{IsDashing}}\ \&\&\ !\mbox{\hyperlink{class_player_ab8df147009969880162db05e243cd129}{IsAttacking}}())\ \{}
+\DoxyCodeLine{00427\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_player_ac69e2d647a9d7317b01599b2a5695199}{UseStamina}}(10))\{}
+\DoxyCodeLine{00428\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_a57850da38e07a680af71543a3e02de1a}{LastAttack}}\ =\ 1;}
+\DoxyCodeLine{00429\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_a343fb1371365e58eb9c641928d41237a}{AnimationPlayer}}.Play(\textcolor{stringliteral}{"{}light\_attack"{}});}
+\DoxyCodeLine{00430\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00431\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (Input.IsActionJustPressed(\textcolor{stringliteral}{"{}heavy\_attack"{}})\ \&\&\ !\mbox{\hyperlink{class_player_a3cf5113d8c5c04d4fc9822c7b33a4fa1}{IsDashing}}\ \&\&\ !\mbox{\hyperlink{class_player_ab8df147009969880162db05e243cd129}{IsAttacking}}())\ \{}
+\DoxyCodeLine{00432\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_player_ac69e2d647a9d7317b01599b2a5695199}{UseStamina}}(25))\{}
+\DoxyCodeLine{00433\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_a57850da38e07a680af71543a3e02de1a}{LastAttack}}\ =\ 2;}
+\DoxyCodeLine{00434\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_a343fb1371365e58eb9c641928d41237a}{AnimationPlayer}}.Play(\textcolor{stringliteral}{"{}heavy\_attack"{}});}
+\DoxyCodeLine{00435\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00436\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00437\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Input.IsActionPressed(\textcolor{stringliteral}{"{}block"{}})\ \&\&\ !\mbox{\hyperlink{class_player_a3cf5113d8c5c04d4fc9822c7b33a4fa1}{IsDashing}}\ \&\&\ !\mbox{\hyperlink{class_player_ab8df147009969880162db05e243cd129}{IsAttacking}}()\ \&\&\ IsOnFloor())\ \{}
+\DoxyCodeLine{00438\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_player_ac69e2d647a9d7317b01599b2a5695199}{UseStamina}}(0))\{}
+\DoxyCodeLine{00439\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_a343fb1371365e58eb9c641928d41237a}{AnimationPlayer}}.Play(\textcolor{stringliteral}{"{}block"{}});}
+\DoxyCodeLine{00440\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_a57850da38e07a680af71543a3e02de1a}{LastAttack}}\ =\ 0;}
+\DoxyCodeLine{00441\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00442\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00443\ }
+\DoxyCodeLine{00444\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (IsOnFloor()\ \&\&\ !\mbox{\hyperlink{class_player_ab8df147009969880162db05e243cd129}{IsAttacking}}()\ \&\&\ !\mbox{\hyperlink{class_player_ac5b003495e551fee56ed26d26a239432}{IsBlocking}}())\ \{}
+\DoxyCodeLine{00445\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_a57850da38e07a680af71543a3e02de1a}{LastAttack}}\ =\ 0;}
+\DoxyCodeLine{00446\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Velocity.X\ ==\ 0)\ \{}
+\DoxyCodeLine{00447\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_a343fb1371365e58eb9c641928d41237a}{AnimationPlayer}}.Play(\textcolor{stringliteral}{"{}idle"{}});}
+\DoxyCodeLine{00448\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00449\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_a343fb1371365e58eb9c641928d41237a}{AnimationPlayer}}.Play(\textcolor{stringliteral}{"{}run"{}});}
+\DoxyCodeLine{00450\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00451\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (!IsOnFloor()\ \&\&\ !\mbox{\hyperlink{class_player_ab8df147009969880162db05e243cd129}{IsAttacking}}()\ \&\&\ !\mbox{\hyperlink{class_player_ac5b003495e551fee56ed26d26a239432}{IsBlocking}}())\ \{}
+\DoxyCodeLine{00452\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_a57850da38e07a680af71543a3e02de1a}{LastAttack}}\ =\ 0;}
+\DoxyCodeLine{00453\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Velocity.Y\ <\ 0)\ \{}
+\DoxyCodeLine{00454\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_a343fb1371365e58eb9c641928d41237a}{AnimationPlayer}}.Play(\textcolor{stringliteral}{"{}jump"{}});}
+\DoxyCodeLine{00455\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (Velocity.Y\ >\ 0)\ \{}
+\DoxyCodeLine{00456\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_a343fb1371365e58eb9c641928d41237a}{AnimationPlayer}}.Play(\textcolor{stringliteral}{"{}fall"{}});}
+\DoxyCodeLine{00457\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00458\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00459\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_player_8cs_source_l00024}{Animation\+Player}}, \mbox{\hyperlink{_player_8cs_source_l00265}{Is\+Attacking()}}, \mbox{\hyperlink{_player_8cs_source_l00273}{Is\+Blocking()}}, \mbox{\hyperlink{_player_8cs_source_l00018}{Is\+Dashing}}, \mbox{\hyperlink{_player_8cs_source_l00034}{Last\+Attack}}, and \mbox{\hyperlink{_player_8cs_source_l00349}{Use\+Stamina()}}.
+
+
+
+Referenced by \mbox{\hyperlink{_player_8cs_source_l00067}{\+\_\+\+Physics\+Process()}}.
+
 \Hypertarget{class_player_ac69e2d647a9d7317b01599b2a5695199}\index{Player@{Player}!UseStamina@{UseStamina}}
 \index{UseStamina@{UseStamina}!Player@{Player}}
 \doxysubsubsection{\texorpdfstring{UseStamina()}{UseStamina()}}
@@ -338,6 +991,330 @@ Verbraucht eine bestimmte Menge an Stamina, falls genügend verfügbar ist. Setz
 \end{DoxyReturn}
 
 
+Definition at line \mbox{\hyperlink{_player_8cs_source_l00349}{349}} of file \mbox{\hyperlink{_player_8cs_source}{Player.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00349\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00350\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Versucht,\ eine\ bestimmte\ Menge\ an\ Stamina\ zu\ verbrauchen.}}
+\DoxyCodeLine{00351\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Gibt\ true\ zurück,\ wenn\ genug\ Stamina\ verfügbar\ war;\ andernfalls\ false.}}
+\DoxyCodeLine{00352\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_a3a170316e8384ab030f5f697b799a947}{GetStamina}}()\ >=\ Amount)\ \{}
+\DoxyCodeLine{00353\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_ab341f12827a6bdcfebb826dff43e82e3}{SetStamina}}(\mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_a3a170316e8384ab030f5f697b799a947}{GetStamina}}()\ -\/\ Amount);}
+\DoxyCodeLine{00354\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_adda3c3e385b428e061d6d1ccd25f23cb}{TimeSinceLastStaminaUse}}\ =\ 0f;}
+\DoxyCodeLine{00355\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00356\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00357\ }
+\DoxyCodeLine{00358\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00359\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_player_stats_8cs_source_l00182}{Player\+Stats.\+Get\+Stamina()}}, \mbox{\hyperlink{_player_stats_8cs_source_l00010}{Player\+Stats.\+Instance}}, \mbox{\hyperlink{_player_stats_8cs_source_l00173}{Player\+Stats.\+Set\+Stamina()}}, and \mbox{\hyperlink{_player_8cs_source_l00037}{Time\+Since\+Last\+Stamina\+Use}}.
+
+
+
+Referenced by \mbox{\hyperlink{_player_8cs_source_l00094}{Handle\+Jump()}}, \mbox{\hyperlink{_player_8cs_source_l00121}{Handle\+Movement()}}, and \mbox{\hyperlink{_player_8cs_source_l00425}{Update\+Animations()}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_player_a343fb1371365e58eb9c641928d41237a}\index{Player@{Player}!AnimationPlayer@{AnimationPlayer}}
+\index{AnimationPlayer@{AnimationPlayer}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{AnimationPlayer}{AnimationPlayer}}
+{\footnotesize\ttfamily \label{class_player_a343fb1371365e58eb9c641928d41237a} 
+Animation\+Player Player.\+Animation\+Player\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_player_8cs_source_l00024}{24}} of file \mbox{\hyperlink{_player_8cs_source}{Player.\+cs}}.
+
+
+
+Referenced by \mbox{\hyperlink{_player_8cs_source_l00043}{\+\_\+\+Ready()}}, \mbox{\hyperlink{_player_8cs_source_l00121}{Handle\+Movement()}}, and \mbox{\hyperlink{_player_8cs_source_l00425}{Update\+Animations()}}.
+
+\Hypertarget{class_player_aaef48228442e066781c02ea9b8c3f694}\index{Player@{Player}!BloodVials@{BloodVials}}
+\index{BloodVials@{BloodVials}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{BloodVials}{BloodVials}}
+{\footnotesize\ttfamily \label{class_player_aaef48228442e066781c02ea9b8c3f694} 
+\mbox{\hyperlink{class_blood_vial}{Blood\+Vial}} Player.\+Blood\+Vials\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_player_8cs_source_l00030}{30}} of file \mbox{\hyperlink{_player_8cs_source}{Player.\+cs}}.
+
+
+
+Referenced by \mbox{\hyperlink{_player_8cs_source_l00067}{\+\_\+\+Physics\+Process()}}, \mbox{\hyperlink{_player_8cs_source_l00043}{\+\_\+\+Ready()}}, \mbox{\hyperlink{_player_8cs_source_l00383}{Get\+Blood\+Vials()}}, and \mbox{\hyperlink{_player_8cs_source_l00372}{Respawn()}}.
+
+\Hypertarget{class_player_ae5ed42be5737449538f03a89ae258780}\index{Player@{Player}!CanDash@{CanDash}}
+\index{CanDash@{CanDash}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{CanDash}{CanDash}}
+{\footnotesize\ttfamily \label{class_player_ae5ed42be5737449538f03a89ae258780} 
+bool Player.\+Can\+Dash = true\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_player_8cs_source_l00019}{19}} of file \mbox{\hyperlink{_player_8cs_source}{Player.\+cs}}.
+
+
+
+Referenced by \mbox{\hyperlink{_player_8cs_source_l00067}{\+\_\+\+Physics\+Process()}}, \mbox{\hyperlink{_player_8cs_source_l00121}{Handle\+Movement()}}, and \mbox{\hyperlink{_player_8cs_source_l00172}{Start\+Dash()}}.
+
+\Hypertarget{class_player_ad64449e2fb7a7b527d08ce823dc4e2e4}\index{Player@{Player}!DashDirection@{DashDirection}}
+\index{DashDirection@{DashDirection}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{DashDirection}{DashDirection}}
+{\footnotesize\ttfamily \label{class_player_ad64449e2fb7a7b527d08ce823dc4e2e4} 
+Vector2 Player.\+Dash\+Direction = Vector2.\+Zero\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_player_8cs_source_l00016}{16}} of file \mbox{\hyperlink{_player_8cs_source}{Player.\+cs}}.
+
+
+
+Referenced by \mbox{\hyperlink{_player_8cs_source_l00187}{Dash\+In\+Progress()}}, and \mbox{\hyperlink{_player_8cs_source_l00121}{Handle\+Movement()}}.
+
+\Hypertarget{class_player_afc303e1e2108345937a0834cb03fee60}\index{Player@{Player}!DashEffect@{DashEffect}}
+\index{DashEffect@{DashEffect}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{DashEffect}{DashEffect}}
+{\footnotesize\ttfamily \label{class_player_afc303e1e2108345937a0834cb03fee60} 
+Timer Player.\+Dash\+Effect\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_player_8cs_source_l00026}{26}} of file \mbox{\hyperlink{_player_8cs_source}{Player.\+cs}}.
+
+
+
+Referenced by \mbox{\hyperlink{_player_8cs_source_l00043}{\+\_\+\+Ready()}}, \mbox{\hyperlink{_player_8cs_source_l00172}{Start\+Dash()}}, and \mbox{\hyperlink{_player_8cs_source_l00252}{Stop\+Dash()}}.
+
+\Hypertarget{class_player_ad418db551711bceecb6a0f504727ca91}\index{Player@{Player}!DashSpeed@{DashSpeed}}
+\index{DashSpeed@{DashSpeed}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{DashSpeed}{DashSpeed}}
+{\footnotesize\ttfamily \label{class_player_ad418db551711bceecb6a0f504727ca91} 
+float Player.\+Dash\+Speed = 300f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_player_8cs_source_l00017}{17}} of file \mbox{\hyperlink{_player_8cs_source}{Player.\+cs}}.
+
+
+
+Referenced by \mbox{\hyperlink{_player_8cs_source_l00187}{Dash\+In\+Progress()}}.
+
+\Hypertarget{class_player_ae1197f00cda479e2e18246010b36fa9d}\index{Player@{Player}!DashTimer@{DashTimer}}
+\index{DashTimer@{DashTimer}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{DashTimer}{DashTimer}}
+{\footnotesize\ttfamily \label{class_player_ae1197f00cda479e2e18246010b36fa9d} 
+Timer Player.\+Dash\+Timer\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_player_8cs_source_l00027}{27}} of file \mbox{\hyperlink{_player_8cs_source}{Player.\+cs}}.
+
+
+
+Referenced by \mbox{\hyperlink{_player_8cs_source_l00043}{\+\_\+\+Ready()}}, \mbox{\hyperlink{_player_8cs_source_l00207}{Create\+Dash\+Effect()}}, \mbox{\hyperlink{_player_8cs_source_l00172}{Start\+Dash()}}, and \mbox{\hyperlink{_player_8cs_source_l00252}{Stop\+Dash()}}.
+
+\Hypertarget{class_player_a33ad87048d2a086b8b74cf2d610aac8e}\index{Player@{Player}!DashTrailInterval@{DashTrailInterval}}
+\index{DashTrailInterval@{DashTrailInterval}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{DashTrailInterval}{DashTrailInterval}}
+{\footnotesize\ttfamily \label{class_player_a33ad87048d2a086b8b74cf2d610aac8e} 
+float Player.\+Dash\+Trail\+Interval = 0.\+05f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_player_8cs_source_l00020}{20}} of file \mbox{\hyperlink{_player_8cs_source}{Player.\+cs}}.
+
+
+
+Referenced by \mbox{\hyperlink{_player_8cs_source_l00187}{Dash\+In\+Progress()}}.
+
+\Hypertarget{class_player_af96d2cf00ca821528f6624b9d746de79}\index{Player@{Player}!DashTrailTimer@{DashTrailTimer}}
+\index{DashTrailTimer@{DashTrailTimer}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{DashTrailTimer}{DashTrailTimer}}
+{\footnotesize\ttfamily \label{class_player_af96d2cf00ca821528f6624b9d746de79} 
+float Player.\+Dash\+Trail\+Timer = 0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_player_8cs_source_l00021}{21}} of file \mbox{\hyperlink{_player_8cs_source}{Player.\+cs}}.
+
+
+
+Referenced by \mbox{\hyperlink{_player_8cs_source_l00187}{Dash\+In\+Progress()}}, and \mbox{\hyperlink{_player_8cs_source_l00172}{Start\+Dash()}}.
+
+\Hypertarget{class_player_ae9c0ec6f7123f5832d82c2cc68eedb97}\index{Player@{Player}!HauptHitbox@{HauptHitbox}}
+\index{HauptHitbox@{HauptHitbox}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{HauptHitbox}{HauptHitbox}}
+{\footnotesize\ttfamily \label{class_player_ae9c0ec6f7123f5832d82c2cc68eedb97} 
+Vector2 Player.\+Haupt\+Hitbox\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_player_8cs_source_l00033}{33}} of file \mbox{\hyperlink{_player_8cs_source}{Player.\+cs}}.
+
+
+
+Referenced by \mbox{\hyperlink{_player_8cs_source_l00043}{\+\_\+\+Ready()}}, and \mbox{\hyperlink{_player_8cs_source_l00121}{Handle\+Movement()}}.
+
+\Hypertarget{class_player_a3cf5113d8c5c04d4fc9822c7b33a4fa1}\index{Player@{Player}!IsDashing@{IsDashing}}
+\index{IsDashing@{IsDashing}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{IsDashing}{IsDashing}}
+{\footnotesize\ttfamily \label{class_player_a3cf5113d8c5c04d4fc9822c7b33a4fa1} 
+bool Player.\+Is\+Dashing = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_player_8cs_source_l00018}{18}} of file \mbox{\hyperlink{_player_8cs_source}{Player.\+cs}}.
+
+
+
+Referenced by \mbox{\hyperlink{_player_8cs_source_l00121}{Handle\+Movement()}}, \mbox{\hyperlink{_player_8cs_source_l00172}{Start\+Dash()}}, \mbox{\hyperlink{_player_8cs_source_l00252}{Stop\+Dash()}}, and \mbox{\hyperlink{_player_8cs_source_l00425}{Update\+Animations()}}.
+
+\Hypertarget{class_player_a8da3506a415217b5eeacbf254620b0a1}\index{Player@{Player}!JUMP\_VELOCITY@{JUMP\_VELOCITY}}
+\index{JUMP\_VELOCITY@{JUMP\_VELOCITY}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{JUMP\_VELOCITY}{JUMP\_VELOCITY}}
+{\footnotesize\ttfamily \label{class_player_a8da3506a415217b5eeacbf254620b0a1} 
+const float Player.\+JUMP\+\_\+\+VELOCITY = -\/300f\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_player_8cs_source_l00012}{12}} of file \mbox{\hyperlink{_player_8cs_source}{Player.\+cs}}.
+
+
+
+Referenced by \mbox{\hyperlink{_player_8cs_source_l00094}{Handle\+Jump()}}.
+
+\Hypertarget{class_player_a9c16b607216c433cd53e2a56fedfeeed}\index{Player@{Player}!JumpCount@{JumpCount}}
+\index{JumpCount@{JumpCount}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{JumpCount}{JumpCount}}
+{\footnotesize\ttfamily \label{class_player_a9c16b607216c433cd53e2a56fedfeeed} 
+int Player.\+Jump\+Count = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_player_8cs_source_l00014}{14}} of file \mbox{\hyperlink{_player_8cs_source}{Player.\+cs}}.
+
+
+
+Referenced by \mbox{\hyperlink{_player_8cs_source_l00094}{Handle\+Jump()}}.
+
+\Hypertarget{class_player_a7bcbe69f9f5e347cf485306520b1dadd}\index{Player@{Player}!JumpMax@{JumpMax}}
+\index{JumpMax@{JumpMax}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{JumpMax}{JumpMax}}
+{\footnotesize\ttfamily \label{class_player_a7bcbe69f9f5e347cf485306520b1dadd} 
+int Player.\+Jump\+Max = 2\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_player_8cs_source_l00013}{13}} of file \mbox{\hyperlink{_player_8cs_source}{Player.\+cs}}.
+
+
+
+Referenced by \mbox{\hyperlink{_player_8cs_source_l00094}{Handle\+Jump()}}.
+
+\Hypertarget{class_player_a57850da38e07a680af71543a3e02de1a}\index{Player@{Player}!LastAttack@{LastAttack}}
+\index{LastAttack@{LastAttack}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{LastAttack}{LastAttack}}
+{\footnotesize\ttfamily \label{class_player_a57850da38e07a680af71543a3e02de1a} 
+int Player.\+Last\+Attack = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_player_8cs_source_l00034}{34}} of file \mbox{\hyperlink{_player_8cs_source}{Player.\+cs}}.
+
+
+
+Referenced by \mbox{\hyperlink{_player_8cs_source_l00317}{Get\+Damage()}}, and \mbox{\hyperlink{_player_8cs_source_l00425}{Update\+Animations()}}.
+
+\Hypertarget{class_player_a5b037b53d0e7c4eacd6e09b71463862c}\index{Player@{Player}!PlayerHitbox@{PlayerHitbox}}
+\index{PlayerHitbox@{PlayerHitbox}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{PlayerHitbox}{PlayerHitbox}}
+{\footnotesize\ttfamily \label{class_player_a5b037b53d0e7c4eacd6e09b71463862c} 
+Collision\+Shape2D Player.\+Player\+Hitbox\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_player_8cs_source_l00029}{29}} of file \mbox{\hyperlink{_player_8cs_source}{Player.\+cs}}.
+
+
+
+Referenced by \mbox{\hyperlink{_player_8cs_source_l00043}{\+\_\+\+Ready()}}, and \mbox{\hyperlink{_player_8cs_source_l00121}{Handle\+Movement()}}.
+
+\Hypertarget{class_player_aa23d4f9699cd9b706e9b6945a365699b}\index{Player@{Player}!SinDisplay@{SinDisplay}}
+\index{SinDisplay@{SinDisplay}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{SinDisplay}{SinDisplay}}
+{\footnotesize\ttfamily \label{class_player_aa23d4f9699cd9b706e9b6945a365699b} 
+Label Player.\+Sin\+Display\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_player_8cs_source_l00031}{31}} of file \mbox{\hyperlink{_player_8cs_source}{Player.\+cs}}.
+
+
+
+Referenced by \mbox{\hyperlink{_player_8cs_source_l00043}{\+\_\+\+Ready()}}.
+
+\Hypertarget{class_player_a23e57f8d9bfe69ab49b86a94bcc8c37d}\index{Player@{Player}!SPEED@{SPEED}}
+\index{SPEED@{SPEED}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{SPEED}{SPEED}}
+{\footnotesize\ttfamily \label{class_player_a23e57f8d9bfe69ab49b86a94bcc8c37d} 
+const float Player.\+SPEED = 100f\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_player_8cs_source_l00011}{11}} of file \mbox{\hyperlink{_player_8cs_source}{Player.\+cs}}.
+
+
+
+Referenced by \mbox{\hyperlink{_player_8cs_source_l00121}{Handle\+Movement()}}.
+
+\Hypertarget{class_player_a650e61374596e594f38f5d9caf11c3fb}\index{Player@{Player}!Sprite@{Sprite}}
+\index{Sprite@{Sprite}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{Sprite}{Sprite}}
+{\footnotesize\ttfamily \label{class_player_a650e61374596e594f38f5d9caf11c3fb} 
+Sprite2D Player.\+Sprite\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_player_8cs_source_l00025}{25}} of file \mbox{\hyperlink{_player_8cs_source}{Player.\+cs}}.
+
+
+
+Referenced by \mbox{\hyperlink{_player_8cs_source_l00043}{\+\_\+\+Ready()}}, \mbox{\hyperlink{_player_8cs_source_l00207}{Create\+Dash\+Effect()}}, \mbox{\hyperlink{_player_8cs_source_l00317}{Get\+Damage()}}, and \mbox{\hyperlink{_player_8cs_source_l00121}{Handle\+Movement()}}.
+
+\Hypertarget{class_player_a64d74400579bd882301f0ec6a6135ed8}\index{Player@{Player}!SwordCollision@{SwordCollision}}
+\index{SwordCollision@{SwordCollision}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{SwordCollision}{SwordCollision}}
+{\footnotesize\ttfamily \label{class_player_a64d74400579bd882301f0ec6a6135ed8} 
+Collision\+Shape2D Player.\+Sword\+Collision\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_player_8cs_source_l00028}{28}} of file \mbox{\hyperlink{_player_8cs_source}{Player.\+cs}}.
+
+
+
+Referenced by \mbox{\hyperlink{_player_8cs_source_l00043}{\+\_\+\+Ready()}}, and \mbox{\hyperlink{_player_8cs_source_l00121}{Handle\+Movement()}}.
+
+\Hypertarget{class_player_adda3c3e385b428e061d6d1ccd25f23cb}\index{Player@{Player}!TimeSinceLastStaminaUse@{TimeSinceLastStaminaUse}}
+\index{TimeSinceLastStaminaUse@{TimeSinceLastStaminaUse}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{TimeSinceLastStaminaUse}{TimeSinceLastStaminaUse}}
+{\footnotesize\ttfamily \label{class_player_adda3c3e385b428e061d6d1ccd25f23cb} 
+float Player.\+Time\+Since\+Last\+Stamina\+Use = 0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_player_8cs_source_l00037}{37}} of file \mbox{\hyperlink{_player_8cs_source}{Player.\+cs}}.
+
+
+
+Referenced by \mbox{\hyperlink{_player_8cs_source_l00067}{\+\_\+\+Physics\+Process()}}, \mbox{\hyperlink{_player_8cs_source_l00336}{Regenerate\+Stamina()}}, and \mbox{\hyperlink{_player_8cs_source_l00349}{Use\+Stamina()}}.
+
+
+
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/\+Youssef/\+Desktop/\+UNI/\+S4/\+Computerspiel\+Entwicklung/\+Das\+Spiel/anfaengerpraktikum/scripts/Player.\+cs\end{DoxyCompactItemize}
+C\+:/\+Users/\+Youssef/\+Desktop/\+UNI/\+S4/\+Computerspiel\+Entwicklung/\+Das\+Spiel/anfaengerpraktikum/scripts/\mbox{\hyperlink{_player_8cs}{Player.\+cs}}\end{DoxyCompactItemize}

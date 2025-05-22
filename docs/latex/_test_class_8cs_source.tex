@@ -1,0 +1,45 @@
+\doxysection{C\+:/\+Users/\+Youssef/\+Desktop/\+UNI/\+S4/\+Computerspiel\+Entwicklung/\+Das\+Spiel/anfaengerpraktikum/\+Test\+Class.cs}
+\hypertarget{_test_class_8cs_source}{}\label{_test_class_8cs_source}\mbox{\hyperlink{_test_class_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_test_class_8cs_source_l00001}00001\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_gd_m_u_t}{GdMUT}};}
+\DoxyCodeLine{\Hypertarget{_test_class_8cs_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_test_class_8cs_source_l00007}00007\ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{class\ }TestClass}
+\DoxyCodeLine{\Hypertarget{_test_class_8cs_source_l00008}00008\ \{}
+\DoxyCodeLine{\Hypertarget{_test_class_8cs_source_l00009}00009\ \textcolor{preprocessor}{\#if\ TOOLS}}
+\DoxyCodeLine{\Hypertarget{_test_class_8cs_source_l00014}00014\ \ \ \ \ [CSTestFunction]}
+\DoxyCodeLine{\Hypertarget{_test_class_8cs_source_l00015}00015\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Result\ ExamplePass()}
+\DoxyCodeLine{\Hypertarget{_test_class_8cs_source_l00016}00016\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_test_class_8cs_source_l00017}00017\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ x\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_test_class_8cs_source_l00018}00018\ \ \ \ \ \ \ \ \ x\ *=\ 100;}
+\DoxyCodeLine{\Hypertarget{_test_class_8cs_source_l00019}00019\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ ==\ 0)\ ?\ Result.Success\ :\ Result.Failure;}
+\DoxyCodeLine{\Hypertarget{_test_class_8cs_source_l00020}00020\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_class_8cs_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_test_class_8cs_source_l00026}00026\ \ \ \ \ [CSTestFunction]}
+\DoxyCodeLine{\Hypertarget{_test_class_8cs_source_l00027}00027\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Result\ ExampleFail()}
+\DoxyCodeLine{\Hypertarget{_test_class_8cs_source_l00028}00028\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_test_class_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ x\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_test_class_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ x\ *=\ 100;}
+\DoxyCodeLine{\Hypertarget{_test_class_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ !=\ 0)\ ?\ Result.Success\ :\ Result.Failure;}
+\DoxyCodeLine{\Hypertarget{_test_class_8cs_source_l00032}00032\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_class_8cs_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_test_class_8cs_source_l00038}00038\ \ \ \ \ [CSTestFunction]}
+\DoxyCodeLine{\Hypertarget{_test_class_8cs_source_l00039}00039\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Result\ ExampleCustomFail()}
+\DoxyCodeLine{\Hypertarget{_test_class_8cs_source_l00040}00040\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_test_class_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ x\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_test_class_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ x\ *=\ 100;}
+\DoxyCodeLine{\Hypertarget{_test_class_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ !=\ 0)}
+\DoxyCodeLine{\Hypertarget{_test_class_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ ?\ Result.Success}
+\DoxyCodeLine{\Hypertarget{_test_class_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ :\ \textcolor{keyword}{new}\ Result(\textcolor{keyword}{false},\ \textcolor{stringliteral}{"{}You\ can't\ multiply\ 0\ and\ expect\ anything\ else\ than\ 0!"{}});}
+\DoxyCodeLine{\Hypertarget{_test_class_8cs_source_l00046}00046\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_class_8cs_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{_test_class_8cs_source_l00052}00052\ \ \ \ \ [CSTestFunction]}
+\DoxyCodeLine{\Hypertarget{_test_class_8cs_source_l00053}00053\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Result\ ExampleCustomSuccess()}
+\DoxyCodeLine{\Hypertarget{_test_class_8cs_source_l00054}00054\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_test_class_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ x\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_test_class_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ x\ *=\ 100;}
+\DoxyCodeLine{\Hypertarget{_test_class_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ ==\ 0)\ ?\ \textcolor{keyword}{new}\ Result(\textcolor{keyword}{true},\ \textcolor{stringliteral}{"{}Proved\ that\ 0\ *\ 100\ =\ 0"{}})\ :\ Result.Failure;}
+\DoxyCodeLine{\Hypertarget{_test_class_8cs_source_l00058}00058\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_class_8cs_source_l00059}00059\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_test_class_8cs_source_l00060}00060\ \}}
+
+\end{DoxyCode}

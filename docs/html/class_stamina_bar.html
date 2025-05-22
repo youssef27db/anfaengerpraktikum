@@ -102,9 +102,8 @@ Inheritance diagram for StaminaBar:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:af72826b9a2b147aa30cc01b5161b6f2c" id="r_af72826b9a2b147aa30cc01b5161b6f2c"><td class="memItemLeft" align="right" valign="top"><a id="af72826b9a2b147aa30cc01b5161b6f2c" name="af72826b9a2b147aa30cc01b5161b6f2c"></a>
-override void&#160;</td><td class="memItemRight" valign="bottom"><b>_Ready</b> ()</td></tr>
-<tr class="memdesc:af72826b9a2b147aa30cc01b5161b6f2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialisiert die <a class="el" href="class_stamina_bar.html" title="Klasse für die Ausdauerleiste des Spielers. Synchronisiert die Anzeige der StaminaBar mit der Ausdaue...">StaminaBar</a> und verbindet sie mit der Ausdauer des Spielers. Lädt den Spieler-Knoten und setzt die maximale und aktuelle Ausdauer in der <a class="el" href="class_stamina_bar.html" title="Klasse für die Ausdauerleiste des Spielers. Synchronisiert die Anzeige der StaminaBar mit der Ausdaue...">StaminaBar</a>. <br /></td></tr>
+<tr class="memitem:af72826b9a2b147aa30cc01b5161b6f2c" id="r_af72826b9a2b147aa30cc01b5161b6f2c"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af72826b9a2b147aa30cc01b5161b6f2c">_Ready</a> ()</td></tr>
+<tr class="memdesc:af72826b9a2b147aa30cc01b5161b6f2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialisiert die <a class="el" href="class_stamina_bar.html" title="Klasse für die Ausdauerleiste des Spielers. Synchronisiert die Anzeige der StaminaBar mit der Ausdaue...">StaminaBar</a> und verbindet sie mit der Ausdauer des Spielers. Lädt den Spieler-Knoten und setzt die maximale und aktuelle Ausdauer in der <a class="el" href="class_stamina_bar.html" title="Klasse für die Ausdauerleiste des Spielers. Synchronisiert die Anzeige der StaminaBar mit der Ausdaue...">StaminaBar</a>.  <br /></td></tr>
 <tr class="separator:af72826b9a2b147aa30cc01b5161b6f2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeb7821ae1530077824c987f7c9f7011a" id="r_aeb7821ae1530077824c987f7c9f7011a"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeb7821ae1530077824c987f7c9f7011a">_Process</a> (double DeltaTime)</td></tr>
 <tr class="memdesc:aeb7821ae1530077824c987f7c9f7011a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aktualisiert die <a class="el" href="class_stamina_bar.html" title="Klasse für die Ausdauerleiste des Spielers. Synchronisiert die Anzeige der StaminaBar mit der Ausdaue...">StaminaBar</a> in jedem Frame. Synchronisiert die Anzeige der aktuellen Ausdauer mit den Werten des Spielers.  <br /></td></tr>
@@ -112,6 +111,8 @@ override void&#160;</td><td class="memItemRight" valign="bottom"><b>_Ready</b> (
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Klasse für die Ausdauerleiste des Spielers. Synchronisiert die Anzeige der <a class="el" href="class_stamina_bar.html" title="Klasse für die Ausdauerleiste des Spielers. Synchronisiert die Anzeige der StaminaBar mit der Ausdaue...">StaminaBar</a> mit der Ausdauer des Spielers. </p>
+
+<p class="definition">Definition at line <a class="el" href="_stamina_bar_8cs_source.html#l00007">7</a> of file <a class="el" href="_stamina_bar_8cs_source.html">StaminaBar.cs</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="aeb7821ae1530077824c987f7c9f7011a" name="aeb7821ae1530077824c987f7c9f7011a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aeb7821ae1530077824c987f7c9f7011a">&#9670;&#160;</a></span>_Process()</h2>
@@ -144,10 +145,58 @@ override void&#160;</td><td class="memItemRight" valign="bottom"><b>_Ready</b> (
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="_stamina_bar_8cs_source.html#l00024">24</a> of file <a class="el" href="_stamina_bar_8cs_source.html">StaminaBar.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   24</span>                                                    {</div>
+<div class="line"><span class="lineno">   25</span>        <span class="comment">// Aktualisiere den Wert der StaminaBar basierend auf der aktuellen Ausdauer des Spielers</span></div>
+<div class="line"><span class="lineno">   26</span>        Value = <a class="code hl_class" href="class_player_stats.html">PlayerStats</a>.<a class="code hl_property" href="class_player_stats.html#adeb667dbe2c1a76d1785ce07b6faf181">Instance</a>.<a class="code hl_function" href="class_player_stats.html#a3a170316e8384ab030f5f697b799a947">GetStamina</a>();</div>
+<div class="line"><span class="lineno">   27</span>    }</div>
+<div class="ttc" id="aclass_player_stats_html"><div class="ttname"><a href="class_player_stats.html">PlayerStats</a></div><div class="ttdoc">Klasse für die Spielerstats.</div><div class="ttdef"><b>Definition</b> <a href="_player_stats_8cs_source.html#l00007">PlayerStats.cs:8</a></div></div>
+<div class="ttc" id="aclass_player_stats_html_a3a170316e8384ab030f5f697b799a947"><div class="ttname"><a href="class_player_stats.html#a3a170316e8384ab030f5f697b799a947">PlayerStats.GetStamina</a></div><div class="ttdeci">float GetStamina()</div><div class="ttdoc">Gibt die aktuelle Stamina des Spielers zurück.</div><div class="ttdef"><b>Definition</b> <a href="_player_stats_8cs_source.html#l00182">PlayerStats.cs:182</a></div></div>
+<div class="ttc" id="aclass_player_stats_html_adeb667dbe2c1a76d1785ce07b6faf181"><div class="ttname"><a href="class_player_stats.html#adeb667dbe2c1a76d1785ce07b6faf181">PlayerStats.Instance</a></div><div class="ttdeci">static PlayerStats Instance</div><div class="ttdef"><b>Definition</b> <a href="_player_stats_8cs_source.html#l00010">PlayerStats.cs:10</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="_player_stats_8cs_source.html#l00182">PlayerStats.GetStamina()</a>, and <a class="el" href="_player_stats_8cs_source.html#l00010">PlayerStats.Instance</a>.</p>
+
+</div>
+</div>
+<a id="af72826b9a2b147aa30cc01b5161b6f2c" name="af72826b9a2b147aa30cc01b5161b6f2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af72826b9a2b147aa30cc01b5161b6f2c">&#9670;&#160;</a></span>_Ready()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">override void StaminaBar._Ready </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initialisiert die <a class="el" href="class_stamina_bar.html" title="Klasse für die Ausdauerleiste des Spielers. Synchronisiert die Anzeige der StaminaBar mit der Ausdaue...">StaminaBar</a> und verbindet sie mit der Ausdauer des Spielers. Lädt den Spieler-Knoten und setzt die maximale und aktuelle Ausdauer in der <a class="el" href="class_stamina_bar.html" title="Klasse für die Ausdauerleiste des Spielers. Synchronisiert die Anzeige der StaminaBar mit der Ausdaue...">StaminaBar</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="_stamina_bar_8cs_source.html#l00013">13</a> of file <a class="el" href="_stamina_bar_8cs_source.html">StaminaBar.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   13</span>                                  {</div>
+<div class="line"><span class="lineno">   14</span>        <span class="comment">// Setze die maximale Ausdauer der StaminaBar basierend auf der Spieler-MaxStamina</span></div>
+<div class="line"><span class="lineno">   15</span>        MaxValue = <a class="code hl_class" href="class_player_stats.html">PlayerStats</a>.<a class="code hl_property" href="class_player_stats.html#adeb667dbe2c1a76d1785ce07b6faf181">Instance</a>.<a class="code hl_function" href="class_player_stats.html#a7e27ea7ba3c266ecfa446c070415180a">GetMaxStamina</a>();</div>
+<div class="line"><span class="lineno">   16</span>        Value = <a class="code hl_class" href="class_player_stats.html">PlayerStats</a>.<a class="code hl_property" href="class_player_stats.html#adeb667dbe2c1a76d1785ce07b6faf181">Instance</a>.<a class="code hl_function" href="class_player_stats.html#a3a170316e8384ab030f5f697b799a947">GetStamina</a>();</div>
+<div class="line"><span class="lineno">   17</span>    }</div>
+<div class="ttc" id="aclass_player_stats_html_a7e27ea7ba3c266ecfa446c070415180a"><div class="ttname"><a href="class_player_stats.html#a7e27ea7ba3c266ecfa446c070415180a">PlayerStats.GetMaxStamina</a></div><div class="ttdeci">float GetMaxStamina()</div><div class="ttdoc">Gibt die maximale Stamina des Spielers zurück.</div><div class="ttdef"><b>Definition</b> <a href="_player_stats_8cs_source.html#l00165">PlayerStats.cs:165</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="_player_stats_8cs_source.html#l00165">PlayerStats.GetMaxStamina()</a>, <a class="el" href="_player_stats_8cs_source.html#l00182">PlayerStats.GetStamina()</a>, and <a class="el" href="_player_stats_8cs_source.html#l00010">PlayerStats.Instance</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>C:/Users/Youssef/Desktop/UNI/S4/ComputerspielEntwicklung/DasSpiel/anfaengerpraktikum/scripts/<b>StaminaBar.cs</b></li>
+<li>C:/Users/Youssef/Desktop/UNI/S4/ComputerspielEntwicklung/DasSpiel/anfaengerpraktikum/scripts/<a class="el" href="_stamina_bar_8cs_source.html">StaminaBar.cs</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

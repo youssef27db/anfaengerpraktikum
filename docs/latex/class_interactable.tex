@@ -14,8 +14,7 @@ Inheritance diagram for Interactable\+:\begin{figure}[H]
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_interactable_a9add6c2a759f67998bdb373dbb654130}\label{class_interactable_a9add6c2a759f67998bdb373dbb654130} 
-override void {\bfseries \+\_\+\+Ready} ()
+override void \mbox{\hyperlink{class_interactable_a9add6c2a759f67998bdb373dbb654130}{\+\_\+\+Ready}} ()
 \begin{DoxyCompactList}\small\item\em Initialisierung der Referenzen. Findet die relevanten Knoten in der Szene und weist sie zu. \end{DoxyCompactList}\item 
 override void \mbox{\hyperlink{class_interactable_aca8766dcd47dd334a4bb9062abf2f626}{\+\_\+\+Process}} (double Delta\+Time)
 \begin{DoxyCompactList}\small\item\em Testet, ob der Spieler mit der Node Interagiert und öffnet ein Pop\+Up. \end{DoxyCompactList}\item 
@@ -24,28 +23,27 @@ void \mbox{\hyperlink{class_interactable_abdf9c193fcfb6f4b5187842b1055830d}{On\+
 \doxysubsubsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_interactable_a2bc5775aa05c0e143cdb196cf06296d1}\label{class_interactable_a2bc5775aa05c0e143cdb196cf06296d1} 
-String {\bfseries Text}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+String \mbox{\hyperlink{class_interactable_a2bc5775aa05c0e143cdb196cf06296d1}{Text}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_interactable_ad74422b51f60ffb81566d0259d829aa1}\label{class_interactable_ad74422b51f60ffb81566d0259d829aa1} 
-\mbox{\hyperlink{class_player}{Player}} {\bfseries Player}
+\mbox{\hyperlink{class_player}{Player}} \mbox{\hyperlink{class_interactable_ad74422b51f60ffb81566d0259d829aa1}{Player}}
 \item 
-\Hypertarget{class_interactable_a61892e9f2a38c92f2b3bd12efed3a22d}\label{class_interactable_a61892e9f2a38c92f2b3bd12efed3a22d} 
-Rich\+Text\+Label {\bfseries Text\+Label}
+Rich\+Text\+Label \mbox{\hyperlink{class_interactable_a61892e9f2a38c92f2b3bd12efed3a22d}{Text\+Label}}
 \item 
-\Hypertarget{class_interactable_a7158399e380702b55704d19dc1c07f12}\label{class_interactable_a7158399e380702b55704d19dc1c07f12} 
-Control {\bfseries Pop\+Up}
+Control \mbox{\hyperlink{class_interactable_a7158399e380702b55704d19dc1c07f12}{Pop\+Up}}
 \item 
-\Hypertarget{class_interactable_ad53cb161d96e7050002454fe60674fa2}\label{class_interactable_ad53cb161d96e7050002454fe60674fa2} 
-Area2D {\bfseries Area}
+Area2D \mbox{\hyperlink{class_interactable_ad53cb161d96e7050002454fe60674fa2}{Area}}
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 Klasse für Interaktion. 
+
+Definition at line \mbox{\hyperlink{_interactable_8cs_source_l00007}{7}} of file \mbox{\hyperlink{_interactable_8cs_source}{Interactable.\+cs}}.
+
+
 
 \doxysubsection{Member Function Documentation}
 \Hypertarget{class_interactable_aca8766dcd47dd334a4bb9062abf2f626}\index{Interactable@{Interactable}!\_Process@{\_Process}}
@@ -63,6 +61,59 @@ Testet, ob der Spieler mit der Node Interagiert und öffnet ein Pop\+Up.
 {\em Delta\+Time} & Zeit zwischen den Frames. \\
 \hline
 \end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_interactable_8cs_source_l00032}{32}} of file \mbox{\hyperlink{_interactable_8cs_source}{Interactable.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(Input.IsActionJustPressed(\textcolor{stringliteral}{"{}interact"{}}))\{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ Godot.Collections.Array<Node2D>\ Bodies\ =\ \mbox{\hyperlink{class_interactable_ad53cb161d96e7050002454fe60674fa2}{Area}}.GetOverlappingBodies();}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}(Node2D\ Body\ \textcolor{keywordflow}{in}\ Bodies)\{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(Body\ ==\ \mbox{\hyperlink{class_player}{Player}})\{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_interactable_a61892e9f2a38c92f2b3bd12efed3a22d}{TextLabel}}.Clear();}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_interactable_a61892e9f2a38c92f2b3bd12efed3a22d}{TextLabel}}.AppendText(\mbox{\hyperlink{class_interactable_a2bc5775aa05c0e143cdb196cf06296d1}{Text}});}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ PopUp.Visible\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00044\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_interactable_8cs_source_l00012}{Area}}, \mbox{\hyperlink{_interactable_8cs_source_l00015}{Text}}, and \mbox{\hyperlink{_interactable_8cs_source_l00010}{Text\+Label}}.
+
+\Hypertarget{class_interactable_a9add6c2a759f67998bdb373dbb654130}\index{Interactable@{Interactable}!\_Ready@{\_Ready}}
+\index{\_Ready@{\_Ready}!Interactable@{Interactable}}
+\doxysubsubsection{\texorpdfstring{\_Ready()}{\_Ready()}}
+{\footnotesize\ttfamily \label{class_interactable_a9add6c2a759f67998bdb373dbb654130} 
+override void Interactable.\+\_\+\+Ready (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Initialisierung der Referenzen. Findet die relevanten Knoten in der Szene und weist sie zu. 
+
+
+
+Definition at line \mbox{\hyperlink{_interactable_8cs_source_l00021}{21}} of file \mbox{\hyperlink{_interactable_8cs_source}{Interactable.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player}{Player}}\ =\ GetNode<Player>(\textcolor{stringliteral}{"{}../Player"{}});}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_interactable_a61892e9f2a38c92f2b3bd12efed3a22d}{TextLabel}}\ =\ GetNode<RichTextLabel>(\textcolor{stringliteral}{"{}../HUD/PopUp/Text"{}});}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_interactable_a7158399e380702b55704d19dc1c07f12}{PopUp}}\ =\ GetNode<Control>(\textcolor{stringliteral}{"{}../HUD/PopUp"{}});}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_interactable_ad53cb161d96e7050002454fe60674fa2}{Area}}\ =\ GetNode<Area2D>(\textcolor{stringliteral}{"{}Area2D"{}});}
+\DoxyCodeLine{00026\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_interactable_8cs_source_l00012}{Area}}, \mbox{\hyperlink{_interactable_8cs_source_l00011}{Pop\+Up}}, and \mbox{\hyperlink{_interactable_8cs_source_l00010}{Text\+Label}}.
+
 \Hypertarget{class_interactable_abdf9c193fcfb6f4b5187842b1055830d}\index{Interactable@{Interactable}!OnAreaBodyExited@{OnAreaBodyExited}}
 \index{OnAreaBodyExited@{OnAreaBodyExited}!Interactable@{Interactable}}
 \doxysubsubsection{\texorpdfstring{OnAreaBodyExited()}{OnAreaBodyExited()}}
@@ -80,6 +131,101 @@ Detektiert, wenn der Spieler den Bereich verlässt und schließt das Pop\+Up.
 \end{DoxyParams}
 
 
+Definition at line \mbox{\hyperlink{_interactable_8cs_source_l00050}{50}} of file \mbox{\hyperlink{_interactable_8cs_source}{Interactable.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(Body\ ==\ \mbox{\hyperlink{class_player}{Player}})\{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ PopUp.Visible\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_interactable_a61892e9f2a38c92f2b3bd12efed3a22d}{TextLabel}}.Clear();}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00055\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_interactable_8cs_source_l00010}{Text\+Label}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_interactable_ad53cb161d96e7050002454fe60674fa2}\index{Interactable@{Interactable}!Area@{Area}}
+\index{Area@{Area}!Interactable@{Interactable}}
+\doxysubsubsection{\texorpdfstring{Area}{Area}}
+{\footnotesize\ttfamily \label{class_interactable_ad53cb161d96e7050002454fe60674fa2} 
+Area2D Interactable.\+Area\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_interactable_8cs_source_l00012}{12}} of file \mbox{\hyperlink{_interactable_8cs_source}{Interactable.\+cs}}.
+
+
+
+Referenced by \mbox{\hyperlink{_interactable_8cs_source_l00032}{\+\_\+\+Process()}}, and \mbox{\hyperlink{_interactable_8cs_source_l00021}{\+\_\+\+Ready()}}.
+
+\Hypertarget{class_interactable_ad74422b51f60ffb81566d0259d829aa1}\index{Interactable@{Interactable}!Player@{Player}}
+\index{Player@{Player}!Interactable@{Interactable}}
+\doxysubsubsection{\texorpdfstring{Player}{Player}}
+{\footnotesize\ttfamily \label{class_interactable_ad74422b51f60ffb81566d0259d829aa1} 
+\mbox{\hyperlink{class_player}{Player}} Interactable.\+Player\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_interactable_8cs_source_l00009}{9}} of file \mbox{\hyperlink{_interactable_8cs_source}{Interactable.\+cs}}.
+
+\Hypertarget{class_interactable_a7158399e380702b55704d19dc1c07f12}\index{Interactable@{Interactable}!PopUp@{PopUp}}
+\index{PopUp@{PopUp}!Interactable@{Interactable}}
+\doxysubsubsection{\texorpdfstring{PopUp}{PopUp}}
+{\footnotesize\ttfamily \label{class_interactable_a7158399e380702b55704d19dc1c07f12} 
+Control Interactable.\+Pop\+Up\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_interactable_8cs_source_l00011}{11}} of file \mbox{\hyperlink{_interactable_8cs_source}{Interactable.\+cs}}.
+
+
+
+Referenced by \mbox{\hyperlink{_interactable_8cs_source_l00021}{\+\_\+\+Ready()}}.
+
+\Hypertarget{class_interactable_a61892e9f2a38c92f2b3bd12efed3a22d}\index{Interactable@{Interactable}!TextLabel@{TextLabel}}
+\index{TextLabel@{TextLabel}!Interactable@{Interactable}}
+\doxysubsubsection{\texorpdfstring{TextLabel}{TextLabel}}
+{\footnotesize\ttfamily \label{class_interactable_a61892e9f2a38c92f2b3bd12efed3a22d} 
+Rich\+Text\+Label Interactable.\+Text\+Label\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_interactable_8cs_source_l00010}{10}} of file \mbox{\hyperlink{_interactable_8cs_source}{Interactable.\+cs}}.
+
+
+
+Referenced by \mbox{\hyperlink{_interactable_8cs_source_l00032}{\+\_\+\+Process()}}, \mbox{\hyperlink{_interactable_8cs_source_l00021}{\+\_\+\+Ready()}}, and \mbox{\hyperlink{_interactable_8cs_source_l00050}{On\+Area\+Body\+Exited()}}.
+
+
+
+\doxysubsection{Property Documentation}
+\Hypertarget{class_interactable_a2bc5775aa05c0e143cdb196cf06296d1}\index{Interactable@{Interactable}!Text@{Text}}
+\index{Text@{Text}!Interactable@{Interactable}}
+\doxysubsubsection{\texorpdfstring{Text}{Text}}
+{\footnotesize\ttfamily \label{class_interactable_a2bc5775aa05c0e143cdb196cf06296d1} 
+String Interactable.\+Text\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_interactable_8cs_source_l00015}{15}} of file \mbox{\hyperlink{_interactable_8cs_source}{Interactable.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00015\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{_interactable_8cs_source_l00032}{\+\_\+\+Process()}}.
+
+
+
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/\+Youssef/\+Desktop/\+UNI/\+S4/\+Computerspiel\+Entwicklung/\+Das\+Spiel/anfaengerpraktikum/scripts/Interactable.\+cs\end{DoxyCompactItemize}
+C\+:/\+Users/\+Youssef/\+Desktop/\+UNI/\+S4/\+Computerspiel\+Entwicklung/\+Das\+Spiel/anfaengerpraktikum/scripts/\mbox{\hyperlink{_interactable_8cs}{Interactable.\+cs}}\end{DoxyCompactItemize}

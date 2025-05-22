@@ -19,13 +19,16 @@ override void \mbox{\hyperlink{class_main_menu_background_af1ec3357af6dcb87856ed
 \doxysubsubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_main_menu_background_a9f98d5689cf2bb4aea2d50f113903ef3}\label{class_main_menu_background_a9f98d5689cf2bb4aea2d50f113903ef3} 
-float {\bfseries Scroll\+Speed} = -\/10f
+float \mbox{\hyperlink{class_main_menu_background_a9f98d5689cf2bb4aea2d50f113903ef3}{Scroll\+Speed}} = -\/10f
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 Klasse für die Main\+Menu\+Background-\/\+Animation. 
+
+Definition at line \mbox{\hyperlink{_main_menu_background_8cs_source_l00007}{7}} of file \mbox{\hyperlink{_main_menu_background_8cs_source}{Main\+Menu\+Background.\+cs}}.
+
+
 
 \doxysubsection{Member Function Documentation}
 \Hypertarget{class_main_menu_background_af1ec3357af6dcb87856edd294f7e7bdb}\index{MainMenuBackground@{MainMenuBackground}!\_Process@{\_Process}}
@@ -45,6 +48,40 @@ Methode wird in jedem Frame ausgeführt.
 \end{DoxyParams}
 
 
+Definition at line \mbox{\hyperlink{_main_menu_background_8cs_source_l00016}{16}} of file \mbox{\hyperlink{_main_menu_background_8cs_source}{Main\+Menu\+Background.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ X\ =\ GetMotionOffset().X;}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ X\ +=\ \mbox{\hyperlink{class_main_menu_background_a9f98d5689cf2bb4aea2d50f113903ef3}{ScrollSpeed}}\ *\ (float)\ DeltaTime;}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ SetMotionOffset(\textcolor{keyword}{new}\ Vector2(X,0));}
+\DoxyCodeLine{00020\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_main_menu_background_8cs_source_l00010}{Scroll\+Speed}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_main_menu_background_a9f98d5689cf2bb4aea2d50f113903ef3}\index{MainMenuBackground@{MainMenuBackground}!ScrollSpeed@{ScrollSpeed}}
+\index{ScrollSpeed@{ScrollSpeed}!MainMenuBackground@{MainMenuBackground}}
+\doxysubsubsection{\texorpdfstring{ScrollSpeed}{ScrollSpeed}}
+{\footnotesize\ttfamily \label{class_main_menu_background_a9f98d5689cf2bb4aea2d50f113903ef3} 
+float Main\+Menu\+Background.\+Scroll\+Speed = -\/10f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_main_menu_background_8cs_source_l00010}{10}} of file \mbox{\hyperlink{_main_menu_background_8cs_source}{Main\+Menu\+Background.\+cs}}.
+
+
+
+Referenced by \mbox{\hyperlink{_main_menu_background_8cs_source_l00016}{\+\_\+\+Process()}}.
+
+
+
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/\+Youssef/\+Desktop/\+UNI/\+S4/\+Computerspiel\+Entwicklung/\+Das\+Spiel/anfaengerpraktikum/scripts/Main\+Menu\+Background.\+cs\end{DoxyCompactItemize}
+C\+:/\+Users/\+Youssef/\+Desktop/\+UNI/\+S4/\+Computerspiel\+Entwicklung/\+Das\+Spiel/anfaengerpraktikum/scripts/\mbox{\hyperlink{_main_menu_background_8cs}{Main\+Menu\+Background.\+cs}}\end{DoxyCompactItemize}

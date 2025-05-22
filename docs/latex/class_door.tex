@@ -14,26 +14,21 @@ Inheritance diagram for Door\+:\begin{figure}[H]
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_door_acdbb6f0657a0a9e1e3ab0ed1dfaca9fa}\label{class_door_acdbb6f0657a0a9e1e3ab0ed1dfaca9fa} 
-override void {\bfseries \+\_\+\+Ready} ()
+override void \mbox{\hyperlink{class_door_acdbb6f0657a0a9e1e3ab0ed1dfaca9fa}{\+\_\+\+Ready}} ()
 \begin{DoxyCompactList}\small\item\em Initialisierung der Node Spawn. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_door_a290c3dafcd3a048d4a5869033bc7a98f}\label{class_door_a290c3dafcd3a048d4a5869033bc7a98f} 
-Node {\bfseries Spawn}
+Node \mbox{\hyperlink{class_door_a290c3dafcd3a048d4a5869033bc7a98f}{Spawn}}
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_door_a75837f996fd6f3c4deb6bf37065c7207}\label{class_door_a75837f996fd6f3c4deb6bf37065c7207} 
-string {\bfseries Destination\+Level\+Tag}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+string \mbox{\hyperlink{class_door_a75837f996fd6f3c4deb6bf37065c7207}{Destination\+Level\+Tag}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \item 
-\Hypertarget{class_door_a4fe67fb3f6df67823b01168ba2031667}\label{class_door_a4fe67fb3f6df67823b01168ba2031667} 
-string {\bfseries Destination\+Door\+Tag}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+string \mbox{\hyperlink{class_door_a4fe67fb3f6df67823b01168ba2031667}{Destination\+Door\+Tag}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \item 
-\Hypertarget{class_door_a4f26c87ed2646e120c5a53f7688ea1c3}\label{class_door_a4f26c87ed2646e120c5a53f7688ea1c3} 
-string {\bfseries Spawn\+Direction} = "{}up"{}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+string \mbox{\hyperlink{class_door_a4f26c87ed2646e120c5a53f7688ea1c3}{Spawn\+Direction}} = "{}up"{}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
@@ -47,7 +42,36 @@ Klasse für die Tür.
 
 Die Klasse ist für den Wechsel zwischen den Levels zuständig. 
 
+Definition at line \mbox{\hyperlink{_door_8cs_source_l00008}{8}} of file \mbox{\hyperlink{_door_8cs_source}{Door.\+cs}}.
+
+
+
 \doxysubsection{Member Function Documentation}
+\Hypertarget{class_door_acdbb6f0657a0a9e1e3ab0ed1dfaca9fa}\index{Door@{Door}!\_Ready@{\_Ready}}
+\index{\_Ready@{\_Ready}!Door@{Door}}
+\doxysubsubsection{\texorpdfstring{\_Ready()}{\_Ready()}}
+{\footnotesize\ttfamily \label{class_door_acdbb6f0657a0a9e1e3ab0ed1dfaca9fa} 
+override void Door.\+\_\+\+Ready (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Initialisierung der Node Spawn. 
+
+
+
+Definition at line \mbox{\hyperlink{_door_8cs_source_l00026}{26}} of file \mbox{\hyperlink{_door_8cs_source}{Door.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00027\ \ \ \ \ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_door_a290c3dafcd3a048d4a5869033bc7a98f}{Spawn}}\ =\ GetNode(\textcolor{stringliteral}{"{}Spawn"{}});}
+\DoxyCodeLine{00029\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_door_8cs_source_l00010}{Spawn}}.
+
 \Hypertarget{class_door_abbb28ab791faecda19ca1add4209c768}\index{Door@{Door}!OnPlayerBodyEntered@{OnPlayerBodyEntered}}
 \index{OnPlayerBodyEntered@{OnPlayerBodyEntered}!Door@{Door}}
 \doxysubsubsection{\texorpdfstring{OnPlayerBodyEntered()}{OnPlayerBodyEntered()}}
@@ -65,6 +89,102 @@ Diese Funktion wird aufgerufen, wenn der \doxylink{class_player}{Player} die Tü
 \end{DoxyParams}
 
 
+Definition at line \mbox{\hyperlink{_door_8cs_source_l00036}{36}} of file \mbox{\hyperlink{_door_8cs_source}{Door.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00037\ \ \ \ \ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (body\ is\ \mbox{\hyperlink{class_player}{Player}}\ player)}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ var\ \mbox{\hyperlink{class_navigation_manager}{NavigationManager}}\ =\ GetNode<NavigationManager>(\textcolor{stringliteral}{"{}/root/NavigationManager"{}});}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_navigation_manager}{NavigationManager}}.\mbox{\hyperlink{class_navigation_manager_a5966bab1490d10dfc285507a0c8d8bb7}{GoToLevel}}(\mbox{\hyperlink{class_door_a75837f996fd6f3c4deb6bf37065c7207}{DestinationLevelTag}},\ \mbox{\hyperlink{class_door_a4fe67fb3f6df67823b01168ba2031667}{DestinationDoorTag}});}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00043\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_door_8cs_source_l00016}{Destination\+Door\+Tag}}, \mbox{\hyperlink{_door_8cs_source_l00013}{Destination\+Level\+Tag}}, and \mbox{\hyperlink{_navigation_manager_8cs_source_l00041}{Navigation\+Manager.\+Go\+To\+Level()}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_door_a290c3dafcd3a048d4a5869033bc7a98f}\index{Door@{Door}!Spawn@{Spawn}}
+\index{Spawn@{Spawn}!Door@{Door}}
+\doxysubsubsection{\texorpdfstring{Spawn}{Spawn}}
+{\footnotesize\ttfamily \label{class_door_a290c3dafcd3a048d4a5869033bc7a98f} 
+Node Door.\+Spawn}
+
+
+
+Definition at line \mbox{\hyperlink{_door_8cs_source_l00010}{10}} of file \mbox{\hyperlink{_door_8cs_source}{Door.\+cs}}.
+
+
+
+Referenced by \mbox{\hyperlink{_door_8cs_source_l00026}{\+\_\+\+Ready()}}.
+
+
+
+\doxysubsection{Property Documentation}
+\Hypertarget{class_door_a4fe67fb3f6df67823b01168ba2031667}\index{Door@{Door}!DestinationDoorTag@{DestinationDoorTag}}
+\index{DestinationDoorTag@{DestinationDoorTag}!Door@{Door}}
+\doxysubsubsection{\texorpdfstring{DestinationDoorTag}{DestinationDoorTag}}
+{\footnotesize\ttfamily \label{class_door_a4fe67fb3f6df67823b01168ba2031667} 
+string Door.\+Destination\+Door\+Tag\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \mbox{\hyperlink{_door_8cs_source_l00016}{16}} of file \mbox{\hyperlink{_door_8cs_source}{Door.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{_door_8cs_source_l00036}{On\+Player\+Body\+Entered()}}.
+
+\Hypertarget{class_door_a75837f996fd6f3c4deb6bf37065c7207}\index{Door@{Door}!DestinationLevelTag@{DestinationLevelTag}}
+\index{DestinationLevelTag@{DestinationLevelTag}!Door@{Door}}
+\doxysubsubsection{\texorpdfstring{DestinationLevelTag}{DestinationLevelTag}}
+{\footnotesize\ttfamily \label{class_door_a75837f996fd6f3c4deb6bf37065c7207} 
+string Door.\+Destination\+Level\+Tag\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \mbox{\hyperlink{_door_8cs_source_l00013}{13}} of file \mbox{\hyperlink{_door_8cs_source}{Door.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00013\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{_door_8cs_source_l00036}{On\+Player\+Body\+Entered()}}.
+
+\Hypertarget{class_door_a4f26c87ed2646e120c5a53f7688ea1c3}\index{Door@{Door}!SpawnDirection@{SpawnDirection}}
+\index{SpawnDirection@{SpawnDirection}!Door@{Door}}
+\doxysubsubsection{\texorpdfstring{SpawnDirection}{SpawnDirection}}
+{\footnotesize\ttfamily \label{class_door_a4f26c87ed2646e120c5a53f7688ea1c3} 
+string Door.\+Spawn\+Direction = "{}up"{}\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \mbox{\hyperlink{_door_8cs_source_l00019}{19}} of file \mbox{\hyperlink{_door_8cs_source}{Door.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00019\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{stringliteral}{"{}up"{}};}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{_level_manager_8cs_source_l00036}{Level\+Manager.\+On\+Level\+Spawn()}}.
+
+
+
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/\+Youssef/\+Desktop/\+UNI/\+S4/\+Computerspiel\+Entwicklung/\+Das\+Spiel/anfaengerpraktikum/scripts/Door.\+cs\end{DoxyCompactItemize}
+C\+:/\+Users/\+Youssef/\+Desktop/\+UNI/\+S4/\+Computerspiel\+Entwicklung/\+Das\+Spiel/anfaengerpraktikum/scripts/\mbox{\hyperlink{_door_8cs}{Door.\+cs}}\end{DoxyCompactItemize}

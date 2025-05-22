@@ -102,9 +102,8 @@ Inheritance diagram for HealthBar:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a639f11c646a0a7de99cbcf4db7574d99" id="r_a639f11c646a0a7de99cbcf4db7574d99"><td class="memItemLeft" align="right" valign="top"><a id="a639f11c646a0a7de99cbcf4db7574d99" name="a639f11c646a0a7de99cbcf4db7574d99"></a>
-override void&#160;</td><td class="memItemRight" valign="bottom"><b>_Ready</b> ()</td></tr>
-<tr class="memdesc:a639f11c646a0a7de99cbcf4db7574d99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialisiert die <a class="el" href="class_health_bar.html" title="Klasse für die Gesundheitsleiste des Spielers. Synchronisiert die Anzeige der HealthBar mit den Leben...">HealthBar</a> und verbindet sie mit den Lebenspunkten des Spielers. Lädt den Spieler-Knoten und setzt die maximale und aktuelle Gesundheit in der <a class="el" href="class_health_bar.html" title="Klasse für die Gesundheitsleiste des Spielers. Synchronisiert die Anzeige der HealthBar mit den Leben...">HealthBar</a>. <br /></td></tr>
+<tr class="memitem:a639f11c646a0a7de99cbcf4db7574d99" id="r_a639f11c646a0a7de99cbcf4db7574d99"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a639f11c646a0a7de99cbcf4db7574d99">_Ready</a> ()</td></tr>
+<tr class="memdesc:a639f11c646a0a7de99cbcf4db7574d99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialisiert die <a class="el" href="class_health_bar.html" title="Klasse für die Gesundheitsleiste des Spielers. Synchronisiert die Anzeige der HealthBar mit den Leben...">HealthBar</a> und verbindet sie mit den Lebenspunkten des Spielers. Lädt den Spieler-Knoten und setzt die maximale und aktuelle Gesundheit in der <a class="el" href="class_health_bar.html" title="Klasse für die Gesundheitsleiste des Spielers. Synchronisiert die Anzeige der HealthBar mit den Leben...">HealthBar</a>.  <br /></td></tr>
 <tr class="separator:a639f11c646a0a7de99cbcf4db7574d99"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4ddfe77d80ebfa7a4268cabd2c4b1282" id="r_a4ddfe77d80ebfa7a4268cabd2c4b1282"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4ddfe77d80ebfa7a4268cabd2c4b1282">_Process</a> (double DeltaTime)</td></tr>
 <tr class="memdesc:a4ddfe77d80ebfa7a4268cabd2c4b1282"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aktualisiert die <a class="el" href="class_health_bar.html" title="Klasse für die Gesundheitsleiste des Spielers. Synchronisiert die Anzeige der HealthBar mit den Leben...">HealthBar</a> in jedem Frame. Synchronisiert die Anzeige der aktuellen Lebenspunkte mit den Werten des Spielers.  <br /></td></tr>
@@ -112,6 +111,8 @@ override void&#160;</td><td class="memItemRight" valign="bottom"><b>_Ready</b> (
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Klasse für die Gesundheitsleiste des Spielers. Synchronisiert die Anzeige der <a class="el" href="class_health_bar.html" title="Klasse für die Gesundheitsleiste des Spielers. Synchronisiert die Anzeige der HealthBar mit den Leben...">HealthBar</a> mit den Lebenspunkten des Spielers. </p>
+
+<p class="definition">Definition at line <a class="el" href="_health_bar_8cs_source.html#l00007">7</a> of file <a class="el" href="_health_bar_8cs_source.html">HealthBar.cs</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a4ddfe77d80ebfa7a4268cabd2c4b1282" name="a4ddfe77d80ebfa7a4268cabd2c4b1282"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4ddfe77d80ebfa7a4268cabd2c4b1282">&#9670;&#160;</a></span>_Process()</h2>
@@ -144,10 +145,58 @@ override void&#160;</td><td class="memItemRight" valign="bottom"><b>_Ready</b> (
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="_health_bar_8cs_source.html#l00024">24</a> of file <a class="el" href="_health_bar_8cs_source.html">HealthBar.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   24</span>                                                    {</div>
+<div class="line"><span class="lineno">   25</span>        <span class="comment">// Aktualisiere den Wert der HealthBar basierend auf der aktuellen Gesundheit des Spielers</span></div>
+<div class="line"><span class="lineno">   26</span>        Value = <a class="code hl_class" href="class_player_stats.html">PlayerStats</a>.<a class="code hl_property" href="class_player_stats.html#adeb667dbe2c1a76d1785ce07b6faf181">Instance</a>.<a class="code hl_function" href="class_player_stats.html#a0ec1075ba0983a3df42454b110194c0d">GetCurrentHealth</a>();</div>
+<div class="line"><span class="lineno">   27</span>    }</div>
+<div class="ttc" id="aclass_player_stats_html"><div class="ttname"><a href="class_player_stats.html">PlayerStats</a></div><div class="ttdoc">Klasse für die Spielerstats.</div><div class="ttdef"><b>Definition</b> <a href="_player_stats_8cs_source.html#l00007">PlayerStats.cs:8</a></div></div>
+<div class="ttc" id="aclass_player_stats_html_a0ec1075ba0983a3df42454b110194c0d"><div class="ttname"><a href="class_player_stats.html#a0ec1075ba0983a3df42454b110194c0d">PlayerStats.GetCurrentHealth</a></div><div class="ttdeci">float GetCurrentHealth()</div><div class="ttdoc">Gibt die aktuellen Lebenspunkte des Spielers zurück.</div><div class="ttdef"><b>Definition</b> <a href="_player_stats_8cs_source.html#l00139">PlayerStats.cs:139</a></div></div>
+<div class="ttc" id="aclass_player_stats_html_adeb667dbe2c1a76d1785ce07b6faf181"><div class="ttname"><a href="class_player_stats.html#adeb667dbe2c1a76d1785ce07b6faf181">PlayerStats.Instance</a></div><div class="ttdeci">static PlayerStats Instance</div><div class="ttdef"><b>Definition</b> <a href="_player_stats_8cs_source.html#l00010">PlayerStats.cs:10</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="_player_stats_8cs_source.html#l00139">PlayerStats.GetCurrentHealth()</a>, and <a class="el" href="_player_stats_8cs_source.html#l00010">PlayerStats.Instance</a>.</p>
+
+</div>
+</div>
+<a id="a639f11c646a0a7de99cbcf4db7574d99" name="a639f11c646a0a7de99cbcf4db7574d99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a639f11c646a0a7de99cbcf4db7574d99">&#9670;&#160;</a></span>_Ready()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">override void HealthBar._Ready </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initialisiert die <a class="el" href="class_health_bar.html" title="Klasse für die Gesundheitsleiste des Spielers. Synchronisiert die Anzeige der HealthBar mit den Leben...">HealthBar</a> und verbindet sie mit den Lebenspunkten des Spielers. Lädt den Spieler-Knoten und setzt die maximale und aktuelle Gesundheit in der <a class="el" href="class_health_bar.html" title="Klasse für die Gesundheitsleiste des Spielers. Synchronisiert die Anzeige der HealthBar mit den Leben...">HealthBar</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="_health_bar_8cs_source.html#l00013">13</a> of file <a class="el" href="_health_bar_8cs_source.html">HealthBar.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   13</span>                                  {</div>
+<div class="line"><span class="lineno">   14</span>        <span class="comment">// Setze die maximale Gesundheit der HealthBar basierend auf der Spieler-MaxHealth</span></div>
+<div class="line"><span class="lineno">   15</span>        MaxValue = <a class="code hl_class" href="class_player_stats.html">PlayerStats</a>.<a class="code hl_property" href="class_player_stats.html#adeb667dbe2c1a76d1785ce07b6faf181">Instance</a>.<a class="code hl_function" href="class_player_stats.html#a6a24773d00e75be9747b99681ac76127">GetMaxHealthPoints</a>();</div>
+<div class="line"><span class="lineno">   16</span>        Value = <a class="code hl_class" href="class_player_stats.html">PlayerStats</a>.<a class="code hl_property" href="class_player_stats.html#adeb667dbe2c1a76d1785ce07b6faf181">Instance</a>.<a class="code hl_function" href="class_player_stats.html#a0ec1075ba0983a3df42454b110194c0d">GetCurrentHealth</a>();</div>
+<div class="line"><span class="lineno">   17</span>    }</div>
+<div class="ttc" id="aclass_player_stats_html_a6a24773d00e75be9747b99681ac76127"><div class="ttname"><a href="class_player_stats.html#a6a24773d00e75be9747b99681ac76127">PlayerStats.GetMaxHealthPoints</a></div><div class="ttdeci">float GetMaxHealthPoints()</div><div class="ttdoc">Gibt die maximalen Lebenspunkte des Spielers zurück.</div><div class="ttdef"><b>Definition</b> <a href="_player_stats_8cs_source.html#l00122">PlayerStats.cs:122</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="_player_stats_8cs_source.html#l00139">PlayerStats.GetCurrentHealth()</a>, <a class="el" href="_player_stats_8cs_source.html#l00122">PlayerStats.GetMaxHealthPoints()</a>, and <a class="el" href="_player_stats_8cs_source.html#l00010">PlayerStats.Instance</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>C:/Users/Youssef/Desktop/UNI/S4/ComputerspielEntwicklung/DasSpiel/anfaengerpraktikum/scripts/<b>HealthBar.cs</b></li>
+<li>C:/Users/Youssef/Desktop/UNI/S4/ComputerspielEntwicklung/DasSpiel/anfaengerpraktikum/scripts/<a class="el" href="_health_bar_8cs_source.html">HealthBar.cs</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

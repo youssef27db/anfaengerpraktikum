@@ -9,8 +9,7 @@ Inheritance diagram for Checkpoint\+:\begin{figure}[H]
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_checkpoint_a11140b9e346dc3b47423d3900467bc85}\label{class_checkpoint_a11140b9e346dc3b47423d3900467bc85} 
-override void {\bfseries \+\_\+\+Ready} ()
+override void \mbox{\hyperlink{class_checkpoint_a11140b9e346dc3b47423d3900467bc85}{\+\_\+\+Ready}} ()
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
@@ -20,12 +19,36 @@ void \mbox{\hyperlink{class_checkpoint_a1edb44ccaab350249bc760360777a04b}{On\+Pl
 \doxysubsubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_checkpoint_ab67a462d06793fca7e9bd2b15d332432}\label{class_checkpoint_ab67a462d06793fca7e9bd2b15d332432} 
-\mbox{\hyperlink{class_player}{Player}} {\bfseries Player}
+\mbox{\hyperlink{class_player}{Player}} \mbox{\hyperlink{class_checkpoint_ab67a462d06793fca7e9bd2b15d332432}{Player}}
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_checkpoint_8cs_source_l00004}{4}} of file \mbox{\hyperlink{_checkpoint_8cs_source}{Checkpoint.\+cs}}.
+
+
+
 \doxysubsection{Member Function Documentation}
+\Hypertarget{class_checkpoint_a11140b9e346dc3b47423d3900467bc85}\index{Checkpoint@{Checkpoint}!\_Ready@{\_Ready}}
+\index{\_Ready@{\_Ready}!Checkpoint@{Checkpoint}}
+\doxysubsubsection{\texorpdfstring{\_Ready()}{\_Ready()}}
+{\footnotesize\ttfamily \label{class_checkpoint_a11140b9e346dc3b47423d3900467bc85} 
+override void Checkpoint.\+\_\+\+Ready (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_checkpoint_8cs_source_l00013}{13}} of file \mbox{\hyperlink{_checkpoint_8cs_source}{Checkpoint.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00014\ \ \ \ \ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Zugriff\ auf\ Player\ Node}}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player}{Player}}\ =\ GetNode<Player>(\textcolor{stringliteral}{"{}../Player"{}});}
+\DoxyCodeLine{00017\ \ \ \ \ \}}
+
+\end{DoxyCode}
 \Hypertarget{class_checkpoint_a1edb44ccaab350249bc760360777a04b}\index{Checkpoint@{Checkpoint}!OnPlayerBodyEntered@{OnPlayerBodyEntered}}
 \index{OnPlayerBodyEntered@{OnPlayerBodyEntered}!Checkpoint@{Checkpoint}}
 \doxysubsubsection{\texorpdfstring{OnPlayerBodyEntered()}{OnPlayerBodyEntered()}}
@@ -34,6 +57,49 @@ void Checkpoint.\+On\+Player\+Body\+Entered (\begin{DoxyParamCaption}\item[{Node
 
 Prüfen ob der Körper, der den \doxylink{class_checkpoint}{Checkpoint} betritt, ein \doxylink{class_player}{Player} ist Wenn ja, dann wird der \doxylink{class_checkpoint}{Checkpoint} als Spawnpoint gesetzt
 
+Definition at line \mbox{\hyperlink{_checkpoint_8cs_source_l00023}{23}} of file \mbox{\hyperlink{_checkpoint_8cs_source}{Checkpoint.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00024\ \ \ \ \ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (body\ is\ \mbox{\hyperlink{class_player}{Player}}\ \mbox{\hyperlink{class_player}{Player}})}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Setzen\ des\ Spawnpoints}}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_stats}{PlayerStats}}\ \mbox{\hyperlink{class_player_stats}{PlayerStats}}\ =\ GetNode<PlayerStats>(\textcolor{stringliteral}{"{}/root/PlayerStats"{}});}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_a147af1b1e37f6506303caca28b60f9e4}{SetSpawnPoint}}(this.GlobalPosition);}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player}{Player}}.\mbox{\hyperlink{class_player_a750d1c5325522c39d232332349e4d2d2}{MaxHeal}}();}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_ab341f12827a6bdcfebb826dff43e82e3}{SetStamina}}(\mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_a7e27ea7ba3c266ecfa446c070415180a}{GetMaxStamina}}());}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player}{Player}}.\mbox{\hyperlink{class_player_ab04e4301a26dacc4e1d178d1b7d1d872}{GetBloodVials}}().\mbox{\hyperlink{class_blood_vial_a31a53feef846bd962bd5b525b0bc5c6c}{ResetUses}}();}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ GD.Print(\textcolor{stringliteral}{"{}Spawnpoint\ des\ Players\ gesetzt\ auf:\ "{}},\ this.GlobalPosition);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_a7ec692981c45e933c737eff8d78e6456}{SetRespawnLevelTag}}(GetParent().Name);}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ GD.Print(\textcolor{stringliteral}{"{}RespawnLevelTag\ des\ Players\ gesetzt\ auf:\ "{}},\ GetParent().Name);}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ GD.Print(\mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_ad868bae6deb062dbcc4702b276a27041}{GetRespawnLevelTag}}());}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_player_8cs_source_l00383}{Player.\+Get\+Blood\+Vials()}}, \mbox{\hyperlink{_player_stats_8cs_source_l00165}{Player\+Stats.\+Get\+Max\+Stamina()}}, \mbox{\hyperlink{_player_stats_8cs_source_l00040}{Player\+Stats.\+Get\+Respawn\+Level\+Tag()}}, \mbox{\hyperlink{_player_stats_8cs_source_l00010}{Player\+Stats.\+Instance}}, \mbox{\hyperlink{_player_8cs_source_l00280}{Player.\+Max\+Heal()}}, \mbox{\hyperlink{_blood_vial_8cs_source_l00031}{Blood\+Vial.\+Reset\+Uses()}}, \mbox{\hyperlink{_player_stats_8cs_source_l00048}{Player\+Stats.\+Set\+Respawn\+Level\+Tag()}}, \mbox{\hyperlink{_player_stats_8cs_source_l00072}{Player\+Stats.\+Set\+Spawn\+Point()}}, and \mbox{\hyperlink{_player_stats_8cs_source_l00173}{Player\+Stats.\+Set\+Stamina()}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_checkpoint_ab67a462d06793fca7e9bd2b15d332432}\index{Checkpoint@{Checkpoint}!Player@{Player}}
+\index{Player@{Player}!Checkpoint@{Checkpoint}}
+\doxysubsubsection{\texorpdfstring{Player}{Player}}
+{\footnotesize\ttfamily \label{class_checkpoint_ab67a462d06793fca7e9bd2b15d332432} 
+\mbox{\hyperlink{class_player}{Player}} Checkpoint.\+Player\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_checkpoint_8cs_source_l00008}{8}} of file \mbox{\hyperlink{_checkpoint_8cs_source}{Checkpoint.\+cs}}.
+
+
+
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/\+Youssef/\+Desktop/\+UNI/\+S4/\+Computerspiel\+Entwicklung/\+Das\+Spiel/anfaengerpraktikum/scripts/Checkpoint.\+cs\end{DoxyCompactItemize}
+C\+:/\+Users/\+Youssef/\+Desktop/\+UNI/\+S4/\+Computerspiel\+Entwicklung/\+Das\+Spiel/anfaengerpraktikum/scripts/\mbox{\hyperlink{_checkpoint_8cs}{Checkpoint.\+cs}}\end{DoxyCompactItemize}

@@ -26,6 +26,10 @@ void \mbox{\hyperlink{class_level_manager_a2bb47b7b35e478b95173a4cebe474c44}{On\
 \doxysubsection{Detailed Description}
 Klasse für den \doxylink{class_level_manager}{Level\+Manager} Diese Klasse verwaltet den Levelwechsel und die Spielerpositionierung. 
 
+Definition at line \mbox{\hyperlink{_level_manager_8cs_source_l00007}{7}} of file \mbox{\hyperlink{_level_manager_8cs_source}{Level\+Manager.\+cs}}.
+
+
+
 \doxysubsection{Member Function Documentation}
 \Hypertarget{class_level_manager_a4b888380e2821900c4234746114081e8}\index{LevelManager@{LevelManager}!\_Ready@{\_Ready}}
 \index{\_Ready@{\_Ready}!LevelManager@{LevelManager}}
@@ -37,7 +41,32 @@ override void Level\+Manager.\+\_\+\+Ready (\begin{DoxyParamCaption}{}{}\end{Dox
 
 Initialisierung der Referenzen. Findet die relevanten Knoten in der Szene und weist sie zu. 
 
-Wenn ein Spawn-\/\+Tag gesetzt ist, wird der Spieler an die entsprechende Tür gesetzt. Dies wird verwendet, um den Spieler an eine bestimmte Tür zu setzen, wenn er von einem anderen Level aus spawnt.\Hypertarget{class_level_manager_a2bb47b7b35e478b95173a4cebe474c44}\index{LevelManager@{LevelManager}!OnLevelSpawn@{OnLevelSpawn}}
+Wenn ein Spawn-\/\+Tag gesetzt ist, wird der Spieler an die entsprechende Tür gesetzt. Dies wird verwendet, um den Spieler an eine bestimmte Tür zu setzen, wenn er von einem anderen Level aus spawnt.
+
+Definition at line \mbox{\hyperlink{_level_manager_8cs_source_l00013}{13}} of file \mbox{\hyperlink{_level_manager_8cs_source}{Level\+Manager.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00014\ \ \ \ \ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ var\ \mbox{\hyperlink{class_navigation_manager}{NavigationManager}}\ =\ GetNode<NavigationManager>(\textcolor{stringliteral}{"{}/root/NavigationManager"{}});}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_navigation_manager}{NavigationManager}}.\mbox{\hyperlink{class_navigation_manager_a5aa88986fee7cfcf701e424e333b6980}{SpawnDoorTag}}\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_level_manager_a2bb47b7b35e478b95173a4cebe474c44}{OnLevelSpawn}}(\mbox{\hyperlink{class_navigation_manager}{NavigationManager}}.\mbox{\hyperlink{class_navigation_manager_a5aa88986fee7cfcf701e424e333b6980}{SpawnDoorTag}});}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_navigation_manager}{NavigationManager}}.CallDeferred(\textcolor{stringliteral}{"{}TriggerPlayerSpawn"{}},\ \mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_a77ca820f184b31dd9590bc8613f8566e}{GetPosition}}(),\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_player_stats_8cs_source_l00096}{Player\+Stats.\+Get\+Position()}}, \mbox{\hyperlink{_player_stats_8cs_source_l00010}{Player\+Stats.\+Instance}}, \mbox{\hyperlink{_level_manager_8cs_source_l00036}{On\+Level\+Spawn()}}, and \mbox{\hyperlink{_navigation_manager_8cs_source_l00019}{Navigation\+Manager.\+Spawn\+Door\+Tag}}.
+
+\Hypertarget{class_level_manager_a2bb47b7b35e478b95173a4cebe474c44}\index{LevelManager@{LevelManager}!OnLevelSpawn@{OnLevelSpawn}}
 \index{OnLevelSpawn@{OnLevelSpawn}!LevelManager@{LevelManager}}
 \doxysubsubsection{\texorpdfstring{OnLevelSpawn()}{OnLevelSpawn()}}
 {\footnotesize\ttfamily \label{class_level_manager_a2bb47b7b35e478b95173a4cebe474c44} 
@@ -54,6 +83,32 @@ Wird aufgerufen, wenn ein neues Level geladen wird.
 \end{DoxyParams}
 
 
+Definition at line \mbox{\hyperlink{_level_manager_8cs_source_l00036}{36}} of file \mbox{\hyperlink{_level_manager_8cs_source}{Level\+Manager.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00037\ \ \ \ \ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ var\ \mbox{\hyperlink{class_navigation_manager}{NavigationManager}}\ =\ GetNode<NavigationManager>(\textcolor{stringliteral}{"{}/root/NavigationManager"{}});}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Pfad\ zur\ Tür\ basierend\ auf\ dem\ Ziel-\/Tag\ erstellen}}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ DoorPath\ =\ \textcolor{stringliteral}{"{}Doors/Door\_"{}}\ +\ DestinationTag;}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_door}{Door}}\ door\ =\ GetNode<Door>(DoorPath);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ TriggerPlayerSpawn\ nach\ deferred\ ausführen}}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_navigation_manager}{NavigationManager}}.CallDeferred(\textcolor{stringliteral}{"{}TriggerPlayerSpawn"{}},\ door.GlobalPosition,\ door.\mbox{\hyperlink{class_door_a4f26c87ed2646e120c5a53f7688ea1c3}{SpawnDirection}});}
+\DoxyCodeLine{00046\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_door_8cs_source_l00019}{Door.\+Spawn\+Direction}}.
+
+
+
+Referenced by \mbox{\hyperlink{_level_manager_8cs_source_l00013}{\+\_\+\+Ready()}}.
+
+
+
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/\+Youssef/\+Desktop/\+UNI/\+S4/\+Computerspiel\+Entwicklung/\+Das\+Spiel/anfaengerpraktikum/scripts/Level\+Manager.\+cs\end{DoxyCompactItemize}
+C\+:/\+Users/\+Youssef/\+Desktop/\+UNI/\+S4/\+Computerspiel\+Entwicklung/\+Das\+Spiel/anfaengerpraktikum/scripts/\mbox{\hyperlink{_level_manager_8cs}{Level\+Manager.\+cs}}\end{DoxyCompactItemize}

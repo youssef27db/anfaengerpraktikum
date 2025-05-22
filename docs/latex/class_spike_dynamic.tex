@@ -21,28 +21,27 @@ override void \mbox{\hyperlink{class_spike_dynamic_a5a70ae1fc75e8df382aa0f575fe5
 \doxysubsubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_spike_dynamic_a425d2b136ce23709eee38f3089937835}\label{class_spike_dynamic_a425d2b136ce23709eee38f3089937835} 
-void {\bfseries On\+Player\+Body\+Entered} (Node body)
+void \mbox{\hyperlink{class_spike_dynamic_a425d2b136ce23709eee38f3089937835}{On\+Player\+Body\+Entered}} (Node body)
 \begin{DoxyCompactList}\small\item\em Prüfen ob der Körper den \doxylink{class_spike}{Spike} betritt falls ja wird der Timer gestartet und der Spieler nimmt Schaden. \end{DoxyCompactList}\item 
-\Hypertarget{class_spike_dynamic_a8a5de6384efa84a5824137882ec91cd3}\label{class_spike_dynamic_a8a5de6384efa84a5824137882ec91cd3} 
-void {\bfseries On\+Player\+Body\+Exited} (Node body)
+void \mbox{\hyperlink{class_spike_dynamic_a8a5de6384efa84a5824137882ec91cd3}{On\+Player\+Body\+Exited}} (Node body)
 \begin{DoxyCompactList}\small\item\em Prüfen ob der Körper den \doxylink{class_spike}{Spike} verlässt, falls ja wird der Timer gestoppt und der Spieler nimmt keinen Schaden mehr. \end{DoxyCompactList}\item 
-\Hypertarget{class_spike_dynamic_a167cdf30da17b600acdc5f65776b72d9}\label{class_spike_dynamic_a167cdf30da17b600acdc5f65776b72d9} 
-void {\bfseries On\+Timer\+Timeout} ()
+void \mbox{\hyperlink{class_spike_dynamic_a167cdf30da17b600acdc5f65776b72d9}{On\+Timer\+Timeout}} ()
 \begin{DoxyCompactList}\small\item\em Timer Timeout Methode, die den Schaden an den Spieler übergibt. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_spike_dynamic_a351d3912c15bd50af5a14bb8cfb9f604}\label{class_spike_dynamic_a351d3912c15bd50af5a14bb8cfb9f604} 
-\mbox{\hyperlink{class_player}{Player}} {\bfseries Player}
+\mbox{\hyperlink{class_player}{Player}} \mbox{\hyperlink{class_spike_dynamic_a351d3912c15bd50af5a14bb8cfb9f604}{Player}}
 \item 
-\Hypertarget{class_spike_dynamic_a748bbe11938b029221313ef57ac47520}\label{class_spike_dynamic_a748bbe11938b029221313ef57ac47520} 
-float {\bfseries Damage} = 10f
+float \mbox{\hyperlink{class_spike_dynamic_a748bbe11938b029221313ef57ac47520}{Damage}} = 10f
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 Klasse für die beweglichen Spikes. 
+
+Definition at line \mbox{\hyperlink{_spike_dynamic_8cs_source_l00007}{7}} of file \mbox{\hyperlink{_spike_dynamic_8cs_source}{Spike\+Dynamic.\+cs}}.
+
+
 
 \doxysubsection{Member Function Documentation}
 \Hypertarget{class_spike_dynamic_a5a70ae1fc75e8df382aa0f575fe5403b}\index{SpikeDynamic@{SpikeDynamic}!\_Ready@{\_Ready}}
@@ -55,7 +54,20 @@ override void Spike\+Dynamic.\+\_\+\+Ready (\begin{DoxyParamCaption}{}{}\end{Dox
 
 Initialisierung der Node \doxylink{class_player}{Player}. 
 
-Hier wird der \doxylink{class_player}{Player} Node gefunden \Hypertarget{class_spike_dynamic_a9c3e59009a1e875146bcb29853ab7e75}\index{SpikeDynamic@{SpikeDynamic}!GetDamage@{GetDamage}}
+Hier wird der \doxylink{class_player}{Player} Node gefunden 
+
+Definition at line \mbox{\hyperlink{_spike_dynamic_8cs_source_l00020}{20}} of file \mbox{\hyperlink{_spike_dynamic_8cs_source}{Spike\+Dynamic.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00021\ \ \ \ \ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Zugriff\ auf\ Player\ Node}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player}{Player}}\ =\ GetNode<Player>(\textcolor{stringliteral}{"{}../../../Player"{}});}
+\DoxyCodeLine{00025\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_spike_dynamic_a9c3e59009a1e875146bcb29853ab7e75}\index{SpikeDynamic@{SpikeDynamic}!GetDamage@{GetDamage}}
 \index{GetDamage@{GetDamage}!SpikeDynamic@{SpikeDynamic}}
 \doxysubsubsection{\texorpdfstring{GetDamage()}{GetDamage()}}
 {\footnotesize\ttfamily \label{class_spike_dynamic_a9c3e59009a1e875146bcb29853ab7e75} 
@@ -70,6 +82,143 @@ Gibt ein \doxylink{class_damage}{Damage} Objekt zurück.
 \end{DoxyReturn}
 
 
+Definition at line \mbox{\hyperlink{_spike_dynamic_8cs_source_l00071}{71}} of file \mbox{\hyperlink{_spike_dynamic_8cs_source}{Spike\+Dynamic.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00072\ \ \ \ \ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_spike_dynamic_a748bbe11938b029221313ef57ac47520}{Damage}}(0,\ \mbox{\hyperlink{class_damage}{Damage}},\ Vector2.Zero,\ \textcolor{keyword}{this});}
+\DoxyCodeLine{00074\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_spike_dynamic_8cs_source_l00013}{Damage}}.
+
+
+
+Referenced by \mbox{\hyperlink{_spike_dynamic_8cs_source_l00030}{On\+Player\+Body\+Entered()}}, and \mbox{\hyperlink{_spike_dynamic_8cs_source_l00060}{On\+Timer\+Timeout()}}.
+
+\Hypertarget{class_spike_dynamic_a425d2b136ce23709eee38f3089937835}\index{SpikeDynamic@{SpikeDynamic}!OnPlayerBodyEntered@{OnPlayerBodyEntered}}
+\index{OnPlayerBodyEntered@{OnPlayerBodyEntered}!SpikeDynamic@{SpikeDynamic}}
+\doxysubsubsection{\texorpdfstring{OnPlayerBodyEntered()}{OnPlayerBodyEntered()}}
+{\footnotesize\ttfamily \label{class_spike_dynamic_a425d2b136ce23709eee38f3089937835} 
+void Spike\+Dynamic.\+On\+Player\+Body\+Entered (\begin{DoxyParamCaption}\item[{Node}]{body}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Prüfen ob der Körper den \doxylink{class_spike}{Spike} betritt falls ja wird der Timer gestartet und der Spieler nimmt Schaden. 
+
+
+
+Definition at line \mbox{\hyperlink{_spike_dynamic_8cs_source_l00030}{30}} of file \mbox{\hyperlink{_spike_dynamic_8cs_source}{Spike\+Dynamic.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00031\ \ \ \ \ \{}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (body\ is\ \mbox{\hyperlink{class_player}{Player}})}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player}{Player}}\ =\ (\mbox{\hyperlink{class_spike_dynamic_a351d3912c15bd50af5a14bb8cfb9f604}{Player}})body;\ \textcolor{comment}{//\ Instanzvariable\ setzen\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player}{Player}}.\mbox{\hyperlink{class_player_aa1a0addae97cec09d2e86f3060a05438}{TakeDamage}}(\mbox{\hyperlink{class_spike_dynamic_a9c3e59009a1e875146bcb29853ab7e75}{GetDamage}}());}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player}{Player}}.\mbox{\hyperlink{class_player_a0a59dfe03d542fa98f28f4c4eaa49a75}{SlowPlayer}}(0.5f);}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ GetNode<Timer>(\textcolor{stringliteral}{"{}StaticBody2D/Area2D/Timer"{}}).Start();}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ GD.Print(\textcolor{stringliteral}{"{}Player\ entered\ spike"{}});}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_spike_dynamic_8cs_source_l00071}{Get\+Damage()}}, \mbox{\hyperlink{_spike_dynamic_8cs_source_l00010}{Player}}, \mbox{\hyperlink{_player_8cs_source_l00365}{Player.\+Slow\+Player()}}, and \mbox{\hyperlink{_player_8cs_source_l00289}{Player.\+Take\+Damage()}}.
+
+\Hypertarget{class_spike_dynamic_a8a5de6384efa84a5824137882ec91cd3}\index{SpikeDynamic@{SpikeDynamic}!OnPlayerBodyExited@{OnPlayerBodyExited}}
+\index{OnPlayerBodyExited@{OnPlayerBodyExited}!SpikeDynamic@{SpikeDynamic}}
+\doxysubsubsection{\texorpdfstring{OnPlayerBodyExited()}{OnPlayerBodyExited()}}
+{\footnotesize\ttfamily \label{class_spike_dynamic_a8a5de6384efa84a5824137882ec91cd3} 
+void Spike\+Dynamic.\+On\+Player\+Body\+Exited (\begin{DoxyParamCaption}\item[{Node}]{body}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Prüfen ob der Körper den \doxylink{class_spike}{Spike} verlässt, falls ja wird der Timer gestoppt und der Spieler nimmt keinen Schaden mehr. 
+
+
+
+Definition at line \mbox{\hyperlink{_spike_dynamic_8cs_source_l00048}{48}} of file \mbox{\hyperlink{_spike_dynamic_8cs_source}{Spike\+Dynamic.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00049\ \ \ \ \ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (body\ is\ \mbox{\hyperlink{class_player}{Player}})}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player}{Player}}\ =\ \textcolor{keyword}{null};\ \textcolor{comment}{//\ Instanzvariable\ zurücksetzen}}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ GetNode<Timer>(\textcolor{stringliteral}{"{}StaticBody2D/Area2D/Timer"{}}).Stop();}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00055\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_spike_dynamic_a167cdf30da17b600acdc5f65776b72d9}\index{SpikeDynamic@{SpikeDynamic}!OnTimerTimeout@{OnTimerTimeout}}
+\index{OnTimerTimeout@{OnTimerTimeout}!SpikeDynamic@{SpikeDynamic}}
+\doxysubsubsection{\texorpdfstring{OnTimerTimeout()}{OnTimerTimeout()}}
+{\footnotesize\ttfamily \label{class_spike_dynamic_a167cdf30da17b600acdc5f65776b72d9} 
+void Spike\+Dynamic.\+On\+Timer\+Timeout (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Timer Timeout Methode, die den Schaden an den Spieler übergibt. 
+
+
+
+Definition at line \mbox{\hyperlink{_spike_dynamic_8cs_source_l00060}{60}} of file \mbox{\hyperlink{_spike_dynamic_8cs_source}{Spike\+Dynamic.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00061\ \ \ \ \ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ GD.Print(\textcolor{stringliteral}{"{}Timer\ timeout"{}});}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player}{Player}}.\mbox{\hyperlink{class_player_aa1a0addae97cec09d2e86f3060a05438}{TakeDamage}}(\mbox{\hyperlink{class_spike_dynamic_a9c3e59009a1e875146bcb29853ab7e75}{GetDamage}}());}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ GetNode<Timer>(\textcolor{stringliteral}{"{}StaticBody2D/Area2D/Timer"{}}).Start();}
+\DoxyCodeLine{00065\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_spike_dynamic_8cs_source_l00071}{Get\+Damage()}}, and \mbox{\hyperlink{_player_8cs_source_l00289}{Player.\+Take\+Damage()}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_spike_dynamic_a748bbe11938b029221313ef57ac47520}\index{SpikeDynamic@{SpikeDynamic}!Damage@{Damage}}
+\index{Damage@{Damage}!SpikeDynamic@{SpikeDynamic}}
+\doxysubsubsection{\texorpdfstring{Damage}{Damage}}
+{\footnotesize\ttfamily \label{class_spike_dynamic_a748bbe11938b029221313ef57ac47520} 
+float Spike\+Dynamic.\+Damage = 10f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_spike_dynamic_8cs_source_l00013}{13}} of file \mbox{\hyperlink{_spike_dynamic_8cs_source}{Spike\+Dynamic.\+cs}}.
+
+
+
+Referenced by \mbox{\hyperlink{_spike_dynamic_8cs_source_l00071}{Get\+Damage()}}.
+
+\Hypertarget{class_spike_dynamic_a351d3912c15bd50af5a14bb8cfb9f604}\index{SpikeDynamic@{SpikeDynamic}!Player@{Player}}
+\index{Player@{Player}!SpikeDynamic@{SpikeDynamic}}
+\doxysubsubsection{\texorpdfstring{Player}{Player}}
+{\footnotesize\ttfamily \label{class_spike_dynamic_a351d3912c15bd50af5a14bb8cfb9f604} 
+\mbox{\hyperlink{class_player}{Player}} Spike\+Dynamic.\+Player\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_spike_dynamic_8cs_source_l00010}{10}} of file \mbox{\hyperlink{_spike_dynamic_8cs_source}{Spike\+Dynamic.\+cs}}.
+
+
+
+Referenced by \mbox{\hyperlink{_spike_dynamic_8cs_source_l00030}{On\+Player\+Body\+Entered()}}.
+
+
+
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/\+Youssef/\+Desktop/\+UNI/\+S4/\+Computerspiel\+Entwicklung/\+Das\+Spiel/anfaengerpraktikum/scripts/Spike\+Dynamic.\+cs\end{DoxyCompactItemize}
+C\+:/\+Users/\+Youssef/\+Desktop/\+UNI/\+S4/\+Computerspiel\+Entwicklung/\+Das\+Spiel/anfaengerpraktikum/scripts/\mbox{\hyperlink{_spike_dynamic_8cs}{Spike\+Dynamic.\+cs}}\end{DoxyCompactItemize}

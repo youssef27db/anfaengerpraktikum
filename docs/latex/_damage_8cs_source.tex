@@ -1,0 +1,38 @@
+\doxysection{Damage.\+cs}
+\hypertarget{_damage_8cs_source}{}\label{_damage_8cs_source}\index{C:/Users/Youssef/Desktop/UNI/S4/ComputerspielEntwicklung/DasSpiel/anfaengerpraktikum/scripts/Damage.cs@{C:/Users/Youssef/Desktop/UNI/S4/ComputerspielEntwicklung/DasSpiel/anfaengerpraktikum/scripts/Damage.cs}}
+\mbox{\hyperlink{_damage_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_damage_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }Godot;}
+\DoxyCodeLine{\Hypertarget{_damage_8cs_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_damage_8cs_source_l00007}\mbox{\hyperlink{class_damage}{00007}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_damage}{Damage}}\{}
+\DoxyCodeLine{\Hypertarget{_damage_8cs_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_damage_8cs_source_l00009}\mbox{\hyperlink{class_damage_ae934748940559be5348b29b2d66a4949}{00009}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_damage_ae934748940559be5348b29b2d66a4949}{PhysicalDMG}};}
+\DoxyCodeLine{\Hypertarget{_damage_8cs_source_l00010}\mbox{\hyperlink{class_damage_a35802df99cc5bb93d22e9e7c5b039f9a}{00010}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_damage_a35802df99cc5bb93d22e9e7c5b039f9a}{TrueDMG}};}
+\DoxyCodeLine{\Hypertarget{_damage_8cs_source_l00011}\mbox{\hyperlink{class_damage_ab3c892c04820406c50102d9471d0fc9d}{00011}}\ \ \ \ \ \textcolor{keyword}{private}\ Vector2\ \mbox{\hyperlink{class_damage_ab3c892c04820406c50102d9471d0fc9d}{PushAmount}};}
+\DoxyCodeLine{\Hypertarget{_damage_8cs_source_l00012}\mbox{\hyperlink{class_damage_a97ac7df60d926ce18242bba40e5d500f}{00012}}\ \ \ \ \ \textcolor{keyword}{private}\ Node2D\ \mbox{\hyperlink{class_damage_a97ac7df60d926ce18242bba40e5d500f}{Source}};}
+\DoxyCodeLine{\Hypertarget{_damage_8cs_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_damage_8cs_source_l00020}\mbox{\hyperlink{class_damage_a078b1c0b6cb42cd0d3c4bf74e3ca4454}{00020}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_damage_a078b1c0b6cb42cd0d3c4bf74e3ca4454}{Damage}}(\textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_damage_ae934748940559be5348b29b2d66a4949}{PhysicalDMG}},\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_damage_a35802df99cc5bb93d22e9e7c5b039f9a}{TrueDMG}},\ Vector2\ \mbox{\hyperlink{class_damage_ab3c892c04820406c50102d9471d0fc9d}{PushAmount}},\ Node2D\ \mbox{\hyperlink{class_damage_a97ac7df60d926ce18242bba40e5d500f}{Source}})\{}
+\DoxyCodeLine{\Hypertarget{_damage_8cs_source_l00021}00021\ \ \ \ \ \ \ \ \ this.PhysicalDMG\ =\ \mbox{\hyperlink{class_damage_ae934748940559be5348b29b2d66a4949}{PhysicalDMG}};}
+\DoxyCodeLine{\Hypertarget{_damage_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ this.TrueDMG\ =\ \mbox{\hyperlink{class_damage_a35802df99cc5bb93d22e9e7c5b039f9a}{TrueDMG}};}
+\DoxyCodeLine{\Hypertarget{_damage_8cs_source_l00023}00023\ \ \ \ \ \ \ \ \ this.PushAmount\ =\ \mbox{\hyperlink{class_damage_ab3c892c04820406c50102d9471d0fc9d}{PushAmount}};}
+\DoxyCodeLine{\Hypertarget{_damage_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ this.Source\ =\ \mbox{\hyperlink{class_damage_a97ac7df60d926ce18242bba40e5d500f}{Source}};}
+\DoxyCodeLine{\Hypertarget{_damage_8cs_source_l00025}00025\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_damage_8cs_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_damage_8cs_source_l00031}\mbox{\hyperlink{class_damage_a084fad418a6be9edca3e3e32355e49c0}{00031}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_damage_a084fad418a6be9edca3e3e32355e49c0}{GetPhysicalDMG}}()\{}
+\DoxyCodeLine{\Hypertarget{_damage_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_damage_ae934748940559be5348b29b2d66a4949}{PhysicalDMG}};}
+\DoxyCodeLine{\Hypertarget{_damage_8cs_source_l00033}00033\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_damage_8cs_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_damage_8cs_source_l00039}\mbox{\hyperlink{class_damage_a4d43580112f089c208f9ba8e0b2559f0}{00039}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_damage_a4d43580112f089c208f9ba8e0b2559f0}{GetTrueDMG}}()\{}
+\DoxyCodeLine{\Hypertarget{_damage_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_damage_a35802df99cc5bb93d22e9e7c5b039f9a}{TrueDMG}};}
+\DoxyCodeLine{\Hypertarget{_damage_8cs_source_l00041}00041\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_damage_8cs_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{_damage_8cs_source_l00047}\mbox{\hyperlink{class_damage_a60741a1e632c21788499ddc284b2844b}{00047}}\ \ \ \ \ \textcolor{keyword}{public}\ Vector2\ \mbox{\hyperlink{class_damage_a60741a1e632c21788499ddc284b2844b}{GetPushAmount}}()\{}
+\DoxyCodeLine{\Hypertarget{_damage_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_damage_ab3c892c04820406c50102d9471d0fc9d}{PushAmount}};}
+\DoxyCodeLine{\Hypertarget{_damage_8cs_source_l00049}00049\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_damage_8cs_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{_damage_8cs_source_l00055}\mbox{\hyperlink{class_damage_ac446ed14eae2ee0d927510a3ab525042}{00055}}\ \ \ \ \ \textcolor{keyword}{public}\ Node2D\ \mbox{\hyperlink{class_damage_ac446ed14eae2ee0d927510a3ab525042}{GetSource}}()\{}
+\DoxyCodeLine{\Hypertarget{_damage_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_damage_a97ac7df60d926ce18242bba40e5d500f}{Source}};}
+\DoxyCodeLine{\Hypertarget{_damage_8cs_source_l00057}00057\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_damage_8cs_source_l00058}00058\ \}}
+
+\end{DoxyCode}

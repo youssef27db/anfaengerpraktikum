@@ -1,8 +1,22 @@
 var searchData=
 [
-  ['damage_0',['Damage',['../class_damage.html',1,'Damage'],['../class_damage.html#a078b1c0b6cb42cd0d3c4bf74e3ca4454',1,'Damage.Damage()']]],
-  ['dashinprogress_1',['DashInProgress',['../class_player.html#aeb354dd739e4fb8af95215e633f2ae30',1,'Player']]],
-  ['deferredchangescene_2',['DeferredChangeScene',['../class_navigation_manager.html#a3d2baed2d27baac07286b561a2338670',1,'NavigationManager']]],
-  ['die_3',['Die',['../class_base_enemy.html#aa5e7d87eaa080ed685315588a39a9f1f',1,'BaseEnemy']]],
-  ['door_4',['Door',['../class_door.html',1,'']]]
+  ['damage_0',['Damage',['../class_damage.html',1,'Damage'],['../class_base_enemy.html#a1661cfbf7e6dff6a1d8a6fa44b10a3b0',1,'BaseEnemy.Damage'],['../class_spike.html#aa6e0e6494eb6bf74afaa7becf33cefe3',1,'Spike.Damage'],['../class_spike_dynamic.html#a748bbe11938b029221313ef57ac47520',1,'SpikeDynamic.Damage'],['../class_damage.html#a078b1c0b6cb42cd0d3c4bf74e3ca4454',1,'Damage.Damage()']]],
+  ['damage_2ecs_1',['Damage.cs',['../_damage_8cs.html',1,'']]],
+  ['dashdirection_2',['DashDirection',['../class_player.html#ad64449e2fb7a7b527d08ce823dc4e2e4',1,'Player']]],
+  ['dasheffect_3',['DashEffect',['../class_player.html#afc303e1e2108345937a0834cb03fee60',1,'Player']]],
+  ['dashinprogress_4',['DashInProgress',['../class_player.html#aeb354dd739e4fb8af95215e633f2ae30',1,'Player']]],
+  ['dashspeed_5',['DashSpeed',['../class_player.html#ad418db551711bceecb6a0f504727ca91',1,'Player']]],
+  ['dashtimer_6',['DashTimer',['../class_player.html#ae1197f00cda479e2e18246010b36fa9d',1,'Player']]],
+  ['dashtrailinterval_7',['DashTrailInterval',['../class_player.html#a33ad87048d2a086b8b74cf2d610aac8e',1,'Player']]],
+  ['dashtrailtimer_8',['DashTrailTimer',['../class_player.html#af96d2cf00ca821528f6624b9d746de79',1,'Player']]],
+  ['dead_9',['Dead',['../class_base_enemy.html#a61314ff2e5931900ca4a87aa8feb670f',1,'BaseEnemy']]],
+  ['deferredchangescene_10',['DeferredChangeScene',['../class_navigation_manager.html#a3d2baed2d27baac07286b561a2338670',1,'NavigationManager']]],
+  ['deletebutton_11',['DeleteButton',['../class_main_menu.html#abcec13116465918e66287ae0ecca2830',1,'MainMenu']]],
+  ['deleteconfirmation_12',['DeleteConfirmation',['../class_main_menu.html#a16b809ac7803c751441cbfc681210818',1,'MainMenu']]],
+  ['destinationdoortag_13',['DestinationDoorTag',['../class_door.html#a4fe67fb3f6df67823b01168ba2031667',1,'Door']]],
+  ['destinationleveltag_14',['DestinationLevelTag',['../class_door.html#a75837f996fd6f3c4deb6bf37065c7207',1,'Door']]],
+  ['die_15',['Die',['../class_base_enemy.html#aa5e7d87eaa080ed685315588a39a9f1f',1,'BaseEnemy']]],
+  ['dock_2ecs_16',['Dock.cs',['../_dock_8cs.html',1,'']]],
+  ['door_17',['Door',['../class_door.html',1,'']]],
+  ['door_2ecs_18',['Door.cs',['../_door_8cs.html',1,'']]]
 ];

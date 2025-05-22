@@ -1,0 +1,33 @@
+\doxysection{GDMUT.\+cs}
+\hypertarget{_g_d_m_u_t_8cs_source}{}\label{_g_d_m_u_t_8cs_source}\index{C:/Users/Youssef/Desktop/UNI/S4/ComputerspielEntwicklung/DasSpiel/anfaengerpraktikum/addons/GDMUT/GDMUT.cs@{C:/Users/Youssef/Desktop/UNI/S4/ComputerspielEntwicklung/DasSpiel/anfaengerpraktikum/addons/GDMUT/GDMUT.cs}}
+\mbox{\hyperlink{_g_d_m_u_t_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_g_d_m_u_t_8cs_source_l00001}00001\ \textcolor{preprocessor}{\#if\ TOOLS}}
+\DoxyCodeLine{\Hypertarget{_g_d_m_u_t_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }Godot;}
+\DoxyCodeLine{\Hypertarget{_g_d_m_u_t_8cs_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_g_d_m_u_t_8cs_source_l00004}00004\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_gd_m_u_t}{GdMUT}};}
+\DoxyCodeLine{\Hypertarget{_g_d_m_u_t_8cs_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{_g_d_m_u_t_8cs_source_l00009}00009\ [Tool]}
+\DoxyCodeLine{\Hypertarget{_g_d_m_u_t_8cs_source_l00010}00010\ \textcolor{keyword}{public}\ \textcolor{keyword}{partial\ class\ }GDMUT\ :\ EditorPlugin}
+\DoxyCodeLine{\Hypertarget{_g_d_m_u_t_8cs_source_l00011}00011\ \{}
+\DoxyCodeLine{\Hypertarget{_g_d_m_u_t_8cs_source_l00012}00012\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ DOCK\_SCENE\ =\ \textcolor{stringliteral}{"{}res://addons/GDMUT/Dock.tscn"{}};}
+\DoxyCodeLine{\Hypertarget{_g_d_m_u_t_8cs_source_l00013}00013\ \ \ \ \ \textcolor{keyword}{private}\ Control\ \_dock;}
+\DoxyCodeLine{\Hypertarget{_g_d_m_u_t_8cs_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{_g_d_m_u_t_8cs_source_l00018}00018\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ \_EnterTree()}
+\DoxyCodeLine{\Hypertarget{_g_d_m_u_t_8cs_source_l00019}00019\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_g_d_m_u_t_8cs_source_l00020}00020\ \ \ \ \ \ \ \ \ base.\_EnterTree();}
+\DoxyCodeLine{\Hypertarget{_g_d_m_u_t_8cs_source_l00021}00021\ \ \ \ \ \ \ \ \ \_dock\ =\ GD.Load<PackedScene>(DOCK\_SCENE).Instantiate<Control>();}
+\DoxyCodeLine{\Hypertarget{_g_d_m_u_t_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ AddControlToDock(DockSlot.RightUl,\ \_dock);}
+\DoxyCodeLine{\Hypertarget{_g_d_m_u_t_8cs_source_l00023}00023\ \ \ \ \ \ \ \ \ GD.Print(\textcolor{stringliteral}{"{}Successfully\ loaded\ GDMUT"{}});}
+\DoxyCodeLine{\Hypertarget{_g_d_m_u_t_8cs_source_l00024}00024\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_g_d_m_u_t_8cs_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_g_d_m_u_t_8cs_source_l00029}00029\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ \_ExitTree()}
+\DoxyCodeLine{\Hypertarget{_g_d_m_u_t_8cs_source_l00030}00030\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_g_d_m_u_t_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ base.\_ExitTree();}
+\DoxyCodeLine{\Hypertarget{_g_d_m_u_t_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ RemoveControlFromDocks(\_dock);}
+\DoxyCodeLine{\Hypertarget{_g_d_m_u_t_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \_dock?.Free();}
+\DoxyCodeLine{\Hypertarget{_g_d_m_u_t_8cs_source_l00034}00034\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_g_d_m_u_t_8cs_source_l00035}00035\ \}}
+\DoxyCodeLine{\Hypertarget{_g_d_m_u_t_8cs_source_l00036}00036\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

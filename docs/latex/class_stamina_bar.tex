@@ -14,8 +14,7 @@ Inheritance diagram for Stamina\+Bar\+:\begin{figure}[H]
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_stamina_bar_af72826b9a2b147aa30cc01b5161b6f2c}\label{class_stamina_bar_af72826b9a2b147aa30cc01b5161b6f2c} 
-override void {\bfseries \+\_\+\+Ready} ()
+override void \mbox{\hyperlink{class_stamina_bar_af72826b9a2b147aa30cc01b5161b6f2c}{\+\_\+\+Ready}} ()
 \begin{DoxyCompactList}\small\item\em Initialisiert die \doxylink{class_stamina_bar}{Stamina\+Bar} und verbindet sie mit der Ausdauer des Spielers. Lädt den Spieler-\/\+Knoten und setzt die maximale und aktuelle Ausdauer in der \doxylink{class_stamina_bar}{Stamina\+Bar}. \end{DoxyCompactList}\item 
 override void \mbox{\hyperlink{class_stamina_bar_aeb7821ae1530077824c987f7c9f7011a}{\+\_\+\+Process}} (double Delta\+Time)
 \begin{DoxyCompactList}\small\item\em Aktualisiert die \doxylink{class_stamina_bar}{Stamina\+Bar} in jedem Frame. Synchronisiert die Anzeige der aktuellen Ausdauer mit den Werten des Spielers. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -23,6 +22,10 @@ override void \mbox{\hyperlink{class_stamina_bar_aeb7821ae1530077824c987f7c9f701
 
 \doxysubsection{Detailed Description}
 Klasse für die Ausdauerleiste des Spielers. Synchronisiert die Anzeige der \doxylink{class_stamina_bar}{Stamina\+Bar} mit der Ausdauer des Spielers. 
+
+Definition at line \mbox{\hyperlink{_stamina_bar_8cs_source_l00007}{7}} of file \mbox{\hyperlink{_stamina_bar_8cs_source}{Stamina\+Bar.\+cs}}.
+
+
 
 \doxysubsection{Member Function Documentation}
 \Hypertarget{class_stamina_bar_aeb7821ae1530077824c987f7c9f7011a}\index{StaminaBar@{StaminaBar}!\_Process@{\_Process}}
@@ -42,6 +45,49 @@ Aktualisiert die \doxylink{class_stamina_bar}{Stamina\+Bar} in jedem Frame. Sync
 \end{DoxyParams}
 
 
+Definition at line \mbox{\hyperlink{_stamina_bar_8cs_source_l00024}{24}} of file \mbox{\hyperlink{_stamina_bar_8cs_source}{Stamina\+Bar.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Aktualisiere\ den\ Wert\ der\ StaminaBar\ basierend\ auf\ der\ aktuellen\ Ausdauer\ des\ Spielers}}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ Value\ =\ \mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_a3a170316e8384ab030f5f697b799a947}{GetStamina}}();}
+\DoxyCodeLine{00027\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_player_stats_8cs_source_l00182}{Player\+Stats.\+Get\+Stamina()}}, and \mbox{\hyperlink{_player_stats_8cs_source_l00010}{Player\+Stats.\+Instance}}.
+
+\Hypertarget{class_stamina_bar_af72826b9a2b147aa30cc01b5161b6f2c}\index{StaminaBar@{StaminaBar}!\_Ready@{\_Ready}}
+\index{\_Ready@{\_Ready}!StaminaBar@{StaminaBar}}
+\doxysubsubsection{\texorpdfstring{\_Ready()}{\_Ready()}}
+{\footnotesize\ttfamily \label{class_stamina_bar_af72826b9a2b147aa30cc01b5161b6f2c} 
+override void Stamina\+Bar.\+\_\+\+Ready (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Initialisiert die \doxylink{class_stamina_bar}{Stamina\+Bar} und verbindet sie mit der Ausdauer des Spielers. Lädt den Spieler-\/\+Knoten und setzt die maximale und aktuelle Ausdauer in der \doxylink{class_stamina_bar}{Stamina\+Bar}. 
+
+
+
+Definition at line \mbox{\hyperlink{_stamina_bar_8cs_source_l00013}{13}} of file \mbox{\hyperlink{_stamina_bar_8cs_source}{Stamina\+Bar.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Setze\ die\ maximale\ Ausdauer\ der\ StaminaBar\ basierend\ auf\ der\ Spieler-\/MaxStamina}}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ MaxValue\ =\ \mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_a7e27ea7ba3c266ecfa446c070415180a}{GetMaxStamina}}();}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ Value\ =\ \mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_a3a170316e8384ab030f5f697b799a947}{GetStamina}}();}
+\DoxyCodeLine{00017\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_player_stats_8cs_source_l00165}{Player\+Stats.\+Get\+Max\+Stamina()}}, \mbox{\hyperlink{_player_stats_8cs_source_l00182}{Player\+Stats.\+Get\+Stamina()}}, and \mbox{\hyperlink{_player_stats_8cs_source_l00010}{Player\+Stats.\+Instance}}.
+
+
+
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/\+Youssef/\+Desktop/\+UNI/\+S4/\+Computerspiel\+Entwicklung/\+Das\+Spiel/anfaengerpraktikum/scripts/Stamina\+Bar.\+cs\end{DoxyCompactItemize}
+C\+:/\+Users/\+Youssef/\+Desktop/\+UNI/\+S4/\+Computerspiel\+Entwicklung/\+Das\+Spiel/anfaengerpraktikum/scripts/\mbox{\hyperlink{_stamina_bar_8cs}{Stamina\+Bar.\+cs}}\end{DoxyCompactItemize}

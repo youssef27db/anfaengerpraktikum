@@ -1,0 +1,102 @@
+\doxysection{Boss1.\+cs}
+\hypertarget{_boss1_8cs_source}{}\label{_boss1_8cs_source}\index{C:/Users/Youssef/Desktop/UNI/S4/ComputerspielEntwicklung/DasSpiel/anfaengerpraktikum/scripts/Boss1.cs@{C:/Users/Youssef/Desktop/UNI/S4/ComputerspielEntwicklung/DasSpiel/anfaengerpraktikum/scripts/Boss1.cs}}
+\mbox{\hyperlink{_boss1_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }Godot;}
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00007}\mbox{\hyperlink{class_boss1}{00007}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{partial\ class\ }\mbox{\hyperlink{class_boss1}{Boss1}}\ :\ \mbox{\hyperlink{class_base_enemy}{BaseEnemy}}\{}
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00009}\mbox{\hyperlink{class_boss1_af34e5a49e4e66b404a0f5ba6e0dcfdf5}{00009}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_boss1_af34e5a49e4e66b404a0f5ba6e0dcfdf5}{EnemiesRevived}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00010}\mbox{\hyperlink{class_boss1_a0a05bef3b6a4852c18ee805f785c8a67}{00010}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_boss1_a0a05bef3b6a4852c18ee805f785c8a67}{RegenCooldown}}\ =\ 5.0f;\ \textcolor{comment}{//\ Zeit,\ nach\ der\ Regeneration\ beginnt,\ wenn\ kein\ Schaden\ genommen\ wurde}}
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00011}\mbox{\hyperlink{class_boss1_a1ffe13684ef66b1ec26b87e728b83cb0}{00011}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_boss1_a1ffe13684ef66b1ec26b87e728b83cb0}{RegenTimer}}\ =\ 0.0f;\ \textcolor{comment}{//\ Timer\ für\ die\ Zeit\ seit\ dem\ letzten\ Angriff}}
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00012}\mbox{\hyperlink{class_boss1_ac698e027fada02bcf0bea5e2c756711c}{00012}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_boss1_ac698e027fada02bcf0bea5e2c756711c}{RegenAmount}}\ =\ 10.0f;\ \textcolor{comment}{//\ Menge\ an\ Gesundheit,\ die\ pro\ Tick\ regeneriert\ wird}}
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00018}\mbox{\hyperlink{class_boss1_a54d969ea1903e38368d64dad18a7f4f7}{00018}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_boss1_a54d969ea1903e38368d64dad18a7f4f7}{\_Ready}}()\{}
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00020}00020\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_base_enemy_aeb1033802e3cdf44b1b0a510cbf18425}{MaxHealthPoints}}\ =\ 400f;}
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00021}00021\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_damage}{Damage}}\ =\ 50f;}
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_base_enemy_a66b9b6f8492753769f40e18e66babe6d}{Armor}}\ =\ 30f;}
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00023}00023\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_base_enemy_a661de31833c943c7d7d72de616a9141a}{Speed}}\ =\ 10f;}
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_base_enemy_afa7426d08cbee4ed3184822c57888ec7}{SinAmount}}\ =\ 100;\ \textcolor{comment}{//\ Bonuspunkte\ für\ Spieler\ beim\ Besiegen\ des\ Bosses}}
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ base.\_Ready();}
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_base_enemy_ad8681385a9f3e9e67d65acb6b945efcf}{CurrentHealthPoints}}\ =\ \mbox{\hyperlink{class_base_enemy_aeb1033802e3cdf44b1b0a510cbf18425}{MaxHealthPoints}};}
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ HealthBar.Value\ =\ 100f\ *\ \mbox{\hyperlink{class_base_enemy_ad8681385a9f3e9e67d65acb6b945efcf}{CurrentHealthPoints}}\ /\ \mbox{\hyperlink{class_base_enemy_aeb1033802e3cdf44b1b0a510cbf18425}{MaxHealthPoints}};}
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00030}00030\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00036}\mbox{\hyperlink{class_boss1_acf5c78871a8938129df05bba3b71780f}{00036}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_boss1_acf5c78871a8938129df05bba3b71780f}{\_Process}}(\textcolor{keywordtype}{double}\ DeltaTime)\{}
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ base.\_Process(DeltaTime);}
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_base_enemy_ad8681385a9f3e9e67d65acb6b945efcf}{CurrentHealthPoints}}\ <=\ \mbox{\hyperlink{class_base_enemy_aeb1033802e3cdf44b1b0a510cbf18425}{MaxHealthPoints}}\ /\ 2\ \&\&\ !\mbox{\hyperlink{class_boss1_af34e5a49e4e66b404a0f5ba6e0dcfdf5}{EnemiesRevived}})\{}
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_boss1_a3028f486f7e9cde1116086a4ae7b810e}{StartGlowing}}();}
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_boss1_aba2c531c46124f21ec612a2acd14cd6c}{ReviveEnemies}}();}
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_boss1_af34e5a49e4e66b404a0f5ba6e0dcfdf5}{EnemiesRevived}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_base_enemy_a66b9b6f8492753769f40e18e66babe6d}{Armor}}\ =\ 60f;\ \textcolor{comment}{//\ Rüstung\ erhöhen}}
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_boss1_adeeb5dafaa8e2f640adba4339b6da0f9}{HandleRegeneration}}(DeltaTime);}
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00047}00047\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00053}\mbox{\hyperlink{class_boss1_adeeb5dafaa8e2f640adba4339b6da0f9}{00053}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_boss1_adeeb5dafaa8e2f640adba4339b6da0f9}{HandleRegeneration}}(\textcolor{keywordtype}{double}\ DeltaTime)\{}
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_base_enemy_ad8681385a9f3e9e67d65acb6b945efcf}{CurrentHealthPoints}}\ <\ \mbox{\hyperlink{class_base_enemy_aeb1033802e3cdf44b1b0a510cbf18425}{MaxHealthPoints}})\{}
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_boss1_a1ffe13684ef66b1ec26b87e728b83cb0}{RegenTimer}}\ +=\ (float)DeltaTime;}
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_boss1_a1ffe13684ef66b1ec26b87e728b83cb0}{RegenTimer}}\ >=\ \mbox{\hyperlink{class_boss1_a0a05bef3b6a4852c18ee805f785c8a67}{RegenCooldown}})\{}
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_base_enemy_ad8681385a9f3e9e67d65acb6b945efcf}{CurrentHealthPoints}}\ =\ Math.Min(\mbox{\hyperlink{class_base_enemy_ad8681385a9f3e9e67d65acb6b945efcf}{CurrentHealthPoints}}\ +\ \mbox{\hyperlink{class_boss1_ac698e027fada02bcf0bea5e2c756711c}{RegenAmount}},\ \mbox{\hyperlink{class_base_enemy_aeb1033802e3cdf44b1b0a510cbf18425}{MaxHealthPoints}});}
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ HealthBar.Value\ =\ 100f\ *\ \mbox{\hyperlink{class_base_enemy_ad8681385a9f3e9e67d65acb6b945efcf}{CurrentHealthPoints}}\ /\ \mbox{\hyperlink{class_base_enemy_aeb1033802e3cdf44b1b0a510cbf18425}{MaxHealthPoints}};}
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_boss1_a1ffe13684ef66b1ec26b87e728b83cb0}{RegenTimer}}\ =\ 0.0f;\ \textcolor{comment}{//\ Timer\ zurücksetzen}}
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00063}00063\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00068}\mbox{\hyperlink{class_boss1_a3028f486f7e9cde1116086a4ae7b810e}{00068}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_boss1_a3028f486f7e9cde1116086a4ae7b810e}{StartGlowing}}()\{}
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Ändere\ die\ Modulationsfarbe\ des\ Sprites,\ um\ ein\ Leuchten\ zu\ simulieren}}
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_base_enemy_a2e4bd99e594a6c3366f64ab47c7443b5}{Sprite}}\ !=\ \textcolor{keyword}{null})\{}
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_boss1_a7f37f00687f7c0e51fde5ba281150091}{ShowPopupMessage}}(\textcolor{stringliteral}{"{}AHHHH!!!"{}});}
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ Sprite.Modulate\ =\ \textcolor{keyword}{new}\ Color(1.0f,\ 0.84f,\ 0.0f,\ 1.0f);\ \textcolor{comment}{//\ Ein\ goldliche\ Leuchteffekt}}
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00074}00074\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00080}\mbox{\hyperlink{class_boss1_a7f37f00687f7c0e51fde5ba281150091}{00080}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_boss1_a7f37f00687f7c0e51fde5ba281150091}{ShowPopupMessage}}(\textcolor{keywordtype}{string}\ Message)\{}
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ Label\ popup\ =\ \textcolor{keyword}{new}\ Label();}
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ popup.Text\ =\ Message;}
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ popup.AddThemeColorOverride(\textcolor{stringliteral}{"{}font\_color"{}},\ \textcolor{keyword}{new}\ Color(1,\ 0,\ 0));\ \textcolor{comment}{//\ Rot}}
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ popup.Modulate\ =\ \textcolor{keyword}{new}\ Color(1,\ 1,\ 1,\ 0);\ \textcolor{comment}{//\ Start\ transparent}}
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ popup.AutowrapMode\ =\ TextServer.AutowrapMode.Word;}
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ popup.SizeFlagsHorizontal\ =\ (Control.SizeFlags)(\textcolor{keywordtype}{int})Control.SizeFlags.ExpandFill;}
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00087}00087\ \ \ \ \ \ \ \ \ popup.SizeFlagsVertical\ =\ (Control.SizeFlags)(\textcolor{keywordtype}{int})Control.SizeFlags.ShrinkCenter;}
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00088}00088\ \ \ \ \ \ \ \ \ popup.HorizontalAlignment\ =\ HorizontalAlignment.Center;}
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ popup.VerticalAlignment\ =\ VerticalAlignment.Center;}
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ Vector2\ bossGlobalPosition\ =\ GetGlobalTransformWithCanvas().Origin;}
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00093}00093\ \ \ \ \ \ \ \ \ popup.GlobalPosition\ =\ bossGlobalPosition\ +\ \textcolor{keyword}{new}\ Vector2(0,\ -\/100);}
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00095}00095\ \ \ \ \ \ \ \ \ CanvasLayer\ canvas\ =\ \textcolor{keyword}{new}\ CanvasLayer();}
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00096}00096\ \ \ \ \ \ \ \ \ AddChild(canvas);}
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00097}00097\ \ \ \ \ \ \ \ \ canvas.AddChild(popup);}
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00098}00098\ }
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00099}00099\ \ \ \ \ \ \ \ \ var\ tween\ =\ CreateTween();}
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00100}00100\ \ \ \ \ \ \ \ \ tween.TweenProperty(popup,\ \textcolor{stringliteral}{"{}modulate:a"{}},\ 1,\ 0.5f).From(0);\ \textcolor{comment}{//\ Einblenden}}
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00101}00101\ \ \ \ \ \ \ \ \ tween.TweenProperty(popup,\ \textcolor{stringliteral}{"{}modulate:a"{}},\ 0,\ 0.5f).From(1).SetDelay(1.0f);\ \textcolor{comment}{//\ Ausblenden\ nach\ 1\ Sekunde}}
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00102}00102\ \ \ \ \ \ \ \ \ tween.Connect(\textcolor{stringliteral}{"{}finished"{}},\ \textcolor{keyword}{new}\ Callable(popup,\ \textcolor{stringliteral}{"{}queue\_free"{}}));}
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00103}00103\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00108}\mbox{\hyperlink{class_boss1_aba2c531c46124f21ec612a2acd14cd6c}{00108}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_boss1_aba2c531c46124f21ec612a2acd14cd6c}{ReviveEnemies}}()}
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00109}00109\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00110}00110\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Hole\ den\ Elternknoten\ (bossRoom)}}
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00111}00111\ \ \ \ \ \ \ \ \ Node\ BossRoom\ =\ GetParent();}
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00113}00113\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Iteriere\ durch\ alle\ Kinder\ von\ bossRoom}}
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00114}00114\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (Node\ Child\ \textcolor{keywordflow}{in}\ BossRoom.GetChildren())\{}
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Child\ is\ \mbox{\hyperlink{class_base_enemy}{BaseEnemy}}\ \mbox{\hyperlink{class_base_enemy}{BaseEnemy}}\ \&\&\ \mbox{\hyperlink{class_base_enemy}{BaseEnemy}}.\mbox{\hyperlink{class_base_enemy_a27c3947769522b35b537e5f472ef0b77}{IsDead}}())\{}
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_base_enemy}{BaseEnemy}}.\mbox{\hyperlink{class_base_enemy_a9ef92c3f73170538681e665e78e2279a}{Respawn}}();}
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00118}00118\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00119}00119\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00120}00120\ \}}
+
+\end{DoxyCode}

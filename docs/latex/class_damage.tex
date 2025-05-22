@@ -8,7 +8,7 @@ Repräsentiert den Schaden, der von Charakteren oder Gegnern verursacht wird. Be
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_damage_a078b1c0b6cb42cd0d3c4bf74e3ca4454}{Damage}} (float Physical\+DMG, float True\+DMG, Vector2 Push\+Amount, Node2D Source)
+\mbox{\hyperlink{class_damage_a078b1c0b6cb42cd0d3c4bf74e3ca4454}{Damage}} (float \mbox{\hyperlink{class_damage_ae934748940559be5348b29b2d66a4949}{Physical\+DMG}}, float \mbox{\hyperlink{class_damage_a35802df99cc5bb93d22e9e7c5b039f9a}{True\+DMG}}, Vector2 \mbox{\hyperlink{class_damage_ab3c892c04820406c50102d9471d0fc9d}{Push\+Amount}}, Node2D \mbox{\hyperlink{class_damage_a97ac7df60d926ce18242bba40e5d500f}{Source}})
 \begin{DoxyCompactList}\small\item\em Konstruktor für die Damage-\/\+Klasse. \end{DoxyCompactList}\item 
 float \mbox{\hyperlink{class_damage_a084fad418a6be9edca3e3e32355e49c0}{Get\+Physical\+DMG}} ()
 \begin{DoxyCompactList}\small\item\em Gibt den physischen Schaden zurück. \end{DoxyCompactList}\item 
@@ -21,22 +21,22 @@ Node2D \mbox{\hyperlink{class_damage_ac446ed14eae2ee0d927510a3ab525042}{Get\+Sou
 \doxysubsubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_damage_ae934748940559be5348b29b2d66a4949}\label{class_damage_ae934748940559be5348b29b2d66a4949} 
-float {\bfseries Physical\+DMG}
+float \mbox{\hyperlink{class_damage_ae934748940559be5348b29b2d66a4949}{Physical\+DMG}}
 \item 
-\Hypertarget{class_damage_a35802df99cc5bb93d22e9e7c5b039f9a}\label{class_damage_a35802df99cc5bb93d22e9e7c5b039f9a} 
-float {\bfseries True\+DMG}
+float \mbox{\hyperlink{class_damage_a35802df99cc5bb93d22e9e7c5b039f9a}{True\+DMG}}
 \item 
-\Hypertarget{class_damage_ab3c892c04820406c50102d9471d0fc9d}\label{class_damage_ab3c892c04820406c50102d9471d0fc9d} 
-Vector2 {\bfseries Push\+Amount}
+Vector2 \mbox{\hyperlink{class_damage_ab3c892c04820406c50102d9471d0fc9d}{Push\+Amount}}
 \item 
-\Hypertarget{class_damage_a97ac7df60d926ce18242bba40e5d500f}\label{class_damage_a97ac7df60d926ce18242bba40e5d500f} 
-Node2D {\bfseries Source}
+Node2D \mbox{\hyperlink{class_damage_a97ac7df60d926ce18242bba40e5d500f}{Source}}
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 Repräsentiert den Schaden, der von Charakteren oder Gegnern verursacht wird. Beinhaltet physischen Schaden, wahren Schaden und den Rückstoßeffekt. 
+
+Definition at line \mbox{\hyperlink{_damage_8cs_source_l00007}{7}} of file \mbox{\hyperlink{_damage_8cs_source}{Damage.\+cs}}.
+
+
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \Hypertarget{class_damage_a078b1c0b6cb42cd0d3c4bf74e3ca4454}\index{Damage@{Damage}!Damage@{Damage}}
@@ -60,6 +60,24 @@ Konstruktor für die Damage-\/\+Klasse.
 \end{DoxyParams}
 
 
+Definition at line \mbox{\hyperlink{_damage_8cs_source_l00020}{20}} of file \mbox{\hyperlink{_damage_8cs_source}{Damage.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ this.PhysicalDMG\ =\ \mbox{\hyperlink{class_damage_ae934748940559be5348b29b2d66a4949}{PhysicalDMG}};}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ this.TrueDMG\ =\ \mbox{\hyperlink{class_damage_a35802df99cc5bb93d22e9e7c5b039f9a}{TrueDMG}};}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ this.PushAmount\ =\ \mbox{\hyperlink{class_damage_ab3c892c04820406c50102d9471d0fc9d}{PushAmount}};}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ this.Source\ =\ \mbox{\hyperlink{class_damage_a97ac7df60d926ce18242bba40e5d500f}{Source}};}
+\DoxyCodeLine{00025\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_damage_8cs_source_l00009}{Physical\+DMG}}, \mbox{\hyperlink{_damage_8cs_source_l00011}{Push\+Amount}}, \mbox{\hyperlink{_damage_8cs_source_l00012}{Source}}, and \mbox{\hyperlink{_damage_8cs_source_l00010}{True\+DMG}}.
+
+
+
 \doxysubsection{Member Function Documentation}
 \Hypertarget{class_damage_a084fad418a6be9edca3e3e32355e49c0}\index{Damage@{Damage}!GetPhysicalDMG@{GetPhysicalDMG}}
 \index{GetPhysicalDMG@{GetPhysicalDMG}!Damage@{Damage}}
@@ -74,6 +92,25 @@ Gibt den physischen Schaden zurück.
 \begin{DoxyReturn}{Returns}
 Der physische Schaden. 
 \end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_damage_8cs_source_l00031}{31}} of file \mbox{\hyperlink{_damage_8cs_source}{Damage.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_damage_ae934748940559be5348b29b2d66a4949}{PhysicalDMG}};}
+\DoxyCodeLine{00033\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_damage_8cs_source_l00009}{Physical\+DMG}}.
+
+
+
+Referenced by \mbox{\hyperlink{_base_enemy_8cs_source_l00245}{Base\+Enemy.\+Take\+Damage()}}, and \mbox{\hyperlink{_player_8cs_source_l00289}{Player.\+Take\+Damage()}}.
+
 \Hypertarget{class_damage_a60741a1e632c21788499ddc284b2844b}\index{Damage@{Damage}!GetPushAmount@{GetPushAmount}}
 \index{GetPushAmount@{GetPushAmount}!Damage@{Damage}}
 \doxysubsubsection{\texorpdfstring{GetPushAmount()}{GetPushAmount()}}
@@ -87,6 +124,25 @@ Gibt den Rückstoßvektor zurück.
 \begin{DoxyReturn}{Returns}
 Der Rückstoßvektor. 
 \end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_damage_8cs_source_l00047}{47}} of file \mbox{\hyperlink{_damage_8cs_source}{Damage.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_damage_ab3c892c04820406c50102d9471d0fc9d}{PushAmount}};}
+\DoxyCodeLine{00049\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_damage_8cs_source_l00011}{Push\+Amount}}.
+
+
+
+Referenced by \mbox{\hyperlink{_base_enemy_8cs_source_l00245}{Base\+Enemy.\+Take\+Damage()}}, and \mbox{\hyperlink{_player_8cs_source_l00289}{Player.\+Take\+Damage()}}.
+
 \Hypertarget{class_damage_ac446ed14eae2ee0d927510a3ab525042}\index{Damage@{Damage}!GetSource@{GetSource}}
 \index{GetSource@{GetSource}!Damage@{Damage}}
 \doxysubsubsection{\texorpdfstring{GetSource()}{GetSource()}}
@@ -100,6 +156,25 @@ Gibt die Ursache zurück.
 \begin{DoxyReturn}{Returns}
 Die Ursache. 
 \end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_damage_8cs_source_l00055}{55}} of file \mbox{\hyperlink{_damage_8cs_source}{Damage.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_damage_a97ac7df60d926ce18242bba40e5d500f}{Source}};}
+\DoxyCodeLine{00057\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_damage_8cs_source_l00012}{Source}}.
+
+
+
+Referenced by \mbox{\hyperlink{_base_enemy_8cs_source_l00245}{Base\+Enemy.\+Take\+Damage()}}.
+
 \Hypertarget{class_damage_a4d43580112f089c208f9ba8e0b2559f0}\index{Damage@{Damage}!GetTrueDMG@{GetTrueDMG}}
 \index{GetTrueDMG@{GetTrueDMG}!Damage@{Damage}}
 \doxysubsubsection{\texorpdfstring{GetTrueDMG()}{GetTrueDMG()}}
@@ -115,6 +190,84 @@ Der wahre Schaden.
 \end{DoxyReturn}
 
 
+Definition at line \mbox{\hyperlink{_damage_8cs_source_l00039}{39}} of file \mbox{\hyperlink{_damage_8cs_source}{Damage.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_damage_a35802df99cc5bb93d22e9e7c5b039f9a}{TrueDMG}};}
+\DoxyCodeLine{00041\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_damage_8cs_source_l00010}{True\+DMG}}.
+
+
+
+Referenced by \mbox{\hyperlink{_base_enemy_8cs_source_l00245}{Base\+Enemy.\+Take\+Damage()}}, and \mbox{\hyperlink{_player_8cs_source_l00289}{Player.\+Take\+Damage()}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_damage_ae934748940559be5348b29b2d66a4949}\index{Damage@{Damage}!PhysicalDMG@{PhysicalDMG}}
+\index{PhysicalDMG@{PhysicalDMG}!Damage@{Damage}}
+\doxysubsubsection{\texorpdfstring{PhysicalDMG}{PhysicalDMG}}
+{\footnotesize\ttfamily \label{class_damage_ae934748940559be5348b29b2d66a4949} 
+float Damage.\+Physical\+DMG\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_damage_8cs_source_l00009}{9}} of file \mbox{\hyperlink{_damage_8cs_source}{Damage.\+cs}}.
+
+
+
+Referenced by \mbox{\hyperlink{_damage_8cs_source_l00020}{Damage()}}, and \mbox{\hyperlink{_damage_8cs_source_l00031}{Get\+Physical\+DMG()}}.
+
+\Hypertarget{class_damage_ab3c892c04820406c50102d9471d0fc9d}\index{Damage@{Damage}!PushAmount@{PushAmount}}
+\index{PushAmount@{PushAmount}!Damage@{Damage}}
+\doxysubsubsection{\texorpdfstring{PushAmount}{PushAmount}}
+{\footnotesize\ttfamily \label{class_damage_ab3c892c04820406c50102d9471d0fc9d} 
+Vector2 Damage.\+Push\+Amount\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_damage_8cs_source_l00011}{11}} of file \mbox{\hyperlink{_damage_8cs_source}{Damage.\+cs}}.
+
+
+
+Referenced by \mbox{\hyperlink{_damage_8cs_source_l00020}{Damage()}}, and \mbox{\hyperlink{_damage_8cs_source_l00047}{Get\+Push\+Amount()}}.
+
+\Hypertarget{class_damage_a97ac7df60d926ce18242bba40e5d500f}\index{Damage@{Damage}!Source@{Source}}
+\index{Source@{Source}!Damage@{Damage}}
+\doxysubsubsection{\texorpdfstring{Source}{Source}}
+{\footnotesize\ttfamily \label{class_damage_a97ac7df60d926ce18242bba40e5d500f} 
+Node2D Damage.\+Source\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_damage_8cs_source_l00012}{12}} of file \mbox{\hyperlink{_damage_8cs_source}{Damage.\+cs}}.
+
+
+
+Referenced by \mbox{\hyperlink{_damage_8cs_source_l00020}{Damage()}}, and \mbox{\hyperlink{_damage_8cs_source_l00055}{Get\+Source()}}.
+
+\Hypertarget{class_damage_a35802df99cc5bb93d22e9e7c5b039f9a}\index{Damage@{Damage}!TrueDMG@{TrueDMG}}
+\index{TrueDMG@{TrueDMG}!Damage@{Damage}}
+\doxysubsubsection{\texorpdfstring{TrueDMG}{TrueDMG}}
+{\footnotesize\ttfamily \label{class_damage_a35802df99cc5bb93d22e9e7c5b039f9a} 
+float Damage.\+True\+DMG\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_damage_8cs_source_l00010}{10}} of file \mbox{\hyperlink{_damage_8cs_source}{Damage.\+cs}}.
+
+
+
+Referenced by \mbox{\hyperlink{_damage_8cs_source_l00020}{Damage()}}, and \mbox{\hyperlink{_damage_8cs_source_l00039}{Get\+True\+DMG()}}.
+
+
+
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/\+Youssef/\+Desktop/\+UNI/\+S4/\+Computerspiel\+Entwicklung/\+Das\+Spiel/anfaengerpraktikum/scripts/Damage.\+cs\end{DoxyCompactItemize}
+C\+:/\+Users/\+Youssef/\+Desktop/\+UNI/\+S4/\+Computerspiel\+Entwicklung/\+Das\+Spiel/anfaengerpraktikum/scripts/\mbox{\hyperlink{_damage_8cs}{Damage.\+cs}}\end{DoxyCompactItemize}

@@ -1,0 +1,39 @@
+\doxysection{Door.\+cs}
+\hypertarget{_door_8cs_source}{}\label{_door_8cs_source}\index{C:/Users/Youssef/Desktop/UNI/S4/ComputerspielEntwicklung/DasSpiel/anfaengerpraktikum/scripts/Door.cs@{C:/Users/Youssef/Desktop/UNI/S4/ComputerspielEntwicklung/DasSpiel/anfaengerpraktikum/scripts/Door.cs}}
+\mbox{\hyperlink{_door_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_door_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }Godot;}
+\DoxyCodeLine{\Hypertarget{_door_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_door_8cs_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_door_8cs_source_l00008}\mbox{\hyperlink{class_door}{00008}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{partial\ class\ }\mbox{\hyperlink{class_door}{Door}}\ :\ Area2D}
+\DoxyCodeLine{\Hypertarget{_door_8cs_source_l00009}00009\ \{}
+\DoxyCodeLine{\Hypertarget{_door_8cs_source_l00010}\mbox{\hyperlink{class_door_a290c3dafcd3a048d4a5869033bc7a98f}{00010}}\ \ \ \ \ \textcolor{keyword}{public}\ Node\ \mbox{\hyperlink{class_door_a290c3dafcd3a048d4a5869033bc7a98f}{Spawn}};}
+\DoxyCodeLine{\Hypertarget{_door_8cs_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_door_8cs_source_l00012}00012\ \ \ \ \ [Export]}
+\DoxyCodeLine{\Hypertarget{_door_8cs_source_l00013}\mbox{\hyperlink{class_door_a75837f996fd6f3c4deb6bf37065c7207}{00013}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_door_a75837f996fd6f3c4deb6bf37065c7207}{DestinationLevelTag}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_door_8cs_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{_door_8cs_source_l00015}00015\ \ \ \ \ [Export]}
+\DoxyCodeLine{\Hypertarget{_door_8cs_source_l00016}\mbox{\hyperlink{class_door_a4fe67fb3f6df67823b01168ba2031667}{00016}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_door_a4fe67fb3f6df67823b01168ba2031667}{DestinationDoorTag}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_door_8cs_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{_door_8cs_source_l00018}00018\ \ \ \ \ [Export]}
+\DoxyCodeLine{\Hypertarget{_door_8cs_source_l00019}\mbox{\hyperlink{class_door_a4f26c87ed2646e120c5a53f7688ea1c3}{00019}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_door_a4f26c87ed2646e120c5a53f7688ea1c3}{SpawnDirection}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{stringliteral}{"{}up"{}};}
+\DoxyCodeLine{\Hypertarget{_door_8cs_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{_door_8cs_source_l00021}00021\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_door_8cs_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{_door_8cs_source_l00026}\mbox{\hyperlink{class_door_acdbb6f0657a0a9e1e3ab0ed1dfaca9fa}{00026}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_door_acdbb6f0657a0a9e1e3ab0ed1dfaca9fa}{\_Ready}}()}
+\DoxyCodeLine{\Hypertarget{_door_8cs_source_l00027}00027\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_door_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_door_a290c3dafcd3a048d4a5869033bc7a98f}{Spawn}}\ =\ GetNode(\textcolor{stringliteral}{"{}Spawn"{}});}
+\DoxyCodeLine{\Hypertarget{_door_8cs_source_l00029}00029\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_door_8cs_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_door_8cs_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_door_8cs_source_l00036}\mbox{\hyperlink{class_door_abbb28ab791faecda19ca1add4209c768}{00036}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_door_abbb28ab791faecda19ca1add4209c768}{OnPlayerBodyEntered}}(Node\ body)}
+\DoxyCodeLine{\Hypertarget{_door_8cs_source_l00037}00037\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_door_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (body\ is\ \mbox{\hyperlink{class_player}{Player}}\ player)}
+\DoxyCodeLine{\Hypertarget{_door_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_door_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ var\ \mbox{\hyperlink{class_navigation_manager}{NavigationManager}}\ =\ GetNode<NavigationManager>(\textcolor{stringliteral}{"{}/root/NavigationManager"{}});}
+\DoxyCodeLine{\Hypertarget{_door_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_navigation_manager}{NavigationManager}}.\mbox{\hyperlink{class_navigation_manager_a5966bab1490d10dfc285507a0c8d8bb7}{GoToLevel}}(\mbox{\hyperlink{class_door_a75837f996fd6f3c4deb6bf37065c7207}{DestinationLevelTag}},\ \mbox{\hyperlink{class_door_a4fe67fb3f6df67823b01168ba2031667}{DestinationDoorTag}});}
+\DoxyCodeLine{\Hypertarget{_door_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_door_8cs_source_l00043}00043\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_door_8cs_source_l00044}00044\ \}}
+
+\end{DoxyCode}

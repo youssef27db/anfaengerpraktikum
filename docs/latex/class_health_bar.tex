@@ -14,8 +14,7 @@ Inheritance diagram for Health\+Bar\+:\begin{figure}[H]
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_health_bar_a639f11c646a0a7de99cbcf4db7574d99}\label{class_health_bar_a639f11c646a0a7de99cbcf4db7574d99} 
-override void {\bfseries \+\_\+\+Ready} ()
+override void \mbox{\hyperlink{class_health_bar_a639f11c646a0a7de99cbcf4db7574d99}{\+\_\+\+Ready}} ()
 \begin{DoxyCompactList}\small\item\em Initialisiert die \doxylink{class_health_bar}{Health\+Bar} und verbindet sie mit den Lebenspunkten des Spielers. Lädt den Spieler-\/\+Knoten und setzt die maximale und aktuelle Gesundheit in der \doxylink{class_health_bar}{Health\+Bar}. \end{DoxyCompactList}\item 
 override void \mbox{\hyperlink{class_health_bar_a4ddfe77d80ebfa7a4268cabd2c4b1282}{\+\_\+\+Process}} (double Delta\+Time)
 \begin{DoxyCompactList}\small\item\em Aktualisiert die \doxylink{class_health_bar}{Health\+Bar} in jedem Frame. Synchronisiert die Anzeige der aktuellen Lebenspunkte mit den Werten des Spielers. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -23,6 +22,10 @@ override void \mbox{\hyperlink{class_health_bar_a4ddfe77d80ebfa7a4268cabd2c4b128
 
 \doxysubsection{Detailed Description}
 Klasse für die Gesundheitsleiste des Spielers. Synchronisiert die Anzeige der \doxylink{class_health_bar}{Health\+Bar} mit den Lebenspunkten des Spielers. 
+
+Definition at line \mbox{\hyperlink{_health_bar_8cs_source_l00007}{7}} of file \mbox{\hyperlink{_health_bar_8cs_source}{Health\+Bar.\+cs}}.
+
+
 
 \doxysubsection{Member Function Documentation}
 \Hypertarget{class_health_bar_a4ddfe77d80ebfa7a4268cabd2c4b1282}\index{HealthBar@{HealthBar}!\_Process@{\_Process}}
@@ -42,6 +45,49 @@ Aktualisiert die \doxylink{class_health_bar}{Health\+Bar} in jedem Frame. Synchr
 \end{DoxyParams}
 
 
+Definition at line \mbox{\hyperlink{_health_bar_8cs_source_l00024}{24}} of file \mbox{\hyperlink{_health_bar_8cs_source}{Health\+Bar.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Aktualisiere\ den\ Wert\ der\ HealthBar\ basierend\ auf\ der\ aktuellen\ Gesundheit\ des\ Spielers}}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ Value\ =\ \mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_a0ec1075ba0983a3df42454b110194c0d}{GetCurrentHealth}}();}
+\DoxyCodeLine{00027\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_player_stats_8cs_source_l00139}{Player\+Stats.\+Get\+Current\+Health()}}, and \mbox{\hyperlink{_player_stats_8cs_source_l00010}{Player\+Stats.\+Instance}}.
+
+\Hypertarget{class_health_bar_a639f11c646a0a7de99cbcf4db7574d99}\index{HealthBar@{HealthBar}!\_Ready@{\_Ready}}
+\index{\_Ready@{\_Ready}!HealthBar@{HealthBar}}
+\doxysubsubsection{\texorpdfstring{\_Ready()}{\_Ready()}}
+{\footnotesize\ttfamily \label{class_health_bar_a639f11c646a0a7de99cbcf4db7574d99} 
+override void Health\+Bar.\+\_\+\+Ready (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Initialisiert die \doxylink{class_health_bar}{Health\+Bar} und verbindet sie mit den Lebenspunkten des Spielers. Lädt den Spieler-\/\+Knoten und setzt die maximale und aktuelle Gesundheit in der \doxylink{class_health_bar}{Health\+Bar}. 
+
+
+
+Definition at line \mbox{\hyperlink{_health_bar_8cs_source_l00013}{13}} of file \mbox{\hyperlink{_health_bar_8cs_source}{Health\+Bar.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Setze\ die\ maximale\ Gesundheit\ der\ HealthBar\ basierend\ auf\ der\ Spieler-\/MaxHealth}}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ MaxValue\ =\ \mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_a6a24773d00e75be9747b99681ac76127}{GetMaxHealthPoints}}();}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ Value\ =\ \mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_a0ec1075ba0983a3df42454b110194c0d}{GetCurrentHealth}}();}
+\DoxyCodeLine{00017\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_player_stats_8cs_source_l00139}{Player\+Stats.\+Get\+Current\+Health()}}, \mbox{\hyperlink{_player_stats_8cs_source_l00122}{Player\+Stats.\+Get\+Max\+Health\+Points()}}, and \mbox{\hyperlink{_player_stats_8cs_source_l00010}{Player\+Stats.\+Instance}}.
+
+
+
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/\+Youssef/\+Desktop/\+UNI/\+S4/\+Computerspiel\+Entwicklung/\+Das\+Spiel/anfaengerpraktikum/scripts/Health\+Bar.\+cs\end{DoxyCompactItemize}
+C\+:/\+Users/\+Youssef/\+Desktop/\+UNI/\+S4/\+Computerspiel\+Entwicklung/\+Das\+Spiel/anfaengerpraktikum/scripts/\mbox{\hyperlink{_health_bar_8cs}{Health\+Bar.\+cs}}\end{DoxyCompactItemize}

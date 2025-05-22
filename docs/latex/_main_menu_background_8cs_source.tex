@@ -1,0 +1,20 @@
+\doxysection{Main\+Menu\+Background.\+cs}
+\hypertarget{_main_menu_background_8cs_source}{}\label{_main_menu_background_8cs_source}\index{C:/Users/Youssef/Desktop/UNI/S4/ComputerspielEntwicklung/DasSpiel/anfaengerpraktikum/scripts/MainMenuBackground.cs@{C:/Users/Youssef/Desktop/UNI/S4/ComputerspielEntwicklung/DasSpiel/anfaengerpraktikum/scripts/MainMenuBackground.cs}}
+\mbox{\hyperlink{_main_menu_background_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_main_menu_background_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }Godot;}
+\DoxyCodeLine{\Hypertarget{_main_menu_background_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_main_menu_background_8cs_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_main_menu_background_8cs_source_l00007}\mbox{\hyperlink{class_main_menu_background}{00007}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{partial\ class\ }\mbox{\hyperlink{class_main_menu_background}{MainMenuBackground}}\ :\ ParallaxLayer\ \{}
+\DoxyCodeLine{\Hypertarget{_main_menu_background_8cs_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_main_menu_background_8cs_source_l00009}00009\ \ \ \ \ [Export]}
+\DoxyCodeLine{\Hypertarget{_main_menu_background_8cs_source_l00010}\mbox{\hyperlink{class_main_menu_background_a9f98d5689cf2bb4aea2d50f113903ef3}{00010}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_main_menu_background_a9f98d5689cf2bb4aea2d50f113903ef3}{ScrollSpeed}}\ =\ -\/10f;}
+\DoxyCodeLine{\Hypertarget{_main_menu_background_8cs_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_main_menu_background_8cs_source_l00016}\mbox{\hyperlink{class_main_menu_background_af1ec3357af6dcb87856edd294f7e7bdb}{00016}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_menu_background_af1ec3357af6dcb87856edd294f7e7bdb}{\_Process}}(\textcolor{keywordtype}{double}\ DeltaTime)\ \{}
+\DoxyCodeLine{\Hypertarget{_main_menu_background_8cs_source_l00017}00017\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ X\ =\ GetMotionOffset().X;}
+\DoxyCodeLine{\Hypertarget{_main_menu_background_8cs_source_l00018}00018\ \ \ \ \ \ \ \ \ X\ +=\ \mbox{\hyperlink{class_main_menu_background_a9f98d5689cf2bb4aea2d50f113903ef3}{ScrollSpeed}}\ *\ (float)\ DeltaTime;}
+\DoxyCodeLine{\Hypertarget{_main_menu_background_8cs_source_l00019}00019\ \ \ \ \ \ \ \ \ SetMotionOffset(\textcolor{keyword}{new}\ Vector2(X,0));}
+\DoxyCodeLine{\Hypertarget{_main_menu_background_8cs_source_l00020}00020\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_main_menu_background_8cs_source_l00021}00021\ \}}
+
+\end{DoxyCode}
