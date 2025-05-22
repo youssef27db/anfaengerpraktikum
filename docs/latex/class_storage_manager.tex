@@ -1,0 +1,175 @@
+\doxysection{Storage\+Manager Class Reference}
+\hypertarget{class_storage_manager}{}\label{class_storage_manager}\index{StorageManager@{StorageManager}}
+
+
+Klasse für das Speichern und Laden von Daten.  
+
+
+Inheritance diagram for Storage\+Manager\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_storage_manager}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_storage_manager_af6389d6712c053027be26d95382ff1e2}\label{class_storage_manager_af6389d6712c053027be26d95382ff1e2} 
+override void {\bfseries \+\_\+\+Ready} ()
+\begin{DoxyCompactList}\small\item\em Initialisierung der Instanz und erstes laden der Einstellungen. \end{DoxyCompactList}\item 
+\Hypertarget{class_storage_manager_a98dc3f0d99389b7c64bcc9552b398452}\label{class_storage_manager_a98dc3f0d99389b7c64bcc9552b398452} 
+void {\bfseries Load\+Settings} ()
+\begin{DoxyCompactList}\small\item\em Laden der Einstellungen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_storage_manager_a1265660745bf77f244ebb401eae892a7}{Load\+Game\+File}} (int id)
+\begin{DoxyCompactList}\small\item\em Laden eines Spielstandes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_storage_manager_acac4cbeec13991178f4e0395011d0452}{Save\+All}} (int id)
+\begin{DoxyCompactList}\small\item\em Speichern der Einstellungen und eines Spielstandes. \end{DoxyCompactList}\item 
+\Hypertarget{class_storage_manager_a0066baa67d0d5b4af3dd31fbace1ef41}\label{class_storage_manager_a0066baa67d0d5b4af3dd31fbace1ef41} 
+void {\bfseries Save\+Settings} ()
+\begin{DoxyCompactList}\small\item\em Speichern der Einstellungen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_storage_manager_aab2c45cef731b397ab3cf33175899e63}{Save\+Game\+File}} (int id)
+\begin{DoxyCompactList}\small\item\em Speichern eines Spielstandes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_storage_manager_a2c513af3aaedc589b36bf0e1de074f2c}{Set\+Last\+Save\+Id}} (int id)
+\begin{DoxyCompactList}\small\item\em Setter für Last\+Save\+Id. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_storage_manager_a1db2888bb3966010740337ad6b975f3a}{Get\+Last\+Save\+Id}} ()
+\begin{DoxyCompactList}\small\item\em Getter für Last\+Save\+Id. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_storage_manager_acc4b79be13db815e5865032a35b4581c}{Set\+Saves}} (int Saves)
+\begin{DoxyCompactList}\small\item\em Setter für Saves. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_storage_manager_a9f87604d57da68440dc0c0a66517c2dc}{Get\+Saves}} ()
+\begin{DoxyCompactList}\small\item\em Getter für Saves. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_storage_manager_abc9f8437bf6c7954bba4d68baf5c96ce}\label{class_storage_manager_abc9f8437bf6c7954bba4d68baf5c96ce} 
+static \mbox{\hyperlink{class_storage_manager}{Storage\+Manager}} {\bfseries Instance}\hspace{0.3cm}{\ttfamily  \mbox{[}get, private set\mbox{]}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_storage_manager_a8df10426c3242d2e36720b89bd840bad}\label{class_storage_manager_a8df10426c3242d2e36720b89bd840bad} 
+String\mbox{[}$\,$\mbox{]} {\bfseries Path\+Save} = \{"{}user\+://save1.\+dat"{}, "{}user\+://save2.\+dat"{}, "{}user\+://save3.\+dat"{}\}
+\item 
+\Hypertarget{class_storage_manager_a5bafc9b0368de9be79ea2161e8aa1956}\label{class_storage_manager_a5bafc9b0368de9be79ea2161e8aa1956} 
+int {\bfseries Last\+Save\+Id} = -\/1
+\item 
+\Hypertarget{class_storage_manager_af7aaff853e07e906b7e94f4017cdb4aa}\label{class_storage_manager_af7aaff853e07e906b7e94f4017cdb4aa} 
+int {\bfseries Saves} = 0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_storage_manager_a26ddc1307e629886c23bfd00cf296a7e}\label{class_storage_manager_a26ddc1307e629886c23bfd00cf296a7e} 
+const String {\bfseries Path\+Settings} = "{}user\+://settings.\+txt"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Klasse für das Speichern und Laden von Daten. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_storage_manager_a1db2888bb3966010740337ad6b975f3a}\index{StorageManager@{StorageManager}!GetLastSaveId@{GetLastSaveId}}
+\index{GetLastSaveId@{GetLastSaveId}!StorageManager@{StorageManager}}
+\doxysubsubsection{\texorpdfstring{GetLastSaveId()}{GetLastSaveId()}}
+{\footnotesize\ttfamily \label{class_storage_manager_a1db2888bb3966010740337ad6b975f3a} 
+int Storage\+Manager.\+Get\+Last\+Save\+Id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Getter für Last\+Save\+Id. 
+
+\begin{DoxyReturn}{Returns}
+int Last\+Save\+Id 
+\end{DoxyReturn}
+\Hypertarget{class_storage_manager_a9f87604d57da68440dc0c0a66517c2dc}\index{StorageManager@{StorageManager}!GetSaves@{GetSaves}}
+\index{GetSaves@{GetSaves}!StorageManager@{StorageManager}}
+\doxysubsubsection{\texorpdfstring{GetSaves()}{GetSaves()}}
+{\footnotesize\ttfamily \label{class_storage_manager_a9f87604d57da68440dc0c0a66517c2dc} 
+int Storage\+Manager.\+Get\+Saves (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Getter für Saves. 
+
+\begin{DoxyReturn}{Returns}
+int Saves 
+\end{DoxyReturn}
+\Hypertarget{class_storage_manager_a1265660745bf77f244ebb401eae892a7}\index{StorageManager@{StorageManager}!LoadGameFile@{LoadGameFile}}
+\index{LoadGameFile@{LoadGameFile}!StorageManager@{StorageManager}}
+\doxysubsubsection{\texorpdfstring{LoadGameFile()}{LoadGameFile()}}
+{\footnotesize\ttfamily \label{class_storage_manager_a1265660745bf77f244ebb401eae892a7} 
+void Storage\+Manager.\+Load\+Game\+File (\begin{DoxyParamCaption}\item[{int}]{id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Laden eines Spielstandes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Id} & des Spielstandes. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_storage_manager_acac4cbeec13991178f4e0395011d0452}\index{StorageManager@{StorageManager}!SaveAll@{SaveAll}}
+\index{SaveAll@{SaveAll}!StorageManager@{StorageManager}}
+\doxysubsubsection{\texorpdfstring{SaveAll()}{SaveAll()}}
+{\footnotesize\ttfamily \label{class_storage_manager_acac4cbeec13991178f4e0395011d0452} 
+void Storage\+Manager.\+Save\+All (\begin{DoxyParamCaption}\item[{int}]{id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Speichern der Einstellungen und eines Spielstandes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Id} & des Spielstandes. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_storage_manager_aab2c45cef731b397ab3cf33175899e63}\index{StorageManager@{StorageManager}!SaveGameFile@{SaveGameFile}}
+\index{SaveGameFile@{SaveGameFile}!StorageManager@{StorageManager}}
+\doxysubsubsection{\texorpdfstring{SaveGameFile()}{SaveGameFile()}}
+{\footnotesize\ttfamily \label{class_storage_manager_aab2c45cef731b397ab3cf33175899e63} 
+void Storage\+Manager.\+Save\+Game\+File (\begin{DoxyParamCaption}\item[{int}]{id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Speichern eines Spielstandes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Id} & des Spielstandes. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_storage_manager_a2c513af3aaedc589b36bf0e1de074f2c}\index{StorageManager@{StorageManager}!SetLastSaveId@{SetLastSaveId}}
+\index{SetLastSaveId@{SetLastSaveId}!StorageManager@{StorageManager}}
+\doxysubsubsection{\texorpdfstring{SetLastSaveId()}{SetLastSaveId()}}
+{\footnotesize\ttfamily \label{class_storage_manager_a2c513af3aaedc589b36bf0e1de074f2c} 
+void Storage\+Manager.\+Set\+Last\+Save\+Id (\begin{DoxyParamCaption}\item[{int}]{id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Setter für Last\+Save\+Id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em int} & Last\+Save\+Id \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_storage_manager_acc4b79be13db815e5865032a35b4581c}\index{StorageManager@{StorageManager}!SetSaves@{SetSaves}}
+\index{SetSaves@{SetSaves}!StorageManager@{StorageManager}}
+\doxysubsubsection{\texorpdfstring{SetSaves()}{SetSaves()}}
+{\footnotesize\ttfamily \label{class_storage_manager_acc4b79be13db815e5865032a35b4581c} 
+void Storage\+Manager.\+Set\+Saves (\begin{DoxyParamCaption}\item[{int}]{Saves}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Setter für Saves. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em int} & Saves \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Youssef/\+Desktop/\+UNI/\+S4/\+Computerspiel\+Entwicklung/\+Das\+Spiel/anfaengerpraktikum/scripts/Storage\+Manager.\+cs\end{DoxyCompactItemize}

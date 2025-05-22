@@ -8,7 +8,7 @@ Klasse für einen einfachen Gegner.
 Inheritance diagram for Base\+Enemy\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=2.000000cm]{class_base_enemy}
+\includegraphics[height=3.000000cm]{class_base_enemy}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Public Member Functions}
@@ -26,45 +26,19 @@ void \mbox{\hyperlink{class_base_enemy_a269f9f3626f17368f404ca27616d0697}{On\+Pu
 void \mbox{\hyperlink{class_base_enemy_a6aad96826441fe152694139d29893bad}{On\+Hitbox\+Area\+Entered}} (Area2D area)
 \begin{DoxyCompactList}\small\item\em Detektiert wenn ein Objekt die Hitbox des Gegners betritt. (z.\+B.\+: Schwert des Spielers) \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_base_enemy_ab07fb117d5286ef97dc702149c02b14a}{On\+Sword\+Hit\+Box\+Body\+Entered}} (Node2D body)
-\begin{DoxyCompactList}\small\item\em Detektiert ob der Spieler in Schlagreichweite ist. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsubsection*{Private Types}
+\begin{DoxyCompactList}\small\item\em Detektiert ob der Spieler in Schlagreichweite ist. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_base_enemy_a27c3947769522b35b537e5f472ef0b77}{Is\+Dead}} ()
+\begin{DoxyCompactList}\small\item\em Gibt boolean Dead zurück. \end{DoxyCompactList}\item 
+\Hypertarget{class_base_enemy_a9ef92c3f73170538681e665e78e2279a}\label{class_base_enemy_a9ef92c3f73170538681e665e78e2279a} 
+void {\bfseries Respawn} ()
+\begin{DoxyCompactList}\small\item\em Wird aufgerufen wenn der Gegner respawnt. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_base_enemy_ac529914117dfe8158325b43be1f1c6dd}\label{class_base_enemy_ac529914117dfe8158325b43be1f1c6dd} 
-enum {\bfseries State} \{ {\bfseries IDLE}
-, {\bfseries WALK}
-, {\bfseries ATTACK}
-, {\bfseries TAKE\+\_\+\+HIT}
- \}
-\end{DoxyCompactItemize}
-\doxysubsubsection*{Private Member Functions}
-\begin{DoxyCompactItemize}
-\item 
-void \mbox{\hyperlink{class_base_enemy_aee39d90b4efaebada5ab47b21184516a}{Handle\+Movement}} (double Delta\+Time)
-\begin{DoxyCompactList}\small\item\em Verarbeitet die Bewegung des Gegners. \end{DoxyCompactList}\item 
-\Hypertarget{class_base_enemy_a74b042cf6b24aa7f0b1d823ae7d4b5af}\label{class_base_enemy_a74b042cf6b24aa7f0b1d823ae7d4b5af} 
-void {\bfseries Update\+Animation} ()
-\begin{DoxyCompactList}\small\item\em Aktualisiert die Animationen des Gegners. \end{DoxyCompactList}\item 
-\Hypertarget{class_base_enemy_a284a995d12d6bc1d7a23d1f6f25a96af}\label{class_base_enemy_a284a995d12d6bc1d7a23d1f6f25a96af} 
-void {\bfseries Take\+Damage} (\mbox{\hyperlink{class_damage}{Damage}} DMG)
-\begin{DoxyCompactList}\small\item\em Verarbeitet zugefügten Schaden. \end{DoxyCompactList}\item 
-\Hypertarget{class_base_enemy_a0a7f33bd3971e202eee9d43e63180500}\label{class_base_enemy_a0a7f33bd3971e202eee9d43e63180500} 
-void {\bfseries Check\+Player\+Hit} ()
-\begin{DoxyCompactList}\small\item\em Überprüft ob der Spieler sich, während eines Angriffes in Reichweite befindet und fügt diesem dann gegebenenfalls Schaden zu. \end{DoxyCompactList}\item 
-\Hypertarget{class_base_enemy_aa5e7d87eaa080ed685315588a39a9f1f}\label{class_base_enemy_aa5e7d87eaa080ed685315588a39a9f1f} 
-void {\bfseries Die} ()
-\begin{DoxyCompactList}\small\item\em Wird aufgerufen wenn der Gegner stirbt. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{class_base_enemy_a59a907194c4c712b41719a6fc12c1583}{Check\+Line\+Of\+Sight}} (Node2D body)
-\begin{DoxyCompactList}\small\item\em Überprüft die direkte Sichtlinie zu einem Objekt. \end{DoxyCompactList}\item 
-\Hypertarget{class_base_enemy_aa9ade96897c57dfc0b6b69e7d0996076}\label{class_base_enemy_aa9ade96897c57dfc0b6b69e7d0996076} 
-void {\bfseries Flip\+Rotation} ()
-\begin{DoxyCompactList}\small\item\em Spiegelt die Orientierung aller zu dem Gegner gehörender Nodes. \end{DoxyCompactList}\item 
-\Hypertarget{class_base_enemy_aebc2a569b2f2f3d35870e9aabb943069}\label{class_base_enemy_aebc2a569b2f2f3d35870e9aabb943069} 
-void {\bfseries Set\+Rotation} (bool Rotation)
-\begin{DoxyCompactList}\small\item\em Setzt Orientierung aller zu dem Gegner gehörender Nodes. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{class_base_enemy_abf57b8dbd0f267fd42a2a02b7bda95dc}{Is\+Close\+To}} (float Value1, float Value2, float Delta)
-\begin{DoxyCompactList}\small\item\em Überprüft, ob zwei Werte in einer Delta-\/\+Umgebung zueinander liegen. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsubsection*{Private Attributes}
+\Hypertarget{class_base_enemy_a52b8c24a84bfa2e981d776f816f33186}\label{class_base_enemy_a52b8c24a84bfa2e981d776f816f33186} 
+virtual void {\bfseries Update\+Animation} ()
+\begin{DoxyCompactList}\small\item\em Aktualisiert die Animationen des Gegners. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \Hypertarget{class_base_enemy_a1661cfbf7e6dff6a1d8a6fa44b10a3b0}\label{class_base_enemy_a1661cfbf7e6dff6a1d8a6fa44b10a3b0} 
@@ -118,9 +92,6 @@ Vector2 {\bfseries Start\+Position}
 \Hypertarget{class_base_enemy_ad2523c398e4a11b5f36a9df26c4014eb}\label{class_base_enemy_ad2523c398e4a11b5f36a9df26c4014eb} 
 bool {\bfseries Start\+Rotation} = false
 \item 
-\Hypertarget{class_base_enemy_a47be49c6e16a1f99ee1ed68549b31d05}\label{class_base_enemy_a47be49c6e16a1f99ee1ed68549b31d05} 
-State {\bfseries Animation\+State} = State.\+IDLE
-\item 
 \Hypertarget{class_base_enemy_a47e5e613c39180e6b1bf9899039b45fc}\label{class_base_enemy_a47e5e613c39180e6b1bf9899039b45fc} 
 bool {\bfseries Already\+Hit} = false
 \item 
@@ -154,6 +125,50 @@ Texture\+Progress\+Bar {\bfseries Health\+Bar}
 \Hypertarget{class_base_enemy_a968a793842be49b5cf65fa35deb9ae5c}\label{class_base_enemy_a968a793842be49b5cf65fa35deb9ae5c} 
 \mbox{\hyperlink{class_player}{Player}} {\bfseries Player}
 \end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_base_enemy_a7a4fe2c824142f79ba0dd6cf9d1a7d25}\label{class_base_enemy_a7a4fe2c824142f79ba0dd6cf9d1a7d25} 
+uint {\bfseries Id} = 0\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_base_enemy_ac529914117dfe8158325b43be1f1c6dd}\label{class_base_enemy_ac529914117dfe8158325b43be1f1c6dd} 
+enum {\bfseries State} \{ {\bfseries IDLE}
+, {\bfseries WALK}
+, {\bfseries ATTACK}
+, {\bfseries TAKE\+\_\+\+HIT}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_base_enemy_aee39d90b4efaebada5ab47b21184516a}{Handle\+Movement}} (double Delta\+Time)
+\begin{DoxyCompactList}\small\item\em Verarbeitet die Bewegung des Gegners. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_base_enemy_a284a995d12d6bc1d7a23d1f6f25a96af}{Take\+Damage}} (\mbox{\hyperlink{class_damage}{Damage}} DMG)
+\begin{DoxyCompactList}\small\item\em Verarbeitet zugefügten Schaden. \end{DoxyCompactList}\item 
+\Hypertarget{class_base_enemy_a0a7f33bd3971e202eee9d43e63180500}\label{class_base_enemy_a0a7f33bd3971e202eee9d43e63180500} 
+void {\bfseries Check\+Player\+Hit} ()
+\begin{DoxyCompactList}\small\item\em Überprüft ob der Spieler sich, während eines Angriffes in Reichweite befindet und fügt diesem dann gegebenenfalls Schaden zu. \end{DoxyCompactList}\item 
+\Hypertarget{class_base_enemy_aa5e7d87eaa080ed685315588a39a9f1f}\label{class_base_enemy_aa5e7d87eaa080ed685315588a39a9f1f} 
+void {\bfseries Die} ()
+\begin{DoxyCompactList}\small\item\em Wird aufgerufen wenn der Gegner stirbt. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_base_enemy_a59a907194c4c712b41719a6fc12c1583}{Check\+Line\+Of\+Sight}} (Node2D body)
+\begin{DoxyCompactList}\small\item\em Überprüft die direkte Sichtlinie zu einem Objekt. \end{DoxyCompactList}\item 
+\Hypertarget{class_base_enemy_aa9ade96897c57dfc0b6b69e7d0996076}\label{class_base_enemy_aa9ade96897c57dfc0b6b69e7d0996076} 
+void {\bfseries Flip\+Rotation} ()
+\begin{DoxyCompactList}\small\item\em Spiegelt die Orientierung aller zu dem Gegner gehörender Nodes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_base_enemy_aebc2a569b2f2f3d35870e9aabb943069}{Set\+Rotation}} (bool Rotation)
+\begin{DoxyCompactList}\small\item\em Setzt Orientierung aller zu dem Gegner gehörender Nodes. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_base_enemy_abf57b8dbd0f267fd42a2a02b7bda95dc}{Is\+Close\+To}} (float Value1, float Value2, float Delta)
+\begin{DoxyCompactList}\small\item\em Überprüft, ob zwei Werte in einer Delta-\/\+Umgebung zueinander liegen. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_base_enemy_a47be49c6e16a1f99ee1ed68549b31d05}\label{class_base_enemy_a47be49c6e16a1f99ee1ed68549b31d05} 
+State {\bfseries Animation\+State} = State.\+IDLE
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -185,6 +200,11 @@ bool Base\+Enemy.\+Check\+Line\+Of\+Sight (\begin{DoxyParamCaption}\item[{Node2D
 
 Überprüft die direkte Sichtlinie zu einem Objekt. 
 
+
+\begin{DoxyParams}{Parameters}
+{\em body} & Objekt das überprüft werden soll. \\
+\hline
+\end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 bool Ergebnis der Abfrage. 
 \end{DoxyReturn}
@@ -224,6 +244,19 @@ bool Base\+Enemy.\+Is\+Close\+To (\begin{DoxyParamCaption}\item[{float}]{Value1}
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 bool Ergebnis 
+\end{DoxyReturn}
+\Hypertarget{class_base_enemy_a27c3947769522b35b537e5f472ef0b77}\index{BaseEnemy@{BaseEnemy}!IsDead@{IsDead}}
+\index{IsDead@{IsDead}!BaseEnemy@{BaseEnemy}}
+\doxysubsubsection{\texorpdfstring{IsDead()}{IsDead()}}
+{\footnotesize\ttfamily \label{class_base_enemy_a27c3947769522b35b537e5f472ef0b77} 
+bool Base\+Enemy.\+Is\+Dead (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gibt boolean Dead zurück. 
+
+\begin{DoxyReturn}{Returns}
+bool ob Gegner tot ist. 
 \end{DoxyReturn}
 \Hypertarget{class_base_enemy_ad1a2b4f2e07d55eab26d4d8e1d9aa713}\index{BaseEnemy@{BaseEnemy}!OnDetectionBodyEntered@{OnDetectionBodyEntered}}
 \index{OnDetectionBodyEntered@{OnDetectionBodyEntered}!BaseEnemy@{BaseEnemy}}
@@ -283,6 +316,36 @@ Detektiert ob der Spieler in Schlagreichweite ist.
 
 \begin{DoxyParams}{Parameters}
 {\em body} & Objekt das den Bereich betritt. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_base_enemy_aebc2a569b2f2f3d35870e9aabb943069}\index{BaseEnemy@{BaseEnemy}!SetRotation@{SetRotation}}
+\index{SetRotation@{SetRotation}!BaseEnemy@{BaseEnemy}}
+\doxysubsubsection{\texorpdfstring{SetRotation()}{SetRotation()}}
+{\footnotesize\ttfamily \label{class_base_enemy_aebc2a569b2f2f3d35870e9aabb943069} 
+void Base\+Enemy.\+Set\+Rotation (\begin{DoxyParamCaption}\item[{bool}]{Rotation}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Setzt Orientierung aller zu dem Gegner gehörender Nodes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Rotation} & Die neue Orientierung. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_base_enemy_a284a995d12d6bc1d7a23d1f6f25a96af}\index{BaseEnemy@{BaseEnemy}!TakeDamage@{TakeDamage}}
+\index{TakeDamage@{TakeDamage}!BaseEnemy@{BaseEnemy}}
+\doxysubsubsection{\texorpdfstring{TakeDamage()}{TakeDamage()}}
+{\footnotesize\ttfamily \label{class_base_enemy_a284a995d12d6bc1d7a23d1f6f25a96af} 
+void Base\+Enemy.\+Take\+Damage (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_damage}{Damage}}}]{DMG}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Verarbeitet zugefügten Schaden. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em DMG} & Schaden der zugefügt wird. \\
 \hline
 \end{DoxyParams}
 

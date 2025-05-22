@@ -92,6 +92,9 @@ $(function(){ initResizable(false); });
   <div class="headertitle"><div class="title">Spike Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Klasse für die Spikes.  
+ <a href="#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for Spike:</div>
 <div class="dyncontent">
@@ -101,8 +104,8 @@ Inheritance diagram for Spike:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a527675080d8e2e4ee4310fb3e112a120" id="r_a527675080d8e2e4ee4310fb3e112a120"><td class="memItemLeft" align="right" valign="top"><a id="a527675080d8e2e4ee4310fb3e112a120" name="a527675080d8e2e4ee4310fb3e112a120"></a>
-override void&#160;</td><td class="memItemRight" valign="bottom"><b>_Ready</b> ()</td></tr>
+<tr class="memitem:a527675080d8e2e4ee4310fb3e112a120" id="r_a527675080d8e2e4ee4310fb3e112a120"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a527675080d8e2e4ee4310fb3e112a120">_Ready</a> ()</td></tr>
+<tr class="memdesc:a527675080d8e2e4ee4310fb3e112a120"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialisierung der Node <a class="el" href="class_player.html" title="Klasse für den Spielercharakter. Verwaltet Bewegung, Sprünge, Angriffe und Animationen.">Player</a>.  <br /></td></tr>
 <tr class="separator:a527675080d8e2e4ee4310fb3e112a120"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a089076328dd0c52b0c595f9ee9c98c33" id="r_a089076328dd0c52b0c595f9ee9c98c33"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_damage.html">Damage</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a089076328dd0c52b0c595f9ee9c98c33">GetDamage</a> ()</td></tr>
 <tr class="memdesc:a089076328dd0c52b0c595f9ee9c98c33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gibt ein <a class="el" href="class_damage.html" title="Repräsentiert den Schaden, der von Charakteren oder Gegnern verursacht wird. Beinhaltet physischen Sc...">Damage</a> Objekt zurück.  <br /></td></tr>
@@ -112,11 +115,11 @@ override void&#160;</td><td class="memItemRight" valign="bottom"><b>_Ready</b> (
 Private Member Functions</h2></td></tr>
 <tr class="memitem:ad359ec07f383c62c2683c1c307941f74" id="r_ad359ec07f383c62c2683c1c307941f74"><td class="memItemLeft" align="right" valign="top"><a id="ad359ec07f383c62c2683c1c307941f74" name="ad359ec07f383c62c2683c1c307941f74"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>OnPlayerBodyEntered</b> (Node body)</td></tr>
-<tr class="memdesc:ad359ec07f383c62c2683c1c307941f74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prüfen ob der Körper den <a class="el" href="class_spike.html">Spike</a> betritt falls ja wird der Timer gestartet und der Spieler nimmt Schaden. <br /></td></tr>
+<tr class="memdesc:ad359ec07f383c62c2683c1c307941f74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prüfen ob der Körper den <a class="el" href="class_spike.html" title="Klasse für die Spikes.">Spike</a> betritt falls ja wird der Timer gestartet und der Spieler nimmt Schaden. <br /></td></tr>
 <tr class="separator:ad359ec07f383c62c2683c1c307941f74"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac7ee6575608e186c3d00d17331dfc97e" id="r_ac7ee6575608e186c3d00d17331dfc97e"><td class="memItemLeft" align="right" valign="top"><a id="ac7ee6575608e186c3d00d17331dfc97e" name="ac7ee6575608e186c3d00d17331dfc97e"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>OnPlayerBodyExited</b> (Node body)</td></tr>
-<tr class="memdesc:ac7ee6575608e186c3d00d17331dfc97e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prüfen ob der Körper den <a class="el" href="class_spike.html">Spike</a> verlässt, falls ja wird der Timer gestoppt und der Spieler nimmt keinen Schaden mehr. <br /></td></tr>
+<tr class="memdesc:ac7ee6575608e186c3d00d17331dfc97e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prüfen ob der Körper den <a class="el" href="class_spike.html" title="Klasse für die Spikes.">Spike</a> verlässt, falls ja wird der Timer gestoppt und der Spieler nimmt keinen Schaden mehr. <br /></td></tr>
 <tr class="separator:ac7ee6575608e186c3d00d17331dfc97e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1ef0f806f713e9d58eb5ef768e5a582e" id="r_a1ef0f806f713e9d58eb5ef768e5a582e"><td class="memItemLeft" align="right" valign="top"><a id="a1ef0f806f713e9d58eb5ef768e5a582e" name="a1ef0f806f713e9d58eb5ef768e5a582e"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>OnTimerTimeout</b> ()</td></tr>
@@ -125,14 +128,44 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>OnTimerTimeout</b> ()
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:af8fec8c06e83274f57c4d37a8cbece5f" id="r_af8fec8c06e83274f57c4d37a8cbece5f"><td class="memItemLeft" align="right" valign="top"><a id="af8fec8c06e83274f57c4d37a8cbece5f" name="af8fec8c06e83274f57c4d37a8cbece5f"></a>
-<a class="el" href="class_player.html">Player</a>&#160;</td><td class="memItemRight" valign="bottom"><b>player</b></td></tr>
-<tr class="separator:af8fec8c06e83274f57c4d37a8cbece5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85d64c8d9c90fef419893853ae7e9942" id="r_a85d64c8d9c90fef419893853ae7e9942"><td class="memItemLeft" align="right" valign="top"><a id="a85d64c8d9c90fef419893853ae7e9942" name="a85d64c8d9c90fef419893853ae7e9942"></a>
+<a class="el" href="class_player.html">Player</a>&#160;</td><td class="memItemRight" valign="bottom"><b>Player</b></td></tr>
+<tr class="separator:a85d64c8d9c90fef419893853ae7e9942"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa6e0e6494eb6bf74afaa7becf33cefe3" id="r_aa6e0e6494eb6bf74afaa7becf33cefe3"><td class="memItemLeft" align="right" valign="top"><a id="aa6e0e6494eb6bf74afaa7becf33cefe3" name="aa6e0e6494eb6bf74afaa7becf33cefe3"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><b>Damage</b> = 10f</td></tr>
 <tr class="separator:aa6e0e6494eb6bf74afaa7becf33cefe3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Klasse für die Spikes. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a527675080d8e2e4ee4310fb3e112a120" name="a527675080d8e2e4ee4310fb3e112a120"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a527675080d8e2e4ee4310fb3e112a120">&#9670;&#160;</a></span>_Ready()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">override void Spike._Ready </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initialisierung der Node <a class="el" href="class_player.html" title="Klasse für den Spielercharakter. Verwaltet Bewegung, Sprünge, Angriffe und Animationen.">Player</a>. </p>
+<p>Hier wird der <a class="el" href="class_player.html" title="Klasse für den Spielercharakter. Verwaltet Bewegung, Sprünge, Angriffe und Animationen.">Player</a> Node gefunden </p>
+
+</div>
+</div>
 <a id="a089076328dd0c52b0c595f9ee9c98c33" name="a089076328dd0c52b0c595f9ee9c98c33"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a089076328dd0c52b0c595f9ee9c98c33">&#9670;&#160;</a></span>GetDamage()</h2>
 

@@ -1,5 +1,10 @@
 \doxysection{Navigation\+Manager Class Reference}
 \hypertarget{class_navigation_manager}{}\label{class_navigation_manager}\index{NavigationManager@{NavigationManager}}
+
+
+Der \doxylink{class_navigation_manager}{Navigation\+Manager} ist für das Laden von Leveln und das Spawnen des Spielers verantwortlich. Der \doxylink{class_navigation_manager}{Navigation\+Manager} ist ein Singleton, der in der Haupt-\/\+Szene platziert wird und von anderen Skripten verwendet wird, um Level zu laden und den Spieler zu spawnen.  
+
+
 Inheritance diagram for Navigation\+Manager\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -10,41 +15,79 @@ Inheritance diagram for Navigation\+Manager\+:\begin{figure}[H]
 \begin{DoxyCompactItemize}
 \item 
 delegate void \mbox{\hyperlink{class_navigation_manager_a0dee864e0854aa918dd9b2d7a125d8dd}{On\+Trigger\+Player\+Spawn\+Event\+Handler}} (Vector2 Position, string Direction)
-\item 
+\begin{DoxyCompactList}\small\item\em Das Signal, das ausgelöst wird, wenn der Spieler spawnen soll. \end{DoxyCompactList}\item 
+\Hypertarget{class_navigation_manager_ab13f450f99d963ae8f808bac3f4261e2}\label{class_navigation_manager_ab13f450f99d963ae8f808bac3f4261e2} 
+override void {\bfseries \+\_\+\+Ready} ()
+\begin{DoxyCompactList}\small\item\em Initialisiert den \doxylink{class_navigation_manager}{Navigation\+Manager} und setzt ihn als Singleton. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_navigation_manager_a5966bab1490d10dfc285507a0c8d8bb7}{Go\+To\+Level}} (string Level\+Tag, string Destination\+Tag)
-\item 
+\begin{DoxyCompactList}\small\item\em Lädt das angegebene Level und setzt das Ziel-\/\+Tag für den Spieler-\/\+Spawn. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_navigation_manager_aaec36be7cfa331ec6d3ca8eb14ba3872}{Trigger\+Player\+Spawn}} (Vector2 Position, string Direction)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Lädt das angegebene Level und setzt das Ziel-\/\+Tag für den Spieler-\/\+Spawn. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Properties}
 \begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_navigation_manager_aca7e1252e63bf4323d89b8f7d4cd4ce8}\label{class_navigation_manager_aca7e1252e63bf4323d89b8f7d4cd4ce8} 
+static \mbox{\hyperlink{class_navigation_manager}{Navigation\+Manager}} {\bfseries Instance}\hspace{0.3cm}{\ttfamily  \mbox{[}get, private set\mbox{]}}
 \item 
 \Hypertarget{class_navigation_manager_a5aa88986fee7cfcf701e424e333b6980}\label{class_navigation_manager_a5aa88986fee7cfcf701e424e333b6980} 
 string {\bfseries Spawn\+Door\+Tag}\hspace{0.3cm}{\ttfamily  \mbox{[}get, private set\mbox{]}}
 \end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_navigation_manager_a3d2baed2d27baac07286b561a2338670}{Deferred\+Change\+Scene}} (Packed\+Scene Scene\+To\+Load)
+\begin{DoxyCompactList}\small\item\em Diese Methode wird aufgerufen, um die Szene zu wechseln. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Static Private Attributes}
 \begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_navigation_manager_a1ffe3077e2f478261082ee583f6c3996}\label{class_navigation_manager_a1ffe3077e2f478261082ee583f6c3996} 
+static readonly Packed\+Scene {\bfseries Scene\+Main\+Menu} = (Packed\+Scene)GD.\+Load("{}res\+://Scenes/main\+\_\+menu.\+tscn"{})
 \item 
 \Hypertarget{class_navigation_manager_ae1efff3ff02142f6b432967154fdc4ce}\label{class_navigation_manager_ae1efff3ff02142f6b432967154fdc4ce} 
 static readonly Packed\+Scene {\bfseries Scene\+Intro} = (Packed\+Scene)GD.\+Load("{}res\+://Scenes/intro.\+tscn"{})
 \item 
 \Hypertarget{class_navigation_manager_a75bcdf3626163a7a13a04786e5c50d45}\label{class_navigation_manager_a75bcdf3626163a7a13a04786e5c50d45} 
 static readonly Packed\+Scene {\bfseries Scene\+Level1} = (Packed\+Scene)GD.\+Load("{}res\+://Scenes/level1.\+tscn"{})
+\item 
+\Hypertarget{class_navigation_manager_a05bae96c7f4291c05c641ecc19de352d}\label{class_navigation_manager_a05bae96c7f4291c05c641ecc19de352d} 
+static readonly Packed\+Scene {\bfseries Scene\+Boss} = (Packed\+Scene)GD.\+Load("{}res\+://Scenes/boss\+Room.\+tscn"{})
+\item 
+\Hypertarget{class_navigation_manager_a41a234813f7d0673dd2485f4ef49f0cc}\label{class_navigation_manager_a41a234813f7d0673dd2485f4ef49f0cc} 
+static readonly Packed\+Scene {\bfseries Scene\+Level\+One} = (Packed\+Scene)GD.\+Load("{}res\+://Scenes/level\+\_\+one.\+tscn"{})
+\item 
+\Hypertarget{class_navigation_manager_a6741a214cbea19bb355bb5e2770634d3}\label{class_navigation_manager_a6741a214cbea19bb355bb5e2770634d3} 
+static readonly Packed\+Scene {\bfseries Scene\+Level\+Two} = (Packed\+Scene)GD.\+Load("{}res\+://Scenes/level\+\_\+two.\+tscn"{})
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Der \doxylink{class_navigation_manager}{Navigation\+Manager} ist für das Laden von Leveln und das Spawnen des Spielers verantwortlich.
-
-Der \doxylink{class_navigation_manager}{Navigation\+Manager} ist ein Singleton, der in der Haupt-\/\+Szene platziert wird und von anderen Skripten verwendet wird, um Level zu laden und den Spieler zu spawnen. 
+Der \doxylink{class_navigation_manager}{Navigation\+Manager} ist für das Laden von Leveln und das Spawnen des Spielers verantwortlich. Der \doxylink{class_navigation_manager}{Navigation\+Manager} ist ein Singleton, der in der Haupt-\/\+Szene platziert wird und von anderen Skripten verwendet wird, um Level zu laden und den Spieler zu spawnen. 
 
 \doxysubsection{Member Function Documentation}
+\Hypertarget{class_navigation_manager_a3d2baed2d27baac07286b561a2338670}\index{NavigationManager@{NavigationManager}!DeferredChangeScene@{DeferredChangeScene}}
+\index{DeferredChangeScene@{DeferredChangeScene}!NavigationManager@{NavigationManager}}
+\doxysubsubsection{\texorpdfstring{DeferredChangeScene()}{DeferredChangeScene()}}
+{\footnotesize\ttfamily \label{class_navigation_manager_a3d2baed2d27baac07286b561a2338670} 
+void Navigation\+Manager.\+Deferred\+Change\+Scene (\begin{DoxyParamCaption}\item[{Packed\+Scene}]{Scene\+To\+Load}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Diese Methode wird aufgerufen, um die Szene zu wechseln. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Scene\+To\+Load} & Die Szene, die geladen werden soll. \\
+\hline
+\end{DoxyParams}
 \Hypertarget{class_navigation_manager_a5966bab1490d10dfc285507a0c8d8bb7}\index{NavigationManager@{NavigationManager}!GoToLevel@{GoToLevel}}
 \index{GoToLevel@{GoToLevel}!NavigationManager@{NavigationManager}}
 \doxysubsubsection{\texorpdfstring{GoToLevel()}{GoToLevel()}}
 {\footnotesize\ttfamily \label{class_navigation_manager_a5966bab1490d10dfc285507a0c8d8bb7} 
 void Navigation\+Manager.\+Go\+To\+Level (\begin{DoxyParamCaption}\item[{string}]{Level\+Tag}{, }\item[{string}]{Destination\+Tag}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-Lädt das angegebene Level und setzt das Ziel-\/\+Tag für den Spieler-\/\+Spawn.
+
+
+Lädt das angegebene Level und setzt das Ziel-\/\+Tag für den Spieler-\/\+Spawn. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -59,7 +102,9 @@ Lädt das angegebene Level und setzt das Ziel-\/\+Tag für den Spieler-\/\+Spawn
 {\footnotesize\ttfamily \label{class_navigation_manager_a0dee864e0854aa918dd9b2d7a125d8dd} 
 delegate void Navigation\+Manager.\+On\+Trigger\+Player\+Spawn\+Event\+Handler (\begin{DoxyParamCaption}\item[{Vector2}]{Position}{, }\item[{string}]{Direction}{}\end{DoxyParamCaption})}
 
-Das Signal, das ausgelöst wird, wenn der Spieler spawnen soll.
+
+
+Das Signal, das ausgelöst wird, wenn der Spieler spawnen soll. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -74,11 +119,15 @@ Das Signal, das ausgelöst wird, wenn der Spieler spawnen soll.
 {\footnotesize\ttfamily \label{class_navigation_manager_aaec36be7cfa331ec6d3ca8eb14ba3872} 
 void Navigation\+Manager.\+Trigger\+Player\+Spawn (\begin{DoxyParamCaption}\item[{Vector2}]{Position}{, }\item[{string}]{Direction}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-Lädt das angegebene Level und setzt das Ziel-\/\+Tag für den Spieler-\/\+Spawn.
+
+
+Lädt das angegebene Level und setzt das Ziel-\/\+Tag für den Spieler-\/\+Spawn. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em Level\+Tag} & Das Tag des Levels, das geladen werden soll. \\
+{\em Position} & Die Position, an der der Spieler spawnen soll. \\
+\hline
+{\em Direction} & Die Richtung, in die der Spieler schauen soll. \\
 \hline
 \end{DoxyParams}
 

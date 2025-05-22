@@ -1,0 +1,75 @@
+\doxysection{Spike\+Dynamic Class Reference}
+\hypertarget{class_spike_dynamic}{}\label{class_spike_dynamic}\index{SpikeDynamic@{SpikeDynamic}}
+
+
+Klasse für die beweglichen Spikes.  
+
+
+Inheritance diagram for Spike\+Dynamic\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_spike_dynamic}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_spike_dynamic_a5a70ae1fc75e8df382aa0f575fe5403b}{\+\_\+\+Ready}} ()
+\begin{DoxyCompactList}\small\item\em Initialisierung der Node \doxylink{class_player}{Player}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_damage}{Damage}} \mbox{\hyperlink{class_spike_dynamic_a9c3e59009a1e875146bcb29853ab7e75}{Get\+Damage}} ()
+\begin{DoxyCompactList}\small\item\em Gibt ein \doxylink{class_damage}{Damage} Objekt zurück. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_spike_dynamic_a425d2b136ce23709eee38f3089937835}\label{class_spike_dynamic_a425d2b136ce23709eee38f3089937835} 
+void {\bfseries On\+Player\+Body\+Entered} (Node body)
+\begin{DoxyCompactList}\small\item\em Prüfen ob der Körper den \doxylink{class_spike}{Spike} betritt falls ja wird der Timer gestartet und der Spieler nimmt Schaden. \end{DoxyCompactList}\item 
+\Hypertarget{class_spike_dynamic_a8a5de6384efa84a5824137882ec91cd3}\label{class_spike_dynamic_a8a5de6384efa84a5824137882ec91cd3} 
+void {\bfseries On\+Player\+Body\+Exited} (Node body)
+\begin{DoxyCompactList}\small\item\em Prüfen ob der Körper den \doxylink{class_spike}{Spike} verlässt, falls ja wird der Timer gestoppt und der Spieler nimmt keinen Schaden mehr. \end{DoxyCompactList}\item 
+\Hypertarget{class_spike_dynamic_a167cdf30da17b600acdc5f65776b72d9}\label{class_spike_dynamic_a167cdf30da17b600acdc5f65776b72d9} 
+void {\bfseries On\+Timer\+Timeout} ()
+\begin{DoxyCompactList}\small\item\em Timer Timeout Methode, die den Schaden an den Spieler übergibt. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_spike_dynamic_a351d3912c15bd50af5a14bb8cfb9f604}\label{class_spike_dynamic_a351d3912c15bd50af5a14bb8cfb9f604} 
+\mbox{\hyperlink{class_player}{Player}} {\bfseries Player}
+\item 
+\Hypertarget{class_spike_dynamic_a748bbe11938b029221313ef57ac47520}\label{class_spike_dynamic_a748bbe11938b029221313ef57ac47520} 
+float {\bfseries Damage} = 10f
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Klasse für die beweglichen Spikes. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_spike_dynamic_a5a70ae1fc75e8df382aa0f575fe5403b}\index{SpikeDynamic@{SpikeDynamic}!\_Ready@{\_Ready}}
+\index{\_Ready@{\_Ready}!SpikeDynamic@{SpikeDynamic}}
+\doxysubsubsection{\texorpdfstring{\_Ready()}{\_Ready()}}
+{\footnotesize\ttfamily \label{class_spike_dynamic_a5a70ae1fc75e8df382aa0f575fe5403b} 
+override void Spike\+Dynamic.\+\_\+\+Ready (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Initialisierung der Node \doxylink{class_player}{Player}. 
+
+Hier wird der \doxylink{class_player}{Player} Node gefunden \Hypertarget{class_spike_dynamic_a9c3e59009a1e875146bcb29853ab7e75}\index{SpikeDynamic@{SpikeDynamic}!GetDamage@{GetDamage}}
+\index{GetDamage@{GetDamage}!SpikeDynamic@{SpikeDynamic}}
+\doxysubsubsection{\texorpdfstring{GetDamage()}{GetDamage()}}
+{\footnotesize\ttfamily \label{class_spike_dynamic_a9c3e59009a1e875146bcb29853ab7e75} 
+\mbox{\hyperlink{class_damage}{Damage}} Spike\+Dynamic.\+Get\+Damage (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gibt ein \doxylink{class_damage}{Damage} Objekt zurück. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{class_damage}{Damage} Objekt 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Youssef/\+Desktop/\+UNI/\+S4/\+Computerspiel\+Entwicklung/\+Das\+Spiel/anfaengerpraktikum/scripts/Spike\+Dynamic.\+cs\end{DoxyCompactItemize}

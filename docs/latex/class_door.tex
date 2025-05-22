@@ -1,5 +1,10 @@
 \doxysection{Door Class Reference}
 \hypertarget{class_door}{}\label{class_door}\index{Door@{Door}}
+
+
+Klasse für die Tür.  
+
+
 Inheritance diagram for Door\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -11,7 +16,7 @@ Inheritance diagram for Door\+:\begin{figure}[H]
 \item 
 \Hypertarget{class_door_acdbb6f0657a0a9e1e3ab0ed1dfaca9fa}\label{class_door_acdbb6f0657a0a9e1e3ab0ed1dfaca9fa} 
 override void {\bfseries \+\_\+\+Ready} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Initialisierung der Node Spawn. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -33,9 +38,31 @@ string {\bfseries Spawn\+Direction} = "{}up"{}\hspace{0.3cm}{\ttfamily  \mbox{[}
 \doxysubsubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_door_abbb28ab791faecda19ca1add4209c768}\label{class_door_abbb28ab791faecda19ca1add4209c768} 
-void {\bfseries On\+Player\+Body\+Entered} (Node body)
-\end{DoxyCompactItemize}
+void \mbox{\hyperlink{class_door_abbb28ab791faecda19ca1add4209c768}{On\+Player\+Body\+Entered}} (Node body)
+\begin{DoxyCompactList}\small\item\em Diese Funktion wird aufgerufen, wenn der \doxylink{class_player}{Player} die Tür betritt. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Klasse für die Tür. 
+
+Die Klasse ist für den Wechsel zwischen den Levels zuständig. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_door_abbb28ab791faecda19ca1add4209c768}\index{Door@{Door}!OnPlayerBodyEntered@{OnPlayerBodyEntered}}
+\index{OnPlayerBodyEntered@{OnPlayerBodyEntered}!Door@{Door}}
+\doxysubsubsection{\texorpdfstring{OnPlayerBodyEntered()}{OnPlayerBodyEntered()}}
+{\footnotesize\ttfamily \label{class_door_abbb28ab791faecda19ca1add4209c768} 
+void Door.\+On\+Player\+Body\+Entered (\begin{DoxyParamCaption}\item[{Node}]{body}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Diese Funktion wird aufgerufen, wenn der \doxylink{class_player}{Player} die Tür betritt. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em body} & Der Körper, der die Tür betritt \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

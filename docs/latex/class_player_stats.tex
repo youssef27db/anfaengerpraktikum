@@ -1,5 +1,10 @@
 \doxysection{Player\+Stats Class Reference}
 \hypertarget{class_player_stats}{}\label{class_player_stats}\index{PlayerStats@{PlayerStats}}
+
+
+Klasse für die Spielerstats.  
+
+
 Inheritance diagram for Player\+Stats\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,22 +14,448 @@ Inheritance diagram for Player\+Stats\+:\begin{figure}[H]
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_player_stats_a4e16244468e2c4ab2ff472784d09b39c}\label{class_player_stats_a4e16244468e2c4ab2ff472784d09b39c} 
-string {\bfseries Get\+Respawn\+Level\+Tag} ()
+\Hypertarget{class_player_stats_a895e862f4ff51140f473568a86ade636}\label{class_player_stats_a895e862f4ff51140f473568a86ade636} 
+override void {\bfseries \+\_\+\+Ready} ()
+\begin{DoxyCompactList}\small\item\em Initialisierung der Referenzen. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{class_player_stats_ad868bae6deb062dbcc4702b276a27041}{Get\+Respawn\+Level\+Tag}} ()
+\begin{DoxyCompactList}\small\item\em Getter für Respawn\+Level\+Tag. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_stats_a7ec692981c45e933c737eff8d78e6456}{Set\+Respawn\+Level\+Tag}} (String level\+Tag)
+\begin{DoxyCompactList}\small\item\em Setter für Respawn\+Level\+Tag. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{class_player_stats_a7db8c1cd1ecfb2041c7b376289054801}{Get\+Current\+Level\+Tag}} ()
+\begin{DoxyCompactList}\small\item\em Getter für Current\+Level\+Tag. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_stats_a3545edeb4834aad7011e561dc5f1b10d}{Set\+Current\+Level\+Tag}} (String level\+Tag)
+\begin{DoxyCompactList}\small\item\em Setter für Current\+Level\+Tag. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_stats_a147af1b1e37f6506303caca28b60f9e4}{Set\+Spawn\+Point}} (Vector2 spawn\+Point)
+\begin{DoxyCompactList}\small\item\em Setzt den Spawn\+Point des Spielers. \end{DoxyCompactList}\item 
+Vector2 \mbox{\hyperlink{class_player_stats_a20396ab55000fe68c62711c072bad9bb}{Get\+Spawn\+Point}} ()
+\begin{DoxyCompactList}\small\item\em Getter für den Spawn\+Point. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_stats_adb53f7019a00edfe089c3dfd205438c2}{Set\+Position}} (Vector2 position)
+\begin{DoxyCompactList}\small\item\em Setzt die Position des Spielers. \end{DoxyCompactList}\item 
+Vector2 \mbox{\hyperlink{class_player_stats_a77ca820f184b31dd9590bc8613f8566e}{Get\+Position}} ()
+\begin{DoxyCompactList}\small\item\em Getter für die Position. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_player_stats_a0b2b3398a02e8fbafe3c41dd466c57d0}{Get\+Sin\+Amount}} ()
+\begin{DoxyCompactList}\small\item\em Getter für Sin\+Amount. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_stats_a647991a1d154f8c2bc8d7032b43e35aa}{Set\+Sin\+Amount}} (int Value)
+\begin{DoxyCompactList}\small\item\em Setzt den Sin\+Amount des Spielers. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_player_stats_a6a24773d00e75be9747b99681ac76127}{Get\+Max\+Health\+Points}} ()
+\begin{DoxyCompactList}\small\item\em Gibt die maximalen Lebenspunkte des Spielers zurück. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_stats_a58c3b27a3633bead2f77fa551f30beeb}{Set\+Max\+Health\+Points}} (float max\+Health\+Points)
+\begin{DoxyCompactList}\small\item\em Setzt die maximalen Lebenspunkte des Spielers. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_player_stats_a0ec1075ba0983a3df42454b110194c0d}{Get\+Current\+Health}} ()
+\begin{DoxyCompactList}\small\item\em Gibt die aktuellen Lebenspunkte des Spielers zurück. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_stats_aaed3690620c6ba9a8866d0c35b4f26d7}{Set\+Current\+Health}} (float Health)
+\begin{DoxyCompactList}\small\item\em Setzt die aktuellen Lebenspunkte des Spielers. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_stats_a8f76220aa1271b2335b045624c6812d0}{Set\+Max\+Stamina}} (float Value)
+\begin{DoxyCompactList}\small\item\em Setzt die maximale Stamina des Spielers. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_player_stats_a7e27ea7ba3c266ecfa446c070415180a}{Get\+Max\+Stamina}} ()
+\begin{DoxyCompactList}\small\item\em Gibt die maximale Stamina des Spielers zurück. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_stats_ab341f12827a6bdcfebb826dff43e82e3}{Set\+Stamina}} (float Value)
+\begin{DoxyCompactList}\small\item\em Setzt die Stamina des Spielers. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_player_stats_a3a170316e8384ab030f5f697b799a947}{Get\+Stamina}} ()
+\begin{DoxyCompactList}\small\item\em Gibt die aktuelle Stamina des Spielers zurück. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_stats_a76c874319c947a35702cd9a0a4b0e66c}{Set\+BVHeal\+Amount}} (int Value)
+\begin{DoxyCompactList}\small\item\em Setzt den Heal\+Amount eines Bloodvials. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_player_stats_a026f80c7d14afe5dbf7e33e0edd2a16a}{Get\+BVHeal\+Amount}} ()
+\begin{DoxyCompactList}\small\item\em Gibt den aktuellen Heal\+Amount eines Bloodvials zurück. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_stats_abebcd5c40720aa0a7b4d86518f8e3b1b}{Set\+BVMax\+Uses}} (int Value)
+\begin{DoxyCompactList}\small\item\em Setzt die Max\+Uses der Bloodvials. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_player_stats_a88cc0468ef32b3b4a7b2e79af4e24424}{Get\+BVMax\+Uses}} ()
+\begin{DoxyCompactList}\small\item\em Gibt die Max\+Uses der Bloodvials zurück. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_stats_a05f3b699b992de2ea849c9397c818a6f}{Set\+BVCurrent\+Uses}} (int Value)
+\begin{DoxyCompactList}\small\item\em Setzt die Current\+Uses der Bloodvials. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_player_stats_a7927fc41f41b344aecea23f12c52329b}{Get\+BVCurrent\+Uses}} ()
+\begin{DoxyCompactList}\small\item\em Gibt die Current\+Uses der Bloodvials zurück. \end{DoxyCompactList}\item 
+\Hypertarget{class_player_stats_a9a513942394be2aae3457a6be9f81b9b}\label{class_player_stats_a9a513942394be2aae3457a6be9f81b9b} 
+void {\bfseries Reload} ()
+\begin{DoxyCompactList}\small\item\em Setzt die Attribute zurück. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_player_stats_adbd280e01c99009cb243357b497a3304}\label{class_player_stats_adbd280e01c99009cb243357b497a3304} 
-void {\bfseries Set\+Respawn\+Level\+Tag} (string level\+Tag)
+\Hypertarget{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}\label{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181} 
+static \mbox{\hyperlink{class_player_stats}{Player\+Stats}} {\bfseries Instance}\hspace{0.3cm}{\ttfamily  \mbox{[}get, private set\mbox{]}}
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_player_stats_addd290a3208260f19e4d1822108d5252}\label{class_player_stats_addd290a3208260f19e4d1822108d5252} 
-string {\bfseries Respawn\+Level\+Tag} = "{}intro"{}
+\Hypertarget{class_player_stats_a1e6557a3100cd9b69dccf218d2c84609}\label{class_player_stats_a1e6557a3100cd9b69dccf218d2c84609} 
+String {\bfseries Respawn\+Level\+Tag} = "{}intro"{}
+\item 
+\Hypertarget{class_player_stats_ae047b0b22ef2d0cbd60c5b4193fac02a}\label{class_player_stats_ae047b0b22ef2d0cbd60c5b4193fac02a} 
+String {\bfseries Current\+Level\+Tag} = "{}intro"{}
+\item 
+\Hypertarget{class_player_stats_a45dbfad923471fe032a894b05daf3735}\label{class_player_stats_a45dbfad923471fe032a894b05daf3735} 
+Vector2 {\bfseries Spawn\+Point}
+\item 
+\Hypertarget{class_player_stats_a2afbdf33659ec177ac5f27638a78fe42}\label{class_player_stats_a2afbdf33659ec177ac5f27638a78fe42} 
+Vector2 {\bfseries Position} = new Vector2(-\/540, 160)
+\item 
+\Hypertarget{class_player_stats_ad7c9580233648775b11f199347087f4c}\label{class_player_stats_ad7c9580233648775b11f199347087f4c} 
+int {\bfseries Sin\+Amount}
+\item 
+\Hypertarget{class_player_stats_a335bea0dc78273f4cc46a01a7d699dcd}\label{class_player_stats_a335bea0dc78273f4cc46a01a7d699dcd} 
+float {\bfseries Max\+Health\+Points} = 100f
+\item 
+\Hypertarget{class_player_stats_ae382740c5a49ebad7a020173d6eb527b}\label{class_player_stats_ae382740c5a49ebad7a020173d6eb527b} 
+float {\bfseries Current\+Health}
+\item 
+\Hypertarget{class_player_stats_a3ec6c1ddfeddebf52f76200216a015b5}\label{class_player_stats_a3ec6c1ddfeddebf52f76200216a015b5} 
+float {\bfseries Max\+Stamina} = 100f
+\item 
+\Hypertarget{class_player_stats_a4d2c11ea6b3c00573fdaada704003164}\label{class_player_stats_a4d2c11ea6b3c00573fdaada704003164} 
+float {\bfseries Current\+Stamina}
+\item 
+\Hypertarget{class_player_stats_ade72e9a5adb4aa136bc4cba06cc701db}\label{class_player_stats_ade72e9a5adb4aa136bc4cba06cc701db} 
+int {\bfseries BVHeal\+Amount} = 25
+\item 
+\Hypertarget{class_player_stats_aa47e0d391b2a9a1bf162da0b00a3b075}\label{class_player_stats_aa47e0d391b2a9a1bf162da0b00a3b075} 
+int {\bfseries BVMax\+Uses} = 5
+\item 
+\Hypertarget{class_player_stats_ab3f1ef87a636e6387817be8334dd75dc}\label{class_player_stats_ab3f1ef87a636e6387817be8334dd75dc} 
+int {\bfseries BVCurrent\+Uses}
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Klasse für die Spielerstats 
+Klasse für die Spielerstats. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_player_stats_a7927fc41f41b344aecea23f12c52329b}\index{PlayerStats@{PlayerStats}!GetBVCurrentUses@{GetBVCurrentUses}}
+\index{GetBVCurrentUses@{GetBVCurrentUses}!PlayerStats@{PlayerStats}}
+\doxysubsubsection{\texorpdfstring{GetBVCurrentUses()}{GetBVCurrentUses()}}
+{\footnotesize\ttfamily \label{class_player_stats_a7927fc41f41b344aecea23f12c52329b} 
+int Player\+Stats.\+Get\+BVCurrent\+Uses (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gibt die Current\+Uses der Bloodvials zurück. 
+
+\begin{DoxyReturn}{Returns}
+Die aktuellen Current\+Uses. 
+\end{DoxyReturn}
+\Hypertarget{class_player_stats_a026f80c7d14afe5dbf7e33e0edd2a16a}\index{PlayerStats@{PlayerStats}!GetBVHealAmount@{GetBVHealAmount}}
+\index{GetBVHealAmount@{GetBVHealAmount}!PlayerStats@{PlayerStats}}
+\doxysubsubsection{\texorpdfstring{GetBVHealAmount()}{GetBVHealAmount()}}
+{\footnotesize\ttfamily \label{class_player_stats_a026f80c7d14afe5dbf7e33e0edd2a16a} 
+int Player\+Stats.\+Get\+BVHeal\+Amount (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gibt den aktuellen Heal\+Amount eines Bloodvials zurück. 
+
+\begin{DoxyReturn}{Returns}
+Der aktuelle Heal\+Amount. 
+\end{DoxyReturn}
+\Hypertarget{class_player_stats_a88cc0468ef32b3b4a7b2e79af4e24424}\index{PlayerStats@{PlayerStats}!GetBVMaxUses@{GetBVMaxUses}}
+\index{GetBVMaxUses@{GetBVMaxUses}!PlayerStats@{PlayerStats}}
+\doxysubsubsection{\texorpdfstring{GetBVMaxUses()}{GetBVMaxUses()}}
+{\footnotesize\ttfamily \label{class_player_stats_a88cc0468ef32b3b4a7b2e79af4e24424} 
+int Player\+Stats.\+Get\+BVMax\+Uses (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gibt die Max\+Uses der Bloodvials zurück. 
+
+\begin{DoxyReturn}{Returns}
+Die aktuellen Max\+Uses. 
+\end{DoxyReturn}
+\Hypertarget{class_player_stats_a0ec1075ba0983a3df42454b110194c0d}\index{PlayerStats@{PlayerStats}!GetCurrentHealth@{GetCurrentHealth}}
+\index{GetCurrentHealth@{GetCurrentHealth}!PlayerStats@{PlayerStats}}
+\doxysubsubsection{\texorpdfstring{GetCurrentHealth()}{GetCurrentHealth()}}
+{\footnotesize\ttfamily \label{class_player_stats_a0ec1075ba0983a3df42454b110194c0d} 
+float Player\+Stats.\+Get\+Current\+Health (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gibt die aktuellen Lebenspunkte des Spielers zurück. 
+
+\begin{DoxyReturn}{Returns}
+Die aktuellen Lebenspunkte. 
+\end{DoxyReturn}
+\Hypertarget{class_player_stats_a7db8c1cd1ecfb2041c7b376289054801}\index{PlayerStats@{PlayerStats}!GetCurrentLevelTag@{GetCurrentLevelTag}}
+\index{GetCurrentLevelTag@{GetCurrentLevelTag}!PlayerStats@{PlayerStats}}
+\doxysubsubsection{\texorpdfstring{GetCurrentLevelTag()}{GetCurrentLevelTag()}}
+{\footnotesize\ttfamily \label{class_player_stats_a7db8c1cd1ecfb2041c7b376289054801} 
+String Player\+Stats.\+Get\+Current\+Level\+Tag (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Getter für Current\+Level\+Tag. 
+
+\begin{DoxyReturn}{Returns}
+String Current\+Level\+Tag 
+\end{DoxyReturn}
+\Hypertarget{class_player_stats_a6a24773d00e75be9747b99681ac76127}\index{PlayerStats@{PlayerStats}!GetMaxHealthPoints@{GetMaxHealthPoints}}
+\index{GetMaxHealthPoints@{GetMaxHealthPoints}!PlayerStats@{PlayerStats}}
+\doxysubsubsection{\texorpdfstring{GetMaxHealthPoints()}{GetMaxHealthPoints()}}
+{\footnotesize\ttfamily \label{class_player_stats_a6a24773d00e75be9747b99681ac76127} 
+float Player\+Stats.\+Get\+Max\+Health\+Points (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gibt die maximalen Lebenspunkte des Spielers zurück. 
+
+\begin{DoxyReturn}{Returns}
+Die maximalen Lebenspunkte. 
+\end{DoxyReturn}
+\Hypertarget{class_player_stats_a7e27ea7ba3c266ecfa446c070415180a}\index{PlayerStats@{PlayerStats}!GetMaxStamina@{GetMaxStamina}}
+\index{GetMaxStamina@{GetMaxStamina}!PlayerStats@{PlayerStats}}
+\doxysubsubsection{\texorpdfstring{GetMaxStamina()}{GetMaxStamina()}}
+{\footnotesize\ttfamily \label{class_player_stats_a7e27ea7ba3c266ecfa446c070415180a} 
+float Player\+Stats.\+Get\+Max\+Stamina (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gibt die maximale Stamina des Spielers zurück. 
+
+\begin{DoxyReturn}{Returns}
+Die maximale Stamina. 
+\end{DoxyReturn}
+\Hypertarget{class_player_stats_a77ca820f184b31dd9590bc8613f8566e}\index{PlayerStats@{PlayerStats}!GetPosition@{GetPosition}}
+\index{GetPosition@{GetPosition}!PlayerStats@{PlayerStats}}
+\doxysubsubsection{\texorpdfstring{GetPosition()}{GetPosition()}}
+{\footnotesize\ttfamily \label{class_player_stats_a77ca820f184b31dd9590bc8613f8566e} 
+Vector2 Player\+Stats.\+Get\+Position (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Getter für die Position. 
+
+\begin{DoxyReturn}{Returns}
+Position des Spielers 
+\end{DoxyReturn}
+\Hypertarget{class_player_stats_ad868bae6deb062dbcc4702b276a27041}\index{PlayerStats@{PlayerStats}!GetRespawnLevelTag@{GetRespawnLevelTag}}
+\index{GetRespawnLevelTag@{GetRespawnLevelTag}!PlayerStats@{PlayerStats}}
+\doxysubsubsection{\texorpdfstring{GetRespawnLevelTag()}{GetRespawnLevelTag()}}
+{\footnotesize\ttfamily \label{class_player_stats_ad868bae6deb062dbcc4702b276a27041} 
+String Player\+Stats.\+Get\+Respawn\+Level\+Tag (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Getter für Respawn\+Level\+Tag. 
+
+\begin{DoxyReturn}{Returns}
+String Respawn\+Level\+Tag 
+\end{DoxyReturn}
+\Hypertarget{class_player_stats_a0b2b3398a02e8fbafe3c41dd466c57d0}\index{PlayerStats@{PlayerStats}!GetSinAmount@{GetSinAmount}}
+\index{GetSinAmount@{GetSinAmount}!PlayerStats@{PlayerStats}}
+\doxysubsubsection{\texorpdfstring{GetSinAmount()}{GetSinAmount()}}
+{\footnotesize\ttfamily \label{class_player_stats_a0b2b3398a02e8fbafe3c41dd466c57d0} 
+int Player\+Stats.\+Get\+Sin\+Amount (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Getter für Sin\+Amount. 
+
+\begin{DoxyReturn}{Returns}
+int Sins 
+\end{DoxyReturn}
+\Hypertarget{class_player_stats_a20396ab55000fe68c62711c072bad9bb}\index{PlayerStats@{PlayerStats}!GetSpawnPoint@{GetSpawnPoint}}
+\index{GetSpawnPoint@{GetSpawnPoint}!PlayerStats@{PlayerStats}}
+\doxysubsubsection{\texorpdfstring{GetSpawnPoint()}{GetSpawnPoint()}}
+{\footnotesize\ttfamily \label{class_player_stats_a20396ab55000fe68c62711c072bad9bb} 
+Vector2 Player\+Stats.\+Get\+Spawn\+Point (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Getter für den Spawn\+Point. 
+
+\begin{DoxyReturn}{Returns}
+Der Spawn\+Point des Spielers 
+\end{DoxyReturn}
+\Hypertarget{class_player_stats_a3a170316e8384ab030f5f697b799a947}\index{PlayerStats@{PlayerStats}!GetStamina@{GetStamina}}
+\index{GetStamina@{GetStamina}!PlayerStats@{PlayerStats}}
+\doxysubsubsection{\texorpdfstring{GetStamina()}{GetStamina()}}
+{\footnotesize\ttfamily \label{class_player_stats_a3a170316e8384ab030f5f697b799a947} 
+float Player\+Stats.\+Get\+Stamina (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gibt die aktuelle Stamina des Spielers zurück. 
+
+\begin{DoxyReturn}{Returns}
+Die aktuelle Stamina. 
+\end{DoxyReturn}
+\Hypertarget{class_player_stats_a05f3b699b992de2ea849c9397c818a6f}\index{PlayerStats@{PlayerStats}!SetBVCurrentUses@{SetBVCurrentUses}}
+\index{SetBVCurrentUses@{SetBVCurrentUses}!PlayerStats@{PlayerStats}}
+\doxysubsubsection{\texorpdfstring{SetBVCurrentUses()}{SetBVCurrentUses()}}
+{\footnotesize\ttfamily \label{class_player_stats_a05f3b699b992de2ea849c9397c818a6f} 
+void Player\+Stats.\+Set\+BVCurrent\+Uses (\begin{DoxyParamCaption}\item[{int}]{Value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Setzt die Current\+Uses der Bloodvials. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Value} & Die Current\+Uses der Bloodvials. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_player_stats_a76c874319c947a35702cd9a0a4b0e66c}\index{PlayerStats@{PlayerStats}!SetBVHealAmount@{SetBVHealAmount}}
+\index{SetBVHealAmount@{SetBVHealAmount}!PlayerStats@{PlayerStats}}
+\doxysubsubsection{\texorpdfstring{SetBVHealAmount()}{SetBVHealAmount()}}
+{\footnotesize\ttfamily \label{class_player_stats_a76c874319c947a35702cd9a0a4b0e66c} 
+void Player\+Stats.\+Set\+BVHeal\+Amount (\begin{DoxyParamCaption}\item[{int}]{Value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Setzt den Heal\+Amount eines Bloodvials. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Value} & Den neuen Wert für den Heal\+Amount. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_player_stats_abebcd5c40720aa0a7b4d86518f8e3b1b}\index{PlayerStats@{PlayerStats}!SetBVMaxUses@{SetBVMaxUses}}
+\index{SetBVMaxUses@{SetBVMaxUses}!PlayerStats@{PlayerStats}}
+\doxysubsubsection{\texorpdfstring{SetBVMaxUses()}{SetBVMaxUses()}}
+{\footnotesize\ttfamily \label{class_player_stats_abebcd5c40720aa0a7b4d86518f8e3b1b} 
+void Player\+Stats.\+Set\+BVMax\+Uses (\begin{DoxyParamCaption}\item[{int}]{Value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Setzt die Max\+Uses der Bloodvials. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Value} & Die Max\+Uses der Bloodvials. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_player_stats_aaed3690620c6ba9a8866d0c35b4f26d7}\index{PlayerStats@{PlayerStats}!SetCurrentHealth@{SetCurrentHealth}}
+\index{SetCurrentHealth@{SetCurrentHealth}!PlayerStats@{PlayerStats}}
+\doxysubsubsection{\texorpdfstring{SetCurrentHealth()}{SetCurrentHealth()}}
+{\footnotesize\ttfamily \label{class_player_stats_aaed3690620c6ba9a8866d0c35b4f26d7} 
+void Player\+Stats.\+Set\+Current\+Health (\begin{DoxyParamCaption}\item[{float}]{Health}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Setzt die aktuellen Lebenspunkte des Spielers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Health} & Neue Lebenspunkte, die gesetzt werden sollen. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_player_stats_a3545edeb4834aad7011e561dc5f1b10d}\index{PlayerStats@{PlayerStats}!SetCurrentLevelTag@{SetCurrentLevelTag}}
+\index{SetCurrentLevelTag@{SetCurrentLevelTag}!PlayerStats@{PlayerStats}}
+\doxysubsubsection{\texorpdfstring{SetCurrentLevelTag()}{SetCurrentLevelTag()}}
+{\footnotesize\ttfamily \label{class_player_stats_a3545edeb4834aad7011e561dc5f1b10d} 
+void Player\+Stats.\+Set\+Current\+Level\+Tag (\begin{DoxyParamCaption}\item[{String}]{level\+Tag}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Setter für Current\+Level\+Tag. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Current\+Level\+Tag} & Neuer Tag \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_player_stats_a58c3b27a3633bead2f77fa551f30beeb}\index{PlayerStats@{PlayerStats}!SetMaxHealthPoints@{SetMaxHealthPoints}}
+\index{SetMaxHealthPoints@{SetMaxHealthPoints}!PlayerStats@{PlayerStats}}
+\doxysubsubsection{\texorpdfstring{SetMaxHealthPoints()}{SetMaxHealthPoints()}}
+{\footnotesize\ttfamily \label{class_player_stats_a58c3b27a3633bead2f77fa551f30beeb} 
+void Player\+Stats.\+Set\+Max\+Health\+Points (\begin{DoxyParamCaption}\item[{float}]{max\+Health\+Points}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Setzt die maximalen Lebenspunkte des Spielers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em max\+Health\+Points} & Die neuen maximalen Lebenspunkte (muss positiv sein). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_player_stats_a8f76220aa1271b2335b045624c6812d0}\index{PlayerStats@{PlayerStats}!SetMaxStamina@{SetMaxStamina}}
+\index{SetMaxStamina@{SetMaxStamina}!PlayerStats@{PlayerStats}}
+\doxysubsubsection{\texorpdfstring{SetMaxStamina()}{SetMaxStamina()}}
+{\footnotesize\ttfamily \label{class_player_stats_a8f76220aa1271b2335b045624c6812d0} 
+void Player\+Stats.\+Set\+Max\+Stamina (\begin{DoxyParamCaption}\item[{float}]{Value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Setzt die maximale Stamina des Spielers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Value} & Den neuen Wert für die maximale Stamina (muss positiv sein). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_player_stats_adb53f7019a00edfe089c3dfd205438c2}\index{PlayerStats@{PlayerStats}!SetPosition@{SetPosition}}
+\index{SetPosition@{SetPosition}!PlayerStats@{PlayerStats}}
+\doxysubsubsection{\texorpdfstring{SetPosition()}{SetPosition()}}
+{\footnotesize\ttfamily \label{class_player_stats_adb53f7019a00edfe089c3dfd205438c2} 
+void Player\+Stats.\+Set\+Position (\begin{DoxyParamCaption}\item[{Vector2}]{position}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Setzt die Position des Spielers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Position} & des Spielers. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_player_stats_a7ec692981c45e933c737eff8d78e6456}\index{PlayerStats@{PlayerStats}!SetRespawnLevelTag@{SetRespawnLevelTag}}
+\index{SetRespawnLevelTag@{SetRespawnLevelTag}!PlayerStats@{PlayerStats}}
+\doxysubsubsection{\texorpdfstring{SetRespawnLevelTag()}{SetRespawnLevelTag()}}
+{\footnotesize\ttfamily \label{class_player_stats_a7ec692981c45e933c737eff8d78e6456} 
+void Player\+Stats.\+Set\+Respawn\+Level\+Tag (\begin{DoxyParamCaption}\item[{String}]{level\+Tag}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Setter für Respawn\+Level\+Tag. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Respawn\+Level\+Tag} & Neuer Tag \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_player_stats_a647991a1d154f8c2bc8d7032b43e35aa}\index{PlayerStats@{PlayerStats}!SetSinAmount@{SetSinAmount}}
+\index{SetSinAmount@{SetSinAmount}!PlayerStats@{PlayerStats}}
+\doxysubsubsection{\texorpdfstring{SetSinAmount()}{SetSinAmount()}}
+{\footnotesize\ttfamily \label{class_player_stats_a647991a1d154f8c2bc8d7032b43e35aa} 
+void Player\+Stats.\+Set\+Sin\+Amount (\begin{DoxyParamCaption}\item[{int}]{Value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Setzt den Sin\+Amount des Spielers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Value} & Der neue Wert für den Sin\+Amount. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_player_stats_a147af1b1e37f6506303caca28b60f9e4}\index{PlayerStats@{PlayerStats}!SetSpawnPoint@{SetSpawnPoint}}
+\index{SetSpawnPoint@{SetSpawnPoint}!PlayerStats@{PlayerStats}}
+\doxysubsubsection{\texorpdfstring{SetSpawnPoint()}{SetSpawnPoint()}}
+{\footnotesize\ttfamily \label{class_player_stats_a147af1b1e37f6506303caca28b60f9e4} 
+void Player\+Stats.\+Set\+Spawn\+Point (\begin{DoxyParamCaption}\item[{Vector2}]{spawn\+Point}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Setzt den Spawn\+Point des Spielers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Der} & Spawn\+Point des Spielers. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_player_stats_ab341f12827a6bdcfebb826dff43e82e3}\index{PlayerStats@{PlayerStats}!SetStamina@{SetStamina}}
+\index{SetStamina@{SetStamina}!PlayerStats@{PlayerStats}}
+\doxysubsubsection{\texorpdfstring{SetStamina()}{SetStamina()}}
+{\footnotesize\ttfamily \label{class_player_stats_ab341f12827a6bdcfebb826dff43e82e3} 
+void Player\+Stats.\+Set\+Stamina (\begin{DoxyParamCaption}\item[{float}]{Value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Setzt die Stamina des Spielers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Value} & Den neuen Wert für Stamina (muss im Bereich zwischen 0 und Max\+Stamina liegen). \\
+\hline
+\end{DoxyParams}
+
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

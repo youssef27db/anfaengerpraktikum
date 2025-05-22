@@ -1,0 +1,194 @@
+\doxysection{Boss1 Class Reference}
+\hypertarget{class_boss1}{}\label{class_boss1}\index{Boss1@{Boss1}}
+
+
+Klasse für einen stärkeren Boss-\/\+Gegner, der von \doxylink{class_base_enemy}{Base\+Enemy} erbt.  
+
+
+Inheritance diagram for Boss1\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_boss1}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_boss1_a54d969ea1903e38368d64dad18a7f4f7}\label{class_boss1_a54d969ea1903e38368d64dad18a7f4f7} 
+override void {\bfseries \+\_\+\+Ready} ()
+\begin{DoxyCompactList}\small\item\em Überschreibt die \+\_\+\+Ready-\/\+Methode von \doxylink{class_base_enemy}{Base\+Enemy}. \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_boss1_acf5c78871a8938129df05bba3b71780f}{\+\_\+\+Process}} (double Delta\+Time)
+\begin{DoxyCompactList}\small\item\em Überschreibt die \+\_\+\+Process-\/\+Methode von \doxylink{class_base_enemy}{Base\+Enemy}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_base_enemy}{Base\+Enemy}}}
+\begin{DoxyCompactItemize}
+\item 
+override void {\bfseries \+\_\+\+Ready} ()
+\begin{DoxyCompactList}\small\item\em Initialisierung der Referenzen. Findet die relevanten Knoten in der Szene und weist sie zu. \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_base_enemy_acf42e9e6b9a386259f5dd74a83c09fac}{\+\_\+\+Process}} (double Delta\+Time)
+\begin{DoxyCompactList}\small\item\em Physikalische Prozesse werden in jedem Frame ausgeführt. Berechnet Gravitation und Bewegung. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_base_enemy_ad1a2b4f2e07d55eab26d4d8e1d9aa713}{On\+Detection\+Body\+Entered}} (Node2D body)
+\begin{DoxyCompactList}\small\item\em Detektiert den Spieler wenn er den Erkennungsbereich betritt. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_base_enemy_a269f9f3626f17368f404ca27616d0697}{On\+Pursuing\+Radius\+Body\+Exited}} (Node2D body)
+\begin{DoxyCompactList}\small\item\em Detektiert wenn der Spieler den Verfolgungsbereich verlässt. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_base_enemy_a6aad96826441fe152694139d29893bad}{On\+Hitbox\+Area\+Entered}} (Area2D area)
+\begin{DoxyCompactList}\small\item\em Detektiert wenn ein Objekt die Hitbox des Gegners betritt. (z.\+B.\+: Schwert des Spielers) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_base_enemy_ab07fb117d5286ef97dc702149c02b14a}{On\+Sword\+Hit\+Box\+Body\+Entered}} (Node2D body)
+\begin{DoxyCompactList}\small\item\em Detektiert ob der Spieler in Schlagreichweite ist. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_base_enemy_a27c3947769522b35b537e5f472ef0b77}{Is\+Dead}} ()
+\begin{DoxyCompactList}\small\item\em Gibt boolean Dead zurück. \end{DoxyCompactList}\item 
+void {\bfseries Respawn} ()
+\begin{DoxyCompactList}\small\item\em Wird aufgerufen wenn der Gegner respawnt. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_boss1_adeeb5dafaa8e2f640adba4339b6da0f9}{Handle\+Regeneration}} (double Delta\+Time)
+\begin{DoxyCompactList}\small\item\em Regeneriert die Gesundheit des Bosses, wenn er keinen Schaden nimmt. \end{DoxyCompactList}\item 
+\Hypertarget{class_boss1_a3028f486f7e9cde1116086a4ae7b810e}\label{class_boss1_a3028f486f7e9cde1116086a4ae7b810e} 
+void {\bfseries Start\+Glowing} ()
+\begin{DoxyCompactList}\small\item\em Startet einen Leuchteffekt, wenn der Boss Schaden nimmt. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_boss1_a7f37f00687f7c0e51fde5ba281150091}{Show\+Popup\+Message}} (string Message)
+\begin{DoxyCompactList}\small\item\em Zeigt eine Popup-\/\+Nachricht an. \end{DoxyCompactList}\item 
+\Hypertarget{class_boss1_aba2c531c46124f21ec612a2acd14cd6c}\label{class_boss1_aba2c531c46124f21ec612a2acd14cd6c} 
+void {\bfseries Revive\+Enemies} ()
+\begin{DoxyCompactList}\small\item\em Lässt alle toten Feinde im Raum des Bosses wiederbeleben. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_boss1_af34e5a49e4e66b404a0f5ba6e0dcfdf5}\label{class_boss1_af34e5a49e4e66b404a0f5ba6e0dcfdf5} 
+bool {\bfseries Enemies\+Revived} = false
+\item 
+\Hypertarget{class_boss1_a0a05bef3b6a4852c18ee805f785c8a67}\label{class_boss1_a0a05bef3b6a4852c18ee805f785c8a67} 
+float {\bfseries Regen\+Cooldown} = 5.\+0f
+\item 
+\Hypertarget{class_boss1_a1ffe13684ef66b1ec26b87e728b83cb0}\label{class_boss1_a1ffe13684ef66b1ec26b87e728b83cb0} 
+float {\bfseries Regen\+Timer} = 0.\+0f
+\item 
+\Hypertarget{class_boss1_ac698e027fada02bcf0bea5e2c756711c}\label{class_boss1_ac698e027fada02bcf0bea5e2c756711c} 
+float {\bfseries Regen\+Amount} = 10.\+0f
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_base_enemy}{Base\+Enemy}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bfseries Update\+Animation} ()
+\begin{DoxyCompactList}\small\item\em Aktualisiert die Animationen des Gegners. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_base_enemy}{Base\+Enemy}}}
+\begin{DoxyCompactItemize}
+\item 
+float {\bfseries Damage} = 20f
+\item 
+bool {\bfseries Dead} = false
+\item 
+bool {\bfseries Respawnable} = true
+\item 
+float {\bfseries Max\+Health\+Points} = 100f
+\item 
+float {\bfseries Armor} = 20f
+\item 
+float {\bfseries Max\+Stamina} = 1f
+\item 
+float {\bfseries Speed} = 10
+\item 
+int {\bfseries Sin\+Amount} = 10
+\item 
+double {\bfseries Return\+To\+Start\+After} = 5
+\item 
+float {\bfseries Current\+Health\+Points}
+\item 
+float {\bfseries Current\+Stamina}
+\item 
+double {\bfseries Return\+To\+Start}
+\item 
+bool {\bfseries Pursuing} = false
+\item 
+Node2D {\bfseries Current\+Target} = null
+\item 
+Vector2 {\bfseries Target\+Position} = Vector2.\+Inf
+\item 
+Vector2 {\bfseries Start\+Position}
+\item 
+bool {\bfseries Start\+Rotation} = false
+\item 
+bool {\bfseries Already\+Hit} = false
+\item 
+Animated\+Sprite2D {\bfseries Sprite}
+\item 
+Collision\+Polygon2D {\bfseries Collision\+Polygon}
+\item 
+Area2D {\bfseries Sword\+Hitbox}
+\item 
+Collision\+Shape2D {\bfseries Main\+Collision}
+\item 
+Ray\+Cast2D {\bfseries Front\+Collision\+Ray\+Cast}
+\item 
+Ray\+Cast2D {\bfseries Line\+Of\+Sight}
+\item 
+Ray\+Cast2D {\bfseries Left\+Fall\+Protection}
+\item 
+Ray\+Cast2D {\bfseries Right\+Fall\+Protection}
+\item 
+Texture\+Progress\+Bar {\bfseries Health\+Bar}
+\item 
+\mbox{\hyperlink{class_player}{Player}} {\bfseries Player}
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties inherited from \mbox{\hyperlink{class_base_enemy}{Base\+Enemy}}}
+\begin{DoxyCompactItemize}
+\item 
+uint {\bfseries Id} = 0\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Klasse für einen stärkeren Boss-\/\+Gegner, der von \doxylink{class_base_enemy}{Base\+Enemy} erbt. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_boss1_acf5c78871a8938129df05bba3b71780f}\index{Boss1@{Boss1}!\_Process@{\_Process}}
+\index{\_Process@{\_Process}!Boss1@{Boss1}}
+\doxysubsubsection{\texorpdfstring{\_Process()}{\_Process()}}
+{\footnotesize\ttfamily \label{class_boss1_acf5c78871a8938129df05bba3b71780f} 
+override void Boss1.\+\_\+\+Process (\begin{DoxyParamCaption}\item[{double}]{Delta\+Time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Überschreibt die \+\_\+\+Process-\/\+Methode von \doxylink{class_base_enemy}{Base\+Enemy}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Delta\+Time} & Die Zeit, die seit dem letzten Frame vergangen ist \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_boss1_adeeb5dafaa8e2f640adba4339b6da0f9}\index{Boss1@{Boss1}!HandleRegeneration@{HandleRegeneration}}
+\index{HandleRegeneration@{HandleRegeneration}!Boss1@{Boss1}}
+\doxysubsubsection{\texorpdfstring{HandleRegeneration()}{HandleRegeneration()}}
+{\footnotesize\ttfamily \label{class_boss1_adeeb5dafaa8e2f640adba4339b6da0f9} 
+void Boss1.\+Handle\+Regeneration (\begin{DoxyParamCaption}\item[{double}]{Delta\+Time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Regeneriert die Gesundheit des Bosses, wenn er keinen Schaden nimmt. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Delta\+Time} & Die Zeit, die seit dem letzten Frame vergangen ist \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_boss1_a7f37f00687f7c0e51fde5ba281150091}\index{Boss1@{Boss1}!ShowPopupMessage@{ShowPopupMessage}}
+\index{ShowPopupMessage@{ShowPopupMessage}!Boss1@{Boss1}}
+\doxysubsubsection{\texorpdfstring{ShowPopupMessage()}{ShowPopupMessage()}}
+{\footnotesize\ttfamily \label{class_boss1_a7f37f00687f7c0e51fde5ba281150091} 
+void Boss1.\+Show\+Popup\+Message (\begin{DoxyParamCaption}\item[{string}]{Message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Zeigt eine Popup-\/\+Nachricht an. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Message} & Die Nachricht, die angezeigt werden soll \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Youssef/\+Desktop/\+UNI/\+S4/\+Computerspiel\+Entwicklung/\+Das\+Spiel/anfaengerpraktikum/scripts/Boss1.\+cs\end{DoxyCompactItemize}

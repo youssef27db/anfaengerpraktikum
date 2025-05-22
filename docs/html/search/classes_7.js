@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['player_0',['Player',['../class_player.html',1,'']]],
-  ['playerstats_1',['PlayerStats',['../class_player_stats.html',1,'']]]
+  ['navigationmanager_0',['NavigationManager',['../class_navigation_manager.html',1,'']]]
 ];

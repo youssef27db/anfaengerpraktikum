@@ -1,0 +1,77 @@
+\doxysection{Hud Class Reference}
+\hypertarget{class_hud}{}\label{class_hud}\index{Hud@{Hud}}
+
+
+Klasse für das Pause\+Menu.  
+
+
+Inheritance diagram for Hud\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_hud}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_hud_a63383b5734266ec3b601e5742de8f838}\label{class_hud_a63383b5734266ec3b601e5742de8f838} 
+override void {\bfseries \+\_\+\+Ready} ()
+\begin{DoxyCompactList}\small\item\em Initialisierung der Referenzen. Findet die relevanten Knoten in der Szene und weist sie zu. \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_hud_afe8b83ec11a8ace01976b245975e684e}{\+\_\+\+Process}} (double Delta\+Time)
+\begin{DoxyCompactList}\small\item\em Methode wird in jedem Frame ausgeführt. \end{DoxyCompactList}\item 
+\Hypertarget{class_hud_a0c8d61fe3aec23e057d5ba6a50693b77}\label{class_hud_a0c8d61fe3aec23e057d5ba6a50693b77} 
+void {\bfseries On\+Resume\+Button\+Pressed} ()
+\begin{DoxyCompactList}\small\item\em Signal für den Resume-\/\+Button. \end{DoxyCompactList}\item 
+\Hypertarget{class_hud_ab984a267cfd8e2ce4e6add2f9a6caefe}\label{class_hud_ab984a267cfd8e2ce4e6add2f9a6caefe} 
+void {\bfseries On\+Save\+Button\+Pressed} ()
+\begin{DoxyCompactList}\small\item\em Signal für den Save-\/\+Button. \end{DoxyCompactList}\item 
+\Hypertarget{class_hud_af4971c76e7d7b29e7a08483d949e8e19}\label{class_hud_af4971c76e7d7b29e7a08483d949e8e19} 
+void {\bfseries On\+Save\+Menu\+Button\+Pressed} ()
+\begin{DoxyCompactList}\small\item\em Signal für den Save\+And\+Return\+To\+Menu-\/\+Button. \end{DoxyCompactList}\item 
+\Hypertarget{class_hud_aecaa338f901e56a031d338278a14fa07}\label{class_hud_aecaa338f901e56a031d338278a14fa07} 
+void {\bfseries On\+Save\+Quit\+Button\+Pressed} ()
+\begin{DoxyCompactList}\small\item\em Signal für den Save\+And\+Quit-\/\+Button. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_hud_ab01ffd8302eac92e75c87da377711f18}\label{class_hud_ab01ffd8302eac92e75c87da377711f18} 
+void {\bfseries Toggle\+Pause} ()
+\begin{DoxyCompactList}\small\item\em Toggled die Pause Funktion. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_hud_abd53b6eed5322906449da3d67f1703be}\label{class_hud_abd53b6eed5322906449da3d67f1703be} 
+Animation\+Player {\bfseries Animation\+Player}
+\item 
+\Hypertarget{class_hud_ab9e20b4d660564445727ca0667048a5c}\label{class_hud_ab9e20b4d660564445727ca0667048a5c} 
+Center\+Container {\bfseries Buttons}
+\item 
+\Hypertarget{class_hud_a7fab5b075645c1cbcce79b0987bceb73}\label{class_hud_a7fab5b075645c1cbcce79b0987bceb73} 
+bool {\bfseries Enabled}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Klasse für das Pause\+Menu. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_hud_afe8b83ec11a8ace01976b245975e684e}\index{Hud@{Hud}!\_Process@{\_Process}}
+\index{\_Process@{\_Process}!Hud@{Hud}}
+\doxysubsubsection{\texorpdfstring{\_Process()}{\_Process()}}
+{\footnotesize\ttfamily \label{class_hud_afe8b83ec11a8ace01976b245975e684e} 
+override void Hud.\+\_\+\+Process (\begin{DoxyParamCaption}\item[{double}]{Delta\+Time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Methode wird in jedem Frame ausgeführt. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Delta\+Time} & Zeit seit dem letzten Frame. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Youssef/\+Desktop/\+UNI/\+S4/\+Computerspiel\+Entwicklung/\+Das\+Spiel/anfaengerpraktikum/scripts/Hud.\+cs\end{DoxyCompactItemize}

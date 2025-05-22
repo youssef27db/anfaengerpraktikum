@@ -1,5 +1,10 @@
 \doxysection{Level\+Manager Class Reference}
 \hypertarget{class_level_manager}{}\label{class_level_manager}\index{LevelManager@{LevelManager}}
+
+
+Klasse für den \doxylink{class_level_manager}{Level\+Manager} Diese Klasse verwaltet den Levelwechsel und die Spielerpositionierung.  
+
+
 Inheritance diagram for Level\+Manager\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -10,13 +15,16 @@ Inheritance diagram for Level\+Manager\+:\begin{figure}[H]
 \begin{DoxyCompactItemize}
 \item 
 override void \mbox{\hyperlink{class_level_manager_a4b888380e2821900c4234746114081e8}{\+\_\+\+Ready}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Initialisierung der Referenzen. Findet die relevanten Knoten in der Szene und weist sie zu. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{class_level_manager_a2bb47b7b35e478b95173a4cebe474c44}{On\+Level\+Spawn}} (string Destination\+Tag)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Wird aufgerufen, wenn ein neues Level geladen wird. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Klasse für den \doxylink{class_level_manager}{Level\+Manager} Diese Klasse verwaltet den Levelwechsel und die Spielerpositionierung. 
 
 \doxysubsection{Member Function Documentation}
 \Hypertarget{class_level_manager_a4b888380e2821900c4234746114081e8}\index{LevelManager@{LevelManager}!\_Ready@{\_Ready}}
@@ -25,13 +33,19 @@ void \mbox{\hyperlink{class_level_manager_a2bb47b7b35e478b95173a4cebe474c44}{On\
 {\footnotesize\ttfamily \label{class_level_manager_a4b888380e2821900c4234746114081e8} 
 override void Level\+Manager.\+\_\+\+Ready (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Initialisierung der Referenzen. Findet die relevanten Knoten in der Szene und weist sie zu. 
+
 Wenn ein Spawn-\/\+Tag gesetzt ist, wird der Spieler an die entsprechende Tür gesetzt. Dies wird verwendet, um den Spieler an eine bestimmte Tür zu setzen, wenn er von einem anderen Level aus spawnt.\Hypertarget{class_level_manager_a2bb47b7b35e478b95173a4cebe474c44}\index{LevelManager@{LevelManager}!OnLevelSpawn@{OnLevelSpawn}}
 \index{OnLevelSpawn@{OnLevelSpawn}!LevelManager@{LevelManager}}
 \doxysubsubsection{\texorpdfstring{OnLevelSpawn()}{OnLevelSpawn()}}
 {\footnotesize\ttfamily \label{class_level_manager_a2bb47b7b35e478b95173a4cebe474c44} 
 void Level\+Manager.\+On\+Level\+Spawn (\begin{DoxyParamCaption}\item[{string}]{Destination\+Tag}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
 
-Wird aufgerufen, wenn ein neues Level geladen wird.
+
+
+Wird aufgerufen, wenn ein neues Level geladen wird. 
 
 
 \begin{DoxyParams}{Parameters}

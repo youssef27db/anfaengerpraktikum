@@ -1,5 +1,10 @@
 \doxysection{Spike Class Reference}
 \hypertarget{class_spike}{}\label{class_spike}\index{Spike@{Spike}}
+
+
+Klasse für die Spikes.  
+
+
 Inheritance diagram for Spike\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,9 +14,8 @@ Inheritance diagram for Spike\+:\begin{figure}[H]
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_spike_a527675080d8e2e4ee4310fb3e112a120}\label{class_spike_a527675080d8e2e4ee4310fb3e112a120} 
-override void {\bfseries \+\_\+\+Ready} ()
-\item 
+override void \mbox{\hyperlink{class_spike_a527675080d8e2e4ee4310fb3e112a120}{\+\_\+\+Ready}} ()
+\begin{DoxyCompactList}\small\item\em Initialisierung der Node \doxylink{class_player}{Player}. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_damage}{Damage}} \mbox{\hyperlink{class_spike_a089076328dd0c52b0c595f9ee9c98c33}{Get\+Damage}} ()
 \begin{DoxyCompactList}\small\item\em Gibt ein \doxylink{class_damage}{Damage} Objekt zurück. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Member Functions}
@@ -29,16 +33,29 @@ void {\bfseries On\+Timer\+Timeout} ()
 \doxysubsubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_spike_af8fec8c06e83274f57c4d37a8cbece5f}\label{class_spike_af8fec8c06e83274f57c4d37a8cbece5f} 
-\mbox{\hyperlink{class_player}{Player}} {\bfseries player}
+\Hypertarget{class_spike_a85d64c8d9c90fef419893853ae7e9942}\label{class_spike_a85d64c8d9c90fef419893853ae7e9942} 
+\mbox{\hyperlink{class_player}{Player}} {\bfseries Player}
 \item 
 \Hypertarget{class_spike_aa6e0e6494eb6bf74afaa7becf33cefe3}\label{class_spike_aa6e0e6494eb6bf74afaa7becf33cefe3} 
 float {\bfseries Damage} = 10f
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+Klasse für die Spikes. 
+
 \doxysubsection{Member Function Documentation}
-\Hypertarget{class_spike_a089076328dd0c52b0c595f9ee9c98c33}\index{Spike@{Spike}!GetDamage@{GetDamage}}
+\Hypertarget{class_spike_a527675080d8e2e4ee4310fb3e112a120}\index{Spike@{Spike}!\_Ready@{\_Ready}}
+\index{\_Ready@{\_Ready}!Spike@{Spike}}
+\doxysubsubsection{\texorpdfstring{\_Ready()}{\_Ready()}}
+{\footnotesize\ttfamily \label{class_spike_a527675080d8e2e4ee4310fb3e112a120} 
+override void Spike.\+\_\+\+Ready (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Initialisierung der Node \doxylink{class_player}{Player}. 
+
+Hier wird der \doxylink{class_player}{Player} Node gefunden \Hypertarget{class_spike_a089076328dd0c52b0c595f9ee9c98c33}\index{Spike@{Spike}!GetDamage@{GetDamage}}
 \index{GetDamage@{GetDamage}!Spike@{Spike}}
 \doxysubsubsection{\texorpdfstring{GetDamage()}{GetDamage()}}
 {\footnotesize\ttfamily \label{class_spike_a089076328dd0c52b0c595f9ee9c98c33} 
