@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://dkd5ua6qjnm3o"]
 
 [ext_resource type="Texture2D" uid="uid://c0w6h05532gs0" path="res://assets/Dungeon Tile Set.png" id="1_gavua"]
-[ext_resource type="PackedScene" uid="uid://chxndv6of54w8" path="res://Scenes/spike.tscn" id="2_ahkow"]
-[ext_resource type="Script" path="res://scripts/SpikeDynamic.cs" id="3_epgej"]
+[ext_resource type="PackedScene" uid="uid://chxndv6of54w8" path="res://scenes/spike.tscn" id="2_ahkow"]
+[ext_resource type="Script" uid="uid://b6cgd532ti6cf" path="res://scripts/SpikeDynamic.cs" id="3_epgej"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aimbu"]
 size = Vector2(31, 4)

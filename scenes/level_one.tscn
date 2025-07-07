@@ -1,6 +1,6 @@
 [gd_scene load_steps=34 format=4 uid="uid://cjhbi6fpo5f66"]
 
-[ext_resource type="Script" path="res://scripts/LevelManager.cs" id="1_ae7yb"]
+[ext_resource type="Script" uid="uid://bxpd8d1o4eeeh" path="res://scripts/LevelManager.cs" id="1_ae7yb"]
 [ext_resource type="PackedScene" uid="uid://cq6xmv3najlnh" path="res://scenes/player.tscn" id="1_nw8jm"]
 [ext_resource type="Texture2D" uid="uid://c0w6h05532gs0" path="res://assets/Dungeon Tile Set.png" id="2_b8sg5"]
 [ext_resource type="PackedScene" uid="uid://dp7co0plevfjk" path="res://scenes/platform.tscn" id="3_vlrcr"]
@@ -379,8 +379,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kcmq4"]
 _data = {
-"RESET": SubResource("Animation_3adp5"),
-"move": SubResource("Animation_5oh67")
+&"RESET": SubResource("Animation_3adp5"),
+&"move": SubResource("Animation_5oh67")
 }
 
 [sub_resource type="Animation" id="Animation_rmraq"]
@@ -417,8 +417,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4a8yr"]
 _data = {
-"RESET": SubResource("Animation_rmraq"),
-"move": SubResource("Animation_p4yc7")
+&"RESET": SubResource("Animation_rmraq"),
+&"move": SubResource("Animation_p4yc7")
 }
 
 [sub_resource type="Animation" id="Animation_f16hk"]
@@ -454,8 +454,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nh0v6"]
 _data = {
-"RESET": SubResource("Animation_f16hk"),
-"move": SubResource("Animation_h5c1w")
+&"RESET": SubResource("Animation_f16hk"),
+&"move": SubResource("Animation_h5c1w")
 }
 
 [sub_resource type="Animation" id="Animation_vafqc"]
@@ -491,8 +491,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mi7od"]
 _data = {
-"RESET": SubResource("Animation_vafqc"),
-"move": SubResource("Animation_rv6n2")
+&"RESET": SubResource("Animation_vafqc"),
+&"move": SubResource("Animation_rv6n2")
 }
 
 [sub_resource type="Animation" id="Animation_0lkdj"]
@@ -528,8 +528,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_td1cu"]
 _data = {
-"RESET": SubResource("Animation_0lkdj"),
-"move": SubResource("Animation_cu2bf")
+&"RESET": SubResource("Animation_0lkdj"),
+&"move": SubResource("Animation_cu2bf")
 }
 
 [sub_resource type="Animation" id="Animation_if3c4"]
@@ -566,8 +566,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_aj25g"]
 _data = {
-"RESET": SubResource("Animation_if3c4"),
-"move": SubResource("Animation_2cidx")
+&"RESET": SubResource("Animation_if3c4"),
+&"move": SubResource("Animation_2cidx")
 }
 
 [node name="level_one" type="Node2D"]
@@ -601,7 +601,7 @@ position = Vector2(670, -98)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/platform"]
 libraries = {
-"": SubResource("AnimationLibrary_kcmq4")
+&"": SubResource("AnimationLibrary_kcmq4")
 }
 autoplay = "move"
 
@@ -610,7 +610,7 @@ position = Vector2(670, -98)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/platform2"]
 libraries = {
-"": SubResource("AnimationLibrary_kcmq4")
+&"": SubResource("AnimationLibrary_kcmq4")
 }
 autoplay = "RESET"
 
@@ -619,7 +619,7 @@ position = Vector2(622, -98)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/platform3"]
 libraries = {
-"": SubResource("AnimationLibrary_4a8yr")
+&"": SubResource("AnimationLibrary_4a8yr")
 }
 autoplay = "move"
 
@@ -723,7 +723,7 @@ position = Vector2(1028, -63)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="spikes_dynamic/spike_dynamic4"]
 libraries = {
-"": SubResource("AnimationLibrary_nh0v6")
+&"": SubResource("AnimationLibrary_nh0v6")
 }
 autoplay = "move"
 
@@ -732,7 +732,7 @@ position = Vector2(1094, -160)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="spikes_dynamic/spike_dynamic3"]
 libraries = {
-"": SubResource("AnimationLibrary_mi7od")
+&"": SubResource("AnimationLibrary_mi7od")
 }
 autoplay = "move"
 
@@ -741,7 +741,7 @@ position = Vector2(1029, -255)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="spikes_dynamic/spike_dynamic2"]
 libraries = {
-"": SubResource("AnimationLibrary_td1cu")
+&"": SubResource("AnimationLibrary_td1cu")
 }
 autoplay = "move"
 
@@ -750,7 +750,7 @@ position = Vector2(325, 4)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="spikes_dynamic/spike_dynamic"]
 libraries = {
-"": SubResource("AnimationLibrary_aj25g")
+&"": SubResource("AnimationLibrary_aj25g")
 }
 autoplay = "RESET"
 

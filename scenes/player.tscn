@@ -1,6 +1,6 @@
 [gd_scene load_steps=22 format=3 uid="uid://cq6xmv3najlnh"]
 
-[ext_resource type="Script" path="res://scripts/Player.cs" id="1_h2dre"]
+[ext_resource type="Script" uid="uid://bw0q1gep6bvr1" path="res://scripts/Player.cs" id="1_h2dre"]
 [ext_resource type="Texture2D" uid="uid://7s4gcm0gyfux" path="res://assets/Hauptcharakter/02_Stripes/05_[Jump[Rising-Loop]].png" id="2_rb1dt"]
 [ext_resource type="Texture2D" uid="uid://o33d1jbytqkn" path="res://assets/Hauptcharakter/02_Stripes/07_[Jump[Falling-Loop]].png" id="3_c6t7y"]
 [ext_resource type="Texture2D" uid="uid://q6wcjef4opyu" path="res://assets/Hauptcharakter/02_Stripes/02_[Run].png" id="3_kryea"]
@@ -554,15 +554,15 @@ tracks/3/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7ensj"]
 _data = {
-"RESET": SubResource("Animation_lshj4"),
-"block": SubResource("Animation_im71e"),
-"dash": SubResource("Animation_n76he"),
-"fall": SubResource("Animation_86lfh"),
-"heavy_attack": SubResource("Animation_2q36j"),
-"idle": SubResource("Animation_kke4t"),
-"jump": SubResource("Animation_ljj8m"),
-"light_attack": SubResource("Animation_8l445"),
-"run": SubResource("Animation_6qflu")
+&"RESET": SubResource("Animation_lshj4"),
+&"block": SubResource("Animation_im71e"),
+&"dash": SubResource("Animation_n76he"),
+&"fall": SubResource("Animation_86lfh"),
+&"heavy_attack": SubResource("Animation_2q36j"),
+&"idle": SubResource("Animation_kke4t"),
+&"jump": SubResource("Animation_ljj8m"),
+&"light_attack": SubResource("Animation_8l445"),
+&"run": SubResource("Animation_6qflu")
 }
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6j6vh"]
@@ -592,7 +592,7 @@ disabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_7ensj")
+&"": SubResource("AnimationLibrary_7ensj")
 }
 autoplay = "idle"
 

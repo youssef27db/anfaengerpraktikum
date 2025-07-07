@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://chxndv6of54w8"]
 
 [ext_resource type="Texture2D" uid="uid://c0w6h05532gs0" path="res://assets/Dungeon Tile Set.png" id="1_145wl"]
-[ext_resource type="Script" path="res://scripts/Spike.cs" id="2_hw8jv"]
+[ext_resource type="Script" uid="uid://dq04lt4mw7wrf" path="res://scripts/Spike.cs" id="2_hw8jv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eq0hh"]
 texture = ExtResource("1_145wl")

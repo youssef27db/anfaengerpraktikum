@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://mjtnmittvw51"]
 
 [ext_resource type="Texture2D" uid="uid://fjduqj77v3ll" path="res://assets/Effects/Water Effect and Bullet 16x16.png" id="1_d3jy5"]
-[ext_resource type="Script" path="res://scripts/Interactable.cs" id="2_shdi7"]
+[ext_resource type="Script" uid="uid://baownn0b4mqcn" path="res://scripts/Interactable.cs" id="2_shdi7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l5aof"]
 atlas = ExtResource("1_d3jy5")
