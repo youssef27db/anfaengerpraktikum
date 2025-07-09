@@ -15,7 +15,7 @@ public partial class BaseEnemy : CharacterBody2D
     [Export]
     protected float Damage = 20f;    
     [Export]
-    protected bool Dead = false;
+    public bool Dead = false;
     [Export]
     protected bool Respawnable = true;
     [Export]
@@ -36,11 +36,11 @@ public partial class BaseEnemy : CharacterBody2D
     //private variables
     protected float CurrentHealthPoints;
     protected float CurrentStamina;
-    protected double ReturnToStart;
-    protected bool Pursuing = false;
+    public double ReturnToStart;
+    public bool Pursuing = false;
     protected Node2D CurrentTarget = null;
-    protected Vector2 TargetPosition = Vector2.Inf;
-    protected Vector2 StartPosition;
+    public Vector2 TargetPosition = Vector2.Inf;
+    public Vector2 StartPosition;
     protected bool StartRotation = false;
     private State AnimationState = State.IDLE;
     protected bool AlreadyHit = false;

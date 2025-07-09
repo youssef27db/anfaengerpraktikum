@@ -6,7 +6,7 @@ using Godot;
 public class TestTests {
 
     [TestCase]
-    public void TestDieTests(){
+    public void Test(){
         Assertions.AssertBool(true).IsEqual(true);
     }
 }
