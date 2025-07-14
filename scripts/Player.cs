@@ -262,7 +262,7 @@ public partial class Player : CharacterBody2D
      * @brief Überprüft, ob der Spieler gerade angreift.
      * @return true, wenn der Spieler angreift.
      */
-    private bool IsAttacking() {
+    public bool IsAttacking() {
         return AnimationPlayer.CurrentAnimation == "heavy_attack" || AnimationPlayer.CurrentAnimation == "light_attack";
     }
 
@@ -270,7 +270,7 @@ public partial class Player : CharacterBody2D
      * @brief Überprüft, ob der Spieler blockiert.
      * @return true, wenn der Spieler blockiert.
      */
-    private bool IsBlocking() {
+    public bool IsBlocking() {
         return AnimationPlayer.CurrentAnimation == "block";
     }
 
