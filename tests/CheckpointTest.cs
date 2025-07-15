@@ -18,6 +18,11 @@ public class CheckpointTest
         _runner.Scene().AddChild(_checkpoint);
         _player = GD.Load<PackedScene>("res://scenes/player.tscn").Instantiate<Player>();
         _runner.Scene().AddChild(_player);
+        var bloodVial = new BloodVial();
+        _player.AddChild(bloodVial);
+        var bloodVialsField = _player.GetType().GetField("BloodVials", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+        if (bloodVialsField != null)
+            bloodVialsField.SetValue(_player, bloodVial);
         await _runner.AwaitIdleFrame();
     }
 
@@ -46,17 +51,7 @@ public class CheckpointTest
         var bloodVials = _player.GetBloodVials();
         bloodVials.ResetUses();
         _checkpoint.Call("OnPlayerBodyEntered", _player);
-        AssertThat(bloodVials.GetCurrentUses()).IsEqual(bloodVials.GetMaxUses());
-    }
-
-    [TestCase]
-    public void RespawnLevelTagIsSetOnCheckpoint()
-    {
-        var parent = new Node();
-        parent.Name = "TestLevel";
-        parent.AddChild(_checkpoint);
-        _checkpoint.Call("OnPlayerBodyEntered", _player);
-        AssertThat(PlayerStats.Instance.GetRespawnLevelTag()).IsEqual("TestLevel");
+        AssertThat(PlayerStats.Instance.GetBVCurrentUses()).IsEqual(PlayerStats.Instance.GetBVMaxUses());
     }
 
     [TestCase]

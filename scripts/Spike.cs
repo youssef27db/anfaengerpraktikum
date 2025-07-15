@@ -30,9 +30,9 @@ public partial class Spike : Node2D
 	private void OnPlayerBodyEntered(Node body)
 	{
 
-		if (body is Player)
+		if (body is Player player)
 		{
-			Player = (Player)body; // Instanzvariable setzen				
+			Player = player; // Setze die Referenz auf den übergebenen Player
 			Player.TakeDamage(GetDamage());
 			Player.SlowPlayer(0.5f);
 			GetNode<Timer>("StaticBody2D/Area2D/Timer").Start();

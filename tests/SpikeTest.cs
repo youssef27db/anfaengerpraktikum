@@ -13,80 +13,131 @@ public class SpikeTest
     [BeforeTest]
     public async Task Setup()
     {
-        _runner = ISceneRunner.Load("res://scenes/level_one.tscn", true);
-
-        _spike = new Spike();
-        _runner.Scene().AddChild(_spike);
-
+        // Laedt die Spike-Szene und instanziiert sie
+        _spike = GD.Load<PackedScene>("res://scenes/spike.tscn").Instantiate<Spike>();
+        
+        // Laedt die Spieler-Szene und instanziiert sie
         _player = GD.Load<PackedScene>("res://scenes/player.tscn").Instantiate<Player>();
-        _runner.Scene().AddChild(_player);
+        _player.Name = "Player"; // Wichtig fuer die Erkennung im Spiel
 
+        // Erstellt eine neue Szene und fuegt Spike und Spieler hinzu
+        var scene = new Node();
+        scene.AddChild(_spike);
+        scene.AddChild(_player);
+
+        // Initialisiert den ISceneRunner mit der neuen Szene
+        _runner = ISceneRunner.Load(scene, true);
+        
+        // Warte einen Frame, damit die Szene vollstaendig geladen ist
         await _runner.AwaitIdleFrame();
     }
 
     [TestCase]
     public async Task WhenPlayerEntersSpike_PlayerHealthShouldDecrease()
     {
+        // Setze die Startgesundheit des Spielers
+        PlayerStats.Instance.SetCurrentHealth(100.0f);
         var initialHealth = PlayerStats.Instance.GetCurrentHealth();
 
+        // Positioniere den Spieler direkt auf dem Spike
+        _player.GlobalPosition = _spike.GlobalPosition;
+
+        // Simuliere das Betreten des Spikes durch den Spieler
         var area2d = _spike.GetNode<Area2D>("StaticBody2D/Area2D");
-        area2d.EmitSignal("body_entered", _player);
+        area2d.EmitSignal(Area2D.SignalName.BodyEntered, _player);
+        
+        // Warte auf den naechsten Physik-Frame, damit der Schaden angewendet wird
         await _runner.AwaitIdleFrame();
 
+        // Ueberpruefe, ob die Gesundheit des Spielers korrekt reduziert wurde
         var newHealth = PlayerStats.Instance.GetCurrentHealth();
-        AssertThat(newHealth < initialHealth).IsTrue();
+        AssertThat(newHealth).IsEqual(initialHealth - _spike.GetDamage().GetTrueDMG());
     }
 
     [TestCase]
     public async Task PlayerTakesRepeatedDamageWhileOnSpike()
     {
+        // Setze die Startgesundheit des Spielers
+        PlayerStats.Instance.SetCurrentHealth(100.0f);
         var initialHealth = PlayerStats.Instance.GetCurrentHealth();
-        var area2d = _spike.GetNode<Area2D>("StaticBody2D/Area2D");
-        area2d.EmitSignal("body_entered", _player);
-        await _runner.AwaitIdleFrame();
 
-        await _runner.SimulateFrames(120, 16);
+        // Positioniere den Spieler auf dem Spike
+        _player.GlobalPosition = _spike.GlobalPosition;
+
+        // Simuliere das Betreten des Spikes
+        var area2d = _spike.GetNode<Area2D>("StaticBody2D/Area2D");
+        area2d.EmitSignal(Area2D.SignalName.BodyEntered, _player);
+        
+        // Warte auf den ersten Schaden
+        await _runner.AwaitIdleFrame();
+        
+        // Simuliere eine Verzoegerung, um wiederholten Schaden zu ermoeglichen
+        await _runner.SimulateFrames(1100);
+
+        // Ueberpruefe, ob die Gesundheit des Spielers weiter reduziert wurde
         var newHealth = PlayerStats.Instance.GetCurrentHealth();
-        AssertThat(newHealth < initialHealth).IsTrue();
+        AssertThat(initialHealth - _spike.GetDamage().GetTrueDMG()).IsGreater(newHealth);
     }
 
     [TestCase]
     public async Task TimerStopsWhenPlayerLeavesSpike()
     {
+        // Setze die Startgesundheit und positioniere den Spieler
+        PlayerStats.Instance.SetCurrentHealth(100.0f);
+        _player.GlobalPosition = _spike.GlobalPosition;
+
+        // Simuliere das Betreten und sofortige Verlassen des Spikes
         var area2d = _spike.GetNode<Area2D>("StaticBody2D/Area2D");
-        area2d.EmitSignal("body_entered", _player);
+        area2d.EmitSignal(Area2D.SignalName.BodyEntered, _player);
         await _runner.AwaitIdleFrame();
-        area2d.EmitSignal("body_exited", _player);
+        
+        area2d.EmitSignal(Area2D.SignalName.BodyExited, _player);
         await _runner.AwaitIdleFrame();
+
+        // Speichere die Gesundheit nach dem Verlassen
         var healthAfterExit = PlayerStats.Instance.GetCurrentHealth();
-        await _runner.SimulateFrames(60, 16);
+
+        // Warte eine Weile, um sicherzustellen, dass kein weiterer Schaden auftritt
+        await _runner.SimulateFrames(2000);
+
+        // Ueberpruefe, ob die Gesundheit unveraendert geblieben ist
         AssertThat(PlayerStats.Instance.GetCurrentHealth()).IsEqual(healthAfterExit);
     }
 
     [TestCase]
     public async Task TimerNotStartedForNonPlayer()
     {
-        var area2d = _spike.GetNode<Area2D>("StaticBody2D/Area2D");
+        // Erstelle ein anderes Objekt, das kein Spieler ist
         var otherObject = new CharacterBody2D();
         _runner.Scene().AddChild(otherObject);
+
+        // Hole den Timer aus dem Spike
         var timer = _spike.GetNode<Timer>("StaticBody2D/Area2D/Timer");
-        area2d.EmitSignal("body_entered", otherObject);
+        
+        // Simuliere, dass das andere Objekt den Spike betritt
+        var area2d = _spike.GetNode<Area2D>("StaticBody2D/Area2D");
+        area2d.EmitSignal(Area2D.SignalName.BodyEntered, otherObject);
         await _runner.AwaitIdleFrame();
+
+        // Ueberpruefe, ob der Timer nicht gestartet wurde
         AssertThat(timer.IsStopped()).IsTrue();
     }
 
     [TestCase]
     public async Task WhenBaseEnemyEntersSpike_BaseEnemyHealthShouldNotChange()
     {
+        // Erstelle einen Gegner und setze seine Gesundheit
         var baseEnemy = new BaseEnemy();
+        baseEnemy.CurrentHealthPoints = 50.0f;
         _runner.Scene().AddChild(baseEnemy);
-        var initialHealth = baseEnemy.GetCurrentHealth();
+        var initialHealth = baseEnemy.CurrentHealthPoints;
 
+        // Simuliere, dass der Gegner den Spike betritt
         var area2d = _spike.GetNode<Area2D>("StaticBody2D/Area2D");
-        area2d.EmitSignal("body_entered", baseEnemy);
+        area2d.EmitSignal(Area2D.SignalName.BodyEntered, baseEnemy);
         await _runner.AwaitIdleFrame();
 
-        var newHealth = baseEnemy.GetCurrentHealth();
-        AssertThat(newHealth).IsEqual(initialHealth);
+        // Ueberpruefe, ob die Gesundheit des Gegners unveraendert ist
+        AssertThat(baseEnemy.CurrentHealthPoints).IsEqual(initialHealth);
     }
 }
