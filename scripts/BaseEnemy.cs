@@ -21,7 +21,7 @@ public partial class BaseEnemy : CharacterBody2D
     [Export]
     protected float MaxHealthPoints = 100f;
     [Export]
-    protected float Armor = 20f; //MUSS ZISCHEN 0 UND 99 LIEGEN
+    public float Armor = 20f; //MUSS ZISCHEN 0 UND 99 LIEGEN
     [Export]
     protected float MaxStamina = 1f;
     [Export]
@@ -34,7 +34,7 @@ public partial class BaseEnemy : CharacterBody2D
     public uint Id { get; set;} = 0;
 
     //private variables
-    protected float CurrentHealthPoints;
+    public float CurrentHealthPoints;
     protected float CurrentStamina;
     public double ReturnToStart;
     public bool Pursuing = false;
@@ -49,7 +49,7 @@ public partial class BaseEnemy : CharacterBody2D
     protected AnimatedSprite2D Sprite;
     protected CollisionPolygon2D CollisionPolygon;
     protected Area2D SwordHitbox;
-    protected CollisionShape2D MainCollision;
+    public CollisionShape2D MainCollision;
     protected RayCast2D FrontCollisionRayCast;
     protected RayCast2D LineOfSight;
     protected RayCast2D LeftFallProtection;
@@ -242,7 +242,7 @@ public partial class BaseEnemy : CharacterBody2D
     * @brief Verarbeitet zugefügten Schaden.
     * @param DMG Schaden der zugefügt wird.
     */
-    private void TakeDamage(Damage DMG){
+    public void TakeDamage(Damage DMG){
         if(Dead) {
             return;
         }
@@ -302,14 +302,16 @@ public partial class BaseEnemy : CharacterBody2D
     /** 
     * @brief Wird aufgerufen wenn der Gegner stirbt.
     */
-    private void Die(){
+    public void Die(){
         Dead = true;
         Velocity = Vector2.Zero;
         MainCollision.SetDeferred(CollisionShape2D.PropertyName.Disabled, true);
 
         Sprite.Play("death");
         HealthBar.SetVisible(false);
-        Player.SetSinAmount(PlayerStats.Instance.GetSinAmount() + SinAmount);
+        if (Player != null) {
+            Player.SetSinAmount(PlayerStats.Instance.GetSinAmount() + SinAmount); 
+        }
 
     }
 
