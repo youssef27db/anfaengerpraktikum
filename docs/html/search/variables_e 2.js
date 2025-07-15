@@ -1,0 +1,27 @@
+var searchData=
+[
+  ['savelabel_0',['SaveLabel',['../class_main_menu.html#ad6431cbbee867c595fe96bc614083ac3',1,'MainMenu']]],
+  ['saves_1',['Saves',['../class_storage_manager.html#af7aaff853e07e906b7e94f4017cdb4aa',1,'StorageManager']]],
+  ['savescontainer_2',['SavesContainer',['../class_main_menu.html#a0da540fd8fc92fadef8b28a61948f195',1,'MainMenu']]],
+  ['savetodelete_3',['SaveToDelete',['../class_main_menu.html#a22d473b728e3fc73bce561cb0c66d315',1,'MainMenu']]],
+  ['sceneboss_4',['SceneBoss',['../class_navigation_manager.html#a05bae96c7f4291c05c641ecc19de352d',1,'NavigationManager']]],
+  ['sceneintro_5',['SceneIntro',['../class_navigation_manager.html#ae1efff3ff02142f6b432967154fdc4ce',1,'NavigationManager']]],
+  ['scenelevel1_6',['SceneLevel1',['../class_navigation_manager.html#a75bcdf3626163a7a13a04786e5c50d45',1,'NavigationManager']]],
+  ['scenelevelone_7',['SceneLevelOne',['../class_navigation_manager.html#a41a234813f7d0673dd2485f4ef49f0cc',1,'NavigationManager']]],
+  ['sceneleveltwo_8',['SceneLevelTwo',['../class_navigation_manager.html#a6741a214cbea19bb355bb5e2770634d3',1,'NavigationManager']]],
+  ['scenemainmenu_9',['SceneMainMenu',['../class_navigation_manager.html#a1ffe3077e2f478261082ee583f6c3996',1,'NavigationManager']]],
+  ['scrollspeed_10',['ScrollSpeed',['../class_main_menu_background.html#a9f98d5689cf2bb4aea2d50f113903ef3',1,'MainMenuBackground']]],
+  ['selectbutton_11',['SelectButton',['../class_main_menu.html#a3fdc58ec0638bafa145d41d2d6b7b8ac',1,'MainMenu']]],
+  ['sinamount_12',['SinAmount',['../class_base_enemy.html#afa7426d08cbee4ed3184822c57888ec7',1,'BaseEnemy.SinAmount'],['../class_player_stats.html#ad7c9580233648775b11f199347087f4c',1,'PlayerStats.SinAmount']]],
+  ['sindisplay_13',['SinDisplay',['../class_player.html#aa23d4f9699cd9b706e9b6945a365699b',1,'Player']]],
+  ['source_14',['Source',['../class_damage.html#a97ac7df60d926ce18242bba40e5d500f',1,'Damage']]],
+  ['spawn_15',['Spawn',['../class_door.html#a290c3dafcd3a048d4a5869033bc7a98f',1,'Door']]],
+  ['spawnpoint_16',['SpawnPoint',['../class_player_stats.html#a45dbfad923471fe032a894b05daf3735',1,'PlayerStats']]],
+  ['speed_17',['SPEED',['../class_player.html#a23e57f8d9bfe69ab49b86a94bcc8c37d',1,'Player']]],
+  ['speed_18',['Speed',['../class_base_enemy.html#a661de31833c943c7d7d72de616a9141a',1,'BaseEnemy']]],
+  ['sprite_19',['Sprite',['../class_base_enemy.html#a2e4bd99e594a6c3366f64ab47c7443b5',1,'BaseEnemy.Sprite'],['../class_player.html#a650e61374596e594f38f5d9caf11c3fb',1,'Player.Sprite']]],
+  ['startposition_20',['StartPosition',['../class_base_enemy.html#af386b85762b6790503bf1716a9d2fd77',1,'BaseEnemy']]],
+  ['startrotation_21',['StartRotation',['../class_base_enemy.html#ad2523c398e4a11b5f36a9df26c4014eb',1,'BaseEnemy']]],
+  ['swordcollision_22',['SwordCollision',['../class_player.html#a64d74400579bd882301f0ec6a6135ed8',1,'Player']]],
+  ['swordhitbox_23',['SwordHitbox',['../class_base_enemy.html#a9d136e8abbf09f7b418112394bdf1c88',1,'BaseEnemy']]]
+];

@@ -1,0 +1,81 @@
+\doxysection{Test\+Result.\+cs}
+\hypertarget{_test_result_8cs_source}{}\label{_test_result_8cs_source}\index{C:/Users/Youssef/Desktop/UNI/S4/ComputerspielEntwicklung/DasSpiel/anfaengerpraktikum/addons/GDMUT/TestResult.cs@{C:/Users/Youssef/Desktop/UNI/S4/ComputerspielEntwicklung/DasSpiel/anfaengerpraktikum/addons/GDMUT/TestResult.cs}}
+\mbox{\hyperlink{_test_result_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_test_result_8cs_source_l00001}00001\ \textcolor{preprocessor}{\#if\ TOOLS}}
+\DoxyCodeLine{\Hypertarget{_test_result_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_test_result_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }Godot;}
+\DoxyCodeLine{\Hypertarget{_test_result_8cs_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_test_result_8cs_source_l00005}00005\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_gd_m_u_t_1_1_components}{GdMUT.Components}};}
+\DoxyCodeLine{\Hypertarget{_test_result_8cs_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_test_result_8cs_source_l00010}00010\ [Tool]}
+\DoxyCodeLine{\Hypertarget{_test_result_8cs_source_l00011}00011\ \textcolor{keyword}{public}\ \textcolor{keyword}{partial\ class\ }TestResult\ :\ Control}
+\DoxyCodeLine{\Hypertarget{_test_result_8cs_source_l00012}00012\ \{}
+\DoxyCodeLine{\Hypertarget{_test_result_8cs_source_l00013}00013\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ TYPE\_NAME\_FORMAT\ =\ \textcolor{stringliteral}{"{}[b][font\_size=24][center]\{0\}[/center][/font\_size][/b]"{}};}
+\DoxyCodeLine{\Hypertarget{_test_result_8cs_source_l00014}00014\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ METHOD\_RESULT\_SCENE\ =\ \textcolor{stringliteral}{"{}res://addons/GDMUT/MethodResult.tscn"{}};}
+\DoxyCodeLine{\Hypertarget{_test_result_8cs_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{_test_result_8cs_source_l00016}00016\ \ \ \ \ [Export]}
+\DoxyCodeLine{\Hypertarget{_test_result_8cs_source_l00017}00017\ \ \ \ \ \textcolor{keyword}{private}\ RichTextLabel\ \_typeName;}
+\DoxyCodeLine{\Hypertarget{_test_result_8cs_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_test_result_8cs_source_l00019}00019\ \ \ \ \ [Export]}
+\DoxyCodeLine{\Hypertarget{_test_result_8cs_source_l00020}00020\ \ \ \ \ \textcolor{keyword}{private}\ VBoxContainer\ \_methodList;}
+\DoxyCodeLine{\Hypertarget{_test_result_8cs_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_test_result_8cs_source_l00022}00022\ \ \ \ \ \textcolor{keyword}{private}\ List<(MethodResult,\ TestFunction)>\ \_functions\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_test_result_8cs_source_l00023}00023\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{string}\ \_typeNameStr;}
+\DoxyCodeLine{\Hypertarget{_test_result_8cs_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_test_result_8cs_source_l00026}00026\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ \_EnterTree()}
+\DoxyCodeLine{\Hypertarget{_test_result_8cs_source_l00027}00027\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_test_result_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ base.\_EnterTree();}
+\DoxyCodeLine{\Hypertarget{_test_result_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (Node\ child\ \textcolor{keywordflow}{in}\ \_methodList.GetChildren())}
+\DoxyCodeLine{\Hypertarget{_test_result_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_test_result_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ child.QueueFree();}
+\DoxyCodeLine{\Hypertarget{_test_result_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_result_8cs_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_test_result_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \_functions.Clear();}
+\DoxyCodeLine{\Hypertarget{_test_result_8cs_source_l00035}00035\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_result_8cs_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{_test_result_8cs_source_l00041}00041\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ SetTypeName(\textcolor{keywordtype}{string}\ typeName)}
+\DoxyCodeLine{\Hypertarget{_test_result_8cs_source_l00042}00042\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_test_result_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \_typeNameStr\ =\ typeName;}
+\DoxyCodeLine{\Hypertarget{_test_result_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \_typeName.Text\ =\ \textcolor{keywordtype}{string}.Format(TYPE\_NAME\_FORMAT,\ typeName);}
+\DoxyCodeLine{\Hypertarget{_test_result_8cs_source_l00045}00045\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_result_8cs_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{_test_result_8cs_source_l00050}00050\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ UpdateResult()}
+\DoxyCodeLine{\Hypertarget{_test_result_8cs_source_l00051}00051\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_test_result_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ numSuccess\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_test_result_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ (methodResult,\ \textcolor{keyword}{function})\ in\ \_functions)}
+\DoxyCodeLine{\Hypertarget{_test_result_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_test_result_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ methodResult.Update();}
+\DoxyCodeLine{\Hypertarget{_test_result_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ numSuccess\ +=\ function.Result.IsSuccess\ ?\ 1\ :\ 0;}
+\DoxyCodeLine{\Hypertarget{_test_result_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_result_8cs_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{_test_result_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \_typeName.Text\ =\ \textcolor{keywordtype}{string}.Format(}
+\DoxyCodeLine{\Hypertarget{_test_result_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ TYPE\_NAME\_FORMAT,}
+\DoxyCodeLine{\Hypertarget{_test_result_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \_typeNameStr\ +\ \$\textcolor{stringliteral}{"{}\ (\{numSuccess\}/\{\_functions.Count\})"{}}}
+\DoxyCodeLine{\Hypertarget{_test_result_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_test_result_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (numSuccess\ ==\ \_functions.Count)}
+\DoxyCodeLine{\Hypertarget{_test_result_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_test_result_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \_typeName.Modulate\ =\ \textcolor{keyword}{new}\ Color(0,\ 1,\ 0);}
+\DoxyCodeLine{\Hypertarget{_test_result_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_result_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (numSuccess\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{_test_result_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_test_result_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \_typeName.Modulate\ =\ \textcolor{keyword}{new}\ Color(1,\ 0,\ 0);}
+\DoxyCodeLine{\Hypertarget{_test_result_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_result_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_test_result_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_test_result_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \_typeName.Modulate\ =\ \textcolor{keyword}{new}\ Color(1,\ 0.9f,\ 0);}
+\DoxyCodeLine{\Hypertarget{_test_result_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_result_8cs_source_l00075}00075\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_result_8cs_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{_test_result_8cs_source_l00081}00081\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ AddMethodResult(TestFunction\ \textcolor{keyword}{function})}
+\DoxyCodeLine{\Hypertarget{_test_result_8cs_source_l00082}00082\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_test_result_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ var\ methodResultScene\ =\ GD.Load<PackedScene>(METHOD\_RESULT\_SCENE);}
+\DoxyCodeLine{\Hypertarget{_test_result_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ var\ methodResult\ =\ methodResultScene.Instantiate<MethodResult>();}
+\DoxyCodeLine{\Hypertarget{_test_result_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ methodResult.SetMethodResult(\textcolor{keyword}{function});}
+\DoxyCodeLine{\Hypertarget{_test_result_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ \_methodList.AddChild(methodResult);}
+\DoxyCodeLine{\Hypertarget{_test_result_8cs_source_l00087}00087\ \ \ \ \ \ \ \ \ \_functions.Add((methodResult,\ \textcolor{keyword}{function}));}
+\DoxyCodeLine{\Hypertarget{_test_result_8cs_source_l00088}00088\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_result_8cs_source_l00089}00089\ \}}
+\DoxyCodeLine{\Hypertarget{_test_result_8cs_source_l00090}00090\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,143 @@
+\doxysection{Player\+Stats.\+cs}
+\hypertarget{_player_stats_8cs_source}{}\label{_player_stats_8cs_source}\index{C:/Users/Youssef/Desktop/UNI/S4/ComputerspielEntwicklung/DasSpiel/anfaengerpraktikum/scripts/PlayerStats.cs@{C:/Users/Youssef/Desktop/UNI/S4/ComputerspielEntwicklung/DasSpiel/anfaengerpraktikum/scripts/PlayerStats.cs}}
+\mbox{\hyperlink{_player_stats_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }Godot;}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00007}\mbox{\hyperlink{class_player_stats}{00007}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{partial\ class\ }\mbox{\hyperlink{class_player_stats}{PlayerStats}}\ :\ Node}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00008}00008\ \{}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00010}\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{00010}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_player_stats}{PlayerStats}}\ \mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{private}\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00011}00011\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00012}\mbox{\hyperlink{class_player_stats_a1e6557a3100cd9b69dccf218d2c84609}{00012}}\ \ \ \ \ \textcolor{keyword}{private}\ String\ \mbox{\hyperlink{class_player_stats_a1e6557a3100cd9b69dccf218d2c84609}{RespawnLevelTag}}\ =\ \textcolor{stringliteral}{"{}intro"{}};}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00013}\mbox{\hyperlink{class_player_stats_ae047b0b22ef2d0cbd60c5b4193fac02a}{00013}}\ \ \ \ \ \textcolor{keyword}{private}\ String\ \mbox{\hyperlink{class_player_stats_ae047b0b22ef2d0cbd60c5b4193fac02a}{CurrentLevelTag}}\ =\ \textcolor{stringliteral}{"{}intro"{}};}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00014}\mbox{\hyperlink{class_player_stats_a45dbfad923471fe032a894b05daf3735}{00014}}\ \ \ \ \ \textcolor{keyword}{private}\ Vector2\ \mbox{\hyperlink{class_player_stats_a45dbfad923471fe032a894b05daf3735}{SpawnPoint}};}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00015}\mbox{\hyperlink{class_player_stats_a2afbdf33659ec177ac5f27638a78fe42}{00015}}\ \ \ \ \ \textcolor{keyword}{private}\ Vector2\ \mbox{\hyperlink{class_player_stats_a2afbdf33659ec177ac5f27638a78fe42}{Position}}\ =\ \textcolor{keyword}{new}\ Vector2(-\/540,\ 160);}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00016}\mbox{\hyperlink{class_player_stats_ad7c9580233648775b11f199347087f4c}{00016}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_player_stats_ad7c9580233648775b11f199347087f4c}{SinAmount}};}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00017}\mbox{\hyperlink{class_player_stats_a335bea0dc78273f4cc46a01a7d699dcd}{00017}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_player_stats_a335bea0dc78273f4cc46a01a7d699dcd}{MaxHealthPoints}}\ =\ 100f;}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00018}\mbox{\hyperlink{class_player_stats_ae382740c5a49ebad7a020173d6eb527b}{00018}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_player_stats_ae382740c5a49ebad7a020173d6eb527b}{CurrentHealth}};}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00019}\mbox{\hyperlink{class_player_stats_a3ec6c1ddfeddebf52f76200216a015b5}{00019}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_player_stats_a3ec6c1ddfeddebf52f76200216a015b5}{MaxStamina}}\ =\ 100f;\ }
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00020}\mbox{\hyperlink{class_player_stats_a4d2c11ea6b3c00573fdaada704003164}{00020}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_player_stats_a4d2c11ea6b3c00573fdaada704003164}{CurrentStamina}};}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00021}\mbox{\hyperlink{class_player_stats_ade72e9a5adb4aa136bc4cba06cc701db}{00021}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_player_stats_ade72e9a5adb4aa136bc4cba06cc701db}{BVHealAmount}}\ =\ 25;}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00022}\mbox{\hyperlink{class_player_stats_aa47e0d391b2a9a1bf162da0b00a3b075}{00022}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_player_stats_aa47e0d391b2a9a1bf162da0b00a3b075}{BVMaxUses}}\ =\ 5;}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00023}\mbox{\hyperlink{class_player_stats_ab3f1ef87a636e6387817be8334dd75dc}{00023}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_player_stats_ab3f1ef87a636e6387817be8334dd75dc}{BVCurrentUses}};}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00029}\mbox{\hyperlink{class_player_stats_a895e862f4ff51140f473568a86ade636}{00029}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_stats_a895e862f4ff51140f473568a86ade636}{\_Ready}}()\{}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_stats_ae382740c5a49ebad7a020173d6eb527b}{CurrentHealth}}\ =\ \mbox{\hyperlink{class_player_stats_a335bea0dc78273f4cc46a01a7d699dcd}{MaxHealthPoints}};}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_stats_a4d2c11ea6b3c00573fdaada704003164}{CurrentStamina}}\ =\ \mbox{\hyperlink{class_player_stats_a3ec6c1ddfeddebf52f76200216a015b5}{MaxStamina}};}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_stats_ab3f1ef87a636e6387817be8334dd75dc}{BVCurrentUses}}\ =\ \mbox{\hyperlink{class_player_stats_aa47e0d391b2a9a1bf162da0b00a3b075}{BVMaxUses}};}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}\ =\ \textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00034}00034\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00040}\mbox{\hyperlink{class_player_stats_ad868bae6deb062dbcc4702b276a27041}{00040}}\ \ \ \ \ \textcolor{keyword}{public}\ String\ \mbox{\hyperlink{class_player_stats_ad868bae6deb062dbcc4702b276a27041}{GetRespawnLevelTag}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_player_stats_a1e6557a3100cd9b69dccf218d2c84609}{RespawnLevelTag}};}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00042}00042\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00048}\mbox{\hyperlink{class_player_stats_a7ec692981c45e933c737eff8d78e6456}{00048}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_stats_a7ec692981c45e933c737eff8d78e6456}{SetRespawnLevelTag}}(String\ levelTag)\ \{}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_stats_a1e6557a3100cd9b69dccf218d2c84609}{RespawnLevelTag}}\ =\ levelTag;}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00050}00050\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00056}\mbox{\hyperlink{class_player_stats_a7db8c1cd1ecfb2041c7b376289054801}{00056}}\ \ \ \ \ \textcolor{keyword}{public}\ String\ \mbox{\hyperlink{class_player_stats_a7db8c1cd1ecfb2041c7b376289054801}{GetCurrentLevelTag}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_player_stats_ae047b0b22ef2d0cbd60c5b4193fac02a}{CurrentLevelTag}};}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00058}00058\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00064}\mbox{\hyperlink{class_player_stats_a3545edeb4834aad7011e561dc5f1b10d}{00064}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_stats_a3545edeb4834aad7011e561dc5f1b10d}{SetCurrentLevelTag}}(String\ levelTag)\ \{}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_stats_ae047b0b22ef2d0cbd60c5b4193fac02a}{CurrentLevelTag}}\ =\ levelTag;}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00066}00066\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00072}\mbox{\hyperlink{class_player_stats_a147af1b1e37f6506303caca28b60f9e4}{00072}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_stats_a147af1b1e37f6506303caca28b60f9e4}{SetSpawnPoint}}(Vector2\ spawnPoint)\ \{}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_stats_a45dbfad923471fe032a894b05daf3735}{SpawnPoint}}\ =\ spawnPoint;}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00074}00074\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00080}\mbox{\hyperlink{class_player_stats_a20396ab55000fe68c62711c072bad9bb}{00080}}\ \ \ \ \ \textcolor{keyword}{public}\ Vector2\ \mbox{\hyperlink{class_player_stats_a20396ab55000fe68c62711c072bad9bb}{GetSpawnPoint}}()\{}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_player_stats_a45dbfad923471fe032a894b05daf3735}{SpawnPoint}};}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00082}00082\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00088}\mbox{\hyperlink{class_player_stats_adb53f7019a00edfe089c3dfd205438c2}{00088}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_stats_adb53f7019a00edfe089c3dfd205438c2}{SetPosition}}(Vector2\ position)\ \{}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_stats_a2afbdf33659ec177ac5f27638a78fe42}{Position}}\ =\ position;}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00090}00090\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00096}\mbox{\hyperlink{class_player_stats_a77ca820f184b31dd9590bc8613f8566e}{00096}}\ \ \ \ \ \textcolor{keyword}{public}\ Vector2\ \mbox{\hyperlink{class_player_stats_a77ca820f184b31dd9590bc8613f8566e}{GetPosition}}()\{}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00097}00097\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_player_stats_a2afbdf33659ec177ac5f27638a78fe42}{Position}};}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00098}00098\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00105}\mbox{\hyperlink{class_player_stats_a0b2b3398a02e8fbafe3c41dd466c57d0}{00105}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_player_stats_a0b2b3398a02e8fbafe3c41dd466c57d0}{GetSinAmount}}()\{}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00106}00106\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_player_stats_ad7c9580233648775b11f199347087f4c}{SinAmount}};}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00107}00107\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00113}\mbox{\hyperlink{class_player_stats_a647991a1d154f8c2bc8d7032b43e35aa}{00113}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_stats_a647991a1d154f8c2bc8d7032b43e35aa}{SetSinAmount}}(\textcolor{keywordtype}{int}\ Value)\ \{}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00114}00114\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ SinAmount\ muss\ immer\ >=\ 0\ sein}}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00115}00115\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_stats_ad7c9580233648775b11f199347087f4c}{SinAmount}}\ =\ Mathf.Max(Value,\ 0);}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00116}00116\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00122}\mbox{\hyperlink{class_player_stats_a6a24773d00e75be9747b99681ac76127}{00122}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_player_stats_a6a24773d00e75be9747b99681ac76127}{GetMaxHealthPoints}}()\{}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00123}00123\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_player_stats_a335bea0dc78273f4cc46a01a7d699dcd}{MaxHealthPoints}};}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00124}00124\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00125}00125\ }
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00130}\mbox{\hyperlink{class_player_stats_a58c3b27a3633bead2f77fa551f30beeb}{00130}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_stats_a58c3b27a3633bead2f77fa551f30beeb}{SetMaxHealthPoints}}(\textcolor{keywordtype}{float}\ maxHealthPoints)\{}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00131}00131\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ MaxHealthPoints\ muss\ immer\ positiv\ sein}}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00132}00132\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_stats_a335bea0dc78273f4cc46a01a7d699dcd}{MaxHealthPoints}}\ =\ Mathf.Max(maxHealthPoints,\ 1);\ \textcolor{comment}{//\ Verhindert,\ dass\ MaxHealthPoints\ <=\ 0\ wird}}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00133}00133\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00134}00134\ }
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00139}\mbox{\hyperlink{class_player_stats_a0ec1075ba0983a3df42454b110194c0d}{00139}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_player_stats_a0ec1075ba0983a3df42454b110194c0d}{GetCurrentHealth}}()\{}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00140}00140\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_player_stats_ae382740c5a49ebad7a020173d6eb527b}{CurrentHealth}};}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00141}00141\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00142}00142\ }
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00147}\mbox{\hyperlink{class_player_stats_aaed3690620c6ba9a8866d0c35b4f26d7}{00147}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_stats_aaed3690620c6ba9a8866d0c35b4f26d7}{SetCurrentHealth}}(\textcolor{keywordtype}{float}\ Health)\{}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00148}00148\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ CurrentHealth\ darf\ MaxHealthPoints\ nicht\ überschreiten.}}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00149}00149\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_stats_ae382740c5a49ebad7a020173d6eb527b}{CurrentHealth}}\ =\ Mathf.Min(Health,\ \mbox{\hyperlink{class_player_stats_a335bea0dc78273f4cc46a01a7d699dcd}{MaxHealthPoints}});}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00150}00150\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00151}00151\ }
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00156}\mbox{\hyperlink{class_player_stats_a8f76220aa1271b2335b045624c6812d0}{00156}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_stats_a8f76220aa1271b2335b045624c6812d0}{SetMaxStamina}}(\textcolor{keywordtype}{float}\ Value)\ \{}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00157}00157\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ MaxStamina\ muss\ immer\ positiv\ sein}}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00158}00158\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_stats_a3ec6c1ddfeddebf52f76200216a015b5}{MaxStamina}}\ =\ Mathf.Max(Value,\ 1);}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00159}00159\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00160}00160\ }
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00165}\mbox{\hyperlink{class_player_stats_a7e27ea7ba3c266ecfa446c070415180a}{00165}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_player_stats_a7e27ea7ba3c266ecfa446c070415180a}{GetMaxStamina}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00166}00166\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_player_stats_a3ec6c1ddfeddebf52f76200216a015b5}{MaxStamina}};}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00167}00167\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00168}00168\ }
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00173}\mbox{\hyperlink{class_player_stats_ab341f12827a6bdcfebb826dff43e82e3}{00173}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_stats_ab341f12827a6bdcfebb826dff43e82e3}{SetStamina}}(\textcolor{keywordtype}{float}\ Value)\ \{}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00174}00174\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Stellt\ sicher,\ dass\ die\ CurrentStamina\ im\ gültigen\ Bereich\ bleibt\ (zwischen\ 0\ und\ MaxStamina)}}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00175}00175\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_stats_a4d2c11ea6b3c00573fdaada704003164}{CurrentStamina}}\ =\ Mathf.Clamp(Value,\ 0,\ \mbox{\hyperlink{class_player_stats_a3ec6c1ddfeddebf52f76200216a015b5}{MaxStamina}});}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00176}00176\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00177}00177\ }
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00182}\mbox{\hyperlink{class_player_stats_a3a170316e8384ab030f5f697b799a947}{00182}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_player_stats_a3a170316e8384ab030f5f697b799a947}{GetStamina}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00183}00183\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_player_stats_a4d2c11ea6b3c00573fdaada704003164}{CurrentStamina}};}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00184}00184\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00185}00185\ }
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00190}\mbox{\hyperlink{class_player_stats_a76c874319c947a35702cd9a0a4b0e66c}{00190}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_stats_a76c874319c947a35702cd9a0a4b0e66c}{SetBVHealAmount}}(\textcolor{keywordtype}{int}\ Value)\{}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00191}00191\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_stats_ade72e9a5adb4aa136bc4cba06cc701db}{BVHealAmount}}\ =\ Math.Max(0,\ Value);}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00192}00192\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00193}00193\ }
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00198}\mbox{\hyperlink{class_player_stats_a026f80c7d14afe5dbf7e33e0edd2a16a}{00198}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_player_stats_a026f80c7d14afe5dbf7e33e0edd2a16a}{GetBVHealAmount}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00199}00199\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_player_stats_ade72e9a5adb4aa136bc4cba06cc701db}{BVHealAmount}};}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00200}00200\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00201}00201\ }
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00206}\mbox{\hyperlink{class_player_stats_abebcd5c40720aa0a7b4d86518f8e3b1b}{00206}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_stats_abebcd5c40720aa0a7b4d86518f8e3b1b}{SetBVMaxUses}}(\textcolor{keywordtype}{int}\ Value)\{}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00207}00207\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_stats_aa47e0d391b2a9a1bf162da0b00a3b075}{BVMaxUses}}\ =\ Math.Max(0,\ Value);}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00208}00208\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00209}00209\ }
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00214}\mbox{\hyperlink{class_player_stats_a88cc0468ef32b3b4a7b2e79af4e24424}{00214}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_player_stats_a88cc0468ef32b3b4a7b2e79af4e24424}{GetBVMaxUses}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00215}00215\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_player_stats_aa47e0d391b2a9a1bf162da0b00a3b075}{BVMaxUses}};}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00216}00216\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00217}00217\ }
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00222}\mbox{\hyperlink{class_player_stats_a05f3b699b992de2ea849c9397c818a6f}{00222}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_stats_a05f3b699b992de2ea849c9397c818a6f}{SetBVCurrentUses}}(\textcolor{keywordtype}{int}\ Value)\{}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00223}00223\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_stats_ab3f1ef87a636e6387817be8334dd75dc}{BVCurrentUses}}\ =\ Math.Max(0,\ Value);}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00224}00224\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00225}00225\ }
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00230}\mbox{\hyperlink{class_player_stats_a7927fc41f41b344aecea23f12c52329b}{00230}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_player_stats_a7927fc41f41b344aecea23f12c52329b}{GetBVCurrentUses}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00231}00231\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_player_stats_ab3f1ef87a636e6387817be8334dd75dc}{BVCurrentUses}};}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00232}00232\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00233}00233\ }
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00237}\mbox{\hyperlink{class_player_stats_a9a513942394be2aae3457a6be9f81b9b}{00237}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_stats_a9a513942394be2aae3457a6be9f81b9b}{Reload}}()\{}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00238}00238\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_player_stats}{PlayerStats}}();}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00239}00239\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_a895e862f4ff51140f473568a86ade636}{\_Ready}}();}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00240}00240\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00241}00241\ }
+\DoxyCodeLine{\Hypertarget{_player_stats_8cs_source_l00242}00242\ \}}
+
+\end{DoxyCode}

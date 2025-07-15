@@ -1,0 +1,517 @@
+\doxysection{Storage\+Manager Class Reference}
+\hypertarget{class_storage_manager}{}\label{class_storage_manager}\index{StorageManager@{StorageManager}}
+
+
+Klasse für das Speichern und Laden von Daten.  
+
+
+Inheritance diagram for Storage\+Manager\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_storage_manager}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_storage_manager_af6389d6712c053027be26d95382ff1e2}{\+\_\+\+Ready}} ()
+\begin{DoxyCompactList}\small\item\em Initialisierung der Instanz und erstes laden der Einstellungen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_storage_manager_a98dc3f0d99389b7c64bcc9552b398452}{Load\+Settings}} ()
+\begin{DoxyCompactList}\small\item\em Laden der Einstellungen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_storage_manager_a1265660745bf77f244ebb401eae892a7}{Load\+Game\+File}} (int id)
+\begin{DoxyCompactList}\small\item\em Laden eines Spielstandes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_storage_manager_acac4cbeec13991178f4e0395011d0452}{Save\+All}} (int id)
+\begin{DoxyCompactList}\small\item\em Speichern der Einstellungen und eines Spielstandes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_storage_manager_a0066baa67d0d5b4af3dd31fbace1ef41}{Save\+Settings}} ()
+\begin{DoxyCompactList}\small\item\em Speichern der Einstellungen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_storage_manager_aab2c45cef731b397ab3cf33175899e63}{Save\+Game\+File}} (int id)
+\begin{DoxyCompactList}\small\item\em Speichern eines Spielstandes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_storage_manager_a2c513af3aaedc589b36bf0e1de074f2c}{Set\+Last\+Save\+Id}} (int id)
+\begin{DoxyCompactList}\small\item\em Setter für Last\+Save\+Id. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_storage_manager_a1db2888bb3966010740337ad6b975f3a}{Get\+Last\+Save\+Id}} ()
+\begin{DoxyCompactList}\small\item\em Getter für Last\+Save\+Id. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_storage_manager_acc4b79be13db815e5865032a35b4581c}{Set\+Saves}} (int \mbox{\hyperlink{class_storage_manager_af7aaff853e07e906b7e94f4017cdb4aa}{Saves}})
+\begin{DoxyCompactList}\small\item\em Setter für Saves. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_storage_manager_a9f87604d57da68440dc0c0a66517c2dc}{Get\+Saves}} ()
+\begin{DoxyCompactList}\small\item\em Getter für Saves. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_storage_manager}{Storage\+Manager}} \mbox{\hyperlink{class_storage_manager_abc9f8437bf6c7954bba4d68baf5c96ce}{Instance}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, private set\mbox{]}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+String\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_storage_manager_a8df10426c3242d2e36720b89bd840bad}{Path\+Save}} = \{"{}user\+://save1.\+dat"{}, "{}user\+://save2.\+dat"{}, "{}user\+://save3.\+dat"{}\}
+\item 
+int \mbox{\hyperlink{class_storage_manager_a5bafc9b0368de9be79ea2161e8aa1956}{Last\+Save\+Id}} = -\/1
+\item 
+int \mbox{\hyperlink{class_storage_manager_af7aaff853e07e906b7e94f4017cdb4aa}{Saves}} = 0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const String \mbox{\hyperlink{class_storage_manager_a26ddc1307e629886c23bfd00cf296a7e}{Path\+Settings}} = "{}user\+://settings.\+txt"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Klasse für das Speichern und Laden von Daten. 
+
+Definition at line \mbox{\hyperlink{_storage_manager_8cs_source_l00008}{8}} of file \mbox{\hyperlink{_storage_manager_8cs_source}{Storage\+Manager.\+cs}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_storage_manager_af6389d6712c053027be26d95382ff1e2}\index{StorageManager@{StorageManager}!\_Ready@{\_Ready}}
+\index{\_Ready@{\_Ready}!StorageManager@{StorageManager}}
+\doxysubsubsection{\texorpdfstring{\_Ready()}{\_Ready()}}
+{\footnotesize\ttfamily \label{class_storage_manager_af6389d6712c053027be26d95382ff1e2} 
+override void Storage\+Manager.\+\_\+\+Ready (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Initialisierung der Instanz und erstes laden der Einstellungen. 
+
+
+
+Definition at line \mbox{\hyperlink{_storage_manager_8cs_source_l00020}{20}} of file \mbox{\hyperlink{_storage_manager_8cs_source}{Storage\+Manager.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_storage_manager_a98dc3f0d99389b7c64bcc9552b398452}{LoadSettings}}();}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_storage_manager_abc9f8437bf6c7954bba4d68baf5c96ce}{Instance}}\ =\ \textcolor{keyword}{this};}
+\DoxyCodeLine{00023\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_storage_manager_8cs_source_l00010}{Instance}}, and \mbox{\hyperlink{_storage_manager_8cs_source_l00028}{Load\+Settings()}}.
+
+\Hypertarget{class_storage_manager_a1db2888bb3966010740337ad6b975f3a}\index{StorageManager@{StorageManager}!GetLastSaveId@{GetLastSaveId}}
+\index{GetLastSaveId@{GetLastSaveId}!StorageManager@{StorageManager}}
+\doxysubsubsection{\texorpdfstring{GetLastSaveId()}{GetLastSaveId()}}
+{\footnotesize\ttfamily \label{class_storage_manager_a1db2888bb3966010740337ad6b975f3a} 
+int Storage\+Manager.\+Get\+Last\+Save\+Id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Getter für Last\+Save\+Id. 
+
+\begin{DoxyReturn}{Returns}
+int Last\+Save\+Id 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_storage_manager_8cs_source_l00118}{118}} of file \mbox{\hyperlink{_storage_manager_8cs_source}{Storage\+Manager.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_storage_manager_a5bafc9b0368de9be79ea2161e8aa1956}{LastSaveId}};}
+\DoxyCodeLine{00120\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_storage_manager_8cs_source_l00013}{Last\+Save\+Id}}.
+
+
+
+Referenced by \mbox{\hyperlink{_main_menu_8cs_source_l00025}{Main\+Menu.\+\_\+\+Ready()}}, \mbox{\hyperlink{_main_menu_8cs_source_l00095}{Main\+Menu.\+On\+Continue\+Button\+Pressed()}}, \mbox{\hyperlink{_hud_8cs_source_l00060}{Hud.\+On\+Save\+Button\+Pressed()}}, \mbox{\hyperlink{_hud_8cs_source_l00067}{Hud.\+On\+Save\+Menu\+Button\+Pressed()}}, and \mbox{\hyperlink{_hud_8cs_source_l00077}{Hud.\+On\+Save\+Quit\+Button\+Pressed()}}.
+
+\Hypertarget{class_storage_manager_a9f87604d57da68440dc0c0a66517c2dc}\index{StorageManager@{StorageManager}!GetSaves@{GetSaves}}
+\index{GetSaves@{GetSaves}!StorageManager@{StorageManager}}
+\doxysubsubsection{\texorpdfstring{GetSaves()}{GetSaves()}}
+{\footnotesize\ttfamily \label{class_storage_manager_a9f87604d57da68440dc0c0a66517c2dc} 
+int Storage\+Manager.\+Get\+Saves (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Getter für Saves. 
+
+\begin{DoxyReturn}{Returns}
+int Saves 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_storage_manager_8cs_source_l00134}{134}} of file \mbox{\hyperlink{_storage_manager_8cs_source}{Storage\+Manager.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_storage_manager_af7aaff853e07e906b7e94f4017cdb4aa}{Saves}};}
+\DoxyCodeLine{00136\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_storage_manager_8cs_source_l00014}{Saves}}.
+
+
+
+Referenced by \mbox{\hyperlink{_main_menu_8cs_source_l00052}{Main\+Menu.\+Change()}}, \mbox{\hyperlink{_main_menu_8cs_source_l00206}{Main\+Menu.\+On\+Delete\+Confirmation\+Confirmed()}}, \mbox{\hyperlink{_main_menu_8cs_source_l00135}{Main\+Menu.\+On\+Save1\+Select\+Pressed()}}, \mbox{\hyperlink{_main_menu_8cs_source_l00156}{Main\+Menu.\+On\+Save2\+Select\+Pressed()}}, and \mbox{\hyperlink{_main_menu_8cs_source_l00177}{Main\+Menu.\+On\+Save3\+Select\+Pressed()}}.
+
+\Hypertarget{class_storage_manager_a1265660745bf77f244ebb401eae892a7}\index{StorageManager@{StorageManager}!LoadGameFile@{LoadGameFile}}
+\index{LoadGameFile@{LoadGameFile}!StorageManager@{StorageManager}}
+\doxysubsubsection{\texorpdfstring{LoadGameFile()}{LoadGameFile()}}
+{\footnotesize\ttfamily \label{class_storage_manager_a1265660745bf77f244ebb401eae892a7} 
+void Storage\+Manager.\+Load\+Game\+File (\begin{DoxyParamCaption}\item[{int}]{id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Laden eines Spielstandes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Id} & des Spielstandes. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_storage_manager_8cs_source_l00043}{43}} of file \mbox{\hyperlink{_storage_manager_8cs_source}{Storage\+Manager.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!FileAccess.FileExists(\mbox{\hyperlink{class_storage_manager_a8df10426c3242d2e36720b89bd840bad}{PathSave}}[\textcolor{keywordtype}{id}]))\{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ FileAccess\ File\ =\ FileAccess.Open(\mbox{\hyperlink{class_storage_manager_a8df10426c3242d2e36720b89bd840bad}{PathSave}}[\textcolor{keywordtype}{id}],\ FileAccess.ModeFlags.Read);}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_a7ec692981c45e933c737eff8d78e6456}{SetRespawnLevelTag}}((String)\ File.GetVar());}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_a3545edeb4834aad7011e561dc5f1b10d}{SetCurrentLevelTag}}((String)\ File.GetVar());}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_a147af1b1e37f6506303caca28b60f9e4}{SetSpawnPoint}}((Vector2)\ File.GetVar());}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_adb53f7019a00edfe089c3dfd205438c2}{SetPosition}}((Vector2)\ File.GetVar());}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_a647991a1d154f8c2bc8d7032b43e35aa}{SetSinAmount}}((\textcolor{keywordtype}{int})\ File.GetVar());}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_a58c3b27a3633bead2f77fa551f30beeb}{SetMaxHealthPoints}}((\textcolor{keywordtype}{float})\ File.GetVar());}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_aaed3690620c6ba9a8866d0c35b4f26d7}{SetCurrentHealth}}((\textcolor{keywordtype}{float})\ File.GetVar());}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_a8f76220aa1271b2335b045624c6812d0}{SetMaxStamina}}((\textcolor{keywordtype}{float})\ File.GetVar());}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_ab341f12827a6bdcfebb826dff43e82e3}{SetStamina}}((\textcolor{keywordtype}{float})\ File.GetVar());}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_a76c874319c947a35702cd9a0a4b0e66c}{SetBVHealAmount}}((\textcolor{keywordtype}{int})\ File.GetVar());}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_abebcd5c40720aa0a7b4d86518f8e3b1b}{SetBVMaxUses}}((\textcolor{keywordtype}{int})\ File.GetVar());}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_a05f3b699b992de2ea849c9397c818a6f}{SetBVCurrentUses}}((\textcolor{keywordtype}{int})\ File.GetVar());}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ File.Close();}
+\DoxyCodeLine{00062\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_player_stats_8cs_source_l00010}{Player\+Stats.\+Instance}}, \mbox{\hyperlink{_storage_manager_8cs_source_l00012}{Path\+Save}}, \mbox{\hyperlink{_player_stats_8cs_source_l00222}{Player\+Stats.\+Set\+BVCurrent\+Uses()}}, \mbox{\hyperlink{_player_stats_8cs_source_l00190}{Player\+Stats.\+Set\+BVHeal\+Amount()}}, \mbox{\hyperlink{_player_stats_8cs_source_l00206}{Player\+Stats.\+Set\+BVMax\+Uses()}}, \mbox{\hyperlink{_player_stats_8cs_source_l00147}{Player\+Stats.\+Set\+Current\+Health()}}, \mbox{\hyperlink{_player_stats_8cs_source_l00064}{Player\+Stats.\+Set\+Current\+Level\+Tag()}}, \mbox{\hyperlink{_player_stats_8cs_source_l00130}{Player\+Stats.\+Set\+Max\+Health\+Points()}}, \mbox{\hyperlink{_player_stats_8cs_source_l00156}{Player\+Stats.\+Set\+Max\+Stamina()}}, \mbox{\hyperlink{_player_stats_8cs_source_l00088}{Player\+Stats.\+Set\+Position()}}, \mbox{\hyperlink{_player_stats_8cs_source_l00048}{Player\+Stats.\+Set\+Respawn\+Level\+Tag()}}, \mbox{\hyperlink{_player_stats_8cs_source_l00113}{Player\+Stats.\+Set\+Sin\+Amount()}}, \mbox{\hyperlink{_player_stats_8cs_source_l00072}{Player\+Stats.\+Set\+Spawn\+Point()}}, and \mbox{\hyperlink{_player_stats_8cs_source_l00173}{Player\+Stats.\+Set\+Stamina()}}.
+
+
+
+Referenced by \mbox{\hyperlink{_main_menu_8cs_source_l00095}{Main\+Menu.\+On\+Continue\+Button\+Pressed()}}, \mbox{\hyperlink{_main_menu_8cs_source_l00135}{Main\+Menu.\+On\+Save1\+Select\+Pressed()}}, \mbox{\hyperlink{_main_menu_8cs_source_l00156}{Main\+Menu.\+On\+Save2\+Select\+Pressed()}}, and \mbox{\hyperlink{_main_menu_8cs_source_l00177}{Main\+Menu.\+On\+Save3\+Select\+Pressed()}}.
+
+\Hypertarget{class_storage_manager_a98dc3f0d99389b7c64bcc9552b398452}\index{StorageManager@{StorageManager}!LoadSettings@{LoadSettings}}
+\index{LoadSettings@{LoadSettings}!StorageManager@{StorageManager}}
+\doxysubsubsection{\texorpdfstring{LoadSettings()}{LoadSettings()}}
+{\footnotesize\ttfamily \label{class_storage_manager_a98dc3f0d99389b7c64bcc9552b398452} 
+void Storage\+Manager.\+Load\+Settings (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Laden der Einstellungen. 
+
+
+
+Definition at line \mbox{\hyperlink{_storage_manager_8cs_source_l00028}{28}} of file \mbox{\hyperlink{_storage_manager_8cs_source}{Storage\+Manager.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!FileAccess.FileExists(\mbox{\hyperlink{class_storage_manager_a26ddc1307e629886c23bfd00cf296a7e}{PathSettings}}))\{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ FileAccess\ File\ =\ FileAccess.Open(\mbox{\hyperlink{class_storage_manager_a26ddc1307e629886c23bfd00cf296a7e}{PathSettings}},\ FileAccess.ModeFlags.Read);}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_storage_manager_af7aaff853e07e906b7e94f4017cdb4aa}{Saves}}\ =\ (int)\ File.GetVar();}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_storage_manager_a5bafc9b0368de9be79ea2161e8aa1956}{LastSaveId}}\ =\ (int)\ File.GetVar();}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ File.Close();}
+\DoxyCodeLine{00037\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_storage_manager_8cs_source_l00013}{Last\+Save\+Id}}, \mbox{\hyperlink{_storage_manager_8cs_source_l00011}{Path\+Settings}}, and \mbox{\hyperlink{_storage_manager_8cs_source_l00014}{Saves}}.
+
+
+
+Referenced by \mbox{\hyperlink{_storage_manager_8cs_source_l00020}{\+\_\+\+Ready()}}.
+
+\Hypertarget{class_storage_manager_acac4cbeec13991178f4e0395011d0452}\index{StorageManager@{StorageManager}!SaveAll@{SaveAll}}
+\index{SaveAll@{SaveAll}!StorageManager@{StorageManager}}
+\doxysubsubsection{\texorpdfstring{SaveAll()}{SaveAll()}}
+{\footnotesize\ttfamily \label{class_storage_manager_acac4cbeec13991178f4e0395011d0452} 
+void Storage\+Manager.\+Save\+All (\begin{DoxyParamCaption}\item[{int}]{id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Speichern der Einstellungen und eines Spielstandes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Id} & des Spielstandes. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_storage_manager_8cs_source_l00068}{68}} of file \mbox{\hyperlink{_storage_manager_8cs_source}{Storage\+Manager.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_storage_manager_aab2c45cef731b397ab3cf33175899e63}{SaveGameFile}}(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_storage_manager_a0066baa67d0d5b4af3dd31fbace1ef41}{SaveSettings}}();}
+\DoxyCodeLine{00071\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_storage_manager_8cs_source_l00088}{Save\+Game\+File()}}, and \mbox{\hyperlink{_storage_manager_8cs_source_l00076}{Save\+Settings()}}.
+
+
+
+Referenced by \mbox{\hyperlink{_hud_8cs_source_l00060}{Hud.\+On\+Save\+Button\+Pressed()}}, \mbox{\hyperlink{_hud_8cs_source_l00067}{Hud.\+On\+Save\+Menu\+Button\+Pressed()}}, and \mbox{\hyperlink{_hud_8cs_source_l00077}{Hud.\+On\+Save\+Quit\+Button\+Pressed()}}.
+
+\Hypertarget{class_storage_manager_aab2c45cef731b397ab3cf33175899e63}\index{StorageManager@{StorageManager}!SaveGameFile@{SaveGameFile}}
+\index{SaveGameFile@{SaveGameFile}!StorageManager@{StorageManager}}
+\doxysubsubsection{\texorpdfstring{SaveGameFile()}{SaveGameFile()}}
+{\footnotesize\ttfamily \label{class_storage_manager_aab2c45cef731b397ab3cf33175899e63} 
+void Storage\+Manager.\+Save\+Game\+File (\begin{DoxyParamCaption}\item[{int}]{id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Speichern eines Spielstandes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Id} & des Spielstandes. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_storage_manager_8cs_source_l00088}{88}} of file \mbox{\hyperlink{_storage_manager_8cs_source}{Storage\+Manager.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ FileAccess\ File\ =\ FileAccess.Open(\mbox{\hyperlink{class_storage_manager_a8df10426c3242d2e36720b89bd840bad}{PathSave}}[\textcolor{keywordtype}{id}],\ FileAccess.ModeFlags.Write);}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ File.StoreVar(\mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_ad868bae6deb062dbcc4702b276a27041}{GetRespawnLevelTag}}());}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ File.StoreVar(\mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_a7db8c1cd1ecfb2041c7b376289054801}{GetCurrentLevelTag}}());}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ File.StoreVar(\mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_a20396ab55000fe68c62711c072bad9bb}{GetSpawnPoint}}());}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ File.StoreVar(\mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_a77ca820f184b31dd9590bc8613f8566e}{GetPosition}}());}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ File.StoreVar(\mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_a0b2b3398a02e8fbafe3c41dd466c57d0}{GetSinAmount}}());}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ File.StoreVar(\mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_a6a24773d00e75be9747b99681ac76127}{GetMaxHealthPoints}}());}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ File.StoreVar(\mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_a0ec1075ba0983a3df42454b110194c0d}{GetCurrentHealth}}());}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ File.StoreVar(\mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_a7e27ea7ba3c266ecfa446c070415180a}{GetMaxStamina}}());}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ File.StoreVar(\mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_a3a170316e8384ab030f5f697b799a947}{GetStamina}}());}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ File.StoreVar(\mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_a026f80c7d14afe5dbf7e33e0edd2a16a}{GetBVHealAmount}}());}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ File.StoreVar(\mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_a88cc0468ef32b3b4a7b2e79af4e24424}{GetBVMaxUses}}());}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ File.StoreVar(\mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_a7927fc41f41b344aecea23f12c52329b}{GetBVCurrentUses}}());}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ File.Close();}
+\DoxyCodeLine{00104\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_player_stats_8cs_source_l00230}{Player\+Stats.\+Get\+BVCurrent\+Uses()}}, \mbox{\hyperlink{_player_stats_8cs_source_l00198}{Player\+Stats.\+Get\+BVHeal\+Amount()}}, \mbox{\hyperlink{_player_stats_8cs_source_l00214}{Player\+Stats.\+Get\+BVMax\+Uses()}}, \mbox{\hyperlink{_player_stats_8cs_source_l00139}{Player\+Stats.\+Get\+Current\+Health()}}, \mbox{\hyperlink{_player_stats_8cs_source_l00056}{Player\+Stats.\+Get\+Current\+Level\+Tag()}}, \mbox{\hyperlink{_player_stats_8cs_source_l00122}{Player\+Stats.\+Get\+Max\+Health\+Points()}}, \mbox{\hyperlink{_player_stats_8cs_source_l00165}{Player\+Stats.\+Get\+Max\+Stamina()}}, \mbox{\hyperlink{_player_stats_8cs_source_l00096}{Player\+Stats.\+Get\+Position()}}, \mbox{\hyperlink{_player_stats_8cs_source_l00040}{Player\+Stats.\+Get\+Respawn\+Level\+Tag()}}, \mbox{\hyperlink{_player_stats_8cs_source_l00105}{Player\+Stats.\+Get\+Sin\+Amount()}}, \mbox{\hyperlink{_player_stats_8cs_source_l00080}{Player\+Stats.\+Get\+Spawn\+Point()}}, \mbox{\hyperlink{_player_stats_8cs_source_l00182}{Player\+Stats.\+Get\+Stamina()}}, \mbox{\hyperlink{_player_stats_8cs_source_l00010}{Player\+Stats.\+Instance}}, and \mbox{\hyperlink{_storage_manager_8cs_source_l00012}{Path\+Save}}.
+
+
+
+Referenced by \mbox{\hyperlink{_storage_manager_8cs_source_l00068}{Save\+All()}}.
+
+\Hypertarget{class_storage_manager_a0066baa67d0d5b4af3dd31fbace1ef41}\index{StorageManager@{StorageManager}!SaveSettings@{SaveSettings}}
+\index{SaveSettings@{SaveSettings}!StorageManager@{StorageManager}}
+\doxysubsubsection{\texorpdfstring{SaveSettings()}{SaveSettings()}}
+{\footnotesize\ttfamily \label{class_storage_manager_a0066baa67d0d5b4af3dd31fbace1ef41} 
+void Storage\+Manager.\+Save\+Settings (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Speichern der Einstellungen. 
+
+
+
+Definition at line \mbox{\hyperlink{_storage_manager_8cs_source_l00076}{76}} of file \mbox{\hyperlink{_storage_manager_8cs_source}{Storage\+Manager.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ FileAccess\ File\ =\ FileAccess.Open(\mbox{\hyperlink{class_storage_manager_a26ddc1307e629886c23bfd00cf296a7e}{PathSettings}},\ FileAccess.ModeFlags.Write);}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ File.StoreVar(\mbox{\hyperlink{class_storage_manager_af7aaff853e07e906b7e94f4017cdb4aa}{Saves}});}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ File.StoreVar(\mbox{\hyperlink{class_storage_manager_a5bafc9b0368de9be79ea2161e8aa1956}{LastSaveId}});}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ File.Close();}
+\DoxyCodeLine{00082\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_storage_manager_8cs_source_l00013}{Last\+Save\+Id}}, \mbox{\hyperlink{_storage_manager_8cs_source_l00011}{Path\+Settings}}, and \mbox{\hyperlink{_storage_manager_8cs_source_l00014}{Saves}}.
+
+
+
+Referenced by \mbox{\hyperlink{_main_menu_8cs_source_l00103}{Main\+Menu.\+On\+Quit\+Button\+Pressed()}}, and \mbox{\hyperlink{_storage_manager_8cs_source_l00068}{Save\+All()}}.
+
+\Hypertarget{class_storage_manager_a2c513af3aaedc589b36bf0e1de074f2c}\index{StorageManager@{StorageManager}!SetLastSaveId@{SetLastSaveId}}
+\index{SetLastSaveId@{SetLastSaveId}!StorageManager@{StorageManager}}
+\doxysubsubsection{\texorpdfstring{SetLastSaveId()}{SetLastSaveId()}}
+{\footnotesize\ttfamily \label{class_storage_manager_a2c513af3aaedc589b36bf0e1de074f2c} 
+void Storage\+Manager.\+Set\+Last\+Save\+Id (\begin{DoxyParamCaption}\item[{int}]{id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Setter für Last\+Save\+Id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em int} & Last\+Save\+Id \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_storage_manager_8cs_source_l00110}{110}} of file \mbox{\hyperlink{_storage_manager_8cs_source}{Storage\+Manager.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_storage_manager_a5bafc9b0368de9be79ea2161e8aa1956}{LastSaveId}}\ =\ id;}
+\DoxyCodeLine{00112\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_storage_manager_8cs_source_l00013}{Last\+Save\+Id}}.
+
+
+
+Referenced by \mbox{\hyperlink{_main_menu_8cs_source_l00135}{Main\+Menu.\+On\+Save1\+Select\+Pressed()}}, \mbox{\hyperlink{_main_menu_8cs_source_l00156}{Main\+Menu.\+On\+Save2\+Select\+Pressed()}}, and \mbox{\hyperlink{_main_menu_8cs_source_l00177}{Main\+Menu.\+On\+Save3\+Select\+Pressed()}}.
+
+\Hypertarget{class_storage_manager_acc4b79be13db815e5865032a35b4581c}\index{StorageManager@{StorageManager}!SetSaves@{SetSaves}}
+\index{SetSaves@{SetSaves}!StorageManager@{StorageManager}}
+\doxysubsubsection{\texorpdfstring{SetSaves()}{SetSaves()}}
+{\footnotesize\ttfamily \label{class_storage_manager_acc4b79be13db815e5865032a35b4581c} 
+void Storage\+Manager.\+Set\+Saves (\begin{DoxyParamCaption}\item[{int}]{Saves}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Setter für Saves. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em int} & Saves \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_storage_manager_8cs_source_l00126}{126}} of file \mbox{\hyperlink{_storage_manager_8cs_source}{Storage\+Manager.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ this.Saves\ =\ \mbox{\hyperlink{class_storage_manager_af7aaff853e07e906b7e94f4017cdb4aa}{Saves}};}
+\DoxyCodeLine{00128\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_storage_manager_8cs_source_l00014}{Saves}}.
+
+
+
+Referenced by \mbox{\hyperlink{_main_menu_8cs_source_l00206}{Main\+Menu.\+On\+Delete\+Confirmation\+Confirmed()}}, \mbox{\hyperlink{_main_menu_8cs_source_l00135}{Main\+Menu.\+On\+Save1\+Select\+Pressed()}}, \mbox{\hyperlink{_main_menu_8cs_source_l00156}{Main\+Menu.\+On\+Save2\+Select\+Pressed()}}, and \mbox{\hyperlink{_main_menu_8cs_source_l00177}{Main\+Menu.\+On\+Save3\+Select\+Pressed()}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_storage_manager_a5bafc9b0368de9be79ea2161e8aa1956}\index{StorageManager@{StorageManager}!LastSaveId@{LastSaveId}}
+\index{LastSaveId@{LastSaveId}!StorageManager@{StorageManager}}
+\doxysubsubsection{\texorpdfstring{LastSaveId}{LastSaveId}}
+{\footnotesize\ttfamily \label{class_storage_manager_a5bafc9b0368de9be79ea2161e8aa1956} 
+int Storage\+Manager.\+Last\+Save\+Id = -\/1\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_storage_manager_8cs_source_l00013}{13}} of file \mbox{\hyperlink{_storage_manager_8cs_source}{Storage\+Manager.\+cs}}.
+
+
+
+Referenced by \mbox{\hyperlink{_storage_manager_8cs_source_l00118}{Get\+Last\+Save\+Id()}}, \mbox{\hyperlink{_storage_manager_8cs_source_l00028}{Load\+Settings()}}, \mbox{\hyperlink{_storage_manager_8cs_source_l00076}{Save\+Settings()}}, and \mbox{\hyperlink{_storage_manager_8cs_source_l00110}{Set\+Last\+Save\+Id()}}.
+
+\Hypertarget{class_storage_manager_a8df10426c3242d2e36720b89bd840bad}\index{StorageManager@{StorageManager}!PathSave@{PathSave}}
+\index{PathSave@{PathSave}!StorageManager@{StorageManager}}
+\doxysubsubsection{\texorpdfstring{PathSave}{PathSave}}
+{\footnotesize\ttfamily \label{class_storage_manager_a8df10426c3242d2e36720b89bd840bad} 
+String \mbox{[}$\,$\mbox{]} Storage\+Manager.\+Path\+Save = \{"{}user\+://save1.\+dat"{}, "{}user\+://save2.\+dat"{}, "{}user\+://save3.\+dat"{}\}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_storage_manager_8cs_source_l00012}{12}} of file \mbox{\hyperlink{_storage_manager_8cs_source}{Storage\+Manager.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00012\ \{\textcolor{stringliteral}{"{}user://save1.dat"{}},\ \textcolor{stringliteral}{"{}user://save2.dat"{}},\ \textcolor{stringliteral}{"{}user://save3.dat"{}}\};}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{_storage_manager_8cs_source_l00043}{Load\+Game\+File()}}, and \mbox{\hyperlink{_storage_manager_8cs_source_l00088}{Save\+Game\+File()}}.
+
+\Hypertarget{class_storage_manager_a26ddc1307e629886c23bfd00cf296a7e}\index{StorageManager@{StorageManager}!PathSettings@{PathSettings}}
+\index{PathSettings@{PathSettings}!StorageManager@{StorageManager}}
+\doxysubsubsection{\texorpdfstring{PathSettings}{PathSettings}}
+{\footnotesize\ttfamily \label{class_storage_manager_a26ddc1307e629886c23bfd00cf296a7e} 
+const String Storage\+Manager.\+Path\+Settings = "{}user\+://settings.\+txt"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_storage_manager_8cs_source_l00011}{11}} of file \mbox{\hyperlink{_storage_manager_8cs_source}{Storage\+Manager.\+cs}}.
+
+
+
+Referenced by \mbox{\hyperlink{_storage_manager_8cs_source_l00028}{Load\+Settings()}}, and \mbox{\hyperlink{_storage_manager_8cs_source_l00076}{Save\+Settings()}}.
+
+\Hypertarget{class_storage_manager_af7aaff853e07e906b7e94f4017cdb4aa}\index{StorageManager@{StorageManager}!Saves@{Saves}}
+\index{Saves@{Saves}!StorageManager@{StorageManager}}
+\doxysubsubsection{\texorpdfstring{Saves}{Saves}}
+{\footnotesize\ttfamily \label{class_storage_manager_af7aaff853e07e906b7e94f4017cdb4aa} 
+int Storage\+Manager.\+Saves = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_storage_manager_8cs_source_l00014}{14}} of file \mbox{\hyperlink{_storage_manager_8cs_source}{Storage\+Manager.\+cs}}.
+
+
+
+Referenced by \mbox{\hyperlink{_storage_manager_8cs_source_l00134}{Get\+Saves()}}, \mbox{\hyperlink{_storage_manager_8cs_source_l00028}{Load\+Settings()}}, \mbox{\hyperlink{_storage_manager_8cs_source_l00076}{Save\+Settings()}}, and \mbox{\hyperlink{_storage_manager_8cs_source_l00126}{Set\+Saves()}}.
+
+
+
+\doxysubsection{Property Documentation}
+\Hypertarget{class_storage_manager_abc9f8437bf6c7954bba4d68baf5c96ce}\index{StorageManager@{StorageManager}!Instance@{Instance}}
+\index{Instance@{Instance}!StorageManager@{StorageManager}}
+\doxysubsubsection{\texorpdfstring{Instance}{Instance}}
+{\footnotesize\ttfamily \label{class_storage_manager_abc9f8437bf6c7954bba4d68baf5c96ce} 
+\mbox{\hyperlink{class_storage_manager}{Storage\+Manager}} Storage\+Manager.\+Instance\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}, {\ttfamily [private set]}}
+
+
+
+Definition at line \mbox{\hyperlink{_storage_manager_8cs_source_l00010}{10}} of file \mbox{\hyperlink{_storage_manager_8cs_source}{Storage\+Manager.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00010\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{private}\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{_main_menu_8cs_source_l00025}{Main\+Menu.\+\_\+\+Ready()}}, \mbox{\hyperlink{_storage_manager_8cs_source_l00020}{\+\_\+\+Ready()}}, \mbox{\hyperlink{_main_menu_8cs_source_l00052}{Main\+Menu.\+Change()}}, \mbox{\hyperlink{_main_menu_8cs_source_l00095}{Main\+Menu.\+On\+Continue\+Button\+Pressed()}}, \mbox{\hyperlink{_main_menu_8cs_source_l00206}{Main\+Menu.\+On\+Delete\+Confirmation\+Confirmed()}}, \mbox{\hyperlink{_main_menu_8cs_source_l00103}{Main\+Menu.\+On\+Quit\+Button\+Pressed()}}, \mbox{\hyperlink{_main_menu_8cs_source_l00135}{Main\+Menu.\+On\+Save1\+Select\+Pressed()}}, \mbox{\hyperlink{_main_menu_8cs_source_l00156}{Main\+Menu.\+On\+Save2\+Select\+Pressed()}}, \mbox{\hyperlink{_main_menu_8cs_source_l00177}{Main\+Menu.\+On\+Save3\+Select\+Pressed()}}, \mbox{\hyperlink{_hud_8cs_source_l00060}{Hud.\+On\+Save\+Button\+Pressed()}}, \mbox{\hyperlink{_hud_8cs_source_l00067}{Hud.\+On\+Save\+Menu\+Button\+Pressed()}}, and \mbox{\hyperlink{_hud_8cs_source_l00077}{Hud.\+On\+Save\+Quit\+Button\+Pressed()}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Youssef/\+Desktop/\+UNI/\+S4/\+Computerspiel\+Entwicklung/\+Das\+Spiel/anfaengerpraktikum/scripts/\mbox{\hyperlink{_storage_manager_8cs}{Storage\+Manager.\+cs}}\end{DoxyCompactItemize}

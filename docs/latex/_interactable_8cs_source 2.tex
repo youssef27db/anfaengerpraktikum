@@ -1,0 +1,48 @@
+\doxysection{Interactable.\+cs}
+\hypertarget{_interactable_8cs_source}{}\label{_interactable_8cs_source}\index{C:/Users/Youssef/Desktop/UNI/S4/ComputerspielEntwicklung/DasSpiel/anfaengerpraktikum/scripts/Interactable.cs@{C:/Users/Youssef/Desktop/UNI/S4/ComputerspielEntwicklung/DasSpiel/anfaengerpraktikum/scripts/Interactable.cs}}
+\mbox{\hyperlink{_interactable_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_interactable_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }Godot;}
+\DoxyCodeLine{\Hypertarget{_interactable_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_interactable_8cs_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_interactable_8cs_source_l00007}\mbox{\hyperlink{class_interactable}{00007}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{partial\ class\ }\mbox{\hyperlink{class_interactable}{Interactable}}\ :\ AnimatedSprite2D\ \{}
+\DoxyCodeLine{\Hypertarget{_interactable_8cs_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_interactable_8cs_source_l00009}\mbox{\hyperlink{class_interactable_ad74422b51f60ffb81566d0259d829aa1}{00009}}\ \ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{class_player}{Player}}\ \mbox{\hyperlink{class_interactable_ad74422b51f60ffb81566d0259d829aa1}{Player}};}
+\DoxyCodeLine{\Hypertarget{_interactable_8cs_source_l00010}\mbox{\hyperlink{class_interactable_a61892e9f2a38c92f2b3bd12efed3a22d}{00010}}\ \ \ \ \ \textcolor{keyword}{private}\ RichTextLabel\ \mbox{\hyperlink{class_interactable_a61892e9f2a38c92f2b3bd12efed3a22d}{TextLabel}};}
+\DoxyCodeLine{\Hypertarget{_interactable_8cs_source_l00011}\mbox{\hyperlink{class_interactable_a7158399e380702b55704d19dc1c07f12}{00011}}\ \ \ \ \ \textcolor{keyword}{private}\ Control\ \mbox{\hyperlink{class_interactable_a7158399e380702b55704d19dc1c07f12}{PopUp}};}
+\DoxyCodeLine{\Hypertarget{_interactable_8cs_source_l00012}\mbox{\hyperlink{class_interactable_ad53cb161d96e7050002454fe60674fa2}{00012}}\ \ \ \ \ \textcolor{keyword}{private}\ Area2D\ \mbox{\hyperlink{class_interactable_ad53cb161d96e7050002454fe60674fa2}{Area}};}
+\DoxyCodeLine{\Hypertarget{_interactable_8cs_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_interactable_8cs_source_l00014}00014\ \ \ \ \ [Export(PropertyHint.MultilineText)]}
+\DoxyCodeLine{\Hypertarget{_interactable_8cs_source_l00015}\mbox{\hyperlink{class_interactable_a2bc5775aa05c0e143cdb196cf06296d1}{00015}}\ \ \ \ \ \textcolor{keyword}{private}\ String\ \mbox{\hyperlink{class_interactable_a2bc5775aa05c0e143cdb196cf06296d1}{Text}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\}}
+\DoxyCodeLine{\Hypertarget{_interactable_8cs_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_interactable_8cs_source_l00021}\mbox{\hyperlink{class_interactable_a9add6c2a759f67998bdb373dbb654130}{00021}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_interactable_a9add6c2a759f67998bdb373dbb654130}{\_Ready}}()\{}
+\DoxyCodeLine{\Hypertarget{_interactable_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player}{Player}}\ =\ GetNode<Player>(\textcolor{stringliteral}{"{}../Player"{}});}
+\DoxyCodeLine{\Hypertarget{_interactable_8cs_source_l00023}00023\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_interactable_a61892e9f2a38c92f2b3bd12efed3a22d}{TextLabel}}\ =\ GetNode<RichTextLabel>(\textcolor{stringliteral}{"{}../HUD/PopUp/Text"{}});}
+\DoxyCodeLine{\Hypertarget{_interactable_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_interactable_a7158399e380702b55704d19dc1c07f12}{PopUp}}\ =\ GetNode<Control>(\textcolor{stringliteral}{"{}../HUD/PopUp"{}});}
+\DoxyCodeLine{\Hypertarget{_interactable_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_interactable_ad53cb161d96e7050002454fe60674fa2}{Area}}\ =\ GetNode<Area2D>(\textcolor{stringliteral}{"{}Area2D"{}});}
+\DoxyCodeLine{\Hypertarget{_interactable_8cs_source_l00026}00026\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_interactable_8cs_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_interactable_8cs_source_l00032}\mbox{\hyperlink{class_interactable_aca8766dcd47dd334a4bb9062abf2f626}{00032}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_interactable_aca8766dcd47dd334a4bb9062abf2f626}{\_Process}}(\textcolor{keywordtype}{double}\ DeltaTime)\{}
+\DoxyCodeLine{\Hypertarget{_interactable_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(Input.IsActionJustPressed(\textcolor{stringliteral}{"{}interact"{}}))\{}
+\DoxyCodeLine{\Hypertarget{_interactable_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ Godot.Collections.Array<Node2D>\ Bodies\ =\ \mbox{\hyperlink{class_interactable_ad53cb161d96e7050002454fe60674fa2}{Area}}.GetOverlappingBodies();}
+\DoxyCodeLine{\Hypertarget{_interactable_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}(Node2D\ Body\ \textcolor{keywordflow}{in}\ Bodies)\{}
+\DoxyCodeLine{\Hypertarget{_interactable_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(Body\ ==\ \mbox{\hyperlink{class_player}{Player}})\{}
+\DoxyCodeLine{\Hypertarget{_interactable_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_interactable_a61892e9f2a38c92f2b3bd12efed3a22d}{TextLabel}}.Clear();}
+\DoxyCodeLine{\Hypertarget{_interactable_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_interactable_a61892e9f2a38c92f2b3bd12efed3a22d}{TextLabel}}.AppendText(\mbox{\hyperlink{class_interactable_a2bc5775aa05c0e143cdb196cf06296d1}{Text}});}
+\DoxyCodeLine{\Hypertarget{_interactable_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ PopUp.Visible\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_interactable_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_interactable_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_interactable_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_interactable_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_interactable_8cs_source_l00044}00044\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_interactable_8cs_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_interactable_8cs_source_l00050}\mbox{\hyperlink{class_interactable_abdf9c193fcfb6f4b5187842b1055830d}{00050}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_interactable_abdf9c193fcfb6f4b5187842b1055830d}{OnAreaBodyExited}}(Node2D\ Body)\{}
+\DoxyCodeLine{\Hypertarget{_interactable_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(Body\ ==\ \mbox{\hyperlink{class_player}{Player}})\{}
+\DoxyCodeLine{\Hypertarget{_interactable_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ PopUp.Visible\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_interactable_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_interactable_a61892e9f2a38c92f2b3bd12efed3a22d}{TextLabel}}.Clear();}
+\DoxyCodeLine{\Hypertarget{_interactable_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_interactable_8cs_source_l00055}00055\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_interactable_8cs_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{_interactable_8cs_source_l00057}00057\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,61 @@
+\doxysection{Spike.\+cs}
+\hypertarget{_spike_8cs_source}{}\label{_spike_8cs_source}\index{C:/Users/Youssef/Desktop/UNI/S4/ComputerspielEntwicklung/DasSpiel/anfaengerpraktikum/scripts/Spike.cs@{C:/Users/Youssef/Desktop/UNI/S4/ComputerspielEntwicklung/DasSpiel/anfaengerpraktikum/scripts/Spike.cs}}
+\mbox{\hyperlink{_spike_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_spike_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }Godot;}
+\DoxyCodeLine{\Hypertarget{_spike_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_spike_8cs_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_spike_8cs_source_l00007}\mbox{\hyperlink{class_spike}{00007}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{partial\ class\ }\mbox{\hyperlink{class_spike}{Spike}}\ :\ Node2D}
+\DoxyCodeLine{\Hypertarget{_spike_8cs_source_l00008}00008\ \{}
+\DoxyCodeLine{\Hypertarget{_spike_8cs_source_l00009}00009\ \ \ \ \ \textcolor{comment}{//\ Variable\ für\ Player}}
+\DoxyCodeLine{\Hypertarget{_spike_8cs_source_l00010}\mbox{\hyperlink{class_spike_a85d64c8d9c90fef419893853ae7e9942}{00010}}\ \ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{class_player}{Player}}\ \mbox{\hyperlink{class_spike_a85d64c8d9c90fef419893853ae7e9942}{Player}};}
+\DoxyCodeLine{\Hypertarget{_spike_8cs_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_spike_8cs_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_spike_8cs_source_l00013}00013\ \ \ \ \ [Export]}
+\DoxyCodeLine{\Hypertarget{_spike_8cs_source_l00014}\mbox{\hyperlink{class_spike_aa6e0e6494eb6bf74afaa7becf33cefe3}{00014}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_damage}{Damage}}\ =\ 10f;}
+\DoxyCodeLine{\Hypertarget{_spike_8cs_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{_spike_8cs_source_l00020}\mbox{\hyperlink{class_spike_a527675080d8e2e4ee4310fb3e112a120}{00020}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_spike_a527675080d8e2e4ee4310fb3e112a120}{\_Ready}}()}
+\DoxyCodeLine{\Hypertarget{_spike_8cs_source_l00021}00021\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_spike_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Zugriff\ auf\ Player\ Node}}
+\DoxyCodeLine{\Hypertarget{_spike_8cs_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_spike_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player}{Player}}\ =\ GetNode<Player>(\textcolor{stringliteral}{"{}../../Player"{}});}
+\DoxyCodeLine{\Hypertarget{_spike_8cs_source_l00025}00025\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spike_8cs_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_spike_8cs_source_l00030}\mbox{\hyperlink{class_spike_ad359ec07f383c62c2683c1c307941f74}{00030}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_spike_ad359ec07f383c62c2683c1c307941f74}{OnPlayerBodyEntered}}(Node\ body)}
+\DoxyCodeLine{\Hypertarget{_spike_8cs_source_l00031}00031\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_spike_8cs_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_spike_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (body\ is\ \mbox{\hyperlink{class_player}{Player}})}
+\DoxyCodeLine{\Hypertarget{_spike_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_spike_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player}{Player}}\ =\ (\mbox{\hyperlink{class_spike_a85d64c8d9c90fef419893853ae7e9942}{Player}})body;\ \textcolor{comment}{//\ Instanzvariable\ setzen\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{_spike_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player}{Player}}.\mbox{\hyperlink{class_player_aa1a0addae97cec09d2e86f3060a05438}{TakeDamage}}(\mbox{\hyperlink{class_spike_a089076328dd0c52b0c595f9ee9c98c33}{GetDamage}}());}
+\DoxyCodeLine{\Hypertarget{_spike_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player}{Player}}.\mbox{\hyperlink{class_player_a0a59dfe03d542fa98f28f4c4eaa49a75}{SlowPlayer}}(0.5f);}
+\DoxyCodeLine{\Hypertarget{_spike_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ GetNode<Timer>(\textcolor{stringliteral}{"{}StaticBody2D/Area2D/Timer"{}}).Start();}
+\DoxyCodeLine{\Hypertarget{_spike_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ GD.Print(\textcolor{stringliteral}{"{}Player\ entered\ spike"{}});}
+\DoxyCodeLine{\Hypertarget{_spike_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spike_8cs_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{_spike_8cs_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{_spike_8cs_source_l00043}00043\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spike_8cs_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{_spike_8cs_source_l00048}\mbox{\hyperlink{class_spike_ac7ee6575608e186c3d00d17331dfc97e}{00048}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_spike_ac7ee6575608e186c3d00d17331dfc97e}{OnPlayerBodyExited}}(Node\ body)}
+\DoxyCodeLine{\Hypertarget{_spike_8cs_source_l00049}00049\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_spike_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (body\ is\ \mbox{\hyperlink{class_player}{Player}})}
+\DoxyCodeLine{\Hypertarget{_spike_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_spike_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player}{Player}}\ =\ \textcolor{keyword}{null};\ \textcolor{comment}{//\ Instanzvariable\ zurücksetzen}}
+\DoxyCodeLine{\Hypertarget{_spike_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ GetNode<Timer>(\textcolor{stringliteral}{"{}StaticBody2D/Area2D/Timer"{}}).Stop();}
+\DoxyCodeLine{\Hypertarget{_spike_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spike_8cs_source_l00055}00055\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spike_8cs_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{_spike_8cs_source_l00060}\mbox{\hyperlink{class_spike_a1ef0f806f713e9d58eb5ef768e5a582e}{00060}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_spike_a1ef0f806f713e9d58eb5ef768e5a582e}{OnTimerTimeout}}()}
+\DoxyCodeLine{\Hypertarget{_spike_8cs_source_l00061}00061\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_spike_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ GD.Print(\textcolor{stringliteral}{"{}Timer\ timeout"{}});}
+\DoxyCodeLine{\Hypertarget{_spike_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player}{Player}}.\mbox{\hyperlink{class_player_aa1a0addae97cec09d2e86f3060a05438}{TakeDamage}}(\mbox{\hyperlink{class_spike_a089076328dd0c52b0c595f9ee9c98c33}{GetDamage}}());}
+\DoxyCodeLine{\Hypertarget{_spike_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ GetNode<Timer>(\textcolor{stringliteral}{"{}StaticBody2D/Area2D/Timer"{}}).Start();}
+\DoxyCodeLine{\Hypertarget{_spike_8cs_source_l00065}00065\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spike_8cs_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{_spike_8cs_source_l00071}\mbox{\hyperlink{class_spike_a089076328dd0c52b0c595f9ee9c98c33}{00071}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_damage}{Damage}}\ \mbox{\hyperlink{class_spike_a089076328dd0c52b0c595f9ee9c98c33}{GetDamage}}()}
+\DoxyCodeLine{\Hypertarget{_spike_8cs_source_l00072}00072\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_spike_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_spike_aa6e0e6494eb6bf74afaa7becf33cefe3}{Damage}}(0,\ \mbox{\hyperlink{class_damage}{Damage}},\ Vector2.Zero,\ \textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{_spike_8cs_source_l00074}00074\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_spike_8cs_source_l00075}00075\ \}}
+
+\end{DoxyCode}

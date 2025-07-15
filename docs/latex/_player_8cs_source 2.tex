@@ -1,0 +1,375 @@
+\doxysection{Player.\+cs}
+\hypertarget{_player_8cs_source}{}\label{_player_8cs_source}\index{C:/Users/Youssef/Desktop/UNI/S4/ComputerspielEntwicklung/DasSpiel/anfaengerpraktikum/scripts/Player.cs@{C:/Users/Youssef/Desktop/UNI/S4/ComputerspielEntwicklung/DasSpiel/anfaengerpraktikum/scripts/Player.cs}}
+\mbox{\hyperlink{_player_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }Godot;}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00008}\mbox{\hyperlink{class_player}{00008}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{partial\ class\ }\mbox{\hyperlink{class_player}{Player}}\ :\ CharacterBody2D}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00009}00009\ \{}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00010}00010\ \ \ \ \ \textcolor{comment}{//\ Variablen\ für\ Bewegung,\ Sprünge\ und\ Dash}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00011}\mbox{\hyperlink{class_player_a23e57f8d9bfe69ab49b86a94bcc8c37d}{00011}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_player_a23e57f8d9bfe69ab49b86a94bcc8c37d}{SPEED}}\ =\ 100f;}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00012}\mbox{\hyperlink{class_player_a8da3506a415217b5eeacbf254620b0a1}{00012}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_player_a8da3506a415217b5eeacbf254620b0a1}{JUMP\_VELOCITY}}\ =\ -\/300f;}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00013}\mbox{\hyperlink{class_player_a7bcbe69f9f5e347cf485306520b1dadd}{00013}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_player_a7bcbe69f9f5e347cf485306520b1dadd}{JumpMax}}\ =\ 2;}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00014}\mbox{\hyperlink{class_player_a9c16b607216c433cd53e2a56fedfeeed}{00014}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_player_a9c16b607216c433cd53e2a56fedfeeed}{JumpCount}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00016}\mbox{\hyperlink{class_player_ad64449e2fb7a7b527d08ce823dc4e2e4}{00016}}\ \ \ \ \ \textcolor{keyword}{private}\ Vector2\ \mbox{\hyperlink{class_player_ad64449e2fb7a7b527d08ce823dc4e2e4}{DashDirection}}\ =\ Vector2.Zero;}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00017}\mbox{\hyperlink{class_player_ad418db551711bceecb6a0f504727ca91}{00017}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_player_ad418db551711bceecb6a0f504727ca91}{DashSpeed}}\ =\ 300f;}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00018}\mbox{\hyperlink{class_player_a3cf5113d8c5c04d4fc9822c7b33a4fa1}{00018}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_player_a3cf5113d8c5c04d4fc9822c7b33a4fa1}{IsDashing}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00019}\mbox{\hyperlink{class_player_ae5ed42be5737449538f03a89ae258780}{00019}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_player_ae5ed42be5737449538f03a89ae258780}{CanDash}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00020}\mbox{\hyperlink{class_player_a33ad87048d2a086b8b74cf2d610aac8e}{00020}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_player_a33ad87048d2a086b8b74cf2d610aac8e}{DashTrailInterval}}\ =\ 0.05f;}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00021}\mbox{\hyperlink{class_player_af96d2cf00ca821528f6624b9d746de79}{00021}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_player_af96d2cf00ca821528f6624b9d746de79}{DashTrailTimer}}\ =\ 0f;}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00023}00023\ \ \ \ \ \textcolor{comment}{//\ Referenzen\ zu\ den\ Knoten}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00024}\mbox{\hyperlink{class_player_a343fb1371365e58eb9c641928d41237a}{00024}}\ \ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{class_player_a343fb1371365e58eb9c641928d41237a}{AnimationPlayer}}\ \mbox{\hyperlink{class_player_a343fb1371365e58eb9c641928d41237a}{AnimationPlayer}};}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00025}\mbox{\hyperlink{class_player_a650e61374596e594f38f5d9caf11c3fb}{00025}}\ \ \ \ \ \textcolor{keyword}{private}\ Sprite2D\ \mbox{\hyperlink{class_player_a650e61374596e594f38f5d9caf11c3fb}{Sprite}};}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00026}\mbox{\hyperlink{class_player_afc303e1e2108345937a0834cb03fee60}{00026}}\ \ \ \ \ \textcolor{keyword}{private}\ Timer\ \mbox{\hyperlink{class_player_afc303e1e2108345937a0834cb03fee60}{DashEffect}};}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00027}\mbox{\hyperlink{class_player_ae1197f00cda479e2e18246010b36fa9d}{00027}}\ \ \ \ \ \textcolor{keyword}{private}\ Timer\ \mbox{\hyperlink{class_player_ae1197f00cda479e2e18246010b36fa9d}{DashTimer}};}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00028}\mbox{\hyperlink{class_player_a64d74400579bd882301f0ec6a6135ed8}{00028}}\ \ \ \ \ \textcolor{keyword}{private}\ CollisionShape2D\ \mbox{\hyperlink{class_player_a64d74400579bd882301f0ec6a6135ed8}{SwordCollision}};}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00029}\mbox{\hyperlink{class_player_a5b037b53d0e7c4eacd6e09b71463862c}{00029}}\ \ \ \ \ \textcolor{keyword}{private}\ CollisionShape2D\ \mbox{\hyperlink{class_player_a5b037b53d0e7c4eacd6e09b71463862c}{PlayerHitbox}};}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00030}\mbox{\hyperlink{class_player_aaef48228442e066781c02ea9b8c3f694}{00030}}\ \ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{class_blood_vial}{BloodVial}}\ \mbox{\hyperlink{class_player_aaef48228442e066781c02ea9b8c3f694}{BloodVials}};}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00031}\mbox{\hyperlink{class_player_aa23d4f9699cd9b706e9b6945a365699b}{00031}}\ \ \ \ \ \textcolor{keyword}{private}\ Label\ \mbox{\hyperlink{class_player_aa23d4f9699cd9b706e9b6945a365699b}{SinDisplay}};}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00033}\mbox{\hyperlink{class_player_ae9c0ec6f7123f5832d82c2cc68eedb97}{00033}}\ \ \ \ \ \textcolor{keyword}{private}\ Vector2\ \mbox{\hyperlink{class_player_ae9c0ec6f7123f5832d82c2cc68eedb97}{HauptHitbox}};}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00034}\mbox{\hyperlink{class_player_a57850da38e07a680af71543a3e02de1a}{00034}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_player_a57850da38e07a680af71543a3e02de1a}{LastAttack}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00036}00036\ \ \ \ \ \textcolor{comment}{//Variablen\ für\ Stamina}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00037}\mbox{\hyperlink{class_player_adda3c3e385b428e061d6d1ccd25f23cb}{00037}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_player_adda3c3e385b428e061d6d1ccd25f23cb}{TimeSinceLastStaminaUse}}\ =\ 0f;}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00043}\mbox{\hyperlink{class_player_ae192a478a80f0e93e01339d62cdd6f6d}{00043}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_ae192a478a80f0e93e01339d62cdd6f6d}{\_Ready}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_a343fb1371365e58eb9c641928d41237a}{AnimationPlayer}}\ =\ GetNode<AnimationPlayer>(\textcolor{stringliteral}{"{}AnimationPlayer"{}});}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_a650e61374596e594f38f5d9caf11c3fb}{Sprite}}\ =\ GetNode<Sprite2D>(\textcolor{stringliteral}{"{}Sprite2D"{}});}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_afc303e1e2108345937a0834cb03fee60}{DashEffect}}\ =\ GetNode<Timer>(\textcolor{stringliteral}{"{}DashEffect"{}});}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_ae1197f00cda479e2e18246010b36fa9d}{DashTimer}}\ =\ GetNode<Timer>(\textcolor{stringliteral}{"{}DashTimer"{}});}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_a64d74400579bd882301f0ec6a6135ed8}{SwordCollision}}\ =\ GetNode<CollisionShape2D>(\textcolor{stringliteral}{"{}Sprite2D/SwordHit/SwordCollision"{}});}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_a5b037b53d0e7c4eacd6e09b71463862c}{PlayerHitbox}}\ =\ GetNode<CollisionShape2D>(\textcolor{stringliteral}{"{}PlayerHitbox"{}});}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_ae9c0ec6f7123f5832d82c2cc68eedb97}{HauptHitbox}}\ =\ \mbox{\hyperlink{class_player_a5b037b53d0e7c4eacd6e09b71463862c}{PlayerHitbox}}.Position;}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_aaef48228442e066781c02ea9b8c3f694}{BloodVials}}\ =\ GetNode<BloodVial>(\textcolor{stringliteral}{"{}../HUD/BloodVial/Counter"{}});}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_aa23d4f9699cd9b706e9b6945a365699b}{SinDisplay}}\ =\ GetNode<Label>(\textcolor{stringliteral}{"{}../HUD/SinAmount/Counter"{}});}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ SinDisplay.Text\ =\ \mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_a0b2b3398a02e8fbafe3c41dd466c57d0}{GetSinAmount}}()\ +\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_navigation_manager}{NavigationManager}}\ navigationManager\ =\ GetNode<NavigationManager>(\textcolor{stringliteral}{"{}/root/NavigationManager"{}});}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ navigationManager.Connect(\textcolor{stringliteral}{"{}OnTriggerPlayerSpawn"{}},\ \textcolor{keyword}{new}\ Callable(\textcolor{keyword}{this},\ nameof(\mbox{\hyperlink{class_player_a026f050e54322e805ad546ee99483e6e}{OnSpawn}})));}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ Position\ =\ \mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_a77ca820f184b31dd9590bc8613f8566e}{GetPosition}}();}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00060}00060\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00067}\mbox{\hyperlink{class_player_a02ef3667915da4d1a2e21fd6c9f93e48}{00067}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_a02ef3667915da4d1a2e21fd6c9f93e48}{\_PhysicsProcess}}(\textcolor{keywordtype}{double}\ DeltaTime)\ \{}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Gravitation\ hinzufügen,\ wenn\ der\ Charakter\ nicht\ am\ Boden\ ist}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!IsOnFloor())\ \{}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ Velocity\ +=\ GetGravity()\ *\ (float)DeltaTime;}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_ae5ed42be5737449538f03a89ae258780}{CanDash}}\ =\ \textcolor{keyword}{true};\ \textcolor{comment}{//\ Dash\ wird\ zurückgesetzt,\ wenn\ der\ Charakter\ am\ Boden\ ist}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_adda3c3e385b428e061d6d1ccd25f23cb}{TimeSinceLastStaminaUse}}\ +=\ (float)DeltaTime;}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_ab715416eb7dbe1d4d320d4ba21999072}{RegenerateStamina}}(20f,\ DeltaTime);}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Heal}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(Input.IsActionJustPressed(\textcolor{stringliteral}{"{}heal"{}}))\{}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_aaef48228442e066781c02ea9b8c3f694}{BloodVials}}.\mbox{\hyperlink{class_blood_vial_a0e0fed9a887f1fa7f068906273d43275}{UseBloodVial}}();}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_a8237be052507e34edec4776fa25f9544}{HandleJump}}();}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_af8fce0260ebcc78bb46e2a8393eb2fb7}{HandleMovement}}(DeltaTime);}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ MoveAndSlide();}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_a6dd10a495418b531f7e65ab238368bdc}{UpdateAnimations}}();}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00087}00087\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_adb53f7019a00edfe089c3dfd205438c2}{SetPosition}}(Position);}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00088}00088\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00094}\mbox{\hyperlink{class_player_a8237be052507e34edec4776fa25f9544}{00094}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_a8237be052507e34edec4776fa25f9544}{HandleJump}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00095}00095\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Sprungzähler\ zurücksetzen,\ wenn\ der\ Charakter\ am\ Boden\ ist}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00096}00096\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_player_a9c16b607216c433cd53e2a56fedfeeed}{JumpCount}}\ !=\ 0\ \&\&\ IsOnFloor())\ \{}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_a9c16b607216c433cd53e2a56fedfeeed}{JumpCount}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00098}00098\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00100}00100\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Überprüfen,\ ob\ der\ Sprung-\/Button\ gedrückt\ wurde\ und\ der\ Charakter\ noch\ Sprünge\ übrig\ hat}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00101}00101\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Input.IsActionJustPressed(\textcolor{stringliteral}{"{}ui\_up"{}})\ \&\&\ \mbox{\hyperlink{class_player_a9c16b607216c433cd53e2a56fedfeeed}{JumpCount}}\ <\ \mbox{\hyperlink{class_player_a7bcbe69f9f5e347cf485306520b1dadd}{JumpMax}})\ \{}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_player_a9c16b607216c433cd53e2a56fedfeeed}{JumpCount}}\ ==\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Erster\ Sprung\ ohne\ Stamina-\/Verlust}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ Velocity\ =\ \textcolor{keyword}{new}\ Vector2(Velocity.X,\ \mbox{\hyperlink{class_player_a8da3506a415217b5eeacbf254620b0a1}{JUMP\_VELOCITY}});}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_a9c16b607216c433cd53e2a56fedfeeed}{JumpCount}}\ +=\ 1;}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_player_a9c16b607216c433cd53e2a56fedfeeed}{JumpCount}}\ >\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Beim\ Doppelsprung\ Stamina\ prüfen\ und\ abziehen}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_player_ac69e2d647a9d7317b01599b2a5695199}{UseStamina}}(15))\ \{}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Velocity\ =\ \textcolor{keyword}{new}\ Vector2(Velocity.X,\ \mbox{\hyperlink{class_player_a8da3506a415217b5eeacbf254620b0a1}{JUMP\_VELOCITY}});}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_a9c16b607216c433cd53e2a56fedfeeed}{JumpCount}}\ +=\ 1;}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ }
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00113}00113\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00114}00114\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00115}00115\ }
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00121}\mbox{\hyperlink{class_player_af8fce0260ebcc78bb46e2a8393eb2fb7}{00121}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_af8fce0260ebcc78bb46e2a8393eb2fb7}{HandleMovement}}(\textcolor{keywordtype}{double}\ DeltaTime)\ \{}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00122}00122\ \ \ \ \ \ \ \ \ Vector2\ direction\ =\ \textcolor{keyword}{new}\ Vector2(Input.GetAxis(\textcolor{stringliteral}{"{}ui\_left"{}},\ \textcolor{stringliteral}{"{}ui\_right"{}}),\ Input.GetAxis(\textcolor{stringliteral}{"{}ui\_up"{}},\ \textcolor{stringliteral}{"{}ui\_down"{}})).Normalized();}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00123}00123\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ currentSpeed\ =\ \mbox{\hyperlink{class_player_a23e57f8d9bfe69ab49b86a94bcc8c37d}{SPEED}};}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00124}00124\ }
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00125}00125\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Sprite\ umdrehen\ basierend\ auf\ der\ Bewegungsrichtung\ und\ Kollision\ umdrehen}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00126}00126\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (direction.X\ <\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ Sprite.FlipH\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ SwordCollision.Position\ =\ \textcolor{keyword}{new}\ Vector2(-\/Mathf.Abs(\mbox{\hyperlink{class_player_a64d74400579bd882301f0ec6a6135ed8}{SwordCollision}}.Position.X),\ \mbox{\hyperlink{class_player_a64d74400579bd882301f0ec6a6135ed8}{SwordCollision}}.Position.Y);}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ PlayerHitbox.Position\ =\ \textcolor{keyword}{new}\ Vector2(\mbox{\hyperlink{class_player_a650e61374596e594f38f5d9caf11c3fb}{Sprite}}.Position.X\ *\ 1.8f,\ \mbox{\hyperlink{class_player_a5b037b53d0e7c4eacd6e09b71463862c}{PlayerHitbox}}.Position.Y);}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00130}00130\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (direction.X\ >\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ Sprite.FlipH\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ SwordCollision.Position\ =\ \textcolor{keyword}{new}\ Vector2(Mathf.Abs(\mbox{\hyperlink{class_player_a64d74400579bd882301f0ec6a6135ed8}{SwordCollision}}.Position.X),\ \mbox{\hyperlink{class_player_a64d74400579bd882301f0ec6a6135ed8}{SwordCollision}}.Position.Y);}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ PlayerHitbox.Position\ =\ \mbox{\hyperlink{class_player_ae9c0ec6f7123f5832d82c2cc68eedb97}{HauptHitbox}};}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00134}00134\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00135}00135\ }
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00136}00136\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Geschwindigkeit\ reduzieren,\ wenn\ der\ Spieler\ angreift}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00137}00137\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_player_a343fb1371365e58eb9c641928d41237a}{AnimationPlayer}}.CurrentAnimation\ ==\ \textcolor{stringliteral}{"{}light\_attack"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ currentSpeed\ *=\ 0.5f;}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00139}00139\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_player_a343fb1371365e58eb9c641928d41237a}{AnimationPlayer}}.CurrentAnimation\ ==\ \textcolor{stringliteral}{"{}heavy\_attack"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ currentSpeed\ *=\ 0.15f;}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00141}00141\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00142}00142\ }
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00143}00143\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Blockieren\ stoppt\ die\ Bewegung}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00144}00144\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_player_ac5b003495e551fee56ed26d26a239432}{IsBlocking}}())\ \{}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ currentSpeed\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00146}00146\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00147}00147\ }
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00148}00148\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_player_a3cf5113d8c5c04d4fc9822c7b33a4fa1}{IsDashing}})\ \{}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_aeb354dd739e4fb8af95215e633f2ae30}{DashInProgress}}(DeltaTime);}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00150}00150\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Normale\ Bewegung\ verarbeiten,\ wenn\ kein\ Dash\ aktiv\ ist}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (direction\ !=\ Vector2.Zero)\ \{}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Velocity\ =\ \textcolor{keyword}{new}\ Vector2(direction.X\ *\ currentSpeed,\ Velocity.Y);}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Velocity\ =\ \textcolor{keyword}{new}\ Vector2(Mathf.MoveToward(Velocity.X,\ 0,\ \mbox{\hyperlink{class_player_a23e57f8d9bfe69ab49b86a94bcc8c37d}{SPEED}}),\ Velocity.Y);}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00156}00156\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00157}00157\ }
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00158}00158\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Überprüfen,\ ob\ der\ Dash-\/Button\ gedrückt\ wurde\ mit\ eine\ Bewegungsrichtung\ und\ nicht\ schon\ am\ angreifen\ ist}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Input.IsActionJustPressed(\textcolor{stringliteral}{"{}dash"{}})\ \&\&\ direction\ !=\ Vector2.Zero\ \&\&\ \mbox{\hyperlink{class_player_ae5ed42be5737449538f03a89ae258780}{CanDash}}\ \&\&\ !\mbox{\hyperlink{class_player_ab8df147009969880162db05e243cd129}{IsAttacking}}())\ \{}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Wenn\ der\ Player\ genug\ Stamina\ hat\ kann\ er\ dashen}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00161}00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_player_ac69e2d647a9d7317b01599b2a5695199}{UseStamina}}(20))\{}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_ad64449e2fb7a7b527d08ce823dc4e2e4}{DashDirection}}\ =\ direction;}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00163}00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_a9d3abf4c257f11a5838c978ab3abb27f}{StartDash}}();\ }
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00164}00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00165}00165\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00166}00166\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00167}00167\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00168}00168\ }
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00172}\mbox{\hyperlink{class_player_a9d3abf4c257f11a5838c978ab3abb27f}{00172}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_a9d3abf4c257f11a5838c978ab3abb27f}{StartDash}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00173}00173\ \ \ \ \ \ \ \ \ SetCollisionLayerValue(1,\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00174}00174\ \ \ \ \ \ \ \ \ SetCollisionMaskValue(1,\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00175}00175\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_a3cf5113d8c5c04d4fc9822c7b33a4fa1}{IsDashing}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00176}00176\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_ae5ed42be5737449538f03a89ae258780}{CanDash}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00177}00177\ \ \ \ \ \ \ \ \ DashTimer.Timeout\ +=\ \mbox{\hyperlink{class_player_a53389f72f48d7980aedb5e8b75d237dd}{StopDash}};}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00178}00178\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_ae1197f00cda479e2e18246010b36fa9d}{DashTimer}}.Start();}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00179}00179\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_afc303e1e2108345937a0834cb03fee60}{DashEffect}}.Start();}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00180}00180\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_af96d2cf00ca821528f6624b9d746de79}{DashTrailTimer}}\ =\ 0f;}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00181}00181\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00182}00182\ }
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00187}\mbox{\hyperlink{class_player_aeb354dd739e4fb8af95215e633f2ae30}{00187}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_aeb354dd739e4fb8af95215e633f2ae30}{DashInProgress}}(\textcolor{keywordtype}{double}\ DeltaTime)\ \{}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00188}00188\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Charakter\ bewegt\ sich\ in\ die\ Dash-\/Richtung\ mit\ Dash-\/Geschwindigkeit}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00189}00189\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_player_ad64449e2fb7a7b527d08ce823dc4e2e4}{DashDirection}}\ ==\ Vector2.Up)\ \{}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00190}00190\ \ \ \ \ \ \ \ \ \ \ \ \ Velocity\ =\ \mbox{\hyperlink{class_player_ad64449e2fb7a7b527d08ce823dc4e2e4}{DashDirection}}\ /\ 1.5f\ *\ \mbox{\hyperlink{class_player_ad418db551711bceecb6a0f504727ca91}{DashSpeed}};}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00191}00191\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00192}00192\ \ \ \ \ \ \ \ \ \ \ \ \ Velocity\ =\ \mbox{\hyperlink{class_player_ad64449e2fb7a7b527d08ce823dc4e2e4}{DashDirection}}\ *\ \mbox{\hyperlink{class_player_ad418db551711bceecb6a0f504727ca91}{DashSpeed}};}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00193}00193\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00194}00194\ }
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00195}00195\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Dash-\/Trail\ bei\ Intervallen\ erstellen}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00196}00196\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_af96d2cf00ca821528f6624b9d746de79}{DashTrailTimer}}\ -\/=\ (float)DeltaTime;}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00197}00197\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_player_af96d2cf00ca821528f6624b9d746de79}{DashTrailTimer}}\ <=\ 0f)\ \{}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00198}00198\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_a0aa4500de693c81904bba34fb91df560}{CreateDashEffect}}();}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00199}00199\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_af96d2cf00ca821528f6624b9d746de79}{DashTrailTimer}}\ =\ \mbox{\hyperlink{class_player_a33ad87048d2a086b8b74cf2d610aac8e}{DashTrailInterval}};}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00200}00200\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00201}00201\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00202}00202\ }
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00207}\mbox{\hyperlink{class_player_a0aa4500de693c81904bba34fb91df560}{00207}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_a0aa4500de693c81904bba34fb91df560}{CreateDashEffect}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00208}00208\ \ \ \ \ \ \ \ \ Sprite2D\ PlayerCopyNode\ =\ (Sprite2D)\mbox{\hyperlink{class_player_a650e61374596e594f38f5d9caf11c3fb}{Sprite}}.Duplicate();}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00209}00209\ \ \ \ \ \ \ \ \ GetParent().AddChild(PlayerCopyNode);}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00210}00210\ }
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00211}00211\ \ \ \ \ \ \ \ \ CollisionShape2D\ SwordCollisionCopy\ =\ PlayerCopyNode.GetNode<CollisionShape2D>(\textcolor{stringliteral}{"{}SwordHit/SwordCollision"{}});}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00212}00212\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (SwordCollisionCopy\ !=\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00213}00213\ \ \ \ \ \ \ \ \ \ \ \ \ SwordCollisionCopy.Disabled\ =\ \textcolor{keyword}{true};\ \textcolor{comment}{//\ Deaktiviere\ die\ Kollision\ der\ Kopie}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00214}00214\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00215}00215\ }
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00216}00216\ \ \ \ \ \ \ \ \ PlayerCopyNode.GlobalPosition\ =\ GlobalPosition\ +\ \textcolor{keyword}{new}\ Vector2(0,\ \mbox{\hyperlink{class_player_a650e61374596e594f38f5d9caf11c3fb}{Sprite}}.Texture.GetHeight()\ *\ \mbox{\hyperlink{class_player_a650e61374596e594f38f5d9caf11c3fb}{Sprite}}.Scale.Y\ *\ -\/0.5f);}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00217}00217\ }
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00218}00218\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Verblassen-\/Effekt\ für\ den\ Dash-\/Trail\ hinzufügen}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00219}00219\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ AnimationTime\ =\ (float)(\mbox{\hyperlink{class_player_ae1197f00cda479e2e18246010b36fa9d}{DashTimer}}.WaitTime\ /\ 3);}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00220}00220\ }
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00221}00221\ \ \ \ \ \ \ \ \ Timer\ FadeTimer1\ =\ \textcolor{keyword}{new}\ Timer();}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00222}00222\ \ \ \ \ \ \ \ \ AddChild(FadeTimer1);}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00223}00223\ \ \ \ \ \ \ \ \ FadeTimer1.Timeout\ +=\ ()\ =>\ \{}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00224}00224\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (IsInstanceValid(PlayerCopyNode))\ \{}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00225}00225\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ PlayerCopyNode.Modulate\ =\ \textcolor{keyword}{new}\ Color(PlayerCopyNode.Modulate,\ 0.4f);}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00226}00226\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00227}00227\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00228}00228\ \ \ \ \ \ \ \ \ FadeTimer1.Start(AnimationTime);}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00229}00229\ }
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00230}00230\ \ \ \ \ \ \ \ \ Timer\ FadeTimer2\ =\ \textcolor{keyword}{new}\ Timer();}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00231}00231\ \ \ \ \ \ \ \ \ AddChild(FadeTimer2);}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00232}00232\ \ \ \ \ \ \ \ \ FadeTimer2.Timeout\ +=\ ()\ =>\ \{}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00233}00233\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (IsInstanceValid(PlayerCopyNode))\ \{}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00234}00234\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ PlayerCopyNode.Modulate\ =\ \textcolor{keyword}{new}\ Color(PlayerCopyNode.Modulate,\ 0.2f);}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00235}00235\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00236}00236\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00237}00237\ \ \ \ \ \ \ \ \ FadeTimer2.Start(AnimationTime\ *\ 2);}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00238}00238\ }
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00239}00239\ \ \ \ \ \ \ \ \ Timer\ FadeTimer3\ =\ \textcolor{keyword}{new}\ Timer();}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00240}00240\ \ \ \ \ \ \ \ \ AddChild(FadeTimer3);}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00241}00241\ \ \ \ \ \ \ \ \ FadeTimer3.Timeout\ +=\ ()\ =>\ \{}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00242}00242\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (IsInstanceValid(PlayerCopyNode))\ \{}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00243}00243\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ PlayerCopyNode.QueueFree();}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00244}00244\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00245}00245\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00246}00246\ \ \ \ \ \ \ \ \ FadeTimer3.Start(AnimationTime\ *\ 3);}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00247}00247\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00248}00248\ }
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00252}\mbox{\hyperlink{class_player_a53389f72f48d7980aedb5e8b75d237dd}{00252}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_a53389f72f48d7980aedb5e8b75d237dd}{StopDash}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00253}00253\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_a3cf5113d8c5c04d4fc9822c7b33a4fa1}{IsDashing}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00254}00254\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_afc303e1e2108345937a0834cb03fee60}{DashEffect}}.Stop();}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00255}00255\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_ae1197f00cda479e2e18246010b36fa9d}{DashTimer}}.Stop();}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00256}00256\ \ \ \ \ \ \ \ \ DashTimer.Timeout\ -\/=\ \mbox{\hyperlink{class_player_a53389f72f48d7980aedb5e8b75d237dd}{StopDash}};}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00257}00257\ \ \ \ \ \ \ \ \ SetCollisionLayerValue(1,\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00258}00258\ \ \ \ \ \ \ \ \ SetCollisionMaskValue(1,\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00259}00259\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00260}00260\ }
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00265}\mbox{\hyperlink{class_player_ab8df147009969880162db05e243cd129}{00265}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_player_ab8df147009969880162db05e243cd129}{IsAttacking}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00266}00266\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ AnimationPlayer.CurrentAnimation\ ==\ \textcolor{stringliteral}{"{}heavy\_attack"{}}\ ||\ AnimationPlayer.CurrentAnimation\ ==\ \textcolor{stringliteral}{"{}light\_attack"{}};}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00267}00267\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00268}00268\ }
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00273}\mbox{\hyperlink{class_player_ac5b003495e551fee56ed26d26a239432}{00273}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_player_ac5b003495e551fee56ed26d26a239432}{IsBlocking}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00274}00274\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ AnimationPlayer.CurrentAnimation\ ==\ \textcolor{stringliteral}{"{}block"{}};}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00275}00275\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00276}00276\ }
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00280}\mbox{\hyperlink{class_player_a750d1c5325522c39d232332349e4d2d2}{00280}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_a750d1c5325522c39d232332349e4d2d2}{MaxHeal}}()\{}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00281}00281\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_aaed3690620c6ba9a8866d0c35b4f26d7}{SetCurrentHealth}}(\mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_a6a24773d00e75be9747b99681ac76127}{GetMaxHealthPoints}}());}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00282}00282\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00283}00283\ }
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00289}\mbox{\hyperlink{class_player_aa1a0addae97cec09d2e86f3060a05438}{00289}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_aa1a0addae97cec09d2e86f3060a05438}{TakeDamage}}(\mbox{\hyperlink{class_damage}{Damage}}\ \mbox{\hyperlink{class_damage}{Damage}})\{}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00290}00290\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ totalDamage\ =\ \mbox{\hyperlink{class_damage}{Damage}}.\mbox{\hyperlink{class_damage_a4d43580112f089c208f9ba8e0b2559f0}{GetTrueDMG}}();}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00291}00291\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!\mbox{\hyperlink{class_player_ac5b003495e551fee56ed26d26a239432}{IsBlocking}}())\{}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00292}00292\ \ \ \ \ \ \ \ \ \ \ \ \ totalDamage\ +=\ \mbox{\hyperlink{class_damage}{Damage}}.\mbox{\hyperlink{class_damage_a084fad418a6be9edca3e3e32355e49c0}{GetPhysicalDMG}}();}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00293}00293\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00294}00294\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ CurrentStamina\ =\ \mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_a3a170316e8384ab030f5f697b799a947}{GetStamina}}();}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00295}00295\ \ \ \ \ \ \ \ \ \ \ \ \ CurrentStamina\ -\/=\ \mbox{\hyperlink{class_damage}{Damage}}.\mbox{\hyperlink{class_damage_a084fad418a6be9edca3e3e32355e49c0}{GetPhysicalDMG}}();}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00296}00296\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(CurrentStamina\ <\ 0)\{}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00297}00297\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ totalDamage\ -\/=\ CurrentStamina;}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00298}00298\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00299}00299\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_ab341f12827a6bdcfebb826dff43e82e3}{SetStamina}}(CurrentStamina);}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00300}00300\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00301}00301\ }
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00302}00302\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_aaed3690620c6ba9a8866d0c35b4f26d7}{SetCurrentHealth}}(\mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_a0ec1075ba0983a3df42454b110194c0d}{GetCurrentHealth}}()\ -\/\ totalDamage);}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00303}00303\ \ \ \ \ \ \ \ \ Position\ +=\ \mbox{\hyperlink{class_damage}{Damage}}.\mbox{\hyperlink{class_damage_a60741a1e632c21788499ddc284b2844b}{GetPushAmount}}();}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00304}00304\ }
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00305}00305\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Überprüfe,\ ob\ der\ Spieler\ gestorben\ ist}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00306}00306\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_a0ec1075ba0983a3df42454b110194c0d}{GetCurrentHealth}}()\ <=\ 0)\{}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00307}00307\ \ \ \ \ \ \ \ \ \ \ \ \ GD.Print(\textcolor{stringliteral}{"{}Spieler\ ist\ gestorben!"{}});}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00308}00308\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_ae1104e2e3726f7bac674615c4e33b2bf}{Respawn}}();}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00309}00309\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00310}00310\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00311}00311\ }
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00317}\mbox{\hyperlink{class_player_a01ad03754c12b1288b69cdd42cb6f85e}{00317}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_damage}{Damage}}\ \mbox{\hyperlink{class_player_a01ad03754c12b1288b69cdd42cb6f85e}{GetDamage}}()\{}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00318}00318\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_player_a57850da38e07a680af71543a3e02de1a}{LastAttack}}\ ==\ 1)\{}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00319}00319\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_damage}{Damage}}(50,\ 0,\ Vector2.Zero,\ \textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00320}00320\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00321}00321\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_player_a57850da38e07a680af71543a3e02de1a}{LastAttack}}\ ==\ 2)\{}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00322}00322\ \ \ \ \ \ \ \ \ \ \ \ \ Vector2\ Push\ =\ \textcolor{keyword}{new}\ Vector2(20,0);}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00323}00323\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_player_a650e61374596e594f38f5d9caf11c3fb}{Sprite}}.FlipH)\{}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00324}00324\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Push\ =\ -\/Push;}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00325}00325\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00326}00326\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_damage}{Damage}}(100,\ 0,\ Push,\ \textcolor{keyword}{this});\ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00327}00327\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00328}00328\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_damage}{Damage}}(0,0,Vector2.Zero,\ \textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00329}00329\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00330}00330\ }
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00336}\mbox{\hyperlink{class_player_ab715416eb7dbe1d4d320d4ba21999072}{00336}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_ab715416eb7dbe1d4d320d4ba21999072}{RegenerateStamina}}(\textcolor{keywordtype}{float}\ Amount,\ \textcolor{keywordtype}{double}\ delta)\ \{}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00337}00337\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Wenn\ die\ Verzögerungszeit\ erreicht\ wurde,\ regeneriere\ Stamina}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00338}00338\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_player_adda3c3e385b428e061d6d1ccd25f23cb}{TimeSinceLastStaminaUse}}\ >=\ 1f)\ \{}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00339}00339\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_ab341f12827a6bdcfebb826dff43e82e3}{SetStamina}}(\mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_a3a170316e8384ab030f5f697b799a947}{GetStamina}}()\ +\ Amount\ *\ (\textcolor{keywordtype}{float})delta);\ \textcolor{comment}{//\ Regeneriere\ Stamina\ abhängig\ von\ der\ Zeit}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00340}00340\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00341}00341\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00342}00342\ }
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00349}\mbox{\hyperlink{class_player_ac69e2d647a9d7317b01599b2a5695199}{00349}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_player_ac69e2d647a9d7317b01599b2a5695199}{UseStamina}}(\textcolor{keywordtype}{float}\ Amount)\ \{}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00350}00350\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Versucht,\ eine\ bestimmte\ Menge\ an\ Stamina\ zu\ verbrauchen.}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00351}00351\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Gibt\ true\ zurück,\ wenn\ genug\ Stamina\ verfügbar\ war;\ andernfalls\ false.}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00352}00352\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_a3a170316e8384ab030f5f697b799a947}{GetStamina}}()\ >=\ Amount)\ \{}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00353}00353\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_ab341f12827a6bdcfebb826dff43e82e3}{SetStamina}}(\mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_a3a170316e8384ab030f5f697b799a947}{GetStamina}}()\ -\/\ Amount);}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00354}00354\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_adda3c3e385b428e061d6d1ccd25f23cb}{TimeSinceLastStaminaUse}}\ =\ 0f;}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00355}00355\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00356}00356\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00357}00357\ }
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00358}00358\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00359}00359\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00360}00360\ }
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00365}\mbox{\hyperlink{class_player_a0a59dfe03d542fa98f28f4c4eaa49a75}{00365}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_a0a59dfe03d542fa98f28f4c4eaa49a75}{SlowPlayer}}(\textcolor{keywordtype}{float}\ SlowAmount)\{}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00366}00366\ \ \ \ \ \ \ \ \ Velocity\ =\ \textcolor{keyword}{new}\ Vector2(Velocity.X\ *\ SlowAmount,\ Velocity.Y);}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00367}00367\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00368}00368\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00372}\mbox{\hyperlink{class_player_ae1104e2e3726f7bac674615c4e33b2bf}{00372}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_ae1104e2e3726f7bac674615c4e33b2bf}{Respawn}}()\{}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00373}00373\ \ \ \ \ \ \ \ \ var\ \mbox{\hyperlink{class_navigation_manager}{NavigationManager}}\ =\ GetNode<NavigationManager>(\textcolor{stringliteral}{"{}/root/NavigationManager"{}});}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00374}00374\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_navigation_manager}{NavigationManager}}.\mbox{\hyperlink{class_navigation_manager_a5966bab1490d10dfc285507a0c8d8bb7}{GoToLevel}}(\mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_ad868bae6deb062dbcc4702b276a27041}{GetRespawnLevelTag}}(),\ \textcolor{stringliteral}{"{}spawn"{}});}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00375}00375\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_aaef48228442e066781c02ea9b8c3f694}{BloodVials}}.\mbox{\hyperlink{class_blood_vial_a31a53feef846bd962bd5b525b0bc5c6c}{ResetUses}}();}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00376}00376\ }
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00377}00377\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00378}00378\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00383}\mbox{\hyperlink{class_player_ab04e4301a26dacc4e1d178d1b7d1d872}{00383}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_blood_vial}{BloodVial}}\ \mbox{\hyperlink{class_player_ab04e4301a26dacc4e1d178d1b7d1d872}{GetBloodVials}}()\{}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00384}00384\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_player_aaef48228442e066781c02ea9b8c3f694}{BloodVials}};}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00385}00385\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00386}00386\ }
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00391}\mbox{\hyperlink{class_player_aa718b6dab81ebd60b8b910ad8c7adff6}{00391}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_aa718b6dab81ebd60b8b910ad8c7adff6}{SetSinAmount}}(\textcolor{keywordtype}{int}\ Value)\ \{}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00392}00392\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ SinAmount\ muss\ immer\ >=\ 0\ sein}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00393}00393\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_a647991a1d154f8c2bc8d7032b43e35aa}{SetSinAmount}}(Value);}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00394}00394\ \ \ \ \ \ \ \ \ SinDisplay.Text\ =\ \mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_a0b2b3398a02e8fbafe3c41dd466c57d0}{GetSinAmount}}()\ +\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00395}00395\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00396}00396\ }
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00402}\mbox{\hyperlink{class_player_a026f050e54322e805ad546ee99483e6e}{00402}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_a026f050e54322e805ad546ee99483e6e}{OnSpawn}}(Vector2\ position,\ \textcolor{keywordtype}{string}\ direction)\{}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00403}00403\ }
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00404}00404\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Spielerposition\ auf\ die\ übergebene\ Position\ setzen}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00405}00405\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (direction\ ==\ \textcolor{stringliteral}{"{}right"{}})}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00406}00406\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00407}00407\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Update\ the\ x\ value\ by\ adding\ 50\ to\ it,\ keep\ the\ original\ y\ value}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00408}00408\ \ \ \ \ \ \ \ \ \ \ \ \ Sprite.FlipH\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00409}00409\ \ \ \ \ \ \ \ \ \ \ \ \ position\ =\ position\ with\ \{\ X\ =\ position.X\ +\ 25\ \};}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00410}00410\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00411}00411\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (direction\ ==\ \textcolor{stringliteral}{"{}left"{}})}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00412}00412\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00413}00413\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Update\ the\ x\ value\ by\ subtracting\ 50\ from\ it,\ keep\ the\ original\ y\ value}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00414}00414\ \ \ \ \ \ \ \ \ \ \ \ \ Sprite.FlipH\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00415}00415\ \ \ \ \ \ \ \ \ \ \ \ \ position\ =\ position\ with\ \{\ X\ =\ position.X\ -\/\ 25\ \};}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00416}00416\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00417}00417\ \ \ \ \ \ \ \ \ Position\ =\ position;}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00418}00418\ }
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00419}00419\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00420}00420\ }
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00421}00421\ }
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00425}\mbox{\hyperlink{class_player_a6dd10a495418b531f7e65ab238368bdc}{00425}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_a6dd10a495418b531f7e65ab238368bdc}{UpdateAnimations}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00426}00426\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Input.IsActionJustPressed(\textcolor{stringliteral}{"{}light\_attack"{}})\ \&\&\ !\mbox{\hyperlink{class_player_a3cf5113d8c5c04d4fc9822c7b33a4fa1}{IsDashing}}\ \&\&\ !\mbox{\hyperlink{class_player_ab8df147009969880162db05e243cd129}{IsAttacking}}())\ \{}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00427}00427\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_player_ac69e2d647a9d7317b01599b2a5695199}{UseStamina}}(10))\{}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00428}00428\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_a57850da38e07a680af71543a3e02de1a}{LastAttack}}\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00429}00429\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_a343fb1371365e58eb9c641928d41237a}{AnimationPlayer}}.Play(\textcolor{stringliteral}{"{}light\_attack"{}});}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00430}00430\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00431}00431\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (Input.IsActionJustPressed(\textcolor{stringliteral}{"{}heavy\_attack"{}})\ \&\&\ !\mbox{\hyperlink{class_player_a3cf5113d8c5c04d4fc9822c7b33a4fa1}{IsDashing}}\ \&\&\ !\mbox{\hyperlink{class_player_ab8df147009969880162db05e243cd129}{IsAttacking}}())\ \{}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00432}00432\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_player_ac69e2d647a9d7317b01599b2a5695199}{UseStamina}}(25))\{}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00433}00433\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_a57850da38e07a680af71543a3e02de1a}{LastAttack}}\ =\ 2;}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00434}00434\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_a343fb1371365e58eb9c641928d41237a}{AnimationPlayer}}.Play(\textcolor{stringliteral}{"{}heavy\_attack"{}});}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00435}00435\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00436}00436\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00437}00437\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Input.IsActionPressed(\textcolor{stringliteral}{"{}block"{}})\ \&\&\ !\mbox{\hyperlink{class_player_a3cf5113d8c5c04d4fc9822c7b33a4fa1}{IsDashing}}\ \&\&\ !\mbox{\hyperlink{class_player_ab8df147009969880162db05e243cd129}{IsAttacking}}()\ \&\&\ IsOnFloor())\ \{}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00438}00438\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_player_ac69e2d647a9d7317b01599b2a5695199}{UseStamina}}(0))\{}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00439}00439\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_a343fb1371365e58eb9c641928d41237a}{AnimationPlayer}}.Play(\textcolor{stringliteral}{"{}block"{}});}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00440}00440\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_a57850da38e07a680af71543a3e02de1a}{LastAttack}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00441}00441\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00442}00442\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00443}00443\ }
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00444}00444\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (IsOnFloor()\ \&\&\ !\mbox{\hyperlink{class_player_ab8df147009969880162db05e243cd129}{IsAttacking}}()\ \&\&\ !\mbox{\hyperlink{class_player_ac5b003495e551fee56ed26d26a239432}{IsBlocking}}())\ \{}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00445}00445\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_a57850da38e07a680af71543a3e02de1a}{LastAttack}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00446}00446\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Velocity.X\ ==\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00447}00447\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_a343fb1371365e58eb9c641928d41237a}{AnimationPlayer}}.Play(\textcolor{stringliteral}{"{}idle"{}});}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00448}00448\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00449}00449\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_a343fb1371365e58eb9c641928d41237a}{AnimationPlayer}}.Play(\textcolor{stringliteral}{"{}run"{}});}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00450}00450\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00451}00451\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (!IsOnFloor()\ \&\&\ !\mbox{\hyperlink{class_player_ab8df147009969880162db05e243cd129}{IsAttacking}}()\ \&\&\ !\mbox{\hyperlink{class_player_ac5b003495e551fee56ed26d26a239432}{IsBlocking}}())\ \{}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00452}00452\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_a57850da38e07a680af71543a3e02de1a}{LastAttack}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00453}00453\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Velocity.Y\ <\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00454}00454\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_a343fb1371365e58eb9c641928d41237a}{AnimationPlayer}}.Play(\textcolor{stringliteral}{"{}jump"{}});}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00455}00455\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (Velocity.Y\ >\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00456}00456\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_a343fb1371365e58eb9c641928d41237a}{AnimationPlayer}}.Play(\textcolor{stringliteral}{"{}fall"{}});}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00457}00457\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00458}00458\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00459}00459\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_8cs_source_l00460}00460\ \}}
+
+\end{DoxyCode}

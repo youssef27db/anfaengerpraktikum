@@ -1,0 +1,185 @@
+\doxysection{Dock.\+cs}
+\hypertarget{_dock_8cs_source}{}\label{_dock_8cs_source}\index{C:/Users/Youssef/Desktop/UNI/S4/ComputerspielEntwicklung/DasSpiel/anfaengerpraktikum/addons/GDMUT/Dock.cs@{C:/Users/Youssef/Desktop/UNI/S4/ComputerspielEntwicklung/DasSpiel/anfaengerpraktikum/addons/GDMUT/Dock.cs}}
+\mbox{\hyperlink{_dock_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00001}00001\ \textcolor{comment}{//\ Copyright\ (c)\ Spencer\ (Spycemyster)\ Chang,\ LLC.\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00002}00002\ \textcolor{comment}{//\ Licensed\ under\ the\ MIT\ License.\ See\ LICENSE\ in\ the\ project\ root\ for\ license\ information.}}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00003}\mbox{\hyperlink{namespace_gd_m_u_t}{00003}}\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_gd_m_u_t_1_1_components}{GdMUT.Components}};}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }Godot;}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }System.Diagnostics;}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00008}00008\ \textcolor{keyword}{using\ }System.Threading;}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00010}00010\ \textcolor{preprocessor}{\#if\ TOOLS}}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00014}00014\ [Tool]}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00015}00015\ \textcolor{keyword}{public}\ \textcolor{keyword}{partial\ class\ }Dock\ :\ Control}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00016}00016\ \{}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00017}00017\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ TEST\_RESULT\_SCENE\ =\ \textcolor{stringliteral}{"{}res://addons/GDMUT/TestResult.tscn"{}};}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00018}00018\ \ \ \ \ \textcolor{keyword}{private}\ readonly\ System.Collections.Generic.Dictionary<}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00019}00019\ \ \ \ \ \ \ \ \ Type,}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00020}00020\ \ \ \ \ \ \ \ \ System.Collections.Generic.List<TestFunction>}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00021}00021\ \ \ \ \ >\ \_testDictionary\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00022}00022\ \ \ \ \ \textcolor{keyword}{private}\ readonly\ System.Collections.Generic.Dictionary<Type,\ TestResult>\ \_testResultDictionary\ =}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00023}00023\ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00025}00025\ \ \ \ \ [Export]}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00026}00026\ \ \ \ \ \textcolor{keyword}{private}\ LineEdit\ \_filter;}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00028}00028\ \ \ \ \ [Export]}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00029}00029\ \ \ \ \ \textcolor{keyword}{private}\ CheckBox\ \_multithreadedEnabled;}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00031}00031\ \ \ \ \ [Export]}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00032}00032\ \ \ \ \ \textcolor{keyword}{private}\ LineEdit\ \_numThreads;}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00034}00034\ \ \ \ \ [Export]}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00035}00035\ \ \ \ \ \textcolor{keyword}{private}\ Button\ \_runTests;}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00037}00037\ \ \ \ \ [Export]}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00038}00038\ \ \ \ \ \textcolor{keyword}{private}\ Button\ \_loadTests;}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00040}00040\ \ \ \ \ [Export]}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00041}00041\ \ \ \ \ \textcolor{keyword}{private}\ VBoxContainer\ \_testList;}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00043}00043\ \ \ \ \ \textcolor{keyword}{private}\ System.Collections.Generic.List<TestFunction>\ \_tests\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00048}00048\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ \_EnterTree()}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00049}00049\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ base.\_EnterTree();}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \_runTests.Pressed\ +=\ RunTests;}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \_loadTests.Pressed\ +=\ LoadTests;}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00053}00053\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00055}00055\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ LoadTests()}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00056}00056\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ var\ stopwatch\ =\ \textcolor{keyword}{new}\ Stopwatch();}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ stopwatch.Start();}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (Node\ node\ \textcolor{keywordflow}{in}\ \_testList.GetChildren())}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ node.QueueFree();}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \_tests?.Clear();}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \_tests\ =\ TestLoader.SearchForAllTests();}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \_testDictionary.Clear();}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ testIndex\ =\ 0;\ testIndex\ <\ \_tests.Count;\ testIndex++)}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ TestFunction\ \textcolor{keyword}{function}\ =\ \_tests[testIndex];}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\textcolor{keyword}{function}.Name.Contains(\_filter.Text))}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_testDictionary.TryGetValue(}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{function}.Type,}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ out\ System.Collections.Generic.List<TestFunction>\ testList}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ testList.Add(\textcolor{keyword}{function});}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_testDictionary.Add(}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{function}.Type,}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ System.Collections.Generic.List<TestFunction>()\ \{\ function\ \}}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00093}00093\ \ \ \ \ \ \ \ \ \_testResultDictionary.Clear();}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00094}00094\ \ \ \ \ \ \ \ \ var\ testResultScene\ =\ GD.Load<PackedScene>(TEST\_RESULT\_SCENE);}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00095}00095\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (Type\ type\ \textcolor{keywordflow}{in}\ \_testDictionary.Keys)}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00096}00096\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ var\ functions\ =\ \_testDictionary[type];}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ var\ testResult\ =\ testResultScene.Instantiate<TestResult>();}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ testResult.SetTypeName(type.Name);}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \_testList.AddChild(testResult);}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \_testResultDictionary.Add(type,\ testResult);}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (TestFunction\ \textcolor{keyword}{function}\ \textcolor{keywordflow}{in}\ functions)}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ testResult.AddMethodResult(\textcolor{keyword}{function});}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00106}00106\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00108}00108\ \ \ \ \ \ \ \ \ stopwatch.Stop();}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00109}00109\ \ \ \ \ \ \ \ \ GD.Print(\$\textcolor{stringliteral}{"{}Loading\ tests\ took\ \{stopwatch.ElapsedMilliseconds\}ms"{}});}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00110}00110\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00111}00111\ }
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00112}00112\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ RunTestsInRange(\textcolor{keywordtype}{int}\ startIndex,\ \textcolor{keywordtype}{int}\ endIndex)}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00113}00113\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00114}00114\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ testIndex\ =\ startIndex;\ testIndex\ <\ endIndex;\ testIndex++)}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00115}00115\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ var\ test\ =\ \_tests[testIndex];}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ GD.Print(test.Name);}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ Result\ testResult;}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ testResult\ =\ (Result)test.Method.Invoke(\textcolor{keyword}{null},\ \textcolor{keyword}{null});}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (Exception\ e)}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ testResult\ =\ \textcolor{keyword}{new}\ Result(\textcolor{keyword}{false},\ \$\textcolor{stringliteral}{"{}Exception\ thrown:\ \{e.Message\}"{}});}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00127}00127\ }
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ test.Result\ =\ testResult;}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00129}00129\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00130}00130\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00131}00131\ }
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00132}00132\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ RunTests()}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00133}00133\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00134}00134\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_tests.Count\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00135}00135\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ GD.Print(\textcolor{stringliteral}{"{}No\ tests\ loaded"{}});}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00138}00138\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00139}00139\ }
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00140}00140\ \ \ \ \ \ \ \ \ var\ stopwatch\ =\ \textcolor{keyword}{new}\ Stopwatch();}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00141}00141\ \ \ \ \ \ \ \ \ stopwatch.Start();}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00142}00142\ }
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00143}00143\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ \_multithreadedEnabled.ButtonPressed}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ \&\&\ \textcolor{keywordtype}{int}.TryParse(\_numThreads.Text,\ out\ \textcolor{keywordtype}{int}\ numThreads)}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ \&\&\ numThreads\ >\ 0}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00147}00147\ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00148}00148\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ GD.Print(\textcolor{stringliteral}{"{}Run\ Tests\ multithreaded"{}});}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ Thread[]\ threads\ =\ \textcolor{keyword}{new}\ Thread[numThreads];}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ testsPerThread\ =}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_tests.Count\ /\ numThreads)\ +\ (\_tests.Count\ \%\ numThreads\ >\ 0\ ?\ 1\ :\ 0);}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ threadIndex\ =\ 0;\ threadIndex\ <\ numThreads;\ threadIndex++)}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ startIndex\ =\ threadIndex\ *\ testsPerThread;}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00156}00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ endIndex\ =\ Math.Min((threadIndex\ +\ 1)\ *\ testsPerThread,\ \_tests.Count);}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00157}00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ threads[threadIndex]\ =\ \textcolor{keyword}{new}\ Thread(()\ =>\ RunTestsInRange(startIndex,\ endIndex));}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00158}00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ threads[threadIndex].Start();}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00160}00160\ }
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00161}00161\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (Thread\ thread\ \textcolor{keywordflow}{in}\ threads)}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00163}00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ thread.Join();}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00164}00164\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00165}00165\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00166}00166\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00167}00167\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00168}00168\ \ \ \ \ \ \ \ \ \ \ \ \ GD.Print(\textcolor{stringliteral}{"{}Run\ Tests\ singlethreaded"{}});}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00169}00169\ \ \ \ \ \ \ \ \ \ \ \ \ RunTestsInRange(0,\ \_tests.Count);}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00170}00170\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00171}00171\ }
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00172}00172\ \ \ \ \ \ \ \ \ stopwatch.Stop();}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00173}00173\ \ \ \ \ \ \ \ \ UpdateUIWithResults();}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00174}00174\ \ \ \ \ \ \ \ \ GD.Print(\$\textcolor{stringliteral}{"{}Tests\ took\ \{stopwatch.ElapsedMilliseconds\}ms"{}});}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00175}00175\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00176}00176\ }
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00177}00177\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ UpdateUIWithResults()}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00178}00178\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00179}00179\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (TestResult\ result\ \textcolor{keywordflow}{in}\ \_testResultDictionary.Values)}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00180}00180\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00181}00181\ \ \ \ \ \ \ \ \ \ \ \ \ result.UpdateResult();}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00182}00182\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00183}00183\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00184}00184\ \}}
+\DoxyCodeLine{\Hypertarget{_dock_8cs_source_l00185}00185\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://dbbehkkpg2xys"]
+
+[ext_resource type="Texture2D" uid="uid://c0w6h05532gs0" path="res://assets/Dungeon Tile Set.png" id="1_61r2l"]
+[ext_resource type="PackedScene" uid="uid://chxndv6of54w8" path="res://scenes/spike.tscn" id="2_7a4pp"]
+[ext_resource type="Script" uid="uid://b6cgd532ti6cf" path="res://scripts/SpikeDynamic.cs" id="3_net55"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aimbu"]
+size = Vector2(31, 4)
+
+[node name="spike_dynamic" type="AnimatableBody2D"]
+z_index = -1
+collision_layer = 2049
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0.5, 0)
+scale = Vector2(1.03333, 1)
+texture = ExtResource("1_61r2l")
+region_enabled = true
+region_rect = Rect2(20.305, 160.865, 30.0893, 3.78223)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = -1
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_aimbu")
+
+[node name="Spike" parent="." instance=ExtResource("2_7a4pp")]
+z_index = -1
+position = Vector2(-15, -2)
+script = ExtResource("3_net55")
+Damage = 100.0

@@ -1,0 +1,37 @@
+\doxysection{Level\+Manager.\+cs}
+\hypertarget{_level_manager_8cs_source}{}\label{_level_manager_8cs_source}\index{C:/Users/Youssef/Desktop/UNI/S4/ComputerspielEntwicklung/DasSpiel/anfaengerpraktikum/scripts/LevelManager.cs@{C:/Users/Youssef/Desktop/UNI/S4/ComputerspielEntwicklung/DasSpiel/anfaengerpraktikum/scripts/LevelManager.cs}}
+\mbox{\hyperlink{_level_manager_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_level_manager_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }Godot;}
+\DoxyCodeLine{\Hypertarget{_level_manager_8cs_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_level_manager_8cs_source_l00007}\mbox{\hyperlink{class_level_manager}{00007}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{partial\ class\ }\mbox{\hyperlink{class_level_manager}{LevelManager}}\ :\ Node2D}
+\DoxyCodeLine{\Hypertarget{_level_manager_8cs_source_l00008}00008\ \{}
+\DoxyCodeLine{\Hypertarget{_level_manager_8cs_source_l00013}\mbox{\hyperlink{class_level_manager_a4b888380e2821900c4234746114081e8}{00013}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_level_manager_a4b888380e2821900c4234746114081e8}{\_Ready}}()}
+\DoxyCodeLine{\Hypertarget{_level_manager_8cs_source_l00014}00014\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_level_manager_8cs_source_l00015}00015\ \ \ \ \ \ \ \ \ var\ \mbox{\hyperlink{class_navigation_manager}{NavigationManager}}\ =\ GetNode<NavigationManager>(\textcolor{stringliteral}{"{}/root/NavigationManager"{}});}
+\DoxyCodeLine{\Hypertarget{_level_manager_8cs_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_level_manager_8cs_source_l00021}00021\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_navigation_manager}{NavigationManager}}.\mbox{\hyperlink{class_navigation_manager_a5aa88986fee7cfcf701e424e333b6980}{SpawnDoorTag}}\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_level_manager_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_level_manager_8cs_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_level_manager_a2bb47b7b35e478b95173a4cebe474c44}{OnLevelSpawn}}(\mbox{\hyperlink{class_navigation_manager}{NavigationManager}}.\mbox{\hyperlink{class_navigation_manager_a5aa88986fee7cfcf701e424e333b6980}{SpawnDoorTag}});}
+\DoxyCodeLine{\Hypertarget{_level_manager_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_level_manager_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_level_manager_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_level_manager_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_navigation_manager}{NavigationManager}}.CallDeferred(\textcolor{stringliteral}{"{}TriggerPlayerSpawn"{}},\ \mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_a77ca820f184b31dd9590bc8613f8566e}{GetPosition}}(),\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{_level_manager_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_level_manager_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_level_manager_8cs_source_l00030}00030\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_level_manager_8cs_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_level_manager_8cs_source_l00036}\mbox{\hyperlink{class_level_manager_a2bb47b7b35e478b95173a4cebe474c44}{00036}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_level_manager_a2bb47b7b35e478b95173a4cebe474c44}{OnLevelSpawn}}(\textcolor{keywordtype}{string}\ DestinationTag)}
+\DoxyCodeLine{\Hypertarget{_level_manager_8cs_source_l00037}00037\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_level_manager_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ var\ \mbox{\hyperlink{class_navigation_manager}{NavigationManager}}\ =\ GetNode<NavigationManager>(\textcolor{stringliteral}{"{}/root/NavigationManager"{}});}
+\DoxyCodeLine{\Hypertarget{_level_manager_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Pfad\ zur\ Tür\ basierend\ auf\ dem\ Ziel-\/Tag\ erstellen}}
+\DoxyCodeLine{\Hypertarget{_level_manager_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ DoorPath\ =\ \textcolor{stringliteral}{"{}Doors/Door\_"{}}\ +\ DestinationTag;}
+\DoxyCodeLine{\Hypertarget{_level_manager_8cs_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{_level_manager_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_door}{Door}}\ door\ =\ GetNode<Door>(DoorPath);}
+\DoxyCodeLine{\Hypertarget{_level_manager_8cs_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{_level_manager_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ TriggerPlayerSpawn\ nach\ deferred\ ausführen}}
+\DoxyCodeLine{\Hypertarget{_level_manager_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_navigation_manager}{NavigationManager}}.CallDeferred(\textcolor{stringliteral}{"{}TriggerPlayerSpawn"{}},\ door.GlobalPosition,\ door.\mbox{\hyperlink{class_door_a4f26c87ed2646e120c5a53f7688ea1c3}{SpawnDirection}});}
+\DoxyCodeLine{\Hypertarget{_level_manager_8cs_source_l00046}00046\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_level_manager_8cs_source_l00047}00047\ \}}
+
+\end{DoxyCode}
