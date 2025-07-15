@@ -54,20 +54,56 @@ public class SpikeTest
     }
 
     [TestCase]
-    public async Task WhenNonPlayerEntersSpike_PlayerHealthShouldNotChange()
+    public async Task PlayerTakesRepeatedDamageWhileOnSpike()
     {
-        // Arrange: Erstelle ein anderes Objekt und hole die Lebenspunkte des Spielers.
-        var otherObject = new CharacterBody2D();
-        _runner.Scene().AddChild(otherObject);
         var initialHealth = PlayerStats.Instance.GetCurrentHealth();
-
-        // Act: Simuliere, dass das andere Objekt den Spike berührt.
         var area2d = _spike.GetNode<Area2D>("StaticBody2D/Area2D");
-        area2d.EmitSignal("body_entered", otherObject);
+        area2d.EmitSignal("body_entered", _player);
         await _runner.AwaitIdleFrame();
 
-        // Assert: Überprüfe, dass die Lebenspunkte des Spielers unverändert sind.
+        // Simuliere Zeit für mindestens zwei Timer-Timeouts (z.B. 2 Sekunden)
+        await _runner.SimulateFrames(120, 16); // 120 Frames bei 16ms ≈ 2 Sekunden
         var newHealth = PlayerStats.Instance.GetCurrentHealth();
+        AssertThat(newHealth < initialHealth).IsTrue();
+    }
+
+    [TestCase]
+    public async Task TimerStopsWhenPlayerLeavesSpike()
+    {
+        var area2d = _spike.GetNode<Area2D>("StaticBody2D/Area2D");
+        area2d.EmitSignal("body_entered", _player);
+        await _runner.AwaitIdleFrame();
+        area2d.EmitSignal("body_exited", _player);
+        await _runner.AwaitIdleFrame();
+        var healthAfterExit = PlayerStats.Instance.GetCurrentHealth();
+        await _runner.SimulateFrames(60, 16); // Simuliere 1 Sekunde
+        AssertThat(PlayerStats.Instance.GetCurrentHealth()).IsEqual(healthAfterExit);
+    }
+
+    [TestCase]
+    public async Task TimerNotStartedForNonPlayer()
+    {
+        var area2d = _spike.GetNode<Area2D>("StaticBody2D/Area2D");
+        var otherObject = new CharacterBody2D();
+        _runner.Scene().AddChild(otherObject);
+        var timer = _spike.GetNode<Timer>("StaticBody2D/Area2D/Timer");
+        area2d.EmitSignal("body_entered", otherObject);
+        await _runner.AwaitIdleFrame();
+        AssertThat(timer.IsStopped()).IsTrue();
+    }
+
+    [TestCase]
+    public async Task WhenBaseEnemyEntersSpike_BaseEnemyHealthShouldNotChange()
+    {
+        var baseEnemy = new BaseEnemy();
+        _runner.Scene().AddChild(baseEnemy);
+        var initialHealth = baseEnemy.GetCurrentHealth();
+
+        var area2d = _spike.GetNode<Area2D>("StaticBody2D/Area2D");
+        area2d.EmitSignal("body_entered", baseEnemy);
+        await _runner.AwaitIdleFrame();
+
+        var newHealth = baseEnemy.GetCurrentHealth();
         AssertThat(newHealth).IsEqual(initialHealth);
     }
 }
