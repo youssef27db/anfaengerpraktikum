@@ -82,53 +82,36 @@ public class SpikeDynamicTest
         AssertThat(newHealth).IsEqual(initialHealth);
     }
 
-    // Speziell für SpikeDynamic:
-    // Hier könnten Tests ergänzt werden, die die Bewegung des Spikes prüfen (z.B. ob er sich korrekt entlang eines Pfades bewegt, ob er nach Kollisionen stoppt, etc.).
-    // Da SpikeDynamic beweglich ist, wären Bewegungstests und Kollisionsverhalten mit anderen Objekten sinnvoll.
-
-    // --- SpikeDynamic-spezifische Tests ---
-
     [TestCase]
     public async Task SpikeDynamic_MovesRight_WhenActivated()
     {
-        // Arrange: Setze Startposition und ggf. Bewegungsrichtung
         var initialPosition = _spikeDynamic.Position;
-        // Act: Simuliere Bewegung (z.B. durch Aufruf einer Methode oder SimulateFrames)
-        await _runner.SimulateFrames(30, 16); // Simuliere ca. 0,5 Sekunde
+        await _runner.SimulateFrames(30, 16); 
         var newPosition = _spikeDynamic.Position;
-        // Assert: Prüfe, ob sich SpikeDynamic nach rechts bewegt hat
         AssertThat(newPosition.X > initialPosition.X).IsTrue();
     }
 
     [TestCase]
     public async Task SpikeDynamic_StopsOnWallCollision()
     {
-        // Arrange: Positioniere SpikeDynamic nahe an einer Wand (ggf. Wand-Node hinzufügen)
-        // Hier als Platzhalter: Annahme, dass eine Wand bei X=400 ist
         _spikeDynamic.Position = new Vector2(395, _spikeDynamic.Position.Y);
-        await _runner.SimulateFrames(20, 16); // Simuliere Bewegung zur Wand
-        var velocityBefore = _spikeDynamic.Get("velocity"); // Falls Velocity-Property vorhanden
-        await _runner.SimulateFrames(20, 16); // Simuliere nach Kollision
+        await _runner.SimulateFrames(20, 16);
+        var velocityBefore = _spikeDynamic.Get("velocity");
+        await _runner.SimulateFrames(20, 16);
         var velocityAfter = _spikeDynamic.Get("velocity");
-        // Assert: Nach der Kollision sollte die Geschwindigkeit 0 sein (Platzhalter)
-        // Falls keine Velocity-Property existiert, prüfe, ob Position sich nicht mehr ändert
         AssertThat(velocityAfter.Equals(Vector2.Zero) || _spikeDynamic.Position.X <= 400).IsTrue();
     }
 
     [TestCase]
     public async Task SpikeDynamic_PlaysMoveAnimation_WhenMoving()
     {
-        // Arrange: Hole AnimationPlayer, falls vorhanden
         var animationPlayer = _spikeDynamic.GetNodeOrNull<AnimationPlayer>("AnimationPlayer");
         if (animationPlayer == null)
         {
-            // Test überspringen, falls keine Animation vorhanden
             AssertThat(true).IsTrue();
             return;
         }
-        // Act: Simuliere Bewegung
         await _runner.SimulateFrames(10, 16);
-        // Assert: Prüfe, ob eine Bewegungsanimation abgespielt wird
         AssertThat(animationPlayer.CurrentAnimation != "" && animationPlayer.IsPlaying()).IsTrue();
     }
 
