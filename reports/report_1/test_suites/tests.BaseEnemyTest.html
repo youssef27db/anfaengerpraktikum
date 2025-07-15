@@ -34,12 +34,12 @@
 		<div class="report-container">
 			<h1>Testsuite Report</h1>
 			<div>
-				<span class="label">res://tests/PlayerTest2.cs</span>
+				<span class="label">res://tests/BaseEnemyTest.cs</span>
 			</div>
 			<div class="summary">
 				<div class="summary-item">
 					<span class="label">Tests</span>
-					<span class="value">18</span>
+					<span class="value">4</span>
 				</div>
 				<div class="summary-item">
 					<span class="label">Skipped</span>
@@ -51,7 +51,7 @@
 				</div>
 				<div class="summary-item">
 					<span class="label">Failures</span>
-					<span class="value">0</span>
+					<span class="value">1</span>
 				</div>
 				<div class="summary-item">
 					<span class="label">Orphans</span>
@@ -59,13 +59,13 @@
 				</div>
 				<div class="summary-item">
 					<span class="label">Duration</span>
-					<span class="value">5s 845ms</span>
+					<span class="value">3s 276ms</span>
 				</div>
 				<div class="success-rate">
-					<div class="check-icon status-passed">✓</div>
+					<div class="check-icon status-failed">✓</div>
 					<div class="rate-text">
 						<span class="label">Success Rate</span>
-						<span class="value">100%</span>
+						<span class="value">75%</span>
 					</div>
 				</div>
 			</div>
@@ -73,7 +73,7 @@
 		<div class="breadcrumb">
 			<a href="../index.html"><span>All</span></a>
 			<a href="../path/tests.html"><span>tests</span></a>
-			<a class="active" href="#"><span>PlayerTest2</span></a>
+			<a class="active" href="#"><span>BaseEnemyTest</span></a>
 		</div>
 	</header>
 
@@ -94,11 +94,11 @@
 					<tbody>
 						
 								<tr class="testcase-group">
-									<td>TestWMovement</td>
+									<td>checkMovementIfDead</td>
 									<td><span class="status status-passed">PASSED</span></td>
 									<td>0</td>
 									<td>0</td>
-									<td>371ms</td>
+									<td>707ms</td>
 									<td class="report-column">
 										<pre>
 
@@ -108,11 +108,11 @@
 
 
 								<tr class="testcase-group">
-									<td>TestAMovement</td>
+									<td>checkMovementIfNotPursuing</td>
 									<td><span class="status status-passed">PASSED</span></td>
 									<td>0</td>
 									<td>0</td>
-									<td>245ms</td>
+									<td>680ms</td>
 									<td class="report-column">
 										<pre>
 
@@ -122,11 +122,11 @@
 
 
 								<tr class="testcase-group">
-									<td>TestDMovement</td>
+									<td>checkMovementIfNoTargetPosition</td>
 									<td><span class="status status-passed">PASSED</span></td>
 									<td>0</td>
 									<td>0</td>
-									<td>254ms</td>
+									<td>659ms</td>
 									<td class="report-column">
 										<pre>
 
@@ -136,210 +136,15 @@
 
 
 								<tr class="testcase-group">
-									<td>TestDashWithNoDirectionMovement</td>
-									<td><span class="status status-passed">PASSED</span></td>
+									<td>checkMovementToTargetPosition</td>
+									<td><span class="status status-failed">FAILED</span></td>
 									<td>0</td>
 									<td>0</td>
-									<td>261ms</td>
+									<td>1s 173ms</td>
 									<td class="report-column">
 										<pre>
-
-										</pre>
-									</td>
-								</tr>
-
-
-								<tr class="testcase-group">
-									<td>TestDashWithDirectionLeftMovement</td>
-									<td><span class="status status-passed">PASSED</span></td>
-									<td>0</td>
-									<td>0</td>
-									<td>267ms</td>
-									<td class="report-column">
-										<pre>
-
-										</pre>
-									</td>
-								</tr>
-
-
-								<tr class="testcase-group">
-									<td>TestDashWithDirectionRightMovement</td>
-									<td><span class="status status-passed">PASSED</span></td>
-									<td>0</td>
-									<td>0</td>
-									<td>267ms</td>
-									<td class="report-column">
-										<pre>
-
-										</pre>
-									</td>
-								</tr>
-
-
-								<tr class="testcase-group">
-									<td>TestDashWithDirectionUpMovement</td>
-									<td><span class="status status-passed">PASSED</span></td>
-									<td>0</td>
-									<td>0</td>
-									<td>267ms</td>
-									<td class="report-column">
-										<pre>
-
-										</pre>
-									</td>
-								</tr>
-
-
-								<tr class="testcase-group">
-									<td>TestDashWithLightAttackMovement</td>
-									<td><span class="status status-passed">PASSED</span></td>
-									<td>0</td>
-									<td>0</td>
-									<td>460ms</td>
-									<td class="report-column">
-										<pre>
-
-										</pre>
-									</td>
-								</tr>
-
-
-								<tr class="testcase-group">
-									<td>TestDashWithHeavyAttackMovement</td>
-									<td><span class="status status-passed">PASSED</span></td>
-									<td>0</td>
-									<td>0</td>
-									<td>460ms</td>
-									<td class="report-column">
-										<pre>
-
-										</pre>
-									</td>
-								</tr>
-
-
-								<tr class="testcase-group">
-									<td>TestHeavyAttack</td>
-									<td><span class="status status-passed">PASSED</span></td>
-									<td>0</td>
-									<td>0</td>
-									<td>253ms</td>
-									<td class="report-column">
-										<pre>
-
-										</pre>
-									</td>
-								</tr>
-
-
-								<tr class="testcase-group">
-									<td>TestLightAttack</td>
-									<td><span class="status status-passed">PASSED</span></td>
-									<td>0</td>
-									<td>0</td>
-									<td>253ms</td>
-									<td class="report-column">
-										<pre>
-
-										</pre>
-									</td>
-								</tr>
-
-
-								<tr class="testcase-group">
-									<td>TestBlock</td>
-									<td><span class="status status-passed">PASSED</span></td>
-									<td>0</td>
-									<td>0</td>
-									<td>668ms</td>
-									<td class="report-column">
-										<pre>
-
-										</pre>
-									</td>
-								</tr>
-
-
-								<tr class="testcase-group">
-									<td>TestMaxHeal</td>
-									<td><span class="status status-passed">PASSED</span></td>
-									<td>0</td>
-									<td>0</td>
-									<td>246ms</td>
-									<td class="report-column">
-										<pre>
-
-										</pre>
-									</td>
-								</tr>
-
-
-								<tr class="testcase-group">
-									<td>TestTakeDMG</td>
-									<td><span class="status status-passed">PASSED</span></td>
-									<td>0</td>
-									<td>0</td>
-									<td>61ms</td>
-									<td class="report-column">
-										<pre>
-
-										</pre>
-									</td>
-								</tr>
-
-
-								<tr class="testcase-group">
-									<td>TestTakeDMGWhileBlocking</td>
-									<td><span class="status status-passed">PASSED</span></td>
-									<td>0</td>
-									<td>0</td>
-									<td>668ms</td>
-									<td class="report-column">
-										<pre>
-
-										</pre>
-									</td>
-								</tr>
-
-
-								<tr class="testcase-group">
-									<td>TestRegenerateStamina</td>
-									<td><span class="status status-passed">PASSED</span></td>
-									<td>0</td>
-									<td>0</td>
-									<td>667ms</td>
-									<td class="report-column">
-										<pre>
-
-										</pre>
-									</td>
-								</tr>
-
-
-								<tr class="testcase-group">
-									<td>TestUseBloodVial</td>
-									<td><span class="status status-passed">PASSED</span></td>
-									<td>0</td>
-									<td>0</td>
-									<td>47ms</td>
-									<td class="report-column">
-										<pre>
-
-										</pre>
-									</td>
-								</tr>
-
-
-								<tr class="testcase-group">
-									<td>TestUseBloodVialWithMaxHealth</td>
-									<td><span class="status status-passed">PASSED</span></td>
-									<td>0</td>
-									<td>0</td>
-									<td>54ms</td>
-									<td class="report-column">
-										<pre>
-
+line 103: Expecting be equal:
+    '(130, 288)' but is '(Infinity, Infinity)'
 										</pre>
 									</td>
 								</tr>
@@ -355,7 +160,7 @@
 	</main>
 
 	<footer>
-		<p>Generated by <a href="https://github.com/MikeSchulze/gdUnit4">GdUnit4</a> at 2025-07-15 16:03:01</p>
+		<p>Generated by <a href="https://github.com/MikeSchulze/gdUnit4">GdUnit4</a> at 2025-07-15 13:46:27</p>
 		<div class="status-legend">
 			<span class="status-legend-item">
 				<span class="status-box status-skipped"></span> Skipped

@@ -1,29 +1,41 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuites id="2025-07-14" name="report_1" tests="12" failures="0" skipped="0" flaky="0" time="0.000">
-	<testsuite id="0" name="PlayerTest2" package="tests" timestamp="2025-07-14T12:33:25" hostname="localhost" tests="12" failures="0" errors="0" skipped="0" flaky="0" time="2.519">
-		<testcase name="TestWMovement" classname="PlayerTest2" time="0.326">
+<testsuites id="2025-07-15" name="report_1" tests="18" failures="0" skipped="0" flaky="0" time="0.000">
+	<testsuite id="0" name="PlayerTest2" package="tests" timestamp="2025-07-15T16:02:55" hostname="localhost" tests="18" failures="0" errors="0" skipped="0" flaky="0" time="5.845">
+		<testcase name="TestWMovement" classname="PlayerTest2" time="0.371">
 		</testcase>
-		<testcase name="TestAMovement" classname="PlayerTest2" time="0.251">
+		<testcase name="TestAMovement" classname="PlayerTest2" time="0.245">
 		</testcase>
-		<testcase name="TestDMovement" classname="PlayerTest2" time="0.246">
+		<testcase name="TestDMovement" classname="PlayerTest2" time="0.254">
 		</testcase>
-		<testcase name="TestDashWithNoDirectionMovement" classname="PlayerTest2" time="0.240">
+		<testcase name="TestDashWithNoDirectionMovement" classname="PlayerTest2" time="0.261">
 		</testcase>
-		<testcase name="TestDashWithDirectionLeftMovement" classname="PlayerTest2" time="0.253">
+		<testcase name="TestDashWithDirectionLeftMovement" classname="PlayerTest2" time="0.267">
 		</testcase>
-		<testcase name="TestDashWithDirectionRightMovement" classname="PlayerTest2" time="0.253">
+		<testcase name="TestDashWithDirectionRightMovement" classname="PlayerTest2" time="0.267">
 		</testcase>
-		<testcase name="TestDashWithDirectionUpMovement" classname="PlayerTest2" time="0.253">
+		<testcase name="TestDashWithDirectionUpMovement" classname="PlayerTest2" time="0.267">
 		</testcase>
-		<testcase name="TestDashWithLightAttackMovement" classname="PlayerTest2" time="0.253">
+		<testcase name="TestDashWithLightAttackMovement" classname="PlayerTest2" time="0.460">
 		</testcase>
-		<testcase name="TestDashWithHeavyAttackMovement" classname="PlayerTest2" time="0.252">
+		<testcase name="TestDashWithHeavyAttackMovement" classname="PlayerTest2" time="0.460">
 		</testcase>
-		<testcase name="TestHeavyAttack" classname="PlayerTest2" time="0.046">
+		<testcase name="TestHeavyAttack" classname="PlayerTest2" time="0.253">
 		</testcase>
-		<testcase name="TestLightAttack" classname="PlayerTest2" time="0.040">
+		<testcase name="TestLightAttack" classname="PlayerTest2" time="0.253">
 		</testcase>
-		<testcase name="TestBlock" classname="PlayerTest2" time="0.039">
+		<testcase name="TestBlock" classname="PlayerTest2" time="0.668">
+		</testcase>
+		<testcase name="TestMaxHeal" classname="PlayerTest2" time="0.246">
+		</testcase>
+		<testcase name="TestTakeDMG" classname="PlayerTest2" time="0.061">
+		</testcase>
+		<testcase name="TestTakeDMGWhileBlocking" classname="PlayerTest2" time="0.668">
+		</testcase>
+		<testcase name="TestRegenerateStamina" classname="PlayerTest2" time="0.667">
+		</testcase>
+		<testcase name="TestUseBloodVial" classname="PlayerTest2" time="0.047">
+		</testcase>
+		<testcase name="TestUseBloodVialWithMaxHealth" classname="PlayerTest2" time="0.054">
 		</testcase>
 	</testsuite>
 </testsuites>
