@@ -27,35 +27,42 @@ public class CheckpointTest
     }
 
     [TestCase]
-    public void PlayerSetsSpawnpointOnCheckpointEnter()
+    [RequireGodotRuntime]
+    public async Task PlayerSetsSpawnpointOnCheckpointEnter()
     {
         _checkpoint.GlobalPosition = new Vector2(100, 200);
         PlayerStats.Instance.SetSpawnPoint(Vector2.Zero);
         _checkpoint.Call("OnPlayerBodyEntered", _player);
         AssertThat(PlayerStats.Instance.GetSpawnPoint()).IsEqual(new Vector2(100, 200));
+        await Setup();
     }
 
     [TestCase]
-    public void PlayerIsHealedAndStaminaRestoredOnCheckpoint()
+    [RequireGodotRuntime]
+    public async Task PlayerIsHealedAndStaminaRestoredOnCheckpoint()
     {
         PlayerStats.Instance.SetCurrentHealth(10);
         PlayerStats.Instance.SetStamina(5);
         _checkpoint.Call("OnPlayerBodyEntered", _player);
         AssertThat(PlayerStats.Instance.GetCurrentHealth()).IsEqual(PlayerStats.Instance.GetMaxHealthPoints());
         AssertThat(PlayerStats.Instance.GetStamina()).IsEqual(PlayerStats.Instance.GetMaxStamina());
+        await Setup();
     }
 
     [TestCase]
-    public void PlayerBloodVialsAreResetOnCheckpoint()
+    [RequireGodotRuntime]
+    public async Task PlayerBloodVialsAreResetOnCheckpoint()
     {
         var bloodVials = _player.GetBloodVials();
         bloodVials.ResetUses();
         _checkpoint.Call("OnPlayerBodyEntered", _player);
         AssertThat(PlayerStats.Instance.GetBVCurrentUses()).IsEqual(PlayerStats.Instance.GetBVMaxUses());
+        await Setup();
     }
 
     [TestCase]
-    public void NoEffectWhenNonPlayerEntersCheckpoint()
+    [RequireGodotRuntime]
+    public async Task NoEffectWhenNonPlayerEntersCheckpoint()
     {
         var dummy = new Node2D();
         PlayerStats.Instance.SetSpawnPoint(Vector2.Zero);
@@ -65,10 +72,12 @@ public class CheckpointTest
         AssertThat(PlayerStats.Instance.GetSpawnPoint()).IsEqual(Vector2.Zero);
         AssertThat(PlayerStats.Instance.GetCurrentHealth()).IsEqual(10);
         AssertThat(PlayerStats.Instance.GetStamina()).IsEqual(5);
+        await Setup();
     }
 
     [TestCase]
-    public void MultipleCheckpointsOverwriteSpawnpoint()
+    [RequireGodotRuntime]
+    public async Task MultipleCheckpointsOverwriteSpawnpoint()
     {
         var checkpoint2 = new Checkpoint();
         _runner.Scene().AddChild(checkpoint2);
@@ -78,5 +87,6 @@ public class CheckpointTest
         AssertThat(PlayerStats.Instance.GetSpawnPoint()).IsEqual(new Vector2(100, 200));
         checkpoint2.Call("OnPlayerBodyEntered", _player);
         AssertThat(PlayerStats.Instance.GetSpawnPoint()).IsEqual(new Vector2(300, 400));
+        await Setup();
     }
 } 

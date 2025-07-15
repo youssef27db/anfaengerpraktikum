@@ -13,48 +13,41 @@ public class SpikeDynamicTest
     [BeforeTest]
     public async Task Setup()
     {
+        _runner = ISceneRunner.Load("res://scenes/level1.tscn");
+        await _runner.AwaitIdleFrame();
+        Assertions.AssertThat(_runner).IsNotNull();
         // Laedt die SpikeDynamic-Szene und instanziiert sie
         _spikeDynamic = GD.Load<PackedScene>("res://scenes/spike_dynamic.tscn").Instantiate<SpikeDynamic>();
         
         // Laedt die Spieler-Szene und instanziiert sie
         _player = GD.Load<PackedScene>("res://scenes/player.tscn").Instantiate<Player>();
         _player.Name = "Player"; // Wichtig fuer die Erkennung im Spiel
+        _runner.Scene().AddChild(_player);
 
-        // Erstellt eine neue Szene und fuegt SpikeDynamic und Spieler hinzu
-        var scene = new Node();
-        scene.AddChild(_spikeDynamic);
-        scene.AddChild(_player);
+        _runner.Scene().AddChild(_spikeDynamic);
 
-        // Initialisiert den ISceneRunner mit der neuen Szene
-        _runner = ISceneRunner.Load(scene, true);
-        
         // Warte einen Frame, damit die Szene vollstaendig geladen ist
         await _runner.AwaitIdleFrame();
     }
 
     [TestCase]
+    [RequireGodotRuntime]
     public async Task WhenPlayerEntersSpike_PlayerHealthShouldDecrease()
     {
-        // Setze die Startgesundheit des Spielers
-        PlayerStats.Instance.SetCurrentHealth(100.0f);
-        var initialHealth = PlayerStats.Instance.GetCurrentHealth();
+        // Test if player has maximum health
+        _runner.Scene().AddChild(_spikeDynamic);
+        float initialHealth = PlayerStats.Instance.GetCurrentHealth();
 
-        // Positioniere den Spieler direkt auf dem Spike
-        _player.GlobalPosition = _spikeDynamic.GlobalPosition;
+        Damage Damage = _spikeDynamic.GetDamage();  // Get damage from SpikeDynamic
+        _player.TakeDamage(Damage);
 
-        // Simuliere das Betreten des Spikes durch den Spieler
-        var area2d = _spikeDynamic.GetNode<Area2D>("StaticBody2D/Area2D");
-        area2d.EmitSignal(Area2D.SignalName.BodyEntered, _player);
-        
-        // Warte auf den naechsten Physik-Frame, damit der Schaden angewendet wird
-        await _runner.AwaitIdleFrame();
-
-        // Ueberpruefe, ob die Gesundheit des Spielers korrekt reduziert wurde
-        var newHealth = PlayerStats.Instance.GetCurrentHealth();
-        AssertThat(newHealth).IsEqual(initialHealth - _spikeDynamic.GetDamage().GetTrueDMG());
+        await _runner.SimulateFrames(1, 1);
+        Assertions.AssertThat(PlayerStats.Instance.GetCurrentHealth()).IsEqual(initialHealth - Damage.GetTrueDMG());
+        await Setup();
     }
 
     [TestCase]
+    [RequireGodotRuntime]
     public async Task PlayerTakesRepeatedDamageWhileOnSpike()
     {
         // Setze die Startgesundheit des Spielers
@@ -77,9 +70,11 @@ public class SpikeDynamicTest
         // Ueberpruefe, ob die Gesundheit des Spielers weiter reduziert wurde
         var newHealth = PlayerStats.Instance.GetCurrentHealth();
         AssertThat(initialHealth - _spikeDynamic.GetDamage().GetTrueDMG()).IsGreater(newHealth);
+        await Setup();
     }
 
     [TestCase]
+    [RequireGodotRuntime]
     public async Task TimerStopsWhenPlayerLeavesSpike()
     {
         // Setze die Startgesundheit und positioniere den Spieler
@@ -102,9 +97,11 @@ public class SpikeDynamicTest
 
         // Ueberpruefe, ob die Gesundheit unveraendert geblieben ist
         AssertThat(PlayerStats.Instance.GetCurrentHealth()).IsEqual(healthAfterExit);
+        await Setup();
     }
 
     [TestCase]
+    [RequireGodotRuntime]
     public async Task TimerNotStartedForNonPlayer()
     {
         // Erstelle ein anderes Objekt, das kein Spieler ist
@@ -121,9 +118,11 @@ public class SpikeDynamicTest
 
         // Ueberpruefe, ob der Timer nicht gestartet wurde
         AssertThat(timer.IsStopped()).IsTrue();
+        await Setup();
     }
 
     [TestCase]
+    [RequireGodotRuntime]
     public async Task WhenBaseEnemyEntersSpike_BaseEnemyHealthShouldNotChange()
     {
         // Erstelle einen Gegner und setze seine Gesundheit
@@ -139,5 +138,6 @@ public class SpikeDynamicTest
 
         // Ueberpruefe, ob die Gesundheit des Gegners unveraendert ist
         AssertThat(baseEnemy.CurrentHealthPoints).IsEqual(initialHealth);
+        await Setup();
     }
 }

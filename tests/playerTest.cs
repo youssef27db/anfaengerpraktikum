@@ -51,6 +51,7 @@ namespace GdMUT
 
         // Test, ob sich der Spieler nach links bewegen kann, bei "Taste a"
         [CSTestFunction]
+        [RequireGodotRuntime]
         public static Result PlayerCanMoveRight()
         {
             // Spieler mit Setup-Methode initialisieren
@@ -68,6 +69,7 @@ namespace GdMUT
 
         // Test, ob sich der Spieler nach rechts bewegen kann, bei "Taste d"
         [CSTestFunction]
+        [RequireGodotRuntime]
         public static Result PlayerCanMoveLeft()
         {
             // Spieler initialisieren
@@ -85,6 +87,7 @@ namespace GdMUT
 
         // Test, ob sich der Spieler springen kann, bei "Taste w"
         [CSTestFunction]
+        [RequireGodotRuntime]
         public static Result PlayerCanJump()
         {
             // Spieler initialisieren
@@ -102,6 +105,7 @@ namespace GdMUT
 
         // Test, ob sich der Spieler dashen kann, bei "Taste L-Shift"
         [CSTestFunction]
+        [RequireGodotRuntime]
         public static Result PlayerCanDash()
         {
             Player player = SetupPlayer();
@@ -118,6 +122,7 @@ namespace GdMUT
 
         // Test, ob sich der Spieler blocken kann, bei "Taste Space". NUR GESCHWINDIGKEITSTEST
         [CSTestFunction]
+        [RequireGodotRuntime]
         public static Result PlayerCanBlock()
         {
             Player player = SetupPlayer();
