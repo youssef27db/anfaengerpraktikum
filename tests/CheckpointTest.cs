@@ -25,7 +25,7 @@ public class CheckpointTest
     public void PlayerSetsSpawnpointOnCheckpointEnter()
     {
         _checkpoint.GlobalPosition = new Vector2(100, 200);
-        PlayerStats.Instance.SetSpawnPoint(Vector2.Zero); // Reset vorher
+        PlayerStats.Instance.SetSpawnPoint(Vector2.Zero);
         _checkpoint.Call("OnPlayerBodyEntered", _player);
         AssertThat(PlayerStats.Instance.GetSpawnPoint()).IsEqual(new Vector2(100, 200));
     }
@@ -44,7 +44,7 @@ public class CheckpointTest
     public void PlayerBloodVialsAreResetOnCheckpoint()
     {
         var bloodVials = _player.GetBloodVials();
-        bloodVials.ResetUses(); // Setze auf 0
+        bloodVials.ResetUses();
         _checkpoint.Call("OnPlayerBodyEntered", _player);
         AssertThat(bloodVials.GetCurrentUses()).IsEqual(bloodVials.GetMaxUses());
     }

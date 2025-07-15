@@ -1,11 +1,8 @@
 using Godot;
 using GdUnit4;
-using System.Threading.Tasks; // Nötig für async/await
+using System.Threading.Tasks; 
 using static GdUnit4.Assertions;
 
-/// <summary>
-/// Test-Suite für die SpikeDynamic-Klasse, die das Zusammenspiel mit dem Spieler testet.
-/// </summary>
 [TestSuite]
 public class SpikeDynamicTest
 {
@@ -135,5 +132,4 @@ public class SpikeDynamicTest
         AssertThat(animationPlayer.CurrentAnimation != "" && animationPlayer.IsPlaying()).IsTrue();
     }
 
-    }
 } 
