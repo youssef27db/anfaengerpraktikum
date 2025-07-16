@@ -6,7 +6,7 @@ using Microsoft.CodeAnalysis.CSharp;
 
 
 [TestSuite]
-public class BaseEnemyTest
+public class BaseEnemyTestGdUnit
 {
 
     private BaseEnemy Enemy;

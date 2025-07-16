@@ -3,7 +3,7 @@ using Godot;
 
 
 [TestSuite]
-public class TestTests {
+public class TestTestsGdUnit {
 
     [TestCase]
     public void Test(){

@@ -5,7 +5,7 @@ using static GdUnit4.Assertions;
 
 
 [TestSuite]
-public class SpikeTest
+public class SpikeTestGdUnit
 {
     private ISceneRunner Runner;
     private Spike Spike;

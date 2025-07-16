@@ -6,7 +6,7 @@ using Microsoft.CodeAnalysis.CSharp;
 
 
 [TestSuite]
-public class BossTest
+public class BossTestGdUnit
 {
 
     private Boss1 Boss;

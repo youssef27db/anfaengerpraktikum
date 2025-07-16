@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 // Testklasse für den Player
 
 [TestSuite]
-public class PlayerTest2
+public class PlayerTestGdUnit
 {
     private ISceneRunner Runner;
     private Player Player;

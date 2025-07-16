@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuites id="2025-07-16" name="report_1" tests="1" failures="0" skipped="0" flaky="0" time="0.000">
-	<testsuite id="0" name="TestTests" package="tests" timestamp="2025-07-16T11:20:03" hostname="localhost" tests="1" failures="0" errors="0" skipped="0" flaky="0" time="0.056">
-		<testcase name="Test" classname="TestTests" time="0.013">
+<testsuites id="2025-07-16" name="report_1" tests="5" failures="0" skipped="0" flaky="0" time="0.000">
+	<testsuite id="0" name="SpikeTestGdUnit" package="tests" timestamp="2025-07-16T12:18:43" hostname="localhost" tests="5" failures="0" errors="0" skipped="0" flaky="0" time="7.952">
+		<testcase name="TestWhenPlayerEntersSpikePlayerHealthShouldDecrease" classname="SpikeTestGdUnit" time="0.134">
+		</testcase>
+		<testcase name="TestPlayerTakesRepeatedDamageWhileOnSpike" classname="SpikeTestGdUnit" time="7.621">
+		</testcase>
+		<testcase name="TestTimerStopsWhenPlayerLeavesSpike" classname="SpikeTestGdUnit" time="0.060">
+		</testcase>
+		<testcase name="TestTimerNotStartedForNonPlayer" classname="SpikeTestGdUnit" time="0.040">
+		</testcase>
+		<testcase name="TestWhenBaseEnemyEntersSpikeBaseEnemyHealthShouldNotChange" classname="SpikeTestGdUnit" time="0.037">
 		</testcase>
 	</testsuite>
 </testsuites>

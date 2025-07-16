@@ -2,7 +2,7 @@ using Godot;
 
 namespace GdMUT
 {
-    public class PlayerTests
+    public class PlayerTestsGDMUT
     {
 #if TOOLS
         private static Player SetupPlayer()

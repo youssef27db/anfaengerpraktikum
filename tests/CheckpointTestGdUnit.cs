@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using static GdUnit4.Assertions;
 
 [TestSuite]
-public class CheckpointTest
+public class CheckpointTestGdUnit
 {
     private ISceneRunner Runner;
     private Checkpoint Checkpoint;
