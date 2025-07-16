@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__interactable_8cs" xml:lang="en-US">
+<title>Interactable.cs File Reference</title>
+<indexterm><primary>Interactable.cs</primary></indexterm>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_class_interactable">Interactable</link></para>
+
+<para>Klasse für Interaktion. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

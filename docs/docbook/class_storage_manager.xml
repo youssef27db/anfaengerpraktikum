@@ -1,0 +1,450 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_storage_manager" xml:lang="en-US">
+<title>StorageManager Class Reference</title>
+<indexterm><primary>StorageManager</primary></indexterm>
+<para>
+
+<para>Klasse für das Speichern und Laden von Daten. </para>
+ 
+</para>
+<para>Inheritance diagram for StorageManager:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_storage_manager.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>override void <link linkend="_class_storage_manager_1af6389d6712c053027be26d95382ff1e2">_Ready</link> ()</para>
+
+<para>Initialisierung der Instanz und erstes laden der Einstellungen. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_storage_manager_1a98dc3f0d99389b7c64bcc9552b398452">LoadSettings</link> ()</para>
+
+<para>Laden der Einstellungen. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_storage_manager_1a1265660745bf77f244ebb401eae892a7">LoadGameFile</link> (int id)</para>
+
+<para>Laden eines Spielstandes. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_storage_manager_1acac4cbeec13991178f4e0395011d0452">SaveAll</link> (int id)</para>
+
+<para>Speichern der Einstellungen und eines Spielstandes. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_storage_manager_1a0066baa67d0d5b4af3dd31fbace1ef41">SaveSettings</link> ()</para>
+
+<para>Speichern der Einstellungen. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_storage_manager_1aab2c45cef731b397ab3cf33175899e63">SaveGameFile</link> (int id)</para>
+
+<para>Speichern eines Spielstandes. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_storage_manager_1a2c513af3aaedc589b36bf0e1de074f2c">SetLastSaveId</link> (int id)</para>
+
+<para>Setter für LastSaveId. </para>
+</listitem>
+            <listitem><para>int <link linkend="_class_storage_manager_1a1db2888bb3966010740337ad6b975f3a">GetLastSaveId</link> ()</para>
+
+<para>Getter für LastSaveId. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_storage_manager_1acc4b79be13db815e5865032a35b4581c">SetSaves</link> (int <link linkend="_class_storage_manager_1af7aaff853e07e906b7e94f4017cdb4aa">Saves</link>)</para>
+
+<para>Setter für Saves. </para>
+</listitem>
+            <listitem><para>int <link linkend="_class_storage_manager_1a9f87604d57da68440dc0c0a66517c2dc">GetSaves</link> ()</para>
+
+<para>Getter für Saves. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Properties    </title>
+        <itemizedlist>
+            <listitem><para>static <link linkend="_class_storage_manager">StorageManager</link> <link linkend="_class_storage_manager_1abc9f8437bf6c7954bba4d68baf5c96ce">Instance</link><computeroutput> [get, private set]</computeroutput>
+</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Private Attributes    </title>
+        <itemizedlist>
+            <listitem><para>String[] <link linkend="_class_storage_manager_1a8df10426c3242d2e36720b89bd840bad">PathSave</link> = {&quot;user://save1.dat&quot;, &quot;user://save2.dat&quot;, &quot;user://save3.dat&quot;}</para>
+</listitem>
+            <listitem><para>int <link linkend="_class_storage_manager_1a5bafc9b0368de9be79ea2161e8aa1956">LastSaveId</link> = -1</para>
+</listitem>
+            <listitem><para>int <link linkend="_class_storage_manager_1af7aaff853e07e906b7e94f4017cdb4aa">Saves</link> = 0</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Static Private Attributes    </title>
+        <itemizedlist>
+            <listitem><para>const String <link linkend="_class_storage_manager_1a26ddc1307e629886c23bfd00cf296a7e">PathSettings</link> = &quot;user://settings.txt&quot;</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Klasse für das Speichern und Laden von Daten. </para>
+<para>
+Definition at line <link linkend="__storage_manager_8cs_source_1l00008">8</link> of file <link linkend="__storage_manager_8cs_source">StorageManager.cs</link>.</para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_storage_manager_1af6389d6712c053027be26d95382ff1e2"/><section>
+    <title>_Ready()</title>
+<indexterm><primary>_Ready</primary><secondary>StorageManager</secondary></indexterm>
+<indexterm><primary>StorageManager</primary><secondary>_Ready</secondary></indexterm>
+<para><computeroutput>override void StorageManager._Ready ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Initialisierung der Instanz und erstes laden der Einstellungen. </para>
+</para>
+<para>
+Definition at line <link linkend="__storage_manager_8cs_source_1l00020">20</link> of file <link linkend="__storage_manager_8cs_source">StorageManager.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00020 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00021 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_storage_manager_1a98dc3f0d99389b7c64bcc9552b398452">LoadSettings</link>();
+00022 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_storage_manager_1abc9f8437bf6c7954bba4d68baf5c96ce">Instance</link>&#32;=&#32;<emphasis role="keyword">this</emphasis>;
+00023 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_storage_manager_1a1db2888bb3966010740337ad6b975f3a"/><section>
+    <title>GetLastSaveId()</title>
+<indexterm><primary>GetLastSaveId</primary><secondary>StorageManager</secondary></indexterm>
+<indexterm><primary>StorageManager</primary><secondary>GetLastSaveId</secondary></indexterm>
+<para><computeroutput>int StorageManager.GetLastSaveId ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Getter für LastSaveId. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>int LastSaveId </para>
+</formalpara>
+</para>
+<para>
+Definition at line <link linkend="__storage_manager_8cs_source_1l00118">118</link> of file <link linkend="__storage_manager_8cs_source">StorageManager.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00118 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00119 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_class_storage_manager_1a5bafc9b0368de9be79ea2161e8aa1956">LastSaveId</link>;
+00120 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_storage_manager_1a9f87604d57da68440dc0c0a66517c2dc"/><section>
+    <title>GetSaves()</title>
+<indexterm><primary>GetSaves</primary><secondary>StorageManager</secondary></indexterm>
+<indexterm><primary>StorageManager</primary><secondary>GetSaves</secondary></indexterm>
+<para><computeroutput>int StorageManager.GetSaves ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Getter für Saves. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>int Saves </para>
+</formalpara>
+</para>
+<para>
+Definition at line <link linkend="__storage_manager_8cs_source_1l00134">134</link> of file <link linkend="__storage_manager_8cs_source">StorageManager.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00134 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00135 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_class_storage_manager_1af7aaff853e07e906b7e94f4017cdb4aa">Saves</link>;
+00136 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_storage_manager_1a1265660745bf77f244ebb401eae892a7"/><section>
+    <title>LoadGameFile()</title>
+<indexterm><primary>LoadGameFile</primary><secondary>StorageManager</secondary></indexterm>
+<indexterm><primary>StorageManager</primary><secondary>LoadGameFile</secondary></indexterm>
+<para><computeroutput>void StorageManager.LoadGameFile (int id)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Laden eines Spielstandes. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>Id</entry><entry>
+<para>des Spielstandes. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line <link linkend="__storage_manager_8cs_source_1l00043">43</link> of file <link linkend="__storage_manager_8cs_source">StorageManager.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00043 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00044 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(!FileAccess.FileExists(<link linkend="_class_storage_manager_1a8df10426c3242d2e36720b89bd840bad">PathSave</link>[<emphasis role="keywordtype">id</emphasis>])){
+00045 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>;
+00046 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00047 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;FileAccess&#32;File&#32;=&#32;FileAccess.Open(<link linkend="_class_storage_manager_1a8df10426c3242d2e36720b89bd840bad">PathSave</link>[<emphasis role="keywordtype">id</emphasis>],&#32;FileAccess.ModeFlags.Read);
+00048 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_stats">PlayerStats</link>.<link linkend="_class_player_stats_1adeb667dbe2c1a76d1785ce07b6faf181">Instance</link>.<link linkend="_class_player_stats_1a7ec692981c45e933c737eff8d78e6456">SetRespawnLevelTag</link>((String)&#32;File.GetVar());
+00049 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_stats">PlayerStats</link>.<link linkend="_class_player_stats_1adeb667dbe2c1a76d1785ce07b6faf181">Instance</link>.<link linkend="_class_player_stats_1a3545edeb4834aad7011e561dc5f1b10d">SetCurrentLevelTag</link>((String)&#32;File.GetVar());
+00050 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_stats">PlayerStats</link>.<link linkend="_class_player_stats_1adeb667dbe2c1a76d1785ce07b6faf181">Instance</link>.<link linkend="_class_player_stats_1a147af1b1e37f6506303caca28b60f9e4">SetSpawnPoint</link>((Vector2)&#32;File.GetVar());
+00051 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_stats">PlayerStats</link>.<link linkend="_class_player_stats_1adeb667dbe2c1a76d1785ce07b6faf181">Instance</link>.<link linkend="_class_player_stats_1adb53f7019a00edfe089c3dfd205438c2">SetPosition</link>((Vector2)&#32;File.GetVar());
+00052 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_stats">PlayerStats</link>.<link linkend="_class_player_stats_1adeb667dbe2c1a76d1785ce07b6faf181">Instance</link>.<link linkend="_class_player_stats_1a647991a1d154f8c2bc8d7032b43e35aa">SetSinAmount</link>((<emphasis role="keywordtype">int</emphasis>)&#32;File.GetVar());
+00053 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_stats">PlayerStats</link>.<link linkend="_class_player_stats_1adeb667dbe2c1a76d1785ce07b6faf181">Instance</link>.<link linkend="_class_player_stats_1a58c3b27a3633bead2f77fa551f30beeb">SetMaxHealthPoints</link>((<emphasis role="keywordtype">float</emphasis>)&#32;File.GetVar());
+00054 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_stats">PlayerStats</link>.<link linkend="_class_player_stats_1adeb667dbe2c1a76d1785ce07b6faf181">Instance</link>.<link linkend="_class_player_stats_1aaed3690620c6ba9a8866d0c35b4f26d7">SetCurrentHealth</link>((<emphasis role="keywordtype">float</emphasis>)&#32;File.GetVar());
+00055 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_stats">PlayerStats</link>.<link linkend="_class_player_stats_1adeb667dbe2c1a76d1785ce07b6faf181">Instance</link>.<link linkend="_class_player_stats_1a8f76220aa1271b2335b045624c6812d0">SetMaxStamina</link>((<emphasis role="keywordtype">float</emphasis>)&#32;File.GetVar());
+00056 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_stats">PlayerStats</link>.<link linkend="_class_player_stats_1adeb667dbe2c1a76d1785ce07b6faf181">Instance</link>.<link linkend="_class_player_stats_1ab341f12827a6bdcfebb826dff43e82e3">SetStamina</link>((<emphasis role="keywordtype">float</emphasis>)&#32;File.GetVar());
+00057 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_stats">PlayerStats</link>.<link linkend="_class_player_stats_1adeb667dbe2c1a76d1785ce07b6faf181">Instance</link>.<link linkend="_class_player_stats_1a76c874319c947a35702cd9a0a4b0e66c">SetBVHealAmount</link>((<emphasis role="keywordtype">int</emphasis>)&#32;File.GetVar());
+00058 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_stats">PlayerStats</link>.<link linkend="_class_player_stats_1adeb667dbe2c1a76d1785ce07b6faf181">Instance</link>.<link linkend="_class_player_stats_1abebcd5c40720aa0a7b4d86518f8e3b1b">SetBVMaxUses</link>((<emphasis role="keywordtype">int</emphasis>)&#32;File.GetVar());
+00059 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_stats">PlayerStats</link>.<link linkend="_class_player_stats_1adeb667dbe2c1a76d1785ce07b6faf181">Instance</link>.<link linkend="_class_player_stats_1a05f3b699b992de2ea849c9397c818a6f">SetBVCurrentUses</link>((<emphasis role="keywordtype">int</emphasis>)&#32;File.GetVar());
+00060 
+00061 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;File.Close();
+00062 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_storage_manager_1a98dc3f0d99389b7c64bcc9552b398452"/><section>
+    <title>LoadSettings()</title>
+<indexterm><primary>LoadSettings</primary><secondary>StorageManager</secondary></indexterm>
+<indexterm><primary>StorageManager</primary><secondary>LoadSettings</secondary></indexterm>
+<para><computeroutput>void StorageManager.LoadSettings ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Laden der Einstellungen. </para>
+</para>
+<para>
+Definition at line <link linkend="__storage_manager_8cs_source_1l00028">28</link> of file <link linkend="__storage_manager_8cs_source">StorageManager.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00028 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00029 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(!FileAccess.FileExists(<link linkend="_class_storage_manager_1a26ddc1307e629886c23bfd00cf296a7e">PathSettings</link>)){
+00030 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>;
+00031 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00032 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;FileAccess&#32;File&#32;=&#32;FileAccess.Open(<link linkend="_class_storage_manager_1a26ddc1307e629886c23bfd00cf296a7e">PathSettings</link>,&#32;FileAccess.ModeFlags.Read);
+00033 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_storage_manager_1af7aaff853e07e906b7e94f4017cdb4aa">Saves</link>&#32;=&#32;(int)&#32;File.GetVar();
+00034 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_storage_manager_1a5bafc9b0368de9be79ea2161e8aa1956">LastSaveId</link>&#32;=&#32;(int)&#32;File.GetVar();
+00035 
+00036 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;File.Close();
+00037 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_storage_manager_1acac4cbeec13991178f4e0395011d0452"/><section>
+    <title>SaveAll()</title>
+<indexterm><primary>SaveAll</primary><secondary>StorageManager</secondary></indexterm>
+<indexterm><primary>StorageManager</primary><secondary>SaveAll</secondary></indexterm>
+<para><computeroutput>void StorageManager.SaveAll (int id)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Speichern der Einstellungen und eines Spielstandes. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>Id</entry><entry>
+<para>des Spielstandes. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line <link linkend="__storage_manager_8cs_source_1l00068">68</link> of file <link linkend="__storage_manager_8cs_source">StorageManager.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00068 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00069 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_storage_manager_1aab2c45cef731b397ab3cf33175899e63">SaveGameFile</link>(<emphasis role="keywordtype">id</emphasis>);
+00070 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_storage_manager_1a0066baa67d0d5b4af3dd31fbace1ef41">SaveSettings</link>();
+00071 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_storage_manager_1aab2c45cef731b397ab3cf33175899e63"/><section>
+    <title>SaveGameFile()</title>
+<indexterm><primary>SaveGameFile</primary><secondary>StorageManager</secondary></indexterm>
+<indexterm><primary>StorageManager</primary><secondary>SaveGameFile</secondary></indexterm>
+<para><computeroutput>void StorageManager.SaveGameFile (int id)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Speichern eines Spielstandes. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>Id</entry><entry>
+<para>des Spielstandes. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line <link linkend="__storage_manager_8cs_source_1l00088">88</link> of file <link linkend="__storage_manager_8cs_source">StorageManager.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00088 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00089 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;FileAccess&#32;File&#32;=&#32;FileAccess.Open(<link linkend="_class_storage_manager_1a8df10426c3242d2e36720b89bd840bad">PathSave</link>[<emphasis role="keywordtype">id</emphasis>],&#32;FileAccess.ModeFlags.Write);
+00090 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;File.StoreVar(<link linkend="_class_player_stats">PlayerStats</link>.<link linkend="_class_player_stats_1adeb667dbe2c1a76d1785ce07b6faf181">Instance</link>.<link linkend="_class_player_stats_1ad868bae6deb062dbcc4702b276a27041">GetRespawnLevelTag</link>());
+00091 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;File.StoreVar(<link linkend="_class_player_stats">PlayerStats</link>.<link linkend="_class_player_stats_1adeb667dbe2c1a76d1785ce07b6faf181">Instance</link>.<link linkend="_class_player_stats_1a7db8c1cd1ecfb2041c7b376289054801">GetCurrentLevelTag</link>());
+00092 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;File.StoreVar(<link linkend="_class_player_stats">PlayerStats</link>.<link linkend="_class_player_stats_1adeb667dbe2c1a76d1785ce07b6faf181">Instance</link>.<link linkend="_class_player_stats_1a20396ab55000fe68c62711c072bad9bb">GetSpawnPoint</link>());
+00093 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;File.StoreVar(<link linkend="_class_player_stats">PlayerStats</link>.<link linkend="_class_player_stats_1adeb667dbe2c1a76d1785ce07b6faf181">Instance</link>.<link linkend="_class_player_stats_1a77ca820f184b31dd9590bc8613f8566e">GetPosition</link>());
+00094 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;File.StoreVar(<link linkend="_class_player_stats">PlayerStats</link>.<link linkend="_class_player_stats_1adeb667dbe2c1a76d1785ce07b6faf181">Instance</link>.<link linkend="_class_player_stats_1a0b2b3398a02e8fbafe3c41dd466c57d0">GetSinAmount</link>());
+00095 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;File.StoreVar(<link linkend="_class_player_stats">PlayerStats</link>.<link linkend="_class_player_stats_1adeb667dbe2c1a76d1785ce07b6faf181">Instance</link>.<link linkend="_class_player_stats_1a6a24773d00e75be9747b99681ac76127">GetMaxHealthPoints</link>());
+00096 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;File.StoreVar(<link linkend="_class_player_stats">PlayerStats</link>.<link linkend="_class_player_stats_1adeb667dbe2c1a76d1785ce07b6faf181">Instance</link>.<link linkend="_class_player_stats_1a0ec1075ba0983a3df42454b110194c0d">GetCurrentHealth</link>());
+00097 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;File.StoreVar(<link linkend="_class_player_stats">PlayerStats</link>.<link linkend="_class_player_stats_1adeb667dbe2c1a76d1785ce07b6faf181">Instance</link>.<link linkend="_class_player_stats_1a7e27ea7ba3c266ecfa446c070415180a">GetMaxStamina</link>());
+00098 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;File.StoreVar(<link linkend="_class_player_stats">PlayerStats</link>.<link linkend="_class_player_stats_1adeb667dbe2c1a76d1785ce07b6faf181">Instance</link>.<link linkend="_class_player_stats_1a3a170316e8384ab030f5f697b799a947">GetStamina</link>());
+00099 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;File.StoreVar(<link linkend="_class_player_stats">PlayerStats</link>.<link linkend="_class_player_stats_1adeb667dbe2c1a76d1785ce07b6faf181">Instance</link>.<link linkend="_class_player_stats_1a026f80c7d14afe5dbf7e33e0edd2a16a">GetBVHealAmount</link>());
+00100 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;File.StoreVar(<link linkend="_class_player_stats">PlayerStats</link>.<link linkend="_class_player_stats_1adeb667dbe2c1a76d1785ce07b6faf181">Instance</link>.<link linkend="_class_player_stats_1a88cc0468ef32b3b4a7b2e79af4e24424">GetBVMaxUses</link>());
+00101 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;File.StoreVar(<link linkend="_class_player_stats">PlayerStats</link>.<link linkend="_class_player_stats_1adeb667dbe2c1a76d1785ce07b6faf181">Instance</link>.<link linkend="_class_player_stats_1a7927fc41f41b344aecea23f12c52329b">GetBVCurrentUses</link>());
+00102 
+00103 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;File.Close();
+00104 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_storage_manager_1a0066baa67d0d5b4af3dd31fbace1ef41"/><section>
+    <title>SaveSettings()</title>
+<indexterm><primary>SaveSettings</primary><secondary>StorageManager</secondary></indexterm>
+<indexterm><primary>StorageManager</primary><secondary>SaveSettings</secondary></indexterm>
+<para><computeroutput>void StorageManager.SaveSettings ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Speichern der Einstellungen. </para>
+</para>
+<para>
+Definition at line <link linkend="__storage_manager_8cs_source_1l00076">76</link> of file <link linkend="__storage_manager_8cs_source">StorageManager.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00076 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00077 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;FileAccess&#32;File&#32;=&#32;FileAccess.Open(<link linkend="_class_storage_manager_1a26ddc1307e629886c23bfd00cf296a7e">PathSettings</link>,&#32;FileAccess.ModeFlags.Write);
+00078 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;File.StoreVar(<link linkend="_class_storage_manager_1af7aaff853e07e906b7e94f4017cdb4aa">Saves</link>);
+00079 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;File.StoreVar(<link linkend="_class_storage_manager_1a5bafc9b0368de9be79ea2161e8aa1956">LastSaveId</link>);
+00080 
+00081 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;File.Close();
+00082 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_storage_manager_1a2c513af3aaedc589b36bf0e1de074f2c"/><section>
+    <title>SetLastSaveId()</title>
+<indexterm><primary>SetLastSaveId</primary><secondary>StorageManager</secondary></indexterm>
+<indexterm><primary>StorageManager</primary><secondary>SetLastSaveId</secondary></indexterm>
+<para><computeroutput>void StorageManager.SetLastSaveId (int id)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Setter für LastSaveId. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>int</entry><entry>
+<para>LastSaveId </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line <link linkend="__storage_manager_8cs_source_1l00110">110</link> of file <link linkend="__storage_manager_8cs_source">StorageManager.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00110 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00111 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_storage_manager_1a5bafc9b0368de9be79ea2161e8aa1956">LastSaveId</link>&#32;=&#32;id;
+00112 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_storage_manager_1acc4b79be13db815e5865032a35b4581c"/><section>
+    <title>SetSaves()</title>
+<indexterm><primary>SetSaves</primary><secondary>StorageManager</secondary></indexterm>
+<indexterm><primary>StorageManager</primary><secondary>SetSaves</secondary></indexterm>
+<para><computeroutput>void StorageManager.SetSaves (int Saves)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Setter für Saves. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>int</entry><entry>
+<para>Saves </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line <link linkend="__storage_manager_8cs_source_1l00126">126</link> of file <link linkend="__storage_manager_8cs_source">StorageManager.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00126 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00127 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this.Saves&#32;=&#32;<link linkend="_class_storage_manager_1af7aaff853e07e906b7e94f4017cdb4aa">Saves</link>;
+00128 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_class_storage_manager_1a5bafc9b0368de9be79ea2161e8aa1956"/><section>
+    <title>LastSaveId</title>
+<indexterm><primary>LastSaveId</primary><secondary>StorageManager</secondary></indexterm>
+<indexterm><primary>StorageManager</primary><secondary>LastSaveId</secondary></indexterm>
+<para><computeroutput>int StorageManager.LastSaveId = -1<computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__storage_manager_8cs_source_1l00013">13</link> of file <link linkend="__storage_manager_8cs_source">StorageManager.cs</link>.</para>
+</section>
+<anchor xml:id="_class_storage_manager_1a8df10426c3242d2e36720b89bd840bad"/><section>
+    <title>PathSave</title>
+<indexterm><primary>PathSave</primary><secondary>StorageManager</secondary></indexterm>
+<indexterm><primary>StorageManager</primary><secondary>PathSave</secondary></indexterm>
+<para><computeroutput>String [] StorageManager.PathSave = {&quot;user://save1.dat&quot;, &quot;user://save2.dat&quot;, &quot;user://save3.dat&quot;}<computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__storage_manager_8cs_source_1l00012">12</link> of file <link linkend="__storage_manager_8cs_source">StorageManager.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00012 {<emphasis role="stringliteral">&quot;user://save1.dat&quot;</emphasis>,&#32;<emphasis role="stringliteral">&quot;user://save2.dat&quot;</emphasis>,&#32;<emphasis role="stringliteral">&quot;user://save3.dat&quot;</emphasis>};
+</programlisting></section>
+<anchor xml:id="_class_storage_manager_1a26ddc1307e629886c23bfd00cf296a7e"/><section>
+    <title>PathSettings</title>
+<indexterm><primary>PathSettings</primary><secondary>StorageManager</secondary></indexterm>
+<indexterm><primary>StorageManager</primary><secondary>PathSettings</secondary></indexterm>
+<para><computeroutput>const String StorageManager.PathSettings = &quot;user://settings.txt&quot;<computeroutput>[static]</computeroutput>, <computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__storage_manager_8cs_source_1l00011">11</link> of file <link linkend="__storage_manager_8cs_source">StorageManager.cs</link>.</para>
+</section>
+<anchor xml:id="_class_storage_manager_1af7aaff853e07e906b7e94f4017cdb4aa"/><section>
+    <title>Saves</title>
+<indexterm><primary>Saves</primary><secondary>StorageManager</secondary></indexterm>
+<indexterm><primary>StorageManager</primary><secondary>Saves</secondary></indexterm>
+<para><computeroutput>int StorageManager.Saves = 0<computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__storage_manager_8cs_source_1l00014">14</link> of file <link linkend="__storage_manager_8cs_source">StorageManager.cs</link>.</para>
+</section>
+</section>
+<section>
+<title>Property Documentation</title>
+<anchor xml:id="_class_storage_manager_1abc9f8437bf6c7954bba4d68baf5c96ce"/><section>
+    <title>Instance</title>
+<indexterm><primary>Instance</primary><secondary>StorageManager</secondary></indexterm>
+<indexterm><primary>StorageManager</primary><secondary>Instance</secondary></indexterm>
+<para><computeroutput><link linkend="_class_storage_manager">StorageManager</link> StorageManager.Instance<computeroutput>[static]</computeroutput>, <computeroutput>[get]</computeroutput>, <computeroutput>[private set]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__storage_manager_8cs_source_1l00010">10</link> of file <link linkend="__storage_manager_8cs_source">StorageManager.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00010 {&#32;<emphasis role="keyword">get</emphasis>;&#32;<emphasis role="keyword">private</emphasis>&#32;<emphasis role="keyword">set</emphasis>;&#32;}
+</programlisting></section>
+<para>
+The documentation for this class was generated from the following file:</para>
+<link linkend="__storage_manager_8cs">StorageManager.cs</link></section>
+</section>

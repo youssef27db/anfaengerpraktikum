@@ -1,0 +1,212 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_interactable" xml:lang="en-US">
+<title>Interactable Class Reference</title>
+<indexterm><primary>Interactable</primary></indexterm>
+<para>
+
+<para>Klasse für Interaktion. </para>
+ 
+</para>
+<para>Inheritance diagram for Interactable:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_interactable.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>override void <link linkend="_class_interactable_1a9add6c2a759f67998bdb373dbb654130">_Ready</link> ()</para>
+
+<para>Initialisierung der Referenzen. Findet die relevanten Knoten in der Szene und weist sie zu. </para>
+</listitem>
+            <listitem><para>override void <link linkend="_class_interactable_1aca8766dcd47dd334a4bb9062abf2f626">_Process</link> (double DeltaTime)</para>
+
+<para>Testet, ob der Spieler mit der Node Interagiert und öffnet ein PopUp. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_interactable_1abdf9c193fcfb6f4b5187842b1055830d">OnAreaBodyExited</link> (Node2D Body)</para>
+
+<para>Detektiert, wenn der Spieler den Bereich verlässt und schließt das PopUp. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Properties    </title>
+        <itemizedlist>
+            <listitem><para>String <link linkend="_class_interactable_1a2bc5775aa05c0e143cdb196cf06296d1">Text</link><computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Private Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_player">Player</link> <link linkend="_class_interactable_1ad74422b51f60ffb81566d0259d829aa1">Player</link></para>
+</listitem>
+            <listitem><para>RichTextLabel <link linkend="_class_interactable_1a61892e9f2a38c92f2b3bd12efed3a22d">TextLabel</link></para>
+</listitem>
+            <listitem><para>Control <link linkend="_class_interactable_1a7158399e380702b55704d19dc1c07f12">PopUp</link></para>
+</listitem>
+            <listitem><para>Area2D <link linkend="_class_interactable_1ad53cb161d96e7050002454fe60674fa2">Area</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Klasse für Interaktion. </para>
+<para>
+Definition at line <link linkend="__interactable_8cs_source_1l00007">7</link> of file <link linkend="__interactable_8cs_source">Interactable.cs</link>.</para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_interactable_1aca8766dcd47dd334a4bb9062abf2f626"/><section>
+    <title>_Process()</title>
+<indexterm><primary>_Process</primary><secondary>Interactable</secondary></indexterm>
+<indexterm><primary>Interactable</primary><secondary>_Process</secondary></indexterm>
+<para><computeroutput>override void Interactable._Process (double DeltaTime)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Testet, ob der Spieler mit der Node Interagiert und öffnet ein PopUp. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>DeltaTime</entry><entry>
+<para>Zeit zwischen den Frames. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line <link linkend="__interactable_8cs_source_1l00032">32</link> of file <link linkend="__interactable_8cs_source">Interactable.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00032 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00033 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(Input.IsActionJustPressed(<emphasis role="stringliteral">&quot;interact&quot;</emphasis>)){
+00034 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Godot.Collections.Array&lt;Node2D&gt;&#32;Bodies&#32;=&#32;<link linkend="_class_interactable_1ad53cb161d96e7050002454fe60674fa2">Area</link>.GetOverlappingBodies();
+00035 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">foreach</emphasis>(Node2D&#32;Body&#32;<emphasis role="keywordflow">in</emphasis>&#32;Bodies){
+00036 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(Body&#32;==&#32;<link linkend="_class_player">Player</link>){
+00037 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_interactable_1a61892e9f2a38c92f2b3bd12efed3a22d">TextLabel</link>.Clear();
+00038 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_interactable_1a61892e9f2a38c92f2b3bd12efed3a22d">TextLabel</link>.AppendText(<link linkend="_class_interactable_1a2bc5775aa05c0e143cdb196cf06296d1">Text</link>);
+00039 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;PopUp.Visible&#32;=&#32;<emphasis role="keyword">true</emphasis>;
+00040 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>;
+00041 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00042 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00043 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00044 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_interactable_1a9add6c2a759f67998bdb373dbb654130"/><section>
+    <title>_Ready()</title>
+<indexterm><primary>_Ready</primary><secondary>Interactable</secondary></indexterm>
+<indexterm><primary>Interactable</primary><secondary>_Ready</secondary></indexterm>
+<para><computeroutput>override void Interactable._Ready ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Initialisierung der Referenzen. Findet die relevanten Knoten in der Szene und weist sie zu. </para>
+</para>
+<para>
+Definition at line <link linkend="__interactable_8cs_source_1l00021">21</link> of file <link linkend="__interactable_8cs_source">Interactable.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00021 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00022 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player">Player</link>&#32;=&#32;GetNode&lt;Player&gt;(<emphasis role="stringliteral">&quot;../Player&quot;</emphasis>);
+00023 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_interactable_1a61892e9f2a38c92f2b3bd12efed3a22d">TextLabel</link>&#32;=&#32;GetNode&lt;RichTextLabel&gt;(<emphasis role="stringliteral">&quot;../HUD/PopUp/Text&quot;</emphasis>);
+00024 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_interactable_1a7158399e380702b55704d19dc1c07f12">PopUp</link>&#32;=&#32;GetNode&lt;Control&gt;(<emphasis role="stringliteral">&quot;../HUD/PopUp&quot;</emphasis>);
+00025 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_interactable_1ad53cb161d96e7050002454fe60674fa2">Area</link>&#32;=&#32;GetNode&lt;Area2D&gt;(<emphasis role="stringliteral">&quot;Area2D&quot;</emphasis>);
+00026 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_interactable_1abdf9c193fcfb6f4b5187842b1055830d"/><section>
+    <title>OnAreaBodyExited()</title>
+<indexterm><primary>OnAreaBodyExited</primary><secondary>Interactable</secondary></indexterm>
+<indexterm><primary>Interactable</primary><secondary>OnAreaBodyExited</secondary></indexterm>
+<para><computeroutput>void Interactable.OnAreaBodyExited (Node2D Body)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Detektiert, wenn der Spieler den Bereich verlässt und schließt das PopUp. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>Node2D</entry><entry>
+<para>die den Bereich verlässt. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line <link linkend="__interactable_8cs_source_1l00050">50</link> of file <link linkend="__interactable_8cs_source">Interactable.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00050 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00051 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(Body&#32;==&#32;<link linkend="_class_player">Player</link>){
+00052 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;PopUp.Visible&#32;=&#32;<emphasis role="keyword">false</emphasis>;
+00053 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_interactable_1a61892e9f2a38c92f2b3bd12efed3a22d">TextLabel</link>.Clear();
+00054 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00055 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_class_interactable_1ad53cb161d96e7050002454fe60674fa2"/><section>
+    <title>Area</title>
+<indexterm><primary>Area</primary><secondary>Interactable</secondary></indexterm>
+<indexterm><primary>Interactable</primary><secondary>Area</secondary></indexterm>
+<para><computeroutput>Area2D Interactable.Area<computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__interactable_8cs_source_1l00012">12</link> of file <link linkend="__interactable_8cs_source">Interactable.cs</link>.</para>
+</section>
+<anchor xml:id="_class_interactable_1ad74422b51f60ffb81566d0259d829aa1"/><section>
+    <title>Player</title>
+<indexterm><primary>Player</primary><secondary>Interactable</secondary></indexterm>
+<indexterm><primary>Interactable</primary><secondary>Player</secondary></indexterm>
+<para><computeroutput><link linkend="_class_player">Player</link> Interactable.Player<computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__interactable_8cs_source_1l00009">9</link> of file <link linkend="__interactable_8cs_source">Interactable.cs</link>.</para>
+</section>
+<anchor xml:id="_class_interactable_1a7158399e380702b55704d19dc1c07f12"/><section>
+    <title>PopUp</title>
+<indexterm><primary>PopUp</primary><secondary>Interactable</secondary></indexterm>
+<indexterm><primary>Interactable</primary><secondary>PopUp</secondary></indexterm>
+<para><computeroutput>Control Interactable.PopUp<computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__interactable_8cs_source_1l00011">11</link> of file <link linkend="__interactable_8cs_source">Interactable.cs</link>.</para>
+</section>
+<anchor xml:id="_class_interactable_1a61892e9f2a38c92f2b3bd12efed3a22d"/><section>
+    <title>TextLabel</title>
+<indexterm><primary>TextLabel</primary><secondary>Interactable</secondary></indexterm>
+<indexterm><primary>Interactable</primary><secondary>TextLabel</secondary></indexterm>
+<para><computeroutput>RichTextLabel Interactable.TextLabel<computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__interactable_8cs_source_1l00010">10</link> of file <link linkend="__interactable_8cs_source">Interactable.cs</link>.</para>
+</section>
+</section>
+<section>
+<title>Property Documentation</title>
+<anchor xml:id="_class_interactable_1a2bc5775aa05c0e143cdb196cf06296d1"/><section>
+    <title>Text</title>
+<indexterm><primary>Text</primary><secondary>Interactable</secondary></indexterm>
+<indexterm><primary>Interactable</primary><secondary>Text</secondary></indexterm>
+<para><computeroutput>String Interactable.Text<computeroutput>[get]</computeroutput>, <computeroutput>[set]</computeroutput>, <computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__interactable_8cs_source_1l00015">15</link> of file <link linkend="__interactable_8cs_source">Interactable.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00015 {&#32;<emphasis role="keyword">get</emphasis>;&#32;<emphasis role="keyword">set</emphasis>;}
+</programlisting></section>
+<para>
+The documentation for this class was generated from the following file:</para>
+<link linkend="__interactable_8cs">Interactable.cs</link></section>
+</section>

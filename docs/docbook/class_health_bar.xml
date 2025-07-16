@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_health_bar" xml:lang="en-US">
+<title>HealthBar Class Reference</title>
+<indexterm><primary>HealthBar</primary></indexterm>
+<para>
+
+<para>Klasse für die Gesundheitsleiste des Spielers. Synchronisiert die Anzeige der <link linkend="_class_health_bar">HealthBar</link> mit den Lebenspunkten des Spielers. </para>
+ 
+</para>
+<para>Inheritance diagram for HealthBar:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_health_bar.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>override void <link linkend="_class_health_bar_1a639f11c646a0a7de99cbcf4db7574d99">_Ready</link> ()</para>
+
+<para>Initialisiert die <link linkend="_class_health_bar">HealthBar</link> und verbindet sie mit den Lebenspunkten des Spielers. Lädt den Spieler-Knoten und setzt die maximale und aktuelle Gesundheit in der <link linkend="_class_health_bar">HealthBar</link>. </para>
+</listitem>
+            <listitem><para>override void <link linkend="_class_health_bar_1a4ddfe77d80ebfa7a4268cabd2c4b1282">_Process</link> (double DeltaTime)</para>
+
+<para>Aktualisiert die <link linkend="_class_health_bar">HealthBar</link> in jedem Frame. Synchronisiert die Anzeige der aktuellen Lebenspunkte mit den Werten des Spielers. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Klasse für die Gesundheitsleiste des Spielers. Synchronisiert die Anzeige der <link linkend="_class_health_bar">HealthBar</link> mit den Lebenspunkten des Spielers. </para>
+<para>
+Definition at line <link linkend="__health_bar_8cs_source_1l00007">7</link> of file <link linkend="__health_bar_8cs_source">HealthBar.cs</link>.</para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_health_bar_1a4ddfe77d80ebfa7a4268cabd2c4b1282"/><section>
+    <title>_Process()</title>
+<indexterm><primary>_Process</primary><secondary>HealthBar</secondary></indexterm>
+<indexterm><primary>HealthBar</primary><secondary>_Process</secondary></indexterm>
+<para><computeroutput>override void HealthBar._Process (double DeltaTime)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Aktualisiert die <link linkend="_class_health_bar">HealthBar</link> in jedem Frame. Synchronisiert die Anzeige der aktuellen Lebenspunkte mit den Werten des Spielers. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>delta</entry><entry>
+<para>Zeit seit dem letzten Frame (wird nicht direkt genutzt). </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line <link linkend="__health_bar_8cs_source_1l00024">24</link> of file <link linkend="__health_bar_8cs_source">HealthBar.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00024 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00025 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Aktualisiere&#32;den&#32;Wert&#32;der&#32;HealthBar&#32;basierend&#32;auf&#32;der&#32;aktuellen&#32;Gesundheit&#32;des&#32;Spielers</emphasis>
+00026 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Value&#32;=&#32;<link linkend="_class_player_stats">PlayerStats</link>.<link linkend="_class_player_stats_1adeb667dbe2c1a76d1785ce07b6faf181">Instance</link>.<link linkend="_class_player_stats_1a0ec1075ba0983a3df42454b110194c0d">GetCurrentHealth</link>();
+00027 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_health_bar_1a639f11c646a0a7de99cbcf4db7574d99"/><section>
+    <title>_Ready()</title>
+<indexterm><primary>_Ready</primary><secondary>HealthBar</secondary></indexterm>
+<indexterm><primary>HealthBar</primary><secondary>_Ready</secondary></indexterm>
+<para><computeroutput>override void HealthBar._Ready ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Initialisiert die <link linkend="_class_health_bar">HealthBar</link> und verbindet sie mit den Lebenspunkten des Spielers. Lädt den Spieler-Knoten und setzt die maximale und aktuelle Gesundheit in der <link linkend="_class_health_bar">HealthBar</link>. </para>
+</para>
+<para>
+Definition at line <link linkend="__health_bar_8cs_source_1l00013">13</link> of file <link linkend="__health_bar_8cs_source">HealthBar.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00013 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00014 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Setze&#32;die&#32;maximale&#32;Gesundheit&#32;der&#32;HealthBar&#32;basierend&#32;auf&#32;der&#32;Spieler-MaxHealth</emphasis>
+00015 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;MaxValue&#32;=&#32;<link linkend="_class_player_stats">PlayerStats</link>.<link linkend="_class_player_stats_1adeb667dbe2c1a76d1785ce07b6faf181">Instance</link>.<link linkend="_class_player_stats_1a6a24773d00e75be9747b99681ac76127">GetMaxHealthPoints</link>();
+00016 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Value&#32;=&#32;<link linkend="_class_player_stats">PlayerStats</link>.<link linkend="_class_player_stats_1adeb667dbe2c1a76d1785ce07b6faf181">Instance</link>.<link linkend="_class_player_stats_1a0ec1075ba0983a3df42454b110194c0d">GetCurrentHealth</link>();
+00017 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<para>
+The documentation for this class was generated from the following file:</para>
+<link linkend="__health_bar_8cs">HealthBar.cs</link></section>
+</section>

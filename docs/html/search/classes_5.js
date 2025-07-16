@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['interactable_0',['Interactable',['../class_interactable.html',1,'']]]
+  ['levelmanager_0',['LevelManager',['../class_level_manager.html',1,'']]]
 ];

@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__main_menu_background_8cs_source" xml:lang="en-US">
+<title>MainMenuBackground.cs</title>
+<indexterm><primary>MainMenuBackground.cs</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered"><anchor xml:id="__main_menu_background_8cs_source_1l00001"/>00001 <emphasis role="keyword">using&#32;</emphasis>Godot;
+<anchor xml:id="__main_menu_background_8cs_source_1l00002"/>00002 <emphasis role="keyword">using&#32;</emphasis>System;
+<anchor xml:id="__main_menu_background_8cs_source_1l00003"/>00003 
+<anchor xml:id="__main_menu_background_8cs_source_1l00007"/><link linkend="_class_main_menu_background">00007</link> <emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">partial&#32;class&#32;</emphasis><link linkend="_class_main_menu_background">MainMenuBackground</link>&#32;:&#32;ParallaxLayer&#32;{
+<anchor xml:id="__main_menu_background_8cs_source_1l00008"/>00008 
+<anchor xml:id="__main_menu_background_8cs_source_1l00009"/>00009 &#32;&#32;&#32;&#32;[Export]
+<anchor xml:id="__main_menu_background_8cs_source_1l00010"/><link linkend="_class_main_menu_background_1a9f98d5689cf2bb4aea2d50f113903ef3">00010</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;<emphasis role="keywordtype">float</emphasis>&#32;<link linkend="_class_main_menu_background_1a9f98d5689cf2bb4aea2d50f113903ef3">ScrollSpeed</link>&#32;=&#32;-10f;
+<anchor xml:id="__main_menu_background_8cs_source_1l00011"/>00011 
+<anchor xml:id="__main_menu_background_8cs_source_1l00016"/><link linkend="_class_main_menu_background_1af1ec3357af6dcb87856edd294f7e7bdb">00016</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">override</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_main_menu_background_1af1ec3357af6dcb87856edd294f7e7bdb">_Process</link>(<emphasis role="keywordtype">double</emphasis>&#32;DeltaTime)&#32;{
+<anchor xml:id="__main_menu_background_8cs_source_1l00017"/>00017 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">float</emphasis>&#32;X&#32;=&#32;GetMotionOffset().X;
+<anchor xml:id="__main_menu_background_8cs_source_1l00018"/>00018 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;X&#32;+=&#32;<link linkend="_class_main_menu_background_1a9f98d5689cf2bb4aea2d50f113903ef3">ScrollSpeed</link>&#32;*&#32;(float)&#32;DeltaTime;
+<anchor xml:id="__main_menu_background_8cs_source_1l00019"/>00019 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SetMotionOffset(<emphasis role="keyword">new</emphasis>&#32;Vector2(X,0));
+<anchor xml:id="__main_menu_background_8cs_source_1l00020"/>00020 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__main_menu_background_8cs_source_1l00021"/>00021 }
+</programlisting></section>

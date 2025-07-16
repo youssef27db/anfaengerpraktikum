@@ -1,0 +1,182 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_spike" xml:lang="en-US">
+<title>Spike Class Reference</title>
+<indexterm><primary>Spike</primary></indexterm>
+<para>
+
+<para>Klasse für die Spikes. </para>
+ 
+</para>
+<para>Inheritance diagram for Spike:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_spike.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>override void <link linkend="_class_spike_1a527675080d8e2e4ee4310fb3e112a120">_Ready</link> ()</para>
+
+<para>Initialisierung der Node <link linkend="_class_player">Player</link>. </para>
+</listitem>
+            <listitem><para><link linkend="_class_damage">Damage</link> <link linkend="_class_spike_1a089076328dd0c52b0c595f9ee9c98c33">GetDamage</link> ()</para>
+
+<para>Gibt ein <link linkend="_class_damage">Damage</link> Objekt zurück. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Private Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_class_spike_1ad359ec07f383c62c2683c1c307941f74">OnPlayerBodyEntered</link> (Node body)</para>
+
+<para>Prüfen ob der Körper den <link linkend="_class_spike">Spike</link> betritt falls ja wird der Timer gestartet und der Spieler nimmt Schaden. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_spike_1ac7ee6575608e186c3d00d17331dfc97e">OnPlayerBodyExited</link> (Node body)</para>
+
+<para>Prüfen ob der Körper den <link linkend="_class_spike">Spike</link> verlässt, falls ja wird der Timer gestoppt und der Spieler nimmt keinen Schaden mehr. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_spike_1a1ef0f806f713e9d58eb5ef768e5a582e">OnTimerTimeout</link> ()</para>
+
+<para>Timer Timeout Methode, die den Schaden an den Spieler übergibt. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Private Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_player">Player</link> <link linkend="_class_spike_1a85d64c8d9c90fef419893853ae7e9942">Player</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_class_spike_1aa6e0e6494eb6bf74afaa7becf33cefe3">Damage</link> = 10f</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Klasse für die Spikes. </para>
+<para>
+Definition at line <link linkend="__spike_8cs_source_1l00007">7</link> of file <link linkend="__spike_8cs_source">Spike.cs</link>.</para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_spike_1a527675080d8e2e4ee4310fb3e112a120"/><section>
+    <title>_Ready()</title>
+<indexterm><primary>_Ready</primary><secondary>Spike</secondary></indexterm>
+<indexterm><primary>Spike</primary><secondary>_Ready</secondary></indexterm>
+<para><computeroutput>override void Spike._Ready ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Initialisierung der Node <link linkend="_class_player">Player</link>. </para>
+</para>
+
+<para>Hier wird der <link linkend="_class_player">Player</link> Node gefunden </para>
+<para>
+Definition at line <link linkend="__spike_8cs_source_1l00020">20</link> of file <link linkend="__spike_8cs_source">Spike.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00021 &#32;&#32;&#32;&#32;{
+00022 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Zugriff&#32;auf&#32;Player&#32;Node</emphasis>
+00023 
+00024 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player">Player</link>&#32;=&#32;GetNode&lt;Player&gt;(<emphasis role="stringliteral">&quot;../../Player&quot;</emphasis>);
+00025 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_spike_1a089076328dd0c52b0c595f9ee9c98c33"/><section>
+    <title>GetDamage()</title>
+<indexterm><primary>GetDamage</primary><secondary>Spike</secondary></indexterm>
+<indexterm><primary>Spike</primary><secondary>GetDamage</secondary></indexterm>
+<para><computeroutput><link linkend="_class_damage">Damage</link> Spike.GetDamage ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Gibt ein <link linkend="_class_damage">Damage</link> Objekt zurück. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para><link linkend="_class_damage">Damage</link> Objekt </para>
+</formalpara>
+</para>
+<para>
+Definition at line <link linkend="__spike_8cs_source_1l00071">71</link> of file <link linkend="__spike_8cs_source">Spike.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00072 &#32;&#32;&#32;&#32;{
+00073 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">new</emphasis>&#32;<link linkend="_class_spike_1aa6e0e6494eb6bf74afaa7becf33cefe3">Damage</link>(0,&#32;<link linkend="_class_damage">Damage</link>,&#32;Vector2.Zero,&#32;<emphasis role="keyword">this</emphasis>);
+00074 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_spike_1ad359ec07f383c62c2683c1c307941f74"/><section>
+    <title>OnPlayerBodyEntered()</title>
+<indexterm><primary>OnPlayerBodyEntered</primary><secondary>Spike</secondary></indexterm>
+<indexterm><primary>Spike</primary><secondary>OnPlayerBodyEntered</secondary></indexterm>
+<para><computeroutput>void Spike.OnPlayerBodyEntered (Node body)<computeroutput>[inline]</computeroutput>, <computeroutput>[private]</computeroutput></computeroutput></para><para>
+
+<para>Prüfen ob der Körper den <link linkend="_class_spike">Spike</link> betritt falls ja wird der Timer gestartet und der Spieler nimmt Schaden. </para>
+</para>
+<para>
+Definition at line <link linkend="__spike_8cs_source_1l00030">30</link> of file <link linkend="__spike_8cs_source">Spike.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00031 &#32;&#32;&#32;&#32;{
+00032 
+00033 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(body&#32;is&#32;<link linkend="_class_player">Player</link>)
+00034 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00035 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player">Player</link>&#32;=&#32;(<link linkend="_class_spike_1a85d64c8d9c90fef419893853ae7e9942">Player</link>)body;&#32;<emphasis role="comment">//&#32;Instanzvariable&#32;setzen&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;</emphasis>
+00036 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player">Player</link>.<link linkend="_class_player_1aa1a0addae97cec09d2e86f3060a05438">TakeDamage</link>(<link linkend="_class_spike_1a089076328dd0c52b0c595f9ee9c98c33">GetDamage</link>());
+00037 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player">Player</link>.<link linkend="_class_player_1a0a59dfe03d542fa98f28f4c4eaa49a75">SlowPlayer</link>(0.5f);
+00038 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;GetNode&lt;Timer&gt;(<emphasis role="stringliteral">&quot;StaticBody2D/Area2D/Timer&quot;</emphasis>).Start();
+00039 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;GD.Print(<emphasis role="stringliteral">&quot;Player&#32;entered&#32;spike&quot;</emphasis>);
+00040 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00041 
+00042 
+00043 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_spike_1ac7ee6575608e186c3d00d17331dfc97e"/><section>
+    <title>OnPlayerBodyExited()</title>
+<indexterm><primary>OnPlayerBodyExited</primary><secondary>Spike</secondary></indexterm>
+<indexterm><primary>Spike</primary><secondary>OnPlayerBodyExited</secondary></indexterm>
+<para><computeroutput>void Spike.OnPlayerBodyExited (Node body)<computeroutput>[inline]</computeroutput>, <computeroutput>[private]</computeroutput></computeroutput></para><para>
+
+<para>Prüfen ob der Körper den <link linkend="_class_spike">Spike</link> verlässt, falls ja wird der Timer gestoppt und der Spieler nimmt keinen Schaden mehr. </para>
+</para>
+<para>
+Definition at line <link linkend="__spike_8cs_source_1l00048">48</link> of file <link linkend="__spike_8cs_source">Spike.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00049 &#32;&#32;&#32;&#32;{
+00050 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(body&#32;is&#32;<link linkend="_class_player">Player</link>)
+00051 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00052 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player">Player</link>&#32;=&#32;<emphasis role="keyword">null</emphasis>;&#32;<emphasis role="comment">//&#32;Instanzvariable&#32;zurücksetzen</emphasis>
+00053 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;GetNode&lt;Timer&gt;(<emphasis role="stringliteral">&quot;StaticBody2D/Area2D/Timer&quot;</emphasis>).Stop();
+00054 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00055 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_spike_1a1ef0f806f713e9d58eb5ef768e5a582e"/><section>
+    <title>OnTimerTimeout()</title>
+<indexterm><primary>OnTimerTimeout</primary><secondary>Spike</secondary></indexterm>
+<indexterm><primary>Spike</primary><secondary>OnTimerTimeout</secondary></indexterm>
+<para><computeroutput>void Spike.OnTimerTimeout ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[private]</computeroutput></computeroutput></para><para>
+
+<para>Timer Timeout Methode, die den Schaden an den Spieler übergibt. </para>
+</para>
+<para>
+Definition at line <link linkend="__spike_8cs_source_1l00060">60</link> of file <link linkend="__spike_8cs_source">Spike.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00061 &#32;&#32;&#32;&#32;{
+00062 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;GD.Print(<emphasis role="stringliteral">&quot;Timer&#32;timeout&quot;</emphasis>);
+00063 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player">Player</link>.<link linkend="_class_player_1aa1a0addae97cec09d2e86f3060a05438">TakeDamage</link>(<link linkend="_class_spike_1a089076328dd0c52b0c595f9ee9c98c33">GetDamage</link>());
+00064 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;GetNode&lt;Timer&gt;(<emphasis role="stringliteral">&quot;StaticBody2D/Area2D/Timer&quot;</emphasis>).Start();
+00065 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_class_spike_1aa6e0e6494eb6bf74afaa7becf33cefe3"/><section>
+    <title>Damage</title>
+<indexterm><primary>Damage</primary><secondary>Spike</secondary></indexterm>
+<indexterm><primary>Spike</primary><secondary>Damage</secondary></indexterm>
+<para><computeroutput>float Spike.Damage = 10f<computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__spike_8cs_source_1l00014">14</link> of file <link linkend="__spike_8cs_source">Spike.cs</link>.</para>
+</section>
+<anchor xml:id="_class_spike_1a85d64c8d9c90fef419893853ae7e9942"/><section>
+    <title>Player</title>
+<indexterm><primary>Player</primary><secondary>Spike</secondary></indexterm>
+<indexterm><primary>Spike</primary><secondary>Player</secondary></indexterm>
+<para><computeroutput><link linkend="_class_player">Player</link> Spike.Player<computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__spike_8cs_source_1l00010">10</link> of file <link linkend="__spike_8cs_source">Spike.cs</link>.</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+<link linkend="__spike_8cs">Spike.cs</link></section>
+</section>

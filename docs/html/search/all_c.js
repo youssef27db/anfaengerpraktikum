@@ -8,6 +8,5 @@ var searchData=
   ['maxheal_5',['MaxHeal',['../class_player.html#a750d1c5325522c39d232332349e4d2d2',1,'Player']]],
   ['maxhealthpoints_6',['MaxHealthPoints',['../class_base_enemy.html#aeb1033802e3cdf44b1b0a510cbf18425',1,'BaseEnemy.MaxHealthPoints'],['../class_player_stats.html#a335bea0dc78273f4cc46a01a7d699dcd',1,'PlayerStats.MaxHealthPoints']]],
   ['maxstamina_7',['MaxStamina',['../class_base_enemy.html#a4f99809bf5de1dbbe762c13fc7db8881',1,'BaseEnemy.MaxStamina'],['../class_player_stats.html#a3ec6c1ddfeddebf52f76200216a015b5',1,'PlayerStats.MaxStamina']]],
-  ['menustate_8',['MenuState',['../class_main_menu.html#a84cbb258f20bcd2424cba1ad150e03c1',1,'MainMenu']]],
-  ['methodresult_2ecs_9',['MethodResult.cs',['../_method_result_8cs.html',1,'']]]
+  ['menustate_8',['MenuState',['../class_main_menu.html#a84cbb258f20bcd2424cba1ad150e03c1',1,'MainMenu']]]
 ];

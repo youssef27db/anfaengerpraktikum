@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__damage_8cs" xml:lang="en-US">
+<title>Damage.cs File Reference</title>
+<indexterm><primary>Damage.cs</primary></indexterm>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_class_damage">Damage</link></para>
+
+<para>Repräsentiert den Schaden, der von Charakteren oder Gegnern verursacht wird. Beinhaltet physischen Schaden, wahren Schaden und den Rückstoßeffekt. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

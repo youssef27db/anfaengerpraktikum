@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__navigation_manager_8cs" xml:lang="en-US">
+<title>NavigationManager.cs File Reference</title>
+<indexterm><primary>NavigationManager.cs</primary></indexterm>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_class_navigation_manager">NavigationManager</link></para>
+
+<para>Der <link linkend="_class_navigation_manager">NavigationManager</link> ist für das Laden von Leveln und das Spawnen des Spielers verantwortlich. Der <link linkend="_class_navigation_manager">NavigationManager</link> ist ein Singleton, der in der Haupt-Szene platziert wird und von anderen Skripten verwendet wird, um Level zu laden und den Spieler zu spawnen. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

@@ -1,0 +1,1117 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_base_enemy" xml:lang="en-US">
+<title>BaseEnemy Class Reference</title>
+<indexterm><primary>BaseEnemy</primary></indexterm>
+<para>
+
+<para>Klasse für einen einfachen Gegner. </para>
+ 
+</para>
+<para>Inheritance diagram for BaseEnemy:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_base_enemy.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>override void <link linkend="_class_base_enemy_1a39d037e06e1fcb609e5108431e931acd">_Ready</link> ()</para>
+
+<para>Initialisierung der Referenzen. Findet die relevanten Knoten in der Szene und weist sie zu. </para>
+</listitem>
+            <listitem><para>override void <link linkend="_class_base_enemy_1acf42e9e6b9a386259f5dd74a83c09fac">_Process</link> (double DeltaTime)</para>
+
+<para>Physikalische Prozesse werden in jedem Frame ausgeführt. Berechnet Gravitation und Bewegung. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_base_enemy_1ad1a2b4f2e07d55eab26d4d8e1d9aa713">OnDetectionBodyEntered</link> (Node2D body)</para>
+
+<para>Detektiert den Spieler wenn er den Erkennungsbereich betritt. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_base_enemy_1a269f9f3626f17368f404ca27616d0697">OnPursuingRadiusBodyExited</link> (Node2D body)</para>
+
+<para>Detektiert wenn der Spieler den Verfolgungsbereich verlässt. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_base_enemy_1a6aad96826441fe152694139d29893bad">OnHitboxAreaEntered</link> (Area2D area)</para>
+
+<para>Detektiert wenn ein Objekt die Hitbox des Gegners betritt. (z.B.: Schwert des Spielers) </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_base_enemy_1ab07fb117d5286ef97dc702149c02b14a">OnSwordHitBoxBodyEntered</link> (Node2D body)</para>
+
+<para>Detektiert ob der Spieler in Schlagreichweite ist. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_base_enemy_1a284a995d12d6bc1d7a23d1f6f25a96af">TakeDamage</link> (<link linkend="_class_damage">Damage</link> DMG)</para>
+
+<para>Verarbeitet zugefügten Schaden. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_class_base_enemy_1a27c3947769522b35b537e5f472ef0b77">IsDead</link> ()</para>
+
+<para>Gibt boolean Dead zurück. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_base_enemy_1aa5e7d87eaa080ed685315588a39a9f1f">Die</link> ()</para>
+
+<para>Wird aufgerufen wenn der Gegner stirbt. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_base_enemy_1a9ef92c3f73170538681e665e78e2279a">Respawn</link> ()</para>
+
+<para>Wird aufgerufen wenn der Gegner respawnt. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>bool <link linkend="_class_base_enemy_1a61314ff2e5931900ca4a87aa8feb670f">Dead</link> = false</para>
+</listitem>
+            <listitem><para>float <link linkend="_class_base_enemy_1a66b9b6f8492753769f40e18e66babe6d">Armor</link> = 20f</para>
+</listitem>
+            <listitem><para>float <link linkend="_class_base_enemy_1ad8681385a9f3e9e67d65acb6b945efcf">CurrentHealthPoints</link></para>
+</listitem>
+            <listitem><para>double <link linkend="_class_base_enemy_1a283d342796ff720966538c0776fc9e48">ReturnToStart</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_class_base_enemy_1a512fca9892d7e4cd717adf9087dcc295">Pursuing</link> = false</para>
+</listitem>
+            <listitem><para>Vector2 <link linkend="_class_base_enemy_1a2b05c8247dab9946e801fd74a8af6376">TargetPosition</link> = Vector2.Inf</para>
+</listitem>
+            <listitem><para>Vector2 <link linkend="_class_base_enemy_1af386b85762b6790503bf1716a9d2fd77">StartPosition</link></para>
+</listitem>
+            <listitem><para>AnimatedSprite2D <link linkend="_class_base_enemy_1a2e4bd99e594a6c3366f64ab47c7443b5">Sprite</link></para>
+</listitem>
+            <listitem><para>CollisionShape2D <link linkend="_class_base_enemy_1a9b71f0d7b10ec2b15f5176b8b69ce190">MainCollision</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Protected Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>virtual void <link linkend="_class_base_enemy_1a52b8c24a84bfa2e981d776f816f33186">UpdateAnimation</link> ()</para>
+
+<para>Aktualisiert die Animationen des Gegners. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Protected Attributes    </title>
+        <itemizedlist>
+            <listitem><para>float <link linkend="_class_base_enemy_1a1661cfbf7e6dff6a1d8a6fa44b10a3b0">Damage</link> = 20f</para>
+</listitem>
+            <listitem><para>bool <link linkend="_class_base_enemy_1a3d261e81ba7422572d0813341016c2c3">Respawnable</link> = true</para>
+</listitem>
+            <listitem><para>float <link linkend="_class_base_enemy_1aeb1033802e3cdf44b1b0a510cbf18425">MaxHealthPoints</link> = 100f</para>
+</listitem>
+            <listitem><para>float <link linkend="_class_base_enemy_1a4f99809bf5de1dbbe762c13fc7db8881">MaxStamina</link> = 1f</para>
+</listitem>
+            <listitem><para>float <link linkend="_class_base_enemy_1a661de31833c943c7d7d72de616a9141a">Speed</link> = 10</para>
+</listitem>
+            <listitem><para>int <link linkend="_class_base_enemy_1afa7426d08cbee4ed3184822c57888ec7">SinAmount</link> = 10</para>
+</listitem>
+            <listitem><para>double <link linkend="_class_base_enemy_1aba59e1a3fffbf2749c266d8caaf1c482">ReturnToStartAfter</link> = 5</para>
+</listitem>
+            <listitem><para>float <link linkend="_class_base_enemy_1a8a041329b7418ab3fb1b92aa0674eaa8">CurrentStamina</link></para>
+</listitem>
+            <listitem><para>Node2D <link linkend="_class_base_enemy_1aaeef5b40160a59096f667fd084b73cc8">CurrentTarget</link> = null</para>
+</listitem>
+            <listitem><para>bool <link linkend="_class_base_enemy_1ad2523c398e4a11b5f36a9df26c4014eb">StartRotation</link> = false</para>
+</listitem>
+            <listitem><para>bool <link linkend="_class_base_enemy_1a47e5e613c39180e6b1bf9899039b45fc">AlreadyHit</link> = false</para>
+</listitem>
+            <listitem><para>CollisionPolygon2D <link linkend="_class_base_enemy_1ada18d6dd378a0f7380579ce63a6b4ec2">CollisionPolygon</link></para>
+</listitem>
+            <listitem><para>Area2D <link linkend="_class_base_enemy_1a9d136e8abbf09f7b418112394bdf1c88">SwordHitbox</link></para>
+</listitem>
+            <listitem><para>RayCast2D <link linkend="_class_base_enemy_1a136d1835e3ccedebaa12d7fe151d890b">FrontCollisionRayCast</link></para>
+</listitem>
+            <listitem><para>RayCast2D <link linkend="_class_base_enemy_1a586349c436eb91c16f5f2f4bee17caa1">LineOfSight</link></para>
+</listitem>
+            <listitem><para>RayCast2D <link linkend="_class_base_enemy_1a4b844f94d42f547d733385fcefc5473a">LeftFallProtection</link></para>
+</listitem>
+            <listitem><para>RayCast2D <link linkend="_class_base_enemy_1a250a47e4f491f15dc19e64816bef01d7">RightFallProtection</link></para>
+</listitem>
+            <listitem><para>TextureProgressBar <link linkend="_class_base_enemy_1a5944a26db58d24ee828a2d8e83687e93">HealthBar</link></para>
+</listitem>
+            <listitem><para><link linkend="_class_player">Player</link> <link linkend="_class_base_enemy_1a968a793842be49b5cf65fa35deb9ae5c">Player</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Properties    </title>
+        <itemizedlist>
+            <listitem><para>uint <link linkend="_class_base_enemy_1a7a4fe2c824142f79ba0dd6cf9d1a7d25">Id</link> = 0<computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Private Types    </title>
+        <itemizedlist>
+            <listitem><para>enum <link linkend="_class_base_enemy_1ac529914117dfe8158325b43be1f1c6dd">State</link> { <link linkend="_class_base_enemy_1ac529914117dfe8158325b43be1f1c6ddaa5daf7f2ebbba4975d61dab1c40188c7">IDLE</link>
+, <link linkend="_class_base_enemy_1ac529914117dfe8158325b43be1f1c6ddabb2dfc184fa2e91373d3ff304cb01b8a">WALK</link>
+, <link linkend="_class_base_enemy_1ac529914117dfe8158325b43be1f1c6ddac6ddd0f72ff2fd344693b9ca8d483871">ATTACK</link>
+, <link linkend="_class_base_enemy_1ac529914117dfe8158325b43be1f1c6dda905cdcadf3bb9a92f3ae1a6583a1c439">TAKE_HIT</link>
+ }</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Private Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_class_base_enemy_1aee39d90b4efaebada5ab47b21184516a">HandleMovement</link> (double DeltaTime)</para>
+
+<para>Verarbeitet die Bewegung des Gegners. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_base_enemy_1a0a7f33bd3971e202eee9d43e63180500">CheckPlayerHit</link> ()</para>
+
+<para>Überprüft ob der Spieler sich, während eines Angriffes in Reichweite befindet und fügt diesem dann gegebenenfalls Schaden zu. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_class_base_enemy_1a59a907194c4c712b41719a6fc12c1583">CheckLineOfSight</link> (Node2D body)</para>
+
+<para>Überprüft die direkte Sichtlinie zu einem Objekt. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_base_enemy_1aa9ade96897c57dfc0b6b69e7d0996076">FlipRotation</link> ()</para>
+
+<para>Spiegelt die Orientierung aller zu dem Gegner gehörender Nodes. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_base_enemy_1aebc2a569b2f2f3d35870e9aabb943069">SetRotation</link> (bool Rotation)</para>
+
+<para>Setzt Orientierung aller zu dem Gegner gehörender Nodes. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_class_base_enemy_1abf57b8dbd0f267fd42a2a02b7bda95dc">IsCloseTo</link> (float Value1, float Value2, float Delta)</para>
+
+<para>Überprüft, ob zwei Werte in einer Delta-Umgebung zueinander liegen. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Private Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_base_enemy_1ac529914117dfe8158325b43be1f1c6dd">State</link> <link linkend="_class_base_enemy_1a47be49c6e16a1f99ee1ed68549b31d05">AnimationState</link> = <link linkend="_class_base_enemy_1ac529914117dfe8158325b43be1f1c6ddaa5daf7f2ebbba4975d61dab1c40188c7">State.IDLE</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Klasse für einen einfachen Gegner. </para>
+<para>
+Definition at line <link linkend="__base_enemy_8cs_source_1l00007">7</link> of file <link linkend="__base_enemy_8cs_source">BaseEnemy.cs</link>.</para>
+</section>
+<section>
+<title>Member Enumeration Documentation</title>
+<anchor xml:id="_class_base_enemy_1ac529914117dfe8158325b43be1f1c6dd"/><section>
+    <title>State</title>
+<indexterm><primary>State</primary><secondary>BaseEnemy</secondary></indexterm>
+<indexterm><primary>BaseEnemy</primary><secondary>State</secondary></indexterm>
+<para><computeroutput>enum <link linkend="_class_base_enemy_1ac529914117dfe8158325b43be1f1c6dd">BaseEnemy.State</link><computeroutput>[private]</computeroutput></computeroutput></para><informaltable frame="all">
+<title>Enumerator</title>
+    <tgroup cols="2" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+<tbody>
+<row><entry><indexterm><primary>IDLE</primary><secondary>BaseEnemy</secondary></indexterm>
+<indexterm><primary>BaseEnemy</primary><secondary>IDLE</secondary></indexterm>
+<anchor xml:id="_class_base_enemy_1ac529914117dfe8158325b43be1f1c6ddaa5daf7f2ebbba4975d61dab1c40188c7"/>IDLE</entry><entry></entry></row><row><entry><indexterm><primary>WALK</primary><secondary>BaseEnemy</secondary></indexterm>
+<indexterm><primary>BaseEnemy</primary><secondary>WALK</secondary></indexterm>
+<anchor xml:id="_class_base_enemy_1ac529914117dfe8158325b43be1f1c6ddabb2dfc184fa2e91373d3ff304cb01b8a"/>WALK</entry><entry></entry></row><row><entry><indexterm><primary>ATTACK</primary><secondary>BaseEnemy</secondary></indexterm>
+<indexterm><primary>BaseEnemy</primary><secondary>ATTACK</secondary></indexterm>
+<anchor xml:id="_class_base_enemy_1ac529914117dfe8158325b43be1f1c6ddac6ddd0f72ff2fd344693b9ca8d483871"/>ATTACK</entry><entry></entry></row><row><entry><indexterm><primary>TAKE_HIT</primary><secondary>BaseEnemy</secondary></indexterm>
+<indexterm><primary>BaseEnemy</primary><secondary>TAKE_HIT</secondary></indexterm>
+<anchor xml:id="_class_base_enemy_1ac529914117dfe8158325b43be1f1c6dda905cdcadf3bb9a92f3ae1a6583a1c439"/>TAKE_HIT</entry><entry></entry></row>    </tbody>
+    </tgroup>
+</informaltable>
+<para>
+Definition at line <link linkend="__base_enemy_8cs_source_1l00010">10</link> of file <link linkend="__base_enemy_8cs_source">BaseEnemy.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00010 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00011 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_base_enemy_1ac529914117dfe8158325b43be1f1c6ddaa5daf7f2ebbba4975d61dab1c40188c7">IDLE</link>,&#32;<link linkend="_class_base_enemy_1ac529914117dfe8158325b43be1f1c6ddabb2dfc184fa2e91373d3ff304cb01b8a">WALK</link>,&#32;<link linkend="_class_base_enemy_1ac529914117dfe8158325b43be1f1c6ddac6ddd0f72ff2fd344693b9ca8d483871">ATTACK</link>,&#32;<link linkend="_class_base_enemy_1ac529914117dfe8158325b43be1f1c6dda905cdcadf3bb9a92f3ae1a6583a1c439">TAKE_HIT</link>
+00012 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_base_enemy_1acf42e9e6b9a386259f5dd74a83c09fac"/><section>
+    <title>_Process()</title>
+<indexterm><primary>_Process</primary><secondary>BaseEnemy</secondary></indexterm>
+<indexterm><primary>BaseEnemy</primary><secondary>_Process</secondary></indexterm>
+<para><computeroutput>override void BaseEnemy._Process (double DeltaTime)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Physikalische Prozesse werden in jedem Frame ausgeführt. Berechnet Gravitation und Bewegung. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>DeltaTime</entry><entry>
+<para>Zeit seit dem letzten Frame. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line <link linkend="__base_enemy_8cs_source_1l00091">91</link> of file <link linkend="__base_enemy_8cs_source">BaseEnemy.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00092 &#32;&#32;&#32;&#32;{
+00093 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_base_enemy_1aee39d90b4efaebada5ab47b21184516a">HandleMovement</link>(DeltaTime);
+00094 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(<link linkend="_class_base_enemy_1a8a041329b7418ab3fb1b92aa0674eaa8">CurrentStamina</link>&#32;&lt;&#32;<link linkend="_class_base_enemy_1a4f99809bf5de1dbbe762c13fc7db8881">MaxStamina</link>){
+00095 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_base_enemy_1a8a041329b7418ab3fb1b92aa0674eaa8">CurrentStamina</link>&#32;+=&#32;(float)&#32;DeltaTime;
+00096 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Velocity&#32;=&#32;Velocity&#32;*&#32;0.8f;
+00097 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00098 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(!IsOnFloor()&#32;&amp;&amp;&#32;!<link linkend="_class_base_enemy_1a61314ff2e5931900ca4a87aa8feb670f">Dead</link>)&#32;{
+00099 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Velocity&#32;+=&#32;GetGravity()&#32;*&#32;(float)DeltaTime;
+00100 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00101 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_base_enemy_1a52b8c24a84bfa2e981d776f816f33186">UpdateAnimation</link>();
+00102 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;MoveAndSlide();
+00103 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_base_enemy_1a0a7f33bd3971e202eee9d43e63180500">CheckPlayerHit</link>();
+00104 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_base_enemy_1a39d037e06e1fcb609e5108431e931acd"/><section>
+    <title>_Ready()</title>
+<indexterm><primary>_Ready</primary><secondary>BaseEnemy</secondary></indexterm>
+<indexterm><primary>BaseEnemy</primary><secondary>_Ready</secondary></indexterm>
+<para><computeroutput>override void BaseEnemy._Ready ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Initialisierung der Referenzen. Findet die relevanten Knoten in der Szene und weist sie zu. </para>
+</para>
+<para>
+Definition at line <link linkend="__base_enemy_8cs_source_1l00064">64</link> of file <link linkend="__base_enemy_8cs_source">BaseEnemy.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00065 &#32;&#32;&#32;&#32;{
+00066 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_base_enemy_1a2e4bd99e594a6c3366f64ab47c7443b5">Sprite</link>&#32;=&#32;GetNode&lt;AnimatedSprite2D&gt;(<emphasis role="stringliteral">&quot;AnimatedSprite2D&quot;</emphasis>);
+00067 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_base_enemy_1ada18d6dd378a0f7380579ce63a6b4ec2">CollisionPolygon</link>&#32;=&#32;GetNode&lt;CollisionPolygon2D&gt;(<emphasis role="stringliteral">&quot;detection/CollisionPolygon2D&quot;</emphasis>);
+00068 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_base_enemy_1a9d136e8abbf09f7b418112394bdf1c88">SwordHitbox</link>&#32;=&#32;GetNode&lt;Area2D&gt;(<emphasis role="stringliteral">&quot;AnimatedSprite2D/SwordHitBox&quot;</emphasis>);
+00069 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_base_enemy_1a9b71f0d7b10ec2b15f5176b8b69ce190">MainCollision</link>&#32;=&#32;GetNode&lt;CollisionShape2D&gt;(<emphasis role="stringliteral">&quot;MainCollision&quot;</emphasis>);
+00070 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_base_enemy_1a136d1835e3ccedebaa12d7fe151d890b">FrontCollisionRayCast</link>&#32;=&#32;GetNode&lt;RayCast2D&gt;(<emphasis role="stringliteral">&quot;FrontCollisionRayCast&quot;</emphasis>);
+00071 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_base_enemy_1a586349c436eb91c16f5f2f4bee17caa1">LineOfSight</link>&#32;=&#32;GetNode&lt;RayCast2D&gt;(<emphasis role="stringliteral">&quot;LineOfSight&quot;</emphasis>);
+00072 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_base_enemy_1a4b844f94d42f547d733385fcefc5473a">LeftFallProtection</link>&#32;=&#32;GetNode&lt;RayCast2D&gt;(<emphasis role="stringliteral">&quot;LeftFallProtection&quot;</emphasis>);
+00073 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_base_enemy_1a250a47e4f491f15dc19e64816bef01d7">RightFallProtection</link>&#32;=&#32;GetNode&lt;RayCast2D&gt;(<emphasis role="stringliteral">&quot;RightFallProtection&quot;</emphasis>);
+00074 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_health_bar">HealthBar</link>&#32;=&#32;GetNode&lt;TextureProgressBar&gt;(<emphasis role="stringliteral">&quot;HealthBar&quot;</emphasis>);
+00075 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player">Player</link>&#32;=&#32;GetNode&lt;Player&gt;(<emphasis role="stringliteral">&quot;../../Player&quot;</emphasis>);
+00076 
+00077 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_base_enemy_1ad8681385a9f3e9e67d65acb6b945efcf">CurrentHealthPoints</link>&#32;=&#32;<link linkend="_class_base_enemy_1aeb1033802e3cdf44b1b0a510cbf18425">MaxHealthPoints</link>;
+00078 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_base_enemy_1a8a041329b7418ab3fb1b92aa0674eaa8">CurrentStamina</link>&#32;=&#32;<link linkend="_class_base_enemy_1a4f99809bf5de1dbbe762c13fc7db8881">MaxStamina</link>;
+00079 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_base_enemy_1a283d342796ff720966538c0776fc9e48">ReturnToStart</link>&#32;=&#32;<link linkend="_class_base_enemy_1aba59e1a3fffbf2749c266d8caaf1c482">ReturnToStartAfter</link>;
+00080 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_base_enemy_1af386b85762b6790503bf1716a9d2fd77">StartPosition</link>&#32;=&#32;Position;
+00081 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_base_enemy_1ad2523c398e4a11b5f36a9df26c4014eb">StartRotation</link>&#32;=&#32;<link linkend="_class_base_enemy_1a2e4bd99e594a6c3366f64ab47c7443b5">Sprite</link>.FlipH;
+00082 
+00083 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;HealthBar.Value&#32;=&#32;100f*&#32;<link linkend="_class_base_enemy_1ad8681385a9f3e9e67d65acb6b945efcf">CurrentHealthPoints</link>/<link linkend="_class_base_enemy_1aeb1033802e3cdf44b1b0a510cbf18425">MaxHealthPoints</link>;
+00084 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_base_enemy_1a59a907194c4c712b41719a6fc12c1583"/><section>
+    <title>CheckLineOfSight()</title>
+<indexterm><primary>CheckLineOfSight</primary><secondary>BaseEnemy</secondary></indexterm>
+<indexterm><primary>BaseEnemy</primary><secondary>CheckLineOfSight</secondary></indexterm>
+<para><computeroutput>bool BaseEnemy.CheckLineOfSight (Node2D body)<computeroutput>[inline]</computeroutput>, <computeroutput>[private]</computeroutput></computeroutput></para><para>
+
+<para>Überprüft die direkte Sichtlinie zu einem Objekt. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>body</entry><entry>
+<para>Objekt das überprüft werden soll. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>bool Ergebnis der Abfrage. </para>
+</formalpara>
+</para>
+<para>
+Definition at line <link linkend="__base_enemy_8cs_source_1l00336">336</link> of file <link linkend="__base_enemy_8cs_source">BaseEnemy.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00336 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00337 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Vector2&#32;offset&#32;=&#32;Vector2.Zero;
+00338 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;offset.Y&#32;=&#32;-14;
+00339 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;LineOfSight.TargetPosition&#32;=&#32;body.Position&#32;+&#32;offset&#32;-&#32;(Position&#32;+&#32;<link linkend="_class_base_enemy_1a586349c436eb91c16f5f2f4bee17caa1">LineOfSight</link>.Position);
+00340 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(<link linkend="_class_base_enemy_1a586349c436eb91c16f5f2f4bee17caa1">LineOfSight</link>.IsColliding()){
+00341 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_class_base_enemy_1a586349c436eb91c16f5f2f4bee17caa1">LineOfSight</link>.GetCollider()&#32;==&#32;body;
+00342 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00343 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">true</emphasis>;
+00344 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_base_enemy_1a0a7f33bd3971e202eee9d43e63180500"/><section>
+    <title>CheckPlayerHit()</title>
+<indexterm><primary>CheckPlayerHit</primary><secondary>BaseEnemy</secondary></indexterm>
+<indexterm><primary>BaseEnemy</primary><secondary>CheckPlayerHit</secondary></indexterm>
+<para><computeroutput>void BaseEnemy.CheckPlayerHit ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[private]</computeroutput></computeroutput></para><para>
+
+<para>Überprüft ob der Spieler sich, während eines Angriffes in Reichweite befindet und fügt diesem dann gegebenenfalls Schaden zu. </para>
+</para>
+<para>
+Definition at line <link linkend="__base_enemy_8cs_source_1l00274">274</link> of file <link linkend="__base_enemy_8cs_source">BaseEnemy.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00274 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00275 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(<link linkend="_class_base_enemy_1a61314ff2e5931900ca4a87aa8feb670f">Dead</link>)&#32;<emphasis role="keywordflow">return</emphasis>;
+00276 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(<link linkend="_class_base_enemy_1a2e4bd99e594a6c3366f64ab47c7443b5">Sprite</link>.Animation&#32;!=&#32;<emphasis role="stringliteral">&quot;attack&quot;</emphasis>){
+00277 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_base_enemy_1a47e5e613c39180e6b1bf9899039b45fc">AlreadyHit</link>&#32;=&#32;<emphasis role="keyword">false</emphasis>;
+00278 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(<link linkend="_class_base_enemy_1a2e4bd99e594a6c3366f64ab47c7443b5">Sprite</link>.Animation&#32;==&#32;<emphasis role="stringliteral">&quot;take_hit&quot;</emphasis>&#32;||&#32;<link linkend="_class_base_enemy_1a8a041329b7418ab3fb1b92aa0674eaa8">CurrentStamina</link>&#32;&lt;&#32;<link linkend="_class_base_enemy_1a4f99809bf5de1dbbe762c13fc7db8881">MaxStamina</link>)&#32;<emphasis role="keywordflow">return</emphasis>;
+00279 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Godot.Collections.Array&lt;Node2D&gt;&#32;Bodies&#32;=&#32;<link linkend="_class_base_enemy_1a9d136e8abbf09f7b418112394bdf1c88">SwordHitbox</link>.GetOverlappingBodies();
+00280 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">foreach</emphasis>(Node2D&#32;Body&#32;<emphasis role="keywordflow">in</emphasis>&#32;Bodies){
+00281 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(Body&#32;==&#32;<link linkend="_class_player">Player</link>){
+00282 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_base_enemy_1a2e4bd99e594a6c3366f64ab47c7443b5">Sprite</link>.Play(<emphasis role="stringliteral">&quot;attack&quot;</emphasis>);
+00283 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00284 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00285 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>;
+00286 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00287 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(<link linkend="_class_base_enemy_1a47e5e613c39180e6b1bf9899039b45fc">AlreadyHit</link>)&#32;<emphasis role="keywordflow">return</emphasis>;
+00288 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(<link linkend="_class_base_enemy_1a2e4bd99e594a6c3366f64ab47c7443b5">Sprite</link>.Frame&#32;&gt;=&#32;6){
+00289 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_base_enemy_1a8a041329b7418ab3fb1b92aa0674eaa8">CurrentStamina</link>&#32;=&#32;0;
+00290 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Godot.Collections.Array&lt;Node2D&gt;&#32;Bodies&#32;=&#32;<link linkend="_class_base_enemy_1a9d136e8abbf09f7b418112394bdf1c88">SwordHitbox</link>.GetOverlappingBodies();
+00291 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">foreach</emphasis>(Node2D&#32;Body&#32;<emphasis role="keywordflow">in</emphasis>&#32;Bodies){
+00292 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(Body&#32;==&#32;<link linkend="_class_player">Player</link>){
+00293 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player">Player</link>.<link linkend="_class_player_1aa1a0addae97cec09d2e86f3060a05438">TakeDamage</link>(<emphasis role="keyword">new</emphasis>&#32;<link linkend="_class_base_enemy_1a1661cfbf7e6dff6a1d8a6fa44b10a3b0">Damage</link>(<link linkend="_class_damage">Damage</link>,&#32;0f,&#32;Vector2.Zero,&#32;<emphasis role="keyword">this</emphasis>));
+00294 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_base_enemy_1a47e5e613c39180e6b1bf9899039b45fc">AlreadyHit</link>&#32;=&#32;<emphasis role="keyword">true</emphasis>;
+00295 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">break</emphasis>;
+00296 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00297 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00298 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00299 
+00300 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_base_enemy_1aa5e7d87eaa080ed685315588a39a9f1f"/><section>
+    <title>Die()</title>
+<indexterm><primary>Die</primary><secondary>BaseEnemy</secondary></indexterm>
+<indexterm><primary>BaseEnemy</primary><secondary>Die</secondary></indexterm>
+<para><computeroutput>void BaseEnemy.Die ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Wird aufgerufen wenn der Gegner stirbt. </para>
+</para>
+<para>
+Definition at line <link linkend="__base_enemy_8cs_source_1l00305">305</link> of file <link linkend="__base_enemy_8cs_source">BaseEnemy.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00305 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00306 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_base_enemy_1a61314ff2e5931900ca4a87aa8feb670f">Dead</link>&#32;=&#32;<emphasis role="keyword">true</emphasis>;
+00307 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Velocity&#32;=&#32;Vector2.Zero;
+00308 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_base_enemy_1a9b71f0d7b10ec2b15f5176b8b69ce190">MainCollision</link>.SetDeferred(CollisionShape2D.PropertyName.Disabled,&#32;<emphasis role="keyword">true</emphasis>);
+00309 
+00310 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_base_enemy_1a2e4bd99e594a6c3366f64ab47c7443b5">Sprite</link>.Play(<emphasis role="stringliteral">&quot;death&quot;</emphasis>);
+00311 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_health_bar">HealthBar</link>.SetVisible(<emphasis role="keyword">false</emphasis>);
+00312 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="_class_player">Player</link>&#32;!=&#32;<emphasis role="keyword">null</emphasis>)&#32;{
+00313 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player">Player</link>.<link linkend="_class_player_1aa718b6dab81ebd60b8b910ad8c7adff6">SetSinAmount</link>(<link linkend="_class_player_stats">PlayerStats</link>.<link linkend="_class_player_stats_1adeb667dbe2c1a76d1785ce07b6faf181">Instance</link>.<link linkend="_class_player_stats_1a0b2b3398a02e8fbafe3c41dd466c57d0">GetSinAmount</link>()&#32;+&#32;<link linkend="_class_base_enemy_1afa7426d08cbee4ed3184822c57888ec7">SinAmount</link>);&#32;
+00314 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00315 
+00316 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_base_enemy_1aa9ade96897c57dfc0b6b69e7d0996076"/><section>
+    <title>FlipRotation()</title>
+<indexterm><primary>FlipRotation</primary><secondary>BaseEnemy</secondary></indexterm>
+<indexterm><primary>BaseEnemy</primary><secondary>FlipRotation</secondary></indexterm>
+<para><computeroutput>void BaseEnemy.FlipRotation ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[private]</computeroutput></computeroutput></para><para>
+
+<para>Spiegelt die Orientierung aller zu dem Gegner gehörender Nodes. </para>
+</para>
+<para>
+Definition at line <link linkend="__base_enemy_8cs_source_1l00349">349</link> of file <link linkend="__base_enemy_8cs_source">BaseEnemy.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00349 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00350 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Sprite.FlipH&#32;=&#32;!<link linkend="_class_base_enemy_1a2e4bd99e594a6c3366f64ab47c7443b5">Sprite</link>.FlipH;
+00351 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;CollisionPolygon.RotationDegrees&#32;=&#32;Math.Abs(<link linkend="_class_base_enemy_1ada18d6dd378a0f7380579ce63a6b4ec2">CollisionPolygon</link>.RotationDegrees&#32;-180);
+00352 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SwordHitbox.RotationDegrees&#32;=&#32;Math.Abs(<link linkend="_class_base_enemy_1a9d136e8abbf09f7b418112394bdf1c88">SwordHitbox</link>.RotationDegrees&#32;-180);
+00353 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;FrontCollisionRayCast.RotationDegrees&#32;=&#32;Math.Abs(<link linkend="_class_base_enemy_1a136d1835e3ccedebaa12d7fe151d890b">FrontCollisionRayCast</link>.RotationDegrees&#32;-&#32;180);
+00354 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_base_enemy_1aee39d90b4efaebada5ab47b21184516a"/><section>
+    <title>HandleMovement()</title>
+<indexterm><primary>HandleMovement</primary><secondary>BaseEnemy</secondary></indexterm>
+<indexterm><primary>BaseEnemy</primary><secondary>HandleMovement</secondary></indexterm>
+<para><computeroutput>void BaseEnemy.HandleMovement (double DeltaTime)<computeroutput>[inline]</computeroutput>, <computeroutput>[private]</computeroutput></computeroutput></para><para>
+
+<para>Verarbeitet die Bewegung des Gegners. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>DeltaTime</entry><entry>
+<para>Zeit seit dem letzten Frame. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line <link linkend="__base_enemy_8cs_source_1l00150">150</link> of file <link linkend="__base_enemy_8cs_source">BaseEnemy.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00150 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00151 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(<link linkend="_class_base_enemy_1a61314ff2e5931900ca4a87aa8feb670f">Dead</link>)&#32;<emphasis role="keywordflow">return</emphasis>;
+00152 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>((<link linkend="_class_base_enemy_1a2e4bd99e594a6c3366f64ab47c7443b5">Sprite</link>.Animation&#32;==&#32;<emphasis role="stringliteral">&quot;take_hit&quot;</emphasis>&#32;||&#32;<link linkend="_class_base_enemy_1a2e4bd99e594a6c3366f64ab47c7443b5">Sprite</link>.Animation&#32;==&#32;<emphasis role="stringliteral">&quot;attack&quot;</emphasis>)&#32;&amp;&amp;&#32;<link linkend="_class_base_enemy_1a2e4bd99e594a6c3366f64ab47c7443b5">Sprite</link>.IsPlaying()){
+00153 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Velocity&#32;=&#32;Vector2.Zero;
+00154 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>;
+00155 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00156 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(<link linkend="_class_base_enemy_1a512fca9892d7e4cd717adf9087dcc295">Pursuing</link>){
+00157 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_base_enemy_1a47be49c6e16a1f99ee1ed68549b31d05">AnimationState</link>&#32;=&#32;<link linkend="_class_base_enemy_1ac529914117dfe8158325b43be1f1c6dd">State</link>.WALK;
+00158 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_base_enemy_1a2b05c8247dab9946e801fd74a8af6376">TargetPosition</link>&#32;=&#32;<link linkend="_class_base_enemy_1aaeef5b40160a59096f667fd084b73cc8">CurrentTarget</link>.Position;
+00159 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(<link linkend="_class_base_enemy_1abf57b8dbd0f267fd42a2a02b7bda95dc">IsCloseTo</link>(Position.X,&#32;<link linkend="_class_base_enemy_1a2b05c8247dab9946e801fd74a8af6376">TargetPosition</link>.X,&#32;0.1f)){
+00160 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_base_enemy_1a47be49c6e16a1f99ee1ed68549b31d05">AnimationState</link>&#32;=&#32;<link linkend="_class_base_enemy_1ac529914117dfe8158325b43be1f1c6dd">State</link>.IDLE;
+00161 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Velocity&#32;=&#32;Vector2.Zero;
+00162 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>;
+00163 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00164 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_base_enemy_1a283d342796ff720966538c0776fc9e48">ReturnToStart</link>&#32;=&#32;<link linkend="_class_base_enemy_1aba59e1a3fffbf2749c266d8caaf1c482">ReturnToStartAfter</link>;
+00165 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>(<link linkend="_class_base_enemy_1a283d342796ff720966538c0776fc9e48">ReturnToStart</link>&#32;&gt;=&#32;0){
+00166 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_base_enemy_1a47be49c6e16a1f99ee1ed68549b31d05">AnimationState</link>&#32;=&#32;<link linkend="_class_base_enemy_1ac529914117dfe8158325b43be1f1c6dd">State</link>.IDLE;
+00167 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_base_enemy_1a283d342796ff720966538c0776fc9e48">ReturnToStart</link>&#32;-=&#32;DeltaTime;
+00168 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_base_enemy_1a2b05c8247dab9946e801fd74a8af6376">TargetPosition</link>&#32;=&#32;Vector2.Inf;
+00169 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>(!<link linkend="_class_base_enemy_1abf57b8dbd0f267fd42a2a02b7bda95dc">IsCloseTo</link>(Position.X,&#32;<link linkend="_class_base_enemy_1af386b85762b6790503bf1716a9d2fd77">StartPosition</link>.X,&#32;0.1f)){
+00170 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_base_enemy_1a47be49c6e16a1f99ee1ed68549b31d05">AnimationState</link>&#32;=&#32;<link linkend="_class_base_enemy_1ac529914117dfe8158325b43be1f1c6dd">State</link>.WALK;
+00171 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_base_enemy_1a2b05c8247dab9946e801fd74a8af6376">TargetPosition</link>&#32;=&#32;<link linkend="_class_base_enemy_1af386b85762b6790503bf1716a9d2fd77">StartPosition</link>;
+00172 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00173 
+00174 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(<link linkend="_class_base_enemy_1a2b05c8247dab9946e801fd74a8af6376">TargetPosition</link>&#32;!=&#32;Vector2.Inf){
+00175 
+00176 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(<link linkend="_class_base_enemy_1abf57b8dbd0f267fd42a2a02b7bda95dc">IsCloseTo</link>(Position.X,&#32;<link linkend="_class_base_enemy_1a2b05c8247dab9946e801fd74a8af6376">TargetPosition</link>.X,&#32;0.1f)){
+00177 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_base_enemy_1a47be49c6e16a1f99ee1ed68549b31d05">AnimationState</link>&#32;=&#32;<link linkend="_class_base_enemy_1ac529914117dfe8158325b43be1f1c6dd">State</link>.IDLE;
+00178 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Velocity&#32;=&#32;Vector2.Zero;
+00179 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(<link linkend="_class_base_enemy_1a2b05c8247dab9946e801fd74a8af6376">TargetPosition</link>&#32;==&#32;<link linkend="_class_base_enemy_1af386b85762b6790503bf1716a9d2fd77">StartPosition</link>&#32;&amp;&amp;&#32;<link linkend="_class_base_enemy_1a2e4bd99e594a6c3366f64ab47c7443b5">Sprite</link>.FlipH&#32;!=&#32;<link linkend="_class_base_enemy_1ad2523c398e4a11b5f36a9df26c4014eb">StartRotation</link>){
+00180 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_base_enemy_1aa9ade96897c57dfc0b6b69e7d0996076">FlipRotation</link>();
+00181 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00182 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_base_enemy_1a2b05c8247dab9946e801fd74a8af6376">TargetPosition</link>&#32;=&#32;Vector2.Inf;
+00183 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>;
+00184 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00185 
+00186 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(<link linkend="_class_base_enemy_1a2b05c8247dab9946e801fd74a8af6376">TargetPosition</link>.X&#32;&gt;&#32;Position.X){
+00187 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_base_enemy_1aebc2a569b2f2f3d35870e9aabb943069">SetRotation</link>(<emphasis role="keyword">true</emphasis>);
+00188 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(!<link linkend="_class_base_enemy_1a136d1835e3ccedebaa12d7fe151d890b">FrontCollisionRayCast</link>.IsColliding()){
+00189 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Vector2&#32;velocity&#32;=&#32;Vector2.Zero;
+00190 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;velocity.X&#32;=&#32;<link linkend="_class_base_enemy_1a661de31833c943c7d7d72de616a9141a">Speed</link>;
+00191 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Velocity&#32;=&#32;velocity;
+00192 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00193 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+00194 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_base_enemy_1aebc2a569b2f2f3d35870e9aabb943069">SetRotation</link>(<emphasis role="keyword">false</emphasis>);
+00195 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(!<link linkend="_class_base_enemy_1a136d1835e3ccedebaa12d7fe151d890b">FrontCollisionRayCast</link>.IsColliding()){
+00196 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Vector2&#32;velocity&#32;=&#32;Vector2.Zero;
+00197 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;velocity.X&#32;=&#32;-<link linkend="_class_base_enemy_1a661de31833c943c7d7d72de616a9141a">Speed</link>;
+00198 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Velocity&#32;=&#32;velocity;
+00199 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00200 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00201 
+00202 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>((!<link linkend="_class_base_enemy_1a250a47e4f491f15dc19e64816bef01d7">RightFallProtection</link>.IsColliding()&#32;&amp;&amp;&#32;!<link linkend="_class_base_enemy_1a2e4bd99e594a6c3366f64ab47c7443b5">Sprite</link>.FlipH)&#32;||&#32;(!<link linkend="_class_base_enemy_1a4b844f94d42f547d733385fcefc5473a">LeftFallProtection</link>.IsColliding()&#32;&amp;&amp;&#32;<link linkend="_class_base_enemy_1a2e4bd99e594a6c3366f64ab47c7443b5">Sprite</link>.FlipH)){
+00203 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Velocity&#32;=&#32;Vector2.Zero;
+00204 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00205 
+00206 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+00207 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Velocity&#32;=&#32;Vector2.Zero;
+00208 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_base_enemy_1a47be49c6e16a1f99ee1ed68549b31d05">AnimationState</link>&#32;=&#32;<link linkend="_class_base_enemy_1ac529914117dfe8158325b43be1f1c6dd">State</link>.IDLE;
+00209 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00210 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_base_enemy_1abf57b8dbd0f267fd42a2a02b7bda95dc"/><section>
+    <title>IsCloseTo()</title>
+<indexterm><primary>IsCloseTo</primary><secondary>BaseEnemy</secondary></indexterm>
+<indexterm><primary>BaseEnemy</primary><secondary>IsCloseTo</secondary></indexterm>
+<para><computeroutput>bool BaseEnemy.IsCloseTo (float Value1, float Value2, float Delta)<computeroutput>[inline]</computeroutput>, <computeroutput>[private]</computeroutput></computeroutput></para><para>
+
+<para>Überprüft, ob zwei Werte in einer Delta-Umgebung zueinander liegen. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>float</entry><entry>
+<para>Wert1 </para>
+</entry>
+                            </row>
+                            <row>
+<entry>float</entry><entry>
+<para>Wert2 </para>
+</entry>
+                            </row>
+                            <row>
+<entry>float</entry><entry>
+<para>Delta </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>bool Ergebnis </para>
+</formalpara>
+</para>
+<para>
+Definition at line <link linkend="__base_enemy_8cs_source_1l00380">380</link> of file <link linkend="__base_enemy_8cs_source">BaseEnemy.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00380 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00381 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;Value1&#32;&lt;=&#32;(Value2&#32;+&#32;Delta)&#32;&amp;&amp;&#32;Value1&#32;&gt;=&#32;(Value2&#32;-&#32;Delta);
+00382 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_base_enemy_1a27c3947769522b35b537e5f472ef0b77"/><section>
+    <title>IsDead()</title>
+<indexterm><primary>IsDead</primary><secondary>BaseEnemy</secondary></indexterm>
+<indexterm><primary>BaseEnemy</primary><secondary>IsDead</secondary></indexterm>
+<para><computeroutput>bool BaseEnemy.IsDead ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Gibt boolean Dead zurück. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>bool ob Gegner tot ist. </para>
+</formalpara>
+</para>
+<para>
+Definition at line <link linkend="__base_enemy_8cs_source_1l00266">266</link> of file <link linkend="__base_enemy_8cs_source">BaseEnemy.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00266 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00267 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_class_base_enemy_1a61314ff2e5931900ca4a87aa8feb670f">Dead</link>;
+00268 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_base_enemy_1ad1a2b4f2e07d55eab26d4d8e1d9aa713"/><section>
+    <title>OnDetectionBodyEntered()</title>
+<indexterm><primary>OnDetectionBodyEntered</primary><secondary>BaseEnemy</secondary></indexterm>
+<indexterm><primary>BaseEnemy</primary><secondary>OnDetectionBodyEntered</secondary></indexterm>
+<para><computeroutput>void BaseEnemy.OnDetectionBodyEntered (Node2D body)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Detektiert den Spieler wenn er den Erkennungsbereich betritt. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>body</entry><entry>
+<para>Objekt das den Bereich betritt. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line <link linkend="__base_enemy_8cs_source_1l00110">110</link> of file <link linkend="__base_enemy_8cs_source">BaseEnemy.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00110 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00111 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(<link linkend="_class_base_enemy_1a59a907194c4c712b41719a6fc12c1583">CheckLineOfSight</link>(body)){
+00112 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_base_enemy_1a512fca9892d7e4cd717adf9087dcc295">Pursuing</link>&#32;=&#32;<emphasis role="keyword">true</emphasis>;
+00113 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_base_enemy_1aaeef5b40160a59096f667fd084b73cc8">CurrentTarget</link>&#32;=&#32;body;
+00114 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00115 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_base_enemy_1a6aad96826441fe152694139d29893bad"/><section>
+    <title>OnHitboxAreaEntered()</title>
+<indexterm><primary>OnHitboxAreaEntered</primary><secondary>BaseEnemy</secondary></indexterm>
+<indexterm><primary>BaseEnemy</primary><secondary>OnHitboxAreaEntered</secondary></indexterm>
+<para><computeroutput>void BaseEnemy.OnHitboxAreaEntered (Area2D area)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Detektiert wenn ein Objekt die Hitbox des Gegners betritt. (z.B.: Schwert des Spielers) </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>area</entry><entry>
+<para>Objekt das den Bereich betritt. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line <link linkend="__base_enemy_8cs_source_1l00132">132</link> of file <link linkend="__base_enemy_8cs_source">BaseEnemy.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00132 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00133 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player">Player</link>&#32;Player1&#32;=&#32;(<link linkend="_class_base_enemy_1a968a793842be49b5cf65fa35deb9ae5c">Player</link>)&#32;area.GetParent().GetParent();
+00134 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_base_enemy_1a284a995d12d6bc1d7a23d1f6f25a96af">TakeDamage</link>(Player1.<link linkend="_class_player_1a01ad03754c12b1288b69cdd42cb6f85e">GetDamage</link>());
+00135 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_base_enemy_1a269f9f3626f17368f404ca27616d0697"/><section>
+    <title>OnPursuingRadiusBodyExited()</title>
+<indexterm><primary>OnPursuingRadiusBodyExited</primary><secondary>BaseEnemy</secondary></indexterm>
+<indexterm><primary>BaseEnemy</primary><secondary>OnPursuingRadiusBodyExited</secondary></indexterm>
+<para><computeroutput>void BaseEnemy.OnPursuingRadiusBodyExited (Node2D body)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Detektiert wenn der Spieler den Verfolgungsbereich verlässt. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>body</entry><entry>
+<para>Objekt das den Bereich verlässt. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line <link linkend="__base_enemy_8cs_source_1l00121">121</link> of file <link linkend="__base_enemy_8cs_source">BaseEnemy.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00121 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00122 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(body&#32;==&#32;<link linkend="_class_base_enemy_1aaeef5b40160a59096f667fd084b73cc8">CurrentTarget</link>){
+00123 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_base_enemy_1a512fca9892d7e4cd717adf9087dcc295">Pursuing</link>&#32;=&#32;<emphasis role="keyword">false</emphasis>;
+00124 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_base_enemy_1aaeef5b40160a59096f667fd084b73cc8">CurrentTarget</link>&#32;=&#32;<emphasis role="keyword">null</emphasis>;
+00125 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00126 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_base_enemy_1ab07fb117d5286ef97dc702149c02b14a"/><section>
+    <title>OnSwordHitBoxBodyEntered()</title>
+<indexterm><primary>OnSwordHitBoxBodyEntered</primary><secondary>BaseEnemy</secondary></indexterm>
+<indexterm><primary>BaseEnemy</primary><secondary>OnSwordHitBoxBodyEntered</secondary></indexterm>
+<para><computeroutput>void BaseEnemy.OnSwordHitBoxBodyEntered (Node2D body)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Detektiert ob der Spieler in Schlagreichweite ist. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>body</entry><entry>
+<para>Objekt das den Bereich betritt. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line <link linkend="__base_enemy_8cs_source_1l00141">141</link> of file <link linkend="__base_enemy_8cs_source">BaseEnemy.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00141 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00142 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(<link linkend="_class_base_enemy_1a61314ff2e5931900ca4a87aa8feb670f">Dead</link>)&#32;<emphasis role="keywordflow">return</emphasis>;
+00143 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_base_enemy_1a2e4bd99e594a6c3366f64ab47c7443b5">Sprite</link>.Play(<emphasis role="stringliteral">&quot;attack&quot;</emphasis>);
+00144 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_base_enemy_1a9ef92c3f73170538681e665e78e2279a"/><section>
+    <title>Respawn()</title>
+<indexterm><primary>Respawn</primary><secondary>BaseEnemy</secondary></indexterm>
+<indexterm><primary>BaseEnemy</primary><secondary>Respawn</secondary></indexterm>
+<para><computeroutput>void BaseEnemy.Respawn ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Wird aufgerufen wenn der Gegner respawnt. </para>
+</para>
+<para>
+Definition at line <link linkend="__base_enemy_8cs_source_1l00321">321</link> of file <link linkend="__base_enemy_8cs_source">BaseEnemy.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00322 &#32;&#32;&#32;&#32;{
+00323 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_base_enemy_1a61314ff2e5931900ca4a87aa8feb670f">Dead</link>&#32;=&#32;<emphasis role="keyword">false</emphasis>;
+00324 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_base_enemy_1ad8681385a9f3e9e67d65acb6b945efcf">CurrentHealthPoints</link>&#32;=&#32;<link linkend="_class_base_enemy_1aeb1033802e3cdf44b1b0a510cbf18425">MaxHealthPoints</link>;
+00325 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;HealthBar.Value&#32;=&#32;100f&#32;*&#32;<link linkend="_class_base_enemy_1ad8681385a9f3e9e67d65acb6b945efcf">CurrentHealthPoints</link>&#32;/&#32;<link linkend="_class_base_enemy_1aeb1033802e3cdf44b1b0a510cbf18425">MaxHealthPoints</link>;
+00326 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_base_enemy_1a9b71f0d7b10ec2b15f5176b8b69ce190">MainCollision</link>.SetDeferred(CollisionShape2D.PropertyName.Disabled,&#32;<emphasis role="keyword">false</emphasis>);
+00327 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_health_bar">HealthBar</link>.SetVisible(<emphasis role="keyword">true</emphasis>);
+00328 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_base_enemy_1a2e4bd99e594a6c3366f64ab47c7443b5">Sprite</link>.Play(<emphasis role="stringliteral">&quot;idle&quot;</emphasis>);
+00329 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_base_enemy_1aebc2a569b2f2f3d35870e9aabb943069"/><section>
+    <title>SetRotation()</title>
+<indexterm><primary>SetRotation</primary><secondary>BaseEnemy</secondary></indexterm>
+<indexterm><primary>BaseEnemy</primary><secondary>SetRotation</secondary></indexterm>
+<para><computeroutput>void BaseEnemy.SetRotation (bool Rotation)<computeroutput>[inline]</computeroutput>, <computeroutput>[private]</computeroutput></computeroutput></para><para>
+
+<para>Setzt Orientierung aller zu dem Gegner gehörender Nodes. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>Rotation</entry><entry>
+<para>Die neue Orientierung. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line <link linkend="__base_enemy_8cs_source_1l00360">360</link> of file <link linkend="__base_enemy_8cs_source">BaseEnemy.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00360 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00361 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Sprite.FlipH&#32;=&#32;Rotation&#32;^&#32;<link linkend="_class_base_enemy_1ad2523c398e4a11b5f36a9df26c4014eb">StartRotation</link>;&#32;<emphasis role="comment">//&#32;XOR&#32;mit&#32;StartRotation</emphasis>
+00362 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(Rotation){
+00363 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;CollisionPolygon.RotationDegrees&#32;=&#32;180;
+00364 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SwordHitbox.RotationDegrees&#32;=&#32;180;
+00365 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;FrontCollisionRayCast.RotationDegrees&#32;=&#32;180;
+00366 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+00367 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;CollisionPolygon.RotationDegrees&#32;=&#32;0;
+00368 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SwordHitbox.RotationDegrees&#32;=&#32;0;
+00369 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;FrontCollisionRayCast.RotationDegrees&#32;=&#32;0;
+00370 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00371 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_base_enemy_1a284a995d12d6bc1d7a23d1f6f25a96af"/><section>
+    <title>TakeDamage()</title>
+<indexterm><primary>TakeDamage</primary><secondary>BaseEnemy</secondary></indexterm>
+<indexterm><primary>BaseEnemy</primary><secondary>TakeDamage</secondary></indexterm>
+<para><computeroutput>void BaseEnemy.TakeDamage (<link linkend="_class_damage">Damage</link> DMG)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Verarbeitet zugefügten Schaden. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>DMG</entry><entry>
+<para>Schaden der zugefügt wird. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line <link linkend="__base_enemy_8cs_source_1l00245">245</link> of file <link linkend="__base_enemy_8cs_source">BaseEnemy.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00245 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00246 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(<link linkend="_class_base_enemy_1a61314ff2e5931900ca4a87aa8feb670f">Dead</link>)&#32;{
+00247 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>;
+00248 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00249 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_base_enemy_1ad8681385a9f3e9e67d65acb6b945efcf">CurrentHealthPoints</link>&#32;-=&#32;DMG.<link linkend="_class_damage_1a084fad418a6be9edca3e3e32355e49c0">GetPhysicalDMG</link>()&#32;*&#32;(1&#32;-&#32;<link linkend="_class_base_enemy_1a66b9b6f8492753769f40e18e66babe6d">Armor</link>&#32;/&#32;100.0f)&#32;+&#32;DMG.<link linkend="_class_damage_1a4d43580112f089c208f9ba8e0b2559f0">GetTrueDMG</link>();
+00250 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Position&#32;+=&#32;DMG.<link linkend="_class_damage_1a60741a1e632c21788499ddc284b2844b">GetPushAmount</link>();
+00251 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(<link linkend="_class_base_enemy_1ad8681385a9f3e9e67d65acb6b945efcf">CurrentHealthPoints</link>&#32;&lt;=&#32;0){
+00252 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_base_enemy_1aa5e7d87eaa080ed685315588a39a9f1f">Die</link>();
+00253 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+00254 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_base_enemy_1a2e4bd99e594a6c3366f64ab47c7443b5">Sprite</link>.Play(<emphasis role="stringliteral">&quot;take_hit&quot;</emphasis>);
+00255 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(DMG.<link linkend="_class_damage_1ac446ed14eae2ee0d927510a3ab525042">GetSource</link>()&#32;==&#32;<link linkend="_class_player">Player</link>){
+00256 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_base_enemy_1a512fca9892d7e4cd717adf9087dcc295">Pursuing</link>&#32;=&#32;<emphasis role="keyword">true</emphasis>;
+00257 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_base_enemy_1aaeef5b40160a59096f667fd084b73cc8">CurrentTarget</link>&#32;=&#32;<link linkend="_class_base_enemy_1a968a793842be49b5cf65fa35deb9ae5c">Player</link>;
+00258 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00259 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00260 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_base_enemy_1a52b8c24a84bfa2e981d776f816f33186"/><section>
+    <title>UpdateAnimation()</title>
+<indexterm><primary>UpdateAnimation</primary><secondary>BaseEnemy</secondary></indexterm>
+<indexterm><primary>BaseEnemy</primary><secondary>UpdateAnimation</secondary></indexterm>
+<para><computeroutput>virtual void BaseEnemy.UpdateAnimation ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[protected]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Aktualisiert die Animationen des Gegners. </para>
+</para>
+<para>
+Definition at line <link linkend="__base_enemy_8cs_source_1l00216">216</link> of file <link linkend="__base_enemy_8cs_source">BaseEnemy.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00216 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00217 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(<link linkend="_class_base_enemy_1a61314ff2e5931900ca4a87aa8feb670f">Dead</link>)&#32;<emphasis role="keywordflow">return</emphasis>;
+00218 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(!((<link linkend="_class_base_enemy_1a2e4bd99e594a6c3366f64ab47c7443b5">Sprite</link>.Animation&#32;==&#32;<emphasis role="stringliteral">&quot;take_hit&quot;</emphasis>&#32;||&#32;<link linkend="_class_base_enemy_1a2e4bd99e594a6c3366f64ab47c7443b5">Sprite</link>.Animation&#32;==&#32;<emphasis role="stringliteral">&quot;attack&quot;</emphasis>)&#32;&amp;&amp;&#32;<link linkend="_class_base_enemy_1a2e4bd99e594a6c3366f64ab47c7443b5">Sprite</link>.IsPlaying())){
+00219 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">switch</emphasis>(<link linkend="_class_base_enemy_1a47be49c6e16a1f99ee1ed68549b31d05">AnimationState</link>){
+00220 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;<link linkend="_class_base_enemy_1ac529914117dfe8158325b43be1f1c6dd">State</link>.IDLE:&#32;
+00221 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_base_enemy_1a2e4bd99e594a6c3366f64ab47c7443b5">Sprite</link>.Play(<emphasis role="stringliteral">&quot;idle&quot;</emphasis>);
+00222 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">break</emphasis>;
+00223 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+00224 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;<link linkend="_class_base_enemy_1ac529914117dfe8158325b43be1f1c6dd">State</link>.WALK:
+00225 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_base_enemy_1a2e4bd99e594a6c3366f64ab47c7443b5">Sprite</link>.Play(<emphasis role="stringliteral">&quot;walk&quot;</emphasis>);
+00226 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">break</emphasis>;
+00227 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+00228 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;<link linkend="_class_base_enemy_1ac529914117dfe8158325b43be1f1c6dd">State</link>.ATTACK:
+00229 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_base_enemy_1a2e4bd99e594a6c3366f64ab47c7443b5">Sprite</link>.Play(<emphasis role="stringliteral">&quot;attack&quot;</emphasis>);
+00230 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">break</emphasis>;
+00231 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+00232 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;<link linkend="_class_base_enemy_1ac529914117dfe8158325b43be1f1c6dd">State</link>.TAKE_HIT:
+00233 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_base_enemy_1a2e4bd99e594a6c3366f64ab47c7443b5">Sprite</link>.Play(<emphasis role="stringliteral">&quot;take_hit&quot;</emphasis>);
+00234 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">break</emphasis>;
+00235 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00236 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00237 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;HealthBar.Value&#32;=&#32;100f*&#32;<link linkend="_class_base_enemy_1ad8681385a9f3e9e67d65acb6b945efcf">CurrentHealthPoints</link>/<link linkend="_class_base_enemy_1aeb1033802e3cdf44b1b0a510cbf18425">MaxHealthPoints</link>;
+00238 
+00239 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_class_base_enemy_1a47e5e613c39180e6b1bf9899039b45fc"/><section>
+    <title>AlreadyHit</title>
+<indexterm><primary>AlreadyHit</primary><secondary>BaseEnemy</secondary></indexterm>
+<indexterm><primary>BaseEnemy</primary><secondary>AlreadyHit</secondary></indexterm>
+<para><computeroutput>bool BaseEnemy.AlreadyHit = false<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__base_enemy_8cs_source_1l00046">46</link> of file <link linkend="__base_enemy_8cs_source">BaseEnemy.cs</link>.</para>
+</section>
+<anchor xml:id="_class_base_enemy_1a47be49c6e16a1f99ee1ed68549b31d05"/><section>
+    <title>AnimationState</title>
+<indexterm><primary>AnimationState</primary><secondary>BaseEnemy</secondary></indexterm>
+<indexterm><primary>BaseEnemy</primary><secondary>AnimationState</secondary></indexterm>
+<para><computeroutput><link linkend="_class_base_enemy_1ac529914117dfe8158325b43be1f1c6dd">State</link> BaseEnemy.AnimationState = <link linkend="_class_base_enemy_1ac529914117dfe8158325b43be1f1c6ddaa5daf7f2ebbba4975d61dab1c40188c7">State.IDLE</link><computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__base_enemy_8cs_source_1l00045">45</link> of file <link linkend="__base_enemy_8cs_source">BaseEnemy.cs</link>.</para>
+</section>
+<anchor xml:id="_class_base_enemy_1a66b9b6f8492753769f40e18e66babe6d"/><section>
+    <title>Armor</title>
+<indexterm><primary>Armor</primary><secondary>BaseEnemy</secondary></indexterm>
+<indexterm><primary>BaseEnemy</primary><secondary>Armor</secondary></indexterm>
+<para><computeroutput>float BaseEnemy.Armor = 20f</computeroutput></para><para>
+Definition at line <link linkend="__base_enemy_8cs_source_1l00024">24</link> of file <link linkend="__base_enemy_8cs_source">BaseEnemy.cs</link>.</para>
+</section>
+<anchor xml:id="_class_base_enemy_1ada18d6dd378a0f7380579ce63a6b4ec2"/><section>
+    <title>CollisionPolygon</title>
+<indexterm><primary>CollisionPolygon</primary><secondary>BaseEnemy</secondary></indexterm>
+<indexterm><primary>BaseEnemy</primary><secondary>CollisionPolygon</secondary></indexterm>
+<para><computeroutput>CollisionPolygon2D BaseEnemy.CollisionPolygon<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__base_enemy_8cs_source_1l00050">50</link> of file <link linkend="__base_enemy_8cs_source">BaseEnemy.cs</link>.</para>
+</section>
+<anchor xml:id="_class_base_enemy_1ad8681385a9f3e9e67d65acb6b945efcf"/><section>
+    <title>CurrentHealthPoints</title>
+<indexterm><primary>CurrentHealthPoints</primary><secondary>BaseEnemy</secondary></indexterm>
+<indexterm><primary>BaseEnemy</primary><secondary>CurrentHealthPoints</secondary></indexterm>
+<para><computeroutput>float BaseEnemy.CurrentHealthPoints</computeroutput></para><para>
+Definition at line <link linkend="__base_enemy_8cs_source_1l00037">37</link> of file <link linkend="__base_enemy_8cs_source">BaseEnemy.cs</link>.</para>
+</section>
+<anchor xml:id="_class_base_enemy_1a8a041329b7418ab3fb1b92aa0674eaa8"/><section>
+    <title>CurrentStamina</title>
+<indexterm><primary>CurrentStamina</primary><secondary>BaseEnemy</secondary></indexterm>
+<indexterm><primary>BaseEnemy</primary><secondary>CurrentStamina</secondary></indexterm>
+<para><computeroutput>float BaseEnemy.CurrentStamina<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__base_enemy_8cs_source_1l00038">38</link> of file <link linkend="__base_enemy_8cs_source">BaseEnemy.cs</link>.</para>
+</section>
+<anchor xml:id="_class_base_enemy_1aaeef5b40160a59096f667fd084b73cc8"/><section>
+    <title>CurrentTarget</title>
+<indexterm><primary>CurrentTarget</primary><secondary>BaseEnemy</secondary></indexterm>
+<indexterm><primary>BaseEnemy</primary><secondary>CurrentTarget</secondary></indexterm>
+<para><computeroutput>Node2D BaseEnemy.CurrentTarget = null<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__base_enemy_8cs_source_1l00041">41</link> of file <link linkend="__base_enemy_8cs_source">BaseEnemy.cs</link>.</para>
+</section>
+<anchor xml:id="_class_base_enemy_1a1661cfbf7e6dff6a1d8a6fa44b10a3b0"/><section>
+    <title>Damage</title>
+<indexterm><primary>Damage</primary><secondary>BaseEnemy</secondary></indexterm>
+<indexterm><primary>BaseEnemy</primary><secondary>Damage</secondary></indexterm>
+<para><computeroutput>float BaseEnemy.Damage = 20f<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__base_enemy_8cs_source_1l00016">16</link> of file <link linkend="__base_enemy_8cs_source">BaseEnemy.cs</link>.</para>
+</section>
+<anchor xml:id="_class_base_enemy_1a61314ff2e5931900ca4a87aa8feb670f"/><section>
+    <title>Dead</title>
+<indexterm><primary>Dead</primary><secondary>BaseEnemy</secondary></indexterm>
+<indexterm><primary>BaseEnemy</primary><secondary>Dead</secondary></indexterm>
+<para><computeroutput>bool BaseEnemy.Dead = false</computeroutput></para><para>
+Definition at line <link linkend="__base_enemy_8cs_source_1l00018">18</link> of file <link linkend="__base_enemy_8cs_source">BaseEnemy.cs</link>.</para>
+</section>
+<anchor xml:id="_class_base_enemy_1a136d1835e3ccedebaa12d7fe151d890b"/><section>
+    <title>FrontCollisionRayCast</title>
+<indexterm><primary>FrontCollisionRayCast</primary><secondary>BaseEnemy</secondary></indexterm>
+<indexterm><primary>BaseEnemy</primary><secondary>FrontCollisionRayCast</secondary></indexterm>
+<para><computeroutput>RayCast2D BaseEnemy.FrontCollisionRayCast<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__base_enemy_8cs_source_1l00053">53</link> of file <link linkend="__base_enemy_8cs_source">BaseEnemy.cs</link>.</para>
+</section>
+<anchor xml:id="_class_base_enemy_1a5944a26db58d24ee828a2d8e83687e93"/><section>
+    <title>HealthBar</title>
+<indexterm><primary>HealthBar</primary><secondary>BaseEnemy</secondary></indexterm>
+<indexterm><primary>BaseEnemy</primary><secondary>HealthBar</secondary></indexterm>
+<para><computeroutput>TextureProgressBar BaseEnemy.HealthBar<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__base_enemy_8cs_source_1l00057">57</link> of file <link linkend="__base_enemy_8cs_source">BaseEnemy.cs</link>.</para>
+</section>
+<anchor xml:id="_class_base_enemy_1a4b844f94d42f547d733385fcefc5473a"/><section>
+    <title>LeftFallProtection</title>
+<indexterm><primary>LeftFallProtection</primary><secondary>BaseEnemy</secondary></indexterm>
+<indexterm><primary>BaseEnemy</primary><secondary>LeftFallProtection</secondary></indexterm>
+<para><computeroutput>RayCast2D BaseEnemy.LeftFallProtection<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__base_enemy_8cs_source_1l00055">55</link> of file <link linkend="__base_enemy_8cs_source">BaseEnemy.cs</link>.</para>
+</section>
+<anchor xml:id="_class_base_enemy_1a586349c436eb91c16f5f2f4bee17caa1"/><section>
+    <title>LineOfSight</title>
+<indexterm><primary>LineOfSight</primary><secondary>BaseEnemy</secondary></indexterm>
+<indexterm><primary>BaseEnemy</primary><secondary>LineOfSight</secondary></indexterm>
+<para><computeroutput>RayCast2D BaseEnemy.LineOfSight<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__base_enemy_8cs_source_1l00054">54</link> of file <link linkend="__base_enemy_8cs_source">BaseEnemy.cs</link>.</para>
+</section>
+<anchor xml:id="_class_base_enemy_1a9b71f0d7b10ec2b15f5176b8b69ce190"/><section>
+    <title>MainCollision</title>
+<indexterm><primary>MainCollision</primary><secondary>BaseEnemy</secondary></indexterm>
+<indexterm><primary>BaseEnemy</primary><secondary>MainCollision</secondary></indexterm>
+<para><computeroutput>CollisionShape2D BaseEnemy.MainCollision</computeroutput></para><para>
+Definition at line <link linkend="__base_enemy_8cs_source_1l00052">52</link> of file <link linkend="__base_enemy_8cs_source">BaseEnemy.cs</link>.</para>
+</section>
+<anchor xml:id="_class_base_enemy_1aeb1033802e3cdf44b1b0a510cbf18425"/><section>
+    <title>MaxHealthPoints</title>
+<indexterm><primary>MaxHealthPoints</primary><secondary>BaseEnemy</secondary></indexterm>
+<indexterm><primary>BaseEnemy</primary><secondary>MaxHealthPoints</secondary></indexterm>
+<para><computeroutput>float BaseEnemy.MaxHealthPoints = 100f<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__base_enemy_8cs_source_1l00022">22</link> of file <link linkend="__base_enemy_8cs_source">BaseEnemy.cs</link>.</para>
+</section>
+<anchor xml:id="_class_base_enemy_1a4f99809bf5de1dbbe762c13fc7db8881"/><section>
+    <title>MaxStamina</title>
+<indexterm><primary>MaxStamina</primary><secondary>BaseEnemy</secondary></indexterm>
+<indexterm><primary>BaseEnemy</primary><secondary>MaxStamina</secondary></indexterm>
+<para><computeroutput>float BaseEnemy.MaxStamina = 1f<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__base_enemy_8cs_source_1l00026">26</link> of file <link linkend="__base_enemy_8cs_source">BaseEnemy.cs</link>.</para>
+</section>
+<anchor xml:id="_class_base_enemy_1a968a793842be49b5cf65fa35deb9ae5c"/><section>
+    <title>Player</title>
+<indexterm><primary>Player</primary><secondary>BaseEnemy</secondary></indexterm>
+<indexterm><primary>BaseEnemy</primary><secondary>Player</secondary></indexterm>
+<para><computeroutput><link linkend="_class_player">Player</link> BaseEnemy.Player<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__base_enemy_8cs_source_1l00058">58</link> of file <link linkend="__base_enemy_8cs_source">BaseEnemy.cs</link>.</para>
+</section>
+<anchor xml:id="_class_base_enemy_1a512fca9892d7e4cd717adf9087dcc295"/><section>
+    <title>Pursuing</title>
+<indexterm><primary>Pursuing</primary><secondary>BaseEnemy</secondary></indexterm>
+<indexterm><primary>BaseEnemy</primary><secondary>Pursuing</secondary></indexterm>
+<para><computeroutput>bool BaseEnemy.Pursuing = false</computeroutput></para><para>
+Definition at line <link linkend="__base_enemy_8cs_source_1l00040">40</link> of file <link linkend="__base_enemy_8cs_source">BaseEnemy.cs</link>.</para>
+</section>
+<anchor xml:id="_class_base_enemy_1a3d261e81ba7422572d0813341016c2c3"/><section>
+    <title>Respawnable</title>
+<indexterm><primary>Respawnable</primary><secondary>BaseEnemy</secondary></indexterm>
+<indexterm><primary>BaseEnemy</primary><secondary>Respawnable</secondary></indexterm>
+<para><computeroutput>bool BaseEnemy.Respawnable = true<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__base_enemy_8cs_source_1l00020">20</link> of file <link linkend="__base_enemy_8cs_source">BaseEnemy.cs</link>.</para>
+</section>
+<anchor xml:id="_class_base_enemy_1a283d342796ff720966538c0776fc9e48"/><section>
+    <title>ReturnToStart</title>
+<indexterm><primary>ReturnToStart</primary><secondary>BaseEnemy</secondary></indexterm>
+<indexterm><primary>BaseEnemy</primary><secondary>ReturnToStart</secondary></indexterm>
+<para><computeroutput>double BaseEnemy.ReturnToStart</computeroutput></para><para>
+Definition at line <link linkend="__base_enemy_8cs_source_1l00039">39</link> of file <link linkend="__base_enemy_8cs_source">BaseEnemy.cs</link>.</para>
+</section>
+<anchor xml:id="_class_base_enemy_1aba59e1a3fffbf2749c266d8caaf1c482"/><section>
+    <title>ReturnToStartAfter</title>
+<indexterm><primary>ReturnToStartAfter</primary><secondary>BaseEnemy</secondary></indexterm>
+<indexterm><primary>BaseEnemy</primary><secondary>ReturnToStartAfter</secondary></indexterm>
+<para><computeroutput>double BaseEnemy.ReturnToStartAfter = 5<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__base_enemy_8cs_source_1l00032">32</link> of file <link linkend="__base_enemy_8cs_source">BaseEnemy.cs</link>.</para>
+</section>
+<anchor xml:id="_class_base_enemy_1a250a47e4f491f15dc19e64816bef01d7"/><section>
+    <title>RightFallProtection</title>
+<indexterm><primary>RightFallProtection</primary><secondary>BaseEnemy</secondary></indexterm>
+<indexterm><primary>BaseEnemy</primary><secondary>RightFallProtection</secondary></indexterm>
+<para><computeroutput>RayCast2D BaseEnemy.RightFallProtection<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__base_enemy_8cs_source_1l00056">56</link> of file <link linkend="__base_enemy_8cs_source">BaseEnemy.cs</link>.</para>
+</section>
+<anchor xml:id="_class_base_enemy_1afa7426d08cbee4ed3184822c57888ec7"/><section>
+    <title>SinAmount</title>
+<indexterm><primary>SinAmount</primary><secondary>BaseEnemy</secondary></indexterm>
+<indexterm><primary>BaseEnemy</primary><secondary>SinAmount</secondary></indexterm>
+<para><computeroutput>int BaseEnemy.SinAmount = 10<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__base_enemy_8cs_source_1l00030">30</link> of file <link linkend="__base_enemy_8cs_source">BaseEnemy.cs</link>.</para>
+</section>
+<anchor xml:id="_class_base_enemy_1a661de31833c943c7d7d72de616a9141a"/><section>
+    <title>Speed</title>
+<indexterm><primary>Speed</primary><secondary>BaseEnemy</secondary></indexterm>
+<indexterm><primary>BaseEnemy</primary><secondary>Speed</secondary></indexterm>
+<para><computeroutput>float BaseEnemy.Speed = 10<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__base_enemy_8cs_source_1l00028">28</link> of file <link linkend="__base_enemy_8cs_source">BaseEnemy.cs</link>.</para>
+</section>
+<anchor xml:id="_class_base_enemy_1a2e4bd99e594a6c3366f64ab47c7443b5"/><section>
+    <title>Sprite</title>
+<indexterm><primary>Sprite</primary><secondary>BaseEnemy</secondary></indexterm>
+<indexterm><primary>BaseEnemy</primary><secondary>Sprite</secondary></indexterm>
+<para><computeroutput>AnimatedSprite2D BaseEnemy.Sprite</computeroutput></para><para>
+Definition at line <link linkend="__base_enemy_8cs_source_1l00049">49</link> of file <link linkend="__base_enemy_8cs_source">BaseEnemy.cs</link>.</para>
+</section>
+<anchor xml:id="_class_base_enemy_1af386b85762b6790503bf1716a9d2fd77"/><section>
+    <title>StartPosition</title>
+<indexterm><primary>StartPosition</primary><secondary>BaseEnemy</secondary></indexterm>
+<indexterm><primary>BaseEnemy</primary><secondary>StartPosition</secondary></indexterm>
+<para><computeroutput>Vector2 BaseEnemy.StartPosition</computeroutput></para><para>
+Definition at line <link linkend="__base_enemy_8cs_source_1l00043">43</link> of file <link linkend="__base_enemy_8cs_source">BaseEnemy.cs</link>.</para>
+</section>
+<anchor xml:id="_class_base_enemy_1ad2523c398e4a11b5f36a9df26c4014eb"/><section>
+    <title>StartRotation</title>
+<indexterm><primary>StartRotation</primary><secondary>BaseEnemy</secondary></indexterm>
+<indexterm><primary>BaseEnemy</primary><secondary>StartRotation</secondary></indexterm>
+<para><computeroutput>bool BaseEnemy.StartRotation = false<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__base_enemy_8cs_source_1l00044">44</link> of file <link linkend="__base_enemy_8cs_source">BaseEnemy.cs</link>.</para>
+</section>
+<anchor xml:id="_class_base_enemy_1a9d136e8abbf09f7b418112394bdf1c88"/><section>
+    <title>SwordHitbox</title>
+<indexterm><primary>SwordHitbox</primary><secondary>BaseEnemy</secondary></indexterm>
+<indexterm><primary>BaseEnemy</primary><secondary>SwordHitbox</secondary></indexterm>
+<para><computeroutput>Area2D BaseEnemy.SwordHitbox<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__base_enemy_8cs_source_1l00051">51</link> of file <link linkend="__base_enemy_8cs_source">BaseEnemy.cs</link>.</para>
+</section>
+<anchor xml:id="_class_base_enemy_1a2b05c8247dab9946e801fd74a8af6376"/><section>
+    <title>TargetPosition</title>
+<indexterm><primary>TargetPosition</primary><secondary>BaseEnemy</secondary></indexterm>
+<indexterm><primary>BaseEnemy</primary><secondary>TargetPosition</secondary></indexterm>
+<para><computeroutput>Vector2 BaseEnemy.TargetPosition = Vector2.Inf</computeroutput></para><para>
+Definition at line <link linkend="__base_enemy_8cs_source_1l00042">42</link> of file <link linkend="__base_enemy_8cs_source">BaseEnemy.cs</link>.</para>
+</section>
+</section>
+<section>
+<title>Property Documentation</title>
+<anchor xml:id="_class_base_enemy_1a7a4fe2c824142f79ba0dd6cf9d1a7d25"/><section>
+    <title>Id</title>
+<indexterm><primary>Id</primary><secondary>BaseEnemy</secondary></indexterm>
+<indexterm><primary>BaseEnemy</primary><secondary>Id</secondary></indexterm>
+<para><computeroutput>uint BaseEnemy.Id = 0<computeroutput>[get]</computeroutput>, <computeroutput>[set]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__base_enemy_8cs_source_1l00034">34</link> of file <link linkend="__base_enemy_8cs_source">BaseEnemy.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00034 {&#32;<emphasis role="keyword">get</emphasis>;&#32;<emphasis role="keyword">set</emphasis>;}&#32;=&#32;0;
+</programlisting></section>
+<para>
+The documentation for this class was generated from the following file:</para>
+<link linkend="__base_enemy_8cs">BaseEnemy.cs</link></section>
+</section>

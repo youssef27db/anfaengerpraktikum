@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_annotated" xml:lang="en-US">
+<title>Class List</title>
+Here are the classes, structs, unions and interfaces with brief descriptions:<link linkend="_class_base_enemy">BaseEnemy</link>
+<para>Klasse für einen einfachen Gegner </para>
+<link linkend="_class_blood_vial">BloodVial</link>
+<para>Klasse für die Interaktion zum heilen </para>
+<link linkend="_class_boss1">Boss1</link>
+<para>Klasse für einen stärkeren Boss-Gegner, der von <link linkend="_class_base_enemy">BaseEnemy</link> erbt </para>
+<link linkend="_class_checkpoint">Checkpoint</link><link linkend="_class_damage">Damage</link>
+<para>Repräsentiert den Schaden, der von Charakteren oder Gegnern verursacht wird. Beinhaltet physischen Schaden, wahren Schaden und den Rückstoßeffekt </para>
+<link linkend="_class_door">Door</link>
+<para>Klasse für die Tür </para>
+<link linkend="_class_health_bar">HealthBar</link>
+<para>Klasse für die Gesundheitsleiste des Spielers. Synchronisiert die Anzeige der <link linkend="_class_health_bar">HealthBar</link> mit den Lebenspunkten des Spielers </para>
+<link linkend="_class_hud">Hud</link>
+<para>Klasse für das PauseMenu </para>
+<link linkend="_class_interactable">Interactable</link>
+<para>Klasse für Interaktion </para>
+<link linkend="_class_level_manager">LevelManager</link>
+<para>Klasse für den <link linkend="_class_level_manager">LevelManager</link> Diese Klasse verwaltet den Levelwechsel und die Spielerpositionierung </para>
+<link linkend="_class_main_menu">MainMenu</link>
+<para>Klasse für das <link linkend="_class_main_menu">MainMenu</link> </para>
+<link linkend="_class_main_menu_background">MainMenuBackground</link>
+<para>Klasse für die MainMenuBackground-Animation </para>
+<link linkend="_class_navigation_manager">NavigationManager</link>
+<para>Der <link linkend="_class_navigation_manager">NavigationManager</link> ist für das Laden von Leveln und das Spawnen des Spielers verantwortlich. Der <link linkend="_class_navigation_manager">NavigationManager</link> ist ein Singleton, der in der Haupt-Szene platziert wird und von anderen Skripten verwendet wird, um Level zu laden und den Spieler zu spawnen </para>
+<link linkend="_class_player">Player</link>
+<para>Klasse für den Spielercharakter. Verwaltet Bewegung, Sprünge, Angriffe und Animationen </para>
+<link linkend="_class_player_stats">PlayerStats</link>
+<para>Klasse für die Spielerstats </para>
+<link linkend="_class_spike">Spike</link>
+<para>Klasse für die Spikes </para>
+<link linkend="_class_spike_dynamic">SpikeDynamic</link>
+<para>Klasse für die beweglichen Spikes </para>
+<link linkend="_class_stamina_bar">StaminaBar</link>
+<para>Klasse für die Ausdauerleiste des Spielers. Synchronisiert die Anzeige der <link linkend="_class_stamina_bar">StaminaBar</link> mit der Ausdauer des Spielers </para>
+<link linkend="_class_storage_manager">StorageManager</link>
+<para>Klasse für das Speichern und Laden von Daten </para>
+</section>

@@ -1,0 +1,983 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_player_stats" xml:lang="en-US">
+<title>PlayerStats Class Reference</title>
+<indexterm><primary>PlayerStats</primary></indexterm>
+<para>
+
+<para>Klasse für die Spielerstats. </para>
+ 
+</para>
+<para>Inheritance diagram for PlayerStats:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_player_stats.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>override void <link linkend="_class_player_stats_1a895e862f4ff51140f473568a86ade636">_Ready</link> ()</para>
+
+<para>Initialisierung der Referenzen. </para>
+</listitem>
+            <listitem><para>String <link linkend="_class_player_stats_1ad868bae6deb062dbcc4702b276a27041">GetRespawnLevelTag</link> ()</para>
+
+<para>Getter für RespawnLevelTag. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_player_stats_1a7ec692981c45e933c737eff8d78e6456">SetRespawnLevelTag</link> (String levelTag)</para>
+
+<para>Setter für RespawnLevelTag. </para>
+</listitem>
+            <listitem><para>String <link linkend="_class_player_stats_1a7db8c1cd1ecfb2041c7b376289054801">GetCurrentLevelTag</link> ()</para>
+
+<para>Getter für CurrentLevelTag. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_player_stats_1a3545edeb4834aad7011e561dc5f1b10d">SetCurrentLevelTag</link> (String levelTag)</para>
+
+<para>Setter für CurrentLevelTag. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_player_stats_1a147af1b1e37f6506303caca28b60f9e4">SetSpawnPoint</link> (Vector2 spawnPoint)</para>
+
+<para>Setzt den SpawnPoint des Spielers. </para>
+</listitem>
+            <listitem><para>Vector2 <link linkend="_class_player_stats_1a20396ab55000fe68c62711c072bad9bb">GetSpawnPoint</link> ()</para>
+
+<para>Getter für den SpawnPoint. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_player_stats_1adb53f7019a00edfe089c3dfd205438c2">SetPosition</link> (Vector2 position)</para>
+
+<para>Setzt die Position des Spielers. </para>
+</listitem>
+            <listitem><para>Vector2 <link linkend="_class_player_stats_1a77ca820f184b31dd9590bc8613f8566e">GetPosition</link> ()</para>
+
+<para>Getter für die Position. </para>
+</listitem>
+            <listitem><para>int <link linkend="_class_player_stats_1a0b2b3398a02e8fbafe3c41dd466c57d0">GetSinAmount</link> ()</para>
+
+<para>Getter für SinAmount. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_player_stats_1a647991a1d154f8c2bc8d7032b43e35aa">SetSinAmount</link> (int Value)</para>
+
+<para>Setzt den SinAmount des Spielers. </para>
+</listitem>
+            <listitem><para>float <link linkend="_class_player_stats_1a6a24773d00e75be9747b99681ac76127">GetMaxHealthPoints</link> ()</para>
+
+<para>Gibt die maximalen Lebenspunkte des Spielers zurück. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_player_stats_1a58c3b27a3633bead2f77fa551f30beeb">SetMaxHealthPoints</link> (float maxHealthPoints)</para>
+
+<para>Setzt die maximalen Lebenspunkte des Spielers. </para>
+</listitem>
+            <listitem><para>float <link linkend="_class_player_stats_1a0ec1075ba0983a3df42454b110194c0d">GetCurrentHealth</link> ()</para>
+
+<para>Gibt die aktuellen Lebenspunkte des Spielers zurück. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_player_stats_1aaed3690620c6ba9a8866d0c35b4f26d7">SetCurrentHealth</link> (float Health)</para>
+
+<para>Setzt die aktuellen Lebenspunkte des Spielers. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_player_stats_1a8f76220aa1271b2335b045624c6812d0">SetMaxStamina</link> (float Value)</para>
+
+<para>Setzt die maximale Stamina des Spielers. </para>
+</listitem>
+            <listitem><para>float <link linkend="_class_player_stats_1a7e27ea7ba3c266ecfa446c070415180a">GetMaxStamina</link> ()</para>
+
+<para>Gibt die maximale Stamina des Spielers zurück. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_player_stats_1ab341f12827a6bdcfebb826dff43e82e3">SetStamina</link> (float Value)</para>
+
+<para>Setzt die Stamina des Spielers. </para>
+</listitem>
+            <listitem><para>float <link linkend="_class_player_stats_1a3a170316e8384ab030f5f697b799a947">GetStamina</link> ()</para>
+
+<para>Gibt die aktuelle Stamina des Spielers zurück. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_player_stats_1a76c874319c947a35702cd9a0a4b0e66c">SetBVHealAmount</link> (int Value)</para>
+
+<para>Setzt den HealAmount eines Bloodvials. </para>
+</listitem>
+            <listitem><para>int <link linkend="_class_player_stats_1a026f80c7d14afe5dbf7e33e0edd2a16a">GetBVHealAmount</link> ()</para>
+
+<para>Gibt den aktuellen HealAmount eines Bloodvials zurück. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_player_stats_1abebcd5c40720aa0a7b4d86518f8e3b1b">SetBVMaxUses</link> (int Value)</para>
+
+<para>Setzt die MaxUses der Bloodvials. </para>
+</listitem>
+            <listitem><para>int <link linkend="_class_player_stats_1a88cc0468ef32b3b4a7b2e79af4e24424">GetBVMaxUses</link> ()</para>
+
+<para>Gibt die MaxUses der Bloodvials zurück. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_player_stats_1a05f3b699b992de2ea849c9397c818a6f">SetBVCurrentUses</link> (int Value)</para>
+
+<para>Setzt die CurrentUses der Bloodvials. </para>
+</listitem>
+            <listitem><para>int <link linkend="_class_player_stats_1a7927fc41f41b344aecea23f12c52329b">GetBVCurrentUses</link> ()</para>
+
+<para>Gibt die CurrentUses der Bloodvials zurück. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_player_stats_1a9a513942394be2aae3457a6be9f81b9b">Reload</link> ()</para>
+
+<para>Setzt die Attribute zurück. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Properties    </title>
+        <itemizedlist>
+            <listitem><para>static <link linkend="_class_player_stats">PlayerStats</link> <link linkend="_class_player_stats_1adeb667dbe2c1a76d1785ce07b6faf181">Instance</link><computeroutput> [get, private set]</computeroutput>
+</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Private Attributes    </title>
+        <itemizedlist>
+            <listitem><para>String <link linkend="_class_player_stats_1a1e6557a3100cd9b69dccf218d2c84609">RespawnLevelTag</link> = &quot;intro&quot;</para>
+</listitem>
+            <listitem><para>String <link linkend="_class_player_stats_1ae047b0b22ef2d0cbd60c5b4193fac02a">CurrentLevelTag</link> = &quot;intro&quot;</para>
+</listitem>
+            <listitem><para>Vector2 <link linkend="_class_player_stats_1a45dbfad923471fe032a894b05daf3735">SpawnPoint</link></para>
+</listitem>
+            <listitem><para>Vector2 <link linkend="_class_player_stats_1a2afbdf33659ec177ac5f27638a78fe42">Position</link> = new Vector2(-540, 160)</para>
+</listitem>
+            <listitem><para>int <link linkend="_class_player_stats_1ad7c9580233648775b11f199347087f4c">SinAmount</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_class_player_stats_1a335bea0dc78273f4cc46a01a7d699dcd">MaxHealthPoints</link> = 100f</para>
+</listitem>
+            <listitem><para>float <link linkend="_class_player_stats_1ae382740c5a49ebad7a020173d6eb527b">CurrentHealth</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_class_player_stats_1a3ec6c1ddfeddebf52f76200216a015b5">MaxStamina</link> = 100f</para>
+</listitem>
+            <listitem><para>float <link linkend="_class_player_stats_1a4d2c11ea6b3c00573fdaada704003164">CurrentStamina</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_class_player_stats_1ade72e9a5adb4aa136bc4cba06cc701db">BVHealAmount</link> = 25</para>
+</listitem>
+            <listitem><para>int <link linkend="_class_player_stats_1aa47e0d391b2a9a1bf162da0b00a3b075">BVMaxUses</link> = 5</para>
+</listitem>
+            <listitem><para>int <link linkend="_class_player_stats_1ab3f1ef87a636e6387817be8334dd75dc">BVCurrentUses</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Klasse für die Spielerstats. </para>
+<para>
+Definition at line <link linkend="__player_stats_8cs_source_1l00007">7</link> of file <link linkend="__player_stats_8cs_source">PlayerStats.cs</link>.</para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_player_stats_1a895e862f4ff51140f473568a86ade636"/><section>
+    <title>_Ready()</title>
+<indexterm><primary>_Ready</primary><secondary>PlayerStats</secondary></indexterm>
+<indexterm><primary>PlayerStats</primary><secondary>_Ready</secondary></indexterm>
+<para><computeroutput>override void PlayerStats._Ready ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Initialisierung der Referenzen. </para>
+</para>
+<para>
+Definition at line <link linkend="__player_stats_8cs_source_1l00029">29</link> of file <link linkend="__player_stats_8cs_source">PlayerStats.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00029 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00030 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_stats_1ae382740c5a49ebad7a020173d6eb527b">CurrentHealth</link>&#32;=&#32;<link linkend="_class_player_stats_1a335bea0dc78273f4cc46a01a7d699dcd">MaxHealthPoints</link>;
+00031 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_stats_1a4d2c11ea6b3c00573fdaada704003164">CurrentStamina</link>&#32;=&#32;<link linkend="_class_player_stats_1a3ec6c1ddfeddebf52f76200216a015b5">MaxStamina</link>;
+00032 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_stats_1ab3f1ef87a636e6387817be8334dd75dc">BVCurrentUses</link>&#32;=&#32;<link linkend="_class_player_stats_1aa47e0d391b2a9a1bf162da0b00a3b075">BVMaxUses</link>;
+00033 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_stats_1adeb667dbe2c1a76d1785ce07b6faf181">Instance</link>&#32;=&#32;<emphasis role="keyword">this</emphasis>;
+00034 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_player_stats_1a7927fc41f41b344aecea23f12c52329b"/><section>
+    <title>GetBVCurrentUses()</title>
+<indexterm><primary>GetBVCurrentUses</primary><secondary>PlayerStats</secondary></indexterm>
+<indexterm><primary>PlayerStats</primary><secondary>GetBVCurrentUses</secondary></indexterm>
+<para><computeroutput>int PlayerStats.GetBVCurrentUses ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Gibt die CurrentUses der Bloodvials zurück. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>Die aktuellen CurrentUses. </para>
+</formalpara>
+</para>
+<para>
+Definition at line <link linkend="__player_stats_8cs_source_1l00230">230</link> of file <link linkend="__player_stats_8cs_source">PlayerStats.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00230 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00231 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_class_player_stats_1ab3f1ef87a636e6387817be8334dd75dc">BVCurrentUses</link>;
+00232 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_player_stats_1a026f80c7d14afe5dbf7e33e0edd2a16a"/><section>
+    <title>GetBVHealAmount()</title>
+<indexterm><primary>GetBVHealAmount</primary><secondary>PlayerStats</secondary></indexterm>
+<indexterm><primary>PlayerStats</primary><secondary>GetBVHealAmount</secondary></indexterm>
+<para><computeroutput>int PlayerStats.GetBVHealAmount ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Gibt den aktuellen HealAmount eines Bloodvials zurück. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>Der aktuelle HealAmount. </para>
+</formalpara>
+</para>
+<para>
+Definition at line <link linkend="__player_stats_8cs_source_1l00198">198</link> of file <link linkend="__player_stats_8cs_source">PlayerStats.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00198 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00199 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_class_player_stats_1ade72e9a5adb4aa136bc4cba06cc701db">BVHealAmount</link>;
+00200 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_player_stats_1a88cc0468ef32b3b4a7b2e79af4e24424"/><section>
+    <title>GetBVMaxUses()</title>
+<indexterm><primary>GetBVMaxUses</primary><secondary>PlayerStats</secondary></indexterm>
+<indexterm><primary>PlayerStats</primary><secondary>GetBVMaxUses</secondary></indexterm>
+<para><computeroutput>int PlayerStats.GetBVMaxUses ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Gibt die MaxUses der Bloodvials zurück. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>Die aktuellen MaxUses. </para>
+</formalpara>
+</para>
+<para>
+Definition at line <link linkend="__player_stats_8cs_source_1l00214">214</link> of file <link linkend="__player_stats_8cs_source">PlayerStats.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00214 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00215 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_class_player_stats_1aa47e0d391b2a9a1bf162da0b00a3b075">BVMaxUses</link>;
+00216 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_player_stats_1a0ec1075ba0983a3df42454b110194c0d"/><section>
+    <title>GetCurrentHealth()</title>
+<indexterm><primary>GetCurrentHealth</primary><secondary>PlayerStats</secondary></indexterm>
+<indexterm><primary>PlayerStats</primary><secondary>GetCurrentHealth</secondary></indexterm>
+<para><computeroutput>float PlayerStats.GetCurrentHealth ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Gibt die aktuellen Lebenspunkte des Spielers zurück. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>Die aktuellen Lebenspunkte. </para>
+</formalpara>
+</para>
+<para>
+Definition at line <link linkend="__player_stats_8cs_source_1l00139">139</link> of file <link linkend="__player_stats_8cs_source">PlayerStats.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00139 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00140 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_class_player_stats_1ae382740c5a49ebad7a020173d6eb527b">CurrentHealth</link>;
+00141 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_player_stats_1a7db8c1cd1ecfb2041c7b376289054801"/><section>
+    <title>GetCurrentLevelTag()</title>
+<indexterm><primary>GetCurrentLevelTag</primary><secondary>PlayerStats</secondary></indexterm>
+<indexterm><primary>PlayerStats</primary><secondary>GetCurrentLevelTag</secondary></indexterm>
+<para><computeroutput>String PlayerStats.GetCurrentLevelTag ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Getter für CurrentLevelTag. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>String CurrentLevelTag </para>
+</formalpara>
+</para>
+<para>
+Definition at line <link linkend="__player_stats_8cs_source_1l00056">56</link> of file <link linkend="__player_stats_8cs_source">PlayerStats.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00056 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00057 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_class_player_stats_1ae047b0b22ef2d0cbd60c5b4193fac02a">CurrentLevelTag</link>;
+00058 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_player_stats_1a6a24773d00e75be9747b99681ac76127"/><section>
+    <title>GetMaxHealthPoints()</title>
+<indexterm><primary>GetMaxHealthPoints</primary><secondary>PlayerStats</secondary></indexterm>
+<indexterm><primary>PlayerStats</primary><secondary>GetMaxHealthPoints</secondary></indexterm>
+<para><computeroutput>float PlayerStats.GetMaxHealthPoints ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Gibt die maximalen Lebenspunkte des Spielers zurück. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>Die maximalen Lebenspunkte. </para>
+</formalpara>
+</para>
+<para>
+Definition at line <link linkend="__player_stats_8cs_source_1l00122">122</link> of file <link linkend="__player_stats_8cs_source">PlayerStats.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00122 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00123 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_class_player_stats_1a335bea0dc78273f4cc46a01a7d699dcd">MaxHealthPoints</link>;
+00124 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_player_stats_1a7e27ea7ba3c266ecfa446c070415180a"/><section>
+    <title>GetMaxStamina()</title>
+<indexterm><primary>GetMaxStamina</primary><secondary>PlayerStats</secondary></indexterm>
+<indexterm><primary>PlayerStats</primary><secondary>GetMaxStamina</secondary></indexterm>
+<para><computeroutput>float PlayerStats.GetMaxStamina ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Gibt die maximale Stamina des Spielers zurück. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>Die maximale Stamina. </para>
+</formalpara>
+</para>
+<para>
+Definition at line <link linkend="__player_stats_8cs_source_1l00165">165</link> of file <link linkend="__player_stats_8cs_source">PlayerStats.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00165 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00166 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_class_player_stats_1a3ec6c1ddfeddebf52f76200216a015b5">MaxStamina</link>;
+00167 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_player_stats_1a77ca820f184b31dd9590bc8613f8566e"/><section>
+    <title>GetPosition()</title>
+<indexterm><primary>GetPosition</primary><secondary>PlayerStats</secondary></indexterm>
+<indexterm><primary>PlayerStats</primary><secondary>GetPosition</secondary></indexterm>
+<para><computeroutput>Vector2 PlayerStats.GetPosition ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Getter für die Position. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>Position des Spielers </para>
+</formalpara>
+</para>
+<para>
+Definition at line <link linkend="__player_stats_8cs_source_1l00096">96</link> of file <link linkend="__player_stats_8cs_source">PlayerStats.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00096 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00097 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_class_player_stats_1a2afbdf33659ec177ac5f27638a78fe42">Position</link>;
+00098 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_player_stats_1ad868bae6deb062dbcc4702b276a27041"/><section>
+    <title>GetRespawnLevelTag()</title>
+<indexterm><primary>GetRespawnLevelTag</primary><secondary>PlayerStats</secondary></indexterm>
+<indexterm><primary>PlayerStats</primary><secondary>GetRespawnLevelTag</secondary></indexterm>
+<para><computeroutput>String PlayerStats.GetRespawnLevelTag ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Getter für RespawnLevelTag. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>String RespawnLevelTag </para>
+</formalpara>
+</para>
+<para>
+Definition at line <link linkend="__player_stats_8cs_source_1l00040">40</link> of file <link linkend="__player_stats_8cs_source">PlayerStats.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00040 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00041 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_class_player_stats_1a1e6557a3100cd9b69dccf218d2c84609">RespawnLevelTag</link>;
+00042 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_player_stats_1a0b2b3398a02e8fbafe3c41dd466c57d0"/><section>
+    <title>GetSinAmount()</title>
+<indexterm><primary>GetSinAmount</primary><secondary>PlayerStats</secondary></indexterm>
+<indexterm><primary>PlayerStats</primary><secondary>GetSinAmount</secondary></indexterm>
+<para><computeroutput>int PlayerStats.GetSinAmount ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Getter für SinAmount. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>int Sins </para>
+</formalpara>
+</para>
+<para>
+Definition at line <link linkend="__player_stats_8cs_source_1l00105">105</link> of file <link linkend="__player_stats_8cs_source">PlayerStats.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00105 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00106 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_class_player_stats_1ad7c9580233648775b11f199347087f4c">SinAmount</link>;
+00107 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_player_stats_1a20396ab55000fe68c62711c072bad9bb"/><section>
+    <title>GetSpawnPoint()</title>
+<indexterm><primary>GetSpawnPoint</primary><secondary>PlayerStats</secondary></indexterm>
+<indexterm><primary>PlayerStats</primary><secondary>GetSpawnPoint</secondary></indexterm>
+<para><computeroutput>Vector2 PlayerStats.GetSpawnPoint ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Getter für den SpawnPoint. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>Der SpawnPoint des Spielers </para>
+</formalpara>
+</para>
+<para>
+Definition at line <link linkend="__player_stats_8cs_source_1l00080">80</link> of file <link linkend="__player_stats_8cs_source">PlayerStats.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00080 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00081 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_class_player_stats_1a45dbfad923471fe032a894b05daf3735">SpawnPoint</link>;
+00082 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_player_stats_1a3a170316e8384ab030f5f697b799a947"/><section>
+    <title>GetStamina()</title>
+<indexterm><primary>GetStamina</primary><secondary>PlayerStats</secondary></indexterm>
+<indexterm><primary>PlayerStats</primary><secondary>GetStamina</secondary></indexterm>
+<para><computeroutput>float PlayerStats.GetStamina ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Gibt die aktuelle Stamina des Spielers zurück. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>Die aktuelle Stamina. </para>
+</formalpara>
+</para>
+<para>
+Definition at line <link linkend="__player_stats_8cs_source_1l00182">182</link> of file <link linkend="__player_stats_8cs_source">PlayerStats.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00182 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00183 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_class_player_stats_1a4d2c11ea6b3c00573fdaada704003164">CurrentStamina</link>;
+00184 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_player_stats_1a9a513942394be2aae3457a6be9f81b9b"/><section>
+    <title>Reload()</title>
+<indexterm><primary>Reload</primary><secondary>PlayerStats</secondary></indexterm>
+<indexterm><primary>PlayerStats</primary><secondary>Reload</secondary></indexterm>
+<para><computeroutput>void PlayerStats.Reload ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Setzt die Attribute zurück. </para>
+</para>
+<para>
+Definition at line <link linkend="__player_stats_8cs_source_1l00237">237</link> of file <link linkend="__player_stats_8cs_source">PlayerStats.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00237 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00238 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_stats_1adeb667dbe2c1a76d1785ce07b6faf181">Instance</link>&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;<link linkend="_class_player_stats">PlayerStats</link>();
+00239 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_stats_1adeb667dbe2c1a76d1785ce07b6faf181">Instance</link>.<link linkend="_class_player_stats_1a895e862f4ff51140f473568a86ade636">_Ready</link>();
+00240 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_player_stats_1a05f3b699b992de2ea849c9397c818a6f"/><section>
+    <title>SetBVCurrentUses()</title>
+<indexterm><primary>SetBVCurrentUses</primary><secondary>PlayerStats</secondary></indexterm>
+<indexterm><primary>PlayerStats</primary><secondary>SetBVCurrentUses</secondary></indexterm>
+<para><computeroutput>void PlayerStats.SetBVCurrentUses (int Value)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Setzt die CurrentUses der Bloodvials. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>Value</entry><entry>
+<para>Die CurrentUses der Bloodvials. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line <link linkend="__player_stats_8cs_source_1l00222">222</link> of file <link linkend="__player_stats_8cs_source">PlayerStats.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00222 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00223 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_stats_1ab3f1ef87a636e6387817be8334dd75dc">BVCurrentUses</link>&#32;=&#32;Math.Max(0,&#32;Value);
+00224 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_player_stats_1a76c874319c947a35702cd9a0a4b0e66c"/><section>
+    <title>SetBVHealAmount()</title>
+<indexterm><primary>SetBVHealAmount</primary><secondary>PlayerStats</secondary></indexterm>
+<indexterm><primary>PlayerStats</primary><secondary>SetBVHealAmount</secondary></indexterm>
+<para><computeroutput>void PlayerStats.SetBVHealAmount (int Value)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Setzt den HealAmount eines Bloodvials. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>Value</entry><entry>
+<para>Den neuen Wert für den HealAmount. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line <link linkend="__player_stats_8cs_source_1l00190">190</link> of file <link linkend="__player_stats_8cs_source">PlayerStats.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00190 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00191 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_stats_1ade72e9a5adb4aa136bc4cba06cc701db">BVHealAmount</link>&#32;=&#32;Math.Max(0,&#32;Value);
+00192 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_player_stats_1abebcd5c40720aa0a7b4d86518f8e3b1b"/><section>
+    <title>SetBVMaxUses()</title>
+<indexterm><primary>SetBVMaxUses</primary><secondary>PlayerStats</secondary></indexterm>
+<indexterm><primary>PlayerStats</primary><secondary>SetBVMaxUses</secondary></indexterm>
+<para><computeroutput>void PlayerStats.SetBVMaxUses (int Value)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Setzt die MaxUses der Bloodvials. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>Value</entry><entry>
+<para>Die MaxUses der Bloodvials. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line <link linkend="__player_stats_8cs_source_1l00206">206</link> of file <link linkend="__player_stats_8cs_source">PlayerStats.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00206 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00207 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_stats_1aa47e0d391b2a9a1bf162da0b00a3b075">BVMaxUses</link>&#32;=&#32;Math.Max(0,&#32;Value);
+00208 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_player_stats_1aaed3690620c6ba9a8866d0c35b4f26d7"/><section>
+    <title>SetCurrentHealth()</title>
+<indexterm><primary>SetCurrentHealth</primary><secondary>PlayerStats</secondary></indexterm>
+<indexterm><primary>PlayerStats</primary><secondary>SetCurrentHealth</secondary></indexterm>
+<para><computeroutput>void PlayerStats.SetCurrentHealth (float Health)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Setzt die aktuellen Lebenspunkte des Spielers. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>Health</entry><entry>
+<para>Neue Lebenspunkte, die gesetzt werden sollen. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line <link linkend="__player_stats_8cs_source_1l00147">147</link> of file <link linkend="__player_stats_8cs_source">PlayerStats.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00147 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00148 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;CurrentHealth&#32;darf&#32;MaxHealthPoints&#32;nicht&#32;überschreiten.</emphasis>
+00149 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_stats_1ae382740c5a49ebad7a020173d6eb527b">CurrentHealth</link>&#32;=&#32;Mathf.Min(Health,&#32;<link linkend="_class_player_stats_1a335bea0dc78273f4cc46a01a7d699dcd">MaxHealthPoints</link>);
+00150 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_player_stats_1a3545edeb4834aad7011e561dc5f1b10d"/><section>
+    <title>SetCurrentLevelTag()</title>
+<indexterm><primary>SetCurrentLevelTag</primary><secondary>PlayerStats</secondary></indexterm>
+<indexterm><primary>PlayerStats</primary><secondary>SetCurrentLevelTag</secondary></indexterm>
+<para><computeroutput>void PlayerStats.SetCurrentLevelTag (String levelTag)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Setter für CurrentLevelTag. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>CurrentLevelTag</entry><entry>
+<para>Neuer Tag </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line <link linkend="__player_stats_8cs_source_1l00064">64</link> of file <link linkend="__player_stats_8cs_source">PlayerStats.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00064 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00065 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_stats_1ae047b0b22ef2d0cbd60c5b4193fac02a">CurrentLevelTag</link>&#32;=&#32;levelTag;
+00066 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_player_stats_1a58c3b27a3633bead2f77fa551f30beeb"/><section>
+    <title>SetMaxHealthPoints()</title>
+<indexterm><primary>SetMaxHealthPoints</primary><secondary>PlayerStats</secondary></indexterm>
+<indexterm><primary>PlayerStats</primary><secondary>SetMaxHealthPoints</secondary></indexterm>
+<para><computeroutput>void PlayerStats.SetMaxHealthPoints (float maxHealthPoints)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Setzt die maximalen Lebenspunkte des Spielers. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>maxHealthPoints</entry><entry>
+<para>Die neuen maximalen Lebenspunkte (muss positiv sein). </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line <link linkend="__player_stats_8cs_source_1l00130">130</link> of file <link linkend="__player_stats_8cs_source">PlayerStats.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00130 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00131 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;MaxHealthPoints&#32;muss&#32;immer&#32;positiv&#32;sein</emphasis>
+00132 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_stats_1a335bea0dc78273f4cc46a01a7d699dcd">MaxHealthPoints</link>&#32;=&#32;Mathf.Max(maxHealthPoints,&#32;1);&#32;<emphasis role="comment">//&#32;Verhindert,&#32;dass&#32;MaxHealthPoints&#32;&lt;=&#32;0&#32;wird</emphasis>
+00133 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_player_stats_1a8f76220aa1271b2335b045624c6812d0"/><section>
+    <title>SetMaxStamina()</title>
+<indexterm><primary>SetMaxStamina</primary><secondary>PlayerStats</secondary></indexterm>
+<indexterm><primary>PlayerStats</primary><secondary>SetMaxStamina</secondary></indexterm>
+<para><computeroutput>void PlayerStats.SetMaxStamina (float Value)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Setzt die maximale Stamina des Spielers. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>Value</entry><entry>
+<para>Den neuen Wert für die maximale Stamina (muss positiv sein). </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line <link linkend="__player_stats_8cs_source_1l00156">156</link> of file <link linkend="__player_stats_8cs_source">PlayerStats.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00156 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00157 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;MaxStamina&#32;muss&#32;immer&#32;positiv&#32;sein</emphasis>
+00158 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_stats_1a3ec6c1ddfeddebf52f76200216a015b5">MaxStamina</link>&#32;=&#32;Mathf.Max(Value,&#32;1);
+00159 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_player_stats_1adb53f7019a00edfe089c3dfd205438c2"/><section>
+    <title>SetPosition()</title>
+<indexterm><primary>SetPosition</primary><secondary>PlayerStats</secondary></indexterm>
+<indexterm><primary>PlayerStats</primary><secondary>SetPosition</secondary></indexterm>
+<para><computeroutput>void PlayerStats.SetPosition (Vector2 position)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Setzt die Position des Spielers. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>Position</entry><entry>
+<para>des Spielers. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line <link linkend="__player_stats_8cs_source_1l00088">88</link> of file <link linkend="__player_stats_8cs_source">PlayerStats.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00088 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00089 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_stats_1a2afbdf33659ec177ac5f27638a78fe42">Position</link>&#32;=&#32;position;
+00090 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_player_stats_1a7ec692981c45e933c737eff8d78e6456"/><section>
+    <title>SetRespawnLevelTag()</title>
+<indexterm><primary>SetRespawnLevelTag</primary><secondary>PlayerStats</secondary></indexterm>
+<indexterm><primary>PlayerStats</primary><secondary>SetRespawnLevelTag</secondary></indexterm>
+<para><computeroutput>void PlayerStats.SetRespawnLevelTag (String levelTag)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Setter für RespawnLevelTag. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>RespawnLevelTag</entry><entry>
+<para>Neuer Tag </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line <link linkend="__player_stats_8cs_source_1l00048">48</link> of file <link linkend="__player_stats_8cs_source">PlayerStats.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00048 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00049 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_stats_1a1e6557a3100cd9b69dccf218d2c84609">RespawnLevelTag</link>&#32;=&#32;levelTag;
+00050 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_player_stats_1a647991a1d154f8c2bc8d7032b43e35aa"/><section>
+    <title>SetSinAmount()</title>
+<indexterm><primary>SetSinAmount</primary><secondary>PlayerStats</secondary></indexterm>
+<indexterm><primary>PlayerStats</primary><secondary>SetSinAmount</secondary></indexterm>
+<para><computeroutput>void PlayerStats.SetSinAmount (int Value)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Setzt den SinAmount des Spielers. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>Value</entry><entry>
+<para>Der neue Wert für den SinAmount. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line <link linkend="__player_stats_8cs_source_1l00113">113</link> of file <link linkend="__player_stats_8cs_source">PlayerStats.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00113 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00114 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;SinAmount&#32;muss&#32;immer&#32;&gt;=&#32;0&#32;sein</emphasis>
+00115 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_stats_1ad7c9580233648775b11f199347087f4c">SinAmount</link>&#32;=&#32;Mathf.Max(Value,&#32;0);
+00116 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_player_stats_1a147af1b1e37f6506303caca28b60f9e4"/><section>
+    <title>SetSpawnPoint()</title>
+<indexterm><primary>SetSpawnPoint</primary><secondary>PlayerStats</secondary></indexterm>
+<indexterm><primary>PlayerStats</primary><secondary>SetSpawnPoint</secondary></indexterm>
+<para><computeroutput>void PlayerStats.SetSpawnPoint (Vector2 spawnPoint)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Setzt den SpawnPoint des Spielers. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>Der</entry><entry>
+<para>SpawnPoint des Spielers. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line <link linkend="__player_stats_8cs_source_1l00072">72</link> of file <link linkend="__player_stats_8cs_source">PlayerStats.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00072 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00073 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_stats_1a45dbfad923471fe032a894b05daf3735">SpawnPoint</link>&#32;=&#32;spawnPoint;
+00074 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_player_stats_1ab341f12827a6bdcfebb826dff43e82e3"/><section>
+    <title>SetStamina()</title>
+<indexterm><primary>SetStamina</primary><secondary>PlayerStats</secondary></indexterm>
+<indexterm><primary>PlayerStats</primary><secondary>SetStamina</secondary></indexterm>
+<para><computeroutput>void PlayerStats.SetStamina (float Value)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Setzt die Stamina des Spielers. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>Value</entry><entry>
+<para>Den neuen Wert für Stamina (muss im Bereich zwischen 0 und MaxStamina liegen). </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line <link linkend="__player_stats_8cs_source_1l00173">173</link> of file <link linkend="__player_stats_8cs_source">PlayerStats.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00173 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00174 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Stellt&#32;sicher,&#32;dass&#32;die&#32;CurrentStamina&#32;im&#32;gültigen&#32;Bereich&#32;bleibt&#32;(zwischen&#32;0&#32;und&#32;MaxStamina)</emphasis>
+00175 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_stats_1a4d2c11ea6b3c00573fdaada704003164">CurrentStamina</link>&#32;=&#32;Mathf.Clamp(Value,&#32;0,&#32;<link linkend="_class_player_stats_1a3ec6c1ddfeddebf52f76200216a015b5">MaxStamina</link>);
+00176 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_class_player_stats_1ab3f1ef87a636e6387817be8334dd75dc"/><section>
+    <title>BVCurrentUses</title>
+<indexterm><primary>BVCurrentUses</primary><secondary>PlayerStats</secondary></indexterm>
+<indexterm><primary>PlayerStats</primary><secondary>BVCurrentUses</secondary></indexterm>
+<para><computeroutput>int PlayerStats.BVCurrentUses<computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__player_stats_8cs_source_1l00023">23</link> of file <link linkend="__player_stats_8cs_source">PlayerStats.cs</link>.</para>
+</section>
+<anchor xml:id="_class_player_stats_1ade72e9a5adb4aa136bc4cba06cc701db"/><section>
+    <title>BVHealAmount</title>
+<indexterm><primary>BVHealAmount</primary><secondary>PlayerStats</secondary></indexterm>
+<indexterm><primary>PlayerStats</primary><secondary>BVHealAmount</secondary></indexterm>
+<para><computeroutput>int PlayerStats.BVHealAmount = 25<computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__player_stats_8cs_source_1l00021">21</link> of file <link linkend="__player_stats_8cs_source">PlayerStats.cs</link>.</para>
+</section>
+<anchor xml:id="_class_player_stats_1aa47e0d391b2a9a1bf162da0b00a3b075"/><section>
+    <title>BVMaxUses</title>
+<indexterm><primary>BVMaxUses</primary><secondary>PlayerStats</secondary></indexterm>
+<indexterm><primary>PlayerStats</primary><secondary>BVMaxUses</secondary></indexterm>
+<para><computeroutput>int PlayerStats.BVMaxUses = 5<computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__player_stats_8cs_source_1l00022">22</link> of file <link linkend="__player_stats_8cs_source">PlayerStats.cs</link>.</para>
+</section>
+<anchor xml:id="_class_player_stats_1ae382740c5a49ebad7a020173d6eb527b"/><section>
+    <title>CurrentHealth</title>
+<indexterm><primary>CurrentHealth</primary><secondary>PlayerStats</secondary></indexterm>
+<indexterm><primary>PlayerStats</primary><secondary>CurrentHealth</secondary></indexterm>
+<para><computeroutput>float PlayerStats.CurrentHealth<computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__player_stats_8cs_source_1l00018">18</link> of file <link linkend="__player_stats_8cs_source">PlayerStats.cs</link>.</para>
+</section>
+<anchor xml:id="_class_player_stats_1ae047b0b22ef2d0cbd60c5b4193fac02a"/><section>
+    <title>CurrentLevelTag</title>
+<indexterm><primary>CurrentLevelTag</primary><secondary>PlayerStats</secondary></indexterm>
+<indexterm><primary>PlayerStats</primary><secondary>CurrentLevelTag</secondary></indexterm>
+<para><computeroutput>String PlayerStats.CurrentLevelTag = &quot;intro&quot;<computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__player_stats_8cs_source_1l00013">13</link> of file <link linkend="__player_stats_8cs_source">PlayerStats.cs</link>.</para>
+</section>
+<anchor xml:id="_class_player_stats_1a4d2c11ea6b3c00573fdaada704003164"/><section>
+    <title>CurrentStamina</title>
+<indexterm><primary>CurrentStamina</primary><secondary>PlayerStats</secondary></indexterm>
+<indexterm><primary>PlayerStats</primary><secondary>CurrentStamina</secondary></indexterm>
+<para><computeroutput>float PlayerStats.CurrentStamina<computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__player_stats_8cs_source_1l00020">20</link> of file <link linkend="__player_stats_8cs_source">PlayerStats.cs</link>.</para>
+</section>
+<anchor xml:id="_class_player_stats_1a335bea0dc78273f4cc46a01a7d699dcd"/><section>
+    <title>MaxHealthPoints</title>
+<indexterm><primary>MaxHealthPoints</primary><secondary>PlayerStats</secondary></indexterm>
+<indexterm><primary>PlayerStats</primary><secondary>MaxHealthPoints</secondary></indexterm>
+<para><computeroutput>float PlayerStats.MaxHealthPoints = 100f<computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__player_stats_8cs_source_1l00017">17</link> of file <link linkend="__player_stats_8cs_source">PlayerStats.cs</link>.</para>
+</section>
+<anchor xml:id="_class_player_stats_1a3ec6c1ddfeddebf52f76200216a015b5"/><section>
+    <title>MaxStamina</title>
+<indexterm><primary>MaxStamina</primary><secondary>PlayerStats</secondary></indexterm>
+<indexterm><primary>PlayerStats</primary><secondary>MaxStamina</secondary></indexterm>
+<para><computeroutput>float PlayerStats.MaxStamina = 100f<computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__player_stats_8cs_source_1l00019">19</link> of file <link linkend="__player_stats_8cs_source">PlayerStats.cs</link>.</para>
+</section>
+<anchor xml:id="_class_player_stats_1a2afbdf33659ec177ac5f27638a78fe42"/><section>
+    <title>Position</title>
+<indexterm><primary>Position</primary><secondary>PlayerStats</secondary></indexterm>
+<indexterm><primary>PlayerStats</primary><secondary>Position</secondary></indexterm>
+<para><computeroutput>Vector2 PlayerStats.Position = new Vector2(-540, 160)<computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__player_stats_8cs_source_1l00015">15</link> of file <link linkend="__player_stats_8cs_source">PlayerStats.cs</link>.</para>
+</section>
+<anchor xml:id="_class_player_stats_1a1e6557a3100cd9b69dccf218d2c84609"/><section>
+    <title>RespawnLevelTag</title>
+<indexterm><primary>RespawnLevelTag</primary><secondary>PlayerStats</secondary></indexterm>
+<indexterm><primary>PlayerStats</primary><secondary>RespawnLevelTag</secondary></indexterm>
+<para><computeroutput>String PlayerStats.RespawnLevelTag = &quot;intro&quot;<computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__player_stats_8cs_source_1l00012">12</link> of file <link linkend="__player_stats_8cs_source">PlayerStats.cs</link>.</para>
+</section>
+<anchor xml:id="_class_player_stats_1ad7c9580233648775b11f199347087f4c"/><section>
+    <title>SinAmount</title>
+<indexterm><primary>SinAmount</primary><secondary>PlayerStats</secondary></indexterm>
+<indexterm><primary>PlayerStats</primary><secondary>SinAmount</secondary></indexterm>
+<para><computeroutput>int PlayerStats.SinAmount<computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__player_stats_8cs_source_1l00016">16</link> of file <link linkend="__player_stats_8cs_source">PlayerStats.cs</link>.</para>
+</section>
+<anchor xml:id="_class_player_stats_1a45dbfad923471fe032a894b05daf3735"/><section>
+    <title>SpawnPoint</title>
+<indexterm><primary>SpawnPoint</primary><secondary>PlayerStats</secondary></indexterm>
+<indexterm><primary>PlayerStats</primary><secondary>SpawnPoint</secondary></indexterm>
+<para><computeroutput>Vector2 PlayerStats.SpawnPoint<computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__player_stats_8cs_source_1l00014">14</link> of file <link linkend="__player_stats_8cs_source">PlayerStats.cs</link>.</para>
+</section>
+</section>
+<section>
+<title>Property Documentation</title>
+<anchor xml:id="_class_player_stats_1adeb667dbe2c1a76d1785ce07b6faf181"/><section>
+    <title>Instance</title>
+<indexterm><primary>Instance</primary><secondary>PlayerStats</secondary></indexterm>
+<indexterm><primary>PlayerStats</primary><secondary>Instance</secondary></indexterm>
+<para><computeroutput><link linkend="_class_player_stats">PlayerStats</link> PlayerStats.Instance<computeroutput>[static]</computeroutput>, <computeroutput>[get]</computeroutput>, <computeroutput>[private set]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__player_stats_8cs_source_1l00010">10</link> of file <link linkend="__player_stats_8cs_source">PlayerStats.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00010 {&#32;<emphasis role="keyword">get</emphasis>;&#32;<emphasis role="keyword">private</emphasis>&#32;<emphasis role="keyword">set</emphasis>;&#32;}
+</programlisting></section>
+<para>
+The documentation for this class was generated from the following file:</para>
+<link linkend="__player_stats_8cs">PlayerStats.cs</link></section>
+</section>

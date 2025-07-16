@@ -1,0 +1,117 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_level_manager" xml:lang="en-US">
+<title>LevelManager Class Reference</title>
+<indexterm><primary>LevelManager</primary></indexterm>
+<para>
+
+<para>Klasse für den <link linkend="_class_level_manager">LevelManager</link> Diese Klasse verwaltet den Levelwechsel und die Spielerpositionierung. </para>
+ 
+</para>
+<para>Inheritance diagram for LevelManager:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_level_manager.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>override void <link linkend="_class_level_manager_1a4b888380e2821900c4234746114081e8">_Ready</link> ()</para>
+
+<para>Initialisierung der Referenzen. Findet die relevanten Knoten in der Szene und weist sie zu. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Private Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_class_level_manager_1a2bb47b7b35e478b95173a4cebe474c44">OnLevelSpawn</link> (string DestinationTag)</para>
+
+<para>Wird aufgerufen, wenn ein neues Level geladen wird. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Klasse für den <link linkend="_class_level_manager">LevelManager</link> Diese Klasse verwaltet den Levelwechsel und die Spielerpositionierung. </para>
+<para>
+Definition at line <link linkend="__level_manager_8cs_source_1l00007">7</link> of file <link linkend="__level_manager_8cs_source">LevelManager.cs</link>.</para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_level_manager_1a4b888380e2821900c4234746114081e8"/><section>
+    <title>_Ready()</title>
+<indexterm><primary>_Ready</primary><secondary>LevelManager</secondary></indexterm>
+<indexterm><primary>LevelManager</primary><secondary>_Ready</secondary></indexterm>
+<para><computeroutput>override void LevelManager._Ready ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Initialisierung der Referenzen. Findet die relevanten Knoten in der Szene und weist sie zu. </para>
+</para>
+
+<para>Wenn ein Spawn-Tag gesetzt ist, wird der Spieler an die entsprechende Tür gesetzt. Dies wird verwendet, um den Spieler an eine bestimmte Tür zu setzen, wenn er von einem anderen Level aus spawnt.</para>
+<para>
+Definition at line <link linkend="__level_manager_8cs_source_1l00013">13</link> of file <link linkend="__level_manager_8cs_source">LevelManager.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00014 &#32;&#32;&#32;&#32;{
+00015 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;var&#32;<link linkend="_class_navigation_manager">NavigationManager</link>&#32;=&#32;GetNode&lt;NavigationManager&gt;(<emphasis role="stringliteral">&quot;/root/NavigationManager&quot;</emphasis>);
+00016 
+00021 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="_class_navigation_manager">NavigationManager</link>.<link linkend="_class_navigation_manager_1a5aa88986fee7cfcf701e424e333b6980">SpawnDoorTag</link>&#32;!=&#32;<emphasis role="keyword">null</emphasis>)
+00022 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00023 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_level_manager_1a2bb47b7b35e478b95173a4cebe474c44">OnLevelSpawn</link>(<link linkend="_class_navigation_manager">NavigationManager</link>.<link linkend="_class_navigation_manager_1a5aa88986fee7cfcf701e424e333b6980">SpawnDoorTag</link>);
+00024 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00025 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>
+00026 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00027 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_navigation_manager">NavigationManager</link>.CallDeferred(<emphasis role="stringliteral">&quot;TriggerPlayerSpawn&quot;</emphasis>,&#32;<link linkend="_class_player_stats">PlayerStats</link>.<link linkend="_class_player_stats_1adeb667dbe2c1a76d1785ce07b6faf181">Instance</link>.<link linkend="_class_player_stats_1a77ca820f184b31dd9590bc8613f8566e">GetPosition</link>(),&#32;<emphasis role="stringliteral">&quot;&quot;</emphasis>);
+00028 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00029 
+00030 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_level_manager_1a2bb47b7b35e478b95173a4cebe474c44"/><section>
+    <title>OnLevelSpawn()</title>
+<indexterm><primary>OnLevelSpawn</primary><secondary>LevelManager</secondary></indexterm>
+<indexterm><primary>LevelManager</primary><secondary>OnLevelSpawn</secondary></indexterm>
+<para><computeroutput>void LevelManager.OnLevelSpawn (string DestinationTag)<computeroutput>[inline]</computeroutput>, <computeroutput>[private]</computeroutput></computeroutput></para><para>
+
+<para>Wird aufgerufen, wenn ein neues Level geladen wird. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>DestinationTag</entry><entry>
+<para>Das Tag der Tür, an der der Spieler spawnen soll. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line <link linkend="__level_manager_8cs_source_1l00036">36</link> of file <link linkend="__level_manager_8cs_source">LevelManager.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00037 &#32;&#32;&#32;&#32;{
+00038 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;var&#32;<link linkend="_class_navigation_manager">NavigationManager</link>&#32;=&#32;GetNode&lt;NavigationManager&gt;(<emphasis role="stringliteral">&quot;/root/NavigationManager&quot;</emphasis>);
+00039 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Pfad&#32;zur&#32;Tür&#32;basierend&#32;auf&#32;dem&#32;Ziel-Tag&#32;erstellen</emphasis>
+00040 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">string</emphasis>&#32;DoorPath&#32;=&#32;<emphasis role="stringliteral">&quot;Doors/Door_&quot;</emphasis>&#32;+&#32;DestinationTag;
+00041 
+00042 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_door">Door</link>&#32;door&#32;=&#32;GetNode&lt;Door&gt;(DoorPath);
+00043 
+00044 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;TriggerPlayerSpawn&#32;nach&#32;deferred&#32;ausführen</emphasis>
+00045 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_navigation_manager">NavigationManager</link>.CallDeferred(<emphasis role="stringliteral">&quot;TriggerPlayerSpawn&quot;</emphasis>,&#32;door.GlobalPosition,&#32;door.<link linkend="_class_door_1a4f26c87ed2646e120c5a53f7688ea1c3">SpawnDirection</link>);
+00046 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<para>
+The documentation for this class was generated from the following file:</para>
+<link linkend="__level_manager_8cs">LevelManager.cs</link></section>
+</section>

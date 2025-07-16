@@ -1,0 +1,439 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_boss1" xml:lang="en-US">
+<title>Boss1 Class Reference</title>
+<indexterm><primary>Boss1</primary></indexterm>
+<para>
+
+<para>Klasse für einen stärkeren Boss-Gegner, der von <link linkend="_class_base_enemy">BaseEnemy</link> erbt. </para>
+ 
+</para>
+<para>Inheritance diagram for Boss1:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_boss1.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>override void <link linkend="_class_boss1_1a54d969ea1903e38368d64dad18a7f4f7">_Ready</link> ()</para>
+
+<para>Überschreibt die _Ready-Methode von <link linkend="_class_base_enemy">BaseEnemy</link>. </para>
+</listitem>
+            <listitem><para>override void <link linkend="_class_boss1_1acf5c78871a8938129df05bba3b71780f">_Process</link> (double DeltaTime)</para>
+
+<para>Überschreibt die _Process-Methode von <link linkend="_class_base_enemy">BaseEnemy</link>. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_boss1_1adeeb5dafaa8e2f640adba4339b6da0f9">HandleRegeneration</link> (double DeltaTime)</para>
+
+<para>Regeneriert die Gesundheit des Bosses, wenn er keinen Schaden nimmt. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_boss1_1a3028f486f7e9cde1116086a4ae7b810e">StartGlowing</link> ()</para>
+
+<para>Startet einen Leuchteffekt, wenn der Boss Schaden nimmt. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+Public Member Functions inherited from <link linkend="_class_base_enemy">BaseEnemy</link>        <itemizedlist>
+            <listitem><para>override void <link linkend="_class_base_enemy_1a39d037e06e1fcb609e5108431e931acd">_Ready</link> ()</para>
+
+<para>Initialisierung der Referenzen. Findet die relevanten Knoten in der Szene und weist sie zu. </para>
+</listitem>
+            <listitem><para>override void <link linkend="_class_base_enemy_1acf42e9e6b9a386259f5dd74a83c09fac">_Process</link> (double DeltaTime)</para>
+
+<para>Physikalische Prozesse werden in jedem Frame ausgeführt. Berechnet Gravitation und Bewegung. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_base_enemy_1ad1a2b4f2e07d55eab26d4d8e1d9aa713">OnDetectionBodyEntered</link> (Node2D body)</para>
+
+<para>Detektiert den Spieler wenn er den Erkennungsbereich betritt. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_base_enemy_1a269f9f3626f17368f404ca27616d0697">OnPursuingRadiusBodyExited</link> (Node2D body)</para>
+
+<para>Detektiert wenn der Spieler den Verfolgungsbereich verlässt. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_base_enemy_1a6aad96826441fe152694139d29893bad">OnHitboxAreaEntered</link> (Area2D area)</para>
+
+<para>Detektiert wenn ein Objekt die Hitbox des Gegners betritt. (z.B.: Schwert des Spielers) </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_base_enemy_1ab07fb117d5286ef97dc702149c02b14a">OnSwordHitBoxBodyEntered</link> (Node2D body)</para>
+
+<para>Detektiert ob der Spieler in Schlagreichweite ist. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_base_enemy_1a284a995d12d6bc1d7a23d1f6f25a96af">TakeDamage</link> (<link linkend="_class_damage">Damage</link> DMG)</para>
+
+<para>Verarbeitet zugefügten Schaden. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_class_base_enemy_1a27c3947769522b35b537e5f472ef0b77">IsDead</link> ()</para>
+
+<para>Gibt boolean Dead zurück. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_base_enemy_1aa5e7d87eaa080ed685315588a39a9f1f">Die</link> ()</para>
+
+<para>Wird aufgerufen wenn der Gegner stirbt. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_base_enemy_1a9ef92c3f73170538681e665e78e2279a">Respawn</link> ()</para>
+
+<para>Wird aufgerufen wenn der Gegner respawnt. </para>
+</listitem>
+        </itemizedlist>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>bool <link linkend="_class_boss1_1af34e5a49e4e66b404a0f5ba6e0dcfdf5">EnemiesRevived</link> = false</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+Public Attributes inherited from <link linkend="_class_base_enemy">BaseEnemy</link>        <itemizedlist>
+            <listitem><para>bool <link linkend="_class_base_enemy_1a61314ff2e5931900ca4a87aa8feb670f">Dead</link> = false</para>
+</listitem>
+            <listitem><para>float <link linkend="_class_base_enemy_1a66b9b6f8492753769f40e18e66babe6d">Armor</link> = 20f</para>
+</listitem>
+            <listitem><para>float <link linkend="_class_base_enemy_1ad8681385a9f3e9e67d65acb6b945efcf">CurrentHealthPoints</link></para>
+</listitem>
+            <listitem><para>double <link linkend="_class_base_enemy_1a283d342796ff720966538c0776fc9e48">ReturnToStart</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_class_base_enemy_1a512fca9892d7e4cd717adf9087dcc295">Pursuing</link> = false</para>
+</listitem>
+            <listitem><para>Vector2 <link linkend="_class_base_enemy_1a2b05c8247dab9946e801fd74a8af6376">TargetPosition</link> = Vector2.Inf</para>
+</listitem>
+            <listitem><para>Vector2 <link linkend="_class_base_enemy_1af386b85762b6790503bf1716a9d2fd77">StartPosition</link></para>
+</listitem>
+            <listitem><para>AnimatedSprite2D <link linkend="_class_base_enemy_1a2e4bd99e594a6c3366f64ab47c7443b5">Sprite</link></para>
+</listitem>
+            <listitem><para>CollisionShape2D <link linkend="_class_base_enemy_1a9b71f0d7b10ec2b15f5176b8b69ce190">MainCollision</link></para>
+</listitem>
+        </itemizedlist>
+<simplesect>
+    <title>Private Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_class_boss1_1a7f37f00687f7c0e51fde5ba281150091">ShowPopupMessage</link> (string Message)</para>
+
+<para>Zeigt eine Popup-Nachricht an. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_boss1_1aba2c531c46124f21ec612a2acd14cd6c">ReviveEnemies</link> ()</para>
+
+<para>Lässt alle toten Feinde im Raum des Bosses wiederbeleben. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Private Attributes    </title>
+        <itemizedlist>
+            <listitem><para>float <link linkend="_class_boss1_1a0a05bef3b6a4852c18ee805f785c8a67">RegenCooldown</link> = 5.0f</para>
+</listitem>
+            <listitem><para>float <link linkend="_class_boss1_1a1ffe13684ef66b1ec26b87e728b83cb0">RegenTimer</link> = 0.0f</para>
+</listitem>
+            <listitem><para>float <link linkend="_class_boss1_1ac698e027fada02bcf0bea5e2c756711c">RegenAmount</link> = 10.0f</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+Protected Member Functions inherited from <link linkend="_class_base_enemy">BaseEnemy</link>        <itemizedlist>
+            <listitem><para>virtual void <link linkend="_class_base_enemy_1a52b8c24a84bfa2e981d776f816f33186">UpdateAnimation</link> ()</para>
+
+<para>Aktualisiert die Animationen des Gegners. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+Protected Attributes inherited from <link linkend="_class_base_enemy">BaseEnemy</link>        <itemizedlist>
+            <listitem><para>float <link linkend="_class_base_enemy_1a1661cfbf7e6dff6a1d8a6fa44b10a3b0">Damage</link> = 20f</para>
+</listitem>
+            <listitem><para>bool <link linkend="_class_base_enemy_1a3d261e81ba7422572d0813341016c2c3">Respawnable</link> = true</para>
+</listitem>
+            <listitem><para>float <link linkend="_class_base_enemy_1aeb1033802e3cdf44b1b0a510cbf18425">MaxHealthPoints</link> = 100f</para>
+</listitem>
+            <listitem><para>float <link linkend="_class_base_enemy_1a4f99809bf5de1dbbe762c13fc7db8881">MaxStamina</link> = 1f</para>
+</listitem>
+            <listitem><para>float <link linkend="_class_base_enemy_1a661de31833c943c7d7d72de616a9141a">Speed</link> = 10</para>
+</listitem>
+            <listitem><para>int <link linkend="_class_base_enemy_1afa7426d08cbee4ed3184822c57888ec7">SinAmount</link> = 10</para>
+</listitem>
+            <listitem><para>double <link linkend="_class_base_enemy_1aba59e1a3fffbf2749c266d8caaf1c482">ReturnToStartAfter</link> = 5</para>
+</listitem>
+            <listitem><para>float <link linkend="_class_base_enemy_1a8a041329b7418ab3fb1b92aa0674eaa8">CurrentStamina</link></para>
+</listitem>
+            <listitem><para>Node2D <link linkend="_class_base_enemy_1aaeef5b40160a59096f667fd084b73cc8">CurrentTarget</link> = null</para>
+</listitem>
+            <listitem><para>bool <link linkend="_class_base_enemy_1ad2523c398e4a11b5f36a9df26c4014eb">StartRotation</link> = false</para>
+</listitem>
+            <listitem><para>bool <link linkend="_class_base_enemy_1a47e5e613c39180e6b1bf9899039b45fc">AlreadyHit</link> = false</para>
+</listitem>
+            <listitem><para>CollisionPolygon2D <link linkend="_class_base_enemy_1ada18d6dd378a0f7380579ce63a6b4ec2">CollisionPolygon</link></para>
+</listitem>
+            <listitem><para>Area2D <link linkend="_class_base_enemy_1a9d136e8abbf09f7b418112394bdf1c88">SwordHitbox</link></para>
+</listitem>
+            <listitem><para>RayCast2D <link linkend="_class_base_enemy_1a136d1835e3ccedebaa12d7fe151d890b">FrontCollisionRayCast</link></para>
+</listitem>
+            <listitem><para>RayCast2D <link linkend="_class_base_enemy_1a586349c436eb91c16f5f2f4bee17caa1">LineOfSight</link></para>
+</listitem>
+            <listitem><para>RayCast2D <link linkend="_class_base_enemy_1a4b844f94d42f547d733385fcefc5473a">LeftFallProtection</link></para>
+</listitem>
+            <listitem><para>RayCast2D <link linkend="_class_base_enemy_1a250a47e4f491f15dc19e64816bef01d7">RightFallProtection</link></para>
+</listitem>
+            <listitem><para>TextureProgressBar <link linkend="_class_base_enemy_1a5944a26db58d24ee828a2d8e83687e93">HealthBar</link></para>
+</listitem>
+            <listitem><para><link linkend="_class_player">Player</link> <link linkend="_class_base_enemy_1a968a793842be49b5cf65fa35deb9ae5c">Player</link></para>
+</listitem>
+        </itemizedlist>
+Properties inherited from <link linkend="_class_base_enemy">BaseEnemy</link>        <itemizedlist>
+            <listitem><para>uint <link linkend="_class_base_enemy_1a7a4fe2c824142f79ba0dd6cf9d1a7d25">Id</link> = 0<computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+        </itemizedlist>
+<section>
+<title>Detailed Description</title>
+
+<para>Klasse für einen stärkeren Boss-Gegner, der von <link linkend="_class_base_enemy">BaseEnemy</link> erbt. </para>
+<para>
+Definition at line <link linkend="__boss1_8cs_source_1l00007">7</link> of file <link linkend="__boss1_8cs_source">Boss1.cs</link>.</para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_boss1_1acf5c78871a8938129df05bba3b71780f"/><section>
+    <title>_Process()</title>
+<indexterm><primary>_Process</primary><secondary>Boss1</secondary></indexterm>
+<indexterm><primary>Boss1</primary><secondary>_Process</secondary></indexterm>
+<para><computeroutput>override void Boss1._Process (double DeltaTime)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Überschreibt die _Process-Methode von <link linkend="_class_base_enemy">BaseEnemy</link>. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>DeltaTime</entry><entry>
+<para>Die Zeit, die seit dem letzten Frame vergangen ist </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line <link linkend="__boss1_8cs_source_1l00036">36</link> of file <link linkend="__boss1_8cs_source">Boss1.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00036 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00037 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;base._Process(DeltaTime);
+00038 
+00039 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="_class_base_enemy_1ad8681385a9f3e9e67d65acb6b945efcf">CurrentHealthPoints</link>&#32;&lt;=&#32;<link linkend="_class_base_enemy_1aeb1033802e3cdf44b1b0a510cbf18425">MaxHealthPoints</link>&#32;/&#32;2&#32;&amp;&amp;&#32;!<link linkend="_class_boss1_1af34e5a49e4e66b404a0f5ba6e0dcfdf5">EnemiesRevived</link>){
+00040 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_boss1_1a3028f486f7e9cde1116086a4ae7b810e">StartGlowing</link>();
+00041 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_boss1_1aba2c531c46124f21ec612a2acd14cd6c">ReviveEnemies</link>();
+00042 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_boss1_1af34e5a49e4e66b404a0f5ba6e0dcfdf5">EnemiesRevived</link>&#32;=&#32;<emphasis role="keyword">true</emphasis>;
+00043 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_base_enemy_1a66b9b6f8492753769f40e18e66babe6d">Armor</link>&#32;=&#32;60f;&#32;<emphasis role="comment">//&#32;Rüstung&#32;erhöhen</emphasis>
+00044 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00045 
+00046 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_boss1_1adeeb5dafaa8e2f640adba4339b6da0f9">HandleRegeneration</link>(DeltaTime);
+00047 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_boss1_1a54d969ea1903e38368d64dad18a7f4f7"/><section>
+    <title>_Ready()</title>
+<indexterm><primary>_Ready</primary><secondary>Boss1</secondary></indexterm>
+<indexterm><primary>Boss1</primary><secondary>_Ready</secondary></indexterm>
+<para><computeroutput>override void Boss1._Ready ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Überschreibt die _Ready-Methode von <link linkend="_class_base_enemy">BaseEnemy</link>. </para>
+</para>
+<para>
+Definition at line <link linkend="__boss1_8cs_source_1l00018">18</link> of file <link linkend="__boss1_8cs_source">Boss1.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00018 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00019 
+00020 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_base_enemy_1aeb1033802e3cdf44b1b0a510cbf18425">MaxHealthPoints</link>&#32;=&#32;400f;
+00021 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_damage">Damage</link>&#32;=&#32;50f;
+00022 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_base_enemy_1a66b9b6f8492753769f40e18e66babe6d">Armor</link>&#32;=&#32;30f;
+00023 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_base_enemy_1a661de31833c943c7d7d72de616a9141a">Speed</link>&#32;=&#32;10f;
+00024 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_base_enemy_1afa7426d08cbee4ed3184822c57888ec7">SinAmount</link>&#32;=&#32;100;&#32;<emphasis role="comment">//&#32;Bonuspunkte&#32;für&#32;Spieler&#32;beim&#32;Besiegen&#32;des&#32;Bosses</emphasis>
+00025 
+00026 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;base._Ready();
+00027 
+00028 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_base_enemy_1ad8681385a9f3e9e67d65acb6b945efcf">CurrentHealthPoints</link>&#32;=&#32;<link linkend="_class_base_enemy_1aeb1033802e3cdf44b1b0a510cbf18425">MaxHealthPoints</link>;
+00029 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;HealthBar.Value&#32;=&#32;100f&#32;*&#32;<link linkend="_class_base_enemy_1ad8681385a9f3e9e67d65acb6b945efcf">CurrentHealthPoints</link>&#32;/&#32;<link linkend="_class_base_enemy_1aeb1033802e3cdf44b1b0a510cbf18425">MaxHealthPoints</link>;
+00030 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_boss1_1adeeb5dafaa8e2f640adba4339b6da0f9"/><section>
+    <title>HandleRegeneration()</title>
+<indexterm><primary>HandleRegeneration</primary><secondary>Boss1</secondary></indexterm>
+<indexterm><primary>Boss1</primary><secondary>HandleRegeneration</secondary></indexterm>
+<para><computeroutput>void Boss1.HandleRegeneration (double DeltaTime)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Regeneriert die Gesundheit des Bosses, wenn er keinen Schaden nimmt. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>DeltaTime</entry><entry>
+<para>Die Zeit, die seit dem letzten Frame vergangen ist </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line <link linkend="__boss1_8cs_source_1l00053">53</link> of file <link linkend="__boss1_8cs_source">Boss1.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00053 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00054 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="_class_base_enemy_1ad8681385a9f3e9e67d65acb6b945efcf">CurrentHealthPoints</link>&#32;&lt;&#32;<link linkend="_class_base_enemy_1aeb1033802e3cdf44b1b0a510cbf18425">MaxHealthPoints</link>){
+00055 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_boss1_1a1ffe13684ef66b1ec26b87e728b83cb0">RegenTimer</link>&#32;+=&#32;(float)DeltaTime;
+00056 
+00057 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="_class_boss1_1a1ffe13684ef66b1ec26b87e728b83cb0">RegenTimer</link>&#32;&gt;=&#32;<link linkend="_class_boss1_1a0a05bef3b6a4852c18ee805f785c8a67">RegenCooldown</link>){
+00058 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_base_enemy_1ad8681385a9f3e9e67d65acb6b945efcf">CurrentHealthPoints</link>&#32;=&#32;Math.Min(<link linkend="_class_base_enemy_1ad8681385a9f3e9e67d65acb6b945efcf">CurrentHealthPoints</link>&#32;+&#32;<link linkend="_class_boss1_1ac698e027fada02bcf0bea5e2c756711c">RegenAmount</link>,&#32;<link linkend="_class_base_enemy_1aeb1033802e3cdf44b1b0a510cbf18425">MaxHealthPoints</link>);
+00059 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;HealthBar.Value&#32;=&#32;100f&#32;*&#32;<link linkend="_class_base_enemy_1ad8681385a9f3e9e67d65acb6b945efcf">CurrentHealthPoints</link>&#32;/&#32;<link linkend="_class_base_enemy_1aeb1033802e3cdf44b1b0a510cbf18425">MaxHealthPoints</link>;
+00060 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_boss1_1a1ffe13684ef66b1ec26b87e728b83cb0">RegenTimer</link>&#32;=&#32;0.0f;&#32;<emphasis role="comment">//&#32;Timer&#32;zurücksetzen</emphasis>
+00061 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00062 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00063 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_boss1_1aba2c531c46124f21ec612a2acd14cd6c"/><section>
+    <title>ReviveEnemies()</title>
+<indexterm><primary>ReviveEnemies</primary><secondary>Boss1</secondary></indexterm>
+<indexterm><primary>Boss1</primary><secondary>ReviveEnemies</secondary></indexterm>
+<para><computeroutput>void Boss1.ReviveEnemies ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[private]</computeroutput></computeroutput></para><para>
+
+<para>Lässt alle toten Feinde im Raum des Bosses wiederbeleben. </para>
+</para>
+<para>
+Definition at line <link linkend="__boss1_8cs_source_1l00108">108</link> of file <link linkend="__boss1_8cs_source">Boss1.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00109 &#32;&#32;&#32;&#32;{
+00110 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Hole&#32;den&#32;Elternknoten&#32;(bossRoom)</emphasis>
+00111 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Node&#32;BossRoom&#32;=&#32;GetParent();
+00112 
+00113 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Iteriere&#32;durch&#32;alle&#32;Kinder&#32;von&#32;bossRoom</emphasis>
+00114 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">foreach</emphasis>&#32;(Node&#32;Child&#32;<emphasis role="keywordflow">in</emphasis>&#32;BossRoom.GetChildren()){
+00115 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(Child&#32;is&#32;<link linkend="_class_base_enemy">BaseEnemy</link>&#32;<link linkend="_class_base_enemy">BaseEnemy</link>&#32;&amp;&amp;&#32;<link linkend="_class_base_enemy">BaseEnemy</link>.<link linkend="_class_base_enemy_1a27c3947769522b35b537e5f472ef0b77">IsDead</link>()){
+00116 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_base_enemy">BaseEnemy</link>.<link linkend="_class_base_enemy_1a9ef92c3f73170538681e665e78e2279a">Respawn</link>();
+00117 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00118 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00119 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_boss1_1a7f37f00687f7c0e51fde5ba281150091"/><section>
+    <title>ShowPopupMessage()</title>
+<indexterm><primary>ShowPopupMessage</primary><secondary>Boss1</secondary></indexterm>
+<indexterm><primary>Boss1</primary><secondary>ShowPopupMessage</secondary></indexterm>
+<para><computeroutput>void Boss1.ShowPopupMessage (string Message)<computeroutput>[inline]</computeroutput>, <computeroutput>[private]</computeroutput></computeroutput></para><para>
+
+<para>Zeigt eine Popup-Nachricht an. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>Message</entry><entry>
+<para>Die Nachricht, die angezeigt werden soll </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line <link linkend="__boss1_8cs_source_1l00080">80</link> of file <link linkend="__boss1_8cs_source">Boss1.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00080 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00081 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Label&#32;popup&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;Label();
+00082 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;popup.Text&#32;=&#32;Message;
+00083 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;popup.AddThemeColorOverride(<emphasis role="stringliteral">&quot;font_color&quot;</emphasis>,&#32;<emphasis role="keyword">new</emphasis>&#32;Color(1,&#32;0,&#32;0));&#32;<emphasis role="comment">//&#32;Rot</emphasis>
+00084 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;popup.Modulate&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;Color(1,&#32;1,&#32;1,&#32;0);&#32;<emphasis role="comment">//&#32;Start&#32;transparent</emphasis>
+00085 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;popup.AutowrapMode&#32;=&#32;TextServer.AutowrapMode.Word;
+00086 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;popup.SizeFlagsHorizontal&#32;=&#32;(Control.SizeFlags)(<emphasis role="keywordtype">int</emphasis>)Control.SizeFlags.ExpandFill;
+00087 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;popup.SizeFlagsVertical&#32;=&#32;(Control.SizeFlags)(<emphasis role="keywordtype">int</emphasis>)Control.SizeFlags.ShrinkCenter;
+00088 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;popup.HorizontalAlignment&#32;=&#32;HorizontalAlignment.Center;
+00089 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;popup.VerticalAlignment&#32;=&#32;VerticalAlignment.Center;
+00090 
+00091 
+00092 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Vector2&#32;bossGlobalPosition&#32;=&#32;GetGlobalTransformWithCanvas().Origin;
+00093 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;popup.GlobalPosition&#32;=&#32;bossGlobalPosition&#32;+&#32;<emphasis role="keyword">new</emphasis>&#32;Vector2(0,&#32;-100);
+00094 
+00095 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;CanvasLayer&#32;canvas&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;CanvasLayer();
+00096 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;AddChild(canvas);
+00097 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;canvas.AddChild(popup);
+00098 
+00099 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;var&#32;tween&#32;=&#32;CreateTween();
+00100 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;tween.TweenProperty(popup,&#32;<emphasis role="stringliteral">&quot;modulate:a&quot;</emphasis>,&#32;1,&#32;0.5f).From(0);&#32;<emphasis role="comment">//&#32;Einblenden</emphasis>
+00101 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;tween.TweenProperty(popup,&#32;<emphasis role="stringliteral">&quot;modulate:a&quot;</emphasis>,&#32;0,&#32;0.5f).From(1).SetDelay(1.0f);&#32;<emphasis role="comment">//&#32;Ausblenden&#32;nach&#32;1&#32;Sekunde</emphasis>
+00102 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;tween.Connect(<emphasis role="stringliteral">&quot;finished&quot;</emphasis>,&#32;<emphasis role="keyword">new</emphasis>&#32;Callable(popup,&#32;<emphasis role="stringliteral">&quot;queue_free&quot;</emphasis>));
+00103 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_boss1_1a3028f486f7e9cde1116086a4ae7b810e"/><section>
+    <title>StartGlowing()</title>
+<indexterm><primary>StartGlowing</primary><secondary>Boss1</secondary></indexterm>
+<indexterm><primary>Boss1</primary><secondary>StartGlowing</secondary></indexterm>
+<para><computeroutput>void Boss1.StartGlowing ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Startet einen Leuchteffekt, wenn der Boss Schaden nimmt. </para>
+</para>
+<para>
+Definition at line <link linkend="__boss1_8cs_source_1l00068">68</link> of file <link linkend="__boss1_8cs_source">Boss1.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00068 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00069 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Ändere&#32;die&#32;Modulationsfarbe&#32;des&#32;Sprites,&#32;um&#32;ein&#32;Leuchten&#32;zu&#32;simulieren</emphasis>
+00070 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="_class_base_enemy_1a2e4bd99e594a6c3366f64ab47c7443b5">Sprite</link>&#32;!=&#32;<emphasis role="keyword">null</emphasis>){
+00071 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_boss1_1a7f37f00687f7c0e51fde5ba281150091">ShowPopupMessage</link>(<emphasis role="stringliteral">&quot;AHHHH!!!&quot;</emphasis>);
+00072 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Sprite.Modulate&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;Color(1.0f,&#32;0.84f,&#32;0.0f,&#32;1.0f);&#32;<emphasis role="comment">//&#32;Ein&#32;goldliche&#32;Leuchteffekt</emphasis>
+00073 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00074 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_class_boss1_1af34e5a49e4e66b404a0f5ba6e0dcfdf5"/><section>
+    <title>EnemiesRevived</title>
+<indexterm><primary>EnemiesRevived</primary><secondary>Boss1</secondary></indexterm>
+<indexterm><primary>Boss1</primary><secondary>EnemiesRevived</secondary></indexterm>
+<para><computeroutput>bool Boss1.EnemiesRevived = false</computeroutput></para><para>
+Definition at line <link linkend="__boss1_8cs_source_1l00009">9</link> of file <link linkend="__boss1_8cs_source">Boss1.cs</link>.</para>
+</section>
+<anchor xml:id="_class_boss1_1ac698e027fada02bcf0bea5e2c756711c"/><section>
+    <title>RegenAmount</title>
+<indexterm><primary>RegenAmount</primary><secondary>Boss1</secondary></indexterm>
+<indexterm><primary>Boss1</primary><secondary>RegenAmount</secondary></indexterm>
+<para><computeroutput>float Boss1.RegenAmount = 10.0f<computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__boss1_8cs_source_1l00012">12</link> of file <link linkend="__boss1_8cs_source">Boss1.cs</link>.</para>
+</section>
+<anchor xml:id="_class_boss1_1a0a05bef3b6a4852c18ee805f785c8a67"/><section>
+    <title>RegenCooldown</title>
+<indexterm><primary>RegenCooldown</primary><secondary>Boss1</secondary></indexterm>
+<indexterm><primary>Boss1</primary><secondary>RegenCooldown</secondary></indexterm>
+<para><computeroutput>float Boss1.RegenCooldown = 5.0f<computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__boss1_8cs_source_1l00010">10</link> of file <link linkend="__boss1_8cs_source">Boss1.cs</link>.</para>
+</section>
+<anchor xml:id="_class_boss1_1a1ffe13684ef66b1ec26b87e728b83cb0"/><section>
+    <title>RegenTimer</title>
+<indexterm><primary>RegenTimer</primary><secondary>Boss1</secondary></indexterm>
+<indexterm><primary>Boss1</primary><secondary>RegenTimer</secondary></indexterm>
+<para><computeroutput>float Boss1.RegenTimer = 0.0f<computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__boss1_8cs_source_1l00011">11</link> of file <link linkend="__boss1_8cs_source">Boss1.cs</link>.</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+<link linkend="__boss1_8cs">Boss1.cs</link></section>
+</section>

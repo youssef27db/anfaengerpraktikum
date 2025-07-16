@@ -1,0 +1,1106 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_player" xml:lang="en-US">
+<title>Player Class Reference</title>
+<indexterm><primary>Player</primary></indexterm>
+<para>
+
+<para>Klasse für den Spielercharakter. Verwaltet Bewegung, Sprünge, Angriffe und Animationen. </para>
+ 
+</para>
+<para>Inheritance diagram for Player:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_player.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>override void <link linkend="_class_player_1ae192a478a80f0e93e01339d62cdd6f6d">_Ready</link> ()</para>
+
+<para>Initialisierung der Referenzen. Findet die relevanten Knoten in der Szene und weist sie zu. </para>
+</listitem>
+            <listitem><para>override void <link linkend="_class_player_1a02ef3667915da4d1a2e21fd6c9f93e48">_PhysicsProcess</link> (double DeltaTime)</para>
+
+<para>Physikalische Prozesse werden in jedem Frame ausgeführt. Berechnet Gravitation, Bewegung, Sprünge und Dashes. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_class_player_1ab8df147009969880162db05e243cd129">IsAttacking</link> ()</para>
+
+<para>Überprüft, ob der Spieler gerade angreift. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_class_player_1ac5b003495e551fee56ed26d26a239432">IsBlocking</link> ()</para>
+
+<para>Überprüft, ob der Spieler blockiert. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_player_1a750d1c5325522c39d232332349e4d2d2">MaxHeal</link> ()</para>
+
+<para>Heilt den Spieler vollständig, indem die aktuellen Lebenspunkte auf das Maximum gesetzt werden. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_player_1aa1a0addae97cec09d2e86f3060a05438">TakeDamage</link> (<link linkend="_class_damage">Damage</link> <link linkend="_class_damage">Damage</link>)</para>
+
+<para>Wendet Schaden auf den Spieler an. Reduziert die aktuellen Lebenspunkte basierend auf dem übergebenen Schaden und wendet einen Rückstoßeffekt an. </para>
+</listitem>
+            <listitem><para><link linkend="_class_damage">Damage</link> <link linkend="_class_player_1a01ad03754c12b1288b69cdd42cb6f85e">GetDamage</link> ()</para>
+
+<para>Gibt den Schaden zurück, den der Spieler mit seinem aktuellen Angriff verursacht. Der Schaden basiert auf der letzten Angriffsmethode (<computeroutput>light_attack</computeroutput> oder <computeroutput>heavy_attack</computeroutput>). </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_player_1ab715416eb7dbe1d4d320d4ba21999072">RegenerateStamina</link> (float Amount, double delta)</para>
+
+<para>Regeneriert die Stamina des Spielers, wenn er für eine bestimmte Zeit keine Stamina-verbrauchende Aktion durchgeführt hat. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_class_player_1ac69e2d647a9d7317b01599b2a5695199">UseStamina</link> (float Amount)</para>
+
+<para>Verbraucht eine bestimmte Menge an Stamina, falls genügend verfügbar ist. Setzt den Inaktivitäts-Timer zurück, wenn Stamina verbraucht wird. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_player_1a0a59dfe03d542fa98f28f4c4eaa49a75">SlowPlayer</link> (float SlowAmount)</para>
+
+<para>Verlangsamt den Spieler um einen bestimmten Prozentsatz. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_player_1ae1104e2e3726f7bac674615c4e33b2bf">Respawn</link> ()</para>
+
+<para>Lässt den Spieler am <link linkend="_class_checkpoint">Checkpoint</link> spawnen. </para>
+</listitem>
+            <listitem><para><link linkend="_class_blood_vial">BloodVial</link> <link linkend="_class_player_1ab04e4301a26dacc4e1d178d1b7d1d872">GetBloodVials</link> ()</para>
+
+<para>Getter für BloodVials. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_player_1aa718b6dab81ebd60b8b910ad8c7adff6">SetSinAmount</link> (int Value)</para>
+
+<para>Setzt den SinAmount des Spielers. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Private Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_class_player_1a8237be052507e34edec4776fa25f9544">HandleJump</link> ()</para>
+
+<para>Verarbeitet die Sprunglogik. Setzt den Sprungzähler zurück und ermöglicht einen Doppelsprung. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_player_1af8fce0260ebcc78bb46e2a8393eb2fb7">HandleMovement</link> (double DeltaTime)</para>
+
+<para>Verarbeitet die Bewegung des Spielers. Regelt normale Bewegungen, Dashes und Kollisionen. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_player_1a9d3abf4c257f11a5838c978ab3abb27f">StartDash</link> ()</para>
+
+<para>Startet den Dash-Prozess. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_player_1aeb354dd739e4fb8af95215e633f2ae30">DashInProgress</link> (double DeltaTime)</para>
+
+<para>Führt die Logik während eines Dashes aus. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_player_1a0aa4500de693c81904bba34fb91df560">CreateDashEffect</link> ()</para>
+
+<para>Erstellt einen visuellen Dash-Trail. Der Spieler hinterlässt eine Spur während des Dashes. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_player_1a53389f72f48d7980aedb5e8b75d237dd">StopDash</link> ()</para>
+
+<para>Stoppt den Dash. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_player_1a026f050e54322e805ad546ee99483e6e">OnSpawn</link> (Vector2 position, string direction)</para>
+
+<para>Wird aufgerufen, wenn der Spieler an einer neuen Position spawnen soll. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_player_1a6dd10a495418b531f7e65ab238368bdc">UpdateAnimations</link> ()</para>
+
+<para>Aktualisiert die Animationen des Spielers. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Private Attributes    </title>
+        <itemizedlist>
+            <listitem><para>int <link linkend="_class_player_1a7bcbe69f9f5e347cf485306520b1dadd">JumpMax</link> = 2</para>
+</listitem>
+            <listitem><para>int <link linkend="_class_player_1a9c16b607216c433cd53e2a56fedfeeed">JumpCount</link> = 0</para>
+</listitem>
+            <listitem><para>Vector2 <link linkend="_class_player_1ad64449e2fb7a7b527d08ce823dc4e2e4">DashDirection</link> = Vector2.Zero</para>
+</listitem>
+            <listitem><para>float <link linkend="_class_player_1ad418db551711bceecb6a0f504727ca91">DashSpeed</link> = 300f</para>
+</listitem>
+            <listitem><para>bool <link linkend="_class_player_1a3cf5113d8c5c04d4fc9822c7b33a4fa1">IsDashing</link> = false</para>
+</listitem>
+            <listitem><para>bool <link linkend="_class_player_1ae5ed42be5737449538f03a89ae258780">CanDash</link> = true</para>
+</listitem>
+            <listitem><para>float <link linkend="_class_player_1a33ad87048d2a086b8b74cf2d610aac8e">DashTrailInterval</link> = 0.05f</para>
+</listitem>
+            <listitem><para>float <link linkend="_class_player_1af96d2cf00ca821528f6624b9d746de79">DashTrailTimer</link> = 0f</para>
+</listitem>
+            <listitem><para>AnimationPlayer <link linkend="_class_player_1a343fb1371365e58eb9c641928d41237a">AnimationPlayer</link></para>
+</listitem>
+            <listitem><para>Sprite2D <link linkend="_class_player_1a650e61374596e594f38f5d9caf11c3fb">Sprite</link></para>
+</listitem>
+            <listitem><para>Timer <link linkend="_class_player_1afc303e1e2108345937a0834cb03fee60">DashEffect</link></para>
+</listitem>
+            <listitem><para>Timer <link linkend="_class_player_1ae1197f00cda479e2e18246010b36fa9d">DashTimer</link></para>
+</listitem>
+            <listitem><para>CollisionShape2D <link linkend="_class_player_1a64d74400579bd882301f0ec6a6135ed8">SwordCollision</link></para>
+</listitem>
+            <listitem><para>CollisionShape2D <link linkend="_class_player_1a5b037b53d0e7c4eacd6e09b71463862c">PlayerHitbox</link></para>
+</listitem>
+            <listitem><para><link linkend="_class_blood_vial">BloodVial</link> <link linkend="_class_player_1aaef48228442e066781c02ea9b8c3f694">BloodVials</link></para>
+</listitem>
+            <listitem><para>Label <link linkend="_class_player_1aa23d4f9699cd9b706e9b6945a365699b">SinDisplay</link></para>
+</listitem>
+            <listitem><para>Vector2 <link linkend="_class_player_1ae9c0ec6f7123f5832d82c2cc68eedb97">HauptHitbox</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_class_player_1a57850da38e07a680af71543a3e02de1a">LastAttack</link> = 0</para>
+</listitem>
+            <listitem><para>float <link linkend="_class_player_1adda3c3e385b428e061d6d1ccd25f23cb">TimeSinceLastStaminaUse</link> = 0f</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Static Private Attributes    </title>
+        <itemizedlist>
+            <listitem><para>const float <link linkend="_class_player_1a23e57f8d9bfe69ab49b86a94bcc8c37d">SPEED</link> = 100f</para>
+</listitem>
+            <listitem><para>const float <link linkend="_class_player_1a8da3506a415217b5eeacbf254620b0a1">JUMP_VELOCITY</link> = -300f</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Klasse für den Spielercharakter. Verwaltet Bewegung, Sprünge, Angriffe und Animationen. </para>
+<para>
+Definition at line <link linkend="__player_8cs_source_1l00008">8</link> of file <link linkend="__player_8cs_source">Player.cs</link>.</para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_player_1a02ef3667915da4d1a2e21fd6c9f93e48"/><section>
+    <title>_PhysicsProcess()</title>
+<indexterm><primary>_PhysicsProcess</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>_PhysicsProcess</secondary></indexterm>
+<para><computeroutput>override void Player._PhysicsProcess (double DeltaTime)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Physikalische Prozesse werden in jedem Frame ausgeführt. Berechnet Gravitation, Bewegung, Sprünge und Dashes. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>DeltaTime</entry><entry>
+<para>Zeit seit dem letzten Frame. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line <link linkend="__player_8cs_source_1l00067">67</link> of file <link linkend="__player_8cs_source">Player.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00067 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00068 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Gravitation&#32;hinzufügen,&#32;wenn&#32;der&#32;Charakter&#32;nicht&#32;am&#32;Boden&#32;ist</emphasis>
+00069 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(!IsOnFloor())&#32;{
+00070 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Velocity&#32;+=&#32;GetGravity()&#32;*&#32;(float)DeltaTime;
+00071 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+00072 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_1ae5ed42be5737449538f03a89ae258780">CanDash</link>&#32;=&#32;<emphasis role="keyword">true</emphasis>;&#32;<emphasis role="comment">//&#32;Dash&#32;wird&#32;zurückgesetzt,&#32;wenn&#32;der&#32;Charakter&#32;am&#32;Boden&#32;ist</emphasis>
+00073 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00074 
+00075 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_1adda3c3e385b428e061d6d1ccd25f23cb">TimeSinceLastStaminaUse</link>&#32;+=&#32;(float)DeltaTime;
+00076 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_1ab715416eb7dbe1d4d320d4ba21999072">RegenerateStamina</link>(20f,&#32;DeltaTime);
+00077 
+00078 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Heal</emphasis>
+00079 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(Input.IsActionJustPressed(<emphasis role="stringliteral">&quot;heal&quot;</emphasis>)){
+00080 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_1aaef48228442e066781c02ea9b8c3f694">BloodVials</link>.<link linkend="_class_blood_vial_1a0e0fed9a887f1fa7f068906273d43275">UseBloodVial</link>();
+00081 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00082 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+00083 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_1a8237be052507e34edec4776fa25f9544">HandleJump</link>();
+00084 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_1af8fce0260ebcc78bb46e2a8393eb2fb7">HandleMovement</link>(DeltaTime);
+00085 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;MoveAndSlide();
+00086 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_1a6dd10a495418b531f7e65ab238368bdc">UpdateAnimations</link>();
+00087 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_stats">PlayerStats</link>.<link linkend="_class_player_stats_1adeb667dbe2c1a76d1785ce07b6faf181">Instance</link>.<link linkend="_class_player_stats_1adb53f7019a00edfe089c3dfd205438c2">SetPosition</link>(Position);
+00088 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_player_1ae192a478a80f0e93e01339d62cdd6f6d"/><section>
+    <title>_Ready()</title>
+<indexterm><primary>_Ready</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>_Ready</secondary></indexterm>
+<para><computeroutput>override void Player._Ready ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Initialisierung der Referenzen. Findet die relevanten Knoten in der Szene und weist sie zu. </para>
+</para>
+<para>
+Definition at line <link linkend="__player_8cs_source_1l00043">43</link> of file <link linkend="__player_8cs_source">Player.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00043 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00044 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_1a343fb1371365e58eb9c641928d41237a">AnimationPlayer</link>&#32;=&#32;GetNode&lt;AnimationPlayer&gt;(<emphasis role="stringliteral">&quot;AnimationPlayer&quot;</emphasis>);
+00045 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_1a650e61374596e594f38f5d9caf11c3fb">Sprite</link>&#32;=&#32;GetNode&lt;Sprite2D&gt;(<emphasis role="stringliteral">&quot;Sprite2D&quot;</emphasis>);
+00046 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_1afc303e1e2108345937a0834cb03fee60">DashEffect</link>&#32;=&#32;GetNode&lt;Timer&gt;(<emphasis role="stringliteral">&quot;DashEffect&quot;</emphasis>);
+00047 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_1ae1197f00cda479e2e18246010b36fa9d">DashTimer</link>&#32;=&#32;GetNode&lt;Timer&gt;(<emphasis role="stringliteral">&quot;DashTimer&quot;</emphasis>);
+00048 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_1a64d74400579bd882301f0ec6a6135ed8">SwordCollision</link>&#32;=&#32;GetNode&lt;CollisionShape2D&gt;(<emphasis role="stringliteral">&quot;Sprite2D/SwordHit/SwordCollision&quot;</emphasis>);
+00049 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_1a5b037b53d0e7c4eacd6e09b71463862c">PlayerHitbox</link>&#32;=&#32;GetNode&lt;CollisionShape2D&gt;(<emphasis role="stringliteral">&quot;PlayerHitbox&quot;</emphasis>);
+00050 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_1ae9c0ec6f7123f5832d82c2cc68eedb97">HauptHitbox</link>&#32;=&#32;<link linkend="_class_player_1a5b037b53d0e7c4eacd6e09b71463862c">PlayerHitbox</link>.Position;
+00051 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_1aaef48228442e066781c02ea9b8c3f694">BloodVials</link>&#32;=&#32;GetNode&lt;BloodVial&gt;(<emphasis role="stringliteral">&quot;../HUD/BloodVial/Counter&quot;</emphasis>);
+00052 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_1aa23d4f9699cd9b706e9b6945a365699b">SinDisplay</link>&#32;=&#32;GetNode&lt;Label&gt;(<emphasis role="stringliteral">&quot;../HUD/SinAmount/Counter&quot;</emphasis>);
+00053 
+00054 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SinDisplay.Text&#32;=&#32;<link linkend="_class_player_stats">PlayerStats</link>.<link linkend="_class_player_stats_1adeb667dbe2c1a76d1785ce07b6faf181">Instance</link>.<link linkend="_class_player_stats_1a0b2b3398a02e8fbafe3c41dd466c57d0">GetSinAmount</link>()&#32;+&#32;<emphasis role="stringliteral">&quot;&quot;</emphasis>;
+00055 
+00056 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_navigation_manager">NavigationManager</link>&#32;navigationManager&#32;=&#32;GetNode&lt;NavigationManager&gt;(<emphasis role="stringliteral">&quot;/root/NavigationManager&quot;</emphasis>);
+00057 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;navigationManager.Connect(<emphasis role="stringliteral">&quot;OnTriggerPlayerSpawn&quot;</emphasis>,&#32;<emphasis role="keyword">new</emphasis>&#32;Callable(<emphasis role="keyword">this</emphasis>,&#32;nameof(<link linkend="_class_player_1a026f050e54322e805ad546ee99483e6e">OnSpawn</link>)));
+00058 
+00059 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Position&#32;=&#32;<link linkend="_class_player_stats">PlayerStats</link>.<link linkend="_class_player_stats_1adeb667dbe2c1a76d1785ce07b6faf181">Instance</link>.<link linkend="_class_player_stats_1a77ca820f184b31dd9590bc8613f8566e">GetPosition</link>();
+00060 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_player_1a0aa4500de693c81904bba34fb91df560"/><section>
+    <title>CreateDashEffect()</title>
+<indexterm><primary>CreateDashEffect</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>CreateDashEffect</secondary></indexterm>
+<para><computeroutput>void Player.CreateDashEffect ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[private]</computeroutput></computeroutput></para><para>
+
+<para>Erstellt einen visuellen Dash-Trail. Der Spieler hinterlässt eine Spur während des Dashes. </para>
+</para>
+<para>
+Definition at line <link linkend="__player_8cs_source_1l00207">207</link> of file <link linkend="__player_8cs_source">Player.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00207 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00208 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Sprite2D&#32;PlayerCopyNode&#32;=&#32;(Sprite2D)<link linkend="_class_player_1a650e61374596e594f38f5d9caf11c3fb">Sprite</link>.Duplicate();
+00209 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;GetParent().AddChild(PlayerCopyNode);
+00210 
+00211 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;CollisionShape2D&#32;SwordCollisionCopy&#32;=&#32;PlayerCopyNode.GetNode&lt;CollisionShape2D&gt;(<emphasis role="stringliteral">&quot;SwordHit/SwordCollision&quot;</emphasis>);
+00212 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(SwordCollisionCopy&#32;!=&#32;<emphasis role="keyword">null</emphasis>)&#32;{
+00213 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SwordCollisionCopy.Disabled&#32;=&#32;<emphasis role="keyword">true</emphasis>;&#32;<emphasis role="comment">//&#32;Deaktiviere&#32;die&#32;Kollision&#32;der&#32;Kopie</emphasis>
+00214 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00215 
+00216 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;PlayerCopyNode.GlobalPosition&#32;=&#32;GlobalPosition&#32;+&#32;<emphasis role="keyword">new</emphasis>&#32;Vector2(0,&#32;<link linkend="_class_player_1a650e61374596e594f38f5d9caf11c3fb">Sprite</link>.Texture.GetHeight()&#32;*&#32;<link linkend="_class_player_1a650e61374596e594f38f5d9caf11c3fb">Sprite</link>.Scale.Y&#32;*&#32;-0.5f);
+00217 
+00218 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Verblassen-Effekt&#32;für&#32;den&#32;Dash-Trail&#32;hinzufügen</emphasis>
+00219 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">float</emphasis>&#32;AnimationTime&#32;=&#32;(float)(<link linkend="_class_player_1ae1197f00cda479e2e18246010b36fa9d">DashTimer</link>.WaitTime&#32;/&#32;3);
+00220 
+00221 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Timer&#32;FadeTimer1&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;Timer();
+00222 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;AddChild(FadeTimer1);
+00223 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;FadeTimer1.Timeout&#32;+=&#32;()&#32;=&gt;&#32;{
+00224 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(IsInstanceValid(PlayerCopyNode))&#32;{
+00225 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;PlayerCopyNode.Modulate&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;Color(PlayerCopyNode.Modulate,&#32;0.4f);
+00226 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00227 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;};
+00228 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;FadeTimer1.Start(AnimationTime);
+00229 
+00230 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Timer&#32;FadeTimer2&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;Timer();
+00231 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;AddChild(FadeTimer2);
+00232 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;FadeTimer2.Timeout&#32;+=&#32;()&#32;=&gt;&#32;{
+00233 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(IsInstanceValid(PlayerCopyNode))&#32;{
+00234 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;PlayerCopyNode.Modulate&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;Color(PlayerCopyNode.Modulate,&#32;0.2f);
+00235 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00236 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;};
+00237 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;FadeTimer2.Start(AnimationTime&#32;*&#32;2);
+00238 
+00239 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Timer&#32;FadeTimer3&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;Timer();
+00240 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;AddChild(FadeTimer3);
+00241 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;FadeTimer3.Timeout&#32;+=&#32;()&#32;=&gt;&#32;{
+00242 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(IsInstanceValid(PlayerCopyNode))&#32;{
+00243 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;PlayerCopyNode.QueueFree();
+00244 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00245 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;};
+00246 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;FadeTimer3.Start(AnimationTime&#32;*&#32;3);
+00247 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_player_1aeb354dd739e4fb8af95215e633f2ae30"/><section>
+    <title>DashInProgress()</title>
+<indexterm><primary>DashInProgress</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>DashInProgress</secondary></indexterm>
+<para><computeroutput>void Player.DashInProgress (double DeltaTime)<computeroutput>[inline]</computeroutput>, <computeroutput>[private]</computeroutput></computeroutput></para><para>
+
+<para>Führt die Logik während eines Dashes aus. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>DeltaTime</entry><entry>
+<para>Zeit seit dem letzten Frame. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line <link linkend="__player_8cs_source_1l00187">187</link> of file <link linkend="__player_8cs_source">Player.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00187 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00188 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Charakter&#32;bewegt&#32;sich&#32;in&#32;die&#32;Dash-Richtung&#32;mit&#32;Dash-Geschwindigkeit</emphasis>
+00189 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="_class_player_1ad64449e2fb7a7b527d08ce823dc4e2e4">DashDirection</link>&#32;==&#32;Vector2.Up)&#32;{
+00190 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Velocity&#32;=&#32;<link linkend="_class_player_1ad64449e2fb7a7b527d08ce823dc4e2e4">DashDirection</link>&#32;/&#32;1.5f&#32;*&#32;<link linkend="_class_player_1ad418db551711bceecb6a0f504727ca91">DashSpeed</link>;
+00191 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+00192 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Velocity&#32;=&#32;<link linkend="_class_player_1ad64449e2fb7a7b527d08ce823dc4e2e4">DashDirection</link>&#32;*&#32;<link linkend="_class_player_1ad418db551711bceecb6a0f504727ca91">DashSpeed</link>;
+00193 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00194 
+00195 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Dash-Trail&#32;bei&#32;Intervallen&#32;erstellen</emphasis>
+00196 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_1af96d2cf00ca821528f6624b9d746de79">DashTrailTimer</link>&#32;-=&#32;(float)DeltaTime;
+00197 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="_class_player_1af96d2cf00ca821528f6624b9d746de79">DashTrailTimer</link>&#32;&lt;=&#32;0f)&#32;{
+00198 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_1a0aa4500de693c81904bba34fb91df560">CreateDashEffect</link>();
+00199 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_1af96d2cf00ca821528f6624b9d746de79">DashTrailTimer</link>&#32;=&#32;<link linkend="_class_player_1a33ad87048d2a086b8b74cf2d610aac8e">DashTrailInterval</link>;
+00200 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00201 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_player_1ab04e4301a26dacc4e1d178d1b7d1d872"/><section>
+    <title>GetBloodVials()</title>
+<indexterm><primary>GetBloodVials</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>GetBloodVials</secondary></indexterm>
+<para><computeroutput><link linkend="_class_blood_vial">BloodVial</link> Player.GetBloodVials ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Getter für BloodVials. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para><link linkend="_class_blood_vial">BloodVial</link> </para>
+</formalpara>
+</para>
+<para>
+Definition at line <link linkend="__player_8cs_source_1l00383">383</link> of file <link linkend="__player_8cs_source">Player.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00383 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00384 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_class_player_1aaef48228442e066781c02ea9b8c3f694">BloodVials</link>;
+00385 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_player_1a01ad03754c12b1288b69cdd42cb6f85e"/><section>
+    <title>GetDamage()</title>
+<indexterm><primary>GetDamage</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>GetDamage</secondary></indexterm>
+<para><computeroutput><link linkend="_class_damage">Damage</link> Player.GetDamage ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Gibt den Schaden zurück, den der Spieler mit seinem aktuellen Angriff verursacht. Der Schaden basiert auf der letzten Angriffsmethode (<computeroutput>light_attack</computeroutput> oder <computeroutput>heavy_attack</computeroutput>). </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>Eine Instanz der Klasse <computeroutput><link linkend="_class_damage">Damage</link></computeroutput>, die den physischen Schaden, wahren Schaden und Rückstoß enthält. </para>
+</formalpara>
+</para>
+<para>
+Definition at line <link linkend="__player_8cs_source_1l00317">317</link> of file <link linkend="__player_8cs_source">Player.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00317 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00318 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(<link linkend="_class_player_1a57850da38e07a680af71543a3e02de1a">LastAttack</link>&#32;==&#32;1){
+00319 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">new</emphasis>&#32;<link linkend="_class_damage">Damage</link>(50,&#32;0,&#32;Vector2.Zero,&#32;<emphasis role="keyword">this</emphasis>);
+00320 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00321 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(<link linkend="_class_player_1a57850da38e07a680af71543a3e02de1a">LastAttack</link>&#32;==&#32;2){
+00322 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Vector2&#32;Push&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;Vector2(20,0);
+00323 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(<link linkend="_class_player_1a650e61374596e594f38f5d9caf11c3fb">Sprite</link>.FlipH){
+00324 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Push&#32;=&#32;-Push;
+00325 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00326 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">new</emphasis>&#32;<link linkend="_class_damage">Damage</link>(100,&#32;0,&#32;Push,&#32;<emphasis role="keyword">this</emphasis>);&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+00327 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00328 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">new</emphasis>&#32;<link linkend="_class_damage">Damage</link>(0,0,Vector2.Zero,&#32;<emphasis role="keyword">this</emphasis>);
+00329 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_player_1a8237be052507e34edec4776fa25f9544"/><section>
+    <title>HandleJump()</title>
+<indexterm><primary>HandleJump</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>HandleJump</secondary></indexterm>
+<para><computeroutput>void Player.HandleJump ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[private]</computeroutput></computeroutput></para><para>
+
+<para>Verarbeitet die Sprunglogik. Setzt den Sprungzähler zurück und ermöglicht einen Doppelsprung. </para>
+</para>
+<para>
+Definition at line <link linkend="__player_8cs_source_1l00094">94</link> of file <link linkend="__player_8cs_source">Player.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00094 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00095 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Sprungzähler&#32;zurücksetzen,&#32;wenn&#32;der&#32;Charakter&#32;am&#32;Boden&#32;ist</emphasis>
+00096 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="_class_player_1a9c16b607216c433cd53e2a56fedfeeed">JumpCount</link>&#32;!=&#32;0&#32;&amp;&amp;&#32;IsOnFloor())&#32;{
+00097 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_1a9c16b607216c433cd53e2a56fedfeeed">JumpCount</link>&#32;=&#32;0;
+00098 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00099 
+00100 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Überprüfen,&#32;ob&#32;der&#32;Sprung-Button&#32;gedrückt&#32;wurde&#32;und&#32;der&#32;Charakter&#32;noch&#32;Sprünge&#32;übrig&#32;hat</emphasis>
+00101 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(Input.IsActionJustPressed(<emphasis role="stringliteral">&quot;ui_up&quot;</emphasis>)&#32;&amp;&amp;&#32;<link linkend="_class_player_1a9c16b607216c433cd53e2a56fedfeeed">JumpCount</link>&#32;&lt;&#32;<link linkend="_class_player_1a7bcbe69f9f5e347cf485306520b1dadd">JumpMax</link>)&#32;{
+00102 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="_class_player_1a9c16b607216c433cd53e2a56fedfeeed">JumpCount</link>&#32;==&#32;0)&#32;{
+00103 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Erster&#32;Sprung&#32;ohne&#32;Stamina-Verlust</emphasis>
+00104 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Velocity&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;Vector2(Velocity.X,&#32;<link linkend="_class_player_1a8da3506a415217b5eeacbf254620b0a1">JUMP_VELOCITY</link>);
+00105 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_1a9c16b607216c433cd53e2a56fedfeeed">JumpCount</link>&#32;+=&#32;1;
+00106 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="_class_player_1a9c16b607216c433cd53e2a56fedfeeed">JumpCount</link>&#32;&gt;&#32;0)&#32;{
+00107 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Beim&#32;Doppelsprung&#32;Stamina&#32;prüfen&#32;und&#32;abziehen</emphasis>
+00108 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="_class_player_1ac69e2d647a9d7317b01599b2a5695199">UseStamina</link>(15))&#32;{
+00109 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Velocity&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;Vector2(Velocity.X,&#32;<link linkend="_class_player_1a8da3506a415217b5eeacbf254620b0a1">JUMP_VELOCITY</link>);
+00110 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_1a9c16b607216c433cd53e2a56fedfeeed">JumpCount</link>&#32;+=&#32;1;
+00111 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00112 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;
+00113 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00114 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_player_1af8fce0260ebcc78bb46e2a8393eb2fb7"/><section>
+    <title>HandleMovement()</title>
+<indexterm><primary>HandleMovement</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>HandleMovement</secondary></indexterm>
+<para><computeroutput>void Player.HandleMovement (double DeltaTime)<computeroutput>[inline]</computeroutput>, <computeroutput>[private]</computeroutput></computeroutput></para><para>
+
+<para>Verarbeitet die Bewegung des Spielers. Regelt normale Bewegungen, Dashes und Kollisionen. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>DeltaTime</entry><entry>
+<para>Zeit seit dem letzten Frame. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line <link linkend="__player_8cs_source_1l00121">121</link> of file <link linkend="__player_8cs_source">Player.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00121 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00122 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Vector2&#32;direction&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;Vector2(Input.GetAxis(<emphasis role="stringliteral">&quot;ui_left&quot;</emphasis>,&#32;<emphasis role="stringliteral">&quot;ui_right&quot;</emphasis>),&#32;Input.GetAxis(<emphasis role="stringliteral">&quot;ui_up&quot;</emphasis>,&#32;<emphasis role="stringliteral">&quot;ui_down&quot;</emphasis>)).Normalized();
+00123 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">float</emphasis>&#32;currentSpeed&#32;=&#32;<link linkend="_class_player_1a23e57f8d9bfe69ab49b86a94bcc8c37d">SPEED</link>;
+00124 
+00125 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Sprite&#32;umdrehen&#32;basierend&#32;auf&#32;der&#32;Bewegungsrichtung&#32;und&#32;Kollision&#32;umdrehen</emphasis>
+00126 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(direction.X&#32;&lt;&#32;0)&#32;{
+00127 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Sprite.FlipH&#32;=&#32;<emphasis role="keyword">true</emphasis>;
+00128 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SwordCollision.Position&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;Vector2(-Mathf.Abs(<link linkend="_class_player_1a64d74400579bd882301f0ec6a6135ed8">SwordCollision</link>.Position.X),&#32;<link linkend="_class_player_1a64d74400579bd882301f0ec6a6135ed8">SwordCollision</link>.Position.Y);
+00129 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;PlayerHitbox.Position&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;Vector2(<link linkend="_class_player_1a650e61374596e594f38f5d9caf11c3fb">Sprite</link>.Position.X&#32;*&#32;1.8f,&#32;<link linkend="_class_player_1a5b037b53d0e7c4eacd6e09b71463862c">PlayerHitbox</link>.Position.Y);
+00130 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(direction.X&#32;&gt;&#32;0)&#32;{
+00131 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Sprite.FlipH&#32;=&#32;<emphasis role="keyword">false</emphasis>;
+00132 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SwordCollision.Position&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;Vector2(Mathf.Abs(<link linkend="_class_player_1a64d74400579bd882301f0ec6a6135ed8">SwordCollision</link>.Position.X),&#32;<link linkend="_class_player_1a64d74400579bd882301f0ec6a6135ed8">SwordCollision</link>.Position.Y);
+00133 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;PlayerHitbox.Position&#32;=&#32;<link linkend="_class_player_1ae9c0ec6f7123f5832d82c2cc68eedb97">HauptHitbox</link>;
+00134 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00135 
+00136 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Geschwindigkeit&#32;reduzieren,&#32;wenn&#32;der&#32;Spieler&#32;angreift</emphasis>
+00137 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="_class_player_1a343fb1371365e58eb9c641928d41237a">AnimationPlayer</link>.CurrentAnimation&#32;==&#32;<emphasis role="stringliteral">&quot;light_attack&quot;</emphasis>)&#32;{
+00138 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;currentSpeed&#32;*=&#32;0.5f;
+00139 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="_class_player_1a343fb1371365e58eb9c641928d41237a">AnimationPlayer</link>.CurrentAnimation&#32;==&#32;<emphasis role="stringliteral">&quot;heavy_attack&quot;</emphasis>)&#32;{
+00140 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;currentSpeed&#32;*=&#32;0.15f;
+00141 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00142 
+00143 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Blockieren&#32;stoppt&#32;die&#32;Bewegung</emphasis>
+00144 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="_class_player_1ac5b003495e551fee56ed26d26a239432">IsBlocking</link>())&#32;{
+00145 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;currentSpeed&#32;=&#32;0;
+00146 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00147 
+00148 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="_class_player_1a3cf5113d8c5c04d4fc9822c7b33a4fa1">IsDashing</link>)&#32;{
+00149 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_1aeb354dd739e4fb8af95215e633f2ae30">DashInProgress</link>(DeltaTime);
+00150 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+00151 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Normale&#32;Bewegung&#32;verarbeiten,&#32;wenn&#32;kein&#32;Dash&#32;aktiv&#32;ist</emphasis>
+00152 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(direction&#32;!=&#32;Vector2.Zero)&#32;{
+00153 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Velocity&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;Vector2(direction.X&#32;*&#32;currentSpeed,&#32;Velocity.Y);
+00154 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+00155 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Velocity&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;Vector2(Mathf.MoveToward(Velocity.X,&#32;0,&#32;<link linkend="_class_player_1a23e57f8d9bfe69ab49b86a94bcc8c37d">SPEED</link>),&#32;Velocity.Y);
+00156 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00157 
+00158 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Überprüfen,&#32;ob&#32;der&#32;Dash-Button&#32;gedrückt&#32;wurde&#32;mit&#32;eine&#32;Bewegungsrichtung&#32;und&#32;nicht&#32;schon&#32;am&#32;angreifen&#32;ist</emphasis>
+00159 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(Input.IsActionJustPressed(<emphasis role="stringliteral">&quot;dash&quot;</emphasis>)&#32;&amp;&amp;&#32;direction&#32;!=&#32;Vector2.Zero&#32;&amp;&amp;&#32;<link linkend="_class_player_1ae5ed42be5737449538f03a89ae258780">CanDash</link>&#32;&amp;&amp;&#32;!<link linkend="_class_player_1ab8df147009969880162db05e243cd129">IsAttacking</link>())&#32;{
+00160 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Wenn&#32;der&#32;Player&#32;genug&#32;Stamina&#32;hat&#32;kann&#32;er&#32;dashen</emphasis>
+00161 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="_class_player_1ac69e2d647a9d7317b01599b2a5695199">UseStamina</link>(20)){
+00162 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_1ad64449e2fb7a7b527d08ce823dc4e2e4">DashDirection</link>&#32;=&#32;direction;
+00163 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_1a9d3abf4c257f11a5838c978ab3abb27f">StartDash</link>();&#32;
+00164 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00165 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00166 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00167 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_player_1ab8df147009969880162db05e243cd129"/><section>
+    <title>IsAttacking()</title>
+<indexterm><primary>IsAttacking</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>IsAttacking</secondary></indexterm>
+<para><computeroutput>bool Player.IsAttacking ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Überprüft, ob der Spieler gerade angreift. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>true, wenn der Spieler angreift. </para>
+</formalpara>
+</para>
+<para>
+Definition at line <link linkend="__player_8cs_source_1l00265">265</link> of file <link linkend="__player_8cs_source">Player.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00265 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00266 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;AnimationPlayer.CurrentAnimation&#32;==&#32;<emphasis role="stringliteral">&quot;heavy_attack&quot;</emphasis>&#32;||&#32;AnimationPlayer.CurrentAnimation&#32;==&#32;<emphasis role="stringliteral">&quot;light_attack&quot;</emphasis>;
+00267 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_player_1ac5b003495e551fee56ed26d26a239432"/><section>
+    <title>IsBlocking()</title>
+<indexterm><primary>IsBlocking</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>IsBlocking</secondary></indexterm>
+<para><computeroutput>bool Player.IsBlocking ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Überprüft, ob der Spieler blockiert. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>true, wenn der Spieler blockiert. </para>
+</formalpara>
+</para>
+<para>
+Definition at line <link linkend="__player_8cs_source_1l00273">273</link> of file <link linkend="__player_8cs_source">Player.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00273 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00274 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;AnimationPlayer.CurrentAnimation&#32;==&#32;<emphasis role="stringliteral">&quot;block&quot;</emphasis>;
+00275 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_player_1a750d1c5325522c39d232332349e4d2d2"/><section>
+    <title>MaxHeal()</title>
+<indexterm><primary>MaxHeal</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>MaxHeal</secondary></indexterm>
+<para><computeroutput>void Player.MaxHeal ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Heilt den Spieler vollständig, indem die aktuellen Lebenspunkte auf das Maximum gesetzt werden. </para>
+</para>
+<para>
+Definition at line <link linkend="__player_8cs_source_1l00280">280</link> of file <link linkend="__player_8cs_source">Player.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00280 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00281 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_stats">PlayerStats</link>.<link linkend="_class_player_stats_1adeb667dbe2c1a76d1785ce07b6faf181">Instance</link>.<link linkend="_class_player_stats_1aaed3690620c6ba9a8866d0c35b4f26d7">SetCurrentHealth</link>(<link linkend="_class_player_stats">PlayerStats</link>.<link linkend="_class_player_stats_1adeb667dbe2c1a76d1785ce07b6faf181">Instance</link>.<link linkend="_class_player_stats_1a6a24773d00e75be9747b99681ac76127">GetMaxHealthPoints</link>());
+00282 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_player_1a026f050e54322e805ad546ee99483e6e"/><section>
+    <title>OnSpawn()</title>
+<indexterm><primary>OnSpawn</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>OnSpawn</secondary></indexterm>
+<para><computeroutput>void Player.OnSpawn (Vector2 position, string direction)<computeroutput>[inline]</computeroutput>, <computeroutput>[private]</computeroutput></computeroutput></para><para>
+
+<para>Wird aufgerufen, wenn der Spieler an einer neuen Position spawnen soll. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>position</entry><entry>
+<para>Die Position, an der der Spieler spawnen soll. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>direction</entry><entry>
+<para>Die Richtung, in die der Spieler schauen soll. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line <link linkend="__player_8cs_source_1l00402">402</link> of file <link linkend="__player_8cs_source">Player.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00402 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00403 
+00404 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Spielerposition&#32;auf&#32;die&#32;übergebene&#32;Position&#32;setzen</emphasis>
+00405 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(direction&#32;==&#32;<emphasis role="stringliteral">&quot;right&quot;</emphasis>)
+00406 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00407 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Update&#32;the&#32;x&#32;value&#32;by&#32;adding&#32;50&#32;to&#32;it,&#32;keep&#32;the&#32;original&#32;y&#32;value</emphasis>
+00408 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Sprite.FlipH&#32;=&#32;<emphasis role="keyword">false</emphasis>;
+00409 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;position&#32;=&#32;position&#32;with&#32;{&#32;X&#32;=&#32;position.X&#32;+&#32;25&#32;};
+00410 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00411 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(direction&#32;==&#32;<emphasis role="stringliteral">&quot;left&quot;</emphasis>)
+00412 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00413 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Update&#32;the&#32;x&#32;value&#32;by&#32;subtracting&#32;50&#32;from&#32;it,&#32;keep&#32;the&#32;original&#32;y&#32;value</emphasis>
+00414 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Sprite.FlipH&#32;=&#32;<emphasis role="keyword">true</emphasis>;
+00415 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;position&#32;=&#32;position&#32;with&#32;{&#32;X&#32;=&#32;position.X&#32;-&#32;25&#32;};
+00416 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00417 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Position&#32;=&#32;position;
+00418 
+00419 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_player_1ab715416eb7dbe1d4d320d4ba21999072"/><section>
+    <title>RegenerateStamina()</title>
+<indexterm><primary>RegenerateStamina</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>RegenerateStamina</secondary></indexterm>
+<para><computeroutput>void Player.RegenerateStamina (float Amount, double delta)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Regeneriert die Stamina des Spielers, wenn er für eine bestimmte Zeit keine Stamina-verbrauchende Aktion durchgeführt hat. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>Amount</entry><entry>
+<para>Menge der Stamina, die regeneriert werden soll. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>delta</entry><entry>
+<para>Zeit seit dem letzten Frame. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line <link linkend="__player_8cs_source_1l00336">336</link> of file <link linkend="__player_8cs_source">Player.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00336 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00337 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Wenn&#32;die&#32;Verzögerungszeit&#32;erreicht&#32;wurde,&#32;regeneriere&#32;Stamina</emphasis>
+00338 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="_class_player_1adda3c3e385b428e061d6d1ccd25f23cb">TimeSinceLastStaminaUse</link>&#32;&gt;=&#32;1f)&#32;{
+00339 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_stats">PlayerStats</link>.<link linkend="_class_player_stats_1adeb667dbe2c1a76d1785ce07b6faf181">Instance</link>.<link linkend="_class_player_stats_1ab341f12827a6bdcfebb826dff43e82e3">SetStamina</link>(<link linkend="_class_player_stats">PlayerStats</link>.<link linkend="_class_player_stats_1adeb667dbe2c1a76d1785ce07b6faf181">Instance</link>.<link linkend="_class_player_stats_1a3a170316e8384ab030f5f697b799a947">GetStamina</link>()&#32;+&#32;Amount&#32;*&#32;(<emphasis role="keywordtype">float</emphasis>)delta);&#32;<emphasis role="comment">//&#32;Regeneriere&#32;Stamina&#32;abhängig&#32;von&#32;der&#32;Zeit</emphasis>
+00340 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00341 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_player_1ae1104e2e3726f7bac674615c4e33b2bf"/><section>
+    <title>Respawn()</title>
+<indexterm><primary>Respawn</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>Respawn</secondary></indexterm>
+<para><computeroutput>void Player.Respawn ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Lässt den Spieler am <link linkend="_class_checkpoint">Checkpoint</link> spawnen. </para>
+</para>
+<para>
+Definition at line <link linkend="__player_8cs_source_1l00372">372</link> of file <link linkend="__player_8cs_source">Player.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00372 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00373 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;var&#32;<link linkend="_class_navigation_manager">NavigationManager</link>&#32;=&#32;GetNode&lt;NavigationManager&gt;(<emphasis role="stringliteral">&quot;/root/NavigationManager&quot;</emphasis>);
+00374 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_navigation_manager">NavigationManager</link>.<link linkend="_class_navigation_manager_1a5966bab1490d10dfc285507a0c8d8bb7">GoToLevel</link>(<link linkend="_class_player_stats">PlayerStats</link>.<link linkend="_class_player_stats_1adeb667dbe2c1a76d1785ce07b6faf181">Instance</link>.<link linkend="_class_player_stats_1ad868bae6deb062dbcc4702b276a27041">GetRespawnLevelTag</link>(),&#32;<emphasis role="stringliteral">&quot;spawn&quot;</emphasis>);
+00375 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_1aaef48228442e066781c02ea9b8c3f694">BloodVials</link>.<link linkend="_class_blood_vial_1a31a53feef846bd962bd5b525b0bc5c6c">ResetUses</link>();
+00376 
+00377 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_player_1aa718b6dab81ebd60b8b910ad8c7adff6"/><section>
+    <title>SetSinAmount()</title>
+<indexterm><primary>SetSinAmount</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>SetSinAmount</secondary></indexterm>
+<para><computeroutput>void Player.SetSinAmount (int Value)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Setzt den SinAmount des Spielers. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>Value</entry><entry>
+<para>Der neue Wert für den SinAmount. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line <link linkend="__player_8cs_source_1l00391">391</link> of file <link linkend="__player_8cs_source">Player.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00391 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00392 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;SinAmount&#32;muss&#32;immer&#32;&gt;=&#32;0&#32;sein</emphasis>
+00393 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_stats">PlayerStats</link>.<link linkend="_class_player_stats_1adeb667dbe2c1a76d1785ce07b6faf181">Instance</link>.<link linkend="_class_player_stats_1a647991a1d154f8c2bc8d7032b43e35aa">SetSinAmount</link>(Value);
+00394 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SinDisplay.Text&#32;=&#32;<link linkend="_class_player_stats">PlayerStats</link>.<link linkend="_class_player_stats_1adeb667dbe2c1a76d1785ce07b6faf181">Instance</link>.<link linkend="_class_player_stats_1a0b2b3398a02e8fbafe3c41dd466c57d0">GetSinAmount</link>()&#32;+&#32;<emphasis role="stringliteral">&quot;&quot;</emphasis>;
+00395 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_player_1a0a59dfe03d542fa98f28f4c4eaa49a75"/><section>
+    <title>SlowPlayer()</title>
+<indexterm><primary>SlowPlayer</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>SlowPlayer</secondary></indexterm>
+<para><computeroutput>void Player.SlowPlayer (float SlowAmount)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Verlangsamt den Spieler um einen bestimmten Prozentsatz. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>SlowAmount</entry><entry>
+<para>Der Prozentsatz, um den der Spieler verlangsamt werden soll. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line <link linkend="__player_8cs_source_1l00365">365</link> of file <link linkend="__player_8cs_source">Player.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00365 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00366 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Velocity&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;Vector2(Velocity.X&#32;*&#32;SlowAmount,&#32;Velocity.Y);
+00367 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_player_1a9d3abf4c257f11a5838c978ab3abb27f"/><section>
+    <title>StartDash()</title>
+<indexterm><primary>StartDash</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>StartDash</secondary></indexterm>
+<para><computeroutput>void Player.StartDash ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[private]</computeroutput></computeroutput></para><para>
+
+<para>Startet den Dash-Prozess. </para>
+</para>
+<para>
+Definition at line <link linkend="__player_8cs_source_1l00172">172</link> of file <link linkend="__player_8cs_source">Player.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00172 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00173 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SetCollisionLayerValue(1,<emphasis role="keyword">false</emphasis>);
+00174 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SetCollisionMaskValue(1,<emphasis role="keyword">false</emphasis>);
+00175 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_1a3cf5113d8c5c04d4fc9822c7b33a4fa1">IsDashing</link>&#32;=&#32;<emphasis role="keyword">true</emphasis>;
+00176 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_1ae5ed42be5737449538f03a89ae258780">CanDash</link>&#32;=&#32;<emphasis role="keyword">false</emphasis>;
+00177 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;DashTimer.Timeout&#32;+=&#32;<link linkend="_class_player_1a53389f72f48d7980aedb5e8b75d237dd">StopDash</link>;
+00178 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_1ae1197f00cda479e2e18246010b36fa9d">DashTimer</link>.Start();
+00179 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_1afc303e1e2108345937a0834cb03fee60">DashEffect</link>.Start();
+00180 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_1af96d2cf00ca821528f6624b9d746de79">DashTrailTimer</link>&#32;=&#32;0f;
+00181 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_player_1a53389f72f48d7980aedb5e8b75d237dd"/><section>
+    <title>StopDash()</title>
+<indexterm><primary>StopDash</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>StopDash</secondary></indexterm>
+<para><computeroutput>void Player.StopDash ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[private]</computeroutput></computeroutput></para><para>
+
+<para>Stoppt den Dash. </para>
+</para>
+<para>
+Definition at line <link linkend="__player_8cs_source_1l00252">252</link> of file <link linkend="__player_8cs_source">Player.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00252 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00253 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_1a3cf5113d8c5c04d4fc9822c7b33a4fa1">IsDashing</link>&#32;=&#32;<emphasis role="keyword">false</emphasis>;
+00254 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_1afc303e1e2108345937a0834cb03fee60">DashEffect</link>.Stop();
+00255 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_1ae1197f00cda479e2e18246010b36fa9d">DashTimer</link>.Stop();
+00256 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;DashTimer.Timeout&#32;-=&#32;<link linkend="_class_player_1a53389f72f48d7980aedb5e8b75d237dd">StopDash</link>;
+00257 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SetCollisionLayerValue(1,<emphasis role="keyword">true</emphasis>);
+00258 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SetCollisionMaskValue(1,<emphasis role="keyword">true</emphasis>);
+00259 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_player_1aa1a0addae97cec09d2e86f3060a05438"/><section>
+    <title>TakeDamage()</title>
+<indexterm><primary>TakeDamage</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>TakeDamage</secondary></indexterm>
+<para><computeroutput>void Player.TakeDamage (<link linkend="_class_damage">Damage</link> Damage)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Wendet Schaden auf den Spieler an. Reduziert die aktuellen Lebenspunkte basierend auf dem übergebenen Schaden und wendet einen Rückstoßeffekt an. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry><link linkend="_class_damage">Damage</link></entry><entry>
+<para>Instanz der Klasse <computeroutput><link linkend="_class_damage">Damage</link></computeroutput>, die den physischen und wahren Schaden sowie den Rückstoß enthält. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line <link linkend="__player_8cs_source_1l00289">289</link> of file <link linkend="__player_8cs_source">Player.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00289 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00290 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">float</emphasis>&#32;totalDamage&#32;=&#32;<link linkend="_class_damage">Damage</link>.<link linkend="_class_damage_1a4d43580112f089c208f9ba8e0b2559f0">GetTrueDMG</link>();
+00291 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(!<link linkend="_class_player_1ac5b003495e551fee56ed26d26a239432">IsBlocking</link>()){
+00292 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;totalDamage&#32;+=&#32;<link linkend="_class_damage">Damage</link>.<link linkend="_class_damage_1a084fad418a6be9edca3e3e32355e49c0">GetPhysicalDMG</link>();
+00293 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+00294 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">float</emphasis>&#32;CurrentStamina&#32;=&#32;<link linkend="_class_player_stats">PlayerStats</link>.<link linkend="_class_player_stats_1adeb667dbe2c1a76d1785ce07b6faf181">Instance</link>.<link linkend="_class_player_stats_1a3a170316e8384ab030f5f697b799a947">GetStamina</link>();
+00295 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;CurrentStamina&#32;-=&#32;<link linkend="_class_damage">Damage</link>.<link linkend="_class_damage_1a084fad418a6be9edca3e3e32355e49c0">GetPhysicalDMG</link>();
+00296 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(CurrentStamina&#32;&lt;&#32;0){
+00297 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;totalDamage&#32;-=&#32;CurrentStamina;
+00298 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00299 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_stats">PlayerStats</link>.<link linkend="_class_player_stats_1adeb667dbe2c1a76d1785ce07b6faf181">Instance</link>.<link linkend="_class_player_stats_1ab341f12827a6bdcfebb826dff43e82e3">SetStamina</link>(CurrentStamina);
+00300 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00301 
+00302 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_stats">PlayerStats</link>.<link linkend="_class_player_stats_1adeb667dbe2c1a76d1785ce07b6faf181">Instance</link>.<link linkend="_class_player_stats_1aaed3690620c6ba9a8866d0c35b4f26d7">SetCurrentHealth</link>(<link linkend="_class_player_stats">PlayerStats</link>.<link linkend="_class_player_stats_1adeb667dbe2c1a76d1785ce07b6faf181">Instance</link>.<link linkend="_class_player_stats_1a0ec1075ba0983a3df42454b110194c0d">GetCurrentHealth</link>()&#32;-&#32;totalDamage);
+00303 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Position&#32;+=&#32;<link linkend="_class_damage">Damage</link>.<link linkend="_class_damage_1a60741a1e632c21788499ddc284b2844b">GetPushAmount</link>();
+00304 
+00305 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Überprüfe,&#32;ob&#32;der&#32;Spieler&#32;gestorben&#32;ist</emphasis>
+00306 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="_class_player_stats">PlayerStats</link>.<link linkend="_class_player_stats_1adeb667dbe2c1a76d1785ce07b6faf181">Instance</link>.<link linkend="_class_player_stats_1a0ec1075ba0983a3df42454b110194c0d">GetCurrentHealth</link>()&#32;&lt;=&#32;0){
+00307 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;GD.Print(<emphasis role="stringliteral">&quot;Spieler&#32;ist&#32;gestorben!&quot;</emphasis>);
+00308 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_1ae1104e2e3726f7bac674615c4e33b2bf">Respawn</link>();
+00309 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00310 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_player_1a6dd10a495418b531f7e65ab238368bdc"/><section>
+    <title>UpdateAnimations()</title>
+<indexterm><primary>UpdateAnimations</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>UpdateAnimations</secondary></indexterm>
+<para><computeroutput>void Player.UpdateAnimations ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[private]</computeroutput></computeroutput></para><para>
+
+<para>Aktualisiert die Animationen des Spielers. </para>
+</para>
+<para>
+Definition at line <link linkend="__player_8cs_source_1l00425">425</link> of file <link linkend="__player_8cs_source">Player.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00425 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00426 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(Input.IsActionJustPressed(<emphasis role="stringliteral">&quot;light_attack&quot;</emphasis>)&#32;&amp;&amp;&#32;!<link linkend="_class_player_1a3cf5113d8c5c04d4fc9822c7b33a4fa1">IsDashing</link>&#32;&amp;&amp;&#32;!<link linkend="_class_player_1ab8df147009969880162db05e243cd129">IsAttacking</link>())&#32;{
+00427 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="_class_player_1ac69e2d647a9d7317b01599b2a5695199">UseStamina</link>(10)){
+00428 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_1a57850da38e07a680af71543a3e02de1a">LastAttack</link>&#32;=&#32;1;
+00429 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_1a343fb1371365e58eb9c641928d41237a">AnimationPlayer</link>.Play(<emphasis role="stringliteral">&quot;light_attack&quot;</emphasis>);
+00430 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00431 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(Input.IsActionJustPressed(<emphasis role="stringliteral">&quot;heavy_attack&quot;</emphasis>)&#32;&amp;&amp;&#32;!<link linkend="_class_player_1a3cf5113d8c5c04d4fc9822c7b33a4fa1">IsDashing</link>&#32;&amp;&amp;&#32;!<link linkend="_class_player_1ab8df147009969880162db05e243cd129">IsAttacking</link>())&#32;{
+00432 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="_class_player_1ac69e2d647a9d7317b01599b2a5695199">UseStamina</link>(25)){
+00433 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_1a57850da38e07a680af71543a3e02de1a">LastAttack</link>&#32;=&#32;2;
+00434 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_1a343fb1371365e58eb9c641928d41237a">AnimationPlayer</link>.Play(<emphasis role="stringliteral">&quot;heavy_attack&quot;</emphasis>);
+00435 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00436 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00437 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(Input.IsActionPressed(<emphasis role="stringliteral">&quot;block&quot;</emphasis>)&#32;&amp;&amp;&#32;!<link linkend="_class_player_1a3cf5113d8c5c04d4fc9822c7b33a4fa1">IsDashing</link>&#32;&amp;&amp;&#32;!<link linkend="_class_player_1ab8df147009969880162db05e243cd129">IsAttacking</link>()&#32;&amp;&amp;&#32;IsOnFloor())&#32;{
+00438 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="_class_player_1ac69e2d647a9d7317b01599b2a5695199">UseStamina</link>(0)){
+00439 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_1a343fb1371365e58eb9c641928d41237a">AnimationPlayer</link>.Play(<emphasis role="stringliteral">&quot;block&quot;</emphasis>);
+00440 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_1a57850da38e07a680af71543a3e02de1a">LastAttack</link>&#32;=&#32;0;
+00441 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00442 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00443 
+00444 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(IsOnFloor()&#32;&amp;&amp;&#32;!<link linkend="_class_player_1ab8df147009969880162db05e243cd129">IsAttacking</link>()&#32;&amp;&amp;&#32;!<link linkend="_class_player_1ac5b003495e551fee56ed26d26a239432">IsBlocking</link>())&#32;{
+00445 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_1a57850da38e07a680af71543a3e02de1a">LastAttack</link>&#32;=&#32;0;
+00446 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(Velocity.X&#32;==&#32;0)&#32;{
+00447 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_1a343fb1371365e58eb9c641928d41237a">AnimationPlayer</link>.Play(<emphasis role="stringliteral">&quot;idle&quot;</emphasis>);
+00448 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+00449 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_1a343fb1371365e58eb9c641928d41237a">AnimationPlayer</link>.Play(<emphasis role="stringliteral">&quot;run&quot;</emphasis>);
+00450 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00451 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(!IsOnFloor()&#32;&amp;&amp;&#32;!<link linkend="_class_player_1ab8df147009969880162db05e243cd129">IsAttacking</link>()&#32;&amp;&amp;&#32;!<link linkend="_class_player_1ac5b003495e551fee56ed26d26a239432">IsBlocking</link>())&#32;{
+00452 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_1a57850da38e07a680af71543a3e02de1a">LastAttack</link>&#32;=&#32;0;
+00453 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(Velocity.Y&#32;&lt;&#32;0)&#32;{
+00454 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_1a343fb1371365e58eb9c641928d41237a">AnimationPlayer</link>.Play(<emphasis role="stringliteral">&quot;jump&quot;</emphasis>);
+00455 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(Velocity.Y&#32;&gt;&#32;0)&#32;{
+00456 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_1a343fb1371365e58eb9c641928d41237a">AnimationPlayer</link>.Play(<emphasis role="stringliteral">&quot;fall&quot;</emphasis>);
+00457 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00458 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00459 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_player_1ac69e2d647a9d7317b01599b2a5695199"/><section>
+    <title>UseStamina()</title>
+<indexterm><primary>UseStamina</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>UseStamina</secondary></indexterm>
+<para><computeroutput>bool Player.UseStamina (float Amount)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Verbraucht eine bestimmte Menge an Stamina, falls genügend verfügbar ist. Setzt den Inaktivitäts-Timer zurück, wenn Stamina verbraucht wird. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>Amount</entry><entry>
+<para>Die Menge an Stamina, die verbraucht werden soll. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para><computeroutput>true</computeroutput>, wenn genügend Stamina verfügbar war und die Aktion ausgeführt wurde; andernfalls <computeroutput>false</computeroutput>. </para>
+</formalpara>
+</para>
+<para>
+Definition at line <link linkend="__player_8cs_source_1l00349">349</link> of file <link linkend="__player_8cs_source">Player.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00349 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00350 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Versucht,&#32;eine&#32;bestimmte&#32;Menge&#32;an&#32;Stamina&#32;zu&#32;verbrauchen.</emphasis>
+00351 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Gibt&#32;true&#32;zurück,&#32;wenn&#32;genug&#32;Stamina&#32;verfügbar&#32;war;&#32;andernfalls&#32;false.</emphasis>
+00352 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="_class_player_stats">PlayerStats</link>.<link linkend="_class_player_stats_1adeb667dbe2c1a76d1785ce07b6faf181">Instance</link>.<link linkend="_class_player_stats_1a3a170316e8384ab030f5f697b799a947">GetStamina</link>()&#32;&gt;=&#32;Amount)&#32;{
+00353 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_stats">PlayerStats</link>.<link linkend="_class_player_stats_1adeb667dbe2c1a76d1785ce07b6faf181">Instance</link>.<link linkend="_class_player_stats_1ab341f12827a6bdcfebb826dff43e82e3">SetStamina</link>(<link linkend="_class_player_stats">PlayerStats</link>.<link linkend="_class_player_stats_1adeb667dbe2c1a76d1785ce07b6faf181">Instance</link>.<link linkend="_class_player_stats_1a3a170316e8384ab030f5f697b799a947">GetStamina</link>()&#32;-&#32;Amount);
+00354 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_1adda3c3e385b428e061d6d1ccd25f23cb">TimeSinceLastStaminaUse</link>&#32;=&#32;0f;
+00355 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">true</emphasis>;
+00356 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00357 
+00358 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">false</emphasis>;
+00359 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_class_player_1a343fb1371365e58eb9c641928d41237a"/><section>
+    <title>AnimationPlayer</title>
+<indexterm><primary>AnimationPlayer</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>AnimationPlayer</secondary></indexterm>
+<para><computeroutput>AnimationPlayer Player.AnimationPlayer<computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__player_8cs_source_1l00024">24</link> of file <link linkend="__player_8cs_source">Player.cs</link>.</para>
+</section>
+<anchor xml:id="_class_player_1aaef48228442e066781c02ea9b8c3f694"/><section>
+    <title>BloodVials</title>
+<indexterm><primary>BloodVials</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>BloodVials</secondary></indexterm>
+<para><computeroutput><link linkend="_class_blood_vial">BloodVial</link> Player.BloodVials<computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__player_8cs_source_1l00030">30</link> of file <link linkend="__player_8cs_source">Player.cs</link>.</para>
+</section>
+<anchor xml:id="_class_player_1ae5ed42be5737449538f03a89ae258780"/><section>
+    <title>CanDash</title>
+<indexterm><primary>CanDash</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>CanDash</secondary></indexterm>
+<para><computeroutput>bool Player.CanDash = true<computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__player_8cs_source_1l00019">19</link> of file <link linkend="__player_8cs_source">Player.cs</link>.</para>
+</section>
+<anchor xml:id="_class_player_1ad64449e2fb7a7b527d08ce823dc4e2e4"/><section>
+    <title>DashDirection</title>
+<indexterm><primary>DashDirection</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>DashDirection</secondary></indexterm>
+<para><computeroutput>Vector2 Player.DashDirection = Vector2.Zero<computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__player_8cs_source_1l00016">16</link> of file <link linkend="__player_8cs_source">Player.cs</link>.</para>
+</section>
+<anchor xml:id="_class_player_1afc303e1e2108345937a0834cb03fee60"/><section>
+    <title>DashEffect</title>
+<indexterm><primary>DashEffect</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>DashEffect</secondary></indexterm>
+<para><computeroutput>Timer Player.DashEffect<computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__player_8cs_source_1l00026">26</link> of file <link linkend="__player_8cs_source">Player.cs</link>.</para>
+</section>
+<anchor xml:id="_class_player_1ad418db551711bceecb6a0f504727ca91"/><section>
+    <title>DashSpeed</title>
+<indexterm><primary>DashSpeed</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>DashSpeed</secondary></indexterm>
+<para><computeroutput>float Player.DashSpeed = 300f<computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__player_8cs_source_1l00017">17</link> of file <link linkend="__player_8cs_source">Player.cs</link>.</para>
+</section>
+<anchor xml:id="_class_player_1ae1197f00cda479e2e18246010b36fa9d"/><section>
+    <title>DashTimer</title>
+<indexterm><primary>DashTimer</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>DashTimer</secondary></indexterm>
+<para><computeroutput>Timer Player.DashTimer<computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__player_8cs_source_1l00027">27</link> of file <link linkend="__player_8cs_source">Player.cs</link>.</para>
+</section>
+<anchor xml:id="_class_player_1a33ad87048d2a086b8b74cf2d610aac8e"/><section>
+    <title>DashTrailInterval</title>
+<indexterm><primary>DashTrailInterval</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>DashTrailInterval</secondary></indexterm>
+<para><computeroutput>float Player.DashTrailInterval = 0.05f<computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__player_8cs_source_1l00020">20</link> of file <link linkend="__player_8cs_source">Player.cs</link>.</para>
+</section>
+<anchor xml:id="_class_player_1af96d2cf00ca821528f6624b9d746de79"/><section>
+    <title>DashTrailTimer</title>
+<indexterm><primary>DashTrailTimer</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>DashTrailTimer</secondary></indexterm>
+<para><computeroutput>float Player.DashTrailTimer = 0f<computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__player_8cs_source_1l00021">21</link> of file <link linkend="__player_8cs_source">Player.cs</link>.</para>
+</section>
+<anchor xml:id="_class_player_1ae9c0ec6f7123f5832d82c2cc68eedb97"/><section>
+    <title>HauptHitbox</title>
+<indexterm><primary>HauptHitbox</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>HauptHitbox</secondary></indexterm>
+<para><computeroutput>Vector2 Player.HauptHitbox<computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__player_8cs_source_1l00033">33</link> of file <link linkend="__player_8cs_source">Player.cs</link>.</para>
+</section>
+<anchor xml:id="_class_player_1a3cf5113d8c5c04d4fc9822c7b33a4fa1"/><section>
+    <title>IsDashing</title>
+<indexterm><primary>IsDashing</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>IsDashing</secondary></indexterm>
+<para><computeroutput>bool Player.IsDashing = false<computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__player_8cs_source_1l00018">18</link> of file <link linkend="__player_8cs_source">Player.cs</link>.</para>
+</section>
+<anchor xml:id="_class_player_1a8da3506a415217b5eeacbf254620b0a1"/><section>
+    <title>JUMP_VELOCITY</title>
+<indexterm><primary>JUMP_VELOCITY</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>JUMP_VELOCITY</secondary></indexterm>
+<para><computeroutput>const float Player.JUMP_VELOCITY = -300f<computeroutput>[static]</computeroutput>, <computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__player_8cs_source_1l00012">12</link> of file <link linkend="__player_8cs_source">Player.cs</link>.</para>
+</section>
+<anchor xml:id="_class_player_1a9c16b607216c433cd53e2a56fedfeeed"/><section>
+    <title>JumpCount</title>
+<indexterm><primary>JumpCount</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>JumpCount</secondary></indexterm>
+<para><computeroutput>int Player.JumpCount = 0<computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__player_8cs_source_1l00014">14</link> of file <link linkend="__player_8cs_source">Player.cs</link>.</para>
+</section>
+<anchor xml:id="_class_player_1a7bcbe69f9f5e347cf485306520b1dadd"/><section>
+    <title>JumpMax</title>
+<indexterm><primary>JumpMax</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>JumpMax</secondary></indexterm>
+<para><computeroutput>int Player.JumpMax = 2<computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__player_8cs_source_1l00013">13</link> of file <link linkend="__player_8cs_source">Player.cs</link>.</para>
+</section>
+<anchor xml:id="_class_player_1a57850da38e07a680af71543a3e02de1a"/><section>
+    <title>LastAttack</title>
+<indexterm><primary>LastAttack</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>LastAttack</secondary></indexterm>
+<para><computeroutput>int Player.LastAttack = 0<computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__player_8cs_source_1l00034">34</link> of file <link linkend="__player_8cs_source">Player.cs</link>.</para>
+</section>
+<anchor xml:id="_class_player_1a5b037b53d0e7c4eacd6e09b71463862c"/><section>
+    <title>PlayerHitbox</title>
+<indexterm><primary>PlayerHitbox</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>PlayerHitbox</secondary></indexterm>
+<para><computeroutput>CollisionShape2D Player.PlayerHitbox<computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__player_8cs_source_1l00029">29</link> of file <link linkend="__player_8cs_source">Player.cs</link>.</para>
+</section>
+<anchor xml:id="_class_player_1aa23d4f9699cd9b706e9b6945a365699b"/><section>
+    <title>SinDisplay</title>
+<indexterm><primary>SinDisplay</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>SinDisplay</secondary></indexterm>
+<para><computeroutput>Label Player.SinDisplay<computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__player_8cs_source_1l00031">31</link> of file <link linkend="__player_8cs_source">Player.cs</link>.</para>
+</section>
+<anchor xml:id="_class_player_1a23e57f8d9bfe69ab49b86a94bcc8c37d"/><section>
+    <title>SPEED</title>
+<indexterm><primary>SPEED</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>SPEED</secondary></indexterm>
+<para><computeroutput>const float Player.SPEED = 100f<computeroutput>[static]</computeroutput>, <computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__player_8cs_source_1l00011">11</link> of file <link linkend="__player_8cs_source">Player.cs</link>.</para>
+</section>
+<anchor xml:id="_class_player_1a650e61374596e594f38f5d9caf11c3fb"/><section>
+    <title>Sprite</title>
+<indexterm><primary>Sprite</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>Sprite</secondary></indexterm>
+<para><computeroutput>Sprite2D Player.Sprite<computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__player_8cs_source_1l00025">25</link> of file <link linkend="__player_8cs_source">Player.cs</link>.</para>
+</section>
+<anchor xml:id="_class_player_1a64d74400579bd882301f0ec6a6135ed8"/><section>
+    <title>SwordCollision</title>
+<indexterm><primary>SwordCollision</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>SwordCollision</secondary></indexterm>
+<para><computeroutput>CollisionShape2D Player.SwordCollision<computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__player_8cs_source_1l00028">28</link> of file <link linkend="__player_8cs_source">Player.cs</link>.</para>
+</section>
+<anchor xml:id="_class_player_1adda3c3e385b428e061d6d1ccd25f23cb"/><section>
+    <title>TimeSinceLastStaminaUse</title>
+<indexterm><primary>TimeSinceLastStaminaUse</primary><secondary>Player</secondary></indexterm>
+<indexterm><primary>Player</primary><secondary>TimeSinceLastStaminaUse</secondary></indexterm>
+<para><computeroutput>float Player.TimeSinceLastStaminaUse = 0f<computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__player_8cs_source_1l00037">37</link> of file <link linkend="__player_8cs_source">Player.cs</link>.</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+<link linkend="__player_8cs">Player.cs</link></section>
+</section>

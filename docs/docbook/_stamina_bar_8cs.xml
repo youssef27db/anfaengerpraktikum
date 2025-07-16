@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__stamina_bar_8cs" xml:lang="en-US">
+<title>StaminaBar.cs File Reference</title>
+<indexterm><primary>StaminaBar.cs</primary></indexterm>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_class_stamina_bar">StaminaBar</link></para>
+
+<para>Klasse für die Ausdauerleiste des Spielers. Synchronisiert die Anzeige der <link linkend="_class_stamina_bar">StaminaBar</link> mit der Ausdauer des Spielers. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

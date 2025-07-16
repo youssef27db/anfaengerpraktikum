@@ -1,0 +1,152 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_blood_vial" xml:lang="en-US">
+<title>BloodVial Class Reference</title>
+<indexterm><primary>BloodVial</primary></indexterm>
+<para>
+
+<para>Klasse für die Interaktion zum heilen. </para>
+ 
+</para>
+<para>Inheritance diagram for BloodVial:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_blood_vial.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>override void <link linkend="_class_blood_vial_1a42ceac7194f591e87bc2a82a61b2165c">_Ready</link> ()</para>
+
+<para>Initialisierung der Referenzen. Findet die relevanten Knoten in der Szene und weist sie zu. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_blood_vial_1a0e0fed9a887f1fa7f068906273d43275">UseBloodVial</link> ()</para>
+
+<para>Versucht ein Bloodvial zu verwenden um den Spieler zu Heilen. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_blood_vial_1a31a53feef846bd962bd5b525b0bc5c6c">ResetUses</link> ()</para>
+
+<para>Setzt die Anzahl der Bloodvials auf das Maximum. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_blood_vial_1af5370d164b83ed4e3b5edec111b4ef98">AddMaxUses</link> (int Amount)</para>
+
+<para>Verbessert die Maximale Anzahl an Bloodvials um die angegebene Anzahl. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_blood_vial_1a993c680c590e63fb4db1f6466e1418d2">LevelHealAmount</link> ()</para>
+
+<para>Verbessert den HealAMount eines Bloodvials um 25. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Klasse für die Interaktion zum heilen. </para>
+<para>
+Definition at line <link linkend="__blood_vial_8cs_source_1l00008">8</link> of file <link linkend="__blood_vial_8cs_source">BloodVial.cs</link>.</para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_blood_vial_1a42ceac7194f591e87bc2a82a61b2165c"/><section>
+    <title>_Ready()</title>
+<indexterm><primary>_Ready</primary><secondary>BloodVial</secondary></indexterm>
+<indexterm><primary>BloodVial</primary><secondary>_Ready</secondary></indexterm>
+<para><computeroutput>override void BloodVial._Ready ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Initialisierung der Referenzen. Findet die relevanten Knoten in der Szene und weist sie zu. </para>
+</para>
+<para>
+Definition at line <link linkend="__blood_vial_8cs_source_1l00014">14</link> of file <link linkend="__blood_vial_8cs_source">BloodVial.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00014 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00015 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Text&#32;=&#32;<link linkend="_class_player_stats">PlayerStats</link>.<link linkend="_class_player_stats_1adeb667dbe2c1a76d1785ce07b6faf181">Instance</link>.<link linkend="_class_player_stats_1a7927fc41f41b344aecea23f12c52329b">GetBVCurrentUses</link>()&#32;+&#32;<emphasis role="stringliteral">&quot;&quot;</emphasis>;
+00016 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_blood_vial_1af5370d164b83ed4e3b5edec111b4ef98"/><section>
+    <title>AddMaxUses()</title>
+<indexterm><primary>AddMaxUses</primary><secondary>BloodVial</secondary></indexterm>
+<indexterm><primary>BloodVial</primary><secondary>AddMaxUses</secondary></indexterm>
+<para><computeroutput>void BloodVial.AddMaxUses (int Amount)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Verbessert die Maximale Anzahl an Bloodvials um die angegebene Anzahl. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>int</entry><entry>
+<para>Amount, um die MaxUses erhöht wird. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line <link linkend="__blood_vial_8cs_source_1l00040">40</link> of file <link linkend="__blood_vial_8cs_source">BloodVial.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00040 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00041 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_stats">PlayerStats</link>.<link linkend="_class_player_stats_1adeb667dbe2c1a76d1785ce07b6faf181">Instance</link>.<link linkend="_class_player_stats_1abebcd5c40720aa0a7b4d86518f8e3b1b">SetBVMaxUses</link>(<link linkend="_class_player_stats">PlayerStats</link>.<link linkend="_class_player_stats_1adeb667dbe2c1a76d1785ce07b6faf181">Instance</link>.<link linkend="_class_player_stats_1a88cc0468ef32b3b4a7b2e79af4e24424">GetBVMaxUses</link>()&#32;+&#32;Amount);
+00042 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_blood_vial_1a31a53feef846bd962bd5b525b0bc5c6c">ResetUses</link>();
+00043 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_blood_vial_1a993c680c590e63fb4db1f6466e1418d2"/><section>
+    <title>LevelHealAmount()</title>
+<indexterm><primary>LevelHealAmount</primary><secondary>BloodVial</secondary></indexterm>
+<indexterm><primary>BloodVial</primary><secondary>LevelHealAmount</secondary></indexterm>
+<para><computeroutput>void BloodVial.LevelHealAmount ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Verbessert den HealAMount eines Bloodvials um 25. </para>
+</para>
+<para>
+Definition at line <link linkend="__blood_vial_8cs_source_1l00048">48</link> of file <link linkend="__blood_vial_8cs_source">BloodVial.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00048 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00049 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_stats">PlayerStats</link>.<link linkend="_class_player_stats_1adeb667dbe2c1a76d1785ce07b6faf181">Instance</link>.<link linkend="_class_player_stats_1a76c874319c947a35702cd9a0a4b0e66c">SetBVHealAmount</link>(<link linkend="_class_player_stats">PlayerStats</link>.<link linkend="_class_player_stats_1adeb667dbe2c1a76d1785ce07b6faf181">Instance</link>.<link linkend="_class_player_stats_1a026f80c7d14afe5dbf7e33e0edd2a16a">GetBVHealAmount</link>()&#32;+&#32;25);
+00050 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_blood_vial_1a31a53feef846bd962bd5b525b0bc5c6c"/><section>
+    <title>ResetUses()</title>
+<indexterm><primary>ResetUses</primary><secondary>BloodVial</secondary></indexterm>
+<indexterm><primary>BloodVial</primary><secondary>ResetUses</secondary></indexterm>
+<para><computeroutput>void BloodVial.ResetUses ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Setzt die Anzahl der Bloodvials auf das Maximum. </para>
+</para>
+<para>
+Definition at line <link linkend="__blood_vial_8cs_source_1l00031">31</link> of file <link linkend="__blood_vial_8cs_source">BloodVial.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00031 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00032 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_stats">PlayerStats</link>.<link linkend="_class_player_stats_1adeb667dbe2c1a76d1785ce07b6faf181">Instance</link>.<link linkend="_class_player_stats_1a05f3b699b992de2ea849c9397c818a6f">SetBVCurrentUses</link>(<link linkend="_class_player_stats">PlayerStats</link>.<link linkend="_class_player_stats_1adeb667dbe2c1a76d1785ce07b6faf181">Instance</link>.<link linkend="_class_player_stats_1a88cc0468ef32b3b4a7b2e79af4e24424">GetBVMaxUses</link>());
+00033 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Text&#32;=&#32;<link linkend="_class_player_stats">PlayerStats</link>.<link linkend="_class_player_stats_1adeb667dbe2c1a76d1785ce07b6faf181">Instance</link>.<link linkend="_class_player_stats_1a7927fc41f41b344aecea23f12c52329b">GetBVCurrentUses</link>()&#32;+&#32;<emphasis role="stringliteral">&quot;&quot;</emphasis>;
+00034 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_blood_vial_1a0e0fed9a887f1fa7f068906273d43275"/><section>
+    <title>UseBloodVial()</title>
+<indexterm><primary>UseBloodVial</primary><secondary>BloodVial</secondary></indexterm>
+<indexterm><primary>BloodVial</primary><secondary>UseBloodVial</secondary></indexterm>
+<para><computeroutput>void BloodVial.UseBloodVial ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Versucht ein Bloodvial zu verwenden um den Spieler zu Heilen. </para>
+</para>
+<para>
+Definition at line <link linkend="__blood_vial_8cs_source_1l00021">21</link> of file <link linkend="__blood_vial_8cs_source">BloodVial.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00021 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00022 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(<link linkend="_class_player_stats">PlayerStats</link>.<link linkend="_class_player_stats_1adeb667dbe2c1a76d1785ce07b6faf181">Instance</link>.<link linkend="_class_player_stats_1a7927fc41f41b344aecea23f12c52329b">GetBVCurrentUses</link>()&#32;&lt;=&#32;0)&#32;<emphasis role="keywordflow">return</emphasis>;
+00023 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_stats">PlayerStats</link>.<link linkend="_class_player_stats_1adeb667dbe2c1a76d1785ce07b6faf181">Instance</link>.<link linkend="_class_player_stats_1a05f3b699b992de2ea849c9397c818a6f">SetBVCurrentUses</link>(<link linkend="_class_player_stats">PlayerStats</link>.<link linkend="_class_player_stats_1adeb667dbe2c1a76d1785ce07b6faf181">Instance</link>.<link linkend="_class_player_stats_1a7927fc41f41b344aecea23f12c52329b">GetBVCurrentUses</link>()&#32;-&#32;1);
+00024 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Text&#32;=&#32;<link linkend="_class_player_stats">PlayerStats</link>.<link linkend="_class_player_stats_1adeb667dbe2c1a76d1785ce07b6faf181">Instance</link>.<link linkend="_class_player_stats_1a7927fc41f41b344aecea23f12c52329b">GetBVCurrentUses</link>()&#32;+&#32;<emphasis role="stringliteral">&quot;&quot;</emphasis>;
+00025 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_stats">PlayerStats</link>.<link linkend="_class_player_stats_1adeb667dbe2c1a76d1785ce07b6faf181">Instance</link>.<link linkend="_class_player_stats_1aaed3690620c6ba9a8866d0c35b4f26d7">SetCurrentHealth</link>(<link linkend="_class_player_stats">PlayerStats</link>.<link linkend="_class_player_stats_1adeb667dbe2c1a76d1785ce07b6faf181">Instance</link>.<link linkend="_class_player_stats_1a0ec1075ba0983a3df42454b110194c0d">GetCurrentHealth</link>()&#32;+&#32;<link linkend="_class_player_stats">PlayerStats</link>.<link linkend="_class_player_stats_1adeb667dbe2c1a76d1785ce07b6faf181">Instance</link>.<link linkend="_class_player_stats_1a026f80c7d14afe5dbf7e33e0edd2a16a">GetBVHealAmount</link>());
+00026 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<para>
+The documentation for this class was generated from the following file:</para>
+<link linkend="__blood_vial_8cs">BloodVial.cs</link></section>
+</section>

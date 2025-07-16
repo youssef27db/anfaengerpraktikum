@@ -1,0 +1,353 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_navigation_manager" xml:lang="en-US">
+<title>NavigationManager Class Reference</title>
+<indexterm><primary>NavigationManager</primary></indexterm>
+<para>
+
+<para>Der <link linkend="_class_navigation_manager">NavigationManager</link> ist für das Laden von Leveln und das Spawnen des Spielers verantwortlich. Der <link linkend="_class_navigation_manager">NavigationManager</link> ist ein Singleton, der in der Haupt-Szene platziert wird und von anderen Skripten verwendet wird, um Level zu laden und den Spieler zu spawnen. </para>
+ 
+</para>
+<para>Inheritance diagram for NavigationManager:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_navigation_manager.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>delegate void <link linkend="_class_navigation_manager_1a0dee864e0854aa918dd9b2d7a125d8dd">OnTriggerPlayerSpawnEventHandler</link> (Vector2 Position, string Direction)</para>
+
+<para>Das Signal, das ausgelöst wird, wenn der Spieler spawnen soll. </para>
+</listitem>
+            <listitem><para>override void <link linkend="_class_navigation_manager_1ab13f450f99d963ae8f808bac3f4261e2">_Ready</link> ()</para>
+
+<para>Initialisiert den <link linkend="_class_navigation_manager">NavigationManager</link> und setzt ihn als Singleton. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_navigation_manager_1a5966bab1490d10dfc285507a0c8d8bb7">GoToLevel</link> (string LevelTag, string DestinationTag)</para>
+
+<para>Lädt das angegebene Level und setzt das Ziel-Tag für den Spieler-Spawn. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_navigation_manager_1aaec36be7cfa331ec6d3ca8eb14ba3872">TriggerPlayerSpawn</link> (Vector2 Position, string Direction)</para>
+
+<para>Lädt das angegebene Level und setzt das Ziel-Tag für den Spieler-Spawn. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Properties    </title>
+        <itemizedlist>
+            <listitem><para>static <link linkend="_class_navigation_manager">NavigationManager</link> <link linkend="_class_navigation_manager_1aca7e1252e63bf4323d89b8f7d4cd4ce8">Instance</link><computeroutput> [get, private set]</computeroutput>
+</para>
+</listitem>
+            <listitem><para>string <link linkend="_class_navigation_manager_1a5aa88986fee7cfcf701e424e333b6980">SpawnDoorTag</link><computeroutput> [get, private set]</computeroutput>
+</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Private Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_class_navigation_manager_1a3d2baed2d27baac07286b561a2338670">DeferredChangeScene</link> (PackedScene SceneToLoad)</para>
+
+<para>Diese Methode wird aufgerufen, um die Szene zu wechseln. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Static Private Attributes    </title>
+        <itemizedlist>
+            <listitem><para>static readonly PackedScene <link linkend="_class_navigation_manager_1a1ffe3077e2f478261082ee583f6c3996">SceneMainMenu</link> = (PackedScene)GD.Load(&quot;res://Scenes/main_menu.tscn&quot;)</para>
+</listitem>
+            <listitem><para>static readonly PackedScene <link linkend="_class_navigation_manager_1ae1efff3ff02142f6b432967154fdc4ce">SceneIntro</link> = (PackedScene)GD.Load(&quot;res://Scenes/intro.tscn&quot;)</para>
+</listitem>
+            <listitem><para>static readonly PackedScene <link linkend="_class_navigation_manager_1a75bcdf3626163a7a13a04786e5c50d45">SceneLevel1</link> = (PackedScene)GD.Load(&quot;res://Scenes/level1.tscn&quot;)</para>
+</listitem>
+            <listitem><para>static readonly PackedScene <link linkend="_class_navigation_manager_1a05bae96c7f4291c05c641ecc19de352d">SceneBoss</link> = (PackedScene)GD.Load(&quot;res://Scenes/bossRoom.tscn&quot;)</para>
+</listitem>
+            <listitem><para>static readonly PackedScene <link linkend="_class_navigation_manager_1a41a234813f7d0673dd2485f4ef49f0cc">SceneLevelOne</link> = (PackedScene)GD.Load(&quot;res://Scenes/level_one.tscn&quot;)</para>
+</listitem>
+            <listitem><para>static readonly PackedScene <link linkend="_class_navigation_manager_1a6741a214cbea19bb355bb5e2770634d3">SceneLevelTwo</link> = (PackedScene)GD.Load(&quot;res://Scenes/level_two.tscn&quot;)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Der <link linkend="_class_navigation_manager">NavigationManager</link> ist für das Laden von Leveln und das Spawnen des Spielers verantwortlich. Der <link linkend="_class_navigation_manager">NavigationManager</link> ist ein Singleton, der in der Haupt-Szene platziert wird und von anderen Skripten verwendet wird, um Level zu laden und den Spieler zu spawnen. </para>
+<para>
+Definition at line <link linkend="__navigation_manager_8cs_source_1l00007">7</link> of file <link linkend="__navigation_manager_8cs_source">NavigationManager.cs</link>.</para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_navigation_manager_1ab13f450f99d963ae8f808bac3f4261e2"/><section>
+    <title>_Ready()</title>
+<indexterm><primary>_Ready</primary><secondary>NavigationManager</secondary></indexterm>
+<indexterm><primary>NavigationManager</primary><secondary>_Ready</secondary></indexterm>
+<para><computeroutput>override void NavigationManager._Ready ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Initialisiert den <link linkend="_class_navigation_manager">NavigationManager</link> und setzt ihn als Singleton. </para>
+</para>
+<para>
+Definition at line <link linkend="__navigation_manager_8cs_source_1l00032">32</link> of file <link linkend="__navigation_manager_8cs_source">NavigationManager.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00032 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00033 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_navigation_manager_1aca7e1252e63bf4323d89b8f7d4cd4ce8">Instance</link>&#32;=&#32;<emphasis role="keyword">this</emphasis>;
+00034 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_navigation_manager_1a3d2baed2d27baac07286b561a2338670"/><section>
+    <title>DeferredChangeScene()</title>
+<indexterm><primary>DeferredChangeScene</primary><secondary>NavigationManager</secondary></indexterm>
+<indexterm><primary>NavigationManager</primary><secondary>DeferredChangeScene</secondary></indexterm>
+<para><computeroutput>void NavigationManager.DeferredChangeScene (PackedScene SceneToLoad)<computeroutput>[inline]</computeroutput>, <computeroutput>[private]</computeroutput></computeroutput></para><para>
+
+<para>Diese Methode wird aufgerufen, um die Szene zu wechseln. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>SceneToLoad</entry><entry>
+<para>Die Szene, die geladen werden soll. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line <link linkend="__navigation_manager_8cs_source_1l00083">83</link> of file <link linkend="__navigation_manager_8cs_source">NavigationManager.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00084 &#32;&#32;&#32;&#32;{
+00085 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;GetTree().ChangeSceneToPacked(SceneToLoad);
+00086 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_navigation_manager_1a5966bab1490d10dfc285507a0c8d8bb7"/><section>
+    <title>GoToLevel()</title>
+<indexterm><primary>GoToLevel</primary><secondary>NavigationManager</secondary></indexterm>
+<indexterm><primary>NavigationManager</primary><secondary>GoToLevel</secondary></indexterm>
+<para><computeroutput>void NavigationManager.GoToLevel (string LevelTag, string DestinationTag)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Lädt das angegebene Level und setzt das Ziel-Tag für den Spieler-Spawn. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>LevelTag</entry><entry>
+<para>Das Tag des Levels, das geladen werden soll. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>DestinationTag</entry><entry>
+<para>Das Tag der Tür, an der der Spieler spawnen soll. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line <link linkend="__navigation_manager_8cs_source_1l00041">41</link> of file <link linkend="__navigation_manager_8cs_source">NavigationManager.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00042 &#32;&#32;&#32;&#32;{
+00043 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;PackedScene&#32;SceneToLoad&#32;=&#32;<emphasis role="keyword">null</emphasis>;
+00044 
+00045 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Bestimmen,&#32;welches&#32;Level&#32;geladen&#32;werden&#32;soll</emphasis>
+00046 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">switch</emphasis>&#32;(LevelTag)
+00047 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00048 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;<emphasis role="stringliteral">&quot;main_menu&quot;</emphasis>:
+00049 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SceneToLoad&#32;=&#32;<link linkend="_class_navigation_manager_1a1ffe3077e2f478261082ee583f6c3996">SceneMainMenu</link>;
+00050 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">break</emphasis>;
+00051 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;<emphasis role="stringliteral">&quot;intro&quot;</emphasis>:
+00052 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SceneToLoad&#32;=&#32;<link linkend="_class_navigation_manager_1ae1efff3ff02142f6b432967154fdc4ce">SceneIntro</link>;
+00053 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">break</emphasis>;
+00054 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;<emphasis role="stringliteral">&quot;level1&quot;</emphasis>:
+00055 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SceneToLoad&#32;=&#32;<link linkend="_class_navigation_manager_1a75bcdf3626163a7a13a04786e5c50d45">SceneLevel1</link>;
+00056 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">break</emphasis>;
+00057 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;<emphasis role="stringliteral">&quot;bossRoom&quot;</emphasis>:
+00058 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SceneToLoad&#32;=&#32;<link linkend="_class_navigation_manager_1a05bae96c7f4291c05c641ecc19de352d">SceneBoss</link>;
+00059 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">break</emphasis>;
+00060 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;<emphasis role="stringliteral">&quot;level_one&quot;</emphasis>:
+00061 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SceneToLoad&#32;=&#32;<link linkend="_class_navigation_manager_1a41a234813f7d0673dd2485f4ef49f0cc">SceneLevelOne</link>;
+00062 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">break</emphasis>;
+00063 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;<emphasis role="stringliteral">&quot;level_two&quot;</emphasis>:
+00064 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SceneToLoad&#32;=&#32;<link linkend="_class_navigation_manager_1a6741a214cbea19bb355bb5e2770634d3">SceneLevelTwo</link>;
+00065 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">break</emphasis>;
+00066 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00067 
+00068 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Überprüfen,&#32;ob&#32;eine&#32;Szene&#32;ausgewählt&#32;wurde&#32;und&#32;diese&#32;dann&#32;laden</emphasis>
+00069 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(SceneToLoad&#32;!=&#32;<emphasis role="keyword">null</emphasis>){
+00070 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(SceneToLoad&#32;!=&#32;<link linkend="_class_navigation_manager_1a1ffe3077e2f478261082ee583f6c3996">SceneMainMenu</link>){
+00071 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_stats">PlayerStats</link>.<link linkend="_class_player_stats_1adeb667dbe2c1a76d1785ce07b6faf181">Instance</link>.<link linkend="_class_player_stats_1a3545edeb4834aad7011e561dc5f1b10d">SetCurrentLevelTag</link>(LevelTag);
+00072 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_navigation_manager_1a5aa88986fee7cfcf701e424e333b6980">SpawnDoorTag</link>&#32;=&#32;DestinationTag;
+00073 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00074 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Verwendung&#32;der&#32;ChangeSceneToPacked-Methode&#32;in&#32;Godot&#32;4</emphasis>
+00075 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;CallDeferred(nameof(<link linkend="_class_navigation_manager_1a3d2baed2d27baac07286b561a2338670">DeferredChangeScene</link>),&#32;SceneToLoad);
+00076 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;
+00077 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_navigation_manager_1a0dee864e0854aa918dd9b2d7a125d8dd"/><section>
+    <title>OnTriggerPlayerSpawnEventHandler()</title>
+<indexterm><primary>OnTriggerPlayerSpawnEventHandler</primary><secondary>NavigationManager</secondary></indexterm>
+<indexterm><primary>NavigationManager</primary><secondary>OnTriggerPlayerSpawnEventHandler</secondary></indexterm>
+<para><computeroutput>delegate void NavigationManager.OnTriggerPlayerSpawnEventHandler (Vector2 Position, string Direction)</computeroutput></para><para>
+
+<para>Das Signal, das ausgelöst wird, wenn der Spieler spawnen soll. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>Position</entry><entry>
+<para>Die Position, an der der Spieler spawnen soll. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>Direction</entry><entry>
+<para>Die Richtung, in die der Spieler schauen soll. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_class_navigation_manager_1aaec36be7cfa331ec6d3ca8eb14ba3872"/><section>
+    <title>TriggerPlayerSpawn()</title>
+<indexterm><primary>TriggerPlayerSpawn</primary><secondary>NavigationManager</secondary></indexterm>
+<indexterm><primary>NavigationManager</primary><secondary>TriggerPlayerSpawn</secondary></indexterm>
+<para><computeroutput>void NavigationManager.TriggerPlayerSpawn (Vector2 Position, string Direction)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Lädt das angegebene Level und setzt das Ziel-Tag für den Spieler-Spawn. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>Position</entry><entry>
+<para>Die Position, an der der Spieler spawnen soll. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>Direction</entry><entry>
+<para>Die Richtung, in die der Spieler schauen soll. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line <link linkend="__navigation_manager_8cs_source_1l00093">93</link> of file <link linkend="__navigation_manager_8cs_source">NavigationManager.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00094 &#32;&#32;&#32;&#32;{
+00095 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;EmitSignal(SignalName.OnTriggerPlayerSpawn,&#32;Position,&#32;Direction);
+00096 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_class_navigation_manager_1a05bae96c7f4291c05c641ecc19de352d"/><section>
+    <title>SceneBoss</title>
+<indexterm><primary>SceneBoss</primary><secondary>NavigationManager</secondary></indexterm>
+<indexterm><primary>NavigationManager</primary><secondary>SceneBoss</secondary></indexterm>
+<para><computeroutput>readonly PackedScene NavigationManager.SceneBoss = (PackedScene)GD.Load(&quot;res://Scenes/bossRoom.tscn&quot;)<computeroutput>[static]</computeroutput>, <computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__navigation_manager_8cs_source_1l00014">14</link> of file <link linkend="__navigation_manager_8cs_source">NavigationManager.cs</link>.</para>
+</section>
+<anchor xml:id="_class_navigation_manager_1ae1efff3ff02142f6b432967154fdc4ce"/><section>
+    <title>SceneIntro</title>
+<indexterm><primary>SceneIntro</primary><secondary>NavigationManager</secondary></indexterm>
+<indexterm><primary>NavigationManager</primary><secondary>SceneIntro</secondary></indexterm>
+<para><computeroutput>readonly PackedScene NavigationManager.SceneIntro = (PackedScene)GD.Load(&quot;res://Scenes/intro.tscn&quot;)<computeroutput>[static]</computeroutput>, <computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__navigation_manager_8cs_source_1l00012">12</link> of file <link linkend="__navigation_manager_8cs_source">NavigationManager.cs</link>.</para>
+</section>
+<anchor xml:id="_class_navigation_manager_1a75bcdf3626163a7a13a04786e5c50d45"/><section>
+    <title>SceneLevel1</title>
+<indexterm><primary>SceneLevel1</primary><secondary>NavigationManager</secondary></indexterm>
+<indexterm><primary>NavigationManager</primary><secondary>SceneLevel1</secondary></indexterm>
+<para><computeroutput>readonly PackedScene NavigationManager.SceneLevel1 = (PackedScene)GD.Load(&quot;res://Scenes/level1.tscn&quot;)<computeroutput>[static]</computeroutput>, <computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__navigation_manager_8cs_source_1l00013">13</link> of file <link linkend="__navigation_manager_8cs_source">NavigationManager.cs</link>.</para>
+</section>
+<anchor xml:id="_class_navigation_manager_1a41a234813f7d0673dd2485f4ef49f0cc"/><section>
+    <title>SceneLevelOne</title>
+<indexterm><primary>SceneLevelOne</primary><secondary>NavigationManager</secondary></indexterm>
+<indexterm><primary>NavigationManager</primary><secondary>SceneLevelOne</secondary></indexterm>
+<para><computeroutput>readonly PackedScene NavigationManager.SceneLevelOne = (PackedScene)GD.Load(&quot;res://Scenes/level_one.tscn&quot;)<computeroutput>[static]</computeroutput>, <computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__navigation_manager_8cs_source_1l00015">15</link> of file <link linkend="__navigation_manager_8cs_source">NavigationManager.cs</link>.</para>
+</section>
+<anchor xml:id="_class_navigation_manager_1a6741a214cbea19bb355bb5e2770634d3"/><section>
+    <title>SceneLevelTwo</title>
+<indexterm><primary>SceneLevelTwo</primary><secondary>NavigationManager</secondary></indexterm>
+<indexterm><primary>NavigationManager</primary><secondary>SceneLevelTwo</secondary></indexterm>
+<para><computeroutput>readonly PackedScene NavigationManager.SceneLevelTwo = (PackedScene)GD.Load(&quot;res://Scenes/level_two.tscn&quot;)<computeroutput>[static]</computeroutput>, <computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__navigation_manager_8cs_source_1l00016">16</link> of file <link linkend="__navigation_manager_8cs_source">NavigationManager.cs</link>.</para>
+</section>
+<anchor xml:id="_class_navigation_manager_1a1ffe3077e2f478261082ee583f6c3996"/><section>
+    <title>SceneMainMenu</title>
+<indexterm><primary>SceneMainMenu</primary><secondary>NavigationManager</secondary></indexterm>
+<indexterm><primary>NavigationManager</primary><secondary>SceneMainMenu</secondary></indexterm>
+<para><computeroutput>readonly PackedScene NavigationManager.SceneMainMenu = (PackedScene)GD.Load(&quot;res://Scenes/main_menu.tscn&quot;)<computeroutput>[static]</computeroutput>, <computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__navigation_manager_8cs_source_1l00011">11</link> of file <link linkend="__navigation_manager_8cs_source">NavigationManager.cs</link>.</para>
+</section>
+</section>
+<section>
+<title>Property Documentation</title>
+<anchor xml:id="_class_navigation_manager_1aca7e1252e63bf4323d89b8f7d4cd4ce8"/><section>
+    <title>Instance</title>
+<indexterm><primary>Instance</primary><secondary>NavigationManager</secondary></indexterm>
+<indexterm><primary>NavigationManager</primary><secondary>Instance</secondary></indexterm>
+<para><computeroutput><link linkend="_class_navigation_manager">NavigationManager</link> NavigationManager.Instance<computeroutput>[static]</computeroutput>, <computeroutput>[get]</computeroutput>, <computeroutput>[private set]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__navigation_manager_8cs_source_1l00009">9</link> of file <link linkend="__navigation_manager_8cs_source">NavigationManager.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00009 {&#32;<emphasis role="keyword">get</emphasis>;&#32;<emphasis role="keyword">private</emphasis>&#32;<emphasis role="keyword">set</emphasis>;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_navigation_manager_1a5aa88986fee7cfcf701e424e333b6980"/><section>
+    <title>SpawnDoorTag</title>
+<indexterm><primary>SpawnDoorTag</primary><secondary>NavigationManager</secondary></indexterm>
+<indexterm><primary>NavigationManager</primary><secondary>SpawnDoorTag</secondary></indexterm>
+<para><computeroutput>string NavigationManager.SpawnDoorTag<computeroutput>[get]</computeroutput>, <computeroutput>[private set]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__navigation_manager_8cs_source_1l00019">19</link> of file <link linkend="__navigation_manager_8cs_source">NavigationManager.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00019 {&#32;<emphasis role="keyword">get</emphasis>;&#32;<emphasis role="keyword">private</emphasis>&#32;<emphasis role="keyword">set</emphasis>;&#32;}
+</programlisting></section>
+<para>
+The documentation for this class was generated from the following file:</para>
+<link linkend="__navigation_manager_8cs">NavigationManager.cs</link></section>
+</section>

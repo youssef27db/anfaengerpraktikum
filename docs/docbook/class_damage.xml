@@ -1,0 +1,223 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_damage" xml:lang="en-US">
+<title>Damage Class Reference</title>
+<indexterm><primary>Damage</primary></indexterm>
+<para>
+
+<para>Repräsentiert den Schaden, der von Charakteren oder Gegnern verursacht wird. Beinhaltet physischen Schaden, wahren Schaden und den Rückstoßeffekt. </para>
+ 
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_damage_1a078b1c0b6cb42cd0d3c4bf74e3ca4454">Damage</link> (float <link linkend="_class_damage_1ae934748940559be5348b29b2d66a4949">PhysicalDMG</link>, float <link linkend="_class_damage_1a35802df99cc5bb93d22e9e7c5b039f9a">TrueDMG</link>, Vector2 <link linkend="_class_damage_1ab3c892c04820406c50102d9471d0fc9d">PushAmount</link>, Node2D <link linkend="_class_damage_1a97ac7df60d926ce18242bba40e5d500f">Source</link>)</para>
+
+<para>Konstruktor für die Damage-Klasse. </para>
+</listitem>
+            <listitem><para>float <link linkend="_class_damage_1a084fad418a6be9edca3e3e32355e49c0">GetPhysicalDMG</link> ()</para>
+
+<para>Gibt den physischen Schaden zurück. </para>
+</listitem>
+            <listitem><para>float <link linkend="_class_damage_1a4d43580112f089c208f9ba8e0b2559f0">GetTrueDMG</link> ()</para>
+
+<para>Gibt den wahren Schaden zurück. </para>
+</listitem>
+            <listitem><para>Vector2 <link linkend="_class_damage_1a60741a1e632c21788499ddc284b2844b">GetPushAmount</link> ()</para>
+
+<para>Gibt den Rückstoßvektor zurück. </para>
+</listitem>
+            <listitem><para>Node2D <link linkend="_class_damage_1ac446ed14eae2ee0d927510a3ab525042">GetSource</link> ()</para>
+
+<para>Gibt die Ursache zurück. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Private Attributes    </title>
+        <itemizedlist>
+            <listitem><para>float <link linkend="_class_damage_1ae934748940559be5348b29b2d66a4949">PhysicalDMG</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_class_damage_1a35802df99cc5bb93d22e9e7c5b039f9a">TrueDMG</link></para>
+</listitem>
+            <listitem><para>Vector2 <link linkend="_class_damage_1ab3c892c04820406c50102d9471d0fc9d">PushAmount</link></para>
+</listitem>
+            <listitem><para>Node2D <link linkend="_class_damage_1a97ac7df60d926ce18242bba40e5d500f">Source</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Repräsentiert den Schaden, der von Charakteren oder Gegnern verursacht wird. Beinhaltet physischen Schaden, wahren Schaden und den Rückstoßeffekt. </para>
+<para>
+Definition at line <link linkend="__damage_8cs_source_1l00007">7</link> of file <link linkend="__damage_8cs_source">Damage.cs</link>.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_class_damage_1a078b1c0b6cb42cd0d3c4bf74e3ca4454"/><section>
+    <title>Damage()</title>
+<indexterm><primary>Damage</primary><secondary>Damage</secondary></indexterm>
+<indexterm><primary>Damage</primary><secondary>Damage</secondary></indexterm>
+<para><computeroutput>Damage.Damage (float PhysicalDMG, float TrueDMG, Vector2 PushAmount, Node2D Source)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Konstruktor für die Damage-Klasse. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>PhysicalDMG</entry><entry>
+<para>Der physische Schaden. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>TrueDMG</entry><entry>
+<para>Der wahre Schaden. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>PushAmount</entry><entry>
+<para>Der Rückstoßvektor. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line <link linkend="__damage_8cs_source_1l00020">20</link> of file <link linkend="__damage_8cs_source">Damage.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00020 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00021 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this.PhysicalDMG&#32;=&#32;<link linkend="_class_damage_1ae934748940559be5348b29b2d66a4949">PhysicalDMG</link>;
+00022 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this.TrueDMG&#32;=&#32;<link linkend="_class_damage_1a35802df99cc5bb93d22e9e7c5b039f9a">TrueDMG</link>;
+00023 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this.PushAmount&#32;=&#32;<link linkend="_class_damage_1ab3c892c04820406c50102d9471d0fc9d">PushAmount</link>;
+00024 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this.Source&#32;=&#32;<link linkend="_class_damage_1a97ac7df60d926ce18242bba40e5d500f">Source</link>;
+00025 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_damage_1a084fad418a6be9edca3e3e32355e49c0"/><section>
+    <title>GetPhysicalDMG()</title>
+<indexterm><primary>GetPhysicalDMG</primary><secondary>Damage</secondary></indexterm>
+<indexterm><primary>Damage</primary><secondary>GetPhysicalDMG</secondary></indexterm>
+<para><computeroutput>float Damage.GetPhysicalDMG ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Gibt den physischen Schaden zurück. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>Der physische Schaden. </para>
+</formalpara>
+</para>
+<para>
+Definition at line <link linkend="__damage_8cs_source_1l00031">31</link> of file <link linkend="__damage_8cs_source">Damage.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00031 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00032 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_class_damage_1ae934748940559be5348b29b2d66a4949">PhysicalDMG</link>;
+00033 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_damage_1a60741a1e632c21788499ddc284b2844b"/><section>
+    <title>GetPushAmount()</title>
+<indexterm><primary>GetPushAmount</primary><secondary>Damage</secondary></indexterm>
+<indexterm><primary>Damage</primary><secondary>GetPushAmount</secondary></indexterm>
+<para><computeroutput>Vector2 Damage.GetPushAmount ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Gibt den Rückstoßvektor zurück. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>Der Rückstoßvektor. </para>
+</formalpara>
+</para>
+<para>
+Definition at line <link linkend="__damage_8cs_source_1l00047">47</link> of file <link linkend="__damage_8cs_source">Damage.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00047 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00048 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_class_damage_1ab3c892c04820406c50102d9471d0fc9d">PushAmount</link>;
+00049 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_damage_1ac446ed14eae2ee0d927510a3ab525042"/><section>
+    <title>GetSource()</title>
+<indexterm><primary>GetSource</primary><secondary>Damage</secondary></indexterm>
+<indexterm><primary>Damage</primary><secondary>GetSource</secondary></indexterm>
+<para><computeroutput>Node2D Damage.GetSource ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Gibt die Ursache zurück. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>Die Ursache. </para>
+</formalpara>
+</para>
+<para>
+Definition at line <link linkend="__damage_8cs_source_1l00055">55</link> of file <link linkend="__damage_8cs_source">Damage.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00055 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00056 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_class_damage_1a97ac7df60d926ce18242bba40e5d500f">Source</link>;
+00057 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_damage_1a4d43580112f089c208f9ba8e0b2559f0"/><section>
+    <title>GetTrueDMG()</title>
+<indexterm><primary>GetTrueDMG</primary><secondary>Damage</secondary></indexterm>
+<indexterm><primary>Damage</primary><secondary>GetTrueDMG</secondary></indexterm>
+<para><computeroutput>float Damage.GetTrueDMG ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Gibt den wahren Schaden zurück. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>Der wahre Schaden. </para>
+</formalpara>
+</para>
+<para>
+Definition at line <link linkend="__damage_8cs_source_1l00039">39</link> of file <link linkend="__damage_8cs_source">Damage.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00039 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00040 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_class_damage_1a35802df99cc5bb93d22e9e7c5b039f9a">TrueDMG</link>;
+00041 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_class_damage_1ae934748940559be5348b29b2d66a4949"/><section>
+    <title>PhysicalDMG</title>
+<indexterm><primary>PhysicalDMG</primary><secondary>Damage</secondary></indexterm>
+<indexterm><primary>Damage</primary><secondary>PhysicalDMG</secondary></indexterm>
+<para><computeroutput>float Damage.PhysicalDMG<computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__damage_8cs_source_1l00009">9</link> of file <link linkend="__damage_8cs_source">Damage.cs</link>.</para>
+</section>
+<anchor xml:id="_class_damage_1ab3c892c04820406c50102d9471d0fc9d"/><section>
+    <title>PushAmount</title>
+<indexterm><primary>PushAmount</primary><secondary>Damage</secondary></indexterm>
+<indexterm><primary>Damage</primary><secondary>PushAmount</secondary></indexterm>
+<para><computeroutput>Vector2 Damage.PushAmount<computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__damage_8cs_source_1l00011">11</link> of file <link linkend="__damage_8cs_source">Damage.cs</link>.</para>
+</section>
+<anchor xml:id="_class_damage_1a97ac7df60d926ce18242bba40e5d500f"/><section>
+    <title>Source</title>
+<indexterm><primary>Source</primary><secondary>Damage</secondary></indexterm>
+<indexterm><primary>Damage</primary><secondary>Source</secondary></indexterm>
+<para><computeroutput>Node2D Damage.Source<computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__damage_8cs_source_1l00012">12</link> of file <link linkend="__damage_8cs_source">Damage.cs</link>.</para>
+</section>
+<anchor xml:id="_class_damage_1a35802df99cc5bb93d22e9e7c5b039f9a"/><section>
+    <title>TrueDMG</title>
+<indexterm><primary>TrueDMG</primary><secondary>Damage</secondary></indexterm>
+<indexterm><primary>Damage</primary><secondary>TrueDMG</secondary></indexterm>
+<para><computeroutput>float Damage.TrueDMG<computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__damage_8cs_source_1l00010">10</link> of file <link linkend="__damage_8cs_source">Damage.cs</link>.</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+<link linkend="__damage_8cs">Damage.cs</link></section>
+</section>

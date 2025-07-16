@@ -1,26 +1,6 @@
 var searchData=
 [
-  ['saveall_0',['SaveAll',['../class_storage_manager.html#acac4cbeec13991178f4e0395011d0452',1,'StorageManager']]],
-  ['savegamefile_1',['SaveGameFile',['../class_storage_manager.html#aab2c45cef731b397ab3cf33175899e63',1,'StorageManager']]],
-  ['savesettings_2',['SaveSettings',['../class_storage_manager.html#a0066baa67d0d5b4af3dd31fbace1ef41',1,'StorageManager']]],
-  ['setbvcurrentuses_3',['SetBVCurrentUses',['../class_player_stats.html#a05f3b699b992de2ea849c9397c818a6f',1,'PlayerStats']]],
-  ['setbvhealamount_4',['SetBVHealAmount',['../class_player_stats.html#a76c874319c947a35702cd9a0a4b0e66c',1,'PlayerStats']]],
-  ['setbvmaxuses_5',['SetBVMaxUses',['../class_player_stats.html#abebcd5c40720aa0a7b4d86518f8e3b1b',1,'PlayerStats']]],
-  ['setcurrenthealth_6',['SetCurrentHealth',['../class_player_stats.html#aaed3690620c6ba9a8866d0c35b4f26d7',1,'PlayerStats']]],
-  ['setcurrentleveltag_7',['SetCurrentLevelTag',['../class_player_stats.html#a3545edeb4834aad7011e561dc5f1b10d',1,'PlayerStats']]],
-  ['setlastsaveid_8',['SetLastSaveId',['../class_storage_manager.html#a2c513af3aaedc589b36bf0e1de074f2c',1,'StorageManager']]],
-  ['setmaxhealthpoints_9',['SetMaxHealthPoints',['../class_player_stats.html#a58c3b27a3633bead2f77fa551f30beeb',1,'PlayerStats']]],
-  ['setmaxstamina_10',['SetMaxStamina',['../class_player_stats.html#a8f76220aa1271b2335b045624c6812d0',1,'PlayerStats']]],
-  ['setposition_11',['SetPosition',['../class_player_stats.html#adb53f7019a00edfe089c3dfd205438c2',1,'PlayerStats']]],
-  ['setrespawnleveltag_12',['SetRespawnLevelTag',['../class_player_stats.html#a7ec692981c45e933c737eff8d78e6456',1,'PlayerStats']]],
-  ['setrotation_13',['SetRotation',['../class_base_enemy.html#aebc2a569b2f2f3d35870e9aabb943069',1,'BaseEnemy']]],
-  ['setsaves_14',['SetSaves',['../class_storage_manager.html#acc4b79be13db815e5865032a35b4581c',1,'StorageManager']]],
-  ['setsinamount_15',['SetSinAmount',['../class_player.html#aa718b6dab81ebd60b8b910ad8c7adff6',1,'Player.SetSinAmount()'],['../class_player_stats.html#a647991a1d154f8c2bc8d7032b43e35aa',1,'PlayerStats.SetSinAmount(int Value)']]],
-  ['setspawnpoint_16',['SetSpawnPoint',['../class_player_stats.html#a147af1b1e37f6506303caca28b60f9e4',1,'PlayerStats']]],
-  ['setstamina_17',['SetStamina',['../class_player_stats.html#ab341f12827a6bdcfebb826dff43e82e3',1,'PlayerStats']]],
-  ['showpopupmessage_18',['ShowPopupMessage',['../class_boss1.html#a7f37f00687f7c0e51fde5ba281150091',1,'Boss1']]],
-  ['slowplayer_19',['SlowPlayer',['../class_player.html#a0a59dfe03d542fa98f28f4c4eaa49a75',1,'Player']]],
-  ['startdash_20',['StartDash',['../class_player.html#a9d3abf4c257f11a5838c978ab3abb27f',1,'Player']]],
-  ['startglowing_21',['StartGlowing',['../class_boss1.html#a3028f486f7e9cde1116086a4ae7b810e',1,'Boss1']]],
-  ['stopdash_22',['StopDash',['../class_player.html#a53389f72f48d7980aedb5e8b75d237dd',1,'Player']]]
+  ['takedamage_0',['TakeDamage',['../class_base_enemy.html#a284a995d12d6bc1d7a23d1f6f25a96af',1,'BaseEnemy.TakeDamage()'],['../class_player.html#aa1a0addae97cec09d2e86f3060a05438',1,'Player.TakeDamage()']]],
+  ['togglepause_1',['TogglePause',['../class_hud.html#ab01ffd8302eac92e75c87da377711f18',1,'Hud']]],
+  ['triggerplayerspawn_2',['TriggerPlayerSpawn',['../class_navigation_manager.html#aaec36be7cfa331ec6d3ca8eb14ba3872',1,'NavigationManager']]]
 ];

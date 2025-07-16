@@ -1,414 +1,384 @@
 \@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
-\contentsline {chapter}{\numberline {1}anfaengerpraktikum}{1}{chapter.1}%
-\contentsline {chapter}{\numberline {2}Third-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Party Notices}{3}{chapter.2}%
-\contentsline {section}{\numberline {2.1}License Texts}{3}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}godotengine/godot-\/cpp}{3}{subsection.2.1.1}%
-\contentsline {subsection}{\numberline {2.1.2}libgit2/libgit2}{4}{subsection.2.1.2}%
-\contentsline {subsection}{\numberline {2.1.3}libssh2/libssh2}{17}{subsection.2.1.3}%
-\contentsline {subsection}{\numberline {2.1.4}Open\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}SSL}{17}{subsection.2.1.4}%
-\contentsline {chapter}{\numberline {3}Namespace Index}{21}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Namespace List}{21}{section.3.1}%
-\contentsline {chapter}{\numberline {4}Hierarchical Index}{23}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Class Hierarchy}{23}{section.4.1}%
-\contentsline {chapter}{\numberline {5}Class Index}{25}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Class List}{25}{section.5.1}%
-\contentsline {chapter}{\numberline {6}File Index}{27}{chapter.6}%
-\contentsline {section}{\numberline {6.1}File List}{27}{section.6.1}%
-\contentsline {chapter}{\numberline {7}Namespace Documentation}{29}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Gd\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}MUT Namespace Reference}{29}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Gd\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}MUT.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Components Namespace Reference}{29}{section.7.2}%
-\contentsline {chapter}{\numberline {8}Class Documentation}{31}{chapter.8}%
-\contentsline {section}{\numberline {8.1}Base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Enemy Class Reference}{31}{section.8.1}%
-\contentsline {subsection}{\numberline {8.1.1}Detailed Description}{33}{subsection.8.1.1}%
-\contentsline {subsection}{\numberline {8.1.2}Member Enumeration Documentation}{33}{subsection.8.1.2}%
-\contentsline {subsubsection}{\numberline {8.1.2.1}State}{33}{subsubsection.8.1.2.1}%
-\contentsline {subsection}{\numberline {8.1.3}Member Function Documentation}{33}{subsection.8.1.3}%
-\contentsline {subsubsection}{\numberline {8.1.3.1}\_Process()}{33}{subsubsection.8.1.3.1}%
-\contentsline {subsubsection}{\numberline {8.1.3.2}\_Ready()}{34}{subsubsection.8.1.3.2}%
-\contentsline {subsubsection}{\numberline {8.1.3.3}CheckLineOfSight()}{34}{subsubsection.8.1.3.3}%
-\contentsline {subsubsection}{\numberline {8.1.3.4}CheckPlayerHit()}{35}{subsubsection.8.1.3.4}%
-\contentsline {subsubsection}{\numberline {8.1.3.5}Die()}{36}{subsubsection.8.1.3.5}%
-\contentsline {subsubsection}{\numberline {8.1.3.6}FlipRotation()}{36}{subsubsection.8.1.3.6}%
-\contentsline {subsubsection}{\numberline {8.1.3.7}HandleMovement()}{36}{subsubsection.8.1.3.7}%
-\contentsline {subsubsection}{\numberline {8.1.3.8}IsCloseTo()}{37}{subsubsection.8.1.3.8}%
-\contentsline {subsubsection}{\numberline {8.1.3.9}IsDead()}{39}{subsubsection.8.1.3.9}%
-\contentsline {subsubsection}{\numberline {8.1.3.10}OnDetectionBodyEntered()}{39}{subsubsection.8.1.3.10}%
-\contentsline {subsubsection}{\numberline {8.1.3.11}OnHitboxAreaEntered()}{39}{subsubsection.8.1.3.11}%
-\contentsline {subsubsection}{\numberline {8.1.3.12}OnPursuingRadiusBodyExited()}{40}{subsubsection.8.1.3.12}%
-\contentsline {subsubsection}{\numberline {8.1.3.13}OnSwordHitBoxBodyEntered()}{40}{subsubsection.8.1.3.13}%
-\contentsline {subsubsection}{\numberline {8.1.3.14}Respawn()}{41}{subsubsection.8.1.3.14}%
-\contentsline {subsubsection}{\numberline {8.1.3.15}SetRotation()}{41}{subsubsection.8.1.3.15}%
-\contentsline {subsubsection}{\numberline {8.1.3.16}TakeDamage()}{41}{subsubsection.8.1.3.16}%
-\contentsline {subsubsection}{\numberline {8.1.3.17}UpdateAnimation()}{42}{subsubsection.8.1.3.17}%
-\contentsline {subsection}{\numberline {8.1.4}Member Data Documentation}{42}{subsection.8.1.4}%
-\contentsline {subsubsection}{\numberline {8.1.4.1}AlreadyHit}{42}{subsubsection.8.1.4.1}%
-\contentsline {subsubsection}{\numberline {8.1.4.2}AnimationState}{43}{subsubsection.8.1.4.2}%
-\contentsline {subsubsection}{\numberline {8.1.4.3}Armor}{43}{subsubsection.8.1.4.3}%
-\contentsline {subsubsection}{\numberline {8.1.4.4}CollisionPolygon}{43}{subsubsection.8.1.4.4}%
-\contentsline {subsubsection}{\numberline {8.1.4.5}CurrentHealthPoints}{43}{subsubsection.8.1.4.5}%
-\contentsline {subsubsection}{\numberline {8.1.4.6}CurrentStamina}{43}{subsubsection.8.1.4.6}%
-\contentsline {subsubsection}{\numberline {8.1.4.7}CurrentTarget}{43}{subsubsection.8.1.4.7}%
-\contentsline {subsubsection}{\numberline {8.1.4.8}Damage}{44}{subsubsection.8.1.4.8}%
-\contentsline {subsubsection}{\numberline {8.1.4.9}Dead}{44}{subsubsection.8.1.4.9}%
-\contentsline {subsubsection}{\numberline {8.1.4.10}FrontCollisionRayCast}{44}{subsubsection.8.1.4.10}%
-\contentsline {subsubsection}{\numberline {8.1.4.11}HealthBar}{44}{subsubsection.8.1.4.11}%
-\contentsline {subsubsection}{\numberline {8.1.4.12}LeftFallProtection}{44}{subsubsection.8.1.4.12}%
-\contentsline {subsubsection}{\numberline {8.1.4.13}LineOfSight}{44}{subsubsection.8.1.4.13}%
-\contentsline {subsubsection}{\numberline {8.1.4.14}MainCollision}{45}{subsubsection.8.1.4.14}%
-\contentsline {subsubsection}{\numberline {8.1.4.15}MaxHealthPoints}{45}{subsubsection.8.1.4.15}%
-\contentsline {subsubsection}{\numberline {8.1.4.16}MaxStamina}{45}{subsubsection.8.1.4.16}%
-\contentsline {subsubsection}{\numberline {8.1.4.17}Player}{45}{subsubsection.8.1.4.17}%
-\contentsline {subsubsection}{\numberline {8.1.4.18}Pursuing}{45}{subsubsection.8.1.4.18}%
-\contentsline {subsubsection}{\numberline {8.1.4.19}Respawnable}{45}{subsubsection.8.1.4.19}%
-\contentsline {subsubsection}{\numberline {8.1.4.20}ReturnToStart}{46}{subsubsection.8.1.4.20}%
-\contentsline {subsubsection}{\numberline {8.1.4.21}ReturnToStartAfter}{46}{subsubsection.8.1.4.21}%
-\contentsline {subsubsection}{\numberline {8.1.4.22}RightFallProtection}{46}{subsubsection.8.1.4.22}%
-\contentsline {subsubsection}{\numberline {8.1.4.23}SinAmount}{46}{subsubsection.8.1.4.23}%
-\contentsline {subsubsection}{\numberline {8.1.4.24}Speed}{46}{subsubsection.8.1.4.24}%
-\contentsline {subsubsection}{\numberline {8.1.4.25}Sprite}{46}{subsubsection.8.1.4.25}%
-\contentsline {subsubsection}{\numberline {8.1.4.26}StartPosition}{47}{subsubsection.8.1.4.26}%
-\contentsline {subsubsection}{\numberline {8.1.4.27}StartRotation}{47}{subsubsection.8.1.4.27}%
-\contentsline {subsubsection}{\numberline {8.1.4.28}SwordHitbox}{47}{subsubsection.8.1.4.28}%
-\contentsline {subsubsection}{\numberline {8.1.4.29}TargetPosition}{47}{subsubsection.8.1.4.29}%
-\contentsline {subsection}{\numberline {8.1.5}Property Documentation}{47}{subsection.8.1.5}%
-\contentsline {subsubsection}{\numberline {8.1.5.1}Id}{47}{subsubsection.8.1.5.1}%
-\contentsline {section}{\numberline {8.2}Blood\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Vial Class Reference}{48}{section.8.2}%
-\contentsline {subsection}{\numberline {8.2.1}Detailed Description}{48}{subsection.8.2.1}%
-\contentsline {subsection}{\numberline {8.2.2}Member Function Documentation}{48}{subsection.8.2.2}%
-\contentsline {subsubsection}{\numberline {8.2.2.1}\_Ready()}{48}{subsubsection.8.2.2.1}%
-\contentsline {subsubsection}{\numberline {8.2.2.2}AddMaxUses()}{48}{subsubsection.8.2.2.2}%
-\contentsline {subsubsection}{\numberline {8.2.2.3}LevelHealAmount()}{49}{subsubsection.8.2.2.3}%
-\contentsline {subsubsection}{\numberline {8.2.2.4}ResetUses()}{49}{subsubsection.8.2.2.4}%
-\contentsline {subsubsection}{\numberline {8.2.2.5}UseBloodVial()}{49}{subsubsection.8.2.2.5}%
-\contentsline {section}{\numberline {8.3}Boss1 Class Reference}{50}{section.8.3}%
-\contentsline {subsection}{\numberline {8.3.1}Detailed Description}{52}{subsection.8.3.1}%
-\contentsline {subsection}{\numberline {8.3.2}Member Function Documentation}{52}{subsection.8.3.2}%
-\contentsline {subsubsection}{\numberline {8.3.2.1}\_Process()}{52}{subsubsection.8.3.2.1}%
-\contentsline {subsubsection}{\numberline {8.3.2.2}\_Ready()}{52}{subsubsection.8.3.2.2}%
-\contentsline {subsubsection}{\numberline {8.3.2.3}HandleRegeneration()}{52}{subsubsection.8.3.2.3}%
-\contentsline {subsubsection}{\numberline {8.3.2.4}ReviveEnemies()}{53}{subsubsection.8.3.2.4}%
-\contentsline {subsubsection}{\numberline {8.3.2.5}ShowPopupMessage()}{53}{subsubsection.8.3.2.5}%
-\contentsline {subsubsection}{\numberline {8.3.2.6}StartGlowing()}{54}{subsubsection.8.3.2.6}%
-\contentsline {subsection}{\numberline {8.3.3}Member Data Documentation}{54}{subsection.8.3.3}%
-\contentsline {subsubsection}{\numberline {8.3.3.1}EnemiesRevived}{54}{subsubsection.8.3.3.1}%
-\contentsline {subsubsection}{\numberline {8.3.3.2}RegenAmount}{55}{subsubsection.8.3.3.2}%
-\contentsline {subsubsection}{\numberline {8.3.3.3}RegenCooldown}{55}{subsubsection.8.3.3.3}%
-\contentsline {subsubsection}{\numberline {8.3.3.4}RegenTimer}{55}{subsubsection.8.3.3.4}%
-\contentsline {section}{\numberline {8.4}Checkpoint Class Reference}{55}{section.8.4}%
-\contentsline {subsection}{\numberline {8.4.1}Detailed Description}{56}{subsection.8.4.1}%
-\contentsline {subsection}{\numberline {8.4.2}Member Function Documentation}{56}{subsection.8.4.2}%
-\contentsline {subsubsection}{\numberline {8.4.2.1}\_Ready()}{56}{subsubsection.8.4.2.1}%
-\contentsline {subsubsection}{\numberline {8.4.2.2}OnPlayerBodyEntered()}{56}{subsubsection.8.4.2.2}%
-\contentsline {subsection}{\numberline {8.4.3}Member Data Documentation}{56}{subsection.8.4.3}%
-\contentsline {subsubsection}{\numberline {8.4.3.1}Player}{56}{subsubsection.8.4.3.1}%
-\contentsline {section}{\numberline {8.5}Damage Class Reference}{57}{section.8.5}%
-\contentsline {subsection}{\numberline {8.5.1}Detailed Description}{57}{subsection.8.5.1}%
-\contentsline {subsection}{\numberline {8.5.2}Constructor \& Destructor Documentation}{57}{subsection.8.5.2}%
-\contentsline {subsubsection}{\numberline {8.5.2.1}Damage()}{57}{subsubsection.8.5.2.1}%
-\contentsline {subsection}{\numberline {8.5.3}Member Function Documentation}{58}{subsection.8.5.3}%
-\contentsline {subsubsection}{\numberline {8.5.3.1}GetPhysicalDMG()}{58}{subsubsection.8.5.3.1}%
-\contentsline {subsubsection}{\numberline {8.5.3.2}GetPushAmount()}{58}{subsubsection.8.5.3.2}%
-\contentsline {subsubsection}{\numberline {8.5.3.3}GetSource()}{58}{subsubsection.8.5.3.3}%
-\contentsline {subsubsection}{\numberline {8.5.3.4}GetTrueDMG()}{59}{subsubsection.8.5.3.4}%
-\contentsline {subsection}{\numberline {8.5.4}Member Data Documentation}{59}{subsection.8.5.4}%
-\contentsline {subsubsection}{\numberline {8.5.4.1}PhysicalDMG}{59}{subsubsection.8.5.4.1}%
-\contentsline {subsubsection}{\numberline {8.5.4.2}PushAmount}{59}{subsubsection.8.5.4.2}%
-\contentsline {subsubsection}{\numberline {8.5.4.3}Source}{59}{subsubsection.8.5.4.3}%
-\contentsline {subsubsection}{\numberline {8.5.4.4}TrueDMG}{60}{subsubsection.8.5.4.4}%
-\contentsline {section}{\numberline {8.6}Door Class Reference}{60}{section.8.6}%
-\contentsline {subsection}{\numberline {8.6.1}Detailed Description}{61}{subsection.8.6.1}%
-\contentsline {subsection}{\numberline {8.6.2}Member Function Documentation}{61}{subsection.8.6.2}%
-\contentsline {subsubsection}{\numberline {8.6.2.1}\_Ready()}{61}{subsubsection.8.6.2.1}%
-\contentsline {subsubsection}{\numberline {8.6.2.2}OnPlayerBodyEntered()}{61}{subsubsection.8.6.2.2}%
-\contentsline {subsection}{\numberline {8.6.3}Member Data Documentation}{61}{subsection.8.6.3}%
-\contentsline {subsubsection}{\numberline {8.6.3.1}Spawn}{61}{subsubsection.8.6.3.1}%
-\contentsline {subsection}{\numberline {8.6.4}Property Documentation}{62}{subsection.8.6.4}%
-\contentsline {subsubsection}{\numberline {8.6.4.1}DestinationDoorTag}{62}{subsubsection.8.6.4.1}%
-\contentsline {subsubsection}{\numberline {8.6.4.2}DestinationLevelTag}{62}{subsubsection.8.6.4.2}%
-\contentsline {subsubsection}{\numberline {8.6.4.3}SpawnDirection}{62}{subsubsection.8.6.4.3}%
-\contentsline {section}{\numberline {8.7}Health\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Bar Class Reference}{62}{section.8.7}%
-\contentsline {subsection}{\numberline {8.7.1}Detailed Description}{63}{subsection.8.7.1}%
-\contentsline {subsection}{\numberline {8.7.2}Member Function Documentation}{63}{subsection.8.7.2}%
-\contentsline {subsubsection}{\numberline {8.7.2.1}\_Process()}{63}{subsubsection.8.7.2.1}%
-\contentsline {subsubsection}{\numberline {8.7.2.2}\_Ready()}{63}{subsubsection.8.7.2.2}%
-\contentsline {section}{\numberline {8.8}Hud Class Reference}{64}{section.8.8}%
-\contentsline {subsection}{\numberline {8.8.1}Detailed Description}{64}{subsection.8.8.1}%
-\contentsline {subsection}{\numberline {8.8.2}Member Function Documentation}{64}{subsection.8.8.2}%
-\contentsline {subsubsection}{\numberline {8.8.2.1}\_Process()}{64}{subsubsection.8.8.2.1}%
-\contentsline {subsubsection}{\numberline {8.8.2.2}\_Ready()}{65}{subsubsection.8.8.2.2}%
-\contentsline {subsubsection}{\numberline {8.8.2.3}OnResumeButtonPressed()}{65}{subsubsection.8.8.2.3}%
-\contentsline {subsubsection}{\numberline {8.8.2.4}OnSaveButtonPressed()}{65}{subsubsection.8.8.2.4}%
-\contentsline {subsubsection}{\numberline {8.8.2.5}OnSaveMenuButtonPressed()}{66}{subsubsection.8.8.2.5}%
-\contentsline {subsubsection}{\numberline {8.8.2.6}OnSaveQuitButtonPressed()}{66}{subsubsection.8.8.2.6}%
-\contentsline {subsubsection}{\numberline {8.8.2.7}TogglePause()}{66}{subsubsection.8.8.2.7}%
-\contentsline {subsection}{\numberline {8.8.3}Member Data Documentation}{66}{subsection.8.8.3}%
-\contentsline {subsubsection}{\numberline {8.8.3.1}AnimationPlayer}{66}{subsubsection.8.8.3.1}%
-\contentsline {subsubsection}{\numberline {8.8.3.2}Buttons}{67}{subsubsection.8.8.3.2}%
-\contentsline {subsubsection}{\numberline {8.8.3.3}Enabled}{67}{subsubsection.8.8.3.3}%
-\contentsline {section}{\numberline {8.9}Interactable Class Reference}{67}{section.8.9}%
-\contentsline {subsection}{\numberline {8.9.1}Detailed Description}{68}{subsection.8.9.1}%
-\contentsline {subsection}{\numberline {8.9.2}Member Function Documentation}{68}{subsection.8.9.2}%
-\contentsline {subsubsection}{\numberline {8.9.2.1}\_Process()}{68}{subsubsection.8.9.2.1}%
-\contentsline {subsubsection}{\numberline {8.9.2.2}\_Ready()}{68}{subsubsection.8.9.2.2}%
-\contentsline {subsubsection}{\numberline {8.9.2.3}OnAreaBodyExited()}{68}{subsubsection.8.9.2.3}%
-\contentsline {subsection}{\numberline {8.9.3}Member Data Documentation}{69}{subsection.8.9.3}%
-\contentsline {subsubsection}{\numberline {8.9.3.1}Area}{69}{subsubsection.8.9.3.1}%
-\contentsline {subsubsection}{\numberline {8.9.3.2}Player}{69}{subsubsection.8.9.3.2}%
-\contentsline {subsubsection}{\numberline {8.9.3.3}PopUp}{69}{subsubsection.8.9.3.3}%
-\contentsline {subsubsection}{\numberline {8.9.3.4}TextLabel}{69}{subsubsection.8.9.3.4}%
-\contentsline {subsection}{\numberline {8.9.4}Property Documentation}{70}{subsection.8.9.4}%
-\contentsline {subsubsection}{\numberline {8.9.4.1}Text}{70}{subsubsection.8.9.4.1}%
-\contentsline {section}{\numberline {8.10}Level\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager Class Reference}{70}{section.8.10}%
-\contentsline {subsection}{\numberline {8.10.1}Detailed Description}{70}{subsection.8.10.1}%
-\contentsline {subsection}{\numberline {8.10.2}Member Function Documentation}{71}{subsection.8.10.2}%
-\contentsline {subsubsection}{\numberline {8.10.2.1}\_Ready()}{71}{subsubsection.8.10.2.1}%
-\contentsline {subsubsection}{\numberline {8.10.2.2}OnLevelSpawn()}{71}{subsubsection.8.10.2.2}%
-\contentsline {section}{\numberline {8.11}Main\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Menu Class Reference}{72}{section.8.11}%
-\contentsline {subsection}{\numberline {8.11.1}Detailed Description}{73}{subsection.8.11.1}%
-\contentsline {subsection}{\numberline {8.11.2}Member Function Documentation}{73}{subsection.8.11.2}%
-\contentsline {subsubsection}{\numberline {8.11.2.1}\_Ready()}{73}{subsubsection.8.11.2.1}%
-\contentsline {subsubsection}{\numberline {8.11.2.2}Change()}{74}{subsubsection.8.11.2.2}%
-\contentsline {subsubsection}{\numberline {8.11.2.3}OnBackButtonPressed()}{74}{subsubsection.8.11.2.3}%
-\contentsline {subsubsection}{\numberline {8.11.2.4}OnContinueButtonPressed()}{75}{subsubsection.8.11.2.4}%
-\contentsline {subsubsection}{\numberline {8.11.2.5}OnDeleteConfirmationCanceled()}{75}{subsubsection.8.11.2.5}%
-\contentsline {subsubsection}{\numberline {8.11.2.6}OnDeleteConfirmationCloseRequested()}{75}{subsubsection.8.11.2.6}%
-\contentsline {subsubsection}{\numberline {8.11.2.7}OnDeleteConfirmationConfirmed()}{75}{subsubsection.8.11.2.7}%
-\contentsline {subsubsection}{\numberline {8.11.2.8}OnLoadGameButtonPressed()}{76}{subsubsection.8.11.2.8}%
-\contentsline {subsubsection}{\numberline {8.11.2.9}OnNewGameButtonPressed()}{76}{subsubsection.8.11.2.9}%
-\contentsline {subsubsection}{\numberline {8.11.2.10}OnQuitButtonPressed()}{76}{subsubsection.8.11.2.10}%
-\contentsline {subsubsection}{\numberline {8.11.2.11}OnSave1DeletePressed()}{76}{subsubsection.8.11.2.11}%
-\contentsline {subsubsection}{\numberline {8.11.2.12}OnSave1SelectPressed()}{77}{subsubsection.8.11.2.12}%
-\contentsline {subsubsection}{\numberline {8.11.2.13}OnSave2DeletePressed()}{77}{subsubsection.8.11.2.13}%
-\contentsline {subsubsection}{\numberline {8.11.2.14}OnSave2SelectPressed()}{77}{subsubsection.8.11.2.14}%
-\contentsline {subsubsection}{\numberline {8.11.2.15}OnSave3DeletePressed()}{78}{subsubsection.8.11.2.15}%
-\contentsline {subsubsection}{\numberline {8.11.2.16}OnSave3SelectPressed()}{78}{subsubsection.8.11.2.16}%
-\contentsline {subsection}{\numberline {8.11.3}Member Data Documentation}{78}{subsection.8.11.3}%
-\contentsline {subsubsection}{\numberline {8.11.3.1}ContinueButton}{78}{subsubsection.8.11.3.1}%
-\contentsline {subsubsection}{\numberline {8.11.3.2}DeleteButton}{78}{subsubsection.8.11.3.2}%
-\contentsline {subsubsection}{\numberline {8.11.3.3}DeleteConfirmation}{79}{subsubsection.8.11.3.3}%
-\contentsline {subsubsection}{\numberline {8.11.3.4}InfoLabel}{79}{subsubsection.8.11.3.4}%
-\contentsline {subsubsection}{\numberline {8.11.3.5}MenuState}{79}{subsubsection.8.11.3.5}%
-\contentsline {subsubsection}{\numberline {8.11.3.6}Navigation}{79}{subsubsection.8.11.3.6}%
-\contentsline {subsubsection}{\numberline {8.11.3.7}SaveLabel}{79}{subsubsection.8.11.3.7}%
-\contentsline {subsubsection}{\numberline {8.11.3.8}SavesContainer}{79}{subsubsection.8.11.3.8}%
-\contentsline {subsubsection}{\numberline {8.11.3.9}SaveToDelete}{80}{subsubsection.8.11.3.9}%
-\contentsline {subsubsection}{\numberline {8.11.3.10}SelectButton}{80}{subsubsection.8.11.3.10}%
-\contentsline {section}{\numberline {8.12}Main\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Menu\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Background Class Reference}{80}{section.8.12}%
-\contentsline {subsection}{\numberline {8.12.1}Detailed Description}{80}{subsection.8.12.1}%
-\contentsline {subsection}{\numberline {8.12.2}Member Function Documentation}{80}{subsection.8.12.2}%
-\contentsline {subsubsection}{\numberline {8.12.2.1}\_Process()}{80}{subsubsection.8.12.2.1}%
-\contentsline {subsection}{\numberline {8.12.3}Member Data Documentation}{81}{subsection.8.12.3}%
-\contentsline {subsubsection}{\numberline {8.12.3.1}ScrollSpeed}{81}{subsubsection.8.12.3.1}%
-\contentsline {section}{\numberline {8.13}Navigation\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager Class Reference}{81}{section.8.13}%
-\contentsline {subsection}{\numberline {8.13.1}Detailed Description}{82}{subsection.8.13.1}%
-\contentsline {subsection}{\numberline {8.13.2}Member Function Documentation}{82}{subsection.8.13.2}%
-\contentsline {subsubsection}{\numberline {8.13.2.1}\_Ready()}{82}{subsubsection.8.13.2.1}%
-\contentsline {subsubsection}{\numberline {8.13.2.2}DeferredChangeScene()}{82}{subsubsection.8.13.2.2}%
-\contentsline {subsubsection}{\numberline {8.13.2.3}GoToLevel()}{83}{subsubsection.8.13.2.3}%
-\contentsline {subsubsection}{\numberline {8.13.2.4}OnTriggerPlayerSpawnEventHandler()}{84}{subsubsection.8.13.2.4}%
-\contentsline {subsubsection}{\numberline {8.13.2.5}TriggerPlayerSpawn()}{84}{subsubsection.8.13.2.5}%
-\contentsline {subsection}{\numberline {8.13.3}Member Data Documentation}{84}{subsection.8.13.3}%
-\contentsline {subsubsection}{\numberline {8.13.3.1}SceneBoss}{84}{subsubsection.8.13.3.1}%
-\contentsline {subsubsection}{\numberline {8.13.3.2}SceneIntro}{84}{subsubsection.8.13.3.2}%
-\contentsline {subsubsection}{\numberline {8.13.3.3}SceneLevel1}{85}{subsubsection.8.13.3.3}%
-\contentsline {subsubsection}{\numberline {8.13.3.4}SceneLevelOne}{85}{subsubsection.8.13.3.4}%
-\contentsline {subsubsection}{\numberline {8.13.3.5}SceneLevelTwo}{85}{subsubsection.8.13.3.5}%
-\contentsline {subsubsection}{\numberline {8.13.3.6}SceneMainMenu}{85}{subsubsection.8.13.3.6}%
-\contentsline {subsection}{\numberline {8.13.4}Property Documentation}{85}{subsection.8.13.4}%
-\contentsline {subsubsection}{\numberline {8.13.4.1}Instance}{85}{subsubsection.8.13.4.1}%
-\contentsline {subsubsection}{\numberline {8.13.4.2}SpawnDoorTag}{86}{subsubsection.8.13.4.2}%
-\contentsline {section}{\numberline {8.14}Player Class Reference}{86}{section.8.14}%
-\contentsline {subsection}{\numberline {8.14.1}Detailed Description}{88}{subsection.8.14.1}%
-\contentsline {subsection}{\numberline {8.14.2}Member Function Documentation}{88}{subsection.8.14.2}%
-\contentsline {subsubsection}{\numberline {8.14.2.1}\_PhysicsProcess()}{88}{subsubsection.8.14.2.1}%
-\contentsline {subsubsection}{\numberline {8.14.2.2}\_Ready()}{88}{subsubsection.8.14.2.2}%
-\contentsline {subsubsection}{\numberline {8.14.2.3}CreateDashEffect()}{89}{subsubsection.8.14.2.3}%
-\contentsline {subsubsection}{\numberline {8.14.2.4}DashInProgress()}{89}{subsubsection.8.14.2.4}%
-\contentsline {subsubsection}{\numberline {8.14.2.5}GetBloodVials()}{90}{subsubsection.8.14.2.5}%
-\contentsline {subsubsection}{\numberline {8.14.2.6}GetDamage()}{90}{subsubsection.8.14.2.6}%
-\contentsline {subsubsection}{\numberline {8.14.2.7}HandleJump()}{91}{subsubsection.8.14.2.7}%
-\contentsline {subsubsection}{\numberline {8.14.2.8}HandleMovement()}{91}{subsubsection.8.14.2.8}%
-\contentsline {subsubsection}{\numberline {8.14.2.9}IsAttacking()}{92}{subsubsection.8.14.2.9}%
-\contentsline {subsubsection}{\numberline {8.14.2.10}IsBlocking()}{92}{subsubsection.8.14.2.10}%
-\contentsline {subsubsection}{\numberline {8.14.2.11}MaxHeal()}{93}{subsubsection.8.14.2.11}%
-\contentsline {subsubsection}{\numberline {8.14.2.12}OnSpawn()}{93}{subsubsection.8.14.2.12}%
-\contentsline {subsubsection}{\numberline {8.14.2.13}RegenerateStamina()}{93}{subsubsection.8.14.2.13}%
-\contentsline {subsubsection}{\numberline {8.14.2.14}Respawn()}{94}{subsubsection.8.14.2.14}%
-\contentsline {subsubsection}{\numberline {8.14.2.15}SetSinAmount()}{94}{subsubsection.8.14.2.15}%
-\contentsline {subsubsection}{\numberline {8.14.2.16}SlowPlayer()}{94}{subsubsection.8.14.2.16}%
-\contentsline {subsubsection}{\numberline {8.14.2.17}StartDash()}{95}{subsubsection.8.14.2.17}%
-\contentsline {subsubsection}{\numberline {8.14.2.18}StopDash()}{95}{subsubsection.8.14.2.18}%
-\contentsline {subsubsection}{\numberline {8.14.2.19}TakeDamage()}{95}{subsubsection.8.14.2.19}%
-\contentsline {subsubsection}{\numberline {8.14.2.20}UpdateAnimations()}{96}{subsubsection.8.14.2.20}%
-\contentsline {subsubsection}{\numberline {8.14.2.21}UseStamina()}{97}{subsubsection.8.14.2.21}%
-\contentsline {subsection}{\numberline {8.14.3}Member Data Documentation}{97}{subsection.8.14.3}%
-\contentsline {subsubsection}{\numberline {8.14.3.1}AnimationPlayer}{97}{subsubsection.8.14.3.1}%
-\contentsline {subsubsection}{\numberline {8.14.3.2}BloodVials}{97}{subsubsection.8.14.3.2}%
-\contentsline {subsubsection}{\numberline {8.14.3.3}CanDash}{98}{subsubsection.8.14.3.3}%
-\contentsline {subsubsection}{\numberline {8.14.3.4}DashDirection}{98}{subsubsection.8.14.3.4}%
-\contentsline {subsubsection}{\numberline {8.14.3.5}DashEffect}{98}{subsubsection.8.14.3.5}%
-\contentsline {subsubsection}{\numberline {8.14.3.6}DashSpeed}{98}{subsubsection.8.14.3.6}%
-\contentsline {subsubsection}{\numberline {8.14.3.7}DashTimer}{98}{subsubsection.8.14.3.7}%
-\contentsline {subsubsection}{\numberline {8.14.3.8}DashTrailInterval}{98}{subsubsection.8.14.3.8}%
-\contentsline {subsubsection}{\numberline {8.14.3.9}DashTrailTimer}{99}{subsubsection.8.14.3.9}%
-\contentsline {subsubsection}{\numberline {8.14.3.10}HauptHitbox}{99}{subsubsection.8.14.3.10}%
-\contentsline {subsubsection}{\numberline {8.14.3.11}IsDashing}{99}{subsubsection.8.14.3.11}%
-\contentsline {subsubsection}{\numberline {8.14.3.12}JUMP\_VELOCITY}{99}{subsubsection.8.14.3.12}%
-\contentsline {subsubsection}{\numberline {8.14.3.13}JumpCount}{99}{subsubsection.8.14.3.13}%
-\contentsline {subsubsection}{\numberline {8.14.3.14}JumpMax}{99}{subsubsection.8.14.3.14}%
-\contentsline {subsubsection}{\numberline {8.14.3.15}LastAttack}{100}{subsubsection.8.14.3.15}%
-\contentsline {subsubsection}{\numberline {8.14.3.16}PlayerHitbox}{100}{subsubsection.8.14.3.16}%
-\contentsline {subsubsection}{\numberline {8.14.3.17}SinDisplay}{100}{subsubsection.8.14.3.17}%
-\contentsline {subsubsection}{\numberline {8.14.3.18}SPEED}{100}{subsubsection.8.14.3.18}%
-\contentsline {subsubsection}{\numberline {8.14.3.19}Sprite}{100}{subsubsection.8.14.3.19}%
-\contentsline {subsubsection}{\numberline {8.14.3.20}SwordCollision}{100}{subsubsection.8.14.3.20}%
-\contentsline {subsubsection}{\numberline {8.14.3.21}TimeSinceLastStaminaUse}{101}{subsubsection.8.14.3.21}%
-\contentsline {section}{\numberline {8.15}Player\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Stats Class Reference}{101}{section.8.15}%
-\contentsline {subsection}{\numberline {8.15.1}Detailed Description}{103}{subsection.8.15.1}%
-\contentsline {subsection}{\numberline {8.15.2}Member Function Documentation}{103}{subsection.8.15.2}%
-\contentsline {subsubsection}{\numberline {8.15.2.1}\_Ready()}{103}{subsubsection.8.15.2.1}%
-\contentsline {subsubsection}{\numberline {8.15.2.2}GetBVCurrentUses()}{103}{subsubsection.8.15.2.2}%
-\contentsline {subsubsection}{\numberline {8.15.2.3}GetBVHealAmount()}{103}{subsubsection.8.15.2.3}%
-\contentsline {subsubsection}{\numberline {8.15.2.4}GetBVMaxUses()}{104}{subsubsection.8.15.2.4}%
-\contentsline {subsubsection}{\numberline {8.15.2.5}GetCurrentHealth()}{104}{subsubsection.8.15.2.5}%
-\contentsline {subsubsection}{\numberline {8.15.2.6}GetCurrentLevelTag()}{104}{subsubsection.8.15.2.6}%
-\contentsline {subsubsection}{\numberline {8.15.2.7}GetMaxHealthPoints()}{105}{subsubsection.8.15.2.7}%
-\contentsline {subsubsection}{\numberline {8.15.2.8}GetMaxStamina()}{105}{subsubsection.8.15.2.8}%
-\contentsline {subsubsection}{\numberline {8.15.2.9}GetPosition()}{105}{subsubsection.8.15.2.9}%
-\contentsline {subsubsection}{\numberline {8.15.2.10}GetRespawnLevelTag()}{106}{subsubsection.8.15.2.10}%
-\contentsline {subsubsection}{\numberline {8.15.2.11}GetSinAmount()}{106}{subsubsection.8.15.2.11}%
-\contentsline {subsubsection}{\numberline {8.15.2.12}GetSpawnPoint()}{106}{subsubsection.8.15.2.12}%
-\contentsline {subsubsection}{\numberline {8.15.2.13}GetStamina()}{107}{subsubsection.8.15.2.13}%
-\contentsline {subsubsection}{\numberline {8.15.2.14}Reload()}{107}{subsubsection.8.15.2.14}%
-\contentsline {subsubsection}{\numberline {8.15.2.15}SetBVCurrentUses()}{107}{subsubsection.8.15.2.15}%
-\contentsline {subsubsection}{\numberline {8.15.2.16}SetBVHealAmount()}{107}{subsubsection.8.15.2.16}%
-\contentsline {subsubsection}{\numberline {8.15.2.17}SetBVMaxUses()}{108}{subsubsection.8.15.2.17}%
-\contentsline {subsubsection}{\numberline {8.15.2.18}SetCurrentHealth()}{108}{subsubsection.8.15.2.18}%
-\contentsline {subsubsection}{\numberline {8.15.2.19}SetCurrentLevelTag()}{108}{subsubsection.8.15.2.19}%
-\contentsline {subsubsection}{\numberline {8.15.2.20}SetMaxHealthPoints()}{109}{subsubsection.8.15.2.20}%
-\contentsline {subsubsection}{\numberline {8.15.2.21}SetMaxStamina()}{109}{subsubsection.8.15.2.21}%
-\contentsline {subsubsection}{\numberline {8.15.2.22}SetPosition()}{109}{subsubsection.8.15.2.22}%
-\contentsline {subsubsection}{\numberline {8.15.2.23}SetRespawnLevelTag()}{110}{subsubsection.8.15.2.23}%
-\contentsline {subsubsection}{\numberline {8.15.2.24}SetSinAmount()}{110}{subsubsection.8.15.2.24}%
-\contentsline {subsubsection}{\numberline {8.15.2.25}SetSpawnPoint()}{110}{subsubsection.8.15.2.25}%
-\contentsline {subsubsection}{\numberline {8.15.2.26}SetStamina()}{111}{subsubsection.8.15.2.26}%
-\contentsline {subsection}{\numberline {8.15.3}Member Data Documentation}{111}{subsection.8.15.3}%
-\contentsline {subsubsection}{\numberline {8.15.3.1}BVCurrentUses}{111}{subsubsection.8.15.3.1}%
-\contentsline {subsubsection}{\numberline {8.15.3.2}BVHealAmount}{111}{subsubsection.8.15.3.2}%
-\contentsline {subsubsection}{\numberline {8.15.3.3}BVMaxUses}{112}{subsubsection.8.15.3.3}%
-\contentsline {subsubsection}{\numberline {8.15.3.4}CurrentHealth}{112}{subsubsection.8.15.3.4}%
-\contentsline {subsubsection}{\numberline {8.15.3.5}CurrentLevelTag}{112}{subsubsection.8.15.3.5}%
-\contentsline {subsubsection}{\numberline {8.15.3.6}CurrentStamina}{112}{subsubsection.8.15.3.6}%
-\contentsline {subsubsection}{\numberline {8.15.3.7}MaxHealthPoints}{112}{subsubsection.8.15.3.7}%
-\contentsline {subsubsection}{\numberline {8.15.3.8}MaxStamina}{112}{subsubsection.8.15.3.8}%
-\contentsline {subsubsection}{\numberline {8.15.3.9}Position}{113}{subsubsection.8.15.3.9}%
-\contentsline {subsubsection}{\numberline {8.15.3.10}RespawnLevelTag}{113}{subsubsection.8.15.3.10}%
-\contentsline {subsubsection}{\numberline {8.15.3.11}SinAmount}{113}{subsubsection.8.15.3.11}%
-\contentsline {subsubsection}{\numberline {8.15.3.12}SpawnPoint}{113}{subsubsection.8.15.3.12}%
-\contentsline {subsection}{\numberline {8.15.4}Property Documentation}{113}{subsection.8.15.4}%
-\contentsline {subsubsection}{\numberline {8.15.4.1}Instance}{113}{subsubsection.8.15.4.1}%
-\contentsline {section}{\numberline {8.16}Spike Class Reference}{114}{section.8.16}%
-\contentsline {subsection}{\numberline {8.16.1}Detailed Description}{114}{subsection.8.16.1}%
-\contentsline {subsection}{\numberline {8.16.2}Member Function Documentation}{114}{subsection.8.16.2}%
-\contentsline {subsubsection}{\numberline {8.16.2.1}\_Ready()}{114}{subsubsection.8.16.2.1}%
-\contentsline {subsubsection}{\numberline {8.16.2.2}GetDamage()}{115}{subsubsection.8.16.2.2}%
-\contentsline {subsubsection}{\numberline {8.16.2.3}OnPlayerBodyEntered()}{115}{subsubsection.8.16.2.3}%
-\contentsline {subsubsection}{\numberline {8.16.2.4}OnPlayerBodyExited()}{115}{subsubsection.8.16.2.4}%
-\contentsline {subsubsection}{\numberline {8.16.2.5}OnTimerTimeout()}{116}{subsubsection.8.16.2.5}%
-\contentsline {subsection}{\numberline {8.16.3}Member Data Documentation}{116}{subsection.8.16.3}%
-\contentsline {subsubsection}{\numberline {8.16.3.1}Damage}{116}{subsubsection.8.16.3.1}%
-\contentsline {subsubsection}{\numberline {8.16.3.2}Player}{116}{subsubsection.8.16.3.2}%
-\contentsline {section}{\numberline {8.17}Spike\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Dynamic Class Reference}{116}{section.8.17}%
-\contentsline {subsection}{\numberline {8.17.1}Detailed Description}{117}{subsection.8.17.1}%
-\contentsline {subsection}{\numberline {8.17.2}Member Function Documentation}{117}{subsection.8.17.2}%
-\contentsline {subsubsection}{\numberline {8.17.2.1}\_Ready()}{117}{subsubsection.8.17.2.1}%
-\contentsline {subsubsection}{\numberline {8.17.2.2}GetDamage()}{118}{subsubsection.8.17.2.2}%
-\contentsline {subsubsection}{\numberline {8.17.2.3}OnPlayerBodyEntered()}{118}{subsubsection.8.17.2.3}%
-\contentsline {subsubsection}{\numberline {8.17.2.4}OnPlayerBodyExited()}{118}{subsubsection.8.17.2.4}%
-\contentsline {subsubsection}{\numberline {8.17.2.5}OnTimerTimeout()}{119}{subsubsection.8.17.2.5}%
-\contentsline {subsection}{\numberline {8.17.3}Member Data Documentation}{119}{subsection.8.17.3}%
-\contentsline {subsubsection}{\numberline {8.17.3.1}Damage}{119}{subsubsection.8.17.3.1}%
-\contentsline {subsubsection}{\numberline {8.17.3.2}Player}{119}{subsubsection.8.17.3.2}%
-\contentsline {section}{\numberline {8.18}Stamina\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Bar Class Reference}{119}{section.8.18}%
-\contentsline {subsection}{\numberline {8.18.1}Detailed Description}{120}{subsection.8.18.1}%
-\contentsline {subsection}{\numberline {8.18.2}Member Function Documentation}{120}{subsection.8.18.2}%
-\contentsline {subsubsection}{\numberline {8.18.2.1}\_Process()}{120}{subsubsection.8.18.2.1}%
-\contentsline {subsubsection}{\numberline {8.18.2.2}\_Ready()}{120}{subsubsection.8.18.2.2}%
-\contentsline {section}{\numberline {8.19}Storage\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager Class Reference}{121}{section.8.19}%
-\contentsline {subsection}{\numberline {8.19.1}Detailed Description}{122}{subsection.8.19.1}%
-\contentsline {subsection}{\numberline {8.19.2}Member Function Documentation}{122}{subsection.8.19.2}%
-\contentsline {subsubsection}{\numberline {8.19.2.1}\_Ready()}{122}{subsubsection.8.19.2.1}%
-\contentsline {subsubsection}{\numberline {8.19.2.2}GetLastSaveId()}{122}{subsubsection.8.19.2.2}%
-\contentsline {subsubsection}{\numberline {8.19.2.3}GetSaves()}{122}{subsubsection.8.19.2.3}%
-\contentsline {subsubsection}{\numberline {8.19.2.4}LoadGameFile()}{122}{subsubsection.8.19.2.4}%
-\contentsline {subsubsection}{\numberline {8.19.2.5}LoadSettings()}{123}{subsubsection.8.19.2.5}%
-\contentsline {subsubsection}{\numberline {8.19.2.6}SaveAll()}{123}{subsubsection.8.19.2.6}%
-\contentsline {subsubsection}{\numberline {8.19.2.7}SaveGameFile()}{124}{subsubsection.8.19.2.7}%
-\contentsline {subsubsection}{\numberline {8.19.2.8}SaveSettings()}{124}{subsubsection.8.19.2.8}%
-\contentsline {subsubsection}{\numberline {8.19.2.9}SetLastSaveId()}{125}{subsubsection.8.19.2.9}%
-\contentsline {subsubsection}{\numberline {8.19.2.10}SetSaves()}{125}{subsubsection.8.19.2.10}%
-\contentsline {subsection}{\numberline {8.19.3}Member Data Documentation}{125}{subsection.8.19.3}%
-\contentsline {subsubsection}{\numberline {8.19.3.1}LastSaveId}{125}{subsubsection.8.19.3.1}%
-\contentsline {subsubsection}{\numberline {8.19.3.2}PathSave}{126}{subsubsection.8.19.3.2}%
-\contentsline {subsubsection}{\numberline {8.19.3.3}PathSettings}{126}{subsubsection.8.19.3.3}%
-\contentsline {subsubsection}{\numberline {8.19.3.4}Saves}{126}{subsubsection.8.19.3.4}%
-\contentsline {subsection}{\numberline {8.19.4}Property Documentation}{126}{subsection.8.19.4}%
-\contentsline {subsubsection}{\numberline {8.19.4.1}Instance}{126}{subsubsection.8.19.4.1}%
-\contentsline {chapter}{\numberline {9}File Documentation}{127}{chapter.9}%
-\contentsline {section}{\numberline {9.1}C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Youssef/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Desktop/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UNI/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}S4/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Computerspiel\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Entwicklung/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Das\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spiel/anfaengerpraktikum/addons/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}GDMUT/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Dock.cs File Reference}{127}{section.9.1}%
-\contentsline {section}{\numberline {9.2}Dock.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{127}{section.9.2}%
-\contentsline {section}{\numberline {9.3}C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Youssef/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Desktop/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UNI/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}S4/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Computerspiel\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Entwicklung/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Das\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spiel/anfaengerpraktikum/addons/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}GDMUT/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}GDMUT.cs File Reference}{129}{section.9.3}%
-\contentsline {section}{\numberline {9.4}GDMUT.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{129}{section.9.4}%
-\contentsline {section}{\numberline {9.5}C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Youssef/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Desktop/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UNI/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}S4/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Computerspiel\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Entwicklung/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Das\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spiel/anfaengerpraktikum/addons/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}GDMUT/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Method\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Result.cs File Reference}{130}{section.9.5}%
-\contentsline {section}{\numberline {9.6}Method\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Result.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{130}{section.9.6}%
-\contentsline {section}{\numberline {9.7}C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Youssef/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Desktop/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UNI/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}S4/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Computerspiel\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Entwicklung/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Das\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spiel/anfaengerpraktikum/addons/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}GDMUT/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Result.cs File Reference}{131}{section.9.7}%
-\contentsline {section}{\numberline {9.8}Result.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{131}{section.9.8}%
-\contentsline {section}{\numberline {9.9}C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Youssef/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Desktop/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UNI/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}S4/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Computerspiel\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Entwicklung/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Das\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spiel/anfaengerpraktikum/addons/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}GDMUT/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Test\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Function.cs File Reference}{131}{section.9.9}%
-\contentsline {section}{\numberline {9.10}Test\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Function.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{131}{section.9.10}%
-\contentsline {section}{\numberline {9.11}C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Youssef/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Desktop/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UNI/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}S4/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Computerspiel\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Entwicklung/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Das\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spiel/anfaengerpraktikum/addons/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}GDMUT/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Test\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Loader.cs File Reference}{131}{section.9.11}%
-\contentsline {section}{\numberline {9.12}Test\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Loader.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{131}{section.9.12}%
-\contentsline {section}{\numberline {9.13}C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Youssef/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Desktop/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UNI/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}S4/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Computerspiel\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Entwicklung/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Das\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spiel/anfaengerpraktikum/addons/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}GDMUT/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Test\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Result.cs File Reference}{133}{section.9.13}%
-\contentsline {section}{\numberline {9.14}Test\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Result.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{133}{section.9.14}%
-\contentsline {section}{\numberline {9.15}C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Youssef/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Desktop/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UNI/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}S4/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Computerspiel\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Entwicklung/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Das\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spiel/anfaengerpraktikum/addons/godot-\/git-\/plugin/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}THIRDPARTY.md File Reference}{134}{section.9.15}%
-\contentsline {section}{\numberline {9.16}C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Youssef/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Desktop/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UNI/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}S4/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Computerspiel\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Entwicklung/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Das\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spiel/anfaengerpraktikum/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}README.md File Reference}{134}{section.9.16}%
-\contentsline {section}{\numberline {9.17}C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Youssef/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Desktop/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UNI/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}S4/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Computerspiel\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Entwicklung/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Das\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spiel/anfaengerpraktikum/scripts/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Enemy.cs File Reference}{134}{section.9.17}%
-\contentsline {section}{\numberline {9.18}Base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Enemy.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{134}{section.9.18}%
-\contentsline {section}{\numberline {9.19}C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Youssef/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Desktop/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UNI/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}S4/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Computerspiel\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Entwicklung/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Das\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spiel/anfaengerpraktikum/scripts/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Blood\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Vial.cs File Reference}{138}{section.9.19}%
-\contentsline {section}{\numberline {9.20}Blood\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Vial.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{138}{section.9.20}%
-\contentsline {section}{\numberline {9.21}C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Youssef/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Desktop/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UNI/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}S4/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Computerspiel\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Entwicklung/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Das\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spiel/anfaengerpraktikum/scripts/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Boss1.cs File Reference}{139}{section.9.21}%
-\contentsline {section}{\numberline {9.22}Boss1.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{139}{section.9.22}%
-\contentsline {section}{\numberline {9.23}C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Youssef/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Desktop/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UNI/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}S4/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Computerspiel\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Entwicklung/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Das\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spiel/anfaengerpraktikum/scripts/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Checkpoint.cs File Reference}{140}{section.9.23}%
-\contentsline {section}{\numberline {9.24}Checkpoint.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{140}{section.9.24}%
-\contentsline {section}{\numberline {9.25}C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Youssef/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Desktop/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UNI/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}S4/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Computerspiel\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Entwicklung/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Das\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spiel/anfaengerpraktikum/scripts/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Damage.cs File Reference}{141}{section.9.25}%
-\contentsline {section}{\numberline {9.26}Damage.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{141}{section.9.26}%
-\contentsline {section}{\numberline {9.27}C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Youssef/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Desktop/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UNI/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}S4/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Computerspiel\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Entwicklung/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Das\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spiel/anfaengerpraktikum/scripts/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Door.cs File Reference}{141}{section.9.27}%
-\contentsline {section}{\numberline {9.28}Door.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{142}{section.9.28}%
-\contentsline {section}{\numberline {9.29}C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Youssef/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Desktop/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UNI/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}S4/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Computerspiel\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Entwicklung/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Das\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spiel/anfaengerpraktikum/scripts/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Health\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Bar.cs File Reference}{142}{section.9.29}%
-\contentsline {section}{\numberline {9.30}Health\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Bar.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{142}{section.9.30}%
-\contentsline {section}{\numberline {9.31}C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Youssef/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Desktop/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UNI/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}S4/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Computerspiel\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Entwicklung/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Das\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spiel/anfaengerpraktikum/scripts/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Hud.cs File Reference}{143}{section.9.31}%
-\contentsline {section}{\numberline {9.32}Hud.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{143}{section.9.32}%
-\contentsline {section}{\numberline {9.33}C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Youssef/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Desktop/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UNI/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}S4/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Computerspiel\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Entwicklung/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Das\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spiel/anfaengerpraktikum/scripts/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Interactable.cs File Reference}{143}{section.9.33}%
-\contentsline {section}{\numberline {9.34}Interactable.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{144}{section.9.34}%
-\contentsline {section}{\numberline {9.35}C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Youssef/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Desktop/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UNI/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}S4/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Computerspiel\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Entwicklung/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Das\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spiel/anfaengerpraktikum/scripts/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Level\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager.cs File Reference}{144}{section.9.35}%
-\contentsline {section}{\numberline {9.36}Level\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{144}{section.9.36}%
-\contentsline {section}{\numberline {9.37}C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Youssef/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Desktop/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UNI/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}S4/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Computerspiel\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Entwicklung/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Das\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spiel/anfaengerpraktikum/scripts/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Main\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Menu.cs File Reference}{145}{section.9.37}%
-\contentsline {section}{\numberline {9.38}Main\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Menu.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{145}{section.9.38}%
-\contentsline {section}{\numberline {9.39}C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Youssef/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Desktop/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UNI/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}S4/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Computerspiel\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Entwicklung/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Das\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spiel/anfaengerpraktikum/scripts/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Main\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Menu\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Background.cs File Reference}{147}{section.9.39}%
-\contentsline {section}{\numberline {9.40}Main\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Menu\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Background.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{147}{section.9.40}%
-\contentsline {section}{\numberline {9.41}C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Youssef/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Desktop/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UNI/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}S4/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Computerspiel\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Entwicklung/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Das\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spiel/anfaengerpraktikum/scripts/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Navigation\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager.cs File Reference}{148}{section.9.41}%
-\contentsline {section}{\numberline {9.42}Navigation\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{148}{section.9.42}%
-\contentsline {section}{\numberline {9.43}C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Youssef/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Desktop/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UNI/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}S4/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Computerspiel\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Entwicklung/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Das\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spiel/anfaengerpraktikum/scripts/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Player.cs File Reference}{149}{section.9.43}%
-\contentsline {section}{\numberline {9.44}Player.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{149}{section.9.44}%
-\contentsline {section}{\numberline {9.45}C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Youssef/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Desktop/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UNI/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}S4/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Computerspiel\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Entwicklung/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Das\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spiel/anfaengerpraktikum/scripts/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Player\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Stats.cs File Reference}{153}{section.9.45}%
-\contentsline {section}{\numberline {9.46}Player\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Stats.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{154}{section.9.46}%
-\contentsline {section}{\numberline {9.47}C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Youssef/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Desktop/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UNI/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}S4/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Computerspiel\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Entwicklung/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Das\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spiel/anfaengerpraktikum/scripts/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spike.cs File Reference}{155}{section.9.47}%
-\contentsline {section}{\numberline {9.48}Spike.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{155}{section.9.48}%
-\contentsline {section}{\numberline {9.49}C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Youssef/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Desktop/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UNI/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}S4/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Computerspiel\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Entwicklung/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Das\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spiel/anfaengerpraktikum/scripts/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spike\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Dynamic.cs File Reference}{156}{section.9.49}%
-\contentsline {section}{\numberline {9.50}Spike\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Dynamic.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{156}{section.9.50}%
-\contentsline {section}{\numberline {9.51}C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Youssef/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Desktop/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UNI/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}S4/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Computerspiel\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Entwicklung/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Das\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spiel/anfaengerpraktikum/scripts/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Stamina\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Bar.cs File Reference}{157}{section.9.51}%
-\contentsline {section}{\numberline {9.52}Stamina\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Bar.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{157}{section.9.52}%
-\contentsline {section}{\numberline {9.53}C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Youssef/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Desktop/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UNI/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}S4/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Computerspiel\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Entwicklung/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Das\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spiel/anfaengerpraktikum/scripts/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Storage\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager.cs File Reference}{158}{section.9.53}%
-\contentsline {section}{\numberline {9.54}Storage\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{158}{section.9.54}%
-\contentsline {section}{\numberline {9.55}C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Youssef/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Desktop/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UNI/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}S4/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Computerspiel\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Entwicklung/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Das\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spiel/anfaengerpraktikum/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Test\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Class.cs File Reference}{159}{section.9.55}%
-\contentsline {section}{\numberline {9.56}C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Youssef/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Desktop/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UNI/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}S4/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Computerspiel\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Entwicklung/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Das\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spiel/anfaengerpraktikum/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Test\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Class.cs}{159}{section.9.56}%
-\contentsline {chapter}{Index}{161}{section*.104}%
+\contentsline {chapter}{\numberline {1}Hierarchical Index}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Class Hierarchy}{1}{section.1.1}%
+\contentsline {chapter}{\numberline {2}Class Index}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Class List}{3}{section.2.1}%
+\contentsline {chapter}{\numberline {3}File Index}{5}{chapter.3}%
+\contentsline {section}{\numberline {3.1}File List}{5}{section.3.1}%
+\contentsline {chapter}{\numberline {4}Class Documentation}{7}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Enemy Class Reference}{7}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Detailed Description}{9}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Member Enumeration Documentation}{9}{subsection.4.1.2}%
+\contentsline {subsubsection}{\numberline {4.1.2.1}State}{9}{subsubsection.4.1.2.1}%
+\contentsline {subsection}{\numberline {4.1.3}Member Function Documentation}{9}{subsection.4.1.3}%
+\contentsline {subsubsection}{\numberline {4.1.3.1}\_Process()}{9}{subsubsection.4.1.3.1}%
+\contentsline {subsubsection}{\numberline {4.1.3.2}\_Ready()}{10}{subsubsection.4.1.3.2}%
+\contentsline {subsubsection}{\numberline {4.1.3.3}CheckLineOfSight()}{10}{subsubsection.4.1.3.3}%
+\contentsline {subsubsection}{\numberline {4.1.3.4}CheckPlayerHit()}{11}{subsubsection.4.1.3.4}%
+\contentsline {subsubsection}{\numberline {4.1.3.5}Die()}{11}{subsubsection.4.1.3.5}%
+\contentsline {subsubsection}{\numberline {4.1.3.6}FlipRotation()}{11}{subsubsection.4.1.3.6}%
+\contentsline {subsubsection}{\numberline {4.1.3.7}HandleMovement()}{12}{subsubsection.4.1.3.7}%
+\contentsline {subsubsection}{\numberline {4.1.3.8}IsCloseTo()}{13}{subsubsection.4.1.3.8}%
+\contentsline {subsubsection}{\numberline {4.1.3.9}IsDead()}{14}{subsubsection.4.1.3.9}%
+\contentsline {subsubsection}{\numberline {4.1.3.10}OnDetectionBodyEntered()}{14}{subsubsection.4.1.3.10}%
+\contentsline {subsubsection}{\numberline {4.1.3.11}OnHitboxAreaEntered()}{14}{subsubsection.4.1.3.11}%
+\contentsline {subsubsection}{\numberline {4.1.3.12}OnPursuingRadiusBodyExited()}{15}{subsubsection.4.1.3.12}%
+\contentsline {subsubsection}{\numberline {4.1.3.13}OnSwordHitBoxBodyEntered()}{15}{subsubsection.4.1.3.13}%
+\contentsline {subsubsection}{\numberline {4.1.3.14}Respawn()}{15}{subsubsection.4.1.3.14}%
+\contentsline {subsubsection}{\numberline {4.1.3.15}SetRotation()}{16}{subsubsection.4.1.3.15}%
+\contentsline {subsubsection}{\numberline {4.1.3.16}TakeDamage()}{16}{subsubsection.4.1.3.16}%
+\contentsline {subsubsection}{\numberline {4.1.3.17}UpdateAnimation()}{17}{subsubsection.4.1.3.17}%
+\contentsline {subsection}{\numberline {4.1.4}Member Data Documentation}{17}{subsection.4.1.4}%
+\contentsline {subsubsection}{\numberline {4.1.4.1}AlreadyHit}{17}{subsubsection.4.1.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.4.2}AnimationState}{17}{subsubsection.4.1.4.2}%
+\contentsline {subsubsection}{\numberline {4.1.4.3}Armor}{17}{subsubsection.4.1.4.3}%
+\contentsline {subsubsection}{\numberline {4.1.4.4}CollisionPolygon}{17}{subsubsection.4.1.4.4}%
+\contentsline {subsubsection}{\numberline {4.1.4.5}CurrentHealthPoints}{18}{subsubsection.4.1.4.5}%
+\contentsline {subsubsection}{\numberline {4.1.4.6}CurrentStamina}{18}{subsubsection.4.1.4.6}%
+\contentsline {subsubsection}{\numberline {4.1.4.7}CurrentTarget}{18}{subsubsection.4.1.4.7}%
+\contentsline {subsubsection}{\numberline {4.1.4.8}Damage}{18}{subsubsection.4.1.4.8}%
+\contentsline {subsubsection}{\numberline {4.1.4.9}Dead}{18}{subsubsection.4.1.4.9}%
+\contentsline {subsubsection}{\numberline {4.1.4.10}FrontCollisionRayCast}{18}{subsubsection.4.1.4.10}%
+\contentsline {subsubsection}{\numberline {4.1.4.11}HealthBar}{18}{subsubsection.4.1.4.11}%
+\contentsline {subsubsection}{\numberline {4.1.4.12}LeftFallProtection}{18}{subsubsection.4.1.4.12}%
+\contentsline {subsubsection}{\numberline {4.1.4.13}LineOfSight}{19}{subsubsection.4.1.4.13}%
+\contentsline {subsubsection}{\numberline {4.1.4.14}MainCollision}{19}{subsubsection.4.1.4.14}%
+\contentsline {subsubsection}{\numberline {4.1.4.15}MaxHealthPoints}{19}{subsubsection.4.1.4.15}%
+\contentsline {subsubsection}{\numberline {4.1.4.16}MaxStamina}{19}{subsubsection.4.1.4.16}%
+\contentsline {subsubsection}{\numberline {4.1.4.17}Player}{19}{subsubsection.4.1.4.17}%
+\contentsline {subsubsection}{\numberline {4.1.4.18}Pursuing}{19}{subsubsection.4.1.4.18}%
+\contentsline {subsubsection}{\numberline {4.1.4.19}Respawnable}{19}{subsubsection.4.1.4.19}%
+\contentsline {subsubsection}{\numberline {4.1.4.20}ReturnToStart}{19}{subsubsection.4.1.4.20}%
+\contentsline {subsubsection}{\numberline {4.1.4.21}ReturnToStartAfter}{20}{subsubsection.4.1.4.21}%
+\contentsline {subsubsection}{\numberline {4.1.4.22}RightFallProtection}{20}{subsubsection.4.1.4.22}%
+\contentsline {subsubsection}{\numberline {4.1.4.23}SinAmount}{20}{subsubsection.4.1.4.23}%
+\contentsline {subsubsection}{\numberline {4.1.4.24}Speed}{20}{subsubsection.4.1.4.24}%
+\contentsline {subsubsection}{\numberline {4.1.4.25}Sprite}{20}{subsubsection.4.1.4.25}%
+\contentsline {subsubsection}{\numberline {4.1.4.26}StartPosition}{20}{subsubsection.4.1.4.26}%
+\contentsline {subsubsection}{\numberline {4.1.4.27}StartRotation}{20}{subsubsection.4.1.4.27}%
+\contentsline {subsubsection}{\numberline {4.1.4.28}SwordHitbox}{20}{subsubsection.4.1.4.28}%
+\contentsline {subsubsection}{\numberline {4.1.4.29}TargetPosition}{21}{subsubsection.4.1.4.29}%
+\contentsline {subsection}{\numberline {4.1.5}Property Documentation}{21}{subsection.4.1.5}%
+\contentsline {subsubsection}{\numberline {4.1.5.1}Id}{21}{subsubsection.4.1.5.1}%
+\contentsline {section}{\numberline {4.2}Blood\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Vial Class Reference}{21}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Detailed Description}{21}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Member Function Documentation}{22}{subsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.2.1}\_Ready()}{22}{subsubsection.4.2.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2.2}AddMaxUses()}{22}{subsubsection.4.2.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.2.3}LevelHealAmount()}{22}{subsubsection.4.2.2.3}%
+\contentsline {subsubsection}{\numberline {4.2.2.4}ResetUses()}{22}{subsubsection.4.2.2.4}%
+\contentsline {subsubsection}{\numberline {4.2.2.5}UseBloodVial()}{23}{subsubsection.4.2.2.5}%
+\contentsline {section}{\numberline {4.3}Boss1 Class Reference}{23}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Detailed Description}{25}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Member Function Documentation}{25}{subsection.4.3.2}%
+\contentsline {subsubsection}{\numberline {4.3.2.1}\_Process()}{25}{subsubsection.4.3.2.1}%
+\contentsline {subsubsection}{\numberline {4.3.2.2}\_Ready()}{26}{subsubsection.4.3.2.2}%
+\contentsline {subsubsection}{\numberline {4.3.2.3}HandleRegeneration()}{26}{subsubsection.4.3.2.3}%
+\contentsline {subsubsection}{\numberline {4.3.2.4}ReviveEnemies()}{27}{subsubsection.4.3.2.4}%
+\contentsline {subsubsection}{\numberline {4.3.2.5}ShowPopupMessage()}{27}{subsubsection.4.3.2.5}%
+\contentsline {subsubsection}{\numberline {4.3.2.6}StartGlowing()}{27}{subsubsection.4.3.2.6}%
+\contentsline {subsection}{\numberline {4.3.3}Member Data Documentation}{28}{subsection.4.3.3}%
+\contentsline {subsubsection}{\numberline {4.3.3.1}EnemiesRevived}{28}{subsubsection.4.3.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.3.2}RegenAmount}{28}{subsubsection.4.3.3.2}%
+\contentsline {subsubsection}{\numberline {4.3.3.3}RegenCooldown}{28}{subsubsection.4.3.3.3}%
+\contentsline {subsubsection}{\numberline {4.3.3.4}RegenTimer}{28}{subsubsection.4.3.3.4}%
+\contentsline {section}{\numberline {4.4}Checkpoint Class Reference}{28}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Detailed Description}{29}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Member Function Documentation}{29}{subsection.4.4.2}%
+\contentsline {subsubsection}{\numberline {4.4.2.1}\_Ready()}{29}{subsubsection.4.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.4.2.2}OnPlayerBodyEntered()}{29}{subsubsection.4.4.2.2}%
+\contentsline {subsection}{\numberline {4.4.3}Member Data Documentation}{30}{subsection.4.4.3}%
+\contentsline {subsubsection}{\numberline {4.4.3.1}Player}{30}{subsubsection.4.4.3.1}%
+\contentsline {section}{\numberline {4.5}Damage Class Reference}{30}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}Detailed Description}{30}{subsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.5.2}Constructor \& Destructor Documentation}{30}{subsection.4.5.2}%
+\contentsline {subsubsection}{\numberline {4.5.2.1}Damage()}{30}{subsubsection.4.5.2.1}%
+\contentsline {subsection}{\numberline {4.5.3}Member Function Documentation}{31}{subsection.4.5.3}%
+\contentsline {subsubsection}{\numberline {4.5.3.1}GetPhysicalDMG()}{31}{subsubsection.4.5.3.1}%
+\contentsline {subsubsection}{\numberline {4.5.3.2}GetPushAmount()}{31}{subsubsection.4.5.3.2}%
+\contentsline {subsubsection}{\numberline {4.5.3.3}GetSource()}{31}{subsubsection.4.5.3.3}%
+\contentsline {subsubsection}{\numberline {4.5.3.4}GetTrueDMG()}{32}{subsubsection.4.5.3.4}%
+\contentsline {subsection}{\numberline {4.5.4}Member Data Documentation}{32}{subsection.4.5.4}%
+\contentsline {subsubsection}{\numberline {4.5.4.1}PhysicalDMG}{32}{subsubsection.4.5.4.1}%
+\contentsline {subsubsection}{\numberline {4.5.4.2}PushAmount}{32}{subsubsection.4.5.4.2}%
+\contentsline {subsubsection}{\numberline {4.5.4.3}Source}{32}{subsubsection.4.5.4.3}%
+\contentsline {subsubsection}{\numberline {4.5.4.4}TrueDMG}{32}{subsubsection.4.5.4.4}%
+\contentsline {section}{\numberline {4.6}Door Class Reference}{33}{section.4.6}%
+\contentsline {subsection}{\numberline {4.6.1}Detailed Description}{33}{subsection.4.6.1}%
+\contentsline {subsection}{\numberline {4.6.2}Member Function Documentation}{33}{subsection.4.6.2}%
+\contentsline {subsubsection}{\numberline {4.6.2.1}\_Ready()}{33}{subsubsection.4.6.2.1}%
+\contentsline {subsubsection}{\numberline {4.6.2.2}OnPlayerBodyEntered()}{33}{subsubsection.4.6.2.2}%
+\contentsline {subsection}{\numberline {4.6.3}Member Data Documentation}{34}{subsection.4.6.3}%
+\contentsline {subsubsection}{\numberline {4.6.3.1}Spawn}{34}{subsubsection.4.6.3.1}%
+\contentsline {subsection}{\numberline {4.6.4}Property Documentation}{34}{subsection.4.6.4}%
+\contentsline {subsubsection}{\numberline {4.6.4.1}DestinationDoorTag}{34}{subsubsection.4.6.4.1}%
+\contentsline {subsubsection}{\numberline {4.6.4.2}DestinationLevelTag}{34}{subsubsection.4.6.4.2}%
+\contentsline {subsubsection}{\numberline {4.6.4.3}SpawnDirection}{34}{subsubsection.4.6.4.3}%
+\contentsline {section}{\numberline {4.7}Health\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Bar Class Reference}{35}{section.4.7}%
+\contentsline {subsection}{\numberline {4.7.1}Detailed Description}{35}{subsection.4.7.1}%
+\contentsline {subsection}{\numberline {4.7.2}Member Function Documentation}{35}{subsection.4.7.2}%
+\contentsline {subsubsection}{\numberline {4.7.2.1}\_Process()}{35}{subsubsection.4.7.2.1}%
+\contentsline {subsubsection}{\numberline {4.7.2.2}\_Ready()}{36}{subsubsection.4.7.2.2}%
+\contentsline {section}{\numberline {4.8}Hud Class Reference}{36}{section.4.8}%
+\contentsline {subsection}{\numberline {4.8.1}Detailed Description}{37}{subsection.4.8.1}%
+\contentsline {subsection}{\numberline {4.8.2}Member Function Documentation}{37}{subsection.4.8.2}%
+\contentsline {subsubsection}{\numberline {4.8.2.1}\_Process()}{37}{subsubsection.4.8.2.1}%
+\contentsline {subsubsection}{\numberline {4.8.2.2}\_Ready()}{37}{subsubsection.4.8.2.2}%
+\contentsline {subsubsection}{\numberline {4.8.2.3}OnResumeButtonPressed()}{37}{subsubsection.4.8.2.3}%
+\contentsline {subsubsection}{\numberline {4.8.2.4}OnSaveButtonPressed()}{38}{subsubsection.4.8.2.4}%
+\contentsline {subsubsection}{\numberline {4.8.2.5}OnSaveMenuButtonPressed()}{38}{subsubsection.4.8.2.5}%
+\contentsline {subsubsection}{\numberline {4.8.2.6}OnSaveQuitButtonPressed()}{38}{subsubsection.4.8.2.6}%
+\contentsline {subsubsection}{\numberline {4.8.2.7}TogglePause()}{38}{subsubsection.4.8.2.7}%
+\contentsline {subsection}{\numberline {4.8.3}Member Data Documentation}{39}{subsection.4.8.3}%
+\contentsline {subsubsection}{\numberline {4.8.3.1}AnimationPlayer}{39}{subsubsection.4.8.3.1}%
+\contentsline {subsubsection}{\numberline {4.8.3.2}Buttons}{39}{subsubsection.4.8.3.2}%
+\contentsline {subsubsection}{\numberline {4.8.3.3}Enabled}{39}{subsubsection.4.8.3.3}%
+\contentsline {section}{\numberline {4.9}Interactable Class Reference}{39}{section.4.9}%
+\contentsline {subsection}{\numberline {4.9.1}Detailed Description}{40}{subsection.4.9.1}%
+\contentsline {subsection}{\numberline {4.9.2}Member Function Documentation}{40}{subsection.4.9.2}%
+\contentsline {subsubsection}{\numberline {4.9.2.1}\_Process()}{40}{subsubsection.4.9.2.1}%
+\contentsline {subsubsection}{\numberline {4.9.2.2}\_Ready()}{40}{subsubsection.4.9.2.2}%
+\contentsline {subsubsection}{\numberline {4.9.2.3}OnAreaBodyExited()}{40}{subsubsection.4.9.2.3}%
+\contentsline {subsection}{\numberline {4.9.3}Member Data Documentation}{41}{subsection.4.9.3}%
+\contentsline {subsubsection}{\numberline {4.9.3.1}Area}{41}{subsubsection.4.9.3.1}%
+\contentsline {subsubsection}{\numberline {4.9.3.2}Player}{41}{subsubsection.4.9.3.2}%
+\contentsline {subsubsection}{\numberline {4.9.3.3}PopUp}{41}{subsubsection.4.9.3.3}%
+\contentsline {subsubsection}{\numberline {4.9.3.4}TextLabel}{41}{subsubsection.4.9.3.4}%
+\contentsline {subsection}{\numberline {4.9.4}Property Documentation}{41}{subsection.4.9.4}%
+\contentsline {subsubsection}{\numberline {4.9.4.1}Text}{41}{subsubsection.4.9.4.1}%
+\contentsline {section}{\numberline {4.10}Level\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager Class Reference}{42}{section.4.10}%
+\contentsline {subsection}{\numberline {4.10.1}Detailed Description}{42}{subsection.4.10.1}%
+\contentsline {subsection}{\numberline {4.10.2}Member Function Documentation}{42}{subsection.4.10.2}%
+\contentsline {subsubsection}{\numberline {4.10.2.1}\_Ready()}{42}{subsubsection.4.10.2.1}%
+\contentsline {subsubsection}{\numberline {4.10.2.2}OnLevelSpawn()}{42}{subsubsection.4.10.2.2}%
+\contentsline {section}{\numberline {4.11}Main\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Menu Class Reference}{43}{section.4.11}%
+\contentsline {subsection}{\numberline {4.11.1}Detailed Description}{44}{subsection.4.11.1}%
+\contentsline {subsection}{\numberline {4.11.2}Member Function Documentation}{44}{subsection.4.11.2}%
+\contentsline {subsubsection}{\numberline {4.11.2.1}\_Ready()}{44}{subsubsection.4.11.2.1}%
+\contentsline {subsubsection}{\numberline {4.11.2.2}Change()}{45}{subsubsection.4.11.2.2}%
+\contentsline {subsubsection}{\numberline {4.11.2.3}OnBackButtonPressed()}{45}{subsubsection.4.11.2.3}%
+\contentsline {subsubsection}{\numberline {4.11.2.4}OnContinueButtonPressed()}{46}{subsubsection.4.11.2.4}%
+\contentsline {subsubsection}{\numberline {4.11.2.5}OnDeleteConfirmationCanceled()}{46}{subsubsection.4.11.2.5}%
+\contentsline {subsubsection}{\numberline {4.11.2.6}OnDeleteConfirmationCloseRequested()}{46}{subsubsection.4.11.2.6}%
+\contentsline {subsubsection}{\numberline {4.11.2.7}OnDeleteConfirmationConfirmed()}{46}{subsubsection.4.11.2.7}%
+\contentsline {subsubsection}{\numberline {4.11.2.8}OnLoadGameButtonPressed()}{46}{subsubsection.4.11.2.8}%
+\contentsline {subsubsection}{\numberline {4.11.2.9}OnNewGameButtonPressed()}{47}{subsubsection.4.11.2.9}%
+\contentsline {subsubsection}{\numberline {4.11.2.10}OnQuitButtonPressed()}{47}{subsubsection.4.11.2.10}%
+\contentsline {subsubsection}{\numberline {4.11.2.11}OnSave1DeletePressed()}{47}{subsubsection.4.11.2.11}%
+\contentsline {subsubsection}{\numberline {4.11.2.12}OnSave1SelectPressed()}{47}{subsubsection.4.11.2.12}%
+\contentsline {subsubsection}{\numberline {4.11.2.13}OnSave2DeletePressed()}{47}{subsubsection.4.11.2.13}%
+\contentsline {subsubsection}{\numberline {4.11.2.14}OnSave2SelectPressed()}{48}{subsubsection.4.11.2.14}%
+\contentsline {subsubsection}{\numberline {4.11.2.15}OnSave3DeletePressed()}{48}{subsubsection.4.11.2.15}%
+\contentsline {subsubsection}{\numberline {4.11.2.16}OnSave3SelectPressed()}{48}{subsubsection.4.11.2.16}%
+\contentsline {subsection}{\numberline {4.11.3}Member Data Documentation}{48}{subsection.4.11.3}%
+\contentsline {subsubsection}{\numberline {4.11.3.1}ContinueButton}{48}{subsubsection.4.11.3.1}%
+\contentsline {subsubsection}{\numberline {4.11.3.2}DeleteButton}{48}{subsubsection.4.11.3.2}%
+\contentsline {subsubsection}{\numberline {4.11.3.3}DeleteConfirmation}{49}{subsubsection.4.11.3.3}%
+\contentsline {subsubsection}{\numberline {4.11.3.4}InfoLabel}{49}{subsubsection.4.11.3.4}%
+\contentsline {subsubsection}{\numberline {4.11.3.5}MenuState}{49}{subsubsection.4.11.3.5}%
+\contentsline {subsubsection}{\numberline {4.11.3.6}Navigation}{49}{subsubsection.4.11.3.6}%
+\contentsline {subsubsection}{\numberline {4.11.3.7}SaveLabel}{49}{subsubsection.4.11.3.7}%
+\contentsline {subsubsection}{\numberline {4.11.3.8}SavesContainer}{49}{subsubsection.4.11.3.8}%
+\contentsline {subsubsection}{\numberline {4.11.3.9}SaveToDelete}{49}{subsubsection.4.11.3.9}%
+\contentsline {subsubsection}{\numberline {4.11.3.10}SelectButton}{50}{subsubsection.4.11.3.10}%
+\contentsline {section}{\numberline {4.12}Main\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Menu\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Background Class Reference}{50}{section.4.12}%
+\contentsline {subsection}{\numberline {4.12.1}Detailed Description}{50}{subsection.4.12.1}%
+\contentsline {subsection}{\numberline {4.12.2}Member Function Documentation}{50}{subsection.4.12.2}%
+\contentsline {subsubsection}{\numberline {4.12.2.1}\_Process()}{50}{subsubsection.4.12.2.1}%
+\contentsline {subsection}{\numberline {4.12.3}Member Data Documentation}{51}{subsection.4.12.3}%
+\contentsline {subsubsection}{\numberline {4.12.3.1}ScrollSpeed}{51}{subsubsection.4.12.3.1}%
+\contentsline {section}{\numberline {4.13}Navigation\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager Class Reference}{51}{section.4.13}%
+\contentsline {subsection}{\numberline {4.13.1}Detailed Description}{52}{subsection.4.13.1}%
+\contentsline {subsection}{\numberline {4.13.2}Member Function Documentation}{52}{subsection.4.13.2}%
+\contentsline {subsubsection}{\numberline {4.13.2.1}\_Ready()}{52}{subsubsection.4.13.2.1}%
+\contentsline {subsubsection}{\numberline {4.13.2.2}DeferredChangeScene()}{52}{subsubsection.4.13.2.2}%
+\contentsline {subsubsection}{\numberline {4.13.2.3}GoToLevel()}{53}{subsubsection.4.13.2.3}%
+\contentsline {subsubsection}{\numberline {4.13.2.4}OnTriggerPlayerSpawnEventHandler()}{53}{subsubsection.4.13.2.4}%
+\contentsline {subsubsection}{\numberline {4.13.2.5}TriggerPlayerSpawn()}{54}{subsubsection.4.13.2.5}%
+\contentsline {subsection}{\numberline {4.13.3}Member Data Documentation}{54}{subsection.4.13.3}%
+\contentsline {subsubsection}{\numberline {4.13.3.1}SceneBoss}{54}{subsubsection.4.13.3.1}%
+\contentsline {subsubsection}{\numberline {4.13.3.2}SceneIntro}{54}{subsubsection.4.13.3.2}%
+\contentsline {subsubsection}{\numberline {4.13.3.3}SceneLevel1}{54}{subsubsection.4.13.3.3}%
+\contentsline {subsubsection}{\numberline {4.13.3.4}SceneLevelOne}{55}{subsubsection.4.13.3.4}%
+\contentsline {subsubsection}{\numberline {4.13.3.5}SceneLevelTwo}{55}{subsubsection.4.13.3.5}%
+\contentsline {subsubsection}{\numberline {4.13.3.6}SceneMainMenu}{55}{subsubsection.4.13.3.6}%
+\contentsline {subsection}{\numberline {4.13.4}Property Documentation}{55}{subsection.4.13.4}%
+\contentsline {subsubsection}{\numberline {4.13.4.1}Instance}{55}{subsubsection.4.13.4.1}%
+\contentsline {subsubsection}{\numberline {4.13.4.2}SpawnDoorTag}{55}{subsubsection.4.13.4.2}%
+\contentsline {section}{\numberline {4.14}Player Class Reference}{55}{section.4.14}%
+\contentsline {subsection}{\numberline {4.14.1}Detailed Description}{57}{subsection.4.14.1}%
+\contentsline {subsection}{\numberline {4.14.2}Member Function Documentation}{57}{subsection.4.14.2}%
+\contentsline {subsubsection}{\numberline {4.14.2.1}\_PhysicsProcess()}{57}{subsubsection.4.14.2.1}%
+\contentsline {subsubsection}{\numberline {4.14.2.2}\_Ready()}{58}{subsubsection.4.14.2.2}%
+\contentsline {subsubsection}{\numberline {4.14.2.3}CreateDashEffect()}{58}{subsubsection.4.14.2.3}%
+\contentsline {subsubsection}{\numberline {4.14.2.4}DashInProgress()}{59}{subsubsection.4.14.2.4}%
+\contentsline {subsubsection}{\numberline {4.14.2.5}GetBloodVials()}{59}{subsubsection.4.14.2.5}%
+\contentsline {subsubsection}{\numberline {4.14.2.6}GetDamage()}{60}{subsubsection.4.14.2.6}%
+\contentsline {subsubsection}{\numberline {4.14.2.7}HandleJump()}{60}{subsubsection.4.14.2.7}%
+\contentsline {subsubsection}{\numberline {4.14.2.8}HandleMovement()}{60}{subsubsection.4.14.2.8}%
+\contentsline {subsubsection}{\numberline {4.14.2.9}IsAttacking()}{61}{subsubsection.4.14.2.9}%
+\contentsline {subsubsection}{\numberline {4.14.2.10}IsBlocking()}{62}{subsubsection.4.14.2.10}%
+\contentsline {subsubsection}{\numberline {4.14.2.11}MaxHeal()}{62}{subsubsection.4.14.2.11}%
+\contentsline {subsubsection}{\numberline {4.14.2.12}OnSpawn()}{62}{subsubsection.4.14.2.12}%
+\contentsline {subsubsection}{\numberline {4.14.2.13}RegenerateStamina()}{62}{subsubsection.4.14.2.13}%
+\contentsline {subsubsection}{\numberline {4.14.2.14}Respawn()}{63}{subsubsection.4.14.2.14}%
+\contentsline {subsubsection}{\numberline {4.14.2.15}SetSinAmount()}{63}{subsubsection.4.14.2.15}%
+\contentsline {subsubsection}{\numberline {4.14.2.16}SlowPlayer()}{63}{subsubsection.4.14.2.16}%
+\contentsline {subsubsection}{\numberline {4.14.2.17}StartDash()}{64}{subsubsection.4.14.2.17}%
+\contentsline {subsubsection}{\numberline {4.14.2.18}StopDash()}{64}{subsubsection.4.14.2.18}%
+\contentsline {subsubsection}{\numberline {4.14.2.19}TakeDamage()}{64}{subsubsection.4.14.2.19}%
+\contentsline {subsubsection}{\numberline {4.14.2.20}UpdateAnimations()}{65}{subsubsection.4.14.2.20}%
+\contentsline {subsubsection}{\numberline {4.14.2.21}UseStamina()}{65}{subsubsection.4.14.2.21}%
+\contentsline {subsection}{\numberline {4.14.3}Member Data Documentation}{66}{subsection.4.14.3}%
+\contentsline {subsubsection}{\numberline {4.14.3.1}AnimationPlayer}{66}{subsubsection.4.14.3.1}%
+\contentsline {subsubsection}{\numberline {4.14.3.2}BloodVials}{66}{subsubsection.4.14.3.2}%
+\contentsline {subsubsection}{\numberline {4.14.3.3}CanDash}{66}{subsubsection.4.14.3.3}%
+\contentsline {subsubsection}{\numberline {4.14.3.4}DashDirection}{66}{subsubsection.4.14.3.4}%
+\contentsline {subsubsection}{\numberline {4.14.3.5}DashEffect}{66}{subsubsection.4.14.3.5}%
+\contentsline {subsubsection}{\numberline {4.14.3.6}DashSpeed}{66}{subsubsection.4.14.3.6}%
+\contentsline {subsubsection}{\numberline {4.14.3.7}DashTimer}{66}{subsubsection.4.14.3.7}%
+\contentsline {subsubsection}{\numberline {4.14.3.8}DashTrailInterval}{67}{subsubsection.4.14.3.8}%
+\contentsline {subsubsection}{\numberline {4.14.3.9}DashTrailTimer}{67}{subsubsection.4.14.3.9}%
+\contentsline {subsubsection}{\numberline {4.14.3.10}HauptHitbox}{67}{subsubsection.4.14.3.10}%
+\contentsline {subsubsection}{\numberline {4.14.3.11}IsDashing}{67}{subsubsection.4.14.3.11}%
+\contentsline {subsubsection}{\numberline {4.14.3.12}JUMP\_VELOCITY}{67}{subsubsection.4.14.3.12}%
+\contentsline {subsubsection}{\numberline {4.14.3.13}JumpCount}{67}{subsubsection.4.14.3.13}%
+\contentsline {subsubsection}{\numberline {4.14.3.14}JumpMax}{67}{subsubsection.4.14.3.14}%
+\contentsline {subsubsection}{\numberline {4.14.3.15}LastAttack}{67}{subsubsection.4.14.3.15}%
+\contentsline {subsubsection}{\numberline {4.14.3.16}PlayerHitbox}{68}{subsubsection.4.14.3.16}%
+\contentsline {subsubsection}{\numberline {4.14.3.17}SinDisplay}{68}{subsubsection.4.14.3.17}%
+\contentsline {subsubsection}{\numberline {4.14.3.18}SPEED}{68}{subsubsection.4.14.3.18}%
+\contentsline {subsubsection}{\numberline {4.14.3.19}Sprite}{68}{subsubsection.4.14.3.19}%
+\contentsline {subsubsection}{\numberline {4.14.3.20}SwordCollision}{68}{subsubsection.4.14.3.20}%
+\contentsline {subsubsection}{\numberline {4.14.3.21}TimeSinceLastStaminaUse}{68}{subsubsection.4.14.3.21}%
+\contentsline {section}{\numberline {4.15}Player\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Stats Class Reference}{68}{section.4.15}%
+\contentsline {subsection}{\numberline {4.15.1}Detailed Description}{70}{subsection.4.15.1}%
+\contentsline {subsection}{\numberline {4.15.2}Member Function Documentation}{70}{subsection.4.15.2}%
+\contentsline {subsubsection}{\numberline {4.15.2.1}\_Ready()}{70}{subsubsection.4.15.2.1}%
+\contentsline {subsubsection}{\numberline {4.15.2.2}GetBVCurrentUses()}{70}{subsubsection.4.15.2.2}%
+\contentsline {subsubsection}{\numberline {4.15.2.3}GetBVHealAmount()}{71}{subsubsection.4.15.2.3}%
+\contentsline {subsubsection}{\numberline {4.15.2.4}GetBVMaxUses()}{71}{subsubsection.4.15.2.4}%
+\contentsline {subsubsection}{\numberline {4.15.2.5}GetCurrentHealth()}{71}{subsubsection.4.15.2.5}%
+\contentsline {subsubsection}{\numberline {4.15.2.6}GetCurrentLevelTag()}{71}{subsubsection.4.15.2.6}%
+\contentsline {subsubsection}{\numberline {4.15.2.7}GetMaxHealthPoints()}{72}{subsubsection.4.15.2.7}%
+\contentsline {subsubsection}{\numberline {4.15.2.8}GetMaxStamina()}{72}{subsubsection.4.15.2.8}%
+\contentsline {subsubsection}{\numberline {4.15.2.9}GetPosition()}{72}{subsubsection.4.15.2.9}%
+\contentsline {subsubsection}{\numberline {4.15.2.10}GetRespawnLevelTag()}{72}{subsubsection.4.15.2.10}%
+\contentsline {subsubsection}{\numberline {4.15.2.11}GetSinAmount()}{73}{subsubsection.4.15.2.11}%
+\contentsline {subsubsection}{\numberline {4.15.2.12}GetSpawnPoint()}{73}{subsubsection.4.15.2.12}%
+\contentsline {subsubsection}{\numberline {4.15.2.13}GetStamina()}{73}{subsubsection.4.15.2.13}%
+\contentsline {subsubsection}{\numberline {4.15.2.14}Reload()}{73}{subsubsection.4.15.2.14}%
+\contentsline {subsubsection}{\numberline {4.15.2.15}SetBVCurrentUses()}{73}{subsubsection.4.15.2.15}%
+\contentsline {subsubsection}{\numberline {4.15.2.16}SetBVHealAmount()}{74}{subsubsection.4.15.2.16}%
+\contentsline {subsubsection}{\numberline {4.15.2.17}SetBVMaxUses()}{74}{subsubsection.4.15.2.17}%
+\contentsline {subsubsection}{\numberline {4.15.2.18}SetCurrentHealth()}{74}{subsubsection.4.15.2.18}%
+\contentsline {subsubsection}{\numberline {4.15.2.19}SetCurrentLevelTag()}{75}{subsubsection.4.15.2.19}%
+\contentsline {subsubsection}{\numberline {4.15.2.20}SetMaxHealthPoints()}{75}{subsubsection.4.15.2.20}%
+\contentsline {subsubsection}{\numberline {4.15.2.21}SetMaxStamina()}{75}{subsubsection.4.15.2.21}%
+\contentsline {subsubsection}{\numberline {4.15.2.22}SetPosition()}{75}{subsubsection.4.15.2.22}%
+\contentsline {subsubsection}{\numberline {4.15.2.23}SetRespawnLevelTag()}{76}{subsubsection.4.15.2.23}%
+\contentsline {subsubsection}{\numberline {4.15.2.24}SetSinAmount()}{76}{subsubsection.4.15.2.24}%
+\contentsline {subsubsection}{\numberline {4.15.2.25}SetSpawnPoint()}{76}{subsubsection.4.15.2.25}%
+\contentsline {subsubsection}{\numberline {4.15.2.26}SetStamina()}{77}{subsubsection.4.15.2.26}%
+\contentsline {subsection}{\numberline {4.15.3}Member Data Documentation}{77}{subsection.4.15.3}%
+\contentsline {subsubsection}{\numberline {4.15.3.1}BVCurrentUses}{77}{subsubsection.4.15.3.1}%
+\contentsline {subsubsection}{\numberline {4.15.3.2}BVHealAmount}{77}{subsubsection.4.15.3.2}%
+\contentsline {subsubsection}{\numberline {4.15.3.3}BVMaxUses}{77}{subsubsection.4.15.3.3}%
+\contentsline {subsubsection}{\numberline {4.15.3.4}CurrentHealth}{77}{subsubsection.4.15.3.4}%
+\contentsline {subsubsection}{\numberline {4.15.3.5}CurrentLevelTag}{77}{subsubsection.4.15.3.5}%
+\contentsline {subsubsection}{\numberline {4.15.3.6}CurrentStamina}{78}{subsubsection.4.15.3.6}%
+\contentsline {subsubsection}{\numberline {4.15.3.7}MaxHealthPoints}{78}{subsubsection.4.15.3.7}%
+\contentsline {subsubsection}{\numberline {4.15.3.8}MaxStamina}{78}{subsubsection.4.15.3.8}%
+\contentsline {subsubsection}{\numberline {4.15.3.9}Position}{78}{subsubsection.4.15.3.9}%
+\contentsline {subsubsection}{\numberline {4.15.3.10}RespawnLevelTag}{78}{subsubsection.4.15.3.10}%
+\contentsline {subsubsection}{\numberline {4.15.3.11}SinAmount}{78}{subsubsection.4.15.3.11}%
+\contentsline {subsubsection}{\numberline {4.15.3.12}SpawnPoint}{78}{subsubsection.4.15.3.12}%
+\contentsline {subsection}{\numberline {4.15.4}Property Documentation}{79}{subsection.4.15.4}%
+\contentsline {subsubsection}{\numberline {4.15.4.1}Instance}{79}{subsubsection.4.15.4.1}%
+\contentsline {section}{\numberline {4.16}Spike Class Reference}{79}{section.4.16}%
+\contentsline {subsection}{\numberline {4.16.1}Detailed Description}{80}{subsection.4.16.1}%
+\contentsline {subsection}{\numberline {4.16.2}Member Function Documentation}{80}{subsection.4.16.2}%
+\contentsline {subsubsection}{\numberline {4.16.2.1}\_Ready()}{80}{subsubsection.4.16.2.1}%
+\contentsline {subsubsection}{\numberline {4.16.2.2}GetDamage()}{80}{subsubsection.4.16.2.2}%
+\contentsline {subsubsection}{\numberline {4.16.2.3}OnPlayerBodyEntered()}{80}{subsubsection.4.16.2.3}%
+\contentsline {subsubsection}{\numberline {4.16.2.4}OnPlayerBodyExited()}{81}{subsubsection.4.16.2.4}%
+\contentsline {subsubsection}{\numberline {4.16.2.5}OnTimerTimeout()}{81}{subsubsection.4.16.2.5}%
+\contentsline {subsection}{\numberline {4.16.3}Member Data Documentation}{81}{subsection.4.16.3}%
+\contentsline {subsubsection}{\numberline {4.16.3.1}Damage}{81}{subsubsection.4.16.3.1}%
+\contentsline {subsubsection}{\numberline {4.16.3.2}Player}{81}{subsubsection.4.16.3.2}%
+\contentsline {section}{\numberline {4.17}Spike\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Dynamic Class Reference}{82}{section.4.17}%
+\contentsline {subsection}{\numberline {4.17.1}Detailed Description}{82}{subsection.4.17.1}%
+\contentsline {subsection}{\numberline {4.17.2}Member Function Documentation}{82}{subsection.4.17.2}%
+\contentsline {subsubsection}{\numberline {4.17.2.1}\_Ready()}{82}{subsubsection.4.17.2.1}%
+\contentsline {subsubsection}{\numberline {4.17.2.2}GetDamage()}{83}{subsubsection.4.17.2.2}%
+\contentsline {subsubsection}{\numberline {4.17.2.3}OnPlayerBodyEntered()}{83}{subsubsection.4.17.2.3}%
+\contentsline {subsubsection}{\numberline {4.17.2.4}OnPlayerBodyExited()}{83}{subsubsection.4.17.2.4}%
+\contentsline {subsubsection}{\numberline {4.17.2.5}OnTimerTimeout()}{83}{subsubsection.4.17.2.5}%
+\contentsline {subsection}{\numberline {4.17.3}Member Data Documentation}{84}{subsection.4.17.3}%
+\contentsline {subsubsection}{\numberline {4.17.3.1}Damage}{84}{subsubsection.4.17.3.1}%
+\contentsline {subsubsection}{\numberline {4.17.3.2}Player}{84}{subsubsection.4.17.3.2}%
+\contentsline {section}{\numberline {4.18}Stamina\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Bar Class Reference}{84}{section.4.18}%
+\contentsline {subsection}{\numberline {4.18.1}Detailed Description}{84}{subsection.4.18.1}%
+\contentsline {subsection}{\numberline {4.18.2}Member Function Documentation}{84}{subsection.4.18.2}%
+\contentsline {subsubsection}{\numberline {4.18.2.1}\_Process()}{84}{subsubsection.4.18.2.1}%
+\contentsline {subsubsection}{\numberline {4.18.2.2}\_Ready()}{85}{subsubsection.4.18.2.2}%
+\contentsline {section}{\numberline {4.19}Storage\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager Class Reference}{85}{section.4.19}%
+\contentsline {subsection}{\numberline {4.19.1}Detailed Description}{86}{subsection.4.19.1}%
+\contentsline {subsection}{\numberline {4.19.2}Member Function Documentation}{86}{subsection.4.19.2}%
+\contentsline {subsubsection}{\numberline {4.19.2.1}\_Ready()}{86}{subsubsection.4.19.2.1}%
+\contentsline {subsubsection}{\numberline {4.19.2.2}GetLastSaveId()}{87}{subsubsection.4.19.2.2}%
+\contentsline {subsubsection}{\numberline {4.19.2.3}GetSaves()}{87}{subsubsection.4.19.2.3}%
+\contentsline {subsubsection}{\numberline {4.19.2.4}LoadGameFile()}{87}{subsubsection.4.19.2.4}%
+\contentsline {subsubsection}{\numberline {4.19.2.5}LoadSettings()}{88}{subsubsection.4.19.2.5}%
+\contentsline {subsubsection}{\numberline {4.19.2.6}SaveAll()}{88}{subsubsection.4.19.2.6}%
+\contentsline {subsubsection}{\numberline {4.19.2.7}SaveGameFile()}{88}{subsubsection.4.19.2.7}%
+\contentsline {subsubsection}{\numberline {4.19.2.8}SaveSettings()}{89}{subsubsection.4.19.2.8}%
+\contentsline {subsubsection}{\numberline {4.19.2.9}SetLastSaveId()}{89}{subsubsection.4.19.2.9}%
+\contentsline {subsubsection}{\numberline {4.19.2.10}SetSaves()}{89}{subsubsection.4.19.2.10}%
+\contentsline {subsection}{\numberline {4.19.3}Member Data Documentation}{89}{subsection.4.19.3}%
+\contentsline {subsubsection}{\numberline {4.19.3.1}LastSaveId}{89}{subsubsection.4.19.3.1}%
+\contentsline {subsubsection}{\numberline {4.19.3.2}PathSave}{90}{subsubsection.4.19.3.2}%
+\contentsline {subsubsection}{\numberline {4.19.3.3}PathSettings}{90}{subsubsection.4.19.3.3}%
+\contentsline {subsubsection}{\numberline {4.19.3.4}Saves}{90}{subsubsection.4.19.3.4}%
+\contentsline {subsection}{\numberline {4.19.4}Property Documentation}{90}{subsection.4.19.4}%
+\contentsline {subsubsection}{\numberline {4.19.4.1}Instance}{90}{subsubsection.4.19.4.1}%
+\contentsline {chapter}{\numberline {5}File Documentation}{91}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Enemy.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs File Reference}{91}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Enemy.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{91}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Blood\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Vial.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs File Reference}{95}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Blood\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Vial.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{95}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Boss1.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs File Reference}{95}{section.5.5}%
+\contentsline {section}{\numberline {5.6}Boss1.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{96}{section.5.6}%
+\contentsline {section}{\numberline {5.7}Checkpoint.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs File Reference}{97}{section.5.7}%
+\contentsline {section}{\numberline {5.8}Checkpoint.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{97}{section.5.8}%
+\contentsline {section}{\numberline {5.9}Damage.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs File Reference}{98}{section.5.9}%
+\contentsline {section}{\numberline {5.10}Damage.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{98}{section.5.10}%
+\contentsline {section}{\numberline {5.11}Door.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs File Reference}{98}{section.5.11}%
+\contentsline {section}{\numberline {5.12}Door.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{98}{section.5.12}%
+\contentsline {section}{\numberline {5.13}Health\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Bar.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs File Reference}{99}{section.5.13}%
+\contentsline {section}{\numberline {5.14}Health\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Bar.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{99}{section.5.14}%
+\contentsline {section}{\numberline {5.15}Hud.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs File Reference}{99}{section.5.15}%
+\contentsline {section}{\numberline {5.16}Hud.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{100}{section.5.16}%
+\contentsline {section}{\numberline {5.17}Interactable.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs File Reference}{100}{section.5.17}%
+\contentsline {section}{\numberline {5.18}Interactable.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{100}{section.5.18}%
+\contentsline {section}{\numberline {5.19}Level\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs File Reference}{101}{section.5.19}%
+\contentsline {section}{\numberline {5.20}Level\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{101}{section.5.20}%
+\contentsline {section}{\numberline {5.21}Main\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Menu.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs File Reference}{102}{section.5.21}%
+\contentsline {section}{\numberline {5.22}Main\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Menu.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{102}{section.5.22}%
+\contentsline {section}{\numberline {5.23}Main\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Menu\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Background.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs File Reference}{104}{section.5.23}%
+\contentsline {section}{\numberline {5.24}Main\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Menu\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Background.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{104}{section.5.24}%
+\contentsline {section}{\numberline {5.25}Navigation\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs File Reference}{104}{section.5.25}%
+\contentsline {section}{\numberline {5.26}Navigation\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{105}{section.5.26}%
+\contentsline {section}{\numberline {5.27}Player.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs File Reference}{106}{section.5.27}%
+\contentsline {section}{\numberline {5.28}Player.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{106}{section.5.28}%
+\contentsline {section}{\numberline {5.29}Player\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Stats.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs File Reference}{110}{section.5.29}%
+\contentsline {section}{\numberline {5.30}Player\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Stats.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{110}{section.5.30}%
+\contentsline {section}{\numberline {5.31}Spike.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs File Reference}{112}{section.5.31}%
+\contentsline {section}{\numberline {5.32}Spike.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{112}{section.5.32}%
+\contentsline {section}{\numberline {5.33}Spike\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Dynamic.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs File Reference}{113}{section.5.33}%
+\contentsline {section}{\numberline {5.34}Spike\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Dynamic.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{113}{section.5.34}%
+\contentsline {section}{\numberline {5.35}Stamina\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Bar.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs File Reference}{114}{section.5.35}%
+\contentsline {section}{\numberline {5.36}Stamina\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Bar.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{114}{section.5.36}%
+\contentsline {section}{\numberline {5.37}Storage\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs File Reference}{114}{section.5.37}%
+\contentsline {section}{\numberline {5.38}Storage\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{115}{section.5.38}%
+\contentsline {chapter}{Index}{117}{section*.102}%

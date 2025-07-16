@@ -1,0 +1,142 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__player_stats_8cs_source" xml:lang="en-US">
+<title>PlayerStats.cs</title>
+<indexterm><primary>PlayerStats.cs</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered"><anchor xml:id="__player_stats_8cs_source_1l00001"/>00001 <emphasis role="keyword">using&#32;</emphasis>System;
+<anchor xml:id="__player_stats_8cs_source_1l00002"/>00002 <emphasis role="keyword">using&#32;</emphasis>Godot;
+<anchor xml:id="__player_stats_8cs_source_1l00003"/>00003 
+<anchor xml:id="__player_stats_8cs_source_1l00007"/><link linkend="_class_player_stats">00007</link> <emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">partial&#32;class&#32;</emphasis><link linkend="_class_player_stats">PlayerStats</link>&#32;:&#32;Node
+<anchor xml:id="__player_stats_8cs_source_1l00008"/>00008 {
+<anchor xml:id="__player_stats_8cs_source_1l00009"/>00009 
+<anchor xml:id="__player_stats_8cs_source_1l00010"/><link linkend="_class_player_stats_1adeb667dbe2c1a76d1785ce07b6faf181">00010</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">static</emphasis>&#32;<link linkend="_class_player_stats">PlayerStats</link>&#32;<link linkend="_class_player_stats_1adeb667dbe2c1a76d1785ce07b6faf181">Instance</link>&#32;{&#32;<emphasis role="keyword">get</emphasis>;&#32;<emphasis role="keyword">private</emphasis>&#32;<emphasis role="keyword">set</emphasis>;&#32;}
+<anchor xml:id="__player_stats_8cs_source_1l00011"/>00011 &#32;&#32;&#32;&#32;
+<anchor xml:id="__player_stats_8cs_source_1l00012"/><link linkend="_class_player_stats_1a1e6557a3100cd9b69dccf218d2c84609">00012</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;String&#32;<link linkend="_class_player_stats_1a1e6557a3100cd9b69dccf218d2c84609">RespawnLevelTag</link>&#32;=&#32;<emphasis role="stringliteral">&quot;intro&quot;</emphasis>;
+<anchor xml:id="__player_stats_8cs_source_1l00013"/><link linkend="_class_player_stats_1ae047b0b22ef2d0cbd60c5b4193fac02a">00013</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;String&#32;<link linkend="_class_player_stats_1ae047b0b22ef2d0cbd60c5b4193fac02a">CurrentLevelTag</link>&#32;=&#32;<emphasis role="stringliteral">&quot;intro&quot;</emphasis>;
+<anchor xml:id="__player_stats_8cs_source_1l00014"/><link linkend="_class_player_stats_1a45dbfad923471fe032a894b05daf3735">00014</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;Vector2&#32;<link linkend="_class_player_stats_1a45dbfad923471fe032a894b05daf3735">SpawnPoint</link>;
+<anchor xml:id="__player_stats_8cs_source_1l00015"/><link linkend="_class_player_stats_1a2afbdf33659ec177ac5f27638a78fe42">00015</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;Vector2&#32;<link linkend="_class_player_stats_1a2afbdf33659ec177ac5f27638a78fe42">Position</link>&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;Vector2(-540,&#32;160);
+<anchor xml:id="__player_stats_8cs_source_1l00016"/><link linkend="_class_player_stats_1ad7c9580233648775b11f199347087f4c">00016</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_player_stats_1ad7c9580233648775b11f199347087f4c">SinAmount</link>;
+<anchor xml:id="__player_stats_8cs_source_1l00017"/><link linkend="_class_player_stats_1a335bea0dc78273f4cc46a01a7d699dcd">00017</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;<emphasis role="keywordtype">float</emphasis>&#32;<link linkend="_class_player_stats_1a335bea0dc78273f4cc46a01a7d699dcd">MaxHealthPoints</link>&#32;=&#32;100f;
+<anchor xml:id="__player_stats_8cs_source_1l00018"/><link linkend="_class_player_stats_1ae382740c5a49ebad7a020173d6eb527b">00018</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;<emphasis role="keywordtype">float</emphasis>&#32;<link linkend="_class_player_stats_1ae382740c5a49ebad7a020173d6eb527b">CurrentHealth</link>;
+<anchor xml:id="__player_stats_8cs_source_1l00019"/><link linkend="_class_player_stats_1a3ec6c1ddfeddebf52f76200216a015b5">00019</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;<emphasis role="keywordtype">float</emphasis>&#32;<link linkend="_class_player_stats_1a3ec6c1ddfeddebf52f76200216a015b5">MaxStamina</link>&#32;=&#32;100f;&#32;
+<anchor xml:id="__player_stats_8cs_source_1l00020"/><link linkend="_class_player_stats_1a4d2c11ea6b3c00573fdaada704003164">00020</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;<emphasis role="keywordtype">float</emphasis>&#32;<link linkend="_class_player_stats_1a4d2c11ea6b3c00573fdaada704003164">CurrentStamina</link>;
+<anchor xml:id="__player_stats_8cs_source_1l00021"/><link linkend="_class_player_stats_1ade72e9a5adb4aa136bc4cba06cc701db">00021</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_player_stats_1ade72e9a5adb4aa136bc4cba06cc701db">BVHealAmount</link>&#32;=&#32;25;
+<anchor xml:id="__player_stats_8cs_source_1l00022"/><link linkend="_class_player_stats_1aa47e0d391b2a9a1bf162da0b00a3b075">00022</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_player_stats_1aa47e0d391b2a9a1bf162da0b00a3b075">BVMaxUses</link>&#32;=&#32;5;
+<anchor xml:id="__player_stats_8cs_source_1l00023"/><link linkend="_class_player_stats_1ab3f1ef87a636e6387817be8334dd75dc">00023</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_player_stats_1ab3f1ef87a636e6387817be8334dd75dc">BVCurrentUses</link>;
+<anchor xml:id="__player_stats_8cs_source_1l00024"/>00024 
+<anchor xml:id="__player_stats_8cs_source_1l00025"/>00025 
+<anchor xml:id="__player_stats_8cs_source_1l00029"/><link linkend="_class_player_stats_1a895e862f4ff51140f473568a86ade636">00029</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">override</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_player_stats_1a895e862f4ff51140f473568a86ade636">_Ready</link>(){
+<anchor xml:id="__player_stats_8cs_source_1l00030"/>00030 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_stats_1ae382740c5a49ebad7a020173d6eb527b">CurrentHealth</link>&#32;=&#32;<link linkend="_class_player_stats_1a335bea0dc78273f4cc46a01a7d699dcd">MaxHealthPoints</link>;
+<anchor xml:id="__player_stats_8cs_source_1l00031"/>00031 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_stats_1a4d2c11ea6b3c00573fdaada704003164">CurrentStamina</link>&#32;=&#32;<link linkend="_class_player_stats_1a3ec6c1ddfeddebf52f76200216a015b5">MaxStamina</link>;
+<anchor xml:id="__player_stats_8cs_source_1l00032"/>00032 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_stats_1ab3f1ef87a636e6387817be8334dd75dc">BVCurrentUses</link>&#32;=&#32;<link linkend="_class_player_stats_1aa47e0d391b2a9a1bf162da0b00a3b075">BVMaxUses</link>;
+<anchor xml:id="__player_stats_8cs_source_1l00033"/>00033 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_stats_1adeb667dbe2c1a76d1785ce07b6faf181">Instance</link>&#32;=&#32;<emphasis role="keyword">this</emphasis>;
+<anchor xml:id="__player_stats_8cs_source_1l00034"/>00034 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__player_stats_8cs_source_1l00035"/>00035 
+<anchor xml:id="__player_stats_8cs_source_1l00040"/><link linkend="_class_player_stats_1ad868bae6deb062dbcc4702b276a27041">00040</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;String&#32;<link linkend="_class_player_stats_1ad868bae6deb062dbcc4702b276a27041">GetRespawnLevelTag</link>()&#32;{
+<anchor xml:id="__player_stats_8cs_source_1l00041"/>00041 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_class_player_stats_1a1e6557a3100cd9b69dccf218d2c84609">RespawnLevelTag</link>;
+<anchor xml:id="__player_stats_8cs_source_1l00042"/>00042 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__player_stats_8cs_source_1l00043"/>00043 
+<anchor xml:id="__player_stats_8cs_source_1l00048"/><link linkend="_class_player_stats_1a7ec692981c45e933c737eff8d78e6456">00048</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_player_stats_1a7ec692981c45e933c737eff8d78e6456">SetRespawnLevelTag</link>(String&#32;levelTag)&#32;{
+<anchor xml:id="__player_stats_8cs_source_1l00049"/>00049 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_stats_1a1e6557a3100cd9b69dccf218d2c84609">RespawnLevelTag</link>&#32;=&#32;levelTag;
+<anchor xml:id="__player_stats_8cs_source_1l00050"/>00050 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__player_stats_8cs_source_1l00051"/>00051 
+<anchor xml:id="__player_stats_8cs_source_1l00056"/><link linkend="_class_player_stats_1a7db8c1cd1ecfb2041c7b376289054801">00056</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;String&#32;<link linkend="_class_player_stats_1a7db8c1cd1ecfb2041c7b376289054801">GetCurrentLevelTag</link>()&#32;{
+<anchor xml:id="__player_stats_8cs_source_1l00057"/>00057 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_class_player_stats_1ae047b0b22ef2d0cbd60c5b4193fac02a">CurrentLevelTag</link>;
+<anchor xml:id="__player_stats_8cs_source_1l00058"/>00058 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__player_stats_8cs_source_1l00059"/>00059 
+<anchor xml:id="__player_stats_8cs_source_1l00064"/><link linkend="_class_player_stats_1a3545edeb4834aad7011e561dc5f1b10d">00064</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_player_stats_1a3545edeb4834aad7011e561dc5f1b10d">SetCurrentLevelTag</link>(String&#32;levelTag)&#32;{
+<anchor xml:id="__player_stats_8cs_source_1l00065"/>00065 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_stats_1ae047b0b22ef2d0cbd60c5b4193fac02a">CurrentLevelTag</link>&#32;=&#32;levelTag;
+<anchor xml:id="__player_stats_8cs_source_1l00066"/>00066 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__player_stats_8cs_source_1l00067"/>00067 
+<anchor xml:id="__player_stats_8cs_source_1l00072"/><link linkend="_class_player_stats_1a147af1b1e37f6506303caca28b60f9e4">00072</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_player_stats_1a147af1b1e37f6506303caca28b60f9e4">SetSpawnPoint</link>(Vector2&#32;spawnPoint)&#32;{
+<anchor xml:id="__player_stats_8cs_source_1l00073"/>00073 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_stats_1a45dbfad923471fe032a894b05daf3735">SpawnPoint</link>&#32;=&#32;spawnPoint;
+<anchor xml:id="__player_stats_8cs_source_1l00074"/>00074 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__player_stats_8cs_source_1l00075"/>00075 
+<anchor xml:id="__player_stats_8cs_source_1l00080"/><link linkend="_class_player_stats_1a20396ab55000fe68c62711c072bad9bb">00080</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;Vector2&#32;<link linkend="_class_player_stats_1a20396ab55000fe68c62711c072bad9bb">GetSpawnPoint</link>(){
+<anchor xml:id="__player_stats_8cs_source_1l00081"/>00081 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_class_player_stats_1a45dbfad923471fe032a894b05daf3735">SpawnPoint</link>;
+<anchor xml:id="__player_stats_8cs_source_1l00082"/>00082 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__player_stats_8cs_source_1l00083"/>00083 
+<anchor xml:id="__player_stats_8cs_source_1l00088"/><link linkend="_class_player_stats_1adb53f7019a00edfe089c3dfd205438c2">00088</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_player_stats_1adb53f7019a00edfe089c3dfd205438c2">SetPosition</link>(Vector2&#32;position)&#32;{
+<anchor xml:id="__player_stats_8cs_source_1l00089"/>00089 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_stats_1a2afbdf33659ec177ac5f27638a78fe42">Position</link>&#32;=&#32;position;
+<anchor xml:id="__player_stats_8cs_source_1l00090"/>00090 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__player_stats_8cs_source_1l00091"/>00091 
+<anchor xml:id="__player_stats_8cs_source_1l00096"/><link linkend="_class_player_stats_1a77ca820f184b31dd9590bc8613f8566e">00096</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;Vector2&#32;<link linkend="_class_player_stats_1a77ca820f184b31dd9590bc8613f8566e">GetPosition</link>(){
+<anchor xml:id="__player_stats_8cs_source_1l00097"/>00097 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_class_player_stats_1a2afbdf33659ec177ac5f27638a78fe42">Position</link>;
+<anchor xml:id="__player_stats_8cs_source_1l00098"/>00098 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__player_stats_8cs_source_1l00099"/>00099 
+<anchor xml:id="__player_stats_8cs_source_1l00100"/>00100 
+<anchor xml:id="__player_stats_8cs_source_1l00105"/><link linkend="_class_player_stats_1a0b2b3398a02e8fbafe3c41dd466c57d0">00105</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_player_stats_1a0b2b3398a02e8fbafe3c41dd466c57d0">GetSinAmount</link>(){
+<anchor xml:id="__player_stats_8cs_source_1l00106"/>00106 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_class_player_stats_1ad7c9580233648775b11f199347087f4c">SinAmount</link>;
+<anchor xml:id="__player_stats_8cs_source_1l00107"/>00107 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__player_stats_8cs_source_1l00108"/>00108 
+<anchor xml:id="__player_stats_8cs_source_1l00113"/><link linkend="_class_player_stats_1a647991a1d154f8c2bc8d7032b43e35aa">00113</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_player_stats_1a647991a1d154f8c2bc8d7032b43e35aa">SetSinAmount</link>(<emphasis role="keywordtype">int</emphasis>&#32;Value)&#32;{
+<anchor xml:id="__player_stats_8cs_source_1l00114"/>00114 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;SinAmount&#32;muss&#32;immer&#32;&gt;=&#32;0&#32;sein</emphasis>
+<anchor xml:id="__player_stats_8cs_source_1l00115"/>00115 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_stats_1ad7c9580233648775b11f199347087f4c">SinAmount</link>&#32;=&#32;Mathf.Max(Value,&#32;0);
+<anchor xml:id="__player_stats_8cs_source_1l00116"/>00116 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__player_stats_8cs_source_1l00117"/>00117 
+<anchor xml:id="__player_stats_8cs_source_1l00122"/><link linkend="_class_player_stats_1a6a24773d00e75be9747b99681ac76127">00122</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keywordtype">float</emphasis>&#32;<link linkend="_class_player_stats_1a6a24773d00e75be9747b99681ac76127">GetMaxHealthPoints</link>(){
+<anchor xml:id="__player_stats_8cs_source_1l00123"/>00123 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_class_player_stats_1a335bea0dc78273f4cc46a01a7d699dcd">MaxHealthPoints</link>;
+<anchor xml:id="__player_stats_8cs_source_1l00124"/>00124 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__player_stats_8cs_source_1l00125"/>00125 
+<anchor xml:id="__player_stats_8cs_source_1l00130"/><link linkend="_class_player_stats_1a58c3b27a3633bead2f77fa551f30beeb">00130</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_player_stats_1a58c3b27a3633bead2f77fa551f30beeb">SetMaxHealthPoints</link>(<emphasis role="keywordtype">float</emphasis>&#32;maxHealthPoints){
+<anchor xml:id="__player_stats_8cs_source_1l00131"/>00131 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;MaxHealthPoints&#32;muss&#32;immer&#32;positiv&#32;sein</emphasis>
+<anchor xml:id="__player_stats_8cs_source_1l00132"/>00132 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_stats_1a335bea0dc78273f4cc46a01a7d699dcd">MaxHealthPoints</link>&#32;=&#32;Mathf.Max(maxHealthPoints,&#32;1);&#32;<emphasis role="comment">//&#32;Verhindert,&#32;dass&#32;MaxHealthPoints&#32;&lt;=&#32;0&#32;wird</emphasis>
+<anchor xml:id="__player_stats_8cs_source_1l00133"/>00133 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__player_stats_8cs_source_1l00134"/>00134 
+<anchor xml:id="__player_stats_8cs_source_1l00139"/><link linkend="_class_player_stats_1a0ec1075ba0983a3df42454b110194c0d">00139</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keywordtype">float</emphasis>&#32;<link linkend="_class_player_stats_1a0ec1075ba0983a3df42454b110194c0d">GetCurrentHealth</link>(){
+<anchor xml:id="__player_stats_8cs_source_1l00140"/>00140 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_class_player_stats_1ae382740c5a49ebad7a020173d6eb527b">CurrentHealth</link>;
+<anchor xml:id="__player_stats_8cs_source_1l00141"/>00141 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__player_stats_8cs_source_1l00142"/>00142 
+<anchor xml:id="__player_stats_8cs_source_1l00147"/><link linkend="_class_player_stats_1aaed3690620c6ba9a8866d0c35b4f26d7">00147</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_player_stats_1aaed3690620c6ba9a8866d0c35b4f26d7">SetCurrentHealth</link>(<emphasis role="keywordtype">float</emphasis>&#32;Health){
+<anchor xml:id="__player_stats_8cs_source_1l00148"/>00148 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;CurrentHealth&#32;darf&#32;MaxHealthPoints&#32;nicht&#32;überschreiten.</emphasis>
+<anchor xml:id="__player_stats_8cs_source_1l00149"/>00149 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_stats_1ae382740c5a49ebad7a020173d6eb527b">CurrentHealth</link>&#32;=&#32;Mathf.Min(Health,&#32;<link linkend="_class_player_stats_1a335bea0dc78273f4cc46a01a7d699dcd">MaxHealthPoints</link>);
+<anchor xml:id="__player_stats_8cs_source_1l00150"/>00150 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__player_stats_8cs_source_1l00151"/>00151 
+<anchor xml:id="__player_stats_8cs_source_1l00156"/><link linkend="_class_player_stats_1a8f76220aa1271b2335b045624c6812d0">00156</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_player_stats_1a8f76220aa1271b2335b045624c6812d0">SetMaxStamina</link>(<emphasis role="keywordtype">float</emphasis>&#32;Value)&#32;{
+<anchor xml:id="__player_stats_8cs_source_1l00157"/>00157 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;MaxStamina&#32;muss&#32;immer&#32;positiv&#32;sein</emphasis>
+<anchor xml:id="__player_stats_8cs_source_1l00158"/>00158 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_stats_1a3ec6c1ddfeddebf52f76200216a015b5">MaxStamina</link>&#32;=&#32;Mathf.Max(Value,&#32;1);
+<anchor xml:id="__player_stats_8cs_source_1l00159"/>00159 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__player_stats_8cs_source_1l00160"/>00160 
+<anchor xml:id="__player_stats_8cs_source_1l00165"/><link linkend="_class_player_stats_1a7e27ea7ba3c266ecfa446c070415180a">00165</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keywordtype">float</emphasis>&#32;<link linkend="_class_player_stats_1a7e27ea7ba3c266ecfa446c070415180a">GetMaxStamina</link>()&#32;{
+<anchor xml:id="__player_stats_8cs_source_1l00166"/>00166 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_class_player_stats_1a3ec6c1ddfeddebf52f76200216a015b5">MaxStamina</link>;
+<anchor xml:id="__player_stats_8cs_source_1l00167"/>00167 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__player_stats_8cs_source_1l00168"/>00168 
+<anchor xml:id="__player_stats_8cs_source_1l00173"/><link linkend="_class_player_stats_1ab341f12827a6bdcfebb826dff43e82e3">00173</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_player_stats_1ab341f12827a6bdcfebb826dff43e82e3">SetStamina</link>(<emphasis role="keywordtype">float</emphasis>&#32;Value)&#32;{
+<anchor xml:id="__player_stats_8cs_source_1l00174"/>00174 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Stellt&#32;sicher,&#32;dass&#32;die&#32;CurrentStamina&#32;im&#32;gültigen&#32;Bereich&#32;bleibt&#32;(zwischen&#32;0&#32;und&#32;MaxStamina)</emphasis>
+<anchor xml:id="__player_stats_8cs_source_1l00175"/>00175 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_stats_1a4d2c11ea6b3c00573fdaada704003164">CurrentStamina</link>&#32;=&#32;Mathf.Clamp(Value,&#32;0,&#32;<link linkend="_class_player_stats_1a3ec6c1ddfeddebf52f76200216a015b5">MaxStamina</link>);
+<anchor xml:id="__player_stats_8cs_source_1l00176"/>00176 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__player_stats_8cs_source_1l00177"/>00177 
+<anchor xml:id="__player_stats_8cs_source_1l00182"/><link linkend="_class_player_stats_1a3a170316e8384ab030f5f697b799a947">00182</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keywordtype">float</emphasis>&#32;<link linkend="_class_player_stats_1a3a170316e8384ab030f5f697b799a947">GetStamina</link>()&#32;{
+<anchor xml:id="__player_stats_8cs_source_1l00183"/>00183 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_class_player_stats_1a4d2c11ea6b3c00573fdaada704003164">CurrentStamina</link>;
+<anchor xml:id="__player_stats_8cs_source_1l00184"/>00184 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__player_stats_8cs_source_1l00185"/>00185 
+<anchor xml:id="__player_stats_8cs_source_1l00190"/><link linkend="_class_player_stats_1a76c874319c947a35702cd9a0a4b0e66c">00190</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_player_stats_1a76c874319c947a35702cd9a0a4b0e66c">SetBVHealAmount</link>(<emphasis role="keywordtype">int</emphasis>&#32;Value){
+<anchor xml:id="__player_stats_8cs_source_1l00191"/>00191 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_stats_1ade72e9a5adb4aa136bc4cba06cc701db">BVHealAmount</link>&#32;=&#32;Math.Max(0,&#32;Value);
+<anchor xml:id="__player_stats_8cs_source_1l00192"/>00192 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__player_stats_8cs_source_1l00193"/>00193 
+<anchor xml:id="__player_stats_8cs_source_1l00198"/><link linkend="_class_player_stats_1a026f80c7d14afe5dbf7e33e0edd2a16a">00198</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_player_stats_1a026f80c7d14afe5dbf7e33e0edd2a16a">GetBVHealAmount</link>()&#32;{
+<anchor xml:id="__player_stats_8cs_source_1l00199"/>00199 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_class_player_stats_1ade72e9a5adb4aa136bc4cba06cc701db">BVHealAmount</link>;
+<anchor xml:id="__player_stats_8cs_source_1l00200"/>00200 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__player_stats_8cs_source_1l00201"/>00201 
+<anchor xml:id="__player_stats_8cs_source_1l00206"/><link linkend="_class_player_stats_1abebcd5c40720aa0a7b4d86518f8e3b1b">00206</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_player_stats_1abebcd5c40720aa0a7b4d86518f8e3b1b">SetBVMaxUses</link>(<emphasis role="keywordtype">int</emphasis>&#32;Value){
+<anchor xml:id="__player_stats_8cs_source_1l00207"/>00207 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_stats_1aa47e0d391b2a9a1bf162da0b00a3b075">BVMaxUses</link>&#32;=&#32;Math.Max(0,&#32;Value);
+<anchor xml:id="__player_stats_8cs_source_1l00208"/>00208 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__player_stats_8cs_source_1l00209"/>00209 
+<anchor xml:id="__player_stats_8cs_source_1l00214"/><link linkend="_class_player_stats_1a88cc0468ef32b3b4a7b2e79af4e24424">00214</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_player_stats_1a88cc0468ef32b3b4a7b2e79af4e24424">GetBVMaxUses</link>()&#32;{
+<anchor xml:id="__player_stats_8cs_source_1l00215"/>00215 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_class_player_stats_1aa47e0d391b2a9a1bf162da0b00a3b075">BVMaxUses</link>;
+<anchor xml:id="__player_stats_8cs_source_1l00216"/>00216 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__player_stats_8cs_source_1l00217"/>00217 
+<anchor xml:id="__player_stats_8cs_source_1l00222"/><link linkend="_class_player_stats_1a05f3b699b992de2ea849c9397c818a6f">00222</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_player_stats_1a05f3b699b992de2ea849c9397c818a6f">SetBVCurrentUses</link>(<emphasis role="keywordtype">int</emphasis>&#32;Value){
+<anchor xml:id="__player_stats_8cs_source_1l00223"/>00223 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_stats_1ab3f1ef87a636e6387817be8334dd75dc">BVCurrentUses</link>&#32;=&#32;Math.Max(0,&#32;Value);
+<anchor xml:id="__player_stats_8cs_source_1l00224"/>00224 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__player_stats_8cs_source_1l00225"/>00225 
+<anchor xml:id="__player_stats_8cs_source_1l00230"/><link linkend="_class_player_stats_1a7927fc41f41b344aecea23f12c52329b">00230</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_player_stats_1a7927fc41f41b344aecea23f12c52329b">GetBVCurrentUses</link>()&#32;{
+<anchor xml:id="__player_stats_8cs_source_1l00231"/>00231 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_class_player_stats_1ab3f1ef87a636e6387817be8334dd75dc">BVCurrentUses</link>;
+<anchor xml:id="__player_stats_8cs_source_1l00232"/>00232 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__player_stats_8cs_source_1l00233"/>00233 
+<anchor xml:id="__player_stats_8cs_source_1l00237"/><link linkend="_class_player_stats_1a9a513942394be2aae3457a6be9f81b9b">00237</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_player_stats_1a9a513942394be2aae3457a6be9f81b9b">Reload</link>(){
+<anchor xml:id="__player_stats_8cs_source_1l00238"/>00238 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_stats_1adeb667dbe2c1a76d1785ce07b6faf181">Instance</link>&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;<link linkend="_class_player_stats">PlayerStats</link>();
+<anchor xml:id="__player_stats_8cs_source_1l00239"/>00239 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_stats_1adeb667dbe2c1a76d1785ce07b6faf181">Instance</link>.<link linkend="_class_player_stats_1a895e862f4ff51140f473568a86ade636">_Ready</link>();
+<anchor xml:id="__player_stats_8cs_source_1l00240"/>00240 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__player_stats_8cs_source_1l00241"/>00241 
+<anchor xml:id="__player_stats_8cs_source_1l00242"/>00242 }
+</programlisting></section>

@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_53e6fa9553ac22a5646d2a2b2d7b97a1" xml:lang="en-US">
+<title>scripts Directory Reference</title>
+<indexterm><primary>scripts Directory Reference</primary></indexterm>
+<simplesect>
+    <title>Files    </title>
+        <itemizedlist>
+            <listitem><para>file <link linkend="__base_enemy_8cs">BaseEnemy.cs</link></para>
+</listitem>
+            <listitem><para>file <link linkend="__blood_vial_8cs">BloodVial.cs</link></para>
+</listitem>
+            <listitem><para>file <link linkend="__boss1_8cs">Boss1.cs</link></para>
+</listitem>
+            <listitem><para>file <link linkend="__checkpoint_8cs">Checkpoint.cs</link></para>
+</listitem>
+            <listitem><para>file <link linkend="__damage_8cs">Damage.cs</link></para>
+</listitem>
+            <listitem><para>file <link linkend="__door_8cs">Door.cs</link></para>
+</listitem>
+            <listitem><para>file <link linkend="__health_bar_8cs">HealthBar.cs</link></para>
+</listitem>
+            <listitem><para>file <link linkend="__hud_8cs">Hud.cs</link></para>
+</listitem>
+            <listitem><para>file <link linkend="__interactable_8cs">Interactable.cs</link></para>
+</listitem>
+            <listitem><para>file <link linkend="__level_manager_8cs">LevelManager.cs</link></para>
+</listitem>
+            <listitem><para>file <link linkend="__main_menu_8cs">MainMenu.cs</link></para>
+</listitem>
+            <listitem><para>file <link linkend="__main_menu_background_8cs">MainMenuBackground.cs</link></para>
+</listitem>
+            <listitem><para>file <link linkend="__navigation_manager_8cs">NavigationManager.cs</link></para>
+</listitem>
+            <listitem><para>file <link linkend="__player_8cs">Player.cs</link></para>
+</listitem>
+            <listitem><para>file <link linkend="__player_stats_8cs">PlayerStats.cs</link></para>
+</listitem>
+            <listitem><para>file <link linkend="__spike_8cs">Spike.cs</link></para>
+</listitem>
+            <listitem><para>file <link linkend="__spike_dynamic_8cs">SpikeDynamic.cs</link></para>
+</listitem>
+            <listitem><para>file <link linkend="__stamina_bar_8cs">StaminaBar.cs</link></para>
+</listitem>
+            <listitem><para>file <link linkend="__storage_manager_8cs">StorageManager.cs</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_checkpoint" xml:lang="en-US">
+<title>Checkpoint Class Reference</title>
+<indexterm><primary>Checkpoint</primary></indexterm>
+<para>Inheritance diagram for Checkpoint:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_checkpoint.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>override void <link linkend="_class_checkpoint_1a11140b9e346dc3b47423d3900467bc85">_Ready</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Private Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_class_checkpoint_1a1edb44ccaab350249bc760360777a04b">OnPlayerBodyEntered</link> (Node body)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Private Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_player">Player</link> <link linkend="_class_checkpoint_1ab67a462d06793fca7e9bd2b15d332432">Player</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<para>
+Definition at line <link linkend="__checkpoint_8cs_source_1l00004">4</link> of file <link linkend="__checkpoint_8cs_source">Checkpoint.cs</link>.</para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_checkpoint_1a11140b9e346dc3b47423d3900467bc85"/><section>
+    <title>_Ready()</title>
+<indexterm><primary>_Ready</primary><secondary>Checkpoint</secondary></indexterm>
+<indexterm><primary>Checkpoint</primary><secondary>_Ready</secondary></indexterm>
+<para><computeroutput>override void Checkpoint._Ready ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__checkpoint_8cs_source_1l00013">13</link> of file <link linkend="__checkpoint_8cs_source">Checkpoint.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00014 &#32;&#32;&#32;&#32;{
+00015 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Zugriff&#32;auf&#32;Player&#32;Node</emphasis>
+00016 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player">Player</link>&#32;=&#32;GetNode&lt;Player&gt;(<emphasis role="stringliteral">&quot;../Player&quot;</emphasis>);
+00017 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_checkpoint_1a1edb44ccaab350249bc760360777a04b"/><section>
+    <title>OnPlayerBodyEntered()</title>
+<indexterm><primary>OnPlayerBodyEntered</primary><secondary>Checkpoint</secondary></indexterm>
+<indexterm><primary>Checkpoint</primary><secondary>OnPlayerBodyEntered</secondary></indexterm>
+<para><computeroutput>void Checkpoint.OnPlayerBodyEntered (Node body)<computeroutput>[inline]</computeroutput>, <computeroutput>[private]</computeroutput></computeroutput></para>
+<para>Prüfen ob der Körper, der den <link linkend="_class_checkpoint">Checkpoint</link> betritt, ein <link linkend="_class_player">Player</link> ist Wenn ja, dann wird der <link linkend="_class_checkpoint">Checkpoint</link> als Spawnpoint gesetzt</para>
+<para>
+Definition at line <link linkend="__checkpoint_8cs_source_1l00023">23</link> of file <link linkend="__checkpoint_8cs_source">Checkpoint.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00024 &#32;&#32;&#32;&#32;{
+00025 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+00031 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(body&#32;is&#32;<link linkend="_class_player">Player</link>&#32;<link linkend="_class_player">Player</link>)
+00032 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00033 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Setzen&#32;des&#32;Spawnpoints</emphasis>
+00034 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_stats">PlayerStats</link>&#32;<link linkend="_class_player_stats">PlayerStats</link>&#32;=&#32;GetNode&lt;PlayerStats&gt;(<emphasis role="stringliteral">&quot;/root/PlayerStats&quot;</emphasis>);
+00035 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_stats">PlayerStats</link>.<link linkend="_class_player_stats_1adeb667dbe2c1a76d1785ce07b6faf181">Instance</link>.<link linkend="_class_player_stats_1a147af1b1e37f6506303caca28b60f9e4">SetSpawnPoint</link>(this.GlobalPosition);
+00036 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player">Player</link>.<link linkend="_class_player_1a750d1c5325522c39d232332349e4d2d2">MaxHeal</link>();
+00037 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_stats">PlayerStats</link>.<link linkend="_class_player_stats_1adeb667dbe2c1a76d1785ce07b6faf181">Instance</link>.<link linkend="_class_player_stats_1ab341f12827a6bdcfebb826dff43e82e3">SetStamina</link>(<link linkend="_class_player_stats">PlayerStats</link>.<link linkend="_class_player_stats_1adeb667dbe2c1a76d1785ce07b6faf181">Instance</link>.<link linkend="_class_player_stats_1a7e27ea7ba3c266ecfa446c070415180a">GetMaxStamina</link>());
+00038 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player">Player</link>.<link linkend="_class_player_1ab04e4301a26dacc4e1d178d1b7d1d872">GetBloodVials</link>().<link linkend="_class_blood_vial_1a31a53feef846bd962bd5b525b0bc5c6c">ResetUses</link>();
+00039 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;GD.Print(<emphasis role="stringliteral">&quot;Spawnpoint&#32;des&#32;Players&#32;gesetzt&#32;auf:&#32;&quot;</emphasis>,&#32;this.GlobalPosition);
+00040 
+00041 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_stats">PlayerStats</link>.<link linkend="_class_player_stats_1a7ec692981c45e933c737eff8d78e6456">SetRespawnLevelTag</link>(GetParent().Name);
+00042 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;GD.Print(<emphasis role="stringliteral">&quot;RespawnLevelTag&#32;des&#32;Players&#32;gesetzt&#32;auf:&#32;&quot;</emphasis>,&#32;GetParent().Name);
+00043 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;GD.Print(<link linkend="_class_player_stats">PlayerStats</link>.<link linkend="_class_player_stats_1adeb667dbe2c1a76d1785ce07b6faf181">Instance</link>.<link linkend="_class_player_stats_1ad868bae6deb062dbcc4702b276a27041">GetRespawnLevelTag</link>());
+00044 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00045 
+00046 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_class_checkpoint_1ab67a462d06793fca7e9bd2b15d332432"/><section>
+    <title>Player</title>
+<indexterm><primary>Player</primary><secondary>Checkpoint</secondary></indexterm>
+<indexterm><primary>Checkpoint</primary><secondary>Player</secondary></indexterm>
+<para><computeroutput><link linkend="_class_player">Player</link> Checkpoint.Player<computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__checkpoint_8cs_source_1l00008">8</link> of file <link linkend="__checkpoint_8cs_source">Checkpoint.cs</link>.</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+<link linkend="__checkpoint_8cs">Checkpoint.cs</link></section>
+</section>

@@ -28,6 +28,5 @@ var searchData=
   ['onspawn_25',['OnSpawn',['../class_player.html#a026f050e54322e805ad546ee99483e6e',1,'Player']]],
   ['onswordhitboxbodyentered_26',['OnSwordHitBoxBodyEntered',['../class_base_enemy.html#ab07fb117d5286ef97dc702149c02b14a',1,'BaseEnemy']]],
   ['ontimertimeout_27',['OnTimerTimeout',['../class_spike.html#a1ef0f806f713e9d58eb5ef768e5a582e',1,'Spike.OnTimerTimeout()'],['../class_spike_dynamic.html#a167cdf30da17b600acdc5f65776b72d9',1,'SpikeDynamic.OnTimerTimeout()']]],
-  ['ontriggerplayerspawneventhandler_28',['OnTriggerPlayerSpawnEventHandler',['../class_navigation_manager.html#a0dee864e0854aa918dd9b2d7a125d8dd',1,'NavigationManager']]],
-  ['openssl_29',['OpenSSL',['../md__c_1_2_users_2_youssef_2_desktop_2_u_n_i_2_s4_2_computerspiel_entwicklung_2_das_spiel_2anfaene077cc7c5bcf0a389cded2b1f693474f.html#autotoc_md5',1,'']]]
+  ['ontriggerplayerspawneventhandler_28',['OnTriggerPlayerSpawnEventHandler',['../class_navigation_manager.html#a0dee864e0854aa918dd9b2d7a125d8dd',1,'NavigationManager']]]
 ];

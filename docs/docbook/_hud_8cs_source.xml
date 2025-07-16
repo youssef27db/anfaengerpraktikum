@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__hud_8cs_source" xml:lang="en-US">
+<title>Hud.cs</title>
+<indexterm><primary>Hud.cs</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered"><anchor xml:id="__hud_8cs_source_1l00001"/>00001 <emphasis role="keyword">using&#32;</emphasis>Godot;
+<anchor xml:id="__hud_8cs_source_1l00002"/>00002 <emphasis role="keyword">using&#32;</emphasis>System;
+<anchor xml:id="__hud_8cs_source_1l00003"/>00003 
+<anchor xml:id="__hud_8cs_source_1l00004"/>00004 
+<anchor xml:id="__hud_8cs_source_1l00008"/><link linkend="_class_hud">00008</link> <emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">partial&#32;class&#32;</emphasis><link linkend="_class_hud">Hud</link>&#32;:&#32;CanvasLayer&#32;{
+<anchor xml:id="__hud_8cs_source_1l00009"/>00009 
+<anchor xml:id="__hud_8cs_source_1l00010"/><link linkend="_class_hud_1abd53b6eed5322906449da3d67f1703be">00010</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;<link linkend="_class_hud_1abd53b6eed5322906449da3d67f1703be">AnimationPlayer</link>&#32;<link linkend="_class_hud_1abd53b6eed5322906449da3d67f1703be">AnimationPlayer</link>;
+<anchor xml:id="__hud_8cs_source_1l00011"/><link linkend="_class_hud_1ab9e20b4d660564445727ca0667048a5c">00011</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;CenterContainer&#32;<link linkend="_class_hud_1ab9e20b4d660564445727ca0667048a5c">Buttons</link>;
+<anchor xml:id="__hud_8cs_source_1l00012"/><link linkend="_class_hud_1a7fab5b075645c1cbcce79b0987bceb73">00012</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_class_hud_1a7fab5b075645c1cbcce79b0987bceb73">Enabled</link>;
+<anchor xml:id="__hud_8cs_source_1l00013"/>00013 
+<anchor xml:id="__hud_8cs_source_1l00014"/>00014 
+<anchor xml:id="__hud_8cs_source_1l00019"/><link linkend="_class_hud_1a63383b5734266ec3b601e5742de8f838">00019</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">override</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_hud_1a63383b5734266ec3b601e5742de8f838">_Ready</link>()&#32;{
+<anchor xml:id="__hud_8cs_source_1l00020"/>00020 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_hud_1abd53b6eed5322906449da3d67f1703be">AnimationPlayer</link>&#32;=&#32;GetNode&lt;AnimationPlayer&gt;(<emphasis role="stringliteral">&quot;PauseMenu/AnimationPlayer&quot;</emphasis>);
+<anchor xml:id="__hud_8cs_source_1l00021"/>00021 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_hud_1ab9e20b4d660564445727ca0667048a5c">Buttons</link>&#32;=&#32;GetNode&lt;CenterContainer&gt;(<emphasis role="stringliteral">&quot;PauseMenu/Buttons&quot;</emphasis>);
+<anchor xml:id="__hud_8cs_source_1l00022"/>00022 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_hud_1abd53b6eed5322906449da3d67f1703be">AnimationPlayer</link>.Play(<emphasis role="stringliteral">&quot;RESET&quot;</emphasis>);
+<anchor xml:id="__hud_8cs_source_1l00023"/>00023 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__hud_8cs_source_1l00024"/>00024 
+<anchor xml:id="__hud_8cs_source_1l00029"/><link linkend="_class_hud_1afe8b83ec11a8ace01976b245975e684e">00029</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">override</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_hud_1afe8b83ec11a8ace01976b245975e684e">_Process</link>(<emphasis role="keywordtype">double</emphasis>&#32;DeltaTime)&#32;{
+<anchor xml:id="__hud_8cs_source_1l00030"/>00030 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(Input.IsActionJustPressed(<emphasis role="stringliteral">&quot;escape&quot;</emphasis>)){
+<anchor xml:id="__hud_8cs_source_1l00031"/>00031 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_hud_1ab01ffd8302eac92e75c87da377711f18">TogglePause</link>();
+<anchor xml:id="__hud_8cs_source_1l00032"/>00032 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__hud_8cs_source_1l00033"/>00033 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__hud_8cs_source_1l00034"/>00034 
+<anchor xml:id="__hud_8cs_source_1l00038"/><link linkend="_class_hud_1ab01ffd8302eac92e75c87da377711f18">00038</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_hud_1ab01ffd8302eac92e75c87da377711f18">TogglePause</link>(){
+<anchor xml:id="__hud_8cs_source_1l00039"/>00039 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_hud_1a7fab5b075645c1cbcce79b0987bceb73">Enabled</link>&#32;=&#32;!<link linkend="_class_hud_1a7fab5b075645c1cbcce79b0987bceb73">Enabled</link>;
+<anchor xml:id="__hud_8cs_source_1l00040"/>00040 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;GetTree().Paused&#32;=&#32;<link linkend="_class_hud_1a7fab5b075645c1cbcce79b0987bceb73">Enabled</link>;
+<anchor xml:id="__hud_8cs_source_1l00041"/>00041 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(<link linkend="_class_hud_1a7fab5b075645c1cbcce79b0987bceb73">Enabled</link>){
+<anchor xml:id="__hud_8cs_source_1l00042"/>00042 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_hud_1abd53b6eed5322906449da3d67f1703be">AnimationPlayer</link>.Play(<emphasis role="stringliteral">&quot;Pause&quot;</emphasis>);
+<anchor xml:id="__hud_8cs_source_1l00043"/>00043 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Buttons.Visible&#32;=&#32;<emphasis role="keyword">true</emphasis>;
+<anchor xml:id="__hud_8cs_source_1l00044"/>00044 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+<anchor xml:id="__hud_8cs_source_1l00045"/>00045 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_hud_1abd53b6eed5322906449da3d67f1703be">AnimationPlayer</link>.PlayBackwards(<emphasis role="stringliteral">&quot;Pause&quot;</emphasis>);
+<anchor xml:id="__hud_8cs_source_1l00046"/>00046 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Buttons.Visible&#32;=&#32;<emphasis role="keyword">false</emphasis>;
+<anchor xml:id="__hud_8cs_source_1l00047"/>00047 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__hud_8cs_source_1l00048"/>00048 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__hud_8cs_source_1l00049"/>00049 
+<anchor xml:id="__hud_8cs_source_1l00053"/><link linkend="_class_hud_1a0c8d61fe3aec23e057d5ba6a50693b77">00053</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_hud_1a0c8d61fe3aec23e057d5ba6a50693b77">OnResumeButtonPressed</link>(){
+<anchor xml:id="__hud_8cs_source_1l00054"/>00054 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_hud_1ab01ffd8302eac92e75c87da377711f18">TogglePause</link>();
+<anchor xml:id="__hud_8cs_source_1l00055"/>00055 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__hud_8cs_source_1l00056"/>00056 
+<anchor xml:id="__hud_8cs_source_1l00060"/><link linkend="_class_hud_1ab984a267cfd8e2ce4e6add2f9a6caefe">00060</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_hud_1ab984a267cfd8e2ce4e6add2f9a6caefe">OnSaveButtonPressed</link>(){
+<anchor xml:id="__hud_8cs_source_1l00061"/>00061 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_storage_manager">StorageManager</link>.<link linkend="_class_storage_manager_1abc9f8437bf6c7954bba4d68baf5c96ce">Instance</link>.<link linkend="_class_storage_manager_1acac4cbeec13991178f4e0395011d0452">SaveAll</link>(<link linkend="_class_storage_manager">StorageManager</link>.<link linkend="_class_storage_manager_1abc9f8437bf6c7954bba4d68baf5c96ce">Instance</link>.<link linkend="_class_storage_manager_1a1db2888bb3966010740337ad6b975f3a">GetLastSaveId</link>());
+<anchor xml:id="__hud_8cs_source_1l00062"/>00062 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__hud_8cs_source_1l00063"/>00063 
+<anchor xml:id="__hud_8cs_source_1l00067"/><link linkend="_class_hud_1af4971c76e7d7b29e7a08483d949e8e19">00067</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_hud_1af4971c76e7d7b29e7a08483d949e8e19">OnSaveMenuButtonPressed</link>(){
+<anchor xml:id="__hud_8cs_source_1l00068"/>00068 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_storage_manager">StorageManager</link>.<link linkend="_class_storage_manager_1abc9f8437bf6c7954bba4d68baf5c96ce">Instance</link>.<link linkend="_class_storage_manager_1acac4cbeec13991178f4e0395011d0452">SaveAll</link>(<link linkend="_class_storage_manager">StorageManager</link>.<link linkend="_class_storage_manager_1abc9f8437bf6c7954bba4d68baf5c96ce">Instance</link>.<link linkend="_class_storage_manager_1a1db2888bb3966010740337ad6b975f3a">GetLastSaveId</link>());
+<anchor xml:id="__hud_8cs_source_1l00069"/>00069 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_navigation_manager">NavigationManager</link>.<link linkend="_class_navigation_manager_1aca7e1252e63bf4323d89b8f7d4cd4ce8">Instance</link>.<link linkend="_class_navigation_manager_1a5966bab1490d10dfc285507a0c8d8bb7">GoToLevel</link>(<emphasis role="stringliteral">&quot;main_menu&quot;</emphasis>,&#32;<emphasis role="keyword">null</emphasis>);
+<anchor xml:id="__hud_8cs_source_1l00070"/>00070 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_stats">PlayerStats</link>.<link linkend="_class_player_stats_1adeb667dbe2c1a76d1785ce07b6faf181">Instance</link>.<link linkend="_class_player_stats_1a9a513942394be2aae3457a6be9f81b9b">Reload</link>();
+<anchor xml:id="__hud_8cs_source_1l00071"/>00071 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;GetTree().Paused&#32;=&#32;<emphasis role="keyword">false</emphasis>;
+<anchor xml:id="__hud_8cs_source_1l00072"/>00072 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__hud_8cs_source_1l00073"/>00073 
+<anchor xml:id="__hud_8cs_source_1l00077"/><link linkend="_class_hud_1aecaa338f901e56a031d338278a14fa07">00077</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_hud_1aecaa338f901e56a031d338278a14fa07">OnSaveQuitButtonPressed</link>(){
+<anchor xml:id="__hud_8cs_source_1l00078"/>00078 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_storage_manager">StorageManager</link>.<link linkend="_class_storage_manager_1abc9f8437bf6c7954bba4d68baf5c96ce">Instance</link>.<link linkend="_class_storage_manager_1acac4cbeec13991178f4e0395011d0452">SaveAll</link>(<link linkend="_class_storage_manager">StorageManager</link>.<link linkend="_class_storage_manager_1abc9f8437bf6c7954bba4d68baf5c96ce">Instance</link>.<link linkend="_class_storage_manager_1a1db2888bb3966010740337ad6b975f3a">GetLastSaveId</link>());
+<anchor xml:id="__hud_8cs_source_1l00079"/>00079 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;GetTree().Quit();
+<anchor xml:id="__hud_8cs_source_1l00080"/>00080 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__hud_8cs_source_1l00081"/>00081 
+<anchor xml:id="__hud_8cs_source_1l00082"/>00082 }
+</programlisting></section>

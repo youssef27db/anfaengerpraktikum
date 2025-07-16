@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__spike_8cs_source" xml:lang="en-US">
+<title>Spike.cs</title>
+<indexterm><primary>Spike.cs</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered"><anchor xml:id="__spike_8cs_source_1l00001"/>00001 <emphasis role="keyword">using&#32;</emphasis>Godot;
+<anchor xml:id="__spike_8cs_source_1l00002"/>00002 <emphasis role="keyword">using&#32;</emphasis>System;
+<anchor xml:id="__spike_8cs_source_1l00003"/>00003 
+<anchor xml:id="__spike_8cs_source_1l00007"/><link linkend="_class_spike">00007</link> <emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">partial&#32;class&#32;</emphasis><link linkend="_class_spike">Spike</link>&#32;:&#32;Node2D
+<anchor xml:id="__spike_8cs_source_1l00008"/>00008 {
+<anchor xml:id="__spike_8cs_source_1l00009"/>00009 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Variable&#32;für&#32;Player</emphasis>
+<anchor xml:id="__spike_8cs_source_1l00010"/><link linkend="_class_spike_1a85d64c8d9c90fef419893853ae7e9942">00010</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;<link linkend="_class_player">Player</link>&#32;<link linkend="_class_spike_1a85d64c8d9c90fef419893853ae7e9942">Player</link>;
+<anchor xml:id="__spike_8cs_source_1l00011"/>00011 
+<anchor xml:id="__spike_8cs_source_1l00012"/>00012 
+<anchor xml:id="__spike_8cs_source_1l00013"/>00013 &#32;&#32;&#32;&#32;[Export]
+<anchor xml:id="__spike_8cs_source_1l00014"/><link linkend="_class_spike_1aa6e0e6494eb6bf74afaa7becf33cefe3">00014</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;<emphasis role="keywordtype">float</emphasis>&#32;<link linkend="_class_damage">Damage</link>&#32;=&#32;10f;
+<anchor xml:id="__spike_8cs_source_1l00015"/>00015 
+<anchor xml:id="__spike_8cs_source_1l00020"/><link linkend="_class_spike_1a527675080d8e2e4ee4310fb3e112a120">00020</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">override</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_spike_1a527675080d8e2e4ee4310fb3e112a120">_Ready</link>()
+<anchor xml:id="__spike_8cs_source_1l00021"/>00021 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__spike_8cs_source_1l00022"/>00022 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Zugriff&#32;auf&#32;Player&#32;Node</emphasis>
+<anchor xml:id="__spike_8cs_source_1l00023"/>00023 
+<anchor xml:id="__spike_8cs_source_1l00024"/>00024 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player">Player</link>&#32;=&#32;GetNode&lt;Player&gt;(<emphasis role="stringliteral">&quot;../../Player&quot;</emphasis>);
+<anchor xml:id="__spike_8cs_source_1l00025"/>00025 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__spike_8cs_source_1l00026"/>00026 
+<anchor xml:id="__spike_8cs_source_1l00030"/><link linkend="_class_spike_1ad359ec07f383c62c2683c1c307941f74">00030</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_spike_1ad359ec07f383c62c2683c1c307941f74">OnPlayerBodyEntered</link>(Node&#32;body)
+<anchor xml:id="__spike_8cs_source_1l00031"/>00031 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__spike_8cs_source_1l00032"/>00032 
+<anchor xml:id="__spike_8cs_source_1l00033"/>00033 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(body&#32;is&#32;<link linkend="_class_player">Player</link>)
+<anchor xml:id="__spike_8cs_source_1l00034"/>00034 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+<anchor xml:id="__spike_8cs_source_1l00035"/>00035 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player">Player</link>&#32;=&#32;(<link linkend="_class_spike_1a85d64c8d9c90fef419893853ae7e9942">Player</link>)body;&#32;<emphasis role="comment">//&#32;Instanzvariable&#32;setzen&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;</emphasis>
+<anchor xml:id="__spike_8cs_source_1l00036"/>00036 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player">Player</link>.<link linkend="_class_player_1aa1a0addae97cec09d2e86f3060a05438">TakeDamage</link>(<link linkend="_class_spike_1a089076328dd0c52b0c595f9ee9c98c33">GetDamage</link>());
+<anchor xml:id="__spike_8cs_source_1l00037"/>00037 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player">Player</link>.<link linkend="_class_player_1a0a59dfe03d542fa98f28f4c4eaa49a75">SlowPlayer</link>(0.5f);
+<anchor xml:id="__spike_8cs_source_1l00038"/>00038 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;GetNode&lt;Timer&gt;(<emphasis role="stringliteral">&quot;StaticBody2D/Area2D/Timer&quot;</emphasis>).Start();
+<anchor xml:id="__spike_8cs_source_1l00039"/>00039 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;GD.Print(<emphasis role="stringliteral">&quot;Player&#32;entered&#32;spike&quot;</emphasis>);
+<anchor xml:id="__spike_8cs_source_1l00040"/>00040 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__spike_8cs_source_1l00041"/>00041 
+<anchor xml:id="__spike_8cs_source_1l00042"/>00042 
+<anchor xml:id="__spike_8cs_source_1l00043"/>00043 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__spike_8cs_source_1l00044"/>00044 
+<anchor xml:id="__spike_8cs_source_1l00048"/><link linkend="_class_spike_1ac7ee6575608e186c3d00d17331dfc97e">00048</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_spike_1ac7ee6575608e186c3d00d17331dfc97e">OnPlayerBodyExited</link>(Node&#32;body)
+<anchor xml:id="__spike_8cs_source_1l00049"/>00049 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__spike_8cs_source_1l00050"/>00050 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(body&#32;is&#32;<link linkend="_class_player">Player</link>)
+<anchor xml:id="__spike_8cs_source_1l00051"/>00051 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+<anchor xml:id="__spike_8cs_source_1l00052"/>00052 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player">Player</link>&#32;=&#32;<emphasis role="keyword">null</emphasis>;&#32;<emphasis role="comment">//&#32;Instanzvariable&#32;zurücksetzen</emphasis>
+<anchor xml:id="__spike_8cs_source_1l00053"/>00053 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;GetNode&lt;Timer&gt;(<emphasis role="stringliteral">&quot;StaticBody2D/Area2D/Timer&quot;</emphasis>).Stop();
+<anchor xml:id="__spike_8cs_source_1l00054"/>00054 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__spike_8cs_source_1l00055"/>00055 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__spike_8cs_source_1l00056"/>00056 
+<anchor xml:id="__spike_8cs_source_1l00060"/><link linkend="_class_spike_1a1ef0f806f713e9d58eb5ef768e5a582e">00060</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_spike_1a1ef0f806f713e9d58eb5ef768e5a582e">OnTimerTimeout</link>()
+<anchor xml:id="__spike_8cs_source_1l00061"/>00061 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__spike_8cs_source_1l00062"/>00062 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;GD.Print(<emphasis role="stringliteral">&quot;Timer&#32;timeout&quot;</emphasis>);
+<anchor xml:id="__spike_8cs_source_1l00063"/>00063 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player">Player</link>.<link linkend="_class_player_1aa1a0addae97cec09d2e86f3060a05438">TakeDamage</link>(<link linkend="_class_spike_1a089076328dd0c52b0c595f9ee9c98c33">GetDamage</link>());
+<anchor xml:id="__spike_8cs_source_1l00064"/>00064 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;GetNode&lt;Timer&gt;(<emphasis role="stringliteral">&quot;StaticBody2D/Area2D/Timer&quot;</emphasis>).Start();
+<anchor xml:id="__spike_8cs_source_1l00065"/>00065 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__spike_8cs_source_1l00066"/>00066 
+<anchor xml:id="__spike_8cs_source_1l00071"/><link linkend="_class_spike_1a089076328dd0c52b0c595f9ee9c98c33">00071</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<link linkend="_class_damage">Damage</link>&#32;<link linkend="_class_spike_1a089076328dd0c52b0c595f9ee9c98c33">GetDamage</link>()
+<anchor xml:id="__spike_8cs_source_1l00072"/>00072 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__spike_8cs_source_1l00073"/>00073 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">new</emphasis>&#32;<link linkend="_class_spike_1aa6e0e6494eb6bf74afaa7becf33cefe3">Damage</link>(0,&#32;<link linkend="_class_damage">Damage</link>,&#32;Vector2.Zero,&#32;<emphasis role="keyword">this</emphasis>);
+<anchor xml:id="__spike_8cs_source_1l00074"/>00074 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__spike_8cs_source_1l00075"/>00075 }
+</programlisting></section>

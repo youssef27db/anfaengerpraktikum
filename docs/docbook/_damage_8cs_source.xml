@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__damage_8cs_source" xml:lang="en-US">
+<title>Damage.cs</title>
+<indexterm><primary>Damage.cs</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered"><anchor xml:id="__damage_8cs_source_1l00001"/>00001 <emphasis role="keyword">using&#32;</emphasis>Godot;
+<anchor xml:id="__damage_8cs_source_1l00002"/>00002 
+<anchor xml:id="__damage_8cs_source_1l00007"/><link linkend="_class_damage">00007</link> <emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">class&#32;</emphasis><link linkend="_class_damage">Damage</link>{
+<anchor xml:id="__damage_8cs_source_1l00008"/>00008 
+<anchor xml:id="__damage_8cs_source_1l00009"/><link linkend="_class_damage_1ae934748940559be5348b29b2d66a4949">00009</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;<emphasis role="keywordtype">float</emphasis>&#32;<link linkend="_class_damage_1ae934748940559be5348b29b2d66a4949">PhysicalDMG</link>;
+<anchor xml:id="__damage_8cs_source_1l00010"/><link linkend="_class_damage_1a35802df99cc5bb93d22e9e7c5b039f9a">00010</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;<emphasis role="keywordtype">float</emphasis>&#32;<link linkend="_class_damage_1a35802df99cc5bb93d22e9e7c5b039f9a">TrueDMG</link>;
+<anchor xml:id="__damage_8cs_source_1l00011"/><link linkend="_class_damage_1ab3c892c04820406c50102d9471d0fc9d">00011</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;Vector2&#32;<link linkend="_class_damage_1ab3c892c04820406c50102d9471d0fc9d">PushAmount</link>;
+<anchor xml:id="__damage_8cs_source_1l00012"/><link linkend="_class_damage_1a97ac7df60d926ce18242bba40e5d500f">00012</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;Node2D&#32;<link linkend="_class_damage_1a97ac7df60d926ce18242bba40e5d500f">Source</link>;
+<anchor xml:id="__damage_8cs_source_1l00013"/>00013 
+<anchor xml:id="__damage_8cs_source_1l00020"/><link linkend="_class_damage_1a078b1c0b6cb42cd0d3c4bf74e3ca4454">00020</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<link linkend="_class_damage_1a078b1c0b6cb42cd0d3c4bf74e3ca4454">Damage</link>(<emphasis role="keywordtype">float</emphasis>&#32;<link linkend="_class_damage_1ae934748940559be5348b29b2d66a4949">PhysicalDMG</link>,&#32;<emphasis role="keywordtype">float</emphasis>&#32;<link linkend="_class_damage_1a35802df99cc5bb93d22e9e7c5b039f9a">TrueDMG</link>,&#32;Vector2&#32;<link linkend="_class_damage_1ab3c892c04820406c50102d9471d0fc9d">PushAmount</link>,&#32;Node2D&#32;<link linkend="_class_damage_1a97ac7df60d926ce18242bba40e5d500f">Source</link>){
+<anchor xml:id="__damage_8cs_source_1l00021"/>00021 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this.PhysicalDMG&#32;=&#32;<link linkend="_class_damage_1ae934748940559be5348b29b2d66a4949">PhysicalDMG</link>;
+<anchor xml:id="__damage_8cs_source_1l00022"/>00022 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this.TrueDMG&#32;=&#32;<link linkend="_class_damage_1a35802df99cc5bb93d22e9e7c5b039f9a">TrueDMG</link>;
+<anchor xml:id="__damage_8cs_source_1l00023"/>00023 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this.PushAmount&#32;=&#32;<link linkend="_class_damage_1ab3c892c04820406c50102d9471d0fc9d">PushAmount</link>;
+<anchor xml:id="__damage_8cs_source_1l00024"/>00024 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this.Source&#32;=&#32;<link linkend="_class_damage_1a97ac7df60d926ce18242bba40e5d500f">Source</link>;
+<anchor xml:id="__damage_8cs_source_1l00025"/>00025 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__damage_8cs_source_1l00026"/>00026 
+<anchor xml:id="__damage_8cs_source_1l00031"/><link linkend="_class_damage_1a084fad418a6be9edca3e3e32355e49c0">00031</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keywordtype">float</emphasis>&#32;<link linkend="_class_damage_1a084fad418a6be9edca3e3e32355e49c0">GetPhysicalDMG</link>(){
+<anchor xml:id="__damage_8cs_source_1l00032"/>00032 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_class_damage_1ae934748940559be5348b29b2d66a4949">PhysicalDMG</link>;
+<anchor xml:id="__damage_8cs_source_1l00033"/>00033 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__damage_8cs_source_1l00034"/>00034 
+<anchor xml:id="__damage_8cs_source_1l00039"/><link linkend="_class_damage_1a4d43580112f089c208f9ba8e0b2559f0">00039</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keywordtype">float</emphasis>&#32;<link linkend="_class_damage_1a4d43580112f089c208f9ba8e0b2559f0">GetTrueDMG</link>(){
+<anchor xml:id="__damage_8cs_source_1l00040"/>00040 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_class_damage_1a35802df99cc5bb93d22e9e7c5b039f9a">TrueDMG</link>;
+<anchor xml:id="__damage_8cs_source_1l00041"/>00041 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__damage_8cs_source_1l00042"/>00042 
+<anchor xml:id="__damage_8cs_source_1l00047"/><link linkend="_class_damage_1a60741a1e632c21788499ddc284b2844b">00047</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;Vector2&#32;<link linkend="_class_damage_1a60741a1e632c21788499ddc284b2844b">GetPushAmount</link>(){
+<anchor xml:id="__damage_8cs_source_1l00048"/>00048 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_class_damage_1ab3c892c04820406c50102d9471d0fc9d">PushAmount</link>;
+<anchor xml:id="__damage_8cs_source_1l00049"/>00049 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__damage_8cs_source_1l00050"/>00050 
+<anchor xml:id="__damage_8cs_source_1l00055"/><link linkend="_class_damage_1ac446ed14eae2ee0d927510a3ab525042">00055</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;Node2D&#32;<link linkend="_class_damage_1ac446ed14eae2ee0d927510a3ab525042">GetSource</link>(){
+<anchor xml:id="__damage_8cs_source_1l00056"/>00056 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_class_damage_1a97ac7df60d926ce18242bba40e5d500f">Source</link>;
+<anchor xml:id="__damage_8cs_source_1l00057"/>00057 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__damage_8cs_source_1l00058"/>00058 }
+</programlisting></section>

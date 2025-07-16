@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__boss1_8cs_source" xml:lang="en-US">
+<title>Boss1.cs</title>
+<indexterm><primary>Boss1.cs</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered"><anchor xml:id="__boss1_8cs_source_1l00001"/>00001 <emphasis role="keyword">using&#32;</emphasis>Godot;
+<anchor xml:id="__boss1_8cs_source_1l00002"/>00002 <emphasis role="keyword">using&#32;</emphasis>System;
+<anchor xml:id="__boss1_8cs_source_1l00003"/>00003 
+<anchor xml:id="__boss1_8cs_source_1l00007"/><link linkend="_class_boss1">00007</link> <emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">partial&#32;class&#32;</emphasis><link linkend="_class_boss1">Boss1</link>&#32;:&#32;<link linkend="_class_base_enemy">BaseEnemy</link>{
+<anchor xml:id="__boss1_8cs_source_1l00008"/>00008 
+<anchor xml:id="__boss1_8cs_source_1l00009"/><link linkend="_class_boss1_1af34e5a49e4e66b404a0f5ba6e0dcfdf5">00009</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_class_boss1_1af34e5a49e4e66b404a0f5ba6e0dcfdf5">EnemiesRevived</link>&#32;=&#32;<emphasis role="keyword">false</emphasis>;
+<anchor xml:id="__boss1_8cs_source_1l00010"/><link linkend="_class_boss1_1a0a05bef3b6a4852c18ee805f785c8a67">00010</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;<emphasis role="keywordtype">float</emphasis>&#32;<link linkend="_class_boss1_1a0a05bef3b6a4852c18ee805f785c8a67">RegenCooldown</link>&#32;=&#32;5.0f;&#32;<emphasis role="comment">//&#32;Zeit,&#32;nach&#32;der&#32;Regeneration&#32;beginnt,&#32;wenn&#32;kein&#32;Schaden&#32;genommen&#32;wurde</emphasis>
+<anchor xml:id="__boss1_8cs_source_1l00011"/><link linkend="_class_boss1_1a1ffe13684ef66b1ec26b87e728b83cb0">00011</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;<emphasis role="keywordtype">float</emphasis>&#32;<link linkend="_class_boss1_1a1ffe13684ef66b1ec26b87e728b83cb0">RegenTimer</link>&#32;=&#32;0.0f;&#32;<emphasis role="comment">//&#32;Timer&#32;für&#32;die&#32;Zeit&#32;seit&#32;dem&#32;letzten&#32;Angriff</emphasis>
+<anchor xml:id="__boss1_8cs_source_1l00012"/><link linkend="_class_boss1_1ac698e027fada02bcf0bea5e2c756711c">00012</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;<emphasis role="keywordtype">float</emphasis>&#32;<link linkend="_class_boss1_1ac698e027fada02bcf0bea5e2c756711c">RegenAmount</link>&#32;=&#32;10.0f;&#32;<emphasis role="comment">//&#32;Menge&#32;an&#32;Gesundheit,&#32;die&#32;pro&#32;Tick&#32;regeneriert&#32;wird</emphasis>
+<anchor xml:id="__boss1_8cs_source_1l00013"/>00013 
+<anchor xml:id="__boss1_8cs_source_1l00014"/>00014 
+<anchor xml:id="__boss1_8cs_source_1l00018"/><link linkend="_class_boss1_1a54d969ea1903e38368d64dad18a7f4f7">00018</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">override</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_boss1_1a54d969ea1903e38368d64dad18a7f4f7">_Ready</link>(){
+<anchor xml:id="__boss1_8cs_source_1l00019"/>00019 
+<anchor xml:id="__boss1_8cs_source_1l00020"/>00020 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_base_enemy_1aeb1033802e3cdf44b1b0a510cbf18425">MaxHealthPoints</link>&#32;=&#32;400f;
+<anchor xml:id="__boss1_8cs_source_1l00021"/>00021 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_damage">Damage</link>&#32;=&#32;50f;
+<anchor xml:id="__boss1_8cs_source_1l00022"/>00022 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_base_enemy_1a66b9b6f8492753769f40e18e66babe6d">Armor</link>&#32;=&#32;30f;
+<anchor xml:id="__boss1_8cs_source_1l00023"/>00023 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_base_enemy_1a661de31833c943c7d7d72de616a9141a">Speed</link>&#32;=&#32;10f;
+<anchor xml:id="__boss1_8cs_source_1l00024"/>00024 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_base_enemy_1afa7426d08cbee4ed3184822c57888ec7">SinAmount</link>&#32;=&#32;100;&#32;<emphasis role="comment">//&#32;Bonuspunkte&#32;für&#32;Spieler&#32;beim&#32;Besiegen&#32;des&#32;Bosses</emphasis>
+<anchor xml:id="__boss1_8cs_source_1l00025"/>00025 
+<anchor xml:id="__boss1_8cs_source_1l00026"/>00026 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;base._Ready();
+<anchor xml:id="__boss1_8cs_source_1l00027"/>00027 
+<anchor xml:id="__boss1_8cs_source_1l00028"/>00028 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_base_enemy_1ad8681385a9f3e9e67d65acb6b945efcf">CurrentHealthPoints</link>&#32;=&#32;<link linkend="_class_base_enemy_1aeb1033802e3cdf44b1b0a510cbf18425">MaxHealthPoints</link>;
+<anchor xml:id="__boss1_8cs_source_1l00029"/>00029 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;HealthBar.Value&#32;=&#32;100f&#32;*&#32;<link linkend="_class_base_enemy_1ad8681385a9f3e9e67d65acb6b945efcf">CurrentHealthPoints</link>&#32;/&#32;<link linkend="_class_base_enemy_1aeb1033802e3cdf44b1b0a510cbf18425">MaxHealthPoints</link>;
+<anchor xml:id="__boss1_8cs_source_1l00030"/>00030 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__boss1_8cs_source_1l00031"/>00031 
+<anchor xml:id="__boss1_8cs_source_1l00036"/><link linkend="_class_boss1_1acf5c78871a8938129df05bba3b71780f">00036</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">override</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_boss1_1acf5c78871a8938129df05bba3b71780f">_Process</link>(<emphasis role="keywordtype">double</emphasis>&#32;DeltaTime){
+<anchor xml:id="__boss1_8cs_source_1l00037"/>00037 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;base._Process(DeltaTime);
+<anchor xml:id="__boss1_8cs_source_1l00038"/>00038 
+<anchor xml:id="__boss1_8cs_source_1l00039"/>00039 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="_class_base_enemy_1ad8681385a9f3e9e67d65acb6b945efcf">CurrentHealthPoints</link>&#32;&lt;=&#32;<link linkend="_class_base_enemy_1aeb1033802e3cdf44b1b0a510cbf18425">MaxHealthPoints</link>&#32;/&#32;2&#32;&amp;&amp;&#32;!<link linkend="_class_boss1_1af34e5a49e4e66b404a0f5ba6e0dcfdf5">EnemiesRevived</link>){
+<anchor xml:id="__boss1_8cs_source_1l00040"/>00040 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_boss1_1a3028f486f7e9cde1116086a4ae7b810e">StartGlowing</link>();
+<anchor xml:id="__boss1_8cs_source_1l00041"/>00041 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_boss1_1aba2c531c46124f21ec612a2acd14cd6c">ReviveEnemies</link>();
+<anchor xml:id="__boss1_8cs_source_1l00042"/>00042 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_boss1_1af34e5a49e4e66b404a0f5ba6e0dcfdf5">EnemiesRevived</link>&#32;=&#32;<emphasis role="keyword">true</emphasis>;
+<anchor xml:id="__boss1_8cs_source_1l00043"/>00043 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_base_enemy_1a66b9b6f8492753769f40e18e66babe6d">Armor</link>&#32;=&#32;60f;&#32;<emphasis role="comment">//&#32;Rüstung&#32;erhöhen</emphasis>
+<anchor xml:id="__boss1_8cs_source_1l00044"/>00044 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__boss1_8cs_source_1l00045"/>00045 
+<anchor xml:id="__boss1_8cs_source_1l00046"/>00046 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_boss1_1adeeb5dafaa8e2f640adba4339b6da0f9">HandleRegeneration</link>(DeltaTime);
+<anchor xml:id="__boss1_8cs_source_1l00047"/>00047 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__boss1_8cs_source_1l00048"/>00048 
+<anchor xml:id="__boss1_8cs_source_1l00053"/><link linkend="_class_boss1_1adeeb5dafaa8e2f640adba4339b6da0f9">00053</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_boss1_1adeeb5dafaa8e2f640adba4339b6da0f9">HandleRegeneration</link>(<emphasis role="keywordtype">double</emphasis>&#32;DeltaTime){
+<anchor xml:id="__boss1_8cs_source_1l00054"/>00054 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="_class_base_enemy_1ad8681385a9f3e9e67d65acb6b945efcf">CurrentHealthPoints</link>&#32;&lt;&#32;<link linkend="_class_base_enemy_1aeb1033802e3cdf44b1b0a510cbf18425">MaxHealthPoints</link>){
+<anchor xml:id="__boss1_8cs_source_1l00055"/>00055 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_boss1_1a1ffe13684ef66b1ec26b87e728b83cb0">RegenTimer</link>&#32;+=&#32;(float)DeltaTime;
+<anchor xml:id="__boss1_8cs_source_1l00056"/>00056 
+<anchor xml:id="__boss1_8cs_source_1l00057"/>00057 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="_class_boss1_1a1ffe13684ef66b1ec26b87e728b83cb0">RegenTimer</link>&#32;&gt;=&#32;<link linkend="_class_boss1_1a0a05bef3b6a4852c18ee805f785c8a67">RegenCooldown</link>){
+<anchor xml:id="__boss1_8cs_source_1l00058"/>00058 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_base_enemy_1ad8681385a9f3e9e67d65acb6b945efcf">CurrentHealthPoints</link>&#32;=&#32;Math.Min(<link linkend="_class_base_enemy_1ad8681385a9f3e9e67d65acb6b945efcf">CurrentHealthPoints</link>&#32;+&#32;<link linkend="_class_boss1_1ac698e027fada02bcf0bea5e2c756711c">RegenAmount</link>,&#32;<link linkend="_class_base_enemy_1aeb1033802e3cdf44b1b0a510cbf18425">MaxHealthPoints</link>);
+<anchor xml:id="__boss1_8cs_source_1l00059"/>00059 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;HealthBar.Value&#32;=&#32;100f&#32;*&#32;<link linkend="_class_base_enemy_1ad8681385a9f3e9e67d65acb6b945efcf">CurrentHealthPoints</link>&#32;/&#32;<link linkend="_class_base_enemy_1aeb1033802e3cdf44b1b0a510cbf18425">MaxHealthPoints</link>;
+<anchor xml:id="__boss1_8cs_source_1l00060"/>00060 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_boss1_1a1ffe13684ef66b1ec26b87e728b83cb0">RegenTimer</link>&#32;=&#32;0.0f;&#32;<emphasis role="comment">//&#32;Timer&#32;zurücksetzen</emphasis>
+<anchor xml:id="__boss1_8cs_source_1l00061"/>00061 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__boss1_8cs_source_1l00062"/>00062 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__boss1_8cs_source_1l00063"/>00063 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__boss1_8cs_source_1l00064"/>00064 
+<anchor xml:id="__boss1_8cs_source_1l00068"/><link linkend="_class_boss1_1a3028f486f7e9cde1116086a4ae7b810e">00068</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_boss1_1a3028f486f7e9cde1116086a4ae7b810e">StartGlowing</link>(){
+<anchor xml:id="__boss1_8cs_source_1l00069"/>00069 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Ändere&#32;die&#32;Modulationsfarbe&#32;des&#32;Sprites,&#32;um&#32;ein&#32;Leuchten&#32;zu&#32;simulieren</emphasis>
+<anchor xml:id="__boss1_8cs_source_1l00070"/>00070 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="_class_base_enemy_1a2e4bd99e594a6c3366f64ab47c7443b5">Sprite</link>&#32;!=&#32;<emphasis role="keyword">null</emphasis>){
+<anchor xml:id="__boss1_8cs_source_1l00071"/>00071 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_boss1_1a7f37f00687f7c0e51fde5ba281150091">ShowPopupMessage</link>(<emphasis role="stringliteral">&quot;AHHHH!!!&quot;</emphasis>);
+<anchor xml:id="__boss1_8cs_source_1l00072"/>00072 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Sprite.Modulate&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;Color(1.0f,&#32;0.84f,&#32;0.0f,&#32;1.0f);&#32;<emphasis role="comment">//&#32;Ein&#32;goldliche&#32;Leuchteffekt</emphasis>
+<anchor xml:id="__boss1_8cs_source_1l00073"/>00073 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__boss1_8cs_source_1l00074"/>00074 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__boss1_8cs_source_1l00075"/>00075 
+<anchor xml:id="__boss1_8cs_source_1l00080"/><link linkend="_class_boss1_1a7f37f00687f7c0e51fde5ba281150091">00080</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_boss1_1a7f37f00687f7c0e51fde5ba281150091">ShowPopupMessage</link>(<emphasis role="keywordtype">string</emphasis>&#32;Message){
+<anchor xml:id="__boss1_8cs_source_1l00081"/>00081 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Label&#32;popup&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;Label();
+<anchor xml:id="__boss1_8cs_source_1l00082"/>00082 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;popup.Text&#32;=&#32;Message;
+<anchor xml:id="__boss1_8cs_source_1l00083"/>00083 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;popup.AddThemeColorOverride(<emphasis role="stringliteral">&quot;font_color&quot;</emphasis>,&#32;<emphasis role="keyword">new</emphasis>&#32;Color(1,&#32;0,&#32;0));&#32;<emphasis role="comment">//&#32;Rot</emphasis>
+<anchor xml:id="__boss1_8cs_source_1l00084"/>00084 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;popup.Modulate&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;Color(1,&#32;1,&#32;1,&#32;0);&#32;<emphasis role="comment">//&#32;Start&#32;transparent</emphasis>
+<anchor xml:id="__boss1_8cs_source_1l00085"/>00085 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;popup.AutowrapMode&#32;=&#32;TextServer.AutowrapMode.Word;
+<anchor xml:id="__boss1_8cs_source_1l00086"/>00086 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;popup.SizeFlagsHorizontal&#32;=&#32;(Control.SizeFlags)(<emphasis role="keywordtype">int</emphasis>)Control.SizeFlags.ExpandFill;
+<anchor xml:id="__boss1_8cs_source_1l00087"/>00087 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;popup.SizeFlagsVertical&#32;=&#32;(Control.SizeFlags)(<emphasis role="keywordtype">int</emphasis>)Control.SizeFlags.ShrinkCenter;
+<anchor xml:id="__boss1_8cs_source_1l00088"/>00088 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;popup.HorizontalAlignment&#32;=&#32;HorizontalAlignment.Center;
+<anchor xml:id="__boss1_8cs_source_1l00089"/>00089 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;popup.VerticalAlignment&#32;=&#32;VerticalAlignment.Center;
+<anchor xml:id="__boss1_8cs_source_1l00090"/>00090 
+<anchor xml:id="__boss1_8cs_source_1l00091"/>00091 
+<anchor xml:id="__boss1_8cs_source_1l00092"/>00092 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Vector2&#32;bossGlobalPosition&#32;=&#32;GetGlobalTransformWithCanvas().Origin;
+<anchor xml:id="__boss1_8cs_source_1l00093"/>00093 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;popup.GlobalPosition&#32;=&#32;bossGlobalPosition&#32;+&#32;<emphasis role="keyword">new</emphasis>&#32;Vector2(0,&#32;-100);
+<anchor xml:id="__boss1_8cs_source_1l00094"/>00094 
+<anchor xml:id="__boss1_8cs_source_1l00095"/>00095 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;CanvasLayer&#32;canvas&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;CanvasLayer();
+<anchor xml:id="__boss1_8cs_source_1l00096"/>00096 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;AddChild(canvas);
+<anchor xml:id="__boss1_8cs_source_1l00097"/>00097 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;canvas.AddChild(popup);
+<anchor xml:id="__boss1_8cs_source_1l00098"/>00098 
+<anchor xml:id="__boss1_8cs_source_1l00099"/>00099 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;var&#32;tween&#32;=&#32;CreateTween();
+<anchor xml:id="__boss1_8cs_source_1l00100"/>00100 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;tween.TweenProperty(popup,&#32;<emphasis role="stringliteral">&quot;modulate:a&quot;</emphasis>,&#32;1,&#32;0.5f).From(0);&#32;<emphasis role="comment">//&#32;Einblenden</emphasis>
+<anchor xml:id="__boss1_8cs_source_1l00101"/>00101 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;tween.TweenProperty(popup,&#32;<emphasis role="stringliteral">&quot;modulate:a&quot;</emphasis>,&#32;0,&#32;0.5f).From(1).SetDelay(1.0f);&#32;<emphasis role="comment">//&#32;Ausblenden&#32;nach&#32;1&#32;Sekunde</emphasis>
+<anchor xml:id="__boss1_8cs_source_1l00102"/>00102 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;tween.Connect(<emphasis role="stringliteral">&quot;finished&quot;</emphasis>,&#32;<emphasis role="keyword">new</emphasis>&#32;Callable(popup,&#32;<emphasis role="stringliteral">&quot;queue_free&quot;</emphasis>));
+<anchor xml:id="__boss1_8cs_source_1l00103"/>00103 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__boss1_8cs_source_1l00104"/>00104 
+<anchor xml:id="__boss1_8cs_source_1l00108"/><link linkend="_class_boss1_1aba2c531c46124f21ec612a2acd14cd6c">00108</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_boss1_1aba2c531c46124f21ec612a2acd14cd6c">ReviveEnemies</link>()
+<anchor xml:id="__boss1_8cs_source_1l00109"/>00109 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__boss1_8cs_source_1l00110"/>00110 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Hole&#32;den&#32;Elternknoten&#32;(bossRoom)</emphasis>
+<anchor xml:id="__boss1_8cs_source_1l00111"/>00111 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Node&#32;BossRoom&#32;=&#32;GetParent();
+<anchor xml:id="__boss1_8cs_source_1l00112"/>00112 
+<anchor xml:id="__boss1_8cs_source_1l00113"/>00113 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Iteriere&#32;durch&#32;alle&#32;Kinder&#32;von&#32;bossRoom</emphasis>
+<anchor xml:id="__boss1_8cs_source_1l00114"/>00114 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">foreach</emphasis>&#32;(Node&#32;Child&#32;<emphasis role="keywordflow">in</emphasis>&#32;BossRoom.GetChildren()){
+<anchor xml:id="__boss1_8cs_source_1l00115"/>00115 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(Child&#32;is&#32;<link linkend="_class_base_enemy">BaseEnemy</link>&#32;<link linkend="_class_base_enemy">BaseEnemy</link>&#32;&amp;&amp;&#32;<link linkend="_class_base_enemy">BaseEnemy</link>.<link linkend="_class_base_enemy_1a27c3947769522b35b537e5f472ef0b77">IsDead</link>()){
+<anchor xml:id="__boss1_8cs_source_1l00116"/>00116 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_base_enemy">BaseEnemy</link>.<link linkend="_class_base_enemy_1a9ef92c3f73170538681e665e78e2279a">Respawn</link>();
+<anchor xml:id="__boss1_8cs_source_1l00117"/>00117 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__boss1_8cs_source_1l00118"/>00118 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__boss1_8cs_source_1l00119"/>00119 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__boss1_8cs_source_1l00120"/>00120 }
+</programlisting></section>

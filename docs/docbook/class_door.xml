@@ -1,0 +1,164 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_door" xml:lang="en-US">
+<title>Door Class Reference</title>
+<indexterm><primary>Door</primary></indexterm>
+<para>
+
+<para>Klasse für die Tür. </para>
+ 
+</para>
+<para>Inheritance diagram for Door:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_door.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>override void <link linkend="_class_door_1acdbb6f0657a0a9e1e3ab0ed1dfaca9fa">_Ready</link> ()</para>
+
+<para>Initialisierung der Node Spawn. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>Node <link linkend="_class_door_1a290c3dafcd3a048d4a5869033bc7a98f">Spawn</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Properties    </title>
+        <itemizedlist>
+            <listitem><para>string <link linkend="_class_door_1a75837f996fd6f3c4deb6bf37065c7207">DestinationLevelTag</link><computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+            <listitem><para>string <link linkend="_class_door_1a4fe67fb3f6df67823b01168ba2031667">DestinationDoorTag</link><computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+            <listitem><para>string <link linkend="_class_door_1a4f26c87ed2646e120c5a53f7688ea1c3">SpawnDirection</link> = &quot;up&quot;<computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Private Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_class_door_1abbb28ab791faecda19ca1add4209c768">OnPlayerBodyEntered</link> (Node body)</para>
+
+<para>Diese Funktion wird aufgerufen, wenn der <link linkend="_class_player">Player</link> die Tür betritt. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Klasse für die Tür. </para>
+
+
+
+<para>Die Klasse ist für den Wechsel zwischen den Levels zuständig. </para>
+<para>
+Definition at line <link linkend="__door_8cs_source_1l00008">8</link> of file <link linkend="__door_8cs_source">Door.cs</link>.</para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_door_1acdbb6f0657a0a9e1e3ab0ed1dfaca9fa"/><section>
+    <title>_Ready()</title>
+<indexterm><primary>_Ready</primary><secondary>Door</secondary></indexterm>
+<indexterm><primary>Door</primary><secondary>_Ready</secondary></indexterm>
+<para><computeroutput>override void Door._Ready ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Initialisierung der Node Spawn. </para>
+</para>
+<para>
+Definition at line <link linkend="__door_8cs_source_1l00026">26</link> of file <link linkend="__door_8cs_source">Door.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00027 &#32;&#32;&#32;&#32;{
+00028 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_door_1a290c3dafcd3a048d4a5869033bc7a98f">Spawn</link>&#32;=&#32;GetNode(<emphasis role="stringliteral">&quot;Spawn&quot;</emphasis>);
+00029 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_door_1abbb28ab791faecda19ca1add4209c768"/><section>
+    <title>OnPlayerBodyEntered()</title>
+<indexterm><primary>OnPlayerBodyEntered</primary><secondary>Door</secondary></indexterm>
+<indexterm><primary>Door</primary><secondary>OnPlayerBodyEntered</secondary></indexterm>
+<para><computeroutput>void Door.OnPlayerBodyEntered (Node body)<computeroutput>[inline]</computeroutput>, <computeroutput>[private]</computeroutput></computeroutput></para><para>
+
+<para>Diese Funktion wird aufgerufen, wenn der <link linkend="_class_player">Player</link> die Tür betritt. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>body</entry><entry>
+<para>Der Körper, der die Tür betritt </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line <link linkend="__door_8cs_source_1l00036">36</link> of file <link linkend="__door_8cs_source">Door.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00037 &#32;&#32;&#32;&#32;{
+00038 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(body&#32;is&#32;<link linkend="_class_player">Player</link>&#32;player)
+00039 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00040 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;var&#32;<link linkend="_class_navigation_manager">NavigationManager</link>&#32;=&#32;GetNode&lt;NavigationManager&gt;(<emphasis role="stringliteral">&quot;/root/NavigationManager&quot;</emphasis>);
+00041 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_navigation_manager">NavigationManager</link>.<link linkend="_class_navigation_manager_1a5966bab1490d10dfc285507a0c8d8bb7">GoToLevel</link>(<link linkend="_class_door_1a75837f996fd6f3c4deb6bf37065c7207">DestinationLevelTag</link>,&#32;<link linkend="_class_door_1a4fe67fb3f6df67823b01168ba2031667">DestinationDoorTag</link>);
+00042 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00043 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_class_door_1a290c3dafcd3a048d4a5869033bc7a98f"/><section>
+    <title>Spawn</title>
+<indexterm><primary>Spawn</primary><secondary>Door</secondary></indexterm>
+<indexterm><primary>Door</primary><secondary>Spawn</secondary></indexterm>
+<para><computeroutput>Node Door.Spawn</computeroutput></para><para>
+Definition at line <link linkend="__door_8cs_source_1l00010">10</link> of file <link linkend="__door_8cs_source">Door.cs</link>.</para>
+</section>
+</section>
+<section>
+<title>Property Documentation</title>
+<anchor xml:id="_class_door_1a4fe67fb3f6df67823b01168ba2031667"/><section>
+    <title>DestinationDoorTag</title>
+<indexterm><primary>DestinationDoorTag</primary><secondary>Door</secondary></indexterm>
+<indexterm><primary>Door</primary><secondary>DestinationDoorTag</secondary></indexterm>
+<para><computeroutput>string Door.DestinationDoorTag<computeroutput>[get]</computeroutput>, <computeroutput>[set]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__door_8cs_source_1l00016">16</link> of file <link linkend="__door_8cs_source">Door.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00016 {&#32;<emphasis role="keyword">get</emphasis>;&#32;<emphasis role="keyword">set</emphasis>;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_door_1a75837f996fd6f3c4deb6bf37065c7207"/><section>
+    <title>DestinationLevelTag</title>
+<indexterm><primary>DestinationLevelTag</primary><secondary>Door</secondary></indexterm>
+<indexterm><primary>Door</primary><secondary>DestinationLevelTag</secondary></indexterm>
+<para><computeroutput>string Door.DestinationLevelTag<computeroutput>[get]</computeroutput>, <computeroutput>[set]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__door_8cs_source_1l00013">13</link> of file <link linkend="__door_8cs_source">Door.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00013 {&#32;<emphasis role="keyword">get</emphasis>;&#32;<emphasis role="keyword">set</emphasis>;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_door_1a4f26c87ed2646e120c5a53f7688ea1c3"/><section>
+    <title>SpawnDirection</title>
+<indexterm><primary>SpawnDirection</primary><secondary>Door</secondary></indexterm>
+<indexterm><primary>Door</primary><secondary>SpawnDirection</secondary></indexterm>
+<para><computeroutput>string Door.SpawnDirection = &quot;up&quot;<computeroutput>[get]</computeroutput>, <computeroutput>[set]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__door_8cs_source_1l00019">19</link> of file <link linkend="__door_8cs_source">Door.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00019 {&#32;<emphasis role="keyword">get</emphasis>;&#32;<emphasis role="keyword">set</emphasis>;&#32;}&#32;=&#32;<emphasis role="stringliteral">&quot;up&quot;</emphasis>;
+</programlisting></section>
+<para>
+The documentation for this class was generated from the following file:</para>
+<link linkend="__door_8cs">Door.cs</link></section>
+</section>

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['healthbar_0',['HealthBar',['../class_health_bar.html',1,'']]],
-  ['hud_1',['Hud',['../class_hud.html',1,'']]]
+  ['interactable_0',['Interactable',['../class_interactable.html',1,'']]]
 ];

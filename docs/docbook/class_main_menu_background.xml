@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_main_menu_background" xml:lang="en-US">
+<title>MainMenuBackground Class Reference</title>
+<indexterm><primary>MainMenuBackground</primary></indexterm>
+<para>
+
+<para>Klasse für die MainMenuBackground-Animation. </para>
+ 
+</para>
+<para>Inheritance diagram for MainMenuBackground:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_main_menu_background.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>override void <link linkend="_class_main_menu_background_1af1ec3357af6dcb87856edd294f7e7bdb">_Process</link> (double DeltaTime)</para>
+
+<para>Methode wird in jedem Frame ausgeführt. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Private Attributes    </title>
+        <itemizedlist>
+            <listitem><para>float <link linkend="_class_main_menu_background_1a9f98d5689cf2bb4aea2d50f113903ef3">ScrollSpeed</link> = -10f</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Klasse für die MainMenuBackground-Animation. </para>
+<para>
+Definition at line <link linkend="__main_menu_background_8cs_source_1l00007">7</link> of file <link linkend="__main_menu_background_8cs_source">MainMenuBackground.cs</link>.</para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_main_menu_background_1af1ec3357af6dcb87856edd294f7e7bdb"/><section>
+    <title>_Process()</title>
+<indexterm><primary>_Process</primary><secondary>MainMenuBackground</secondary></indexterm>
+<indexterm><primary>MainMenuBackground</primary><secondary>_Process</secondary></indexterm>
+<para><computeroutput>override void MainMenuBackground._Process (double DeltaTime)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Methode wird in jedem Frame ausgeführt. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>DeltaTime</entry><entry>
+<para>Zeit seit dem letzten Frame. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line <link linkend="__main_menu_background_8cs_source_1l00016">16</link> of file <link linkend="__main_menu_background_8cs_source">MainMenuBackground.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00016 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00017 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">float</emphasis>&#32;X&#32;=&#32;GetMotionOffset().X;
+00018 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;X&#32;+=&#32;<link linkend="_class_main_menu_background_1a9f98d5689cf2bb4aea2d50f113903ef3">ScrollSpeed</link>&#32;*&#32;(float)&#32;DeltaTime;
+00019 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SetMotionOffset(<emphasis role="keyword">new</emphasis>&#32;Vector2(X,0));
+00020 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_class_main_menu_background_1a9f98d5689cf2bb4aea2d50f113903ef3"/><section>
+    <title>ScrollSpeed</title>
+<indexterm><primary>ScrollSpeed</primary><secondary>MainMenuBackground</secondary></indexterm>
+<indexterm><primary>MainMenuBackground</primary><secondary>ScrollSpeed</secondary></indexterm>
+<para><computeroutput>float MainMenuBackground.ScrollSpeed = -10f<computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__main_menu_background_8cs_source_1l00010">10</link> of file <link linkend="__main_menu_background_8cs_source">MainMenuBackground.cs</link>.</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+<link linkend="__main_menu_background_8cs">MainMenuBackground.cs</link></section>
+</section>

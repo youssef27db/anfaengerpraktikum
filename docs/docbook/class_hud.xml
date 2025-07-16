@@ -1,0 +1,239 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_hud" xml:lang="en-US">
+<title>Hud Class Reference</title>
+<indexterm><primary>Hud</primary></indexterm>
+<para>
+
+<para>Klasse für das PauseMenu. </para>
+ 
+</para>
+<para>Inheritance diagram for Hud:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_hud.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>override void <link linkend="_class_hud_1a63383b5734266ec3b601e5742de8f838">_Ready</link> ()</para>
+
+<para>Initialisierung der Referenzen. Findet die relevanten Knoten in der Szene und weist sie zu. </para>
+</listitem>
+            <listitem><para>override void <link linkend="_class_hud_1afe8b83ec11a8ace01976b245975e684e">_Process</link> (double DeltaTime)</para>
+
+<para>Methode wird in jedem Frame ausgeführt. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_hud_1a0c8d61fe3aec23e057d5ba6a50693b77">OnResumeButtonPressed</link> ()</para>
+
+<para>Signal für den Resume-Button. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_hud_1ab984a267cfd8e2ce4e6add2f9a6caefe">OnSaveButtonPressed</link> ()</para>
+
+<para>Signal für den Save-Button. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_hud_1af4971c76e7d7b29e7a08483d949e8e19">OnSaveMenuButtonPressed</link> ()</para>
+
+<para>Signal für den SaveAndReturnToMenu-Button. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_hud_1aecaa338f901e56a031d338278a14fa07">OnSaveQuitButtonPressed</link> ()</para>
+
+<para>Signal für den SaveAndQuit-Button. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Private Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_class_hud_1ab01ffd8302eac92e75c87da377711f18">TogglePause</link> ()</para>
+
+<para>Toggled die Pause Funktion. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Private Attributes    </title>
+        <itemizedlist>
+            <listitem><para>AnimationPlayer <link linkend="_class_hud_1abd53b6eed5322906449da3d67f1703be">AnimationPlayer</link></para>
+</listitem>
+            <listitem><para>CenterContainer <link linkend="_class_hud_1ab9e20b4d660564445727ca0667048a5c">Buttons</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_class_hud_1a7fab5b075645c1cbcce79b0987bceb73">Enabled</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Klasse für das PauseMenu. </para>
+<para>
+Definition at line <link linkend="__hud_8cs_source_1l00008">8</link> of file <link linkend="__hud_8cs_source">Hud.cs</link>.</para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_hud_1afe8b83ec11a8ace01976b245975e684e"/><section>
+    <title>_Process()</title>
+<indexterm><primary>_Process</primary><secondary>Hud</secondary></indexterm>
+<indexterm><primary>Hud</primary><secondary>_Process</secondary></indexterm>
+<para><computeroutput>override void Hud._Process (double DeltaTime)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Methode wird in jedem Frame ausgeführt. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>DeltaTime</entry><entry>
+<para>Zeit seit dem letzten Frame. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line <link linkend="__hud_8cs_source_1l00029">29</link> of file <link linkend="__hud_8cs_source">Hud.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00029 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00030 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(Input.IsActionJustPressed(<emphasis role="stringliteral">&quot;escape&quot;</emphasis>)){
+00031 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_hud_1ab01ffd8302eac92e75c87da377711f18">TogglePause</link>();
+00032 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00033 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_hud_1a63383b5734266ec3b601e5742de8f838"/><section>
+    <title>_Ready()</title>
+<indexterm><primary>_Ready</primary><secondary>Hud</secondary></indexterm>
+<indexterm><primary>Hud</primary><secondary>_Ready</secondary></indexterm>
+<para><computeroutput>override void Hud._Ready ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Initialisierung der Referenzen. Findet die relevanten Knoten in der Szene und weist sie zu. </para>
+</para>
+<para>
+Definition at line <link linkend="__hud_8cs_source_1l00019">19</link> of file <link linkend="__hud_8cs_source">Hud.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00019 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00020 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_hud_1abd53b6eed5322906449da3d67f1703be">AnimationPlayer</link>&#32;=&#32;GetNode&lt;AnimationPlayer&gt;(<emphasis role="stringliteral">&quot;PauseMenu/AnimationPlayer&quot;</emphasis>);
+00021 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_hud_1ab9e20b4d660564445727ca0667048a5c">Buttons</link>&#32;=&#32;GetNode&lt;CenterContainer&gt;(<emphasis role="stringliteral">&quot;PauseMenu/Buttons&quot;</emphasis>);
+00022 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_hud_1abd53b6eed5322906449da3d67f1703be">AnimationPlayer</link>.Play(<emphasis role="stringliteral">&quot;RESET&quot;</emphasis>);
+00023 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_hud_1a0c8d61fe3aec23e057d5ba6a50693b77"/><section>
+    <title>OnResumeButtonPressed()</title>
+<indexterm><primary>OnResumeButtonPressed</primary><secondary>Hud</secondary></indexterm>
+<indexterm><primary>Hud</primary><secondary>OnResumeButtonPressed</secondary></indexterm>
+<para><computeroutput>void Hud.OnResumeButtonPressed ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Signal für den Resume-Button. </para>
+</para>
+<para>
+Definition at line <link linkend="__hud_8cs_source_1l00053">53</link> of file <link linkend="__hud_8cs_source">Hud.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00053 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00054 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_hud_1ab01ffd8302eac92e75c87da377711f18">TogglePause</link>();
+00055 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_hud_1ab984a267cfd8e2ce4e6add2f9a6caefe"/><section>
+    <title>OnSaveButtonPressed()</title>
+<indexterm><primary>OnSaveButtonPressed</primary><secondary>Hud</secondary></indexterm>
+<indexterm><primary>Hud</primary><secondary>OnSaveButtonPressed</secondary></indexterm>
+<para><computeroutput>void Hud.OnSaveButtonPressed ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Signal für den Save-Button. </para>
+</para>
+<para>
+Definition at line <link linkend="__hud_8cs_source_1l00060">60</link> of file <link linkend="__hud_8cs_source">Hud.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00060 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00061 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_storage_manager">StorageManager</link>.<link linkend="_class_storage_manager_1abc9f8437bf6c7954bba4d68baf5c96ce">Instance</link>.<link linkend="_class_storage_manager_1acac4cbeec13991178f4e0395011d0452">SaveAll</link>(<link linkend="_class_storage_manager">StorageManager</link>.<link linkend="_class_storage_manager_1abc9f8437bf6c7954bba4d68baf5c96ce">Instance</link>.<link linkend="_class_storage_manager_1a1db2888bb3966010740337ad6b975f3a">GetLastSaveId</link>());
+00062 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_hud_1af4971c76e7d7b29e7a08483d949e8e19"/><section>
+    <title>OnSaveMenuButtonPressed()</title>
+<indexterm><primary>OnSaveMenuButtonPressed</primary><secondary>Hud</secondary></indexterm>
+<indexterm><primary>Hud</primary><secondary>OnSaveMenuButtonPressed</secondary></indexterm>
+<para><computeroutput>void Hud.OnSaveMenuButtonPressed ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Signal für den SaveAndReturnToMenu-Button. </para>
+</para>
+<para>
+Definition at line <link linkend="__hud_8cs_source_1l00067">67</link> of file <link linkend="__hud_8cs_source">Hud.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00067 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00068 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_storage_manager">StorageManager</link>.<link linkend="_class_storage_manager_1abc9f8437bf6c7954bba4d68baf5c96ce">Instance</link>.<link linkend="_class_storage_manager_1acac4cbeec13991178f4e0395011d0452">SaveAll</link>(<link linkend="_class_storage_manager">StorageManager</link>.<link linkend="_class_storage_manager_1abc9f8437bf6c7954bba4d68baf5c96ce">Instance</link>.<link linkend="_class_storage_manager_1a1db2888bb3966010740337ad6b975f3a">GetLastSaveId</link>());
+00069 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_navigation_manager">NavigationManager</link>.<link linkend="_class_navigation_manager_1aca7e1252e63bf4323d89b8f7d4cd4ce8">Instance</link>.<link linkend="_class_navigation_manager_1a5966bab1490d10dfc285507a0c8d8bb7">GoToLevel</link>(<emphasis role="stringliteral">&quot;main_menu&quot;</emphasis>,&#32;<emphasis role="keyword">null</emphasis>);
+00070 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_player_stats">PlayerStats</link>.<link linkend="_class_player_stats_1adeb667dbe2c1a76d1785ce07b6faf181">Instance</link>.<link linkend="_class_player_stats_1a9a513942394be2aae3457a6be9f81b9b">Reload</link>();
+00071 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;GetTree().Paused&#32;=&#32;<emphasis role="keyword">false</emphasis>;
+00072 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_hud_1aecaa338f901e56a031d338278a14fa07"/><section>
+    <title>OnSaveQuitButtonPressed()</title>
+<indexterm><primary>OnSaveQuitButtonPressed</primary><secondary>Hud</secondary></indexterm>
+<indexterm><primary>Hud</primary><secondary>OnSaveQuitButtonPressed</secondary></indexterm>
+<para><computeroutput>void Hud.OnSaveQuitButtonPressed ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Signal für den SaveAndQuit-Button. </para>
+</para>
+<para>
+Definition at line <link linkend="__hud_8cs_source_1l00077">77</link> of file <link linkend="__hud_8cs_source">Hud.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00077 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00078 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_storage_manager">StorageManager</link>.<link linkend="_class_storage_manager_1abc9f8437bf6c7954bba4d68baf5c96ce">Instance</link>.<link linkend="_class_storage_manager_1acac4cbeec13991178f4e0395011d0452">SaveAll</link>(<link linkend="_class_storage_manager">StorageManager</link>.<link linkend="_class_storage_manager_1abc9f8437bf6c7954bba4d68baf5c96ce">Instance</link>.<link linkend="_class_storage_manager_1a1db2888bb3966010740337ad6b975f3a">GetLastSaveId</link>());
+00079 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;GetTree().Quit();
+00080 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_hud_1ab01ffd8302eac92e75c87da377711f18"/><section>
+    <title>TogglePause()</title>
+<indexterm><primary>TogglePause</primary><secondary>Hud</secondary></indexterm>
+<indexterm><primary>Hud</primary><secondary>TogglePause</secondary></indexterm>
+<para><computeroutput>void Hud.TogglePause ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[private]</computeroutput></computeroutput></para><para>
+
+<para>Toggled die Pause Funktion. </para>
+</para>
+<para>
+Definition at line <link linkend="__hud_8cs_source_1l00038">38</link> of file <link linkend="__hud_8cs_source">Hud.cs</link>.</para>
+<programlisting linenumbering="unnumbered">00038 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00039 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_hud_1a7fab5b075645c1cbcce79b0987bceb73">Enabled</link>&#32;=&#32;!<link linkend="_class_hud_1a7fab5b075645c1cbcce79b0987bceb73">Enabled</link>;
+00040 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;GetTree().Paused&#32;=&#32;<link linkend="_class_hud_1a7fab5b075645c1cbcce79b0987bceb73">Enabled</link>;
+00041 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(<link linkend="_class_hud_1a7fab5b075645c1cbcce79b0987bceb73">Enabled</link>){
+00042 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_hud_1abd53b6eed5322906449da3d67f1703be">AnimationPlayer</link>.Play(<emphasis role="stringliteral">&quot;Pause&quot;</emphasis>);
+00043 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Buttons.Visible&#32;=&#32;<emphasis role="keyword">true</emphasis>;
+00044 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+00045 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_hud_1abd53b6eed5322906449da3d67f1703be">AnimationPlayer</link>.PlayBackwards(<emphasis role="stringliteral">&quot;Pause&quot;</emphasis>);
+00046 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Buttons.Visible&#32;=&#32;<emphasis role="keyword">false</emphasis>;
+00047 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00048 &#32;&#32;&#32;&#32;}
+</programlisting></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_class_hud_1abd53b6eed5322906449da3d67f1703be"/><section>
+    <title>AnimationPlayer</title>
+<indexterm><primary>AnimationPlayer</primary><secondary>Hud</secondary></indexterm>
+<indexterm><primary>Hud</primary><secondary>AnimationPlayer</secondary></indexterm>
+<para><computeroutput>AnimationPlayer Hud.AnimationPlayer<computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__hud_8cs_source_1l00010">10</link> of file <link linkend="__hud_8cs_source">Hud.cs</link>.</para>
+</section>
+<anchor xml:id="_class_hud_1ab9e20b4d660564445727ca0667048a5c"/><section>
+    <title>Buttons</title>
+<indexterm><primary>Buttons</primary><secondary>Hud</secondary></indexterm>
+<indexterm><primary>Hud</primary><secondary>Buttons</secondary></indexterm>
+<para><computeroutput>CenterContainer Hud.Buttons<computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__hud_8cs_source_1l00011">11</link> of file <link linkend="__hud_8cs_source">Hud.cs</link>.</para>
+</section>
+<anchor xml:id="_class_hud_1a7fab5b075645c1cbcce79b0987bceb73"/><section>
+    <title>Enabled</title>
+<indexterm><primary>Enabled</primary><secondary>Hud</secondary></indexterm>
+<indexterm><primary>Hud</primary><secondary>Enabled</secondary></indexterm>
+<para><computeroutput>bool Hud.Enabled<computeroutput>[private]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__hud_8cs_source_1l00012">12</link> of file <link linkend="__hud_8cs_source">Hud.cs</link>.</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+<link linkend="__hud_8cs">Hud.cs</link></section>
+</section>

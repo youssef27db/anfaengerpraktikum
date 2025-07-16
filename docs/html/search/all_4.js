@@ -16,8 +16,6 @@ var searchData=
   ['destinationdoortag_13',['DestinationDoorTag',['../class_door.html#a4fe67fb3f6df67823b01168ba2031667',1,'Door']]],
   ['destinationleveltag_14',['DestinationLevelTag',['../class_door.html#a75837f996fd6f3c4deb6bf37065c7207',1,'Door']]],
   ['die_15',['Die',['../class_base_enemy.html#aa5e7d87eaa080ed685315588a39a9f1f',1,'BaseEnemy']]],
-  ['discovertests_16',['DiscoverTests',['../classgd_unit4_1_1addons_1_1gd_unit4_1_1src_1_1dotnet_1_1_gd_unit4_c_sharp_api.html#a95545295b88dbd18ab97c951fedaf89b',1,'gdUnit4::addons::gdUnit4::src::dotnet::GdUnit4CSharpApi']]],
-  ['dock_2ecs_17',['Dock.cs',['../_dock_8cs.html',1,'']]],
-  ['door_18',['Door',['../class_door.html',1,'']]],
-  ['door_2ecs_19',['Door.cs',['../_door_8cs.html',1,'']]]
+  ['door_16',['Door',['../class_door.html',1,'']]],
+  ['door_2ecs_17',['Door.cs',['../_door_8cs.html',1,'']]]
 ];

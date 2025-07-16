@@ -8,12 +8,10 @@ var searchData=
   ['checkpoint_2ecs_5',['Checkpoint.cs',['../_checkpoint_8cs.html',1,'']]],
   ['collisionpolygon_6',['CollisionPolygon',['../class_base_enemy.html#ada18d6dd378a0f7380579ce63a6b4ec2',1,'BaseEnemy']]],
   ['continuebutton_7',['ContinueButton',['../class_main_menu.html#a62456fc5f1e7c3a97cfb4effb4207b62',1,'MainMenu']]],
-  ['cpp_8',['godotengine/godot-cpp',['../md__c_1_2_users_2_youssef_2_desktop_2_u_n_i_2_s4_2_computerspiel_entwicklung_2_das_spiel_2anfaene077cc7c5bcf0a389cded2b1f693474f.html#autotoc_md2',1,'']]],
-  ['createdasheffect_9',['CreateDashEffect',['../class_player.html#a0aa4500de693c81904bba34fb91df560',1,'Player']]],
-  ['createtestsuite_10',['CreateTestSuite',['../classgd_unit4_1_1addons_1_1gd_unit4_1_1src_1_1dotnet_1_1_gd_unit4_c_sharp_api.html#a7e178f2a0d7a0e329440216238265378',1,'gdUnit4::addons::gdUnit4::src::dotnet::GdUnit4CSharpApi']]],
-  ['currenthealth_11',['CurrentHealth',['../class_player_stats.html#ae382740c5a49ebad7a020173d6eb527b',1,'PlayerStats']]],
-  ['currenthealthpoints_12',['CurrentHealthPoints',['../class_base_enemy.html#ad8681385a9f3e9e67d65acb6b945efcf',1,'BaseEnemy']]],
-  ['currentleveltag_13',['CurrentLevelTag',['../class_player_stats.html#ae047b0b22ef2d0cbd60c5b4193fac02a',1,'PlayerStats']]],
-  ['currentstamina_14',['CurrentStamina',['../class_base_enemy.html#a8a041329b7418ab3fb1b92aa0674eaa8',1,'BaseEnemy.CurrentStamina'],['../class_player_stats.html#a4d2c11ea6b3c00573fdaada704003164',1,'PlayerStats.CurrentStamina']]],
-  ['currenttarget_15',['CurrentTarget',['../class_base_enemy.html#aaeef5b40160a59096f667fd084b73cc8',1,'BaseEnemy']]]
+  ['createdasheffect_8',['CreateDashEffect',['../class_player.html#a0aa4500de693c81904bba34fb91df560',1,'Player']]],
+  ['currenthealth_9',['CurrentHealth',['../class_player_stats.html#ae382740c5a49ebad7a020173d6eb527b',1,'PlayerStats']]],
+  ['currenthealthpoints_10',['CurrentHealthPoints',['../class_base_enemy.html#ad8681385a9f3e9e67d65acb6b945efcf',1,'BaseEnemy']]],
+  ['currentleveltag_11',['CurrentLevelTag',['../class_player_stats.html#ae047b0b22ef2d0cbd60c5b4193fac02a',1,'PlayerStats']]],
+  ['currentstamina_12',['CurrentStamina',['../class_base_enemy.html#a8a041329b7418ab3fb1b92aa0674eaa8',1,'BaseEnemy.CurrentStamina'],['../class_player_stats.html#a4d2c11ea6b3c00573fdaada704003164',1,'PlayerStats.CurrentStamina']]],
+  ['currenttarget_13',['CurrentTarget',['../class_base_enemy.html#aaeef5b40160a59096f667fd084b73cc8',1,'BaseEnemy']]]
 ];
