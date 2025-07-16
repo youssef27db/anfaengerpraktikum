@@ -174,7 +174,7 @@ public class PlayerTest2
     [RequireGodotRuntime]
     public async Task TestBlock()
     {
-        // Test block with space key
+        // Test block with space Key
 
         Runner.SimulateKeyPress(Key.Space);
         await Runner.SimulateFrames(5, 100);
@@ -188,12 +188,12 @@ public class PlayerTest2
     public async Task TestMaxHeal()
     {
         // Test if player has maximum health
-        float initialHealth = PlayerStats.Instance.GetCurrentHealth();
+        float InitialHealth = PlayerStats.Instance.GetCurrentHealth();
 
         PlayerStats.Instance.SetCurrentHealth(50.0f);
         Player.MaxHeal();
         await Runner.SimulateFrames(1, 100);
-        Assertions.AssertThat(PlayerStats.Instance.GetCurrentHealth()).IsEqual(initialHealth);
+        Assertions.AssertThat(PlayerStats.Instance.GetCurrentHealth()).IsEqual(InitialHealth);
         await Setup();
     }
 
@@ -204,13 +204,13 @@ public class PlayerTest2
         // Test if player has maximum health
         Spike Spike = GD.Load<PackedScene>("res://scenes/spike.tscn").Instantiate<Spike>();
         Runner.Scene().AddChild(Spike);
-        float initialHealth = PlayerStats.Instance.GetCurrentHealth();
+        float InitialHealth = PlayerStats.Instance.GetCurrentHealth();
 
         Damage Damage = Spike.GetDamage();  // Get 10 damage from Spike
         Player.TakeDamage(Damage);
 
         await Runner.SimulateFrames(1, 1);
-        Assertions.AssertThat(PlayerStats.Instance.GetCurrentHealth()).IsEqual(initialHealth - 10.0f);
+        Assertions.AssertThat(PlayerStats.Instance.GetCurrentHealth()).IsEqual(InitialHealth - 10.0f);
         await Setup();
     }
 
@@ -238,10 +238,10 @@ public class PlayerTest2
     {
         // Test stamina regeneration
         PlayerStats.Instance.SetStamina(50.0f); // Set initial stamina
-        float staminaRegenRate = 10f;
-        float delta = 0.5f; // Simulate half a second
+        float StaminaRegenRate = 10f;
+        float Delta = 0.5f; // Simulate half a second
 
-        Player.RegenerateStamina(staminaRegenRate, delta);
+        Player.RegenerateStamina(StaminaRegenRate, Delta);
         await Runner.SimulateFrames(5, 100);
         
         Assertions.AssertThat(PlayerStats.Instance.GetStamina()).IsEqual(100.0f); // Assuming max stamina is 100
@@ -277,24 +277,24 @@ public class PlayerTest2
         await Setup();
     }
 
-    private async Task TestMovement(Key key, Vector2 expectedDirection) //KeyboardInput
+    private async Task TestMovement(Key Key, Vector2 EcpectedDirection) //KeyboardInput
     {
         await Semaphore.WaitAsync(); // wait for semaphore
 
         try
         {
-            Vector2 initialPosition = Player.Position;
+            Vector2 InitialPosition = Player.Position;
 
-            Runner.SimulateKeyPress(key);
+            Runner.SimulateKeyPress(Key);
             await Runner.SimulateFrames(1, 100);
-            Runner.SimulateKeyRelease(key);
+            Runner.SimulateKeyRelease(Key);
             await Runner.AwaitIdleFrame();
 
-            Vector2 newPosition = Player.Position;
+            Vector2 NewPosition = Player.Position;
 
-            Vector2 movementDirection = (newPosition - initialPosition).Normalized();
+            Vector2 MovementDirection = (NewPosition - InitialPosition).Normalized();
 
-            Assertions.AssertThat(movementDirection).IsEqual(expectedDirection);
+            Assertions.AssertThat(MovementDirection).IsEqual(EcpectedDirection);
         }
         finally
         {
@@ -302,7 +302,7 @@ public class PlayerTest2
         }
     }
 
-    private async Task TestMovementApprox(Key key, Vector2 expectedDirection) //KeyboardInput
+    private async Task TestMovementApprox(Key Key, Vector2 EcpectedDirection) //KeyboardInput
     {
         await Semaphore.WaitAsync(); // wait for semaphore
 
@@ -310,16 +310,16 @@ public class PlayerTest2
         {
             Vector2 initialPosition = Player.Position;
 
-            Runner.SimulateKeyPress(key);
+            Runner.SimulateKeyPress(Key);
             await Runner.SimulateFrames(1, 100);
-            Runner.SimulateKeyRelease(key);
+            Runner.SimulateKeyRelease(Key);
             await Runner.AwaitIdleFrame();
 
-            Vector2 newPosition = Player.Position;
+            Vector2 NewPosition = Player.Position;
 
-            Vector2 movementDirection = (newPosition - initialPosition).Normalized();
+            Vector2 MovementDirection = (NewPosition - initialPosition).Normalized();
 
-            Assertions.AssertThat(movementDirection).IsEqualApprox(expectedDirection, new Vector2(0.1f, 0.1f));
+            Assertions.AssertThat(MovementDirection).IsEqualApprox(EcpectedDirection, new Vector2(0.1f, 0.1f));
         }
         finally
         {

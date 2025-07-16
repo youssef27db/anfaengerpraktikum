@@ -46,7 +46,7 @@ public partial class BaseEnemy : CharacterBody2D
     protected bool AlreadyHit = false;
 
     //linked nodes
-    protected AnimatedSprite2D Sprite;
+    public AnimatedSprite2D Sprite;
     protected CollisionPolygon2D CollisionPolygon;
     protected Area2D SwordHitbox;
     public CollisionShape2D MainCollision;

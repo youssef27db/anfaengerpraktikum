@@ -44,7 +44,7 @@ public class BaseEnemyTest
 
     [TestCase]
     [RequireGodotRuntime]
-    public async Task checkMovementIfDead()
+    public async Task TestMovementIfDead()
     {
         await Reset();
 
@@ -62,7 +62,7 @@ public class BaseEnemyTest
 
     [TestCase]
     [RequireGodotRuntime]
-    public async Task checkMovementIfNotPursuing()
+    public async Task TestMovementIfNotPursuing()
     {
         await Reset();
 
@@ -79,7 +79,7 @@ public class BaseEnemyTest
 
     [TestCase]
     [RequireGodotRuntime]
-    public async Task checkMovementIfNoTargetPosition()
+    public async Task TestMovementIfNoTargetPosition()
     {
         await Reset();
 
@@ -97,7 +97,7 @@ public class BaseEnemyTest
 
     [TestCase]
     [RequireGodotRuntime]
-    public async Task checkMovementToTargetPositionLeft()
+    public async Task TestMovementToTargetPositionLeft()
     {
         await Reset();
 
@@ -115,7 +115,7 @@ public class BaseEnemyTest
 
     [TestCase]
     [RequireGodotRuntime]
-    public async Task checkMovementToTargetPositionRight()
+    public async Task TestMovementToTargetPositionRight()
     {
         await Reset();
 
@@ -133,7 +133,7 @@ public class BaseEnemyTest
 
     [TestCase]
     [RequireGodotRuntime]
-    public async Task checkTakeDamageIfDead()
+    public async Task TestTakeDamageIfDead()
     {
 
         await Reset();
@@ -152,7 +152,7 @@ public class BaseEnemyTest
 
     [TestCase]
     [RequireGodotRuntime]
-    public async Task checkTakeDamageOnlyPhysical()
+    public async Task TestTakeDamageOnlyPhysical()
     {
 
         await Reset();
@@ -172,7 +172,7 @@ public class BaseEnemyTest
 
     [TestCase]
     [RequireGodotRuntime]
-    public async Task checkTakeDamageOnlyTrue()
+    public async Task TestTakeDamageOnlyTrue()
     {
 
         await Reset();
@@ -191,7 +191,7 @@ public class BaseEnemyTest
 
     [TestCase]
     [RequireGodotRuntime]
-    public async Task checkTakeDamageOnlyPushRight()
+    public async Task TestTakeDamageOnlyPushRight()
     {
 
         await Reset();
@@ -209,7 +209,7 @@ public class BaseEnemyTest
 
     [TestCase]
     [RequireGodotRuntime]
-    public async Task checkTakeDamageOnlyPushLeft()
+    public async Task TestTakeDamageOnlyPushLeft()
     {
 
         await Reset();
@@ -227,7 +227,7 @@ public class BaseEnemyTest
 
     [TestCase]
     [RequireGodotRuntime]
-    public async Task checkTakeDamageCombined()
+    public async Task TestTakeDamageCombined()
     {
 
         await Reset();
@@ -246,7 +246,7 @@ public class BaseEnemyTest
 
     [TestCase]
     [RequireGodotRuntime]
-    public async Task checkTakeDamageTillDead()
+    public async Task TestTakeDamageTillDead()
     {
 
         await Reset();
@@ -267,7 +267,7 @@ public class BaseEnemyTest
 
     [TestCase]
     [RequireGodotRuntime]
-    public async Task checkDie()
+    public async Task TestDie()
     {
 
         await Reset();

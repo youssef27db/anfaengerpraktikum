@@ -6,7 +6,7 @@ using System;
 */
 public partial class Boss1 : BaseEnemy{
 
-    private bool EnemiesRevived = false;
+    public bool EnemiesRevived = false;
     private float RegenCooldown = 5.0f; // Zeit, nach der Regeneration beginnt, wenn kein Schaden genommen wurde
     private float RegenTimer = 0.0f; // Timer für die Zeit seit dem letzten Angriff
     private float RegenAmount = 10.0f; // Menge an Gesundheit, die pro Tick regeneriert wird
@@ -50,7 +50,7 @@ public partial class Boss1 : BaseEnemy{
     * @brief Regeneriert die Gesundheit des Bosses, wenn er keinen Schaden nimmt
     * @param DeltaTime Die Zeit, die seit dem letzten Frame vergangen ist
     */
-    private void HandleRegeneration(double DeltaTime){
+    public void HandleRegeneration(double DeltaTime){
         if (CurrentHealthPoints < MaxHealthPoints){
             RegenTimer += (float)DeltaTime;
 
@@ -65,7 +65,7 @@ public partial class Boss1 : BaseEnemy{
     /**
     * @brief Startet einen Leuchteffekt, wenn der Boss Schaden nimmt
     */
-    private void StartGlowing(){
+    public void StartGlowing(){
         // Ändere die Modulationsfarbe des Sprites, um ein Leuchten zu simulieren
         if (Sprite != null){
             ShowPopupMessage("AHHHH!!!");

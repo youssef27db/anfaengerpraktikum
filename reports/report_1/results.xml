@@ -1,41 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuites id="2025-07-15" name="report_1" tests="18" failures="0" skipped="0" flaky="0" time="0.000">
-	<testsuite id="0" name="PlayerTest2" package="tests" timestamp="2025-07-15T16:04:42" hostname="localhost" tests="18" failures="0" errors="0" skipped="0" flaky="0" time="5.829">
-		<testcase name="TestWMovement" classname="PlayerTest2" time="0.358">
-		</testcase>
-		<testcase name="TestAMovement" classname="PlayerTest2" time="0.252">
-		</testcase>
-		<testcase name="TestDMovement" classname="PlayerTest2" time="0.260">
-		</testcase>
-		<testcase name="TestDashWithNoDirectionMovement" classname="PlayerTest2" time="0.261">
-		</testcase>
-		<testcase name="TestDashWithDirectionLeftMovement" classname="PlayerTest2" time="0.267">
-		</testcase>
-		<testcase name="TestDashWithDirectionRightMovement" classname="PlayerTest2" time="0.267">
-		</testcase>
-		<testcase name="TestDashWithDirectionUpMovement" classname="PlayerTest2" time="0.275">
-		</testcase>
-		<testcase name="TestDashWithLightAttackMovement" classname="PlayerTest2" time="0.467">
-		</testcase>
-		<testcase name="TestDashWithHeavyAttackMovement" classname="PlayerTest2" time="0.466">
-		</testcase>
-		<testcase name="TestHeavyAttack" classname="PlayerTest2" time="0.247">
-		</testcase>
-		<testcase name="TestLightAttack" classname="PlayerTest2" time="0.253">
-		</testcase>
-		<testcase name="TestBlock" classname="PlayerTest2" time="0.661">
-		</testcase>
-		<testcase name="TestMaxHeal" classname="PlayerTest2" time="0.246">
-		</testcase>
-		<testcase name="TestTakeDMG" classname="PlayerTest2" time="0.053">
-		</testcase>
-		<testcase name="TestTakeDMGWhileBlocking" classname="PlayerTest2" time="0.668">
-		</testcase>
-		<testcase name="TestRegenerateStamina" classname="PlayerTest2" time="0.661">
-		</testcase>
-		<testcase name="TestUseBloodVial" classname="PlayerTest2" time="0.047">
-		</testcase>
-		<testcase name="TestUseBloodVialWithMaxHealth" classname="PlayerTest2" time="0.047">
+<testsuites id="2025-07-16" name="report_1" tests="1" failures="0" skipped="0" flaky="0" time="0.000">
+	<testsuite id="0" name="TestTests" package="tests" timestamp="2025-07-16T11:20:03" hostname="localhost" tests="1" failures="0" errors="0" skipped="0" flaky="0" time="0.056">
+		<testcase name="Test" classname="TestTests" time="0.013">
 		</testcase>
 	</testsuite>
 </testsuites>
