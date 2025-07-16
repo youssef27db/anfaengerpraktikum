@@ -26,10 +26,35 @@ void \mbox{\hyperlink{class_base_enemy_a6aad96826441fe152694139d29893bad}{On\+Hi
 \begin{DoxyCompactList}\small\item\em Detektiert wenn ein Objekt die Hitbox des Gegners betritt. (z.\+B.\+: Schwert des Spielers) \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_base_enemy_ab07fb117d5286ef97dc702149c02b14a}{On\+Sword\+Hit\+Box\+Body\+Entered}} (Node2D body)
 \begin{DoxyCompactList}\small\item\em Detektiert ob der Spieler in Schlagreichweite ist. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_base_enemy_a284a995d12d6bc1d7a23d1f6f25a96af}{Take\+Damage}} (\mbox{\hyperlink{class_damage}{Damage}} DMG)
+\begin{DoxyCompactList}\small\item\em Verarbeitet zugefügten Schaden. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_base_enemy_a27c3947769522b35b537e5f472ef0b77}{Is\+Dead}} ()
 \begin{DoxyCompactList}\small\item\em Gibt boolean Dead zurück. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_base_enemy_aa5e7d87eaa080ed685315588a39a9f1f}{Die}} ()
+\begin{DoxyCompactList}\small\item\em Wird aufgerufen wenn der Gegner stirbt. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_base_enemy_a9ef92c3f73170538681e665e78e2279a}{Respawn}} ()
 \begin{DoxyCompactList}\small\item\em Wird aufgerufen wenn der Gegner respawnt. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_base_enemy_a61314ff2e5931900ca4a87aa8feb670f}{Dead}} = false
+\item 
+float \mbox{\hyperlink{class_base_enemy_a66b9b6f8492753769f40e18e66babe6d}{Armor}} = 20f
+\item 
+float \mbox{\hyperlink{class_base_enemy_ad8681385a9f3e9e67d65acb6b945efcf}{Current\+Health\+Points}}
+\item 
+double \mbox{\hyperlink{class_base_enemy_a283d342796ff720966538c0776fc9e48}{Return\+To\+Start}}
+\item 
+bool \mbox{\hyperlink{class_base_enemy_a512fca9892d7e4cd717adf9087dcc295}{Pursuing}} = false
+\item 
+Vector2 \mbox{\hyperlink{class_base_enemy_a2b05c8247dab9946e801fd74a8af6376}{Target\+Position}} = Vector2.\+Inf
+\item 
+Vector2 \mbox{\hyperlink{class_base_enemy_af386b85762b6790503bf1716a9d2fd77}{Start\+Position}}
+\item 
+Animated\+Sprite2D \mbox{\hyperlink{class_base_enemy_a2e4bd99e594a6c3366f64ab47c7443b5}{Sprite}}
+\item 
+Collision\+Shape2D \mbox{\hyperlink{class_base_enemy_a9b71f0d7b10ec2b15f5176b8b69ce190}{Main\+Collision}}
+\end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -40,13 +65,9 @@ virtual void \mbox{\hyperlink{class_base_enemy_a52b8c24a84bfa2e981d776f816f33186
 \item 
 float \mbox{\hyperlink{class_base_enemy_a1661cfbf7e6dff6a1d8a6fa44b10a3b0}{Damage}} = 20f
 \item 
-bool \mbox{\hyperlink{class_base_enemy_a61314ff2e5931900ca4a87aa8feb670f}{Dead}} = false
-\item 
 bool \mbox{\hyperlink{class_base_enemy_a3d261e81ba7422572d0813341016c2c3}{Respawnable}} = true
 \item 
 float \mbox{\hyperlink{class_base_enemy_aeb1033802e3cdf44b1b0a510cbf18425}{Max\+Health\+Points}} = 100f
-\item 
-float \mbox{\hyperlink{class_base_enemy_a66b9b6f8492753769f40e18e66babe6d}{Armor}} = 20f
 \item 
 float \mbox{\hyperlink{class_base_enemy_a4f99809bf5de1dbbe762c13fc7db8881}{Max\+Stamina}} = 1f
 \item 
@@ -56,31 +77,17 @@ int \mbox{\hyperlink{class_base_enemy_afa7426d08cbee4ed3184822c57888ec7}{Sin\+Am
 \item 
 double \mbox{\hyperlink{class_base_enemy_aba59e1a3fffbf2749c266d8caaf1c482}{Return\+To\+Start\+After}} = 5
 \item 
-float \mbox{\hyperlink{class_base_enemy_ad8681385a9f3e9e67d65acb6b945efcf}{Current\+Health\+Points}}
-\item 
 float \mbox{\hyperlink{class_base_enemy_a8a041329b7418ab3fb1b92aa0674eaa8}{Current\+Stamina}}
 \item 
-double \mbox{\hyperlink{class_base_enemy_a283d342796ff720966538c0776fc9e48}{Return\+To\+Start}}
-\item 
-bool \mbox{\hyperlink{class_base_enemy_a512fca9892d7e4cd717adf9087dcc295}{Pursuing}} = false
-\item 
 Node2D \mbox{\hyperlink{class_base_enemy_aaeef5b40160a59096f667fd084b73cc8}{Current\+Target}} = null
-\item 
-Vector2 \mbox{\hyperlink{class_base_enemy_a2b05c8247dab9946e801fd74a8af6376}{Target\+Position}} = Vector2.\+Inf
-\item 
-Vector2 \mbox{\hyperlink{class_base_enemy_af386b85762b6790503bf1716a9d2fd77}{Start\+Position}}
 \item 
 bool \mbox{\hyperlink{class_base_enemy_ad2523c398e4a11b5f36a9df26c4014eb}{Start\+Rotation}} = false
 \item 
 bool \mbox{\hyperlink{class_base_enemy_a47e5e613c39180e6b1bf9899039b45fc}{Already\+Hit}} = false
 \item 
-Animated\+Sprite2D \mbox{\hyperlink{class_base_enemy_a2e4bd99e594a6c3366f64ab47c7443b5}{Sprite}}
-\item 
 Collision\+Polygon2D \mbox{\hyperlink{class_base_enemy_ada18d6dd378a0f7380579ce63a6b4ec2}{Collision\+Polygon}}
 \item 
 Area2D \mbox{\hyperlink{class_base_enemy_a9d136e8abbf09f7b418112394bdf1c88}{Sword\+Hitbox}}
-\item 
-Collision\+Shape2D \mbox{\hyperlink{class_base_enemy_a9b71f0d7b10ec2b15f5176b8b69ce190}{Main\+Collision}}
 \item 
 Ray\+Cast2D \mbox{\hyperlink{class_base_enemy_a136d1835e3ccedebaa12d7fe151d890b}{Front\+Collision\+Ray\+Cast}}
 \item 
@@ -113,12 +120,8 @@ enum \mbox{\hyperlink{class_base_enemy_ac529914117dfe8158325b43be1f1c6dd}{State}
 \item 
 void \mbox{\hyperlink{class_base_enemy_aee39d90b4efaebada5ab47b21184516a}{Handle\+Movement}} (double Delta\+Time)
 \begin{DoxyCompactList}\small\item\em Verarbeitet die Bewegung des Gegners. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_base_enemy_a284a995d12d6bc1d7a23d1f6f25a96af}{Take\+Damage}} (\mbox{\hyperlink{class_damage}{Damage}} DMG)
-\begin{DoxyCompactList}\small\item\em Verarbeitet zugefügten Schaden. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_base_enemy_a0a7f33bd3971e202eee9d43e63180500}{Check\+Player\+Hit}} ()
 \begin{DoxyCompactList}\small\item\em Überprüft ob der Spieler sich, während eines Angriffes in Reichweite befindet und fügt diesem dann gegebenenfalls Schaden zu. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_base_enemy_aa5e7d87eaa080ed685315588a39a9f1f}{Die}} ()
-\begin{DoxyCompactList}\small\item\em Wird aufgerufen wenn der Gegner stirbt. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_base_enemy_a59a907194c4c712b41719a6fc12c1583}{Check\+Line\+Of\+Sight}} (Node2D body)
 \begin{DoxyCompactList}\small\item\em Überprüft die direkte Sichtlinie zu einem Objekt. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_base_enemy_aa9ade96897c57dfc0b6b69e7d0996076}{Flip\+Rotation}} ()
@@ -282,19 +285,19 @@ bool Ergebnis der Abfrage.
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{_base_enemy_8cs_source_l00334}{334}} of file \mbox{\hyperlink{_base_enemy_8cs_source}{Base\+Enemy.\+cs}}.
+Definition at line \mbox{\hyperlink{_base_enemy_8cs_source_l00336}{336}} of file \mbox{\hyperlink{_base_enemy_8cs_source}{Base\+Enemy.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00335\ \ \ \ \ \ \ \ \ Vector2\ offset\ =\ Vector2.Zero;}
-\DoxyCodeLine{00336\ \ \ \ \ \ \ \ \ offset.Y\ =\ -\/14;}
-\DoxyCodeLine{00337\ \ \ \ \ \ \ \ \ LineOfSight.TargetPosition\ =\ body.Position\ +\ offset\ -\/\ (Position\ +\ \mbox{\hyperlink{class_base_enemy_a586349c436eb91c16f5f2f4bee17caa1}{LineOfSight}}.Position);}
-\DoxyCodeLine{00338\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_base_enemy_a586349c436eb91c16f5f2f4bee17caa1}{LineOfSight}}.IsColliding())\{}
-\DoxyCodeLine{00339\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_base_enemy_a586349c436eb91c16f5f2f4bee17caa1}{LineOfSight}}.GetCollider()\ ==\ body;}
-\DoxyCodeLine{00340\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00341\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00342\ \ \ \ \ \}}
+\DoxyCodeLine{00336\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00337\ \ \ \ \ \ \ \ \ Vector2\ offset\ =\ Vector2.Zero;}
+\DoxyCodeLine{00338\ \ \ \ \ \ \ \ \ offset.Y\ =\ -\/14;}
+\DoxyCodeLine{00339\ \ \ \ \ \ \ \ \ LineOfSight.TargetPosition\ =\ body.Position\ +\ offset\ -\/\ (Position\ +\ \mbox{\hyperlink{class_base_enemy_a586349c436eb91c16f5f2f4bee17caa1}{LineOfSight}}.Position);}
+\DoxyCodeLine{00340\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_base_enemy_a586349c436eb91c16f5f2f4bee17caa1}{LineOfSight}}.IsColliding())\{}
+\DoxyCodeLine{00341\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_base_enemy_a586349c436eb91c16f5f2f4bee17caa1}{LineOfSight}}.GetCollider()\ ==\ body;}
+\DoxyCodeLine{00342\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00343\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00344\ \ \ \ \ \}}
 
 \end{DoxyCode}
 
@@ -362,7 +365,7 @@ Referenced by \mbox{\hyperlink{_base_enemy_8cs_source_l00091}{\+\_\+\+Process()}
 \index{Die@{Die}!BaseEnemy@{BaseEnemy}}
 \doxysubsubsection{\texorpdfstring{Die()}{Die()}}
 {\footnotesize\ttfamily \label{class_base_enemy_aa5e7d87eaa080ed685315588a39a9f1f} 
-void Base\+Enemy.\+Die (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+void Base\+Enemy.\+Die (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -374,16 +377,18 @@ Definition at line \mbox{\hyperlink{_base_enemy_8cs_source_l00305}{305}} of file
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_base_enemy_a61314ff2e5931900ca4a87aa8feb670f}{Dead}}\ =\ \textcolor{keyword}{true};}
 \DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ Velocity\ =\ Vector2.Zero;}
 \DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_base_enemy_a9b71f0d7b10ec2b15f5176b8b69ce190}{MainCollision}}.SetDeferred(CollisionShape2D.PropertyName.Disabled,\ \textcolor{keyword}{true});}
 \DoxyCodeLine{00309\ }
 \DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_base_enemy_a2e4bd99e594a6c3366f64ab47c7443b5}{Sprite}}.Play(\textcolor{stringliteral}{"{}death"{}});}
 \DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_health_bar}{HealthBar}}.SetVisible(\textcolor{keyword}{false});}
-\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player}{Player}}.\mbox{\hyperlink{class_player_aa718b6dab81ebd60b8b910ad8c7adff6}{SetSinAmount}}(\mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_a0b2b3398a02e8fbafe3c41dd466c57d0}{GetSinAmount}}()\ +\ \mbox{\hyperlink{class_base_enemy_afa7426d08cbee4ed3184822c57888ec7}{SinAmount}});}
-\DoxyCodeLine{00313\ }
-\DoxyCodeLine{00314\ \ \ \ \ \}}
+\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_player}{Player}}\ !=\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player}{Player}}.\mbox{\hyperlink{class_player_aa718b6dab81ebd60b8b910ad8c7adff6}{SetSinAmount}}(\mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_a0b2b3398a02e8fbafe3c41dd466c57d0}{GetSinAmount}}()\ +\ \mbox{\hyperlink{class_base_enemy_afa7426d08cbee4ed3184822c57888ec7}{SinAmount}});\ }
+\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00315\ }
+\DoxyCodeLine{00316\ \ \ \ \ \}}
 
 \end{DoxyCode}
 
@@ -406,16 +411,16 @@ Spiegelt die Orientierung aller zu dem Gegner gehörender Nodes.
 
 
 
-Definition at line \mbox{\hyperlink{_base_enemy_8cs_source_l00347}{347}} of file \mbox{\hyperlink{_base_enemy_8cs_source}{Base\+Enemy.\+cs}}.
+Definition at line \mbox{\hyperlink{_base_enemy_8cs_source_l00349}{349}} of file \mbox{\hyperlink{_base_enemy_8cs_source}{Base\+Enemy.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00347\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00348\ \ \ \ \ \ \ \ \ Sprite.FlipH\ =\ !\mbox{\hyperlink{class_base_enemy_a2e4bd99e594a6c3366f64ab47c7443b5}{Sprite}}.FlipH;}
-\DoxyCodeLine{00349\ \ \ \ \ \ \ \ \ CollisionPolygon.RotationDegrees\ =\ Math.Abs(\mbox{\hyperlink{class_base_enemy_ada18d6dd378a0f7380579ce63a6b4ec2}{CollisionPolygon}}.RotationDegrees\ -\/180);}
-\DoxyCodeLine{00350\ \ \ \ \ \ \ \ \ SwordHitbox.RotationDegrees\ =\ Math.Abs(\mbox{\hyperlink{class_base_enemy_a9d136e8abbf09f7b418112394bdf1c88}{SwordHitbox}}.RotationDegrees\ -\/180);}
-\DoxyCodeLine{00351\ \ \ \ \ \ \ \ \ FrontCollisionRayCast.RotationDegrees\ =\ Math.Abs(\mbox{\hyperlink{class_base_enemy_a136d1835e3ccedebaa12d7fe151d890b}{FrontCollisionRayCast}}.RotationDegrees\ -\/\ 180);}
-\DoxyCodeLine{00352\ \ \ \ \ \}}
+\DoxyCodeLine{00349\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00350\ \ \ \ \ \ \ \ \ Sprite.FlipH\ =\ !\mbox{\hyperlink{class_base_enemy_a2e4bd99e594a6c3366f64ab47c7443b5}{Sprite}}.FlipH;}
+\DoxyCodeLine{00351\ \ \ \ \ \ \ \ \ CollisionPolygon.RotationDegrees\ =\ Math.Abs(\mbox{\hyperlink{class_base_enemy_ada18d6dd378a0f7380579ce63a6b4ec2}{CollisionPolygon}}.RotationDegrees\ -\/180);}
+\DoxyCodeLine{00352\ \ \ \ \ \ \ \ \ SwordHitbox.RotationDegrees\ =\ Math.Abs(\mbox{\hyperlink{class_base_enemy_a9d136e8abbf09f7b418112394bdf1c88}{SwordHitbox}}.RotationDegrees\ -\/180);}
+\DoxyCodeLine{00353\ \ \ \ \ \ \ \ \ FrontCollisionRayCast.RotationDegrees\ =\ Math.Abs(\mbox{\hyperlink{class_base_enemy_a136d1835e3ccedebaa12d7fe151d890b}{FrontCollisionRayCast}}.RotationDegrees\ -\/\ 180);}
+\DoxyCodeLine{00354\ \ \ \ \ \}}
 
 \end{DoxyCode}
 
@@ -512,7 +517,7 @@ Definition at line \mbox{\hyperlink{_base_enemy_8cs_source_l00150}{150}} of file
 \end{DoxyCode}
 
 
-References \mbox{\hyperlink{_base_enemy_8cs_source_l00045}{Animation\+State}}, \mbox{\hyperlink{_base_enemy_8cs_source_l00041}{Current\+Target}}, \mbox{\hyperlink{_base_enemy_8cs_source_l00018}{Dead}}, \mbox{\hyperlink{_base_enemy_8cs_source_l00347}{Flip\+Rotation()}}, \mbox{\hyperlink{_base_enemy_8cs_source_l00053}{Front\+Collision\+Ray\+Cast}}, \mbox{\hyperlink{_base_enemy_8cs_source_l00378}{Is\+Close\+To()}}, \mbox{\hyperlink{_base_enemy_8cs_source_l00055}{Left\+Fall\+Protection}}, \mbox{\hyperlink{_base_enemy_8cs_source_l00040}{Pursuing}}, \mbox{\hyperlink{_base_enemy_8cs_source_l00039}{Return\+To\+Start}}, \mbox{\hyperlink{_base_enemy_8cs_source_l00032}{Return\+To\+Start\+After}}, \mbox{\hyperlink{_base_enemy_8cs_source_l00056}{Right\+Fall\+Protection}}, \mbox{\hyperlink{_base_enemy_8cs_source_l00358}{Set\+Rotation()}}, \mbox{\hyperlink{_base_enemy_8cs_source_l00028}{Speed}}, \mbox{\hyperlink{_base_enemy_8cs_source_l00049}{Sprite}}, \mbox{\hyperlink{_base_enemy_8cs_source_l00043}{Start\+Position}}, \mbox{\hyperlink{_base_enemy_8cs_source_l00044}{Start\+Rotation}}, and \mbox{\hyperlink{_base_enemy_8cs_source_l00042}{Target\+Position}}.
+References \mbox{\hyperlink{_base_enemy_8cs_source_l00045}{Animation\+State}}, \mbox{\hyperlink{_base_enemy_8cs_source_l00041}{Current\+Target}}, \mbox{\hyperlink{_base_enemy_8cs_source_l00018}{Dead}}, \mbox{\hyperlink{_base_enemy_8cs_source_l00349}{Flip\+Rotation()}}, \mbox{\hyperlink{_base_enemy_8cs_source_l00053}{Front\+Collision\+Ray\+Cast}}, \mbox{\hyperlink{_base_enemy_8cs_source_l00380}{Is\+Close\+To()}}, \mbox{\hyperlink{_base_enemy_8cs_source_l00055}{Left\+Fall\+Protection}}, \mbox{\hyperlink{_base_enemy_8cs_source_l00040}{Pursuing}}, \mbox{\hyperlink{_base_enemy_8cs_source_l00039}{Return\+To\+Start}}, \mbox{\hyperlink{_base_enemy_8cs_source_l00032}{Return\+To\+Start\+After}}, \mbox{\hyperlink{_base_enemy_8cs_source_l00056}{Right\+Fall\+Protection}}, \mbox{\hyperlink{_base_enemy_8cs_source_l00360}{Set\+Rotation()}}, \mbox{\hyperlink{_base_enemy_8cs_source_l00028}{Speed}}, \mbox{\hyperlink{_base_enemy_8cs_source_l00049}{Sprite}}, \mbox{\hyperlink{_base_enemy_8cs_source_l00043}{Start\+Position}}, \mbox{\hyperlink{_base_enemy_8cs_source_l00044}{Start\+Rotation}}, and \mbox{\hyperlink{_base_enemy_8cs_source_l00042}{Target\+Position}}.
 
 
 
@@ -542,13 +547,13 @@ bool Ergebnis
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{_base_enemy_8cs_source_l00378}{378}} of file \mbox{\hyperlink{_base_enemy_8cs_source}{Base\+Enemy.\+cs}}.
+Definition at line \mbox{\hyperlink{_base_enemy_8cs_source_l00380}{380}} of file \mbox{\hyperlink{_base_enemy_8cs_source}{Base\+Enemy.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00378\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00379\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Value1\ <=\ (Value2\ +\ Delta)\ \&\&\ Value1\ >=\ (Value2\ -\/\ Delta);}
-\DoxyCodeLine{00380\ \ \ \ \ \}}
+\DoxyCodeLine{00380\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00381\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Value1\ <=\ (Value2\ +\ Delta)\ \&\&\ Value1\ >=\ (Value2\ -\/\ Delta);}
+\DoxyCodeLine{00382\ \ \ \ \ \}}
 
 \end{DoxyCode}
 
@@ -618,7 +623,7 @@ Definition at line \mbox{\hyperlink{_base_enemy_8cs_source_l00110}{110}} of file
 \end{DoxyCode}
 
 
-References \mbox{\hyperlink{_base_enemy_8cs_source_l00334}{Check\+Line\+Of\+Sight()}}, \mbox{\hyperlink{_base_enemy_8cs_source_l00041}{Current\+Target}}, and \mbox{\hyperlink{_base_enemy_8cs_source_l00040}{Pursuing}}.
+References \mbox{\hyperlink{_base_enemy_8cs_source_l00336}{Check\+Line\+Of\+Sight()}}, \mbox{\hyperlink{_base_enemy_8cs_source_l00041}{Current\+Target}}, and \mbox{\hyperlink{_base_enemy_8cs_source_l00040}{Pursuing}}.
 
 \Hypertarget{class_base_enemy_a6aad96826441fe152694139d29893bad}\index{BaseEnemy@{BaseEnemy}!OnHitboxAreaEntered@{OnHitboxAreaEntered}}
 \index{OnHitboxAreaEntered@{OnHitboxAreaEntered}!BaseEnemy@{BaseEnemy}}
@@ -727,18 +732,18 @@ Wird aufgerufen wenn der Gegner respawnt.
 
 
 
-Definition at line \mbox{\hyperlink{_base_enemy_8cs_source_l00319}{319}} of file \mbox{\hyperlink{_base_enemy_8cs_source}{Base\+Enemy.\+cs}}.
+Definition at line \mbox{\hyperlink{_base_enemy_8cs_source_l00321}{321}} of file \mbox{\hyperlink{_base_enemy_8cs_source}{Base\+Enemy.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00320\ \ \ \ \ \{}
-\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_base_enemy_a61314ff2e5931900ca4a87aa8feb670f}{Dead}}\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00322\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_base_enemy_ad8681385a9f3e9e67d65acb6b945efcf}{CurrentHealthPoints}}\ =\ \mbox{\hyperlink{class_base_enemy_aeb1033802e3cdf44b1b0a510cbf18425}{MaxHealthPoints}};}
-\DoxyCodeLine{00323\ \ \ \ \ \ \ \ \ HealthBar.Value\ =\ 100f\ *\ \mbox{\hyperlink{class_base_enemy_ad8681385a9f3e9e67d65acb6b945efcf}{CurrentHealthPoints}}\ /\ \mbox{\hyperlink{class_base_enemy_aeb1033802e3cdf44b1b0a510cbf18425}{MaxHealthPoints}};}
-\DoxyCodeLine{00324\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_base_enemy_a9b71f0d7b10ec2b15f5176b8b69ce190}{MainCollision}}.SetDeferred(CollisionShape2D.PropertyName.Disabled,\ \textcolor{keyword}{false});}
-\DoxyCodeLine{00325\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_health_bar}{HealthBar}}.SetVisible(\textcolor{keyword}{true});}
-\DoxyCodeLine{00326\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_base_enemy_a2e4bd99e594a6c3366f64ab47c7443b5}{Sprite}}.Play(\textcolor{stringliteral}{"{}idle"{}});}
-\DoxyCodeLine{00327\ \ \ \ \ \}}
+\DoxyCodeLine{00322\ \ \ \ \ \{}
+\DoxyCodeLine{00323\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_base_enemy_a61314ff2e5931900ca4a87aa8feb670f}{Dead}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00324\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_base_enemy_ad8681385a9f3e9e67d65acb6b945efcf}{CurrentHealthPoints}}\ =\ \mbox{\hyperlink{class_base_enemy_aeb1033802e3cdf44b1b0a510cbf18425}{MaxHealthPoints}};}
+\DoxyCodeLine{00325\ \ \ \ \ \ \ \ \ HealthBar.Value\ =\ 100f\ *\ \mbox{\hyperlink{class_base_enemy_ad8681385a9f3e9e67d65acb6b945efcf}{CurrentHealthPoints}}\ /\ \mbox{\hyperlink{class_base_enemy_aeb1033802e3cdf44b1b0a510cbf18425}{MaxHealthPoints}};}
+\DoxyCodeLine{00326\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_base_enemy_a9b71f0d7b10ec2b15f5176b8b69ce190}{MainCollision}}.SetDeferred(CollisionShape2D.PropertyName.Disabled,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00327\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_health_bar}{HealthBar}}.SetVisible(\textcolor{keyword}{true});}
+\DoxyCodeLine{00328\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_base_enemy_a2e4bd99e594a6c3366f64ab47c7443b5}{Sprite}}.Play(\textcolor{stringliteral}{"{}idle"{}});}
+\DoxyCodeLine{00329\ \ \ \ \ \}}
 
 \end{DoxyCode}
 
@@ -766,22 +771,22 @@ Setzt Orientierung aller zu dem Gegner gehörender Nodes.
 \end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{_base_enemy_8cs_source_l00358}{358}} of file \mbox{\hyperlink{_base_enemy_8cs_source}{Base\+Enemy.\+cs}}.
+Definition at line \mbox{\hyperlink{_base_enemy_8cs_source_l00360}{360}} of file \mbox{\hyperlink{_base_enemy_8cs_source}{Base\+Enemy.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00358\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00359\ \ \ \ \ \ \ \ \ Sprite.FlipH\ =\ Rotation\ \string^\ \mbox{\hyperlink{class_base_enemy_ad2523c398e4a11b5f36a9df26c4014eb}{StartRotation}};\ \textcolor{comment}{//\ XOR\ mit\ StartRotation}}
-\DoxyCodeLine{00360\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(Rotation)\{}
-\DoxyCodeLine{00361\ \ \ \ \ \ \ \ \ \ \ \ \ CollisionPolygon.RotationDegrees\ =\ 180;}
-\DoxyCodeLine{00362\ \ \ \ \ \ \ \ \ \ \ \ \ SwordHitbox.RotationDegrees\ =\ 180;}
-\DoxyCodeLine{00363\ \ \ \ \ \ \ \ \ \ \ \ \ FrontCollisionRayCast.RotationDegrees\ =\ 180;}
-\DoxyCodeLine{00364\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{00365\ \ \ \ \ \ \ \ \ \ \ \ \ CollisionPolygon.RotationDegrees\ =\ 0;}
-\DoxyCodeLine{00366\ \ \ \ \ \ \ \ \ \ \ \ \ SwordHitbox.RotationDegrees\ =\ 0;}
-\DoxyCodeLine{00367\ \ \ \ \ \ \ \ \ \ \ \ \ FrontCollisionRayCast.RotationDegrees\ =\ 0;}
-\DoxyCodeLine{00368\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00369\ \ \ \ \ \}}
+\DoxyCodeLine{00360\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00361\ \ \ \ \ \ \ \ \ Sprite.FlipH\ =\ Rotation\ \string^\ \mbox{\hyperlink{class_base_enemy_ad2523c398e4a11b5f36a9df26c4014eb}{StartRotation}};\ \textcolor{comment}{//\ XOR\ mit\ StartRotation}}
+\DoxyCodeLine{00362\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(Rotation)\{}
+\DoxyCodeLine{00363\ \ \ \ \ \ \ \ \ \ \ \ \ CollisionPolygon.RotationDegrees\ =\ 180;}
+\DoxyCodeLine{00364\ \ \ \ \ \ \ \ \ \ \ \ \ SwordHitbox.RotationDegrees\ =\ 180;}
+\DoxyCodeLine{00365\ \ \ \ \ \ \ \ \ \ \ \ \ FrontCollisionRayCast.RotationDegrees\ =\ 180;}
+\DoxyCodeLine{00366\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00367\ \ \ \ \ \ \ \ \ \ \ \ \ CollisionPolygon.RotationDegrees\ =\ 0;}
+\DoxyCodeLine{00368\ \ \ \ \ \ \ \ \ \ \ \ \ SwordHitbox.RotationDegrees\ =\ 0;}
+\DoxyCodeLine{00369\ \ \ \ \ \ \ \ \ \ \ \ \ FrontCollisionRayCast.RotationDegrees\ =\ 0;}
+\DoxyCodeLine{00370\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00371\ \ \ \ \ \}}
 
 \end{DoxyCode}
 
@@ -796,7 +801,7 @@ Referenced by \mbox{\hyperlink{_base_enemy_8cs_source_l00150}{Handle\+Movement()
 \index{TakeDamage@{TakeDamage}!BaseEnemy@{BaseEnemy}}
 \doxysubsubsection{\texorpdfstring{TakeDamage()}{TakeDamage()}}
 {\footnotesize\ttfamily \label{class_base_enemy_a284a995d12d6bc1d7a23d1f6f25a96af} 
-void Base\+Enemy.\+Take\+Damage (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_damage}{Damage}}}]{DMG}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+void Base\+Enemy.\+Take\+Damage (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_damage}{Damage}}}]{DMG}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -813,7 +818,7 @@ Definition at line \mbox{\hyperlink{_base_enemy_8cs_source_l00245}{245}} of file
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_base_enemy_a61314ff2e5931900ca4a87aa8feb670f}{Dead}})\ \{}
 \DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
 \DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \}}
@@ -924,7 +929,7 @@ Referenced by \mbox{\hyperlink{_base_enemy_8cs_source_l00150}{Handle\+Movement()
 \index{Armor@{Armor}!BaseEnemy@{BaseEnemy}}
 \doxysubsubsection{\texorpdfstring{Armor}{Armor}}
 {\footnotesize\ttfamily \label{class_base_enemy_a66b9b6f8492753769f40e18e66babe6d} 
-float Base\+Enemy.\+Armor = 20f\hspace{0.3cm}{\ttfamily [protected]}}
+float Base\+Enemy.\+Armor = 20f}
 
 
 
@@ -946,13 +951,13 @@ Definition at line \mbox{\hyperlink{_base_enemy_8cs_source_l00050}{50}} of file 
 
 
 
-Referenced by \mbox{\hyperlink{_base_enemy_8cs_source_l00064}{\+\_\+\+Ready()}}, and \mbox{\hyperlink{_base_enemy_8cs_source_l00347}{Flip\+Rotation()}}.
+Referenced by \mbox{\hyperlink{_base_enemy_8cs_source_l00064}{\+\_\+\+Ready()}}, and \mbox{\hyperlink{_base_enemy_8cs_source_l00349}{Flip\+Rotation()}}.
 
 \Hypertarget{class_base_enemy_ad8681385a9f3e9e67d65acb6b945efcf}\index{BaseEnemy@{BaseEnemy}!CurrentHealthPoints@{CurrentHealthPoints}}
 \index{CurrentHealthPoints@{CurrentHealthPoints}!BaseEnemy@{BaseEnemy}}
 \doxysubsubsection{\texorpdfstring{CurrentHealthPoints}{CurrentHealthPoints}}
 {\footnotesize\ttfamily \label{class_base_enemy_ad8681385a9f3e9e67d65acb6b945efcf} 
-float Base\+Enemy.\+Current\+Health\+Points\hspace{0.3cm}{\ttfamily [protected]}}
+float Base\+Enemy.\+Current\+Health\+Points}
 
 
 
@@ -960,7 +965,7 @@ Definition at line \mbox{\hyperlink{_base_enemy_8cs_source_l00037}{37}} of file 
 
 
 
-Referenced by \mbox{\hyperlink{_boss1_8cs_source_l00036}{Boss1.\+\_\+\+Process()}}, \mbox{\hyperlink{_base_enemy_8cs_source_l00064}{\+\_\+\+Ready()}}, \mbox{\hyperlink{_boss1_8cs_source_l00018}{Boss1.\+\_\+\+Ready()}}, \mbox{\hyperlink{_boss1_8cs_source_l00053}{Boss1.\+Handle\+Regeneration()}}, \mbox{\hyperlink{_base_enemy_8cs_source_l00319}{Respawn()}}, \mbox{\hyperlink{_base_enemy_8cs_source_l00245}{Take\+Damage()}}, and \mbox{\hyperlink{_base_enemy_8cs_source_l00216}{Update\+Animation()}}.
+Referenced by \mbox{\hyperlink{_boss1_8cs_source_l00036}{Boss1.\+\_\+\+Process()}}, \mbox{\hyperlink{_base_enemy_8cs_source_l00064}{\+\_\+\+Ready()}}, \mbox{\hyperlink{_boss1_8cs_source_l00018}{Boss1.\+\_\+\+Ready()}}, \mbox{\hyperlink{_boss1_8cs_source_l00053}{Boss1.\+Handle\+Regeneration()}}, \mbox{\hyperlink{_base_enemy_8cs_source_l00321}{Respawn()}}, \mbox{\hyperlink{_base_enemy_8cs_source_l00245}{Take\+Damage()}}, and \mbox{\hyperlink{_base_enemy_8cs_source_l00216}{Update\+Animation()}}.
 
 \Hypertarget{class_base_enemy_a8a041329b7418ab3fb1b92aa0674eaa8}\index{BaseEnemy@{BaseEnemy}!CurrentStamina@{CurrentStamina}}
 \index{CurrentStamina@{CurrentStamina}!BaseEnemy@{BaseEnemy}}
@@ -1008,7 +1013,7 @@ Referenced by \mbox{\hyperlink{_base_enemy_8cs_source_l00274}{Check\+Player\+Hit
 \index{Dead@{Dead}!BaseEnemy@{BaseEnemy}}
 \doxysubsubsection{\texorpdfstring{Dead}{Dead}}
 {\footnotesize\ttfamily \label{class_base_enemy_a61314ff2e5931900ca4a87aa8feb670f} 
-bool Base\+Enemy.\+Dead = false\hspace{0.3cm}{\ttfamily [protected]}}
+bool Base\+Enemy.\+Dead = false}
 
 
 
@@ -1016,7 +1021,7 @@ Definition at line \mbox{\hyperlink{_base_enemy_8cs_source_l00018}{18}} of file 
 
 
 
-Referenced by \mbox{\hyperlink{_base_enemy_8cs_source_l00091}{\+\_\+\+Process()}}, \mbox{\hyperlink{_base_enemy_8cs_source_l00274}{Check\+Player\+Hit()}}, \mbox{\hyperlink{_base_enemy_8cs_source_l00305}{Die()}}, \mbox{\hyperlink{_base_enemy_8cs_source_l00150}{Handle\+Movement()}}, \mbox{\hyperlink{_base_enemy_8cs_source_l00266}{Is\+Dead()}}, \mbox{\hyperlink{_base_enemy_8cs_source_l00141}{On\+Sword\+Hit\+Box\+Body\+Entered()}}, \mbox{\hyperlink{_base_enemy_8cs_source_l00319}{Respawn()}}, \mbox{\hyperlink{_base_enemy_8cs_source_l00245}{Take\+Damage()}}, and \mbox{\hyperlink{_base_enemy_8cs_source_l00216}{Update\+Animation()}}.
+Referenced by \mbox{\hyperlink{_base_enemy_8cs_source_l00091}{\+\_\+\+Process()}}, \mbox{\hyperlink{_base_enemy_8cs_source_l00274}{Check\+Player\+Hit()}}, \mbox{\hyperlink{_base_enemy_8cs_source_l00305}{Die()}}, \mbox{\hyperlink{_base_enemy_8cs_source_l00150}{Handle\+Movement()}}, \mbox{\hyperlink{_base_enemy_8cs_source_l00266}{Is\+Dead()}}, \mbox{\hyperlink{_base_enemy_8cs_source_l00141}{On\+Sword\+Hit\+Box\+Body\+Entered()}}, \mbox{\hyperlink{_base_enemy_8cs_source_l00321}{Respawn()}}, \mbox{\hyperlink{_base_enemy_8cs_source_l00245}{Take\+Damage()}}, and \mbox{\hyperlink{_base_enemy_8cs_source_l00216}{Update\+Animation()}}.
 
 \Hypertarget{class_base_enemy_a136d1835e3ccedebaa12d7fe151d890b}\index{BaseEnemy@{BaseEnemy}!FrontCollisionRayCast@{FrontCollisionRayCast}}
 \index{FrontCollisionRayCast@{FrontCollisionRayCast}!BaseEnemy@{BaseEnemy}}
@@ -1030,7 +1035,7 @@ Definition at line \mbox{\hyperlink{_base_enemy_8cs_source_l00053}{53}} of file 
 
 
 
-Referenced by \mbox{\hyperlink{_base_enemy_8cs_source_l00064}{\+\_\+\+Ready()}}, \mbox{\hyperlink{_base_enemy_8cs_source_l00347}{Flip\+Rotation()}}, and \mbox{\hyperlink{_base_enemy_8cs_source_l00150}{Handle\+Movement()}}.
+Referenced by \mbox{\hyperlink{_base_enemy_8cs_source_l00064}{\+\_\+\+Ready()}}, \mbox{\hyperlink{_base_enemy_8cs_source_l00349}{Flip\+Rotation()}}, and \mbox{\hyperlink{_base_enemy_8cs_source_l00150}{Handle\+Movement()}}.
 
 \Hypertarget{class_base_enemy_a5944a26db58d24ee828a2d8e83687e93}\index{BaseEnemy@{BaseEnemy}!HealthBar@{HealthBar}}
 \index{HealthBar@{HealthBar}!BaseEnemy@{BaseEnemy}}
@@ -1068,13 +1073,13 @@ Definition at line \mbox{\hyperlink{_base_enemy_8cs_source_l00054}{54}} of file 
 
 
 
-Referenced by \mbox{\hyperlink{_base_enemy_8cs_source_l00064}{\+\_\+\+Ready()}}, and \mbox{\hyperlink{_base_enemy_8cs_source_l00334}{Check\+Line\+Of\+Sight()}}.
+Referenced by \mbox{\hyperlink{_base_enemy_8cs_source_l00064}{\+\_\+\+Ready()}}, and \mbox{\hyperlink{_base_enemy_8cs_source_l00336}{Check\+Line\+Of\+Sight()}}.
 
 \Hypertarget{class_base_enemy_a9b71f0d7b10ec2b15f5176b8b69ce190}\index{BaseEnemy@{BaseEnemy}!MainCollision@{MainCollision}}
 \index{MainCollision@{MainCollision}!BaseEnemy@{BaseEnemy}}
 \doxysubsubsection{\texorpdfstring{MainCollision}{MainCollision}}
 {\footnotesize\ttfamily \label{class_base_enemy_a9b71f0d7b10ec2b15f5176b8b69ce190} 
-Collision\+Shape2D Base\+Enemy.\+Main\+Collision\hspace{0.3cm}{\ttfamily [protected]}}
+Collision\+Shape2D Base\+Enemy.\+Main\+Collision}
 
 
 
@@ -1082,7 +1087,7 @@ Definition at line \mbox{\hyperlink{_base_enemy_8cs_source_l00052}{52}} of file 
 
 
 
-Referenced by \mbox{\hyperlink{_base_enemy_8cs_source_l00064}{\+\_\+\+Ready()}}, \mbox{\hyperlink{_base_enemy_8cs_source_l00305}{Die()}}, and \mbox{\hyperlink{_base_enemy_8cs_source_l00319}{Respawn()}}.
+Referenced by \mbox{\hyperlink{_base_enemy_8cs_source_l00064}{\+\_\+\+Ready()}}, \mbox{\hyperlink{_base_enemy_8cs_source_l00305}{Die()}}, and \mbox{\hyperlink{_base_enemy_8cs_source_l00321}{Respawn()}}.
 
 \Hypertarget{class_base_enemy_aeb1033802e3cdf44b1b0a510cbf18425}\index{BaseEnemy@{BaseEnemy}!MaxHealthPoints@{MaxHealthPoints}}
 \index{MaxHealthPoints@{MaxHealthPoints}!BaseEnemy@{BaseEnemy}}
@@ -1096,7 +1101,7 @@ Definition at line \mbox{\hyperlink{_base_enemy_8cs_source_l00022}{22}} of file 
 
 
 
-Referenced by \mbox{\hyperlink{_boss1_8cs_source_l00036}{Boss1.\+\_\+\+Process()}}, \mbox{\hyperlink{_base_enemy_8cs_source_l00064}{\+\_\+\+Ready()}}, \mbox{\hyperlink{_boss1_8cs_source_l00018}{Boss1.\+\_\+\+Ready()}}, \mbox{\hyperlink{_boss1_8cs_source_l00053}{Boss1.\+Handle\+Regeneration()}}, \mbox{\hyperlink{_base_enemy_8cs_source_l00319}{Respawn()}}, and \mbox{\hyperlink{_base_enemy_8cs_source_l00216}{Update\+Animation()}}.
+Referenced by \mbox{\hyperlink{_boss1_8cs_source_l00036}{Boss1.\+\_\+\+Process()}}, \mbox{\hyperlink{_base_enemy_8cs_source_l00064}{\+\_\+\+Ready()}}, \mbox{\hyperlink{_boss1_8cs_source_l00018}{Boss1.\+\_\+\+Ready()}}, \mbox{\hyperlink{_boss1_8cs_source_l00053}{Boss1.\+Handle\+Regeneration()}}, \mbox{\hyperlink{_base_enemy_8cs_source_l00321}{Respawn()}}, and \mbox{\hyperlink{_base_enemy_8cs_source_l00216}{Update\+Animation()}}.
 
 \Hypertarget{class_base_enemy_a4f99809bf5de1dbbe762c13fc7db8881}\index{BaseEnemy@{BaseEnemy}!MaxStamina@{MaxStamina}}
 \index{MaxStamina@{MaxStamina}!BaseEnemy@{BaseEnemy}}
@@ -1130,7 +1135,7 @@ Referenced by \mbox{\hyperlink{_base_enemy_8cs_source_l00132}{On\+Hitbox\+Area\+
 \index{Pursuing@{Pursuing}!BaseEnemy@{BaseEnemy}}
 \doxysubsubsection{\texorpdfstring{Pursuing}{Pursuing}}
 {\footnotesize\ttfamily \label{class_base_enemy_a512fca9892d7e4cd717adf9087dcc295} 
-bool Base\+Enemy.\+Pursuing = false\hspace{0.3cm}{\ttfamily [protected]}}
+bool Base\+Enemy.\+Pursuing = false}
 
 
 
@@ -1154,7 +1159,7 @@ Definition at line \mbox{\hyperlink{_base_enemy_8cs_source_l00020}{20}} of file 
 \index{ReturnToStart@{ReturnToStart}!BaseEnemy@{BaseEnemy}}
 \doxysubsubsection{\texorpdfstring{ReturnToStart}{ReturnToStart}}
 {\footnotesize\ttfamily \label{class_base_enemy_a283d342796ff720966538c0776fc9e48} 
-double Base\+Enemy.\+Return\+To\+Start\hspace{0.3cm}{\ttfamily [protected]}}
+double Base\+Enemy.\+Return\+To\+Start}
 
 
 
@@ -1224,7 +1229,7 @@ Referenced by \mbox{\hyperlink{_boss1_8cs_source_l00018}{Boss1.\+\_\+\+Ready()}}
 \index{Sprite@{Sprite}!BaseEnemy@{BaseEnemy}}
 \doxysubsubsection{\texorpdfstring{Sprite}{Sprite}}
 {\footnotesize\ttfamily \label{class_base_enemy_a2e4bd99e594a6c3366f64ab47c7443b5} 
-Animated\+Sprite2D Base\+Enemy.\+Sprite\hspace{0.3cm}{\ttfamily [protected]}}
+Animated\+Sprite2D Base\+Enemy.\+Sprite}
 
 
 
@@ -1232,13 +1237,13 @@ Definition at line \mbox{\hyperlink{_base_enemy_8cs_source_l00049}{49}} of file 
 
 
 
-Referenced by \mbox{\hyperlink{_base_enemy_8cs_source_l00064}{\+\_\+\+Ready()}}, \mbox{\hyperlink{_base_enemy_8cs_source_l00274}{Check\+Player\+Hit()}}, \mbox{\hyperlink{_base_enemy_8cs_source_l00305}{Die()}}, \mbox{\hyperlink{_base_enemy_8cs_source_l00347}{Flip\+Rotation()}}, \mbox{\hyperlink{_base_enemy_8cs_source_l00150}{Handle\+Movement()}}, \mbox{\hyperlink{_base_enemy_8cs_source_l00141}{On\+Sword\+Hit\+Box\+Body\+Entered()}}, \mbox{\hyperlink{_base_enemy_8cs_source_l00319}{Respawn()}}, \mbox{\hyperlink{_boss1_8cs_source_l00068}{Boss1.\+Start\+Glowing()}}, \mbox{\hyperlink{_base_enemy_8cs_source_l00245}{Take\+Damage()}}, and \mbox{\hyperlink{_base_enemy_8cs_source_l00216}{Update\+Animation()}}.
+Referenced by \mbox{\hyperlink{_base_enemy_8cs_source_l00064}{\+\_\+\+Ready()}}, \mbox{\hyperlink{_base_enemy_8cs_source_l00274}{Check\+Player\+Hit()}}, \mbox{\hyperlink{_base_enemy_8cs_source_l00305}{Die()}}, \mbox{\hyperlink{_base_enemy_8cs_source_l00349}{Flip\+Rotation()}}, \mbox{\hyperlink{_base_enemy_8cs_source_l00150}{Handle\+Movement()}}, \mbox{\hyperlink{_base_enemy_8cs_source_l00141}{On\+Sword\+Hit\+Box\+Body\+Entered()}}, \mbox{\hyperlink{_base_enemy_8cs_source_l00321}{Respawn()}}, \mbox{\hyperlink{_boss1_8cs_source_l00068}{Boss1.\+Start\+Glowing()}}, \mbox{\hyperlink{_base_enemy_8cs_source_l00245}{Take\+Damage()}}, and \mbox{\hyperlink{_base_enemy_8cs_source_l00216}{Update\+Animation()}}.
 
 \Hypertarget{class_base_enemy_af386b85762b6790503bf1716a9d2fd77}\index{BaseEnemy@{BaseEnemy}!StartPosition@{StartPosition}}
 \index{StartPosition@{StartPosition}!BaseEnemy@{BaseEnemy}}
 \doxysubsubsection{\texorpdfstring{StartPosition}{StartPosition}}
 {\footnotesize\ttfamily \label{class_base_enemy_af386b85762b6790503bf1716a9d2fd77} 
-Vector2 Base\+Enemy.\+Start\+Position\hspace{0.3cm}{\ttfamily [protected]}}
+Vector2 Base\+Enemy.\+Start\+Position}
 
 
 
@@ -1260,7 +1265,7 @@ Definition at line \mbox{\hyperlink{_base_enemy_8cs_source_l00044}{44}} of file 
 
 
 
-Referenced by \mbox{\hyperlink{_base_enemy_8cs_source_l00064}{\+\_\+\+Ready()}}, \mbox{\hyperlink{_base_enemy_8cs_source_l00150}{Handle\+Movement()}}, and \mbox{\hyperlink{_base_enemy_8cs_source_l00358}{Set\+Rotation()}}.
+Referenced by \mbox{\hyperlink{_base_enemy_8cs_source_l00064}{\+\_\+\+Ready()}}, \mbox{\hyperlink{_base_enemy_8cs_source_l00150}{Handle\+Movement()}}, and \mbox{\hyperlink{_base_enemy_8cs_source_l00360}{Set\+Rotation()}}.
 
 \Hypertarget{class_base_enemy_a9d136e8abbf09f7b418112394bdf1c88}\index{BaseEnemy@{BaseEnemy}!SwordHitbox@{SwordHitbox}}
 \index{SwordHitbox@{SwordHitbox}!BaseEnemy@{BaseEnemy}}
@@ -1274,13 +1279,13 @@ Definition at line \mbox{\hyperlink{_base_enemy_8cs_source_l00051}{51}} of file 
 
 
 
-Referenced by \mbox{\hyperlink{_base_enemy_8cs_source_l00064}{\+\_\+\+Ready()}}, \mbox{\hyperlink{_base_enemy_8cs_source_l00274}{Check\+Player\+Hit()}}, and \mbox{\hyperlink{_base_enemy_8cs_source_l00347}{Flip\+Rotation()}}.
+Referenced by \mbox{\hyperlink{_base_enemy_8cs_source_l00064}{\+\_\+\+Ready()}}, \mbox{\hyperlink{_base_enemy_8cs_source_l00274}{Check\+Player\+Hit()}}, and \mbox{\hyperlink{_base_enemy_8cs_source_l00349}{Flip\+Rotation()}}.
 
 \Hypertarget{class_base_enemy_a2b05c8247dab9946e801fd74a8af6376}\index{BaseEnemy@{BaseEnemy}!TargetPosition@{TargetPosition}}
 \index{TargetPosition@{TargetPosition}!BaseEnemy@{BaseEnemy}}
 \doxysubsubsection{\texorpdfstring{TargetPosition}{TargetPosition}}
 {\footnotesize\ttfamily \label{class_base_enemy_a2b05c8247dab9946e801fd74a8af6376} 
-Vector2 Base\+Enemy.\+Target\+Position = Vector2.\+Inf\hspace{0.3cm}{\ttfamily [protected]}}
+Vector2 Base\+Enemy.\+Target\+Position = Vector2.\+Inf}
 
 
 

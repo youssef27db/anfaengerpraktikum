@@ -1,6 +1,24 @@
 var searchData=
 [
-  ['handlejump_0',['HandleJump',['../class_player.html#a8237be052507e34edec4776fa25f9544',1,'Player']]],
-  ['handlemovement_1',['HandleMovement',['../class_base_enemy.html#aee39d90b4efaebada5ab47b21184516a',1,'BaseEnemy.HandleMovement()'],['../class_player.html#af8fce0260ebcc78bb46e2a8393eb2fb7',1,'Player.HandleMovement()']]],
-  ['handleregeneration_2',['HandleRegeneration',['../class_boss1.html#adeeb5dafaa8e2f640adba4339b6da0f9',1,'Boss1']]]
+  ['getbloodvials_0',['GetBloodVials',['../class_player.html#ab04e4301a26dacc4e1d178d1b7d1d872',1,'Player']]],
+  ['getbvcurrentuses_1',['GetBVCurrentUses',['../class_player_stats.html#a7927fc41f41b344aecea23f12c52329b',1,'PlayerStats']]],
+  ['getbvhealamount_2',['GetBVHealAmount',['../class_player_stats.html#a026f80c7d14afe5dbf7e33e0edd2a16a',1,'PlayerStats']]],
+  ['getbvmaxuses_3',['GetBVMaxUses',['../class_player_stats.html#a88cc0468ef32b3b4a7b2e79af4e24424',1,'PlayerStats']]],
+  ['getcurrenthealth_4',['GetCurrentHealth',['../class_player_stats.html#a0ec1075ba0983a3df42454b110194c0d',1,'PlayerStats']]],
+  ['getcurrentleveltag_5',['GetCurrentLevelTag',['../class_player_stats.html#a7db8c1cd1ecfb2041c7b376289054801',1,'PlayerStats']]],
+  ['getdamage_6',['GetDamage',['../class_player.html#a01ad03754c12b1288b69cdd42cb6f85e',1,'Player.GetDamage()'],['../class_spike.html#a089076328dd0c52b0c595f9ee9c98c33',1,'Spike.GetDamage()'],['../class_spike_dynamic.html#a9c3e59009a1e875146bcb29853ab7e75',1,'SpikeDynamic.GetDamage()']]],
+  ['getlastsaveid_7',['GetLastSaveId',['../class_storage_manager.html#a1db2888bb3966010740337ad6b975f3a',1,'StorageManager']]],
+  ['getmaxhealthpoints_8',['GetMaxHealthPoints',['../class_player_stats.html#a6a24773d00e75be9747b99681ac76127',1,'PlayerStats']]],
+  ['getmaxstamina_9',['GetMaxStamina',['../class_player_stats.html#a7e27ea7ba3c266ecfa446c070415180a',1,'PlayerStats']]],
+  ['getphysicaldmg_10',['GetPhysicalDMG',['../class_damage.html#a084fad418a6be9edca3e3e32355e49c0',1,'Damage']]],
+  ['getposition_11',['GetPosition',['../class_player_stats.html#a77ca820f184b31dd9590bc8613f8566e',1,'PlayerStats']]],
+  ['getpushamount_12',['GetPushAmount',['../class_damage.html#a60741a1e632c21788499ddc284b2844b',1,'Damage']]],
+  ['getrespawnleveltag_13',['GetRespawnLevelTag',['../class_player_stats.html#ad868bae6deb062dbcc4702b276a27041',1,'PlayerStats']]],
+  ['getsaves_14',['GetSaves',['../class_storage_manager.html#a9f87604d57da68440dc0c0a66517c2dc',1,'StorageManager']]],
+  ['getsinamount_15',['GetSinAmount',['../class_player_stats.html#a0b2b3398a02e8fbafe3c41dd466c57d0',1,'PlayerStats']]],
+  ['getsource_16',['GetSource',['../class_damage.html#ac446ed14eae2ee0d927510a3ab525042',1,'Damage']]],
+  ['getspawnpoint_17',['GetSpawnPoint',['../class_player_stats.html#a20396ab55000fe68c62711c072bad9bb',1,'PlayerStats']]],
+  ['getstamina_18',['GetStamina',['../class_player_stats.html#a3a170316e8384ab030f5f697b799a947',1,'PlayerStats']]],
+  ['gettruedmg_19',['GetTrueDMG',['../class_damage.html#a4d43580112f089c208f9ba8e0b2559f0',1,'Damage']]],
+  ['gotolevel_20',['GoToLevel',['../class_navigation_manager.html#a5966bab1490d10dfc285507a0c8d8bb7',1,'NavigationManager']]]
 ];

@@ -17,7 +17,11 @@ Inheritance diagram for Boss1\+:\begin{figure}[H]
 override void \mbox{\hyperlink{class_boss1_a54d969ea1903e38368d64dad18a7f4f7}{\+\_\+\+Ready}} ()
 \begin{DoxyCompactList}\small\item\em Überschreibt die \+\_\+\+Ready-\/\+Methode von \doxylink{class_base_enemy}{Base\+Enemy}. \end{DoxyCompactList}\item 
 override void \mbox{\hyperlink{class_boss1_acf5c78871a8938129df05bba3b71780f}{\+\_\+\+Process}} (double Delta\+Time)
-\begin{DoxyCompactList}\small\item\em Überschreibt die \+\_\+\+Process-\/\+Methode von \doxylink{class_base_enemy}{Base\+Enemy}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Überschreibt die \+\_\+\+Process-\/\+Methode von \doxylink{class_base_enemy}{Base\+Enemy}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_boss1_adeeb5dafaa8e2f640adba4339b6da0f9}{Handle\+Regeneration}} (double Delta\+Time)
+\begin{DoxyCompactList}\small\item\em Regeneriert die Gesundheit des Bosses, wenn er keinen Schaden nimmt. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_boss1_a3028f486f7e9cde1116086a4ae7b810e}{Start\+Glowing}} ()
+\begin{DoxyCompactList}\small\item\em Startet einen Leuchteffekt, wenn der Boss Schaden nimmt. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_base_enemy}{Base\+Enemy}}}
 \begin{DoxyCompactItemize}
 \item 
@@ -33,25 +37,49 @@ void \mbox{\hyperlink{class_base_enemy_a6aad96826441fe152694139d29893bad}{On\+Hi
 \begin{DoxyCompactList}\small\item\em Detektiert wenn ein Objekt die Hitbox des Gegners betritt. (z.\+B.\+: Schwert des Spielers) \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_base_enemy_ab07fb117d5286ef97dc702149c02b14a}{On\+Sword\+Hit\+Box\+Body\+Entered}} (Node2D body)
 \begin{DoxyCompactList}\small\item\em Detektiert ob der Spieler in Schlagreichweite ist. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_base_enemy_a284a995d12d6bc1d7a23d1f6f25a96af}{Take\+Damage}} (\mbox{\hyperlink{class_damage}{Damage}} DMG)
+\begin{DoxyCompactList}\small\item\em Verarbeitet zugefügten Schaden. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_base_enemy_a27c3947769522b35b537e5f472ef0b77}{Is\+Dead}} ()
 \begin{DoxyCompactList}\small\item\em Gibt boolean Dead zurück. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_base_enemy_aa5e7d87eaa080ed685315588a39a9f1f}{Die}} ()
+\begin{DoxyCompactList}\small\item\em Wird aufgerufen wenn der Gegner stirbt. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_base_enemy_a9ef92c3f73170538681e665e78e2279a}{Respawn}} ()
 \begin{DoxyCompactList}\small\item\em Wird aufgerufen wenn der Gegner respawnt. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_boss1_af34e5a49e4e66b404a0f5ba6e0dcfdf5}{Enemies\+Revived}} = false
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{class_base_enemy}{Base\+Enemy}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_base_enemy_a61314ff2e5931900ca4a87aa8feb670f}{Dead}} = false
+\item 
+float \mbox{\hyperlink{class_base_enemy_a66b9b6f8492753769f40e18e66babe6d}{Armor}} = 20f
+\item 
+float \mbox{\hyperlink{class_base_enemy_ad8681385a9f3e9e67d65acb6b945efcf}{Current\+Health\+Points}}
+\item 
+double \mbox{\hyperlink{class_base_enemy_a283d342796ff720966538c0776fc9e48}{Return\+To\+Start}}
+\item 
+bool \mbox{\hyperlink{class_base_enemy_a512fca9892d7e4cd717adf9087dcc295}{Pursuing}} = false
+\item 
+Vector2 \mbox{\hyperlink{class_base_enemy_a2b05c8247dab9946e801fd74a8af6376}{Target\+Position}} = Vector2.\+Inf
+\item 
+Vector2 \mbox{\hyperlink{class_base_enemy_af386b85762b6790503bf1716a9d2fd77}{Start\+Position}}
+\item 
+Animated\+Sprite2D \mbox{\hyperlink{class_base_enemy_a2e4bd99e594a6c3366f64ab47c7443b5}{Sprite}}
+\item 
+Collision\+Shape2D \mbox{\hyperlink{class_base_enemy_a9b71f0d7b10ec2b15f5176b8b69ce190}{Main\+Collision}}
+\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{class_boss1_adeeb5dafaa8e2f640adba4339b6da0f9}{Handle\+Regeneration}} (double Delta\+Time)
-\begin{DoxyCompactList}\small\item\em Regeneriert die Gesundheit des Bosses, wenn er keinen Schaden nimmt. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_boss1_a3028f486f7e9cde1116086a4ae7b810e}{Start\+Glowing}} ()
-\begin{DoxyCompactList}\small\item\em Startet einen Leuchteffekt, wenn der Boss Schaden nimmt. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_boss1_a7f37f00687f7c0e51fde5ba281150091}{Show\+Popup\+Message}} (string Message)
 \begin{DoxyCompactList}\small\item\em Zeigt eine Popup-\/\+Nachricht an. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_boss1_aba2c531c46124f21ec612a2acd14cd6c}{Revive\+Enemies}} ()
 \begin{DoxyCompactList}\small\item\em Lässt alle toten Feinde im Raum des Bosses wiederbeleben. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
-\item 
-bool \mbox{\hyperlink{class_boss1_af34e5a49e4e66b404a0f5ba6e0dcfdf5}{Enemies\+Revived}} = false
 \item 
 float \mbox{\hyperlink{class_boss1_a0a05bef3b6a4852c18ee805f785c8a67}{Regen\+Cooldown}} = 5.\+0f
 \item 
@@ -70,13 +98,9 @@ virtual void \mbox{\hyperlink{class_base_enemy_a52b8c24a84bfa2e981d776f816f33186
 \item 
 float \mbox{\hyperlink{class_base_enemy_a1661cfbf7e6dff6a1d8a6fa44b10a3b0}{Damage}} = 20f
 \item 
-bool \mbox{\hyperlink{class_base_enemy_a61314ff2e5931900ca4a87aa8feb670f}{Dead}} = false
-\item 
 bool \mbox{\hyperlink{class_base_enemy_a3d261e81ba7422572d0813341016c2c3}{Respawnable}} = true
 \item 
 float \mbox{\hyperlink{class_base_enemy_aeb1033802e3cdf44b1b0a510cbf18425}{Max\+Health\+Points}} = 100f
-\item 
-float \mbox{\hyperlink{class_base_enemy_a66b9b6f8492753769f40e18e66babe6d}{Armor}} = 20f
 \item 
 float \mbox{\hyperlink{class_base_enemy_a4f99809bf5de1dbbe762c13fc7db8881}{Max\+Stamina}} = 1f
 \item 
@@ -86,31 +110,17 @@ int \mbox{\hyperlink{class_base_enemy_afa7426d08cbee4ed3184822c57888ec7}{Sin\+Am
 \item 
 double \mbox{\hyperlink{class_base_enemy_aba59e1a3fffbf2749c266d8caaf1c482}{Return\+To\+Start\+After}} = 5
 \item 
-float \mbox{\hyperlink{class_base_enemy_ad8681385a9f3e9e67d65acb6b945efcf}{Current\+Health\+Points}}
-\item 
 float \mbox{\hyperlink{class_base_enemy_a8a041329b7418ab3fb1b92aa0674eaa8}{Current\+Stamina}}
 \item 
-double \mbox{\hyperlink{class_base_enemy_a283d342796ff720966538c0776fc9e48}{Return\+To\+Start}}
-\item 
-bool \mbox{\hyperlink{class_base_enemy_a512fca9892d7e4cd717adf9087dcc295}{Pursuing}} = false
-\item 
 Node2D \mbox{\hyperlink{class_base_enemy_aaeef5b40160a59096f667fd084b73cc8}{Current\+Target}} = null
-\item 
-Vector2 \mbox{\hyperlink{class_base_enemy_a2b05c8247dab9946e801fd74a8af6376}{Target\+Position}} = Vector2.\+Inf
-\item 
-Vector2 \mbox{\hyperlink{class_base_enemy_af386b85762b6790503bf1716a9d2fd77}{Start\+Position}}
 \item 
 bool \mbox{\hyperlink{class_base_enemy_ad2523c398e4a11b5f36a9df26c4014eb}{Start\+Rotation}} = false
 \item 
 bool \mbox{\hyperlink{class_base_enemy_a47e5e613c39180e6b1bf9899039b45fc}{Already\+Hit}} = false
 \item 
-Animated\+Sprite2D \mbox{\hyperlink{class_base_enemy_a2e4bd99e594a6c3366f64ab47c7443b5}{Sprite}}
-\item 
 Collision\+Polygon2D \mbox{\hyperlink{class_base_enemy_ada18d6dd378a0f7380579ce63a6b4ec2}{Collision\+Polygon}}
 \item 
 Area2D \mbox{\hyperlink{class_base_enemy_a9d136e8abbf09f7b418112394bdf1c88}{Sword\+Hitbox}}
-\item 
-Collision\+Shape2D \mbox{\hyperlink{class_base_enemy_a9b71f0d7b10ec2b15f5176b8b69ce190}{Main\+Collision}}
 \item 
 Ray\+Cast2D \mbox{\hyperlink{class_base_enemy_a136d1835e3ccedebaa12d7fe151d890b}{Front\+Collision\+Ray\+Cast}}
 \item 
@@ -217,7 +227,7 @@ References \mbox{\hyperlink{_base_enemy_8cs_source_l00024}{Base\+Enemy.\+Armor}}
 \index{HandleRegeneration@{HandleRegeneration}!Boss1@{Boss1}}
 \doxysubsubsection{\texorpdfstring{HandleRegeneration()}{HandleRegeneration()}}
 {\footnotesize\ttfamily \label{class_boss1_adeeb5dafaa8e2f640adba4339b6da0f9} 
-void Boss1.\+Handle\+Regeneration (\begin{DoxyParamCaption}\item[{double}]{Delta\+Time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+void Boss1.\+Handle\+Regeneration (\begin{DoxyParamCaption}\item[{double}]{Delta\+Time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -234,7 +244,7 @@ Definition at line \mbox{\hyperlink{_boss1_8cs_source_l00053}{53}} of file \mbox
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_base_enemy_ad8681385a9f3e9e67d65acb6b945efcf}{CurrentHealthPoints}}\ <\ \mbox{\hyperlink{class_base_enemy_aeb1033802e3cdf44b1b0a510cbf18425}{MaxHealthPoints}})\{}
 \DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_boss1_a1ffe13684ef66b1ec26b87e728b83cb0}{RegenTimer}}\ +=\ (float)DeltaTime;}
 \DoxyCodeLine{00056\ }
@@ -286,7 +296,7 @@ Definition at line \mbox{\hyperlink{_boss1_8cs_source_l00108}{108}} of file \mbo
 \end{DoxyCode}
 
 
-References \mbox{\hyperlink{_base_enemy_8cs_source_l00266}{Base\+Enemy.\+Is\+Dead()}}, and \mbox{\hyperlink{_base_enemy_8cs_source_l00319}{Base\+Enemy.\+Respawn()}}.
+References \mbox{\hyperlink{_base_enemy_8cs_source_l00266}{Base\+Enemy.\+Is\+Dead()}}, and \mbox{\hyperlink{_base_enemy_8cs_source_l00321}{Base\+Enemy.\+Respawn()}}.
 
 
 
@@ -347,7 +357,7 @@ Referenced by \mbox{\hyperlink{_boss1_8cs_source_l00068}{Start\+Glowing()}}.
 \index{StartGlowing@{StartGlowing}!Boss1@{Boss1}}
 \doxysubsubsection{\texorpdfstring{StartGlowing()}{StartGlowing()}}
 {\footnotesize\ttfamily \label{class_boss1_a3028f486f7e9cde1116086a4ae7b810e} 
-void Boss1.\+Start\+Glowing (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+void Boss1.\+Start\+Glowing (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -359,7 +369,7 @@ Definition at line \mbox{\hyperlink{_boss1_8cs_source_l00068}{68}} of file \mbox
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Ändere\ die\ Modulationsfarbe\ des\ Sprites,\ um\ ein\ Leuchten\ zu\ simulieren}}
 \DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_base_enemy_a2e4bd99e594a6c3366f64ab47c7443b5}{Sprite}}\ !=\ \textcolor{keyword}{null})\{}
 \DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_boss1_a7f37f00687f7c0e51fde5ba281150091}{ShowPopupMessage}}(\textcolor{stringliteral}{"{}AHHHH!!!"{}});}
@@ -383,7 +393,7 @@ Referenced by \mbox{\hyperlink{_boss1_8cs_source_l00036}{\+\_\+\+Process()}}.
 \index{EnemiesRevived@{EnemiesRevived}!Boss1@{Boss1}}
 \doxysubsubsection{\texorpdfstring{EnemiesRevived}{EnemiesRevived}}
 {\footnotesize\ttfamily \label{class_boss1_af34e5a49e4e66b404a0f5ba6e0dcfdf5} 
-bool Boss1.\+Enemies\+Revived = false\hspace{0.3cm}{\ttfamily [private]}}
+bool Boss1.\+Enemies\+Revived = false}
 
 
 

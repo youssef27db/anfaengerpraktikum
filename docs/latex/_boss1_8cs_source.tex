@@ -7,7 +7,7 @@
 \DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00003}00003\ }
 \DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00007}\mbox{\hyperlink{class_boss1}{00007}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{partial\ class\ }\mbox{\hyperlink{class_boss1}{Boss1}}\ :\ \mbox{\hyperlink{class_base_enemy}{BaseEnemy}}\{}
 \DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00008}00008\ }
-\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00009}\mbox{\hyperlink{class_boss1_af34e5a49e4e66b404a0f5ba6e0dcfdf5}{00009}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_boss1_af34e5a49e4e66b404a0f5ba6e0dcfdf5}{EnemiesRevived}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00009}\mbox{\hyperlink{class_boss1_af34e5a49e4e66b404a0f5ba6e0dcfdf5}{00009}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_boss1_af34e5a49e4e66b404a0f5ba6e0dcfdf5}{EnemiesRevived}}\ =\ \textcolor{keyword}{false};}
 \DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00010}\mbox{\hyperlink{class_boss1_a0a05bef3b6a4852c18ee805f785c8a67}{00010}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_boss1_a0a05bef3b6a4852c18ee805f785c8a67}{RegenCooldown}}\ =\ 5.0f;\ \textcolor{comment}{//\ Zeit,\ nach\ der\ Regeneration\ beginnt,\ wenn\ kein\ Schaden\ genommen\ wurde}}
 \DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00011}\mbox{\hyperlink{class_boss1_a1ffe13684ef66b1ec26b87e728b83cb0}{00011}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_boss1_a1ffe13684ef66b1ec26b87e728b83cb0}{RegenTimer}}\ =\ 0.0f;\ \textcolor{comment}{//\ Timer\ für\ die\ Zeit\ seit\ dem\ letzten\ Angriff}}
 \DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00012}\mbox{\hyperlink{class_boss1_ac698e027fada02bcf0bea5e2c756711c}{00012}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_boss1_ac698e027fada02bcf0bea5e2c756711c}{RegenAmount}}\ =\ 10.0f;\ \textcolor{comment}{//\ Menge\ an\ Gesundheit,\ die\ pro\ Tick\ regeneriert\ wird}}
@@ -40,7 +40,7 @@
 \DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_boss1_adeeb5dafaa8e2f640adba4339b6da0f9}{HandleRegeneration}}(DeltaTime);}
 \DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00047}00047\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00048}00048\ }
-\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00053}\mbox{\hyperlink{class_boss1_adeeb5dafaa8e2f640adba4339b6da0f9}{00053}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_boss1_adeeb5dafaa8e2f640adba4339b6da0f9}{HandleRegeneration}}(\textcolor{keywordtype}{double}\ DeltaTime)\{}
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00053}\mbox{\hyperlink{class_boss1_adeeb5dafaa8e2f640adba4339b6da0f9}{00053}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_boss1_adeeb5dafaa8e2f640adba4339b6da0f9}{HandleRegeneration}}(\textcolor{keywordtype}{double}\ DeltaTime)\{}
 \DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_base_enemy_ad8681385a9f3e9e67d65acb6b945efcf}{CurrentHealthPoints}}\ <\ \mbox{\hyperlink{class_base_enemy_aeb1033802e3cdf44b1b0a510cbf18425}{MaxHealthPoints}})\{}
 \DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_boss1_a1ffe13684ef66b1ec26b87e728b83cb0}{RegenTimer}}\ +=\ (float)DeltaTime;}
 \DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00056}00056\ }
@@ -52,7 +52,7 @@
 \DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00063}00063\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00064}00064\ }
-\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00068}\mbox{\hyperlink{class_boss1_a3028f486f7e9cde1116086a4ae7b810e}{00068}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_boss1_a3028f486f7e9cde1116086a4ae7b810e}{StartGlowing}}()\{}
+\DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00068}\mbox{\hyperlink{class_boss1_a3028f486f7e9cde1116086a4ae7b810e}{00068}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_boss1_a3028f486f7e9cde1116086a4ae7b810e}{StartGlowing}}()\{}
 \DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Ändere\ die\ Modulationsfarbe\ des\ Sprites,\ um\ ein\ Leuchten\ zu\ simulieren}}
 \DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_base_enemy_a2e4bd99e594a6c3366f64ab47c7443b5}{Sprite}}\ !=\ \textcolor{keyword}{null})\{}
 \DoxyCodeLine{\Hypertarget{_boss1_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_boss1_a7f37f00687f7c0e51fde5ba281150091}{ShowPopupMessage}}(\textcolor{stringliteral}{"{}AHHHH!!!"{}});}

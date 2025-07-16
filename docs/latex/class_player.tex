@@ -18,6 +18,10 @@ override void \mbox{\hyperlink{class_player_ae192a478a80f0e93e01339d62cdd6f6d}{\
 \begin{DoxyCompactList}\small\item\em Initialisierung der Referenzen. Findet die relevanten Knoten in der Szene und weist sie zu. \end{DoxyCompactList}\item 
 override void \mbox{\hyperlink{class_player_a02ef3667915da4d1a2e21fd6c9f93e48}{\+\_\+\+Physics\+Process}} (double Delta\+Time)
 \begin{DoxyCompactList}\small\item\em Physikalische Prozesse werden in jedem Frame ausgeführt. Berechnet Gravitation, Bewegung, Sprünge und Dashes. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_player_ab8df147009969880162db05e243cd129}{Is\+Attacking}} ()
+\begin{DoxyCompactList}\small\item\em Überprüft, ob der Spieler gerade angreift. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_player_ac5b003495e551fee56ed26d26a239432}{Is\+Blocking}} ()
+\begin{DoxyCompactList}\small\item\em Überprüft, ob der Spieler blockiert. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_player_a750d1c5325522c39d232332349e4d2d2}{Max\+Heal}} ()
 \begin{DoxyCompactList}\small\item\em Heilt den Spieler vollständig, indem die aktuellen Lebenspunkte auf das Maximum gesetzt werden. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_player_aa1a0addae97cec09d2e86f3060a05438}{Take\+Damage}} (\mbox{\hyperlink{class_damage}{Damage}} \mbox{\hyperlink{class_damage}{Damage}})
@@ -51,10 +55,6 @@ void \mbox{\hyperlink{class_player_a0aa4500de693c81904bba34fb91df560}{Create\+Da
 \begin{DoxyCompactList}\small\item\em Erstellt einen visuellen Dash-\/\+Trail. Der Spieler hinterlässt eine Spur während des Dashes. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_player_a53389f72f48d7980aedb5e8b75d237dd}{Stop\+Dash}} ()
 \begin{DoxyCompactList}\small\item\em Stoppt den Dash. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{class_player_ab8df147009969880162db05e243cd129}{Is\+Attacking}} ()
-\begin{DoxyCompactList}\small\item\em Überprüft, ob der Spieler gerade angreift. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{class_player_ac5b003495e551fee56ed26d26a239432}{Is\+Blocking}} ()
-\begin{DoxyCompactList}\small\item\em Überprüft, ob der Spieler blockiert. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_player_a026f050e54322e805ad546ee99483e6e}{On\+Spawn}} (Vector2 position, string direction)
 \begin{DoxyCompactList}\small\item\em Wird aufgerufen, wenn der Spieler an einer neuen Position spawnen soll. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_player_a6dd10a495418b531f7e65ab238368bdc}{Update\+Animations}} ()
@@ -522,7 +522,7 @@ Referenced by \mbox{\hyperlink{_player_8cs_source_l00067}{\+\_\+\+Physics\+Proce
 \index{IsAttacking@{IsAttacking}!Player@{Player}}
 \doxysubsubsection{\texorpdfstring{IsAttacking()}{IsAttacking()}}
 {\footnotesize\ttfamily \label{class_player_ab8df147009969880162db05e243cd129} 
-bool Player.\+Is\+Attacking (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+bool Player.\+Is\+Attacking (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -537,7 +537,7 @@ Definition at line \mbox{\hyperlink{_player_8cs_source_l00265}{265}} of file \mb
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ AnimationPlayer.CurrentAnimation\ ==\ \textcolor{stringliteral}{"{}heavy\_attack"{}}\ ||\ AnimationPlayer.CurrentAnimation\ ==\ \textcolor{stringliteral}{"{}light\_attack"{}};}
 \DoxyCodeLine{00267\ \ \ \ \ \}}
 
@@ -550,7 +550,7 @@ Referenced by \mbox{\hyperlink{_player_8cs_source_l00121}{Handle\+Movement()}}, 
 \index{IsBlocking@{IsBlocking}!Player@{Player}}
 \doxysubsubsection{\texorpdfstring{IsBlocking()}{IsBlocking()}}
 {\footnotesize\ttfamily \label{class_player_ac5b003495e551fee56ed26d26a239432} 
-bool Player.\+Is\+Blocking (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+bool Player.\+Is\+Blocking (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -565,7 +565,7 @@ Definition at line \mbox{\hyperlink{_player_8cs_source_l00273}{273}} of file \mb
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ AnimationPlayer.CurrentAnimation\ ==\ \textcolor{stringliteral}{"{}block"{}};}
 \DoxyCodeLine{00275\ \ \ \ \ \}}
 

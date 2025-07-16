@@ -6,9 +6,11 @@ var searchData=
   ['instance_3',['Instance',['../class_navigation_manager.html#aca7e1252e63bf4323d89b8f7d4cd4ce8',1,'NavigationManager.Instance'],['../class_player_stats.html#adeb667dbe2c1a76d1785ce07b6faf181',1,'PlayerStats.Instance'],['../class_storage_manager.html#abc9f8437bf6c7954bba4d68baf5c96ce',1,'StorageManager.Instance']]],
   ['interactable_4',['Interactable',['../class_interactable.html',1,'']]],
   ['interactable_2ecs_5',['Interactable.cs',['../_interactable_8cs.html',1,'']]],
-  ['isattacking_6',['IsAttacking',['../class_player.html#ab8df147009969880162db05e243cd129',1,'Player']]],
-  ['isblocking_7',['IsBlocking',['../class_player.html#ac5b003495e551fee56ed26d26a239432',1,'Player']]],
-  ['iscloseto_8',['IsCloseTo',['../class_base_enemy.html#abf57b8dbd0f267fd42a2a02b7bda95dc',1,'BaseEnemy']]],
-  ['isdashing_9',['IsDashing',['../class_player.html#a3cf5113d8c5c04d4fc9822c7b33a4fa1',1,'Player']]],
-  ['isdead_10',['IsDead',['../class_base_enemy.html#a27c3947769522b35b537e5f472ef0b77',1,'BaseEnemy']]]
+  ['isapiloaded_6',['IsApiLoaded',['../classgd_unit4_1_1addons_1_1gd_unit4_1_1src_1_1dotnet_1_1_gd_unit4_c_sharp_api.html#ae155a88d906d4ea48eb4f94e0714a242',1,'gdUnit4::addons::gdUnit4::src::dotnet::GdUnit4CSharpApi']]],
+  ['isattacking_7',['IsAttacking',['../class_player.html#ab8df147009969880162db05e243cd129',1,'Player']]],
+  ['isblocking_8',['IsBlocking',['../class_player.html#ac5b003495e551fee56ed26d26a239432',1,'Player']]],
+  ['iscloseto_9',['IsCloseTo',['../class_base_enemy.html#abf57b8dbd0f267fd42a2a02b7bda95dc',1,'BaseEnemy']]],
+  ['isdashing_10',['IsDashing',['../class_player.html#a3cf5113d8c5c04d4fc9822c7b33a4fa1',1,'Player']]],
+  ['isdead_11',['IsDead',['../class_base_enemy.html#a27c3947769522b35b537e5f472ef0b77',1,'BaseEnemy']]],
+  ['istestsuite_12',['IsTestSuite',['../classgd_unit4_1_1addons_1_1gd_unit4_1_1src_1_1dotnet_1_1_gd_unit4_c_sharp_api.html#aac1a25e69e8e08372b0fc87a37dace5c',1,'gdUnit4::addons::gdUnit4::src::dotnet::GdUnit4CSharpApi']]]
 ];

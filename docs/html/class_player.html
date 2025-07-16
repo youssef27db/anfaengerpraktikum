@@ -111,6 +111,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a02ef3667915da4d1a2e21fd6c9f93e48" id="r_a02ef3667915da4d1a2e21fd6c9f93e48"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a02ef3667915da4d1a2e21fd6c9f93e48">_PhysicsProcess</a> (double DeltaTime)</td></tr>
 <tr class="memdesc:a02ef3667915da4d1a2e21fd6c9f93e48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Physikalische Prozesse werden in jedem Frame ausgeführt. Berechnet Gravitation, Bewegung, Sprünge und Dashes.  <br /></td></tr>
 <tr class="separator:a02ef3667915da4d1a2e21fd6c9f93e48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8df147009969880162db05e243cd129" id="r_ab8df147009969880162db05e243cd129"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab8df147009969880162db05e243cd129">IsAttacking</a> ()</td></tr>
+<tr class="memdesc:ab8df147009969880162db05e243cd129"><td class="mdescLeft">&#160;</td><td class="mdescRight">Überprüft, ob der Spieler gerade angreift.  <br /></td></tr>
+<tr class="separator:ab8df147009969880162db05e243cd129"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5b003495e551fee56ed26d26a239432" id="r_ac5b003495e551fee56ed26d26a239432"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac5b003495e551fee56ed26d26a239432">IsBlocking</a> ()</td></tr>
+<tr class="memdesc:ac5b003495e551fee56ed26d26a239432"><td class="mdescLeft">&#160;</td><td class="mdescRight">Überprüft, ob der Spieler blockiert.  <br /></td></tr>
+<tr class="separator:ac5b003495e551fee56ed26d26a239432"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a750d1c5325522c39d232332349e4d2d2" id="r_a750d1c5325522c39d232332349e4d2d2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a750d1c5325522c39d232332349e4d2d2">MaxHeal</a> ()</td></tr>
 <tr class="memdesc:a750d1c5325522c39d232332349e4d2d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Heilt den Spieler vollständig, indem die aktuellen Lebenspunkte auf das Maximum gesetzt werden.  <br /></td></tr>
 <tr class="separator:a750d1c5325522c39d232332349e4d2d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -159,12 +165,6 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:a53389f72f48d7980aedb5e8b75d237dd" id="r_a53389f72f48d7980aedb5e8b75d237dd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a53389f72f48d7980aedb5e8b75d237dd">StopDash</a> ()</td></tr>
 <tr class="memdesc:a53389f72f48d7980aedb5e8b75d237dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stoppt den Dash.  <br /></td></tr>
 <tr class="separator:a53389f72f48d7980aedb5e8b75d237dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab8df147009969880162db05e243cd129" id="r_ab8df147009969880162db05e243cd129"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab8df147009969880162db05e243cd129">IsAttacking</a> ()</td></tr>
-<tr class="memdesc:ab8df147009969880162db05e243cd129"><td class="mdescLeft">&#160;</td><td class="mdescRight">Überprüft, ob der Spieler gerade angreift.  <br /></td></tr>
-<tr class="separator:ab8df147009969880162db05e243cd129"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac5b003495e551fee56ed26d26a239432" id="r_ac5b003495e551fee56ed26d26a239432"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac5b003495e551fee56ed26d26a239432">IsBlocking</a> ()</td></tr>
-<tr class="memdesc:ac5b003495e551fee56ed26d26a239432"><td class="mdescLeft">&#160;</td><td class="mdescRight">Überprüft, ob der Spieler blockiert.  <br /></td></tr>
-<tr class="separator:ac5b003495e551fee56ed26d26a239432"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a026f050e54322e805ad546ee99483e6e" id="r_a026f050e54322e805ad546ee99483e6e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a026f050e54322e805ad546ee99483e6e">OnSpawn</a> (Vector2 position, string direction)</td></tr>
 <tr class="memdesc:a026f050e54322e805ad546ee99483e6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wird aufgerufen, wenn der Spieler an einer neuen Position spawnen soll.  <br /></td></tr>
 <tr class="separator:a026f050e54322e805ad546ee99483e6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -743,7 +743,7 @@ Static Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -752,7 +752,7 @@ Static Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>true, wenn der Spieler angreift. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="_player_8cs_source.html#l00265">265</a> of file <a class="el" href="_player_8cs_source.html">Player.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  265</span>                               {</div>
+<div class="fragment"><div class="line"><span class="lineno">  265</span>                              {</div>
 <div class="line"><span class="lineno">  266</span>        <span class="keywordflow">return</span> AnimationPlayer.CurrentAnimation == <span class="stringliteral">&quot;heavy_attack&quot;</span> || AnimationPlayer.CurrentAnimation == <span class="stringliteral">&quot;light_attack&quot;</span>;</div>
 <div class="line"><span class="lineno">  267</span>    }</div>
 </div><!-- fragment -->
@@ -778,7 +778,7 @@ Static Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -787,7 +787,7 @@ Static Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>true, wenn der Spieler blockiert. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="_player_8cs_source.html#l00273">273</a> of file <a class="el" href="_player_8cs_source.html">Player.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  273</span>                              {</div>
+<div class="fragment"><div class="line"><span class="lineno">  273</span>                             {</div>
 <div class="line"><span class="lineno">  274</span>        <span class="keywordflow">return</span> AnimationPlayer.CurrentAnimation == <span class="stringliteral">&quot;block&quot;</span>;</div>
 <div class="line"><span class="lineno">  275</span>    }</div>
 </div><!-- fragment -->

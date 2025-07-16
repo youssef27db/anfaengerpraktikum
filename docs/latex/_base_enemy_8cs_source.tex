@@ -16,13 +16,13 @@
 \DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00015}00015\ \ \ \ \ [Export]}
 \DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00016}\mbox{\hyperlink{class_base_enemy_a1661cfbf7e6dff6a1d8a6fa44b10a3b0}{00016}}\ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_damage}{Damage}}\ =\ 20f;\ \ \ \ }
 \DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00017}00017\ \ \ \ \ [Export]}
-\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00018}\mbox{\hyperlink{class_base_enemy_a61314ff2e5931900ca4a87aa8feb670f}{00018}}\ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_base_enemy_a61314ff2e5931900ca4a87aa8feb670f}{Dead}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00018}\mbox{\hyperlink{class_base_enemy_a61314ff2e5931900ca4a87aa8feb670f}{00018}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_base_enemy_a61314ff2e5931900ca4a87aa8feb670f}{Dead}}\ =\ \textcolor{keyword}{false};}
 \DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00019}00019\ \ \ \ \ [Export]}
 \DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00020}\mbox{\hyperlink{class_base_enemy_a3d261e81ba7422572d0813341016c2c3}{00020}}\ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_base_enemy_a3d261e81ba7422572d0813341016c2c3}{Respawnable}}\ =\ \textcolor{keyword}{true};}
 \DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00021}00021\ \ \ \ \ [Export]}
 \DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00022}\mbox{\hyperlink{class_base_enemy_aeb1033802e3cdf44b1b0a510cbf18425}{00022}}\ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_base_enemy_aeb1033802e3cdf44b1b0a510cbf18425}{MaxHealthPoints}}\ =\ 100f;}
 \DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00023}00023\ \ \ \ \ [Export]}
-\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00024}\mbox{\hyperlink{class_base_enemy_a66b9b6f8492753769f40e18e66babe6d}{00024}}\ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_base_enemy_a66b9b6f8492753769f40e18e66babe6d}{Armor}}\ =\ 20f;\ \textcolor{comment}{//MUSS\ ZISCHEN\ 0\ UND\ 99\ LIEGEN}}
+\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00024}\mbox{\hyperlink{class_base_enemy_a66b9b6f8492753769f40e18e66babe6d}{00024}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_base_enemy_a66b9b6f8492753769f40e18e66babe6d}{Armor}}\ =\ 20f;\ \textcolor{comment}{//MUSS\ ZISCHEN\ 0\ UND\ 99\ LIEGEN}}
 \DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00025}00025\ \ \ \ \ [Export]}
 \DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00026}\mbox{\hyperlink{class_base_enemy_a4f99809bf5de1dbbe762c13fc7db8881}{00026}}\ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_base_enemy_a4f99809bf5de1dbbe762c13fc7db8881}{MaxStamina}}\ =\ 1f;}
 \DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00027}00027\ \ \ \ \ [Export]}
@@ -35,22 +35,22 @@
 \DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00034}\mbox{\hyperlink{class_base_enemy_a7a4fe2c824142f79ba0dd6cf9d1a7d25}{00034}}\ \ \ \ \ \textcolor{keyword}{public}\ uint\ \mbox{\hyperlink{class_base_enemy_a7a4fe2c824142f79ba0dd6cf9d1a7d25}{Id}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\}\ =\ 0;}
 \DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00035}00035\ }
 \DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00036}00036\ \ \ \ \ \textcolor{comment}{//private\ variables}}
-\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00037}\mbox{\hyperlink{class_base_enemy_ad8681385a9f3e9e67d65acb6b945efcf}{00037}}\ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_base_enemy_ad8681385a9f3e9e67d65acb6b945efcf}{CurrentHealthPoints}};}
+\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00037}\mbox{\hyperlink{class_base_enemy_ad8681385a9f3e9e67d65acb6b945efcf}{00037}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_base_enemy_ad8681385a9f3e9e67d65acb6b945efcf}{CurrentHealthPoints}};}
 \DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00038}\mbox{\hyperlink{class_base_enemy_a8a041329b7418ab3fb1b92aa0674eaa8}{00038}}\ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_base_enemy_a8a041329b7418ab3fb1b92aa0674eaa8}{CurrentStamina}};}
-\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00039}\mbox{\hyperlink{class_base_enemy_a283d342796ff720966538c0776fc9e48}{00039}}\ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_base_enemy_a283d342796ff720966538c0776fc9e48}{ReturnToStart}};}
-\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00040}\mbox{\hyperlink{class_base_enemy_a512fca9892d7e4cd717adf9087dcc295}{00040}}\ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_base_enemy_a512fca9892d7e4cd717adf9087dcc295}{Pursuing}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00039}\mbox{\hyperlink{class_base_enemy_a283d342796ff720966538c0776fc9e48}{00039}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_base_enemy_a283d342796ff720966538c0776fc9e48}{ReturnToStart}};}
+\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00040}\mbox{\hyperlink{class_base_enemy_a512fca9892d7e4cd717adf9087dcc295}{00040}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_base_enemy_a512fca9892d7e4cd717adf9087dcc295}{Pursuing}}\ =\ \textcolor{keyword}{false};}
 \DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00041}\mbox{\hyperlink{class_base_enemy_aaeef5b40160a59096f667fd084b73cc8}{00041}}\ \ \ \ \ \textcolor{keyword}{protected}\ Node2D\ \mbox{\hyperlink{class_base_enemy_aaeef5b40160a59096f667fd084b73cc8}{CurrentTarget}}\ =\ \textcolor{keyword}{null};}
-\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00042}\mbox{\hyperlink{class_base_enemy_a2b05c8247dab9946e801fd74a8af6376}{00042}}\ \ \ \ \ \textcolor{keyword}{protected}\ Vector2\ \mbox{\hyperlink{class_base_enemy_a2b05c8247dab9946e801fd74a8af6376}{TargetPosition}}\ =\ Vector2.Inf;}
-\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00043}\mbox{\hyperlink{class_base_enemy_af386b85762b6790503bf1716a9d2fd77}{00043}}\ \ \ \ \ \textcolor{keyword}{protected}\ Vector2\ \mbox{\hyperlink{class_base_enemy_af386b85762b6790503bf1716a9d2fd77}{StartPosition}};}
+\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00042}\mbox{\hyperlink{class_base_enemy_a2b05c8247dab9946e801fd74a8af6376}{00042}}\ \ \ \ \ \textcolor{keyword}{public}\ Vector2\ \mbox{\hyperlink{class_base_enemy_a2b05c8247dab9946e801fd74a8af6376}{TargetPosition}}\ =\ Vector2.Inf;}
+\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00043}\mbox{\hyperlink{class_base_enemy_af386b85762b6790503bf1716a9d2fd77}{00043}}\ \ \ \ \ \textcolor{keyword}{public}\ Vector2\ \mbox{\hyperlink{class_base_enemy_af386b85762b6790503bf1716a9d2fd77}{StartPosition}};}
 \DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00044}\mbox{\hyperlink{class_base_enemy_ad2523c398e4a11b5f36a9df26c4014eb}{00044}}\ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_base_enemy_ad2523c398e4a11b5f36a9df26c4014eb}{StartRotation}}\ =\ \textcolor{keyword}{false};}
 \DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00045}\mbox{\hyperlink{class_base_enemy_a47be49c6e16a1f99ee1ed68549b31d05}{00045}}\ \ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{class_base_enemy_ac529914117dfe8158325b43be1f1c6dd}{State}}\ \mbox{\hyperlink{class_base_enemy_a47be49c6e16a1f99ee1ed68549b31d05}{AnimationState}}\ =\ \mbox{\hyperlink{class_base_enemy_ac529914117dfe8158325b43be1f1c6dd}{State}}.IDLE;}
 \DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00046}\mbox{\hyperlink{class_base_enemy_a47e5e613c39180e6b1bf9899039b45fc}{00046}}\ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_base_enemy_a47e5e613c39180e6b1bf9899039b45fc}{AlreadyHit}}\ =\ \textcolor{keyword}{false};}
 \DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00047}00047\ }
 \DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00048}00048\ \ \ \ \ \textcolor{comment}{//linked\ nodes}}
-\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00049}\mbox{\hyperlink{class_base_enemy_a2e4bd99e594a6c3366f64ab47c7443b5}{00049}}\ \ \ \ \ \textcolor{keyword}{protected}\ AnimatedSprite2D\ \mbox{\hyperlink{class_base_enemy_a2e4bd99e594a6c3366f64ab47c7443b5}{Sprite}};}
+\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00049}\mbox{\hyperlink{class_base_enemy_a2e4bd99e594a6c3366f64ab47c7443b5}{00049}}\ \ \ \ \ \textcolor{keyword}{public}\ AnimatedSprite2D\ \mbox{\hyperlink{class_base_enemy_a2e4bd99e594a6c3366f64ab47c7443b5}{Sprite}};}
 \DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00050}\mbox{\hyperlink{class_base_enemy_ada18d6dd378a0f7380579ce63a6b4ec2}{00050}}\ \ \ \ \ \textcolor{keyword}{protected}\ CollisionPolygon2D\ \mbox{\hyperlink{class_base_enemy_ada18d6dd378a0f7380579ce63a6b4ec2}{CollisionPolygon}};}
 \DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00051}\mbox{\hyperlink{class_base_enemy_a9d136e8abbf09f7b418112394bdf1c88}{00051}}\ \ \ \ \ \textcolor{keyword}{protected}\ Area2D\ \mbox{\hyperlink{class_base_enemy_a9d136e8abbf09f7b418112394bdf1c88}{SwordHitbox}};}
-\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00052}\mbox{\hyperlink{class_base_enemy_a9b71f0d7b10ec2b15f5176b8b69ce190}{00052}}\ \ \ \ \ \textcolor{keyword}{protected}\ CollisionShape2D\ \mbox{\hyperlink{class_base_enemy_a9b71f0d7b10ec2b15f5176b8b69ce190}{MainCollision}};}
+\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00052}\mbox{\hyperlink{class_base_enemy_a9b71f0d7b10ec2b15f5176b8b69ce190}{00052}}\ \ \ \ \ \textcolor{keyword}{public}\ CollisionShape2D\ \mbox{\hyperlink{class_base_enemy_a9b71f0d7b10ec2b15f5176b8b69ce190}{MainCollision}};}
 \DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00053}\mbox{\hyperlink{class_base_enemy_a136d1835e3ccedebaa12d7fe151d890b}{00053}}\ \ \ \ \ \textcolor{keyword}{protected}\ RayCast2D\ \mbox{\hyperlink{class_base_enemy_a136d1835e3ccedebaa12d7fe151d890b}{FrontCollisionRayCast}};}
 \DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00054}\mbox{\hyperlink{class_base_enemy_a586349c436eb91c16f5f2f4bee17caa1}{00054}}\ \ \ \ \ \textcolor{keyword}{protected}\ RayCast2D\ \mbox{\hyperlink{class_base_enemy_a586349c436eb91c16f5f2f4bee17caa1}{LineOfSight}};}
 \DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00055}\mbox{\hyperlink{class_base_enemy_a4b844f94d42f547d733385fcefc5473a}{00055}}\ \ \ \ \ \textcolor{keyword}{protected}\ RayCast2D\ \mbox{\hyperlink{class_base_enemy_a4b844f94d42f547d733385fcefc5473a}{LeftFallProtection}};}
@@ -207,7 +207,7 @@
 \DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00238}00238\ }
 \DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00239}00239\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00240}00240\ }
-\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00245}\mbox{\hyperlink{class_base_enemy_a284a995d12d6bc1d7a23d1f6f25a96af}{00245}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_base_enemy_a284a995d12d6bc1d7a23d1f6f25a96af}{TakeDamage}}(\mbox{\hyperlink{class_damage}{Damage}}\ DMG)\{}
+\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00245}\mbox{\hyperlink{class_base_enemy_a284a995d12d6bc1d7a23d1f6f25a96af}{00245}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_base_enemy_a284a995d12d6bc1d7a23d1f6f25a96af}{TakeDamage}}(\mbox{\hyperlink{class_damage}{Damage}}\ DMG)\{}
 \DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00246}00246\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_base_enemy_a61314ff2e5931900ca4a87aa8feb670f}{Dead}})\ \{}
 \DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00247}00247\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
 \DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00248}00248\ \ \ \ \ \ \ \ \ \}}
@@ -256,60 +256,62 @@
 \DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00299}00299\ }
 \DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00300}00300\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00301}00301\ }
-\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00305}\mbox{\hyperlink{class_base_enemy_aa5e7d87eaa080ed685315588a39a9f1f}{00305}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_base_enemy_aa5e7d87eaa080ed685315588a39a9f1f}{Die}}()\{}
+\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00305}\mbox{\hyperlink{class_base_enemy_aa5e7d87eaa080ed685315588a39a9f1f}{00305}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_base_enemy_aa5e7d87eaa080ed685315588a39a9f1f}{Die}}()\{}
 \DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00306}00306\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_base_enemy_a61314ff2e5931900ca4a87aa8feb670f}{Dead}}\ =\ \textcolor{keyword}{true};}
 \DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00307}00307\ \ \ \ \ \ \ \ \ Velocity\ =\ Vector2.Zero;}
 \DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00308}00308\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_base_enemy_a9b71f0d7b10ec2b15f5176b8b69ce190}{MainCollision}}.SetDeferred(CollisionShape2D.PropertyName.Disabled,\ \textcolor{keyword}{true});}
 \DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00309}00309\ }
 \DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00310}00310\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_base_enemy_a2e4bd99e594a6c3366f64ab47c7443b5}{Sprite}}.Play(\textcolor{stringliteral}{"{}death"{}});}
 \DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00311}00311\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_health_bar}{HealthBar}}.SetVisible(\textcolor{keyword}{false});}
-\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00312}00312\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player}{Player}}.\mbox{\hyperlink{class_player_aa718b6dab81ebd60b8b910ad8c7adff6}{SetSinAmount}}(\mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_a0b2b3398a02e8fbafe3c41dd466c57d0}{GetSinAmount}}()\ +\ \mbox{\hyperlink{class_base_enemy_afa7426d08cbee4ed3184822c57888ec7}{SinAmount}});}
-\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00313}00313\ }
-\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00314}00314\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00312}00312\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_player}{Player}}\ !=\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00313}00313\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player}{Player}}.\mbox{\hyperlink{class_player_aa718b6dab81ebd60b8b910ad8c7adff6}{SetSinAmount}}(\mbox{\hyperlink{class_player_stats}{PlayerStats}}.\mbox{\hyperlink{class_player_stats_adeb667dbe2c1a76d1785ce07b6faf181}{Instance}}.\mbox{\hyperlink{class_player_stats_a0b2b3398a02e8fbafe3c41dd466c57d0}{GetSinAmount}}()\ +\ \mbox{\hyperlink{class_base_enemy_afa7426d08cbee4ed3184822c57888ec7}{SinAmount}});\ }
+\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00314}00314\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00315}00315\ }
-\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00319}\mbox{\hyperlink{class_base_enemy_a9ef92c3f73170538681e665e78e2279a}{00319}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_base_enemy_a9ef92c3f73170538681e665e78e2279a}{Respawn}}()}
-\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00320}00320\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00321}00321\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_base_enemy_a61314ff2e5931900ca4a87aa8feb670f}{Dead}}\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00322}00322\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_base_enemy_ad8681385a9f3e9e67d65acb6b945efcf}{CurrentHealthPoints}}\ =\ \mbox{\hyperlink{class_base_enemy_aeb1033802e3cdf44b1b0a510cbf18425}{MaxHealthPoints}};}
-\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00323}00323\ \ \ \ \ \ \ \ \ HealthBar.Value\ =\ 100f\ *\ \mbox{\hyperlink{class_base_enemy_ad8681385a9f3e9e67d65acb6b945efcf}{CurrentHealthPoints}}\ /\ \mbox{\hyperlink{class_base_enemy_aeb1033802e3cdf44b1b0a510cbf18425}{MaxHealthPoints}};}
-\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00324}00324\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_base_enemy_a9b71f0d7b10ec2b15f5176b8b69ce190}{MainCollision}}.SetDeferred(CollisionShape2D.PropertyName.Disabled,\ \textcolor{keyword}{false});}
-\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00325}00325\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_health_bar}{HealthBar}}.SetVisible(\textcolor{keyword}{true});}
-\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00326}00326\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_base_enemy_a2e4bd99e594a6c3366f64ab47c7443b5}{Sprite}}.Play(\textcolor{stringliteral}{"{}idle"{}});}
-\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00327}00327\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00328}00328\ }
-\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00334}\mbox{\hyperlink{class_base_enemy_a59a907194c4c712b41719a6fc12c1583}{00334}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_base_enemy_a59a907194c4c712b41719a6fc12c1583}{CheckLineOfSight}}(Node2D\ body)\{}
-\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00335}00335\ \ \ \ \ \ \ \ \ Vector2\ offset\ =\ Vector2.Zero;}
-\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00336}00336\ \ \ \ \ \ \ \ \ offset.Y\ =\ -\/14;}
-\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00337}00337\ \ \ \ \ \ \ \ \ LineOfSight.TargetPosition\ =\ body.Position\ +\ offset\ -\/\ (Position\ +\ \mbox{\hyperlink{class_base_enemy_a586349c436eb91c16f5f2f4bee17caa1}{LineOfSight}}.Position);}
-\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00338}00338\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_base_enemy_a586349c436eb91c16f5f2f4bee17caa1}{LineOfSight}}.IsColliding())\{}
-\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00339}00339\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_base_enemy_a586349c436eb91c16f5f2f4bee17caa1}{LineOfSight}}.GetCollider()\ ==\ body;}
-\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00340}00340\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00341}00341\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
-\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00342}00342\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00343}00343\ }
-\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00347}\mbox{\hyperlink{class_base_enemy_aa9ade96897c57dfc0b6b69e7d0996076}{00347}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_base_enemy_aa9ade96897c57dfc0b6b69e7d0996076}{FlipRotation}}()\{}
-\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00348}00348\ \ \ \ \ \ \ \ \ Sprite.FlipH\ =\ !\mbox{\hyperlink{class_base_enemy_a2e4bd99e594a6c3366f64ab47c7443b5}{Sprite}}.FlipH;}
-\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00349}00349\ \ \ \ \ \ \ \ \ CollisionPolygon.RotationDegrees\ =\ Math.Abs(\mbox{\hyperlink{class_base_enemy_ada18d6dd378a0f7380579ce63a6b4ec2}{CollisionPolygon}}.RotationDegrees\ -\/180);}
-\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00350}00350\ \ \ \ \ \ \ \ \ SwordHitbox.RotationDegrees\ =\ Math.Abs(\mbox{\hyperlink{class_base_enemy_a9d136e8abbf09f7b418112394bdf1c88}{SwordHitbox}}.RotationDegrees\ -\/180);}
-\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00351}00351\ \ \ \ \ \ \ \ \ FrontCollisionRayCast.RotationDegrees\ =\ Math.Abs(\mbox{\hyperlink{class_base_enemy_a136d1835e3ccedebaa12d7fe151d890b}{FrontCollisionRayCast}}.RotationDegrees\ -\/\ 180);}
-\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00352}00352\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00353}00353\ }
-\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00358}\mbox{\hyperlink{class_base_enemy_aebc2a569b2f2f3d35870e9aabb943069}{00358}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_base_enemy_aebc2a569b2f2f3d35870e9aabb943069}{SetRotation}}(\textcolor{keywordtype}{bool}\ Rotation)\{}
-\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00359}00359\ \ \ \ \ \ \ \ \ Sprite.FlipH\ =\ Rotation\ \string^\ \mbox{\hyperlink{class_base_enemy_ad2523c398e4a11b5f36a9df26c4014eb}{StartRotation}};\ \textcolor{comment}{//\ XOR\ mit\ StartRotation}}
-\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00360}00360\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(Rotation)\{}
-\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00361}00361\ \ \ \ \ \ \ \ \ \ \ \ \ CollisionPolygon.RotationDegrees\ =\ 180;}
-\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00362}00362\ \ \ \ \ \ \ \ \ \ \ \ \ SwordHitbox.RotationDegrees\ =\ 180;}
-\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00363}00363\ \ \ \ \ \ \ \ \ \ \ \ \ FrontCollisionRayCast.RotationDegrees\ =\ 180;}
-\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00364}00364\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00365}00365\ \ \ \ \ \ \ \ \ \ \ \ \ CollisionPolygon.RotationDegrees\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00366}00366\ \ \ \ \ \ \ \ \ \ \ \ \ SwordHitbox.RotationDegrees\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00367}00367\ \ \ \ \ \ \ \ \ \ \ \ \ FrontCollisionRayCast.RotationDegrees\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00368}00368\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00369}00369\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00370}00370\ }
-\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00378}\mbox{\hyperlink{class_base_enemy_abf57b8dbd0f267fd42a2a02b7bda95dc}{00378}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_base_enemy_abf57b8dbd0f267fd42a2a02b7bda95dc}{IsCloseTo}}(\textcolor{keywordtype}{float}\ Value1,\ \textcolor{keywordtype}{float}\ Value2,\ \textcolor{keywordtype}{float}\ Delta)\{}
-\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00379}00379\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Value1\ <=\ (Value2\ +\ Delta)\ \&\&\ Value1\ >=\ (Value2\ -\/\ Delta);}
-\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00380}00380\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00381}00381\ \}}
+\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00316}00316\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00317}00317\ }
+\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00321}\mbox{\hyperlink{class_base_enemy_a9ef92c3f73170538681e665e78e2279a}{00321}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_base_enemy_a9ef92c3f73170538681e665e78e2279a}{Respawn}}()}
+\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00322}00322\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00323}00323\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_base_enemy_a61314ff2e5931900ca4a87aa8feb670f}{Dead}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00324}00324\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_base_enemy_ad8681385a9f3e9e67d65acb6b945efcf}{CurrentHealthPoints}}\ =\ \mbox{\hyperlink{class_base_enemy_aeb1033802e3cdf44b1b0a510cbf18425}{MaxHealthPoints}};}
+\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00325}00325\ \ \ \ \ \ \ \ \ HealthBar.Value\ =\ 100f\ *\ \mbox{\hyperlink{class_base_enemy_ad8681385a9f3e9e67d65acb6b945efcf}{CurrentHealthPoints}}\ /\ \mbox{\hyperlink{class_base_enemy_aeb1033802e3cdf44b1b0a510cbf18425}{MaxHealthPoints}};}
+\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00326}00326\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_base_enemy_a9b71f0d7b10ec2b15f5176b8b69ce190}{MainCollision}}.SetDeferred(CollisionShape2D.PropertyName.Disabled,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00327}00327\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_health_bar}{HealthBar}}.SetVisible(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00328}00328\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_base_enemy_a2e4bd99e594a6c3366f64ab47c7443b5}{Sprite}}.Play(\textcolor{stringliteral}{"{}idle"{}});}
+\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00329}00329\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00330}00330\ }
+\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00336}\mbox{\hyperlink{class_base_enemy_a59a907194c4c712b41719a6fc12c1583}{00336}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_base_enemy_a59a907194c4c712b41719a6fc12c1583}{CheckLineOfSight}}(Node2D\ body)\{}
+\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00337}00337\ \ \ \ \ \ \ \ \ Vector2\ offset\ =\ Vector2.Zero;}
+\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00338}00338\ \ \ \ \ \ \ \ \ offset.Y\ =\ -\/14;}
+\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00339}00339\ \ \ \ \ \ \ \ \ LineOfSight.TargetPosition\ =\ body.Position\ +\ offset\ -\/\ (Position\ +\ \mbox{\hyperlink{class_base_enemy_a586349c436eb91c16f5f2f4bee17caa1}{LineOfSight}}.Position);}
+\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00340}00340\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_base_enemy_a586349c436eb91c16f5f2f4bee17caa1}{LineOfSight}}.IsColliding())\{}
+\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00341}00341\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_base_enemy_a586349c436eb91c16f5f2f4bee17caa1}{LineOfSight}}.GetCollider()\ ==\ body;}
+\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00342}00342\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00343}00343\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00344}00344\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00345}00345\ }
+\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00349}\mbox{\hyperlink{class_base_enemy_aa9ade96897c57dfc0b6b69e7d0996076}{00349}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_base_enemy_aa9ade96897c57dfc0b6b69e7d0996076}{FlipRotation}}()\{}
+\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00350}00350\ \ \ \ \ \ \ \ \ Sprite.FlipH\ =\ !\mbox{\hyperlink{class_base_enemy_a2e4bd99e594a6c3366f64ab47c7443b5}{Sprite}}.FlipH;}
+\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00351}00351\ \ \ \ \ \ \ \ \ CollisionPolygon.RotationDegrees\ =\ Math.Abs(\mbox{\hyperlink{class_base_enemy_ada18d6dd378a0f7380579ce63a6b4ec2}{CollisionPolygon}}.RotationDegrees\ -\/180);}
+\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00352}00352\ \ \ \ \ \ \ \ \ SwordHitbox.RotationDegrees\ =\ Math.Abs(\mbox{\hyperlink{class_base_enemy_a9d136e8abbf09f7b418112394bdf1c88}{SwordHitbox}}.RotationDegrees\ -\/180);}
+\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00353}00353\ \ \ \ \ \ \ \ \ FrontCollisionRayCast.RotationDegrees\ =\ Math.Abs(\mbox{\hyperlink{class_base_enemy_a136d1835e3ccedebaa12d7fe151d890b}{FrontCollisionRayCast}}.RotationDegrees\ -\/\ 180);}
+\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00354}00354\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00355}00355\ }
+\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00360}\mbox{\hyperlink{class_base_enemy_aebc2a569b2f2f3d35870e9aabb943069}{00360}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_base_enemy_aebc2a569b2f2f3d35870e9aabb943069}{SetRotation}}(\textcolor{keywordtype}{bool}\ Rotation)\{}
+\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00361}00361\ \ \ \ \ \ \ \ \ Sprite.FlipH\ =\ Rotation\ \string^\ \mbox{\hyperlink{class_base_enemy_ad2523c398e4a11b5f36a9df26c4014eb}{StartRotation}};\ \textcolor{comment}{//\ XOR\ mit\ StartRotation}}
+\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00362}00362\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(Rotation)\{}
+\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00363}00363\ \ \ \ \ \ \ \ \ \ \ \ \ CollisionPolygon.RotationDegrees\ =\ 180;}
+\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00364}00364\ \ \ \ \ \ \ \ \ \ \ \ \ SwordHitbox.RotationDegrees\ =\ 180;}
+\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00365}00365\ \ \ \ \ \ \ \ \ \ \ \ \ FrontCollisionRayCast.RotationDegrees\ =\ 180;}
+\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00366}00366\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00367}00367\ \ \ \ \ \ \ \ \ \ \ \ \ CollisionPolygon.RotationDegrees\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00368}00368\ \ \ \ \ \ \ \ \ \ \ \ \ SwordHitbox.RotationDegrees\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00369}00369\ \ \ \ \ \ \ \ \ \ \ \ \ FrontCollisionRayCast.RotationDegrees\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00370}00370\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00371}00371\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00372}00372\ }
+\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00380}\mbox{\hyperlink{class_base_enemy_abf57b8dbd0f267fd42a2a02b7bda95dc}{00380}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_base_enemy_abf57b8dbd0f267fd42a2a02b7bda95dc}{IsCloseTo}}(\textcolor{keywordtype}{float}\ Value1,\ \textcolor{keywordtype}{float}\ Value2,\ \textcolor{keywordtype}{float}\ Delta)\{}
+\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00381}00381\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Value1\ <=\ (Value2\ +\ Delta)\ \&\&\ Value1\ >=\ (Value2\ -\/\ Delta);}
+\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00382}00382\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_base_enemy_8cs_source_l00383}00383\ \}}
 
 \end{DoxyCode}
